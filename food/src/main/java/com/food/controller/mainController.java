@@ -1,0 +1,12 @@
+package com.food.controller;
+
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+
+public class mainController {
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
+	public String list () {
+		return "Main/main";
+	}
+
+}
