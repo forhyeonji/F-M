@@ -15,14 +15,14 @@
             <div id="board_menu">
                 <ul class="b_ul">
                     <li><a href="#">레시피
-                        <ul class="b_ul">
+                        <ul>
                             <li><a href="#">면</a></li>
                             <li><a href="#">빵</a></li>
                             <li><a href="#">고기</a></li>
                         </ul>
                     </a></li>
                     <li><a href="#">요리
-                        <ul class="b_ul">
+                        <ul>
                             <li><a href="#">양식</a></li>
                             <li><a href="#">중식</a></li>
                             <li><a href="#">한식</a></li>
@@ -45,12 +45,31 @@
                         <li><a href="#">인기</a></li>
                     </ul>
                     <ul class="b_ul">
-                        <li><a href="#"></a></li>
+                        <li><a href="#">asdasd</a></li>
                     </ul>
                 </div>
             </div>
+            <br>
             <div id="board_main">
-
+                <div class="board_list">
+                    <ul>
+                        <li>
+                            <div class="board_list abc">
+                                aaaa
+                            </div>
+                        </li>
+                        <li>
+                            <div class="board_list abc">
+                                aaaa
+                            </div>
+                        </li>
+                        <li>
+                            <div class="board_list abc">
+                                aaaa
+                            </div>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div id="board_footer">
                 <div id="serch">
