@@ -64,7 +64,7 @@
 	<h2>인기 상품></h2>
 	<div class="main_image">
       <div class="main_image_1">
-         <img src="image/배추.jpg" width="300px" >
+         <img src="../image/배추.jpg" width="300px" >
          <div class="parcel">한진택배</div>
          <div class="cabbage">알배기 배추 1kg</div>
          <div class="cabbage_price">4,990원</div>
