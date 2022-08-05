@@ -13,7 +13,7 @@ div{margin:5px; }
 <body>
 
 <header>
-<h1 align="center">food</h1>
+<h1 align="center">fo od</h1>
 <p align="center">다른 메뉴는 메인페이지 따라갈게요</p>
 </header>
 
