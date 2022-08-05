@@ -19,7 +19,6 @@
 
         .product {
             display: inline;
-            float: left;
         }
 
         .main_image {
@@ -53,10 +52,12 @@
         }
 
         .main_image_5 {
-            float: left;
-            display: inline;
             margin-top: 70px;
         }
+        
+       .main_image_6{
+            padding-left: 20px;
+       }
 
     </style>
 </head>
@@ -106,9 +107,26 @@
             <img src="../../../resources/image/규동.jpg" width="300px" height="200px">
             <div class="parcel">한진택배</div>
             <div class="guydong">규동<br> 소고기 덮밥용</div>
-            <div class="meat_price">18,430원</div>
+            <div class="guydong_price">18,430원</div>
             <p class="guydong_ex">간편하게 만들어 맛있게</p>
-
+        </div>
+        
+           <div class="main_image_6">
+            <img src="../../../resources/image/granate.jpg" width="300px" height="200px">
+            <div class="parcel">한진택배</div>
+            <div class="granate">석류 3개</div>
+            <div class="granate_price">23,500</div>
+            <p class="granate_ex">여자에게 최고의 과일</p>
+        </div>
+        
+   
+        
+         <div class="main_image_7">
+            <img src="../../../resources/image/VINIQ.jpg" width="300px" height="250px">
+            <div class="parcel">한진택배</div>
+            <div class="VINIQ">VINIQ 1병</div>
+            <div class="VINIQ_price">13,500</div>
+            <p class="VINIQ_ex">특별한 날 파티용 샴페인</p>
         </div>
     </div>
 </div>
