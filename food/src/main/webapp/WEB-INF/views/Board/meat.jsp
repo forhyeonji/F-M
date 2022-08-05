@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
@@ -5,53 +6,51 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    <script src="https://kit.fontawesome.com/c8b59d7559.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="<c:url value="resources/CSS/CSS.css" />" type="text/css" />
 </head>
 <body>
 <div id="wrap">
     <div id="container">
         <div id="content">
             <div id="board_menu">
-                <ul>
-                    <a href="#"><li>레시피
-                        <ul>
-                            <a href="#"><li>면</li></a>
-                            <a href="#"><li>빵</li></a>
-                            <a href="#"><li>고기</li></a>
+                <ul class="b_ul">
+                    <li><a href="#">레시피
+                        <ul class="b_ul">
+                            <li><a href="#">면</a></li>
+                            <li><a href="#">빵</a></li>
+                            <li><a href="#">고기</a></li>
                         </ul>
-                    </li></a>
-                    <a href="#"><li>요리
-                        <ul>
-                            <a href="#"><li>양식</li></a>
-                            <a href="#"><li>중식</li></a>
-                            <a href="#"><li>한식</li></a>
+                    </a></li>
+                    <li><a href="#">요리
+                        <ul class="b_ul">
+                            <li><a href="#">양식</a></li>
+                            <li><a href="#">중식</a></li>
+                            <li><a href="#">한식</a></li>
                         </ul>
-                    </li></a>
-                    <a href="#"><li>커뮤니티</li></a>
-                    <a href="#"><li>그림판</li></a>
-                    <a href="#"><li>실시간 채팅</li></a>
+                    </a></li>
+                    <li><a href="#">커뮤니티</a></li>
+                    <li><a href="#">그림판</a></li>
+                    <li><a href="#">실시간 채팅</a></li>
                 </ul>
             </div>
             <div class="board_title">
                 <div class="">
                     <h1>
-                        <a herf="#">고기</a>
+                        고기
                     </h1>
-                 </div>
+                </div>
+                <div>
+                    <ul class="b_ul">
+                        <li><a href="#">홈</a></li>
+                        <li><a href="#">인기</a></li>
+                    </ul>
+                    <ul class="b_ul">
+                        <li><a href="#"></a></li>
+                    </ul>
+                </div>
             </div>
             <div id="board_main">
-                <table border="1">
-                    <tr>
-                        <th>1</th>
-                        <th>2</th>
-                        <th>3</th>
-                    </tr>
-                    <tr>
-                        <td>1</td>
-                        <td>2</td>
-                        <td>3</td>
-                    </tr>
-                </table>
+
             </div>
             <div id="board_footer">
                 <div id="serch">
@@ -67,6 +66,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>
