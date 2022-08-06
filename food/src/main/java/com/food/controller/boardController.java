@@ -35,5 +35,8 @@ public class boardController {
 		return "/Board/boardList";
 	}
 
-
+	@RequestMapping(value = "/boardWrite", method = RequestMethod.GET)
+	public String boardWrite () {
+		return "/Board/write";
+	}
 }
