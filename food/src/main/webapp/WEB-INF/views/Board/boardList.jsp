@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Insert title here</title>
-    <link rel="stylesheet" href="<c:url value="resources/CSS/CSS.css" />" type="text/css" />
+    <link rel="stylesheet" href="<c:url value="../../../resources/CSS/CSS.css" />" type="text/css" />
 </head>
 <body>
 <div id="wrap">
