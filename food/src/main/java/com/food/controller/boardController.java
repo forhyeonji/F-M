@@ -6,35 +6,33 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class boardController {
-	
-	@RequestMapping(value = "/noodle", method = RequestMethod.GET)
-	public String noodle () {
-		return "/Board/noodle";
-	}
 
 	@RequestMapping(value = "/bread", method = RequestMethod.GET)
 	public String bread () {
-		return "/Board/bread";
+		return "/Board/boardList";
 	}
 
 	@RequestMapping(value = "/chinese", method = RequestMethod.GET)
 	public String chinese () {
-		return "/Board/chinese";
+		return "/Board/boardList";
 	}
-
+	@RequestMapping(value = "/noodle", method = RequestMethod.GET)
+	public String noodle () {
+		return "/Board/boardList";
+	}
 	@RequestMapping(value = "/korean", method = RequestMethod.GET)
 	public String korean () {
-		return "/Board/korean";
+		return "/Board/boardList";
 	}
 
 	@RequestMapping(value = "/meat", method = RequestMethod.GET)
 	public String meat () {
-		return "/Board/meat";
+		return "/Board/boardList";
 	}
 
 	@RequestMapping(value = "/western", method = RequestMethod.GET)
 	public String western () {
-		return "/Board/western";
+		return "/Board/boardList";
 	}
 
 
