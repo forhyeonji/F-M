@@ -1,5 +1,5 @@
 package com.food.model;
 
-public class memberVO {
+public class MemberVO {
 
 }

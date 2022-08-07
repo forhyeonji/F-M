@@ -5,13 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
-public class noticeController {
-
-	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+public class MainController {
+	@RequestMapping(value = "/main", method = RequestMethod.GET)
 	public String list () {
-		return "Notice/notice";
+		return "Main/main";
 	}
 
-	
-	
 }
