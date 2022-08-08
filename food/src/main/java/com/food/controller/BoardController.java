@@ -9,21 +9,21 @@ public class BoardController {
 
     @RequestMapping(value = "/bread", method = RequestMethod.GET)
     public String bread() {
-        return "BoardList";
+        return "/Board/BoardList";
     }
 
     @RequestMapping(value = "/boardWrite", method = RequestMethod.GET)
     public String boardWrite() {
-        return "BoardWrite";
+        return "/Board/BoardWrite";
     }
 
     @RequestMapping(value = "/boardDetail", method = RequestMethod.GET)
     public String boardDetail() {
-        return "BoardDetail";
+        return "/Board/BoardDetail";
     }
 
     @RequestMapping(value = "/boardModify", method = RequestMethod.GET)
     public String boardModify() {
-        return "BoardModify";
+        return "/Board/BoardModify";
     }
 }
