@@ -6,9 +6,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class InsertController {
-	
-	@RequestMapping(value = "/Insert", method = RequestMethod.GET)
-	public String Insert () {
-		return "Insert/insert";
+	@RequestMapping(value="/insert", method = RequestMethod.POST)
+	public String list () {
+		return "Main/Insert";
+
 	}
 }
