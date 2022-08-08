@@ -14,16 +14,16 @@ public class BoardController {
 
     @RequestMapping(value = "/boardWrite", method = RequestMethod.GET)
     public String boardWrite() {
-        return "BoardWrite";
+        return "/Board/BoardWrite";
     }
 
     @RequestMapping(value = "/boardDetail", method = RequestMethod.GET)
     public String boardDetail() {
-        return "BoardDetail";
+        return "/Board/BoardDetail";
     }
 
     @RequestMapping(value = "/boardModify", method = RequestMethod.GET)
     public String boardModify() {
-        return "BoardModify";
+        return "/Board/BoardModify";
     }
 }

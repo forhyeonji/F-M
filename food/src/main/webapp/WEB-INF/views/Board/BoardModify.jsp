@@ -23,8 +23,8 @@
                 </tbody>
             </table>
             <div class="board_btn">
-                <input type="submit" value="수정" formaction="BoardModifyServer">
-                <input type="submit" value="취소" formaction="BoardDetail">
+                <input type="submit" value="수정" formaction="boardModifyServer">
+                <input type="submit" value="취소" formaction="boardDetail">
             </div>
         </form>
     </div>

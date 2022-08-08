@@ -29,7 +29,7 @@
                 </tr>
                 </tbody>
             </table>
-            <input type="submit" value="글쓰기" formaction="BoardDetail">
+            <input type="submit" value="글쓰기" formaction="boardDetail">
         </form>
     </div>
 </div>

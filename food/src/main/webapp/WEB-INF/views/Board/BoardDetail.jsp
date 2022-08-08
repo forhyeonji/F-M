@@ -23,9 +23,9 @@
                 </tbody>
             </table>
             <div class="board_btn">
-                <input type="submit" value="목록" formaction="BoardList">
-                <input type="submit" value="수정" formaction="BoardModify">
-                <input type="submit" value="삭제" formaction="BoardDelete">
+                <input type="submit" value="목록" formaction="boardList">
+                <input type="submit" value="수정" formaction="boardModify">
+                <input type="submit" value="삭제" formaction="boardDelete">
             </div>
         </form>
     </div>
