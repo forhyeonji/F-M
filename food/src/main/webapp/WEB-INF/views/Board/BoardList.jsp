@@ -64,7 +64,7 @@
                         </div>
                     </div>
                     <div>
-                        <input type="submit" value="글쓰기">
+                        <input type="submit" value="글쓰기" formaction="BoardWrite">
                     </div>
                 </div>
                 <div id="board_footer">

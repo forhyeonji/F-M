@@ -9,7 +9,7 @@ public class BoardController {
 
     @RequestMapping(value = "/bread", method = RequestMethod.GET)
     public String bread() {
-        return "BoardList";
+        return "/Board/BoardList";
     }
 
     @RequestMapping(value = "/boardWrite", method = RequestMethod.GET)
