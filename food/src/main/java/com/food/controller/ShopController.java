@@ -7,11 +7,16 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 public class ShopController {
 
-	@RequestMapping(value = "/shop", method = RequestMethod.GET)
-	public String list () {
-		return "Shop/shop";
-	}
+   @RequestMapping(value = "/shop", method = RequestMethod.GET)
+   public String list () {
+      return "Shop/shop";
+   }
 
-	
-	
+   @RequestMapping(value = "/shopConer", method = RequestMethod.GET)
+   public String Coner () {
+      return "Shop/shopConer";
+   }
+
+   
+   
 }

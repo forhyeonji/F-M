@@ -31,6 +31,10 @@ public class MypageController {
 	public String ordercancle () {
 		return "Mypage/ordercancle";
 	}
+	@RequestMapping(value = "mypage/orderrefund", method = RequestMethod.GET)
+	public String orderrefund () {
+		return "Mypage/orderrefund";
+	}
 	@RequestMapping(value = "mypage/delivery", method = RequestMethod.GET)
 	public String delivery () {
 		return "Mypage/delivery";
@@ -38,5 +42,9 @@ public class MypageController {
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
 	public String mywrite () {
 		return "Mypage/mywrite";
+	}
+	@RequestMapping(value = "mypage/myreply", method = RequestMethod.GET)
+	public String myreply () {
+		return "Mypage/myreply";
 	}
 }

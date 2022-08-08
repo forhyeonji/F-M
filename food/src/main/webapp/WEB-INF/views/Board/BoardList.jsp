@@ -2,76 +2,88 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
-    <link rel="stylesheet" href="<c:url value="../../../resources/CSS/CSS.css" />" type="text/css" />
+    <title>Title</title>
+    <link rel="stylesheet" href="resources/CSS/boardList.css" type="text/css"/>
+
 </head>
 <body>
 <div id="wrap">
     <div id="container">
         <div id="content">
-            <form>
-                <div id="board_menu">
-                    <ul class="b_ul">
-                        <li><a href="#">레시피
-                            <ul>
-                                <li><a href="#">면</a></li>
-                                <li><a href="#">빵</a></li>
-                                <li><a href="#">고기</a></li>
-                            </ul>
-                        </a></li>
-                        <li><a href="#">요리
-                            <ul>
-                                <li><a href="#">양식</a></li>
-                                <li><a href="#">중식</a></li>
-                                <li><a href="#">한식</a></li>
-                            </ul>
-                        </a></li>
-                        <li><a href="#">커뮤니티</a></li>
-                        <li><a href="#">그림판</a></li>
-                        <li><a href="#">실시간 채팅</a></li>
+                <div id="navigation">
+                    <ul>
+                        <li class="dropdown">
+                            <a href="#" class="dropdownbutton">레시피</a>
+                            <div class="dropdown-content">
+                                <a href="#">빵</a>
+                                <a href="#">면</a>
+                                <a href="#">고기</a>
+                            </div>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdownbutton">요리</a>
+                            <div class="dropdown-content">
+                                <a href="#">한식</a>
+                                <a href="#">중식</a>
+                                <a href="#">양식</a>
+                            </div>
+                        </li>
+                        <li><a href="#">잡담</a></li>
+                        <li><a href="#">실시간채팅</a></li>
                     </ul>
                 </div>
-                <div class="board_title">
-                    <div class="">
+
+                <div class="board_title" id="board_title">
+                    <div class="board_title header">
                         <h1>
                             빵
                         </h1>
                     </div>
                     <div>
-                        <ul class="b_ul">
-                            <li><a href="#">홈</a></li>
-                            <li><a href="#">인기</a></li>
-                        </ul>
-                        <ul class="b_ul">
-                            <li><a href="#">asdasd</a></li>
-                        </ul>
+                        <table class="tb_nav">
+                            <tr>
+                                <td id="home"><a href="#"><span>🏠</span></a></td>
+                                <td id="best"><a href="#"><span>인기</span></a></td>
+                                <td class="show_view"><a href="#"><span>🐱</span></a></td>
+                                <td class="show_view"><a href="#"><span>🐉</span></a></td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <br>
+<%--            <form>--%>
                 <div id="board_main">
-                    <div class="board_list">
-                        <div>
-                            aaaaaa1
-                        </div>
-                        <div>
-                            aaaaaa2
-                        </div>
-                        <div>
-                            aaaaaa3
-                        </div>
+                    <div id="board_list">
+                        <table class="tb_nav list">
+                            <thead>
+                                <tr>
+                                    <th class="list_title">제목</th>
+                                    <th class="list_user">글쓴이</th>
+                                    <th class="list_cnt">조회수</th>
+                                    <th class="list_date">날짜</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="list_title" id="lt">a</td>
+                                    <td class="list_user">a</td>
+                                    <td class="list_cnt">a</td>
+                                    <td class="list_date">a</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div>
-                        <input type="submit" value="글쓰기">
+                    <div id="sb_btn">
+                        <input type="submit" value="글쓰기" formaction="boardWrite">
                     </div>
                 </div>
                 <div id="board_footer">
                     <div id="serch">
                         <div>
                             <form action="#">
-                                <rect>돋보기</rect>
+                                <rect>🔍</rect>
                                 <input type="text" size="10">
                                 <input type="submit" value="검색">
                                 <select>
@@ -82,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+<%--            </form>--%>
         </div>
     </div>
 </div>
