@@ -1,4 +1,4 @@
-package com.food.mapper;
+package Mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
