@@ -1,0 +1,102 @@
+@charset "EUC-KR";
+
+* {
+	margin : 0px;
+	padding : 0px;
+	
+	}
+
+ul>li {
+	width : 200px;
+	border : solid 1px rgb(234, 234, 234);
+	padding-left : 20px;
+	padding-top : 15px;
+	padding-bottom : 15px;
+	padding-right : 0px;
+	margin : 0px;
+	}
+
+a {
+	text-decoration : none;
+}
+
+table {
+	border-collapse : collapse;
+}
+
+td {
+	border-bottom : solid 1px rgb(234, 234, 234);
+}
+
+#container {
+		width:1024px;
+		height:1300px;
+		margin:0px auto;
+		padding-left:5px;
+		padding-right:5px;
+	}
+
+#main {
+	margin-top:50px;
+	
+}
+
+#main_left {
+
+	
+	float : left;
+}
+
+#main_center{
+	border : solid 1px;
+	width : 790px;
+	height : 1000px;
+	padding : 20px;
+	box-sizing : border-box;
+	float : right;
+}
+
+#notice_lable{
+	
+	font-size : 50px;
+	
+}
+
+#bar {
+	width : 790px;
+}
+
+.title_effect{
+	padding : 15px;
+}
+
+#no{
+	width : 60px;
+	text-align : center;
+	vertical-align :middle;
+}
+
+#title{
+	width : 490px;
+	text-align : center;
+
+}
+
+#writer{
+	width : 120px;
+	text-align : center;
+}
+
+
+#regdate{
+	width : 120px;
+	text-align : center;
+}
+
+
+
+.but {
+	padding : 5px;
+	margin-top : 20px;
+	margin-bottom : 10px;  
+}

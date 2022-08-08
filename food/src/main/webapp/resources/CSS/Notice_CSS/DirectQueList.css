@@ -1,0 +1,137 @@
+@charset "EUC-KR";
+
+* {
+	margin : 0px;
+	padding : 0px;
+	
+	}
+	
+#container {
+		width:1024px;
+		height:1300px;
+		margin:0px auto;
+		padding-left:5px;
+		padding-right:5px;
+	}
+	
+ul>li {
+	width : 200px;
+	border : solid 1px rgb(234, 234, 234);
+	padding-left : 20px;
+	padding-top : 15px;
+	padding-bottom : 15px;
+	padding-right : 0px;
+	margin : 0px;
+	}
+	
+a {
+	text-decoration : none;
+}
+
+h3 {
+	margin : 20px;
+	text-align : center;
+}
+
+
+#notice_lable{
+	
+	font-size : 50px;
+	margin-bottom : 20px;
+	
+}
+
+
+/* table */
+
+#listTable {
+	border-collapse : collapse;
+}
+
+
+
+#main {
+	margin-top:50px;
+	
+}
+
+#main_left {
+
+	
+	float : left;
+}
+
+#main_center{
+	width : 790px;
+	height : 1000px;
+	padding : 20px;
+	box-sizing : border-box;
+	float : right;
+}
+
+
+.title_effect{
+	padding : 15px;
+	border-bottom : solid 1px rgb(234, 234, 234);
+}
+
+
+#category{
+	
+	width : 120px;
+	text-align : center;
+}
+
+
+#title{
+	width : 490px;
+	text-align : center;
+
+}
+
+#writer{
+	width : 120px;
+	text-align : center;
+}
+
+
+#regdate{
+	width : 120px;
+	text-align : center;
+}
+
+#check{
+	width : 120px;
+	text-align : center;
+}
+
+.text {
+	width : 748px;
+	height : 400px;
+	}
+	
+textarea {
+	width : 748px;
+	height : 400px;
+	margin : 0px auto;
+	margin-top : 10px;
+	}
+
+.but {
+	padding : 5px;
+	}
+
+#tel {
+	width : 200px;
+	height : 22px;
+}
+
+select {
+	height : 24px;
+}
+
+#button {
+	width : 42px;
+}
+
+
