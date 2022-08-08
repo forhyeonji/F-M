@@ -13,7 +13,6 @@
 <div id="wrap">
     <div id="container">
         <div id="content">
-            <form>
                 <div id="navigation">
                     <ul>
                         <li class="dropdown">
@@ -38,37 +37,45 @@
                 </div>
 
                 <div class="board_title" id="board_title">
-                    <div class="">
+                    <div class="board_title header">
                         <h1>
                             빵
                         </h1>
                     </div>
-                    <div class="board_title nav">
-                        <ul>
-                            <li><a href="#">홈</a></li>
-                            <li><a href="#">인기</a></li>
-                        </ul>
-                    </div>
-                    <div class="board_title nav show">
-                        <ul>
-                            <li><a href="#">asdasd</a></li>
-                        </ul>
+                    <div>
+                        <table class="tb_nav">
+                            <tr>
+                                <td id="home"><a href="#"><span>🏠</span></a></td>
+                                <td id="best"><a href="#"><span>인기</span></a></td>
+                                <td class="show_view"><a href="#"><span>🐱</span></a></td>
+                                <td class="show_view"><a href="#"><span>🐉</span></a></td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
-                <br>
+<%--            <form>--%>
                 <div id="board_main">
-                    <div class="board_list">
-                        <div>
-                            aaaaaa1
-                        </div>
-                        <div>
-                            aaaaaa2
-                        </div>
-                        <div>
-                            aaaaaa3
-                        </div>
+                    <div id="board_list">
+                        <table class="tb_nav list">
+                            <thead>
+                                <tr>
+                                    <th class="list_title">제목</th>
+                                    <th class="list_user">글쓴이</th>
+                                    <th class="list_cnt">조회수</th>
+                                    <th class="list_date">날짜</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="list_title" id="lt">a</td>
+                                    <td class="list_user">a</td>
+                                    <td class="list_cnt">a</td>
+                                    <td class="list_date">a</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
-                    <div>
+                    <div id="sb_btn">
                         <input type="submit" value="글쓰기" formaction="boardWrite">
                     </div>
                 </div>
@@ -76,7 +83,7 @@
                     <div id="serch">
                         <div>
                             <form action="#">
-                                <rect>돋보기</rect>
+                                <rect>🔍</rect>
                                 <input type="text" size="10">
                                 <input type="submit" value="검색">
                                 <select>
@@ -87,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+<%--            </form>--%>
         </div>
     </div>
 </div>
