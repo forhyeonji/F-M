@@ -1,10 +1,10 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 
 <link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/DirectDetail.css">
@@ -16,26 +16,26 @@
 		
 		
 		<div id="main_top">	
-		<h3>1:1 ¹®ÀÇ ´äº¯ÇÏ±â</h3>
+		<h3>1:1 ë¬¸ì˜ ë‹µë³€í•˜ê¸°</h3>
 		
 		<table>
 			<tr>
-				<td class="label">ÀÛ¼ºÀÚ</td>
-				<td class="label_answer">ÇÚÁö</td>
+				<td class="label">ìž‘ì„±ìž</td>
+				<td class="label_answer">í•¸ì§€</td>
 			</tr>
 			
 			<tr>
-				<td class="label">ÀÛ¼ºÀÏÀÚ</td>
-				<td class="label_answer">¿À´Ã³»ÀÏ³»ÀÏ¿À´Ã</td>
+				<td class="label">ìž‘ì„±ì¼ìž</td>
+				<td class="label_answer">ì˜¤ëŠ˜ë‚´ì¼ë‚´ì¼ì˜¤ëŠ˜</td>
 			</tr>
 			
 			<tr>
-				<td class="label">Ä«Å×°í¸®</td>
-				<td class="label_answer">Ä¿¹Â´ÏÆ¼ ¹®ÀÇ</td>
+				<td class="label">ì¹´í…Œê³ ë¦¬</td>
+				<td class="label_answer">ì»¤ë®¤ë‹ˆí‹° ë¬¸ì˜</td>
 			</tr>
 			
 			<tr>
-				<td colspan="2" class="text" id="question"><p>¿ä·ÎÄôÀú·¯Äô ¾îÂ¼³ª¿ä?</p></td>
+				<td colspan="2" class="text" id="question"><p>ìš”ë¡œì¿µì €ëŸ¬ì¿µ ì–´ì©Œë‚˜ìš”?</p></td>
 			</tr>
 			
 			</table>
@@ -46,13 +46,13 @@
 			
 			<div id="main_bottom">
 			<hr>
-			<h4 style="color:gray">´äº¯</h4>
+			<h3>ë‹µë³€</h3>
 			<hr>
 			
 			
 			<table>
 			<tr>
-				<td colspan="2" class="text"><textarea placeholder="´äº¯À» ÀÔ·ÂÇØ ÁÖ¼¼¿ä."></textarea></td>
+				<td colspan="2" class="text"><textarea placeholder="ë‹µë³€ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”."></textarea></td>
 			</tr>
 			</table>
 			</div> <!-- main_bottom -->
@@ -60,8 +60,8 @@
 			
 			<div id="button">
 
-				<input type="submit" value="µî·Ï" class="but">
-				<input type="button" value="Ãë¼Ò" onclick="location.href='http://localhost:8080/directKing'" class="but">
+				<input type="submit" value="ë“±ë¡" class="but">
+				<input type="button" value="ì·¨ì†Œ" onclick="location.href='http://localhost:8080/directKing'" class="but">
 			</div> <!-- button -->
 			
 		

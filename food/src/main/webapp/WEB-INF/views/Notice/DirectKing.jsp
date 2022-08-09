@@ -1,42 +1,67 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/DirectKing.css">
 </head>
 <body>
-	<ul type="none">
-		<li><a href="http://localhost:8080/notice">°øÁö»çÇ×</a></li>
-		<li><a href="http://localhost:8080/QnA">ÀÚÁÖÇÏ´Â Áú¹®</a></li>
-		<li><a href="http://localhost:8080/directQue">1:1 ¹®ÀÇ</a></li>
-		<li><a href="http://localhost:8080/directKing">1:1 ¹®ÀÇ °ü¸®ÀÚ</a></li>
-		<li><a>½Ç½Ã°£ ¹®ÀÇ</a></li>
-	</ul>
+<div id="container">
+
+<div id="main">
+
+
+	<div id="main_left">
+		<ul type="none">
+			<li><a href="http://localhost:8080/notice">ê³µì§€ì‚¬í•­</a></li>
+			<li><a href="http://localhost:8080/QnA">ìžì£¼í•˜ëŠ” ì§ˆë¬¸</a></li>
+			<li><a href="http://localhost:8080/directQue">1:1 ë¬¸ì˜</a></li>
+			<li><a href="http://localhost:8080/directKing">1:1 ë¬¸ì˜ ê´€ë¦¬ìž</a></li>
+			<li><a>ì‹¤ì‹œê°„ ë¬¸ì˜</a></li>
+		</ul>
+	</div>
 	
-	<label style="font-size : 50px">1:1 ¹®ÀÇ ´äº¯ÇÏ±â</label>  <label>³»°¡ ¸»ÇØÁÖ²²~~~</label> <br><br>
 	
-				<select>
-					<option>·¹½ÃÇÇ ¹®ÀÇ</option>
-					<option>½ºÅä¾î ¹®ÀÇ</option>
-					<option>Ä¿¹Â´ÏÆ¼ ¹®ÀÇ</option>
-					<option>±âÅ¸ ¹®ÀÇ</option>
-				</select>
-				
-				
-	<table border="1">	
 	
-		<tr>
-			<td width="300px">Á¦¸ñ</td>
-			<td width="100px">ÀÛ¼ºÀÏ</td>
-			<td width="100px">´äº¯¿©ºÎ</td>
-		</tr>
+	
+	<div id="main_center">
+		<label id="notice_lable">1:1 ë¬¸ì˜ ê´€ë¦¬ìž</label>  <label>ë‚´ê°€ ë§í•´ì£¼ê»˜~~~</label> <br><br>
 		
-		<tr>
-			<td colspan="3"><a href="http://localhost:8080/directKing_answer">¿©±â¸¦ Å¬¸¯ÇÏ¼¼¿ä</a></td>
-		</tr>
+					<select>
+						<option>ë ˆì‹œí”¼ ë¬¸ì˜</option>
+						<option>ìŠ¤í† ì–´ ë¬¸ì˜</option>
+						<option>ì»¤ë®¤ë‹ˆí‹° ë¬¸ì˜</option>
+						<option>ê¸°íƒ€ ë¬¸ì˜</option>
+					</select>
+					
+		<hr>	
+		<table>	
+		
+			<tr id="bar">
+				<td width="300px" class="title_effect" id="title">ì œëª©</td>
+				<td width="100px" class="title_effect" id="regdate">ìž‘ì„±ì¼</td>
+				<td width="100px" class="title_effect" id="check">ë‹µë³€ì—¬ë¶€</td>
+			</tr>
+			
+			<tr>
+				<td colspan="3" class="title_effect"><a href="http://localhost:8080/directKing_answer">ì—¬ê¸°ë¥¼ í´ë¦­í•˜ì„¸ìš”</a></td>
+			</tr>
+			
+			<tr>
+				<td colspan="3" class="title_effect"><a href="http://localhost:8080/directKing_answer">ì—¬ê¸°ë¥¼ í´ë¦­í•˜ì„¸ìš”</a></td>
+			</tr>
+		
+		</table>
+		
+	</div> <!-- main_center -->
 	
-	</table>
+	
+	
+	
+</div> <!-- main -->
+</div> <!-- container -->	
 </body>
 </html>

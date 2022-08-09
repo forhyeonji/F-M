@@ -1,6 +1,7 @@
 @charset "EUC-KR";
 
 
+
 * {
 	margin : 0px;
 	padding : 0px;
@@ -41,23 +42,7 @@ table {
 	background-color : rgba(255, 252, 252)
 	}
 
-textarea {
-	width : 1050px;
-	height : 400px;
-	margin : 0px auto;
-	margin-top : 10px;
-	}
-
-.text {
-	width : 1050px;
-	height : 400px;
-	}
-
-#question {
-	vertical-align : top;
-	padding : 20px;
-	}
-
+	
 h3 {
 	width : 1050px;
 	margin : 0px;
@@ -72,17 +57,8 @@ hr {
 
 
 
-
 .but {
 	padding : 5px;
+	margin-top : 10px;
 	}
-
-#button {
-	width : 90px;
-	margin : 0px auto;
-}
-
-#answer {
-	vertical-align:top;
-	padding-top:15px;
-}
+	
