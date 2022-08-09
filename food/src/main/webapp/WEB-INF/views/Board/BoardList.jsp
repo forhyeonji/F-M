@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" href="resources/CSS/boardList.css" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/boardList.css" type="text/css"/>
 
 </head>
 <body>
@@ -53,7 +53,7 @@
                         </table>
                     </div>
                 </div>
-<%--            <form>--%>
+            <form>
                 <div id="board_main">
                     <div id="board_list">
                         <table class="tb_nav list">
@@ -69,14 +69,14 @@
                                 <tr>
                                     <td class="list_title" id="lt">a</td>
                                     <td class="list_user">a</td>
-                                    <td class="list_cnt">a</td>
+                                    <td class="list_cnt">b</td>
                                     <td class="list_date">a</td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
-                    <div id="sb_btn">
-                        <input type="submit" value="글쓰기" formaction="boardWrite">
+                    <div id="list_btns">
+                        <input type="submit" value="글쓰기" formaction="boardWrite" id="btn_write">
                     </div>
                 </div>
                 <div id="board_footer">
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-<%--            </form>--%>
+            </form>
         </div>
     </div>
 </div>
