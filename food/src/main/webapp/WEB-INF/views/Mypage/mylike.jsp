@@ -4,7 +4,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>myreply</title>
+<title>mylike</title>
+</head>
+<body>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 </head>
 <body>
@@ -13,10 +15,10 @@
 		<h1>food</h1>
 		<p>다른 메뉴는 메인페이지 따라갈게요</p>
 	</header>
-
+	
 	<div id="main">
 		<div id="side_left">
-			<div><label id="page_title">💬내가 올린 "댓"글</label></div>
+			<div><label id="page_title">❤내가 좋아요 누른 글</label></div>
 			<div id="profile">
 				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
 				<div><span id="id">회원id 님</span><br>
@@ -33,26 +35,20 @@
 		<div id="center">
 			<div>
 				<a href="http://localhost:8080/mypage/mywrite"><button>📝내가 쓴 글</button></a>
-				<a href="http://localhost:8080/mypage/mylike"><button>❤내가 좋아요 누른 글</button></a>
+				<a href="http://localhost:8080/mypage/myreply"><button>💬내 댓글</button></a>			
 			</div>
-				<table id="myreply" border="1" style="width:500px;">
+				<table id="mylike" border="1" style="width:500px;">
 					<tr>
-						<th>💬</th><th>제목</th><th>작성일자</th>
+						<th>❤</th><th>제목</th><th>좋아요 누른 날짜</th>
 					</tr>
 					<tr>
-						<td style="font-size:150%">💬</td><td>좋아요!</td><td>2022/08/08</td>
+						<td style="height:80px">❤글 썸네일</td><td>요즘 재밌는 놀이</td><td>2022/08/07</td>
 					</tr>
 					<tr>
-						<td style="font-size:150%">💬</td><td>잘 보고 가요!</td><td>2022/08/01</td>
+						<td style="height:80px">❤글 썸네일</td><td>맛있는 수박 고르는 법</td><td>2022/07/31</td>
 					</tr>
 					<tr>
-						<td style="font-size:150%">💬</td><td>푸하하핳ㅋㅋ</td><td>2022/07/30</td>
-					</tr>					
-					<tr>
-						<td style="font-size:150%">💬</td><td>얼만가요?</td><td>2022/07/26</td>
-					</tr>				
-					<tr>
-						<td style="font-size:150%">💬</td><td>ㅋㅋㅋㅋㅋ</td><td>2022/07/25</td>
+						<td style="height:80px">❤글 썸네일</td><td>최고 수출 효자 과일은?</td><td>2022/07/23</td>
 					</tr>				
 				</table>
 		</div>

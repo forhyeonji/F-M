@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/DirectQueList.css">
 </head>
@@ -17,11 +17,11 @@
 	
 	<div id="main_left">
 	<ul type="none">
-		<li><a href="http://localhost:8080/notice">°øÁö»çÇ×</a></li>
-		<li><a href="http://localhost:8080/QnA">ÀÚÁÖÇÏ´Â Áú¹®</a></li>
-		<li><a href="http://localhost:8080/directQue">1:1 ¹®ÀÇ</a></li>
-		<li><a href="http://localhost:8080/directKing">1:1 ¹®ÀÇ °ü¸®ÀÚ</a></li>
-		<li><a>½Ç½Ã°£ ¹®ÀÇ</a></li>
+		<li><a href="http://localhost:8080/notice">ê³µì§€ì‚¬í•­</a></li>
+		<li><a href="http://localhost:8080/QnA">ìžì£¼í•˜ëŠ” ì§ˆë¬¸</a></li>
+		<li><a href="http://localhost:8080/directQue">1:1 ë¬¸ì˜</a></li>
+		<li><a href="http://localhost:8080/directKing">1:1 ë¬¸ì˜ ê´€ë¦¬ìž</a></li>
+		<li><a>ì‹¤ì‹œê°„ ë¬¸ì˜</a></li>
 	</ul>
 	</div>	<!-- main_left -->
 	
@@ -30,32 +30,35 @@
 	
 			<div id="main_center">
 			<div id="main_top">
-			<label id="notice_lable">1:1 ¹®ÀÇ</label>  <label>°µÀûÀ¸·Î ±Ã±ÝÇØ?~~</label> <br><br>
+			<label id="notice_lable">1:1 ë¬¸ì˜</label>  <label>ê° ì ìœ¼ë¡œ ê¶ê¸ˆí•´?~~</label> <br><br>
 			
 			
 			<table id="queTable">
 			
 				<tr>	
-					<td width="260px"> ¿¬¶ôÃ³ <input type="text" placeholder="¿øÇÏ½Ã´Â ºÐ¸¸ ³²°ÜÁÖ¼¼¿ä" id="tel"> </td>
+					<td width="260px"> ì—°ë½ì²˜ <input type="text" placeholder="ì›í•˜ì‹œëŠ” ë¶„ë§Œ ë‚¨ê²¨ì£¼ì„¸ìš”" id="tel"> </td>
 			
 					<td>
 						<select>
-							<option>·¹½ÃÇÇ ¹®ÀÇ</option>
-							<option>½ºÅä¾î ¹®ÀÇ</option>
-							<option>Ä¿¹Â´ÏÆ¼ ¹®ÀÇ</option>
-							<option>±âÅ¸ ¹®ÀÇ</option>
+							<option>ë ˆì‹œí”¼ ë¬¸ì˜</option>
+							<option>ìŠ¤í† ì–´ ë¬¸ì˜</option>
+							<option>ì»¤ë®¤ë‹ˆí‹° ë¬¸ì˜</option>
+							<option>ê¸°íƒ€ ë¬¸ì˜</option>
 						</select>
 					</td>
 					
 					<td id="button">
-						<input type="submit" value="µî·Ï" class="but">
+						<input type="submit" value="ë“±ë¡" class="but">
 					</td>
 					
 				</tr>
-			
+				
+				<tr>
+					<td colspan="3" width="750px"><input type="text" id="title" placeholder="ì œëª©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”."></td>
+				</tr>
 			
 				<tr>
-					<td colspan="3" class="text"><textarea placeholder="¹®ÀÇ»çÇ×À» ³²°ÜÁÖ¼¼¿ä."></textarea></td>
+					<td colspan="3" class="text"><textarea placeholder="ë¬¸ì˜ì‚¬í•­ì„ ë‚¨ê²¨ì£¼ì„¸ìš”." id="content"></textarea></td>
 				</tr>
 			
 			</table>
@@ -67,25 +70,25 @@
 			
 			
 			<div id="main_bottom">
-			<h3>³»°¡ ³²±ä ¹®ÀÇ</h3>
+			<h3>ë‚´ê°€ ë‚¨ê¸´ ë¬¸ì˜</h3>
 			<hr>
 			
 				
 			<table id="listTable">	
 			
 				<tr>
-					<td width="100px" id="category" class="title_effect">Ä«Å×°í¸®</td>
-					<td width="300px" id="title" class="title_effect">Á¦¸ñ</td>
-					<td width="100px" id="regdate" class="title_effect">ÀÛ¼ºÀÏ</td>
-					<td width="100px" id="check" class="title_effect">´äº¯¿©ºÎ</td>
+					<td width="100px" id="category" class="title_effect">ì¹´í…Œê³ ë¦¬</td>
+					<td width="300px" id="title" class="title_effect">ì œëª©</td>
+					<td width="100px" id="regdate" class="title_effect">ìž‘ì„±ì¼</td>
+					<td width="100px" id="check" class="title_effect">ë‹µë³€ì—¬ë¶€</td>
 				</tr>
 				
 				<tr>
-					<td colspan="4" class="title_effect"><a href="http://localhost:8080/directQue_detail">¿©±â¸¦ Å¬¸¯ÇÏ¼¼¿ä</a></td>
+					<td colspan="4" class="title_effect"><a href="http://localhost:8080/directQue_detail">ì—¬ê¸°ë¥¼ í´ë¦­í•˜ì„¸ìš”</a></td>
 				</tr>
 			
 				<tr>
-					<td colspan="4" class="title_effect"><a href="http://localhost:8080/directQue_detail">¿©±â¸¦ Å¬¸¯ÇÏ¼¼¿ä</a></td>
+					<td colspan="4" class="title_effect"><a href="http://localhost:8080/directQue_detail">ì—¬ê¸°ë¥¼ í´ë¦­í•˜ì„¸ìš”</a></td>
 				</tr>
 				
 			</table>

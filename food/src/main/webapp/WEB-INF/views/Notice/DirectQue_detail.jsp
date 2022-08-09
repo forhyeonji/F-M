@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/DirectDetail.css">
 </head>
@@ -15,27 +15,27 @@
 		
 		
 	<div id="main_top">	
-	<h3>³»°¡ ³²±ä ¹®ÀÇ</h3>
+	<h3>ë‚´ê°€ ë‚¨ê¸´ ë¬¸ì˜</h3>
 	
 	<table>
 		<tr>
-			<td class="label">ÀÛ¼ºÀÚ</td>
-			<td class="label_answer">ÇÚÁö</td>
+			<td class="label">ìž‘ì„±ìž</td>
+			<td class="label_answer">í•¸ì§€</td>
 		</tr>
 		
 		<tr>
-			<td class="label">ÀÛ¼ºÀÏÀÚ</td>
-			<td class="label_answer">¿À´Ã³»ÀÏ³»ÀÏ¿À´Ã</td>
+			<td class="label">ìž‘ì„±ì¼ìž</td>
+			<td class="label_answer">ì˜¤ëŠ˜ë‚´ì¼ë‚´ì¼ì˜¤ëŠ˜</td>
 		</tr>
 		
 		<tr>
-			<td class="label">Ä«Å×°í¸®</td>
-			<td class="label_answer">Ä¿¹Â´ÏÆ¼ ¹®ÀÇ</td>
+			<td class="label">ì¹´í…Œê³ ë¦¬</td>
+			<td class="label_answer">ì»¤ë®¤ë‹ˆí‹° ë¬¸ì˜</td>
 		</tr>
 		
 		
 		<tr>
-			<td colspan="2" class="text" id="question"><p>¿ä·ÎÄôÀú·¯Äô ¾îÂ¼³ª¿ä?</p></td>
+			<td colspan="2" class="text" id="question"><p>ìš”ë¡œì¿µì €ëŸ¬ì¿µ ì–´ì©Œë‚˜ìš”?</p></td>
 		</tr>
 	</table>
 			</div> <!-- main_top -->
@@ -45,12 +45,12 @@
 	<div id="main_bottom">
 
 	<hr>
-	<h3>´äº¯</h3>
+	<h3>ë‹µë³€</h3>
 	<hr>
 
 	<table>
 		<tr>
-			<td height="400">¿ä·ÎÄôÀú·¯Äô ÀúÂ¼¼¼¿ä ^^</td>
+			<td height="400">ìš”ë¡œì¿µì €ëŸ¬ì¿µ ì €ì©Œì„¸ìš” ^^</td>
 		</tr>
 	</table>
 	
@@ -59,7 +59,7 @@
 
 			
 	<div id="button">
-	<input type="button" value="¸ñ·Ï" onclick="location.href='http://localhost:8080/directQue'" class="but">
+	<input type="button" value="ëª©ë¡" onclick="location.href='http://localhost:8080/directQue'" class="but">
 	
 	
 	</div> <!-- button -->

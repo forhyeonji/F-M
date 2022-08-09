@@ -1,37 +1,46 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/Write.css">
 </head>
 <body>
-	<h3>ÀÚÁÖÇÏ´Â Áú¹® ÀÛ¼º</h3>
+<div id="container">
+
+<div id="main">	
+
+	
+	<h3>ìžì£¼í•˜ëŠ” ì§ˆë¬¸ ê¸€ì“°ê¸°</h3>
 	
 	<table>
 	<tr>
 		<td>
-			<input type="checkbox"> Á¦¸ñ °­Á¶
-			<input type="checkbox"> ¿ì¼±
+			<input type="checkbox"> ì œëª© ê°•ì¡°
+			<input type="checkbox"> ìš°ì„ 
 		</td>
 	</tr>
 	
 	<tr>
-		<td><input type="text" placeholder="Á¦¸ñÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä"></td>
+		<td><input type="text" id="title" placeholder="ì œëª©ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”"></td>
 	</tr>
 	
-	<tr>
-		<td><textarea placeholder="³»¿ëÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä" ></textarea></td>
-	</tr>
-	
-	<tr>
-		<td>
-		<input type="submit" value="µî·Ï">
-		<input type="button" value="Ãë¼Ò" onclick="location.href='http://localhost:8080/QnA'">
-		</td>
+	<tr class="text">
+		<td><textarea id="content" placeholder="ë‚´ìš©ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”" ></textarea></td>
 	</tr>
 	
 	</table>
+	
+	<div id="button">
+		<input type="submit" class="but" value="ë“±ë¡">
+		<input type="button" class="but" value="ì·¨ì†Œ" onclick="location.href='http://localhost:8080/QnA'">
+	</div> <!-- button -->
+	
+	
+</div> <!-- main -->	
+</div> <!-- container -->
+	
 </body>
 </html>
