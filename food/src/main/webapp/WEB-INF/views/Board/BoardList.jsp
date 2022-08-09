@@ -1,13 +1,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page  language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/boardList.css" type="text/css"/>
-
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/BoardList_CSS/boardList.css?asfd" type="text/css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
 <div id="wrap">
@@ -47,8 +47,9 @@
                             <tr>
                                 <td id="home"><a href="#"><span>🏠</span></a></td>
                                 <td id="best"><a href="#"><span>인기</span></a></td>
-                                <td class="show_view"><a href="#"><span>🐱</span></a></td>
-                                <td class="show_view"><a href="#"><span>🐉</span></a></td>
+                                <td class="show_view"><a href="###">👍</a>
+                                    <a href="###">👍</a>
+                                </td>
                             </tr>
                         </table>
                     </div>
@@ -76,21 +77,18 @@
                         </table>
                     </div>
                     <div id="list_btns">
-                        <input type="submit" value="글쓰기" formaction="boardWrite" id="btn_write">
+                        <input type="submit" value="글쓰기" formaction="#" id="btn_write">
                     </div>
                 </div>
                 <div id="board_footer">
-                    <div id="serch">
-                        <div>
-                            <form action="#">
-                                <rect>🔍</rect>
-                                <input type="text" size="10">
-                                <input type="submit" value="검색">
-                                <select>
-                                    <option>닉네임</option>
-                                    <option>제목</option>
-                                </select>
-                            </form>
+                    <div id="search">
+                        <div class="search_inside">
+                            <input type="text" size="10" id="abc">
+                            <input type="submit" value="🔍" id="search_btn" formaction="##">
+                            <select>
+                                <option>닉네임</option>
+                                <option>제목</option>
+                            </select>
                         </div>
                     </div>
                 </div>
