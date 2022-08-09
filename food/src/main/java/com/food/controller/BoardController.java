@@ -4,8 +4,12 @@ import com.food.model.BoardVO;
 import com.food.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.util.List;
 
 @Controller
 public class BoardController {
@@ -14,7 +18,11 @@ public class BoardController {
     BoardService bs;
 
     @RequestMapping(value = "/bread", method = RequestMethod.GET)
-    public String bread() {
+    public String bread(BoardVO board, Model model) throws Exception {
+        List<BoardVO> list = bs.selectBoardList(board);
+        model.addAttribute("list", list);
+        System.out.println(list);
+
         return "/Board/BoardList";
     }
 

@@ -1,6 +1,9 @@
 package com.food.model;
 
 public class BoardVO {
+    public BoardVO(){
+
+    }
     private String title;
     private String content;
 

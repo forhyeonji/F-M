@@ -9,4 +9,13 @@
         insert into board(title, content)
         values(#{title},#{content})
     </insert>
+
+    <select id="selectBoardList" resultType="com.food.model.BoardVO">
+        select title, content from board
+    </select>
 </mapper>
+
+
+
+
+

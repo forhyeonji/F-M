@@ -66,14 +66,16 @@
                                     <th class="list_date">날짜</th>
                                 </tr>
                             </thead>
+                            <c:forEach var="board" items="${list}" >
                             <tbody>
                                 <tr>
-                                    <td class="list_title" id="lt">a</td>
+                                    <td class="list_title" id="lt">${board.title}</td>
                                     <td class="list_user">a</td>
                                     <td class="list_cnt">b</td>
                                     <td class="list_date">a</td>
                                 </tr>
                             </tbody>
+                            </c:forEach>
                         </table>
                     </div>
                     <div id="list_btns">
