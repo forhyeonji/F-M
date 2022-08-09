@@ -113,7 +113,7 @@ tr td, th{
     height: 500px;
 }
 #board_list{
-    height:400px;
+    height:450px;
     width:100%;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }
@@ -138,10 +138,13 @@ tr td, th{
     height:44px;
     margin: 2px 0;
 }
-#sb_btn{
-    margin : 10px;
+#list_btns{
+    margin : 20px 0;
+    width:1200px;
     height:30px;
+    display : flex;
+    justify-items: flex-end;
 }
-input{
-    font-size : 1.1em;
+#btn_write{
+    font-size:1.0em;
 }
