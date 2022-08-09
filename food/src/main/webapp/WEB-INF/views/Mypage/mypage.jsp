@@ -5,76 +5,69 @@
 <head>
 <meta charset="UTF-8">
 <title>mypage</title>
-<style type="text/css">
-container{display:flex; justify-content:center; }
-div{margin:5px; }
-header{text-align:center; }
-</style>
+<link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 </head>
 <body>
-<header>
-	<h1>food</h1>
-	<p>다른 메뉴는 메인페이지 따라갈게요</p>
-</header>
-<container>
-	<div class="mypage" id="side_left">
-		<table border="1">
-			<tr>
-				<td colspan="2">회원 정보</td>
-			</tr>
-			<tr>
-				<td rowspan="2">프로필사진</td>
-				<td>회원 id 님</td>
-			</tr>
-			<tr>
-				<td colspan="2"><input type="button" value="회원정보 수정"></td>
-			</tr>
-			<tr>
-				<td colspan="2">
-					<ul>
-						<li>공지사항</li>
-						<li>자주하는 질문</li>
-						<li>1:1 문의</li>
-					</ul>
-				</td>
-			</tr>
-			<tr>
-				<td colspan="3">원래여기에있던<br>회원탈퇴는<br> 정보수정쪽으로<br> 들어가야 나옴</td>
-			</tr>	
-		</table>
-	</div>
-	<div class="mypage" id="go_orderboard" >
-		<div id="go_order" style="width:400px;border:1px solid;">
-			<p>🛒🛒🛒</p>
-			<p>주문 & 배송 조회</p>
+<div id="container">
+	<header>
+		<h1>food</h1>
+		<p>다른 메뉴는 메인페이지 따라갈게요</p>
+	</header>
+
+	<div id="main">
+		<div id="side_left">
+			<div><label id="page_title">회원 정보</label></div>
+			<div id="profile">
+				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
+				<div><span id="id">회원id 님</span><br>
+				<a href="http://localhost:8080/mypage/profile_edit">
+					<input type="button" value="회원정보 수정"></a></div>
+			</div>
+			<div id="notice">
+				<div><a href="http://localhost:8080/notice">▷ 공지사항</a></div>
+				<div><a href="http://localhost:8080/QnA">▷ 자주하는 질문</a></div>
+				<div><a href="http://localhost:8080/directQue">▷ 1:1 문의</a></div>
+			</div>
+		</div><!-- side_left -->
+		<div id="center">
+			<div class="mypage_center_go">				
+				<div class="mypage_go"><a href="http://localhost:8080/mypage/orderlist">
+				🛒🛒🛒<br>주문 배송 조회</a></div>
+				<div class="mypage_go"><a href="http://localhost:8080/mypage/ordercancle">
+				❌❌❌<br>주문 취소 내역</a></div>
+				<div class="mypage_go"><a href="http://localhost:8080/mypage/orderrefund">
+				↪↪↪<br>주문 반품 내역</a></div>
+			</div>
+			<div class="mypage_center_go">
+				<div class="mypage_go"><a href="http://localhost:8080/mypage">
+				💕💕💕<br>찜한 상품</a></div>
+				<div class="mypage_go"><a href="http://localhost:8080/mypage">
+				✒✒✒<br>내가 쓴 상품평</a></div>
+			</div>
+			<div class="mypage_center_go" style="width:480px;height:150px;border:1px solid;">
+				<p>여기에는 기획전 BX슬라이더로 돌리면 좋을듯</p>
+			</div>
+			<div class="mypage_center_go">				
+				<div class="mypage_go"><a href="http://localhost:8080/mypage/mywrite">
+				📝📝📝<br>내 글 보기</a></div>
+				<div class="mypage_go"><a href="http://localhost:8080/mypage/myreply">
+				💬💬💬<br>내 "댓"글 보기</a></div>
+				<div class="mypage_go"><a href="http://localhost:8080/mypage/mylike">
+				❤❤❤<br>내가 좋아요 <br>누른 글 보기</a></div>
+			</div>
+		</div><!-- center -->
+		<div class="mypage" id="go_watched" style="border:1px solid;">
+			<h3>최근 본 상품</h3>
+			<div id="go_watched1" style="width:150px;height:100px;border:1px solid;">상품1</div>
+			<div id="go_watched2" style="width:150px;height:100px;border:1px solid;">상품2</div>
+			<div id="go_watched3" style="width:150px;height:100px;border:1px solid;">상품3</div>
 		</div>
-		<div id="go_myboard" style="width:400px;border:1px solid;">
-			<table>
-				<tr>
-					<td>📝📝📝</td>
-					<td>내 글 보기</td>
-				</tr>
-				<tr>
-					<td>💬💬💬</td>
-					<td>내 댓글 보기</td>
-				</tr>
-				<tr>
-					<td>❤❤❤</td>
-					<td>내가 좋아요 누른 글 보기</td>
-				</tr>
-			</table>
-		</div>
-	</div>
-	<div class="mypage" id="go_watched" style="border:1px solid;">
-		<h3>최근 본 상품</h3>
-		<div id="go_watched1" style="width:150px;height:100px;border:1px solid;">상품1</div>
-		<div id="go_watched2" style="width:150px;height:100px;border:1px solid;">상품2</div>
-		<div id="go_watched3" style="width:150px;height:100px;border:1px solid;">상품3</div>
-	</div>
-</container>
-<footer>
-	<p>회사소개</p>
-</footer>
+	</div><!-- main -->
+	
+	<footer>
+		<p>회사소개</p>
+	</footer>
+</div><!-- container -->
 </body>
 
 </html>

@@ -1,0 +1,69 @@
+@charset "UTF-8";
+
+* {
+	margin: 0px;
+	padding: 0px
+}
+
+#container {
+	width: 1050px;
+	margin: 0px auto;
+	padding: 10px;
+}
+
+header {
+	text-align: center;
+}
+
+#main {
+	display: flex;
+	justify-content: center;
+}
+
+div {
+	margin: 5px;
+}
+
+a {
+	text-decoration: none;
+}
+
+table{
+	padding : 5px;
+}
+
+#page_title{
+	display:flex;
+	justify-content: center;
+	font-size:150%;
+	background-color:#ff8080;
+}
+#profile {
+	display: flex;
+	justify-content: center;
+	align-items:center;
+}
+img{
+	height: 100px;
+}
+
+#center{	
+	width:500px;
+	border:1px solid;
+}
+
+#go_watched{
+	background-color:#f1f1f1;
+}
+
+.mypage_center_go{
+	display: flex;
+	justify-content: space-between;
+}
+
+.mypage_go{
+	width:200px;
+	border:1px solid;
+	padding:10px;
+	text-align:center;
+}
