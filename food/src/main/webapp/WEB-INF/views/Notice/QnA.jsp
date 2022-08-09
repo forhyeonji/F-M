@@ -1,9 +1,9 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/NoticeList.css">
 </head>
@@ -15,11 +15,11 @@
 		
 		<div id="main_left">
 		<ul type="none">
-			<li><a href="http://localhost:8080/notice">°øÁö»çÇ×</a></li>
-			<li><a href="http://localhost:8080/QnA">ÀÚÁÖÇÏ´Â Áú¹®</a></li>
-			<li><a href="http://localhost:8080/directQue">1:1 ¹®ÀÇ</a></li>
-			<li><a href="http://localhost:8080/directKing">1:1 ¹®ÀÇ °ü¸®ÀÚ</a></li>
-			<li><a>½Ç½Ã°£ ¹®ÀÇ</a></li>
+			<li><a href="http://localhost:8080/notice">ê³µì§€ì‚¬í•­</a></li>
+			<li><a href="http://localhost:8080/QnA">ìžì£¼í•˜ëŠ” ì§ˆë¬¸</a></li>
+			<li><a href="http://localhost:8080/directQue">1:1 ë¬¸ì˜</a></li>
+			<li><a href="http://localhost:8080/directKing">1:1 ë¬¸ì˜ ê´€ë¦¬ìž</a></li>
+			<li><a>ì‹¤ì‹œê°„ ë¬¸ì˜</a></li>
 		</ul>
 		</div> <!-- main left -->
 		
@@ -28,24 +28,24 @@
 		
 		
 		<div id="main_center">
-		<label id="notice_lable">ÀÚÁÖÇÏ´Â Áú¹®</label>  <label>¾îÂ¼°í ÀúÂ¼°í~</label> <br><br>
+		<label id="notice_lable">ìžì£¼í•˜ëŠ” ì§ˆë¬¸</label>  <label>ì–´ì©Œê³  ì €ì©Œê³ ~</label> <br><br>
 		
-		<input type="button" class="but" value="±Û¾²±â" onclick="location.href='http://localhost:8080/QnA_write'">
+		<input type="button" class="but" value="ê¸€ì“°ê¸°" onclick="location.href='http://localhost:8080/QnA_write'">
 		<hr>
 		<table>
 		<tr id="bar">
 			<td id="no" class="title_effect">No</td>
-			<td id="title" class="title_effect">Á¦¸ñ</td>
-			<td id="writer" class="title_effect">ÀÛ¼ºÀÚ</td>
-			<td id="regdate" class="title_effect">ÀÛ¼ºÀÏ</td>
+			<td id="title" class="title_effect">ì œëª©</td>
+			<td id="writer" class="title_effect">ìž‘ì„±ìž</td>
+			<td id="regdate" class="title_effect">ìž‘ì„±ì¼</td>
 		</tr>
 		
 		<tr>
-			<td colspan="4" class="title_effect"><a href="http://localhost:8080/QnA_detail">ÀÚ¼¼È÷ º¸·Á¸é ¿©±â Å¬¸¯ÇÏ¼¼¿ä</a></td>
+			<td colspan="4" class="title_effect"><a href="http://localhost:8080/QnA_detail">ìžì„¸ížˆ ë³´ë ¤ë©´ ì—¬ê¸° í´ë¦­í•˜ì„¸ìš”</a></td>
 		</tr>
 		
 		<tr>
-			<td colspan="4" class="title_effect"><a href="http://localhost:8080/QnA_detail">ÀÚ¼¼È÷ º¸·Á¸é ¿©±â Å¬¸¯ÇÏ¼¼¿ä</a></td>
+			<td colspan="4" class="title_effect"><a href="http://localhost:8080/QnA_detail">ìžì„¸ížˆ ë³´ë ¤ë©´ ì—¬ê¸° í´ë¦­í•˜ì„¸ìš”</a></td>
 		</tr>
 		
 		</table>

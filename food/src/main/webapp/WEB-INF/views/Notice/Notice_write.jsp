@@ -1,40 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+
+<link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/Write.css">
 </head>
 <body>
 	
+<div id="container">
+
+<div id="main">	
+
+
+	<h3>ê³µì§€ ê¸€ì“°ê¸°</h3>
 	
-	<h3>°øÁö ÀÛ¼º</h3>
+	
+	<form action="/notice_write" method="post">
 	
 	<table>
 	<tr>
 		<td>
-			<input type="checkbox"> Á¦¸ñ °­Á¶
-			<input type="checkbox"> ¿ì¼±
+			<input type="checkbox"> ì œëª© ê°•ì¡°
+			<input type="checkbox"> ìš°ì„ 
 		</td>
 	</tr>
 	
 	<tr>
-		<td><input type="text" placeholder="Á¦¸ñÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä"></td>
+		<td><input type="text" name="title" id="title" placeholder="ì œëª©ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”"></td>
 	</tr>
 	
-	<tr>
-		<td><textarea placeholder="³»¿ëÀ» ÀÔ·ÂÇØ ÁÖ¼¼¿ä" ></textarea></td>
+	<tr class="text">
+		<td><textarea name="content" id="content" placeholder="ë‚´ìš©ì„ ìž…ë ¥í•´ ì£¼ì„¸ìš”" ></textarea></td>
+		
 	</tr>
-	
-	<tr>
-		<td>
-		<input type="submit" value="µî·Ï">
-		<input type="button" value="Ãë¼Ò" onclick="location.href='http://localhost:8080/notice'">
-		</td>
-	</tr>
-	
-	</table>
 
+	</table>
+	
+	<div id="button">
+		<input type="submit" class="but" value="ë“±ë¡">
+		<input type="button" class="but" value="ì·¨ì†Œ" onclick="location.href='http://localhost:8080/notice'">
+	</div> <!-- button -->
+	
+	
+	
+	</form>
+	
+	
+	
+	
+</div> <!-- main -->	
+</div> <!-- container -->
 </body>
 </html>

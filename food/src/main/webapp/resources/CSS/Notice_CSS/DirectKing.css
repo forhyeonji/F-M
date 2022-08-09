@@ -38,7 +38,6 @@ td {
 
 #main {
 	margin-top:50px;
-	
 }
 
 #main_left {
@@ -48,7 +47,6 @@ td {
 }
 
 #main_center{
-
 	width : 790px;
 	height : 1000px;
 	padding : 20px;
@@ -56,11 +54,18 @@ td {
 	float : right;
 }
 
+
 #notice_lable{
 	
 	font-size : 50px;
 	
 }
+
+select {
+	height : 24px;
+	margin-bottom : 10px;
+}
+
 
 #bar {
 	width : 790px;
@@ -70,22 +75,12 @@ td {
 	padding : 15px;
 }
 
-#no{
-	width : 60px;
-	text-align : center;
-	vertical-align :middle;
-}
-
 #title{
 	width : 490px;
 	text-align : center;
 
 }
 
-#writer{
-	width : 120px;
-	text-align : center;
-}
 
 
 #regdate{
@@ -93,10 +88,12 @@ td {
 	text-align : center;
 }
 
-
-
-.but {
-	padding : 5px;
-	margin-top : 20px;
-	margin-bottom : 10px;  
+#check{
+	width : 120px;
+	text-align : center;
 }
+
+
+
+
+

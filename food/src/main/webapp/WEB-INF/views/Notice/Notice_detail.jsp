@@ -1,42 +1,54 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<meta charset="UTF-8">
 <title>Insert title here</title>
+<link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/NoticeDetail.css">
 </head>
 <body>
+<div id="container">
+
+
+<div id="main">
+
+	<h3>ê³µì§€ì‚¬í•­</h3>
 	
-	<h3>°øÁö»çÇ×</h3>
-	<p>¿©·¯ºÐ¿¡°Ô Áß¿äÇÑ °øÁö¸¦ ¾Ë·Áµå·Á¿©</p>
 	
-	<table border="1">
+	
+	<table>
 		
 		<tr>
-			<td>Á¦¸ñ</td>
-			<td>ºí¶óºí¶ó</td>
+			<td class="label">ì œëª©</td>
+			<td class="label_answer">ë¸”ë¼ë¸”ë¼</td>
 		</tr>
 	
 		<tr>
-			<td>ÀÛ¼ºÀÚ</td>
-			<td>ÇÚÁö</td>
+			<td class="label">ìž‘ì„±ìž</td>
+			<td class="label_answer">í•¸ì§€</td>
 		</tr>
 	
 		<tr>
-			<td>ÀÛ¼ºÀÏÀÚ</td>
-			<td>¿À´Ã</td>
+			<td class="label">ìž‘ì„±ì¼ìž</td>
+			<td class="label_answer">ì˜¤ëŠ˜</td>
 		</tr>
 		
 		<tr>
-		<td colspan="2" height="100px"></td>
+		<td colspan="2" height="600px"> ì—¬ê¸° ê³µì§€ê°€ ìžˆë‹¤êµ¬ìš©</td>
 		</tr>
-		
 	</table>
 	
-	<input type="button" value="ÀÌÀü±Û">
-	<input type="button" value="´ÙÀ½±Û">
-	<input type="button" value="¸ñ·Ï" onclick="location.href='http://localhost:8080/notice'">
+	
+	<hr>
+	<input type="button" value="ì´ì „ê¸€" class="but">
+	<input type="button" value="ë‹¤ìŒê¸€" class="but">
+	<input type="button" value="ëª©ë¡"  class="but" onclick="location.href='http://localhost:8080/notice'">
 
+
+
+</div> <!-- main -->
+
+</div> <!-- container -->
 </body>
 </html>
