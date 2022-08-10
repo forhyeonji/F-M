@@ -10,11 +10,13 @@
 }
 #container{
     weight:100%;
+    height:auto;
 }
 #content{
     width:1050px;
-    height: 100%;
+    height: auto;
     margin:0 auto;
+    position: relative;
 }
 #navigation{
     margin:0;
@@ -53,6 +55,19 @@
     font-size: 1.2em;
     text:bolder;
 }
+table > a:link{
+    color:pink
+}
+table > a:visited{
+    color:greenyellow;
+}
+table > a:hover{
+    color:red
+}
+table > a:active{
+    color:green;
+}
+
 .dropdown-content > a:active{
     color:salmon;
     font-size: 1.2em;
@@ -137,14 +152,16 @@ thead{
 tr td, th{
     border: solid 1px #dddddd;
 }
-
+table{
+    height:auto;
+}
 #board_main{
     margin: 20px 0;
     width:1050px;
-    height: 500px;
+    height:auto;
 }
 #board_list{
-    height:450px;
+    height:auto;
     width:100%;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }
