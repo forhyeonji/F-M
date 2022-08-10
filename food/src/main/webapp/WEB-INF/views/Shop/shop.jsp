@@ -14,22 +14,26 @@
 <body>
 <div class="shop">
 	<div class="shopall">
-		<div class="header">
-   			<table border="1" class="menu">
-      		<tr>
-      		<td>Kategorie</td>
-      
-      		<td>Best</td>
-      
-     	 	<td>Sale</td>
-      
-      		<td>Event</td>
-      		</tr>
-  	 </table>
-   	 </div>
+		<ul class="header">
+   			<li>
+   			<a href="#">Category</a>
+   			<ul class="submenu">
+   				<li><a href="#">meat</a></li>
+   				<li><a href="#">vagetable</a></li>
+   				<li><a href="#">fruit</a></li>
+   				<li><a href="#">fish</a></li>
+   				<li><a href="#">juice</a></li>
+   			</ul>
+   			</li>
+   					
+			<li><a href="#">Best</a></li>
+			<li><a href="#">New</a></li>
+			<li><a href="#">Sale</a></li>
+			<li><a href="#">Event</a></li>
+   		</ul>
 
 	<div class="main">
-		<div class="division_1"><h2>인기 상품></h2></div>
+		<div class="division_1"><a href="#"><h2>인기 상품></h2></a></div>
     		<div class="main_top">
             	<div class="main_image_1">
                 	<div class="img"><img src="../../../resources/image/배추.jpg"></div>
@@ -65,7 +69,7 @@
             	 </div>
    		 </div>
    		 
-   		  		<div class="division_2"><h2>F&M이 추천하는 신상 제품></h2></div>
+   		  		<div class="division_2"><a href="#"><h2>F&M이 추천하는 신상 제품></h2></a></div>
    	 
     		<div class="main_middle">
         		<div class="main_image_1">
@@ -90,7 +94,7 @@
             		<div class="VINIQ">VINIQ 1병</div>
             		<div class="VINIQ_price">13,500</div>
             		<p class="VINIQ_ex">특별한 날 파티용 샴페인</p>
-           </div>
+           	 </div>
         
         	<div class="main_image_1">
             		<div class="img"><img src="../../../resources/image/lemon.jpg"></div>
@@ -98,7 +102,7 @@
             		<div class="lemon">레몬 6개입</div>
             		<div class="lemon_price">8,750원</div>
             		<p class="lemon_ex">상큼한 미국산 레몬 6개입</p>
-          </div>
+          	</div>
     	</div>
 	</div>    
 </div>

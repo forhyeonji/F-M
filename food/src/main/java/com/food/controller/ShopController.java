@@ -16,9 +16,9 @@ public class ShopController {
       return "Shop/shop";
    }
 
-   @RequestMapping(value = "/shopConer", method = RequestMethod.GET)
+   @RequestMapping(value = "/shopconer", method = RequestMethod.GET)
    public String Coner () {
-      return "Shop/shopConer";
+      return "Shop/shopconer";
    }
   
 

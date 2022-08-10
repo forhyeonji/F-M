@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+  *  {
+  			margin: 0px;
+  			padding: 0px;
+  	 }
+  
+  .header{
+  		display: grid;
+  		grid-template-rows: 100px 80px 50px;
+  		grid-template-colums: 100px 80px 50px;
+  		
+  }
+  
+  ul{
+  		list-style: none;
+  }
+  
