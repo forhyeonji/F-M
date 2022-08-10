@@ -1,11 +1,37 @@
 package com.food.model;
 
 public class BoardVO {
-    public BoardVO(){
 
-    }
     private String title;
     private String content;
+
+    private int bno;
+    private String regdate;
+    private int cnt;
+
+    public int getBno() {
+        return bno;
+    }
+
+    public void setBno(int bno) {
+        this.bno = bno;
+    }
+
+    public String getRegdate() {
+        return regdate;
+    }
+
+    public void setRegdate(String regdate) {
+        this.regdate = regdate;
+    }
+
+    public int getCnt() {
+        return cnt;
+    }
+
+    public void setCnt(int cnt) {
+        this.cnt = cnt;
+    }
 
     public String getTitle() {
         return title;
@@ -28,6 +54,9 @@ public class BoardVO {
         return "BoardVO{" +
                 "title='" + title + '\'' +
                 ", content='" + content + '\'' +
+                ", bno=" + bno +
+                ", regdate='" + regdate + '\'' +
+                ", cnt=" + cnt +
                 '}';
     }
 }

@@ -10,9 +10,27 @@
         values(#{title},#{content})
     </insert>
 
-    <select id="selectBoardList" resultType="com.food.model.BoardVO">
-        select title, content from board
+    <select id="list" resultType="com.food.model.BoardVO">
+        select bno, title, content, regdate, cnt
+        from board;
     </select>
+
+    <select id="detail" resultType="com.food.model.BoardVO">
+        select bno, title, content, regdate, cnt, id
+        from board
+        where bno=#{bno}
+    </select>
+
+    <update id="modify">
+        update board set
+        title=#{title}, content=#{content}
+        where bno=#{bno}
+    </update>
+
+    <delete id="remove">
+        delete from board
+        where bno=#{bno}
+    </delete>
 </mapper>
 
 

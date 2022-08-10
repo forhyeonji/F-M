@@ -34,8 +34,8 @@
                     </tbody>
                 </table>
                 <div id="abc">
-                    <button type="submit" formaction="#" class="btn_write">글쓰기</button>
-                    <button type="submit" formaction="#" class="btn_write btn_cancel">취소</button>
+                    <button type="submit" class="btn_write">글쓰기</button>
+                    <a href="http://localhost:8080/bread"><button type="button" class="btn_write btn_cancel">취소</button></a>
                 </div>
             </form>
         </div>
