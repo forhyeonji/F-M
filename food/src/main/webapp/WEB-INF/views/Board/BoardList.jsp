@@ -6,7 +6,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/BoardList_CSS/boardList.css?asfd" type="text/css"/>
+    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/BoardList_CSS/boardList.css?1" type="text/css"/>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -54,7 +54,7 @@
                         </table>
                     </div>
                 </div>
-            <form>
+            <form action="/boardWrite" method="get">
                 <div id="board_main">
                     <div id="board_list">
                         <table class="tb_nav list">
@@ -66,27 +66,27 @@
                                     <th class="list_date">날짜</th>
                                 </tr>
                             </thead>
-                            <c:forEach var="board" items="${list}" >
                             <tbody>
+                            <c:forEach var="board" items="${list}">
                                 <tr>
-                                    <td class="list_title" id="lt">${board.title}</td>
-                                    <td class="list_user">a</td>
-                                    <td class="list_cnt">b</td>
-                                    <td class="list_date">a</td>
+                                    <td class="list_title" id="lt"><a href="/boardDetail?bno=${board.bno}">${board.title}</a></td>
+                                    <td class="list_user"></td>
+                                    <td class="list_cnt">${board.cnt}</td>
+                                    <td class="list_date">${board.regdate}</td>
                                 </tr>
-                            </tbody>
                             </c:forEach>
+                            </tbody>
                         </table>
                     </div>
                     <div id="list_btns">
-                        <input type="submit" value="글쓰기" formaction="#" id="btn_write">
+                        <input type="submit" value="글쓰기" id="btn_write">
                     </div>
                 </div>
                 <div id="board_footer">
                     <div id="search">
                         <div class="search_inside">
                             <input type="text" size="10" id="abc">
-                            <input type="submit" value="🔍" id="search_btn" formaction="##">
+                            <input type="submit" value="🔍" id="search_btn" formaction="#">
                             <select>
                                 <option>닉네임</option>
                                 <option>제목</option>
