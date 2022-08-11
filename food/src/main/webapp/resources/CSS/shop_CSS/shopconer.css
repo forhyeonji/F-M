@@ -5,11 +5,14 @@
   			padding: 0px;
   	 }
   
-  .header{
+  .item{
   		display: grid;
-  		grid-template-rows: 100px 80px 50px;
-  		grid-template-colums: 100px 80px 50px;
-  		
+  	
+  }
+  
+  .item{
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+  		grid-template-rows: 1fr 1fr;
   }
   
   ul{
