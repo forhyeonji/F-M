@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+    
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,7 +10,7 @@
 <link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/NoticeList.css">
 </head>
 <body>
-
+<%@ include file="../Header/Header.jsp" %>
 <div id="container">
 
 	<div id="main">

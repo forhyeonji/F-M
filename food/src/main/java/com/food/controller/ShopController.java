@@ -21,5 +21,9 @@ public class ShopController {
       return "Shop/shopconer";
    }
   
+   @RequestMapping(value = "/shopbeef", method = RequestMethod.GET)
+   public String serve () {
+      return "Shop/shopbeef";
+   }
 
 }
