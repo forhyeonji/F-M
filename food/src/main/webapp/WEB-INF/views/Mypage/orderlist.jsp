@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>orderlist</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
 <body>
 <div id="container">
@@ -67,7 +68,8 @@
 					<tr>
 						<td rowspan="3">상품 사진</td>
 						<td>상품 이름(제목)</td>
-						<td><input type="button" value="상세 보기"></td>
+						<td><a href="http://localhost:8080/mypage/orderdetail">
+						<input type="button" value="상세 보기"></a></td>
 					</tr>
 					<tr>
 						<td>외 5품목</td>
@@ -89,11 +91,13 @@
 					<tr>
 						<td rowspan="3">상품 사진</td>
 						<td>상품 이름(제목)</td>
-						<td><input type="button" value="상세 보기"></td>
+						<td><a href="http://localhost:8080/mypage/orderdetail">
+						<input type="button" value="상세 보기"></a></td>
 					</tr>
 					<tr>
 						<td>외 1품목</td>
-						<td><input type="button" value="배송 완료"></td>
+						<td><a href="http://localhost:8080/mypage/delivery">
+						<input type="button" value="배송 완료"></a></td>
 					</tr>
 					<tr>
 						<td>금액 40,000</td>
@@ -112,10 +116,8 @@
 				style="width: 130px; height: 100px; border: 1px solid;">상품3</div>
 		</div>
 	</div><!-- main -->
-	
-	<footer>
-		<p>회사소개</p>
-	</footer>
+
 </div><!-- container -->	
 </body>
+<jsp:include page="../Footer/footer.jsp"></jsp:include>
 </html>

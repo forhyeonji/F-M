@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>ordercancle</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
 <body>
 <div id="container">
@@ -61,7 +62,9 @@
 							name="cancle" value="서비스 불만족">서비스 불만족 <input type="radio"
 							name="cancle" value="기타">기타</td>
 					</tr>
+					<tr>
 					<td><textarea rows="10" cols="60" placeholder="상세사유를  입력해주세요."></textarea></td>
+					</tr>
 					<tr>
 						<td><input type="submit" value="취소 신청"></td>
 					</tr>
@@ -78,10 +81,8 @@
 				style="width: 130px; height: 100px; border: 1px solid;">상품3</div>
 		</div>
 	</div><!-- main -->
-	
-	<footer>
-		<p>회사소개</p>
-	</footer>
+
 </div><!-- container -->
 </body>
+<jsp:include page="../Footer/footer.jsp"></jsp:include>
 </html>

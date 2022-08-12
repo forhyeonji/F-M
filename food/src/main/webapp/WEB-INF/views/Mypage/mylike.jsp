@@ -6,8 +6,8 @@
 <meta charset="UTF-8">
 <title>mylike</title>
 </head>
-<body>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
 <body>
 <div id="container">
@@ -55,9 +55,7 @@
 		<div>최근본상품은 생략???</div>
 	</div><!-- main -->
 	
-	<footer>
-		<p>회사소개</p>
-	</footer>
 </div><!-- container -->
 </body>
+<jsp:include page="../Footer/footer.jsp"></jsp:include>
 </html>

@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>delivery</title>
+<title>canclelist</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
@@ -16,8 +16,8 @@
 	</header>
 	
 	<div id="main">
-		<div id="side_left">
-			<div><label id="page_title">배송 조회</label></div>
+		<div id="side_left" >
+			<div><label id="page_title">❌취소 리스트❌</label></div>
 			<div id="profile">
 				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
 				<div><span id="id">회원id 님</span><br>
@@ -31,21 +31,62 @@
 			</div>
 		</div><!-- side_left -->
 
-		<div id="delivery" >
+		<div id="center">
+			<h3>❌❌❌주문 취소 내역을 확인하세여.</h3>
 			<div>
-				<label>주문날짜 8/1</label>
-				<label>주문 번호 123456789</label>
+				<label>취소완료 8/1</label>
 			</div>
-		배송조회 API ::::: https://tracker.delivery/guide/
-		</div>
+			<div class="order1" style="border: 1px solid;">
+				<table style="width: 500px;">
+					<tr>
+						<td rowspan="3">
+						<img src="../../../resources/image/lemon.jpg">
+						<br>상품 사진(대표로 하나만)</td>
+						<td>상품 이름(제목)</td>
+						<td rowspan="3">
+						<a href="http://localhost:8080/mypage/orderdetail">
+						<input type="button" value="상세 보기"></a></td>
+					</tr>
+					<tr>
+						<td>외 2품목</td>						
+					</tr>
+					<tr>
+						<td>금액 80,000</td>
+					</tr>
+				</table>
+			</div>
+			<div>
+				<label>취소 완료 7/25</label>
+			</div>
+			<div class="order1" style="border: 1px solid;">
+				<table style="width: 500px;">
+					<tr>
+						<td rowspan="3">
+						<img src="../../../resources/image/egg.jpg">
+						<br>상품 사진(대표로 하나만)</td>
+						<td>상품 이름(제목)</td>
+						<td rowspan="3">
+						<a href="http://localhost:8080/mypage/orderdetail">
+						<input type="button" value="상세 보기"></a></td>
+					</tr>
+					<tr>
+						<td>외 5품목</td>
+					</tr>
+					<tr>
+						<td>금액 130,000</td>
+						<td></td>
+					</tr>
+				</table>
+			</div>	
+		</div><!-- center -->
 		<div id="go_watched" style="border:1px solid;">
 			<h3>최근 본 상품</h3>
 			<div id="go_watched1" style="width:130px;height:100px;border:1px solid;">상품1</div>
 			<div id="go_watched2" style="width:130px;height:100px;border:1px solid;">상품2</div>
 			<div id="go_watched3" style="width:130px;height:100px;border:1px solid;">상품3</div>
 		</div>
-	</div><!-- main -->
-	
+	</div><!-- main -->	
+
 </div><!-- container -->
 </body>
 <jsp:include page="../Footer/footer.jsp"></jsp:include>

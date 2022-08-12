@@ -1,11 +1,12 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+    pageEncoding="UTF-8"%>   
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>mypage</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
 <body>
 <div id="container">
@@ -33,7 +34,7 @@
 			<div class="mypage_center_go">				
 				<div class="mypage_go"><a href="http://localhost:8080/mypage/orderlist">
 				🛒🛒🛒<br>주문 배송 조회</a></div>
-				<div class="mypage_go"><a href="http://localhost:8080/mypage/ordercancle">
+				<div class="mypage_go"><a href="http://localhost:8080/mypage/canclelist">
 				❌❌❌<br>주문 취소 내역</a></div>
 				<div class="mypage_go"><a href="http://localhost:8080/mypage/orderrefund">
 				↪↪↪<br>주문 반품 내역</a></div>
@@ -63,11 +64,7 @@
 			<div id="go_watched3" style="width:150px;height:100px;border:1px solid;">상품3</div>
 		</div>
 	</div><!-- main -->
-	
-	<footer>
-		<p>회사소개</p>
-	</footer>
 </div><!-- container -->
 </body>
-
+<jsp:include page="../Footer/footer.jsp"></jsp:include>
 </html>

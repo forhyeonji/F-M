@@ -21,6 +21,11 @@ public class MypageController {
 	public String resign() {
 		return "Mypage/resign";
 	}
+	//장바구니
+	@RequestMapping(value = "mypage/cart", method = RequestMethod.GET)
+	public String cart() {
+		return "Mypage/cart";
+	}	
 	//주문 리스트
 	@RequestMapping(value = "mypage/orderlist", method = RequestMethod.GET)
 	public String orderlist() {
@@ -35,6 +40,11 @@ public class MypageController {
 	@RequestMapping(value = "mypage/ordercancle", method = RequestMethod.GET)
 	public String ordercancle() {
 		return "Mypage/ordercancle";
+	}
+	//주문_취소 리스트
+	@RequestMapping(value = "mypage/canclelist", method = RequestMethod.GET)
+	public String canclelist() {
+		return "Mypage/canclelist";
 	}
 	//주문 반품
 	@RequestMapping(value = "mypage/orderrefund", method = RequestMethod.GET)

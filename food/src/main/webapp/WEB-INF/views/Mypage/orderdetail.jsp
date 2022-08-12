@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>orderdetail</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
 <body>
 <div id="container">
@@ -94,10 +95,8 @@
 			<div id="go_watched3" style="width:130px;height:100px;border:1px solid;">상품3</div>
 		</div>
 	</div><!-- main -->
-	
-	<footer>
-		<p>회사소개</p>
-	</footer>	
+
 </div><!-- container -->
 </body>
+<jsp:include page="../Footer/footer.jsp"></jsp:include>
 </html>

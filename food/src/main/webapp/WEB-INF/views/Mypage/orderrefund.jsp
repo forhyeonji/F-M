@@ -6,6 +6,7 @@
 <meta charset="UTF-8">
 <title>order refund</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
 <body>
 <div id="container">
@@ -35,6 +36,7 @@
 			<div>
 				<label>주문날짜 8/1</label> <label>주문 번호 123456789</label>
 			</div>
+			
 			<div style="border: 1px solid;">
 				<a href="http://localhost:8080/mypage/orderdetail">
 				<table style="width: 500px;">			
@@ -49,7 +51,8 @@
 					<tr>
 						<td>금액 30,000</td>
 					</tr>
-				</table></a>
+				</table>
+				</a>
 			</div>
 			<div align="center">
 				<table border="1" >
@@ -91,9 +94,7 @@
 		</div>
 	</div><!-- main -->
 	
-	<footer>
-		<p>회사소개</p>
-	</footer>
 </div><!-- container -->
 </body>
+<jsp:include page="../Footer/footer.jsp"></jsp:include>
 </html>
