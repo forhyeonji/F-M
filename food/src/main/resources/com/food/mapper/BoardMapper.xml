@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.food.mapper.BoardMapper">
+    <insert id="write">
+        insert into board(title, content)
+        values(#{title},#{content})
+    </insert>
+
+    <select id="list" resultType="com.food.model.BoardVO">
+        select bno, title, content, regdate, cnt
+        from board;
+    </select>
+
+    <select id="detail" resultType="com.food.model.BoardVO">
+        select bno, title, content, regdate, cnt, id
+        from board
+        where bno=#{bno}
+    </select>
+
+    <update id="modify">
+        update board set
+        title=#{title}, content=#{content}
+        where bno=#{bno}
+    </update>
+
+    <delete id="remove">
+        delete from board
+        where bno=#{bno}
+    </delete>
+</mapper>
+
+
+
+
+
