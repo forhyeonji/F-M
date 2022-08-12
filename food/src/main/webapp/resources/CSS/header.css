@@ -1,0 +1,49 @@
+#header{
+    width:100%;
+    border-bottom:1px solid #dddddd
+}
+#header_main{
+    width:1050px;
+    margin : 0 auto;
+}
+#h_banner{
+    width: 160px;
+    height: 50px;
+    margin:10px;
+}
+#h_search{
+    display: flex;
+    width: 384px;
+    height: 46px;
+    align-items: center;
+}
+
+.h_searchTd {
+    padding: 13px;
+}
+#h_searchBar {
+    width: 300px;
+    height: 20px;
+}
+
+#h_mag {
+    height: 20px;
+    width: 20px;
+}
+.h_navBox{
+    display: block;
+    padding: 20px;
+    collapse: none;
+}
+#h_menu{
+    margin:0 auto;
+}
+#h_s1{
+    display:flex;
+    justify-content: center;
+    margin:5px 0;
+    padding-top:10px;
+}
+.h_nav{
+    padding:10px 70px;
+}
