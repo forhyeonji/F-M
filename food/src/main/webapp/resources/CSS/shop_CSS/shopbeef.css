@@ -1,0 +1,40 @@
+@charset "UTF-8";
+  * {
+	margin: 0px;
+	padding: 0px;
+}
+
+.header {
+	width: 1050px;
+	overflow: hidden;
+	margin: 150px auto;
+	list-style: none;
+	margin: 0px;
+}
+
+.header>li {
+	width: 20%;
+	float: left;
+	text-align: center;
+	line-height: 40px;
+	background-color: #FFDC7E;
+}
+
+.submenu>li {
+	line-height: 50px;
+}
+
+.submenu {
+	height: 0;
+	overflow: hidden;
+	background-color: #FFA7A7;
+}
+
+.header>li:hover {
+	transition-duration: 0.5s;
+}
+
+.header>li:hover .submenu {
+	height: 250px;
+	transition-duration: 1s;
+}
