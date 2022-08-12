@@ -12,7 +12,9 @@
 	}
 	
 	container{
-	display:flex; justify-content:center;
+	display:flex; 
+	justify-content:center;
+	text-align : center;
 	}
 	
 	footer{
@@ -23,21 +25,24 @@
 	text-align : center;
 	}
 	
-	table{
-	border-spacing : 20px;
-	}
-	
 	.login_login{
-	width : 200px;
-	height : 30px;
+	width : 400px;
+	height : 40px;
+	border : 1px solid #dddddd;
+	text-align : center;
+	padding : 0;
+	border-radius : 5px;
 	}
 	
 	.login_button{
-	width : 200px;
-	height : 30px;
+	width : 402px;
+	height : 42px;
+	color : white;
+	border : none;
 	background-color : salmon;
-	border : 0;
-	outline : 0;
+	box-sizing : content-box;
+	padding : 0px;
+	border-radius : 5px;
 	}
 
 </style>
@@ -51,32 +56,29 @@
 
 	<container>
 	<div>
-	<table>
-		<tr>
-		<td>아이디</td>
-		</tr>
-		<tr>
-		<td><input type="text" class="login_login"></td>
-		</tr>
-		<tr>
-		<td>비밀번호</td></tr>
-		<tr>
-		<td><input type="text" class="login_login"></td>
-		</tr>
-		<tr>
-		<td><input type="submit" value="로그인" formaction="메인페이지" class="login_button"></td>
-		</tr>
-		<tr>
-		<td><input type="submit" value="아직 회원이 아니신가요?" formaction="insert" class="login_button"></td>
-		</tr>
-	</table>
+		<div>
+		<h4>아이디</h4>
+		<input type="text" id="" class="login_login">
+		</div>
+		
+		<div>
+		<h4>비밀번호</h4>
+		<input type="text" id="" class="login_login">
+		</div><br><br>
+		
+		<div>
+		<input type="button" value="로그인" id="" class="login_button">
+		</div><br>
+		
+		<div>
+		<input type="button" value="회원가입" id="login_to_insert" class="login_button">
+		</div>
 	</div>
 	</container>
 	
 	<footer>
 	<div>푸터자리</div>
 	</footer>
-
 
 </form>
 </body>
