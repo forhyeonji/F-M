@@ -9,6 +9,7 @@
     weight:100%;
 }
 #container{
+    margin-top:30px;
     weight:100%;
     height:auto;
 }
@@ -198,7 +199,7 @@ table{
 }
 #board_footer{
     display: flex;
-    height:50px;
+    height:auto;
     align-items: center;
     border-top:1px solid #dddddd;
     border-bottom: 1px solid #dddddd;

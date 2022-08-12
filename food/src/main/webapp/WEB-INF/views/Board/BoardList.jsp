@@ -1,17 +1,6 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ include file="../Header/Header.jsp"%>
 <%@ page  language="java" contentType="text/html; charset=UTF-8"
           pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/resources/CSS/BoardList_CSS/boardList.css?1" type="text/css"/>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/CSS/footer.css">
-</head>
-<body>
-<div id="wrap">
     <div id="container">
         <div id="content">
             <div id="navigation">
