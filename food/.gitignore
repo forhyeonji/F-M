@@ -13,3 +13,5 @@ target/
 .classpath
 .project
 bin/
+lib/
+out/
