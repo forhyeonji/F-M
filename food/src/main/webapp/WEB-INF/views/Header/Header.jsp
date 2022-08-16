@@ -9,6 +9,8 @@
 
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/CSS/BoardList_CSS/boardList.css?4" type="text/css"/>
+    <link rel="stylesheet" type="text/css"
+	href="../../../resources/CSS/shop_CSS/shop.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="resources/CSS/footer.css">
     <link rel="stylesheet" href="resources/CSS/header.css">

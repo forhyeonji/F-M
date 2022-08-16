@@ -44,7 +44,7 @@ table {
 	float: left;
 	text-align: center;
 	line-height: 40px;
-	background-color: #FFDC7E;
+	background-color: #FFCDFF;
 }
 
 .submenu1>li {
@@ -54,7 +54,7 @@ table {
 .submenu1 {
 	height: 0;
 	overflow: hidden;
-	background-color: #FFA7A7;
+	background-color: #FFFFB3;
 }
 
 .menu>li:hover {
@@ -70,7 +70,7 @@ table {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	font-size:20pt;
+	font-size: 20pt;
 	row-gap: 10px;
 }
 
@@ -79,7 +79,7 @@ ul {
 }
 
 .meat_main {
-	margin-top: 45px; 
+	margin-top: 60px;
 	flex-flow: row wrap;
 	display: flex;
 	justify-content: space-between;

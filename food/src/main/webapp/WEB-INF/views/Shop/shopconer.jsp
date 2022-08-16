@@ -1,13 +1,11 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
+<%@ include file="../Header/Header.jsp"%>
+
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopconer.css">
 <meta charset="UTF-8">
-<title>Insert title here</title>
 
 </head>
 <body>
@@ -38,7 +36,7 @@
 					<td>
 						<ul class="item">
 							<li><a href="#">전체</a></li>
-							<li><a href="http://localhost:8950/shopbeef">소고기</a></li>
+							<li><a href="http://localhost:8080/shopbeef">소고기</a></li>
 							<li><a href="#">돼지고기</a></li>
 							<li><a href="#">계란</a></li>
 							<li><a href="#">닭고기</a></li>

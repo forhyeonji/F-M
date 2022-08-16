@@ -13,7 +13,7 @@
 		<ul class="menu">
 			<li><a href="#">Category</a>
 				<ul class="submenu1">
-					<li><a href="#">meat</a></li>
+					<li><a href="http://localhost:8080/shopconer">meat</a></li>
 					<li><a href="#">vagetable</a></li>
 					<li><a href="#">fruit</a></li>
 					<li><a href="#">fish</a></li>
@@ -61,3 +61,6 @@
 	</div>
 </body>
 </html>
+
+
+

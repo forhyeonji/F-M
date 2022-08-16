@@ -1,4 +1,4 @@
-  * {
+* {
 	margin: 0px;
 	padding: 0px;
 }
@@ -21,7 +21,7 @@ a {
 	float: left;
 	text-align: center;
 	line-height: 40px;
-	background-color: #FFDC7E;
+	background-color: #FFCDFF;
 }
 
 .submenu>li {
@@ -31,7 +31,7 @@ a {
 .submenu {
 	height: 0;
 	overflow: hidden;
-	background-color: #FFA7A7;
+	background-color: #FFFFB3;
 }
 
 .header>li:hover {
