@@ -14,6 +14,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="resources/CSS/footer.css">
     <link rel="stylesheet" href="resources/CSS/header.css">
+    
+    <!-- Notice Css -->
+    <link rel="stylesheet" href="resources/CSS/Notice_CSS/NoticeCss.css">
+    
+    
 </head>
 <body>
 <div id="wrap">

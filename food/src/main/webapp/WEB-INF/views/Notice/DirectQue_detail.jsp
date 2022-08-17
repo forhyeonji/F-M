@@ -1,54 +1,49 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-<link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/DirectDetail.css">
-</head>
-<body>
+<%@ include file="../Header/Header.jsp"%>
 
-<div id="container">
 
-	<div id="main">
+
+<div id="NOTI_container">
+
+	<div id="NOTI_main">
 		
 		
-	<div id="main_top">	
-	<h3>내가 남긴 문의</h3>
+	<div class="NOTI_main_top">	
+	<h3 class="NOTI_bigTitle">내가 남긴 문의</h3>
 	
-	<table>
+	<table class="NOTI_table">
 		<tr>
-			<td class="label">작성자</td>
-			<td class="label_answer">핸지</td>
+			<td class="NOTI_label">작성자</td>
+			<td class="NOTI_label_answer">핸지</td>
 		</tr>
 		
 		<tr>
-			<td class="label">작성일자</td>
-			<td class="label_answer">오늘내일내일오늘</td>
+			<td class="NOTI_label">작성일자</td>
+			<td class="NOTI_label_answer">오늘내일내일오늘</td>
 		</tr>
 		
 		<tr>
-			<td class="label">카테고리</td>
-			<td class="label_answer">커뮤니티 문의</td>
+			<td class="NOTI_label">카테고리</td>
+			<td class="NOTI_label_answer">커뮤니티 문의</td>
 		</tr>
 		
 		
 		<tr>
-			<td colspan="2" class="text" id="question"><p>요로쿵저러쿵 어쩌나요?</p></td>
+			<td colspan="2" class="NOTI_text"><p>요로쿵저러쿵 어쩌나요?</p></td>
 		</tr>
 	</table>
 			</div> <!-- main_top -->
 			
 			
 			
-	<div id="main_bottom">
+	<div id="NOTI_main_bottom">
 
-	<hr>
-	<h3>답변</h3>
-	<hr>
+	
+	<h3 class="NOTI_bigTitle">답변</h3>
+	
 
-	<table>
+	<table class="NOTI_table">
 		<tr>
 			<td height="400">요로쿵저러쿵 저쩌세요 ^^</td>
 		</tr>
@@ -58,8 +53,8 @@
 		
 
 			
-	<div id="button">
-	<input type="button" value="목록" onclick="location.href='http://localhost:8080/directQue'" class="but">
+	<div id="NOTI_button">
+	<input type="button" value="목록" onclick="location.href='http://localhost:8080/directQue'" class="NOTI_but">
 	
 	
 	</div> <!-- button -->
@@ -69,5 +64,4 @@
 
 
 </div>  <!-- container -->
-</body>
-</html>
+<%@ include file="../Footer/footer.jsp"%>

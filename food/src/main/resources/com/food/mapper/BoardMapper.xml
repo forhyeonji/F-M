@@ -11,8 +11,18 @@
     </insert>
 
     <select id="list" resultType="com.food.model.BoardVO">
-        select bno, title, content, regdate, cnt
-        from board;
+        select *
+        from (
+                 select @rownum:=@rownum+1 rownum, b.* from board b, (select @rownum:=0) tmp
+                 order by bno desc
+             ) list
+        <![CDATA[
+        where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum} * #{amount}
+        ]]>
+    </select>
+
+    <select id="total" resultType="int" parameterType="com.food.model.BoardVO">
+        select count(*) from board
     </select>
 
     <select id="detail" resultType="com.food.model.BoardVO">
@@ -21,9 +31,15 @@
         where bno=#{bno}
     </select>
 
+    <update id="cntup">
+        update board
+        set cnt = cnt + 1
+        where bno = #{bno}
+    </update>
+
     <update id="modify">
         update board set
-        title=#{title}, content=#{content}
+                         title=#{title}, content=#{content}
         where bno=#{bno}
     </update>
 
