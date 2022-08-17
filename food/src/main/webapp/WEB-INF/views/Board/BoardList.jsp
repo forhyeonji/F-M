@@ -59,8 +59,9 @@
                             <tbody>
                             <c:forEach var="board" items="${list}">
                                 <tr>
-                                    <td class="list_title" id="lt"><a href="/boardDetail?bno=${board.bno}">${board.title}</a></td>
-                                    <td class="list_user"></td>
+                                    <td class="list_title" id="lt"><a
+                                            href="/boardDetail?bno=${board.bno}">${board.title}</a></td>
+                                    <td class="list_user">${board.bno}</td>
                                     <td class="list_cnt">${board.cnt}</td>
                                     <td class="list_date">${board.regdate}</td>
                                 </tr>
@@ -68,20 +69,38 @@
                             </tbody>
                         </table>
                     </div>
-                    <div id="list_btns">
-                        <input type="submit" value="글쓰기" id="btn_write">
-                    </div>
-                </div>
-                <div id="board_footer">
-                    <div id="search">
-                        <div class="search_inside">
-                            <input type="text" size="10" id="abc">
-                            <input type="submit" value="🔍" id="search_btn" formaction="#">
-                            <select>
-                                <option>닉네임</option>
-                                <option>제목</option>
-                            </select>
+                    <div id="board_footer">
+                        <div id="search">
+                            <div class="search_inside">
+                                <input type="text" size="10" id="abc">
+                                <input type="submit" value="🔍" id="search_btn" formaction="#">
+                                <select>
+                                    <option>닉네임</option>
+                                    <option>제목</option>
+                                </select>
+                            </div>
                         </div>
+                        <div id="list_btns">
+                            <input type="submit" value="글쓰기" id="btn_write">
+                        </div>
+                    </div>
+                    <div id="paging">
+                        <c:if test="${paging.prevBtn}">
+                            <a href="/bread?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+                        </c:if>
+                        <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+                            <c:choose>
+                                <c:when test="${num == paging.startPage}">
+                                <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span id="pageNum">${num}</span></a>
+                                </c:when>
+                                <c:when test="${num != paging.startPage}">
+                                    <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span id="pageNum">${num}</span></a>
+                                </c:when>
+                            </c:choose>
+                        </c:forEach>
+                        <c:if test="${paging.nextBtn}">
+                            <a href="/bread?pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+                        </c:if>
                     </div>
                 </div>
             </form>
