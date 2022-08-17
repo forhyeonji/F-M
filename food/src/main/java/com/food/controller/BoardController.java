@@ -1,6 +1,8 @@
 package com.food.controller;
 
 import com.food.model.BoardVO;
+import com.food.model.CriteriaVO;
+import com.food.model.PageVO;
 import com.food.service.BoardService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,11 +20,11 @@ public class BoardController {
     BoardService boardService;
 
     @RequestMapping(value = "/bread", method = RequestMethod.GET)
-    public String list(Model model) {
+    public String list(Model model, CriteriaVO criteriaVO) {
         // boardList.jsp 실행할 때 select된 결과를 가져가라.
-        ArrayList<BoardVO> list = boardService.list();
-        model.addAttribute("list",list);
 
+        model.addAttribute("list",boardService.list(criteriaVO));
+        model.addAttribute("paging", new PageVO(criteriaVO, boardService.total()));
         return "/Board/BoardList";
     }
 

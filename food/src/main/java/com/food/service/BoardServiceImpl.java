@@ -2,13 +2,16 @@ package com.food.service;
 
 import com.food.mapper.BoardMapper;
 import com.food.model.BoardVO;
+import com.food.model.CriteriaVO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
 import java.util.ArrayList;
 
 
 @Service
-public class BoardServiceImpl implements BoardService, BoardMapper{
+public class BoardServiceImpl implements BoardService{
     @Autowired
     BoardMapper boardMapper;
 
@@ -20,19 +23,23 @@ public class BoardServiceImpl implements BoardService, BoardMapper{
 
         boardMapper.write(board);
     }
-    public ArrayList<BoardVO> list(){
-        return boardMapper.list();
+    public ArrayList<BoardVO> list(CriteriaVO criteriaVO){
+        return boardMapper.list(criteriaVO);
     }
 
+    @Transactional
     public BoardVO detail(BoardVO board){
+        boardMapper.cntup(board);
         return boardMapper.detail(board);
     }
-
     public void modify(BoardVO board){
-         boardMapper.modify(board);
+        boardMapper.modify(board);
     }
 
     public void remove(BoardVO board){
         boardMapper.remove(board);
+    }
+    public int total(){
+        return boardMapper.total();
     }
 }
