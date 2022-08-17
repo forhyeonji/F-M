@@ -10,27 +10,27 @@
 	margin: auto;
 }
 
-a {
+.sh_a {
 	text-decoration: none;
 }
 
-h1 {
+.sh_h1 {
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-table {
+.sh_table {
 	text-align: center;
 	border-collapse: collapse;
 }
 
-.order {
+.sh_order {
 	margin-top: 20px;
 	margin-bottom: 0px;
 }
 
-.menu {
+.sh_menu {
 	width: 1050px;
 	overflow: hidden;
 	margin: 150px auto;
@@ -39,7 +39,7 @@ table {
 	font-size: 25px;
 }
 
-.menu>li {
+.sh_menu>li {
 	width: 20%;
 	float: left;
 	text-align: center;
@@ -47,45 +47,44 @@ table {
 	background-color: #FFCDFF;
 }
 
-.submenu1>li {
+.sh_submenu1>li {
 	line-height: 50px;
 }
 
-.submenu1 {
+.sh_submenu1 {
 	height: 0;
 	overflow: hidden;
 	background-color: #FFFFB3;
+	list-style: none;
 }
 
-.menu>li:hover {
+.sh_menu>li:hover {
 	transition-duration: 0.5s;
 }
 
-.menu>li:hover .submenu1 {
+.sh_menu>li:hover .sh_submenu1 {
 	height: 250px;
 	transition-duration: 1s;
 }
 
-.item {
+.sh_item {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
 	font-size: 20pt;
 	row-gap: 10px;
-}
-
-ul {
 	list-style: none;
 }
 
-.meat_main {
-	margin-top: 60px;
+
+.sh_meat_main {
+	margin-top: 80px;
 	flex-flow: row wrap;
 	display: flex;
 	justify-content: space-between;
 }
 
-.meat_middle {
+.sh_meat_middle {
 	padding-top: 20px;
 	clear: both;
 	display: flex;

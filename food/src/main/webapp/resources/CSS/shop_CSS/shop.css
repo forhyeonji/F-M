@@ -3,12 +3,17 @@
 	padding: 0px;
 }
 
-a {
+.sh_a {
 	text-decoration: none;
 	font-size: 25px;
+	color: black;
 }
 
-.header {
+.sh_a:hover {
+	color: #0100FF;
+}
+
+.sh_header {
 	width: 1050px;
 	overflow: hidden;
 	margin: 150px auto;
@@ -16,7 +21,7 @@ a {
 	margin: 0px;
 }
 
-.header>li {
+.sh_header>li {
 	width: 20%;
 	float: left;
 	text-align: center;
@@ -24,21 +29,21 @@ a {
 	background-color: #FFCDFF;
 }
 
-.submenu>li {
+.sh_submenu>li {
 	line-height: 50px;
 }
 
-.submenu {
+.sh_submenu {
 	height: 0;
 	overflow: hidden;
 	background-color: #FFFFB3;
 }
 
-.header>li:hover {
+.sh_header>li:hover {
 	transition-duration: 0.5s;
 }
 
-.header>li:hover .submenu {
+.sh_header>li:hover .sh_submenu {
 	height: 250px;
 	transition-duration: 1s;
 }
@@ -48,42 +53,34 @@ a {
 	margin: auto;
 }
 
-h2 {
+.sh_h2 {
 	margin-bottom: 30px;
 	margin-top: 30px;
 	text-align: center;
 	font-size: 40px;
 }
 
-a {
-	color: black;
-}
-
-a:hover {
-	color: #0100FF;
-}
-
-.main_top {
+.sh_main_top {
 	display: flex;
 	justify-content: space-around;
 }
 
-.main_middle {
+.sh_main_middle {
 	padding-top: 20px;
 	clear: both;
 	display: flex;
 	justify-content: space-around;
 }
 
-.product {
+.sh_product {
 	display: inline;
 }
 
-.main_image {
+.sh_main_image {
 	padding: 10px;
 }
 
-.img>img {
+.sh_img>img {
 	width: 250px;
 	height: 300px;
 }
