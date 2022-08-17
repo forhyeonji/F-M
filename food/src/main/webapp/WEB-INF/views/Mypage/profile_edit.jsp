@@ -6,14 +6,12 @@
 <meta charset="UTF-8">
 <title>profile_edit</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
+<jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
-<div id="container">
-	<header>
-		<h1>food</h1>
-		<p>다른 메뉴는 메인페이지 따라갈게요</p>
-	</header>
+<div id="my_con">
 	
 	<div id="main">
 		<div id="side_left" >

@@ -5,14 +5,10 @@
 	padding: 0px
 }
 
-#container {
+#my_con {
 	width: 1050px;
 	margin: 0px auto;
 	padding: 10px;
-}
-
-header {
-	text-align: center;
 }
 
 #main {
@@ -20,34 +16,35 @@ header {
 	justify-content: center;
 }
 
-div {
+#my_con div {
 	margin: 5px;
 }
 
-a {
+#my_con a {
 	text-decoration: none;
 }
 
-table{
+#my_con table{
 	padding : 5px;
 }
 
-#page_title{
+#page_title {
 	display:flex;
 	justify-content: center;
 	font-size:150%;
 	background-color:#ff8080;
 }
-#profile {
+
+#my_profile {
 	display: flex;
 	justify-content: center;
 	align-items:center;
 }
-img{
+#my_con img{
 	height: 100px;
 }
 
-#center{	
+#my_con #center{	
 	width:500px;
 	border:1px solid;
 }
