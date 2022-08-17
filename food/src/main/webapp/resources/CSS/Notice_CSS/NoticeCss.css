@@ -7,7 +7,7 @@
 	}
 	
 	
-#NOTI_container {
+.NOTI_container {
 		width:1050px;
 		height:1300px;
 		margin:0px auto;
@@ -15,7 +15,7 @@
 		padding-right:5px;
 	}
 
-#NOTI_main {
+.NOTI_main {
 		width:1050px;
 		height:1200px;
 
@@ -61,14 +61,10 @@
 	width : 1004px;
 	height : 400px;
 	padding : 20px;
+	vertical-align : top;
 	}
 
-#NOTI_question {
-	vertical-align : top;
-	width : 1050px;
-	height : 400px;
-	padding : 20px;
-	}
+
 
 .NOTI_bigTitle {
 	width : 1050px;
@@ -83,10 +79,25 @@
 	padding : 5px;
 	}
 
-#NOTI_button {
+.NOTI_button {
 	width : 90px;
 	margin : 0px auto;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -98,7 +109,7 @@
 	DirectKing
 */
 
-#NOTI_King_container {
+.NOTI_King_container {
 	width:1040px;
 	height:1300px;
 	margin:0px auto;
@@ -106,16 +117,16 @@
 	padding-right:5px;
 }
 
-#NOTI_King_main {
+.NOTI_King_main {
 	margin-top:50px;
 }
 
 
-#NOTI_King_main_left {
+.NOTI_King_main_left {
 	float : left;
 }
 
-#NOTI_King_main_center {
+.NOTI_King_main_center {
 	
 	width : 790px;
 	height : 1000px;
@@ -145,9 +156,10 @@
 }
 
 
-#NOTI_notice_lable{
+.NOTI_notice_lable{
 	
 	font-size : 50px;
+	margin-bottom : 40px;
 	
 }
 
@@ -187,3 +199,61 @@
 /*
 	DirectQue
  */
+.NOTI_Que_main_center {
+	
+	width : 750px;
+	height : 1000px;
+	padding : 20px;
+	box-sizing : border-box;
+	float : right;	
+}
+ 
+ 
+.NOTI_Que_lable {
+	width : 750px;
+}
+
+.NOTI_Que_Table {
+	width : 750px;
+	border-collapse : collapse;
+	
+}
+ 
+.NOTI_Que_title_effect{
+	padding : 15px;
+	border-bottom : solid 1px rgb(234, 234, 234);
+}
+
+#Que_category{
+	
+	width : 120px;
+	text-align : center;
+}
+
+
+#Que_title{
+	width : 750px;
+	height : 22px;
+	margin-top : 10px;
+	margin-bottom : 7px;
+	box-sizing : border-box;
+	padding-left : 10px;
+}
+
+#Que_writer{
+	width : 120px;
+	text-align : center;
+}
+
+
+#Que_regdate{
+	width : 120px;
+	text-align : center;
+}
+
+#Que_check{
+	width : 120px;
+	text-align : center;
+}
+ 
+ 

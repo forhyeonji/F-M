@@ -4,12 +4,12 @@
 
 
 
-<div id="NOTI_King_container">
+<div class="NOTI_King_container">
 
-<div id="NOTI_King_main">
+<div class="NOTI_King_main">
 
 
-	<div id="NOTI_King_main_left">
+	<div class="NOTI_King_main_left">
 		<ul type="none" class="NOTI_leftBar">
 			<li><a href="http://localhost:8080/notice" class="NOTI_a">공지사항</a></li>
 			<li><a href="http://localhost:8080/QnA" class="NOTI_a">자주하는 질문</a></li>
@@ -22,8 +22,8 @@
 	
 	
 	
-	<div id="NOTI_King_main_center">
-		<label id="NOTI_notice_lable">1:1 문의 관리자</label>  <label>내가 말해주께~~~</label> <br><br>
+	<div class="NOTI_King_main_center">
+		<label class="NOTI_notice_lable">1:1 문의 관리자</label>  <label>내가 말해주께~~~</label> <br><br>
 		
 					<select class="NOTI_King_select">
 						<option>레시피 문의</option>

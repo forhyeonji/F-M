@@ -4,7 +4,7 @@
 
 
 
-<div id="NOTI_container">
+<div class="NOTI_container">
 
 	<div id="NOTI_main">
 		
@@ -29,7 +29,7 @@
 			</tr>
 			
 			<tr>
-				<td colspan="2" class="text" id="NOTI_question"><p>요로쿵저러쿵 어쩌나요?</p></td>
+				<td colspan="2" class="NOTI_text"><p>요로쿵저러쿵 어쩌나요?</p></td>
 			</tr>
 			
 			</table>
@@ -52,7 +52,7 @@
 			</div> <!-- main_bottom -->
 			
 			
-			<div id="NOTI_button">
+			<div class="NOTI_button">
 
 				<input type="submit" value="등록" class="NOTI_but">
 				<input type="button" value="취소" onclick="location.href='http://localhost:8080/directKing'" class="NOTI_but">

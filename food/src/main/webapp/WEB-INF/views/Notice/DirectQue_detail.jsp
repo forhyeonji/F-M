@@ -9,7 +9,7 @@
 	<div id="NOTI_main">
 		
 		
-	<div id="NOTI_main_top">	
+	<div class="NOTI_main_top">	
 	<h3 class="NOTI_bigTitle">내가 남긴 문의</h3>
 	
 	<table class="NOTI_table">
@@ -30,7 +30,7 @@
 		
 		
 		<tr>
-			<td colspan="2" class="text" id="NOTI_question"><p>요로쿵저러쿵 어쩌나요?</p></td>
+			<td colspan="2" class="NOTI_text"><p>요로쿵저러쿵 어쩌나요?</p></td>
 		</tr>
 	</table>
 			</div> <!-- main_top -->
