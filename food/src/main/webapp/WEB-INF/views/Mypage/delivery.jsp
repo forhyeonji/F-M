@@ -6,19 +6,16 @@
 <meta charset="UTF-8">
 <title>delivery</title>
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
+<link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
 </head>
+<jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
-<div id="container">
-	<header>
-		<h1>food</h1>
-		<p>다른 메뉴는 메인페이지 따라갈게요</p>
-	</header>
-	
+<div id="my_con">
 	<div id="main">
 		<div id="side_left">
 			<div><label id="page_title">배송 조회</label></div>
-			<div id="profile">
+			<div id="my_profile">
 				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
 				<div><span id="id">회원id 님</span><br>
 				<a href="http://localhost:8080/mypage/profile_edit">
