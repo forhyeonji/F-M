@@ -1,15 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
+<%@ include file="../Header/Header.jsp"%>
 
-<link rel="stylesheet" href="../../../resources/CSS/Notice_CSS/Write.css">
-</head>
-<body>
-	
+
+
 <div id="container">
 
 <div id="main">	
@@ -53,5 +47,4 @@
 	
 </div> <!-- main -->	
 </div> <!-- container -->
-</body>
-</html>
+<%@ include file="../Footer/footer.jsp"%>

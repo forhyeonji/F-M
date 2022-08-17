@@ -1,0 +1,189 @@
+@charset "UTF-8";
+
+* {
+	margin : 0px;
+	padding : 0px;
+	
+	}
+	
+	
+#NOTI_container {
+		width:1050px;
+		height:1300px;
+		margin:0px auto;
+		padding-left:5px;
+		padding-right:5px;
+	}
+
+#NOTI_main {
+		width:1050px;
+		height:1200px;
+
+}
+
+
+
+/*
+	DirectKing_answer
+	DirectQue_detail
+ */
+
+
+.NOTI_table {
+	width : 1050px;
+	margin : 0px auto;
+	border-collapse : collapse;
+
+	}
+
+.NOTI_label {
+	width : 200px;
+	height : 24px;
+	background-color : rgba(255, 234, 234);
+	text-align : center;
+	}
+
+.NOTI_label_answer {
+	width : 600px;
+	padding-left : 30px;
+	background-color : rgba(255, 252, 252)
+	}
+
+.NOTI_textarea {
+	width : 1004px;
+	height : 400px;
+	margin : 0px auto;
+	margin-top : 10px;
+	border : none;
+	}
+
+.NOTI_text {
+	width : 1004px;
+	height : 400px;
+	padding : 20px;
+	}
+
+#NOTI_question {
+	vertical-align : top;
+	width : 1050px;
+	height : 400px;
+	padding : 20px;
+	}
+
+.NOTI_bigTitle {
+	width : 1050px;
+	margin : 0px;
+	padding : 25px 0px;
+	text-align : center;
+	}
+	
+
+
+.NOTI_but {
+	padding : 5px;
+	}
+
+#NOTI_button {
+	width : 90px;
+	margin : 0px auto;
+}
+
+
+
+
+
+
+
+/*
+	DirectKing
+*/
+
+#NOTI_King_container {
+	width:1040px;
+	height:1300px;
+	margin:0px auto;
+	padding-left:5px;
+	padding-right:5px;
+}
+
+#NOTI_King_main {
+	margin-top:50px;
+}
+
+
+#NOTI_King_main_left {
+	float : left;
+}
+
+#NOTI_King_main_center {
+	
+	width : 790px;
+	height : 1000px;
+	padding : 20px;
+	box-sizing : border-box;
+	float : right;	
+}
+
+
+
+
+.NOTI_leftBar > li {
+	
+	width : 200px;
+	border : solid 1px rgb(234, 234, 234);
+	padding-left : 20px;
+	padding-top : 15px;
+	padding-bottom : 15px;
+	padding-right : 0px;
+	margin : 0px;
+
+}
+
+.NOTI_a {
+	
+	text-decoration : none;
+}
+
+
+#NOTI_notice_lable{
+	
+	font-size : 50px;
+	
+}
+
+.NOTI_King_select {
+	height : 24px;
+	margin-bottom : 10px;
+}
+
+
+.NOTI_bar {
+	width : 790px;
+}
+
+.NOTI_title_effect{
+	padding : 15px;
+	border-bottom : solid 1px rgb(234, 234, 234);
+}
+
+#NOTI_title{
+	width : 490px;
+	text-align : center;
+
+}
+
+#NOTI_regdate{
+	width : 120px;
+	text-align : center;
+}
+
+#NOTI_check{
+	width : 120px;
+	text-align : center;
+}
+
+
+
+/*
+	DirectQue
+ */
