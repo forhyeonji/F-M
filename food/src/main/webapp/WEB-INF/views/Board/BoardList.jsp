@@ -91,10 +91,10 @@
                         <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
                             <c:choose>
                                 <c:when test="${num == paging.startPage}">
-                                <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span id="pageNum">${num}</span></a>
+                                <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span class="pageNum">${num}</span></a>
                                 </c:when>
                                 <c:when test="${num != paging.startPage}">
-                                    <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span id="pageNum">${num}</span></a>
+                                    <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span class="pageNum">${num}</span></a>
                                 </c:when>
                             </c:choose>
                         </c:forEach>
