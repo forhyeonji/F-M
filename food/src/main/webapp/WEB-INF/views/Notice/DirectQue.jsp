@@ -14,7 +14,7 @@
 		<li><a href="http://localhost:8080/QnA" class="NOTI_a">자주하는 질문</a></li>
 		<li><a href="http://localhost:8080/directQue" class="NOTI_a">1:1 문의</a></li>
 		<li><a href="http://localhost:8080/directKing" class="NOTI_a">1:1 문의 관리자</a></li>
-		<li><a class="NOTI_a">실시간 문의하기</a></li>
+		<li><a class="NOTI_a">실시간 문의하기ㅋ</a></li>
 	</ul>
 	</div>	<!-- main_left -->
 	
