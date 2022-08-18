@@ -9,51 +9,51 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<div class="beef">
-		<ul class="menu">
-			<li><a href="#">Category</a>
-				<ul class="submenu1">
-					<li><a href="http://localhost:8080/shopconer">meat</a></li>
-					<li><a href="#">vagetable</a></li>
-					<li><a href="#">fruit</a></li>
-					<li><a href="#">fish</a></li>
-					<li><a href="#">juice</a></li>
+	<div class="sh_beef">
+		<ul class="sh_menu">
+			<li><a href="#" class="sh_a">Category</a>
+				<ul class="sh_submenu1">
+					<li><a href="http://localhost:8080/shopconer" class="sh_a">meat</a></li>
+					<li><a href="#" class="sh_a">vagetable</a></li>
+					<li><a href="#" class="sh_a">fruit</a></li>
+					<li><a href="#" class="sh_a">fish</a></li>
+					<li><a href="#" class="sh_a">juice</a></li>
 				</ul></li>
 
-			<li><a href="#">Best</a></li>
-			<li><a href="#">New</a></li>
-			<li><a href="#">Sale</a></li>
-			<li><a href="#">Event</a></li>
+			<li><a href="#" class="sh_a">Best</a></li>
+			<li><a href="#" class="sh_a">New</a></li>
+			<li><a href="#" class="sh_a">Sale</a></li>
+			<li><a href="#" class="sh_a">Event</a></li>
 		</ul>
 
-		<div class="title">
-			<h1>정육 & 계란 코너</h1>
+		<div class="sh_title">
+			<h1 class="sh_h1">정육 & 계란 코너</h1>
 		</div>
 
-		<div class="header">
+		<div class="sh_header">
 			<table border="1" width="1050px" height="130px">
 				<tr>
 					<td>
-						<ul class="item">
-							<li><a href="#">전체</a></li>
-							<li><a href="#">소고기</a></li>
-							<li><a href="#">돼지고기</a></li>
-							<li><a href="#">계란</a></li>
-							<li><a href="#">닭고기</a></li>
-							<li><a href="#">오리고기</a></li>
-							<li><a href="#">양고기</a></li>
+						<ul class="sh_item">
+							<li><a href="#" class="sh_a">전체</a></li>
+							<li><a href="#" class="sh_a">소고기</a></li>
+							<li><a href="#" class="sh_a">돼지고기</a></li>
+							<dli><a href="#" class="sh_a">계란</a></li>
+							<li><a href="#" class="sh_a">닭고기</a></li>
+							<li><a href="#" class="sh_a">오리고기</a></li>
+							<li><a href="#" class="sh_a">양고기</a></li>
 						</ul>
 					</td>
 				</tr>
 			</table>
 		</div>
 
-		<table border="1" class="order" align="right">
+		<table border="1" class="sh_order" align="right">
 			<tr>
-				<td><a href="#"> 낮은가격순</a></td>
-				<td><a href="#"> 높은가격순</a></td>
-				<td><a href="#"> 후기많은순</a></td>
-				<td><a href="#"> 추천순</a></td>
+				<td><a href="#" class="sh_a"> 낮은가격순</a></td>
+				<td><a href="#" class="sh_a"> 높은가격순</a></td>
+				<td><a href="#" class="sh_a"> 후기많은순</a></td>
+				<td><a href="#" class="sh_a"> 추천순</a></td>
 			</tr>
 		</table>
 

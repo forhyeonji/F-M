@@ -5,7 +5,7 @@
 	padding: 0px;
 }
 
-.beef {
+.sh_beef {
 	width: 1050px;
 	overflow: hidden;
 	margin: 150px auto;
@@ -14,17 +14,21 @@
 	align-content: center;
 }
 
-a {
+.sh_a {
 	text-decoration: none;
 }
 
-h1 {
+.sh_menu{
+	margin-bottom: 20px;
+}
+
+.sh_h1 {
 	text-align: center;
 	margin-top: 20px;
 	margin-bottom: 20px;
 }
 
-.menu>li {
+.sh_menu>li {
 	width: 20%;
 	float: left;
 	text-align: center;
@@ -32,21 +36,21 @@ h1 {
 	background-color: #FFCDFF;
 }
 
-.submenu1>li {
+.sh_submenu1>li {
 	line-height: 50px;
 }
 
-.submenu1 {
+.sh_submenu1 {
 	height: 0;
 	overflow: hidden;
 	background-color: #FFFFB3;
 }
 
-.menu>li:hover {
+.sh_menu>li:hover {
 	transition-duration: 0.5s;
 }
 
-.menu>li:hover .submenu1 {
+.sh_menu>li:hover .sh_submenu1 {
 	height: 250px;
 	transition-duration: 1s;
 }
