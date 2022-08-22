@@ -14,7 +14,7 @@
 		<li><a href="http://localhost:8080/QnA" class="NOTI_a">자주하는 질문</a></li>
 		<li><a href="http://localhost:8080/directQue" class="NOTI_a">1:1 문의</a></li>
 		<li><a href="http://localhost:8080/directKing" class="NOTI_a">1:1 문의 관리자</a></li>
-		<li><a class="NOTI_a">실시간 문의하기ㅋ</a></li>
+		<li><a class="NOTI_a">실시간 문의하기</a></li>
 	</ul>
 	</div>	<!-- main_left -->
 	
@@ -29,10 +29,10 @@
 			<table class="NOTI_Que_Table">
 			
 				<tr>	
-					<td width="260px"> 연락처 <input type="text" placeholder="원하시는 분만 남겨주세요" id="tel"> </td>
+					<td width="260px"> 연락처 <input type="text" placeholder="원하시는 분만 남겨주세요" class="NOTI_Tel"> </td>
 			
 					<td>
-						<select>
+						<select class="NOTI_Que_select">
 							<option>레시피 문의</option>
 							<option>스토어 문의</option>
 							<option>커뮤니티 문의</option>
@@ -40,18 +40,18 @@
 						</select>
 					</td>
 					
-					<td class="NOTI_button">
-						<input type="submit" value="등록" class="but">
+					<td>
+						<input type="submit" value="등록" class="NOTI_Sbutton">
 					</td>
 					
 				</tr>
 				
 				<tr>
-					<td colspan="3" width="750px"><input type="text" id="Que_title" placeholder="제목을 입력해주세요."></td>
+					<td colspan="3"><input type="text" id="NOTI_Que_title" placeholder="제목을 입력해주세요."></td>
 				</tr>
 			
 				<tr>
-					<td colspan="3" class="text"><textarea placeholder="문의사항을 남겨주세요." id="content"></textarea></td>
+					<td colspan="3" height="400px" width="750px"><textarea class="NOTI_Que_Textarea" placeholder="문의사항을 남겨주세요."></textarea></td>
 				</tr>
 			
 			</table>
@@ -64,16 +64,16 @@
 			
 			<div class="NOTI_Que_main_bottom">
 			<h3 class="NOTI_Que_lable">내가 남긴 문의</h3>
-			<hr>
+			
 			
 				
 			<table class="NOTI_Que_Table">	
 			
 				<tr>
-					<td width="100px" id="Que_category" class="NOTI_Que_title_effect">카테고리</td>
-					<td width="300px" id="Que_title" class="NOTI_Que_title_effect">제목</td>
-					<td width="100px" id="Que_regdate" class="NOTI_Que_title_effect">작성일</td>
-					<td width="100px" id="Que_check" class="NOTI_Que_title_effect">답변여부</td>
+					<td width="100px" id="NOTI_Que_category" class="NOTI_Que_title_effect">카테고리</td>
+					<td width="300px" id="NOTI_Que_title" class="NOTI_Que_title_effect">제목</td>
+					<td width="100px" id="NOTI_Que_regdate" class="NOTI_Que_title_effect">작성일</td>
+					<td width="100px" id="NOTI_Que_check" class="NOTI_Que_title_effect">답변여부</td>
 				</tr>
 				
 				<tr>

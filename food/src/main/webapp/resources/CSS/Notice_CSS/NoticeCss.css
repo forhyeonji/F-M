@@ -18,6 +18,7 @@
 .NOTI_main {
 		width:1050px;
 		height:1200px;
+		
 
 }
 
@@ -55,6 +56,7 @@
 	margin : 0px auto;
 	margin-top : 10px;
 	border : none;
+	padding-left : 10px;
 	}
 
 .NOTI_text {
@@ -66,26 +68,31 @@
 
 
 
+
 .NOTI_bigTitle {
-	width : 1050px;
-	margin : 0px;
-	padding : 25px 0px;
 	text-align : center;
+	margin-tom : 20px;
+	margin-bottom : 20px;
 	}
 	
 
 
 .NOTI_but {
 	padding : 5px;
+	margin : 0px auto;
 	}
 
 .NOTI_button {
-	width : 90px;
+	width : 70px;
+	height : 32px;
 	margin : 0px auto;
 }
 
 
-
+.NOTI_Sbutton {
+	width : 70px;
+	margin : 0px auto;
+}
 
 
 
@@ -159,7 +166,7 @@
 .NOTI_notice_lable{
 	
 	font-size : 50px;
-	margin-bottom : 40px;
+	margin-bottom : 60px;
 	
 }
 
@@ -211,6 +218,10 @@
  
 .NOTI_Que_lable {
 	width : 750px;
+	text-align:center;
+	margin-top:10px;
+	padding-bottom : 10px;
+	border-bottom : solid gray 1px;
 }
 
 .NOTI_Que_Table {
@@ -218,20 +229,46 @@
 	border-collapse : collapse;
 	
 }
+
+.NOTI_Que_select {
+	height : 24px;
+	padding-left : 10px;
+	margin-left : 10px;
+}
+
+.NOTI_Tel{
+	
+	width : 200px;
+	height : 24px;
+	box-sizing : border-box;
+	padding-left : 10px;
+	
+}
+
+
+.NOTI_Que_Textarea{
+	width : 748px;
+	height : 400px;
+	margin : 0px auto;
+	margin-top : 10px;
+	padding : 10px;
+	border : none;
+	box-sizing : border-box;
+}
  
 .NOTI_Que_title_effect{
 	padding : 15px;
 	border-bottom : solid 1px rgb(234, 234, 234);
 }
 
-#Que_category{
+#NOTI_Que_category{
 	
 	width : 120px;
 	text-align : center;
 }
 
 
-#Que_title{
+#NOTI_Que_title{
 	width : 750px;
 	height : 22px;
 	margin-top : 10px;
@@ -240,18 +277,67 @@
 	padding-left : 10px;
 }
 
-#Que_writer{
+
+#NOTI_Que_regdate{
+	width : 120px;
+	text-align : center;
+}
+
+#NOTI_Que_check{
 	width : 120px;
 	text-align : center;
 }
 
 
-#Que_regdate{
+
+
+
+
+
+/*
+	Notice_write
+	QnA_write
+ */
+ 
+ 
+ 
+ 	
+.NOTI_WriteTitle {
+	width : 1050px;
+	height : 22px;
+	padding : 5px;
+	margin-left : 5px;
+	border : none;
+	}
+ 
+ 
+ 
+ /*
+	Notice
+	QnA
+ */
+ 
+ 
+.NOTI_QnA_no{
+	width : 60px;
+	height: 51px;
+	text-align : center;
+	vertical-align :middle;
+}
+
+.NOTI_QnA_title{
+	width : 490px;
+	text-align : center;
+
+}
+
+.NOTI_QnA_writer{
 	width : 120px;
 	text-align : center;
 }
 
-#Que_check{
+
+.NOTI_QnA_regdate{
 	width : 120px;
 	text-align : center;
 }

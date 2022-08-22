@@ -55,6 +55,10 @@ public class NoticeController {
 			return "/Notice/QnA_write";
 		}
 		
+		@RequestMapping(value = "/QnA_write", method = RequestMethod.POST)
+		public String QnA_write_post () {
+			return "/Notice/QnA_write";
+		}
 		
 		
 		

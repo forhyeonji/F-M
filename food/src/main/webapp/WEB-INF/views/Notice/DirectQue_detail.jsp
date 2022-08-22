@@ -13,6 +13,7 @@
 	<h3 class="NOTI_bigTitle">내가 남긴 문의</h3>
 	
 	<table class="NOTI_table">
+
 		<tr>
 			<td class="NOTI_label">작성자</td>
 			<td class="NOTI_label_answer">핸지</td>
@@ -53,7 +54,7 @@
 		
 
 			
-	<div id="NOTI_button">
+	<div class="NOTI_button">
 	<input type="button" value="목록" onclick="location.href='http://localhost:8080/directQue'" class="NOTI_but">
 	
 	

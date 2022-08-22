@@ -3,16 +3,16 @@
 <%@ include file="../Header/Header.jsp" %>
 
 
-<div id="container">
+<div class="NOTI_King_container">
 
-	<div id="main">
+	<div class="NOTI_King_main">
 	
-		<div id="main_left">
-		<ul type="none">
-			<li><a href="http://localhost:8080/notice">공지사항</a></li>
-			<li><a href="http://localhost:8080/QnA">자주하는 질문</a></li>
-			<li><a href="http://localhost:8080/directQue">1:1 문의</a></li>
-			<li><a href="http://localhost:8080/directKing">1:1 문의 관리자</a></li>
+		<div class="NOTI_King_main_left">
+		<ul type="none" class="NOTI_leftBar">
+			<li><a href="http://localhost:8080/notice" class="NOTI_a">공지사항</a></li>
+			<li><a href="http://localhost:8080/QnA" class="NOTI_a">자주하는 질문</a></li>
+			<li><a href="http://localhost:8080/directQue" class="NOTI_a">1:1 문의</a></li>
+			<li><a href="http://localhost:8080/directKing" class="NOTI_a">1:1 문의 관리자</a></li>
 			<li><a>실시간 문의</a></li>
 		</ul>
 		</div> <!-- main left -->
@@ -21,25 +21,25 @@
 		
 		
 		
-		<div id="main_center">
-		<label id="notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
+		<div class="NOTI_King_main_center">
+		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
 		
-		<input type="button" class="but" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
+		<input type="button" class="NOTI_button" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
 		<hr>
 		<table>
-		<tr id="bar">
-			<td id="no" class="title_effect">No</td>
-			<td id="title" class="title_effect">제목</td>
-			<td id="writer" class="title_effect">작성자</td>
-			<td id="regdate" class="title_effect">작성일</td>
+		<tr class="NOTI_bar">
+			<td class="NOTI_QnA_no" class="NOTI_title_effect">No</td>
+			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
+			<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
+			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
 		</tr>
 		
 		<tr>
-			<td colspan="4" class="title_effect"><a href="http://localhost:8080/notice_detail">자세히 보려면 여기 클릭하세요</a></td>
+			<td colspan="4" class="NOTI_title_effect"><a href="http://localhost:8080/notice_detail">자세히 보려면 여기 클릭하세요</a></td>
 		</tr>
 		
 		<tr>
-			<td colspan="4" class="title_effect"><a href="http://localhost:8080/notice_detail">자세히 보려면 여기 클릭하세요</a></td>
+			<td colspan="4" class="NOTI_title_effect"><a href="http://localhost:8080/notice_detail">자세히 보려면 여기 클릭하세요</a></td>
 		</tr>
 		
 		</table>
