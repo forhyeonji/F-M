@@ -5,22 +5,24 @@
 
 <div class="shop">
 	<div class="shopall">
-		<ul class="sh_header">
+		<ul class=" sh_menu1">
 			<li><a href="#" class="sh_a">Category</a>
-				<ul class="sh_submenu">
+				
+ 				<ul class="sh_submenu">
 					<li><a href="http://localhost:8080/shopconer" class="sh_a">meat</a></li>
 					<li><a href="#" class="sh_a">vagetable</a></li>
 					<li><a href="#" class="sh_a">fruit</a></li>
 					<li><a href="#" class="sh_a">fish</a></li>
 					<li><a href="#" class="sh_a">juice</a></li>
-				</ul></li>
+				</ul>
+ 				
+			</li>
 
 			<li><a href="#" class="sh_a">Best</a></li>
 			<li><a href="#" class="sh_a">New</a></li>
 			<li><a href="#" class="sh_a">Sale</a></li>
 			<li><a href="#" class="sh_a">Event</a></li>
 		</ul>
-
 		<div class="sh_main">
 			<div class="division_1">
 				<a href="#" class="sh_a"><h2 class="sh_h2">인기 상품></h2></a>
