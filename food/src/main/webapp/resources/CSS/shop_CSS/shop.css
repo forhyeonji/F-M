@@ -4,13 +4,15 @@
 }
 
 /* basic menu code 1.0 */
-.sh_menu1 {
-	width: 1050px;
+a.sh_a {
+	width: 170px;
+	text-align: center;
 }
 
 .sh_menu1 ul {
 	margin: 0;
 	padding: 0;
+	text-align: center;
 }
 
 .sh_menu1 li {
@@ -32,7 +34,7 @@
 	position: absolute;
 	left: 0;
 	top: 100%;
-	width: 10em;
+	width: 12.5em;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 	z-index: 999;
 }
@@ -95,4 +97,13 @@
 .sh_img>img {
 	width: 250px;
 	height: 300px;
+}
+
+.sh_h2 {
+	margin-top: 55px;
+	margin-bottom: 50px;
+}
+
+.sh_h1 {
+	margin-bottom: 30px;
 }

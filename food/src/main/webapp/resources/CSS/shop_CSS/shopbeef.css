@@ -1,56 +1,63 @@
-@charset "UTF-8";
+/* basic menu code 1.0 */
+a.sh_a {
+   width: 170px;
+   text-align: center;
+}
 
-* {
-	margin: 0px;
-	padding: 0px;
+.sh_menu ul {
+   margin: 0;
+   padding: 0;
+   text-align: center;
+}
+
+.sh_menu li {
+   float: left;
+   list-style: none;
+   background: #bbb;
+   position: relative;
+}
+
+.sh_menu li a {
+   text-decoration: none;
+   color: #fff;
+   display: block;
+   padding: 0.5em 1em;
+}
+
+.sh_menu li ul {
+   display: none;
+   position: absolute;
+   left: 0;
+   top: 100%;
+   width: 12.5em;
+   box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+   z-index: 999;
+}
+
+.sh_menu li ul li {
+   float: none;
+}
+
+.sh_menu li ul li ul {
+   left: 100%;
+   top: 0;
+}
+
+.sh_menu li:hover {
+   background: #aaa;
+}
+
+.sh_menu li:hover>ul {
+   display: block;
+}
+
+.sh_menu:after {
+   content: "";
+   display: table;
+   clear: both;
 }
 
 .sh_beef {
-	width: 1050px;
-	overflow: hidden;
-	margin: 150px auto;
-	list-style: none;
-	margin: auto;
-	align-content: center;
-}
-
-.sh_a {
-	text-decoration: none;
-}
-
-.sh_menu{
-	margin-bottom: 20px;
-}
-
-.sh_h1 {
-	text-align: center;
-	margin-top: 20px;
-	margin-bottom: 20px;
-}
-
-.sh_menu>li {
-	width: 20%;
-	float: left;
-	text-align: center;
-	line-height: 40px;
-	background-color: #FFCDFF;
-}
-
-.sh_submenu1>li {
-	line-height: 50px;
-}
-
-.sh_submenu1 {
-	height: 0;
-	overflow: hidden;
-	background-color: #FFFFB3;
-}
-
-.sh_menu>li:hover {
-	transition-duration: 0.5s;
-}
-
-.sh_menu>li:hover .sh_submenu1 {
-	height: 250px;
-	transition-duration: 1s;
+   width: 1050px;
+   margin: auto;
 }
