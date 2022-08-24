@@ -17,8 +17,8 @@ public class UserController {
     private UserService userService;
 
     @RequestMapping(value = "/insert", consumes = { MediaType.ALL_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
-    public String joinPost(@RequestBody UserVO userVO) {
-        return userService.join(userVO);
+    public void joinPost(@RequestBody UserVO userVO) {
+        userService.join(userVO);
     }
 //    @RequestMapping(value = "/insert", method = RequestMethod.GET)
 //    public void join() {
