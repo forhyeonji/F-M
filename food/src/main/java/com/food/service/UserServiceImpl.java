@@ -11,8 +11,8 @@ public class UserServiceImpl implements UserService {
     @Autowired
     UserMapper userMapper;
 
-    public void join(UserVO userVO) {
-        userMapper.join(userVO);
+    public String join(UserVO userVO) {
+        return userMapper.join(userVO);
     }
 
     public void login(UserVO userVO) {

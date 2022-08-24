@@ -6,13 +6,13 @@
 
 <mapper namespace="com.food.mapper.UserMapper">
     <insert id="join">
-        insert into tb_user
+        insert into tb_user(user_id,user_pw,user_name)
         values(#{user_id},#{user_pw},#{user_name})
     </insert>
 
-    <select id="login" resultType="com.food.model.UserVO">
-        select user_id, user_pw
-        from tb_user
-        where user_id = #{user_id} and user_pw = #{user_pw}
-    </select>
+<!--    <select id="login" resultType="com.food.model.UserVO">-->
+<!--        select user_id, user_pw-->
+<!--        from tb_user-->
+<!--        where user_id = #{user_id} and user_pw = #{user_pw}-->
+<!--    </select>-->
 </mapper>
