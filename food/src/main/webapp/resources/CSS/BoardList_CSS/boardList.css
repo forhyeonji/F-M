@@ -144,25 +144,22 @@ a > span:active{
     width:65px;
     height:100%;
 }
-span{
-    font-size:1.2em;
-}
 thead{
     height:40px;
 }
-tr td, th{
+.tb_nav > tr,
+.tb_nav  td,
+.tb_nav  th{
     border: solid 1px #dddddd;
 }
-table{
-    height:auto;
-}
+
 #board_main{
     margin: 20px 0;
     width:1050px;
     height:auto;
 }
 #board_list{
-    height:auto;
+    height:572px;
     width:100%;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }

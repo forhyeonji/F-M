@@ -124,7 +124,7 @@ hr{
 
 <!-- 테마 컬러 변경 가능, 임시로 파란색으로 지정-->
 
-<form method ="post">
+<form method ="post" action="/join">
 
 
 	<header>
@@ -144,13 +144,13 @@ hr{
 		
 		<div>
 		<h4>아이디</h4>
-		<input type="text" id="" class="insert_inputext_b">
+		<input type="text" id="" class="insert_inputext_b" name="user_id">
 		<input type="button" value="중복 확인" id="insert_idcf">
 		</div><br>
 		
 		<div>
 		<h4>비밀번호</h4>
-		<input type="text" id="" class="insert_inputext" >
+		<input type="text" id="" class="insert_inputext" name="user_pw">
 		</div><br>
 		
 		<div>
@@ -160,7 +160,7 @@ hr{
 		
 		<div>
 		<h4>이름</h4>
-		<input type="text" id="" class="insert_inputext">
+		<input type="text" id="" class="insert_inputext" name="user_name">
 		</div><br>
 		
         <div>
@@ -200,7 +200,7 @@ hr{
 		</div>
 		
 		<div>
-		<input type="submit" id = "insert_insert" formaction="메인페이지" value="가입하기">
+		<input type="submit" id = "insert_insert" value="가입하기">
 		</div>
 
 	</div>		
