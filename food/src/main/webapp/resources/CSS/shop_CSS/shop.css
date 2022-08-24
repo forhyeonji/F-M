@@ -18,7 +18,7 @@ a.sh_a {
 .sh_menu1 li {
 	float: left;
 	list-style: none;
-	background: #bbb;
+	background: #ff8080;
 	position: relative;
 }
 
@@ -49,7 +49,7 @@ a.sh_a {
 }
 
 .sh_menu1 li:hover {
-	background: #aaa;
+	background: #0080ff;
 }
 
 .sh_menu1 li:hover>ul {
