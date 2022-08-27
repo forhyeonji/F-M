@@ -1,16 +1,12 @@
 package com.food.controller;
 
-import com.food.service.BoardService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ViewController {
-    @Autowired
-    BoardService boardService;
-
     @RequestMapping(value = "/join", method = RequestMethod.GET)
     public String join() {
         return "/Main/insert";
@@ -26,5 +22,10 @@ public class ViewController {
     public String login() {
         return "/Main/login";
 
+    }
+
+    @RequestMapping(value="/community/bread", method = RequestMethod.GET)
+    public String getBoardList(){
+        return "/Board/BoardList";
     }
 }

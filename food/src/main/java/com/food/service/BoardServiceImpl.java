@@ -26,6 +26,10 @@ public class BoardServiceImpl implements BoardService{
     public ArrayList<BoardVO> list(CriteriaVO criteriaVO){
         return boardMapper.list(criteriaVO);
     }
+    public ArrayList<BoardVO> boardList(BoardVO boardVO){
+        return boardMapper.boardList(boardVO);
+    }
+
 
     @Transactional
     public BoardVO detail(BoardVO board){

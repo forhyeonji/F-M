@@ -9,18 +9,18 @@
 	<!-- Root Context: defines shared resources visible to all other web components -->
 	<!-- DBCP(DB Connection Pool) -->
 	
-<!-- 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
+ 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
 		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
 		<property name="jdbcUrl" value="jdbc:mysql://legendary.n-e.kr:3306/market?serverTimezone=Asia/Seoul"></property>
 		<property name="username" value="student"></property>
 		<property name="password" value="student00"></property>
-	</bean> -->
-	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>
-		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/exam?serverTimezone=Asia/Seoul"></property>
-		<property name="username" value="root"></property>
-		<property name="password" value="1234"></property>
-	</bean> 
+	</bean>
+<!--	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">-->
+<!--		<property name="driverClassName" value="com.mysql.jdbc.Driver"></property>-->
+<!--		<property name="jdbcUrl" value="jdbc:mysql://localhost:3306/exam?serverTimezone=Asia/Seoul"></property>-->
+<!--		<property name="username" value="root"></property>-->
+<!--		<property name="password" value="1234"></property>-->
+<!--	</bean> -->
 	
 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource" destroy-method="close">
 		<constructor-arg ref="hikariConfig" />

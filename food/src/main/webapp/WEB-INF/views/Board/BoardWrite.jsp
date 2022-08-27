@@ -10,7 +10,7 @@
     <div id="container">
         <div id="content">
             <form method="post" action="/boardWrite" accept-charset="UTF-8">
-                <table class="b">
+                <table class="b_table">
                     <thead>
                     <tr>
                         <th>게시판 글쓰기 양식</th>

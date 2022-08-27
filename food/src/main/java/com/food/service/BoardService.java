@@ -12,6 +12,9 @@ public interface BoardService {
 
     // 글 목록 리스트 설계
     public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
+    ArrayList<BoardVO> boardList(BoardVO boardVO);
+
+
 
     // 글 상세 내용 보기 설계
     public BoardVO detail(BoardVO board);

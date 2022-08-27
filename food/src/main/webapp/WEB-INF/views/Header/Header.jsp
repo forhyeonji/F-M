@@ -8,17 +8,18 @@
     <title>Insert title here</title>
 
     <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/CSS/BoardList_CSS/boardList.css?4" type="text/css"/>
+          href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/boardList.css?4" type="text/css"/>
     <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shop.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="resources/CSS/footer.css">
-    <link rel="stylesheet" href="resources/CSS/header.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/footer.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/header.css">
     
     <!-- Notice Css -->
-    <link rel="stylesheet" href="resources/CSS/Notice_CSS/NoticeCss.css">
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/Notice_CSS/NoticeCss.css">
     
-    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="${pageContext.request.contextPath}/resources/JS/BoardList.js" type="text/javascript"></script>
 </head>
 <body>
 <div id="wrap">

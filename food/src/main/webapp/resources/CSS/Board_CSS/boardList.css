@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap");
-
+a{
+    text-decoration: none;
+}
 *{
     margin:0;
     padding:0;
@@ -19,7 +21,7 @@
     margin:0 auto;
     position: relative;
 }
-#navigation{
+#b_navigation{
     margin:0;
     display:flex;
     width:100%;
@@ -27,19 +29,19 @@
     background: #FFFFF6;
     border: solid 1px #dddddd;
 }
-#navigation ul{
+#b_navigation ul{
     list-style-type:none;
     margin:0 auto;
     padding:0px;
     overflow:hidden;
     height:58px;
 }
-#navigation li{
+#b_navigation li{
     float:left;
     margin:0 60px;
 }
 
-#navigation a:link,a:visited{
+#b_navigation a:link,a:visited{
     display:block;
     width:100px;
     height:33px;
@@ -50,31 +52,31 @@
     padding:12px 5px 12px 5px;
     text-decoration:none;
 }
-.dropdown > a:hover,
-.dropdown-content > a:hover{
+.b_dropdown > a:hover,
+.b_dropdown-content > a:hover{
     color:darksalmon;
     font-size: 1.2em;
     text:bolder;
 }
-table > a:link{
+#b_table > a:link{
     color:pink
 }
-table > a:visited{
+#b_table > a:visited{
     color:greenyellow;
 }
-table > a:hover{
+#b_table > a:hover{
     color:red
 }
-table > a:active{
+#b_table > a:active{
     color:green;
 }
 
-.dropdown-content > a:active{
+.b_dropdown-content > a:active{
     color:salmon;
     font-size: 1.2em;
     text:bolder;
 }
-.dropdown-content{
+.b_dropdown-content{
     background: #FFFFF6;
     display: none;
     position: absolute;
@@ -82,14 +84,14 @@ table > a:active{
     border-top:0;
 }
 
-.dropdown-content > a{
+.b_dropdown-content > a{
     display:block;
 }
-.dropdown:hover .dropdown-content{
+.b_dropdown:hover .b_dropdown-content{
     display: block;
 }
 
-ul li{
+#b_ul{
     list-style: none;
     color:black;
 }
@@ -112,39 +114,39 @@ ul li{
     height:50px;
     width:1050px;
 }
-.tb_nav a:link,a:visited{
+.tb_nav a.b_tag:link,a.b_tag:visited{
     text-decoration:none;
 }
-a > span:active{
+.b_tag > .b_span:active{
     font-size:1.5em;
 }
-.show_view > a{
+.b_show_view > a{
     background: #ffffff;
     border:0;
     font-size: 1.2em;
 }
-.show_view > a:hover
+.b_show_view > a:hover
 {
     box-shadow: 1px 1px rgba(0, 0, 0, 0.2);
 }
-.show_view > a:active{
+.b_show_view > a:active{
     background: rgb(241,241,241);
 }
-#home{
+#b_home{
     width:50px;
     height:100%;
 }
-#best{
+#b_best{
     height:100%;
     width:860px;
     text-align: left;
     padding: 0 0 0 20px;
 }
-#show_view{
+#b_show_view{
     width:65px;
     height:100%;
 }
-thead{
+.b_thead{
     height:40px;
 }
 .tb_nav > tr,
@@ -163,31 +165,31 @@ thead{
     width:100%;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }
-.tb_nav .list{
+.tb_nav .blist{
     width:1050px;
 }
-.list_title{
-    width:950px;
+.blist_title{
+    width:900px;
     text-align: left;
     padding:0 0 0 10px;
 }
-.list_date{
+.blist_date{
     width:130px;
 }
-.list_user{
+.blist_user{
     width:60px;
 }
-.list_cnt{
+.blist_cnt{
     width:60px;
 }
-#lt{
+#blt{
     height:44px;
     margin: 2px 0;
 }
-#list_btns{
+#b_list_btns{
     margin : 20px 0;
     width:1050px;
-    height:30px;
+    height:100%;
     display : flex;
     justify-content: flex-end;
 }
@@ -201,26 +203,20 @@ thead{
     border-top:1px solid #dddddd;
     border-bottom: 1px solid #dddddd;
 }
-#search{
+#b_search{
     height:40px;
     margin : 0 0 0 10px;
     display: flex;
     align-items: center;
 }
-rect{
-    border: solid 1px #dddddd;
-}
+
 .search_inside{
     margin:0;
     height:30px;
     display: flex;
     align-items: center;
 }
-.search_inside > rect{
-    height: 23px;
-    border-left:0;
-}
-select, option{
+#b_select, #b_option{
     height:25px;
     margin : 0 0 0 5px;
     font-size:1.0em;
@@ -282,4 +278,21 @@ select, option{
 #btn_write {
     background-image: linear-gradient(to right, #25aae1, #40e495, #30dd8a, #2bb673);
     box-shadow: 0 4px 15px 0 rgba(49, 196, 190, 0.75);
+}
+
+#b_paging {
+    margin : 20px 0;
+    display: flex;
+    font-size: 20px;
+}
+#b_ps{
+    margin : 0 auto;
+    width : 360px;
+    display:flex;
+}
+.b_pagingBtn{
+    margin:0 5px;
+}
+.b_pageNum:active{
+    color:green;
 }
