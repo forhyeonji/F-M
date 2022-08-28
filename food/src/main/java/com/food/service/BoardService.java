@@ -8,16 +8,15 @@ import java.util.ArrayList;
 
 public interface BoardService {
     // 글쓰기 설계
-    public void write(BoardVO board);
+//    public void write(BoardVO board);
+    public int boardWrite(BoardVO board);
 
     // 글 목록 리스트 설계
-    public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
+//    public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
     ArrayList<BoardVO> boardList(BoardVO boardVO);
 
-
-
     // 글 상세 내용 보기 설계
-    public BoardVO detail(BoardVO board);
+    BoardVO boardDetail(BoardVO boardVO);
 
     // 글 수정 설계
     public void modify(BoardVO board);

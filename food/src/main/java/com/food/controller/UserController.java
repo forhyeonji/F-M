@@ -24,16 +24,6 @@ public class UserController extends CommonController{
 
     @RequestMapping(value = "/join", consumes = { MediaType.ALL_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
     public ResponseEntity<UserVO> joinPost(@RequestBody UserVO userVO) {
-        ObjectMapper objectMapper = new ObjectMapper();
-        try {
-            if(logger.isDebugEnabled())
-                logger.debug("request: {}", objectMapper.writeValueAsString(userVO));
-        } catch (JsonProcessingException e) {
-            if(logger.isErrorEnabled()) logger.error("err: {}", e.getMessage());
-        } catch (IOException e) {
-            throw new RuntimeException(e);
-        }
-
         int result = userService.join(userVO);
             if(result==1){
                 return new ResponseEntity<>( HttpStatus.OK);
@@ -41,10 +31,6 @@ public class UserController extends CommonController{
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
     }
-//    @RequestMapping(value = "/insert", method = RequestMethod.GET)
-//    public void join() {
-//
-//    }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public void login(UserVO userVO) {

@@ -8,14 +8,15 @@ import java.util.ArrayList;
 @Mapper
 public interface BoardMapper {
     // 글쓰기에 해당되는 DB작업 설계
-    public void write(BoardVO board);
+//    public void write(BoardVO board);
+    public int boardWrite(BoardVO board);
 
     // 게시글 목록 리스트에 해당되는 DB작업 설계
-    public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
+//    public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
     ArrayList<BoardVO> boardList(BoardVO boardVO);
 
     // 게시글 상세보기에 해당되는 DB작업 설계
-    public BoardVO detail(BoardVO board);
+    BoardVO boardDetail(BoardVO boardVO);
 
     // 조회수 업데이트
     void cntup(BoardVO board);

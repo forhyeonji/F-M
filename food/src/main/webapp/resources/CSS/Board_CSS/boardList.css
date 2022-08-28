@@ -13,11 +13,9 @@ a{
 #container{
     margin-top:30px;
     weight:100%;
-    height:auto;
 }
 #content{
     width:1050px;
-    height: auto;
     margin:0 auto;
     position: relative;
 }
@@ -150,18 +148,20 @@ a{
     height:40px;
 }
 .tb_nav > tr,
-.tb_nav  td,
-.tb_nav  th{
+.tb_nav > td,
+.tb_nav > th{
     border: solid 1px #dddddd;
 }
 
 #board_main{
+    display: flex;
     margin: 20px 0;
     width:1050px;
-    height:auto;
+    height: auto;
+    flex-direction: column;
 }
 #board_list{
-    height:572px;
+    height:auto;
     width:100%;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }
@@ -192,6 +192,7 @@ a{
     height:100%;
     display : flex;
     justify-content: flex-end;
+    align-items: center;
 }
 #btn_write{
     font-size:1.0em;
@@ -202,6 +203,7 @@ a{
     align-items: center;
     border-top:1px solid #dddddd;
     border-bottom: 1px solid #dddddd;
+    margin:10px 0;
 }
 #b_search{
     height:40px;
@@ -221,7 +223,7 @@ a{
     margin : 0 0 0 5px;
     font-size:1.0em;
 }
-#abc{
+#b_so{
     height:23px;
     border: solid 1px #dddddd;
     border-right:0px;
@@ -296,3 +298,8 @@ a{
 .b_pageNum:active{
     color:green;
 }
+.b_list{
+    height:40px;
+    border:1px solid #dddddd;
+}
+

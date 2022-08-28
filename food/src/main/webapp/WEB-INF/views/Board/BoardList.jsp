@@ -44,7 +44,7 @@
                 </table>
             </div>
         </div>
-        <form action="/boardWrite" method="get">
+        <form action="/community/write" method="get">
             <div id="board_main">
                 <div id="board_list">
                     <table class="tb_nav blist">
@@ -64,7 +64,7 @@
                 <div id="board_footer">
                     <div id="b_search">
                         <div class="search_inside">
-                            <input type="text" size="10" id="abc">
+                            <input type="text" size="10" id="b_so">
                             <input type="submit" value="🔍" id="search_btn" formaction="#">
                             <select id="b_select">
                                 <option id="b_option">닉네임</option>
@@ -73,7 +73,7 @@
                         </div>
                     </div>
                     <div id="b_list_btns">
-                        <input type="submit" value="글쓰기" id="btn_write">
+                            <input type="submit" value="글쓰기" id="btn_write">
                     </div>
                 </div>
                 <div id="b_paging">

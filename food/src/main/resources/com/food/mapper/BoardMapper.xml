@@ -5,9 +5,9 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="com.food.mapper.BoardMapper">
-    <insert id="write">
-        insert into board(title, content)
-        values(#{title},#{content})
+    <insert id="boardWrite">
+        insert into tb_board(title, context)
+        values(#{title},#{context})
     </insert>
 
 <!--    <select id="list" resultType="com.food.model.BoardVO">-->
@@ -24,7 +24,8 @@
     <select id="boardList" resultType="com.food.model.BoardVO">
         select
             bno, title, context, date_format(mod_dt, '%m-%d') mod_dt, cnt, user_id
-        from tb_board;
+        from tb_board
+        order by bno desc
     </select>
 
 
@@ -32,14 +33,14 @@
         select count(*) from board
     </select>
 
-    <select id="detail" resultType="com.food.model.BoardVO">
-        select bno, title, content, regdate, cnt, id
-        from board
-        where bno=#{bno}
+    <select id="boardDetail" resultType="com.food.model.BoardVO">
+        select bno, title, context, user_id
+        from tb_board
+        where bno= #{bno}
     </select>
 
     <update id="cntup">
-        update board
+        update tb_board
         set cnt = cnt + 1
         where bno = #{bno}
     </update>
