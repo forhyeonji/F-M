@@ -11,10 +11,21 @@
 }
 
 a.sh_a {
-	width: 170px;
+	width: 178px;
 	text-align: center;
 }
 
+.sh_a:link {
+	color: #D1B2FF;
+}
+
+.sh_a:visited {
+	color: black;
+}
+
+.sh_a:hover {
+	color: #F15F5F;
+}
 
 .sh_menu ul {
 	margin: 0;
@@ -41,7 +52,7 @@ a.sh_a {
 	position: absolute;
 	left: 0;
 	top: 100%;
-	width: 12.5em;
+	width: 13.1em;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 	z-index: 999;
 }
@@ -70,23 +81,22 @@ a.sh_a {
 }
 
 .sh_item {
-   display: grid;
-   grid-template-columns: 1fr 1fr 1fr 1fr;
-   grid-template-rows: 1fr 1fr;
-   font-size: 20pt;
-   row-gap: 10px;
-   list-style: none;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	font-size: 20pt;
+	row-gap: 25px;
+	list-style: none;
 }
 
-.sh_header{
+.sh_header {
 	text-align: center;
 }
 
-.sh_h1{
+.sh_h1 {
 	margin-top: 30px;
 	margin-bottom: 30px;
 	text-align: center;
-	
 }
 
 .sh_meat_main {
@@ -101,6 +111,34 @@ a.sh_a {
 	clear: both;
 	display: flex;
 	justify-content: space-between;
+}
+
+.sh_table {
+	width: 1050px;
+	height: 130px;
+	border-collapse: collapse;
+	border-color: #D5D5D5;
+}
+
+.sh_ta {
+	margin-top: 40px;
+	margin-left: 700px;
+	width: 350px;
+	height: 30px;
+}
+
+.sh_a2 {
+	border-right: 1px solid;
+}
+
+img {
+	width: 300px;
+	height: 300px;
+}
+
+#tip {
+	width: 312px;
+	height: 310px;
 }
 
 #chi {

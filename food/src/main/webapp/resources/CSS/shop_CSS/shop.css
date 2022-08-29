@@ -5,7 +5,7 @@
 
 /* basic menu code 1.0 */
 a.sh_a {
-	width: 170px;
+	width: 178px;
 	text-align: center;
 }
 
@@ -97,6 +97,10 @@ a.sh_a {
 .sh_img>img {
 	width: 250px;
 	height: 300px;
+}
+
+.sh_img {
+	width: 262px;
 }
 
 .sh_h2 {

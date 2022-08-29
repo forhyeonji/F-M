@@ -9,7 +9,7 @@
 	
 .NOTI_container {
 		width:1050px;
-		height:1300px;
+		height:1400px;
 		margin:0px auto;
 		padding-left:5px;
 		padding-right:5px;
@@ -17,8 +17,7 @@
 
 .NOTI_main {
 		width:1050px;
-		height:1200px;
-		
+		height:1400px;
 
 }
 
@@ -30,12 +29,11 @@
  */
 
 
-.NOTI_table {
-	width : 1050px;
-	margin : 0px auto;
+.NOTI_table, td {
+	border : solid 1px rgb(234, 234, 234);
 	border-collapse : collapse;
+}
 
-	}
 
 .NOTI_label {
 	width : 200px;
@@ -51,13 +49,16 @@
 	}
 
 .NOTI_textarea {
-	width : 1004px;
+	width : 950px;
 	height : 400px;
 	margin : 0px auto;
 	margin-top : 10px;
 	border : none;
 	padding-left : 10px;
 	}
+	
+
+
 
 .NOTI_text {
 	width : 1004px;
@@ -71,27 +72,39 @@
 
 .NOTI_bigTitle {
 	text-align : center;
-	margin-tom : 20px;
+	margin-top : 20px;
 	margin-bottom : 20px;
 	}
 	
 
 
 .NOTI_but {
+	width : 70px;
+	height : 32px;
 	padding : 5px;
-	margin : 0px auto;
+	display : inline;
 	}
 
 .NOTI_button {
-	width : 70px;
-	height : 32px;
+	width : 120px;
+	height : 40px;
 	margin : 0px auto;
+	display : inline;
 }
 
 
 .NOTI_Sbutton {
 	width : 70px;
 	margin : 0px auto;
+	display : inline;
+}
+
+#divTest{
+	width : 100px;
+	height : 50px;
+	margin : 0px auto;
+	
+
 }
 
 
@@ -183,7 +196,11 @@
 .NOTI_title_effect{
 	padding : 15px;
 	border-bottom : solid 1px rgb(234, 234, 234);
+	text-align:
 }
+
+
+
 
 #NOTI_title{
 	width : 490px;
@@ -303,7 +320,7 @@
  
  	
 .NOTI_WriteTitle {
-	width : 1050px;
+	width : 1040px;
 	height : 22px;
 	padding : 5px;
 	margin-left : 5px;
@@ -341,5 +358,30 @@
 	width : 120px;
 	text-align : center;
 }
- 
+
+
+.NOTI_list_no{
+	width : 60px;
+	height: 36px;
+	text-align : center;
+	vertical-align :middle;
+}
+
+.NOTI_list_title{
+	width : 490px;
+	text-align : center;
+
+}
+
+.NOTI_list_writer{
+	width : 120px;
+	text-align : center;
+}
+
+
+.NOTI_list_regdate{
+	width : 120px;
+	text-align : center;
+}
+
  

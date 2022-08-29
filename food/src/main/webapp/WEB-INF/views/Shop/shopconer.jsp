@@ -48,19 +48,18 @@
 			</table>
 		</div>
 
-		<table border="1" class="sh_order" align="right">
+		<table class="sh_ta" align="right">
 			<tr>
-				<td><a href="#" class="sh_a"> 낮은가격순</a></td>
-				<td><a href="#" class="sh_a"> 높은가격순</a></td>
-				<td><a href="#" class="sh_a"> 후기많은순</a></td>
-				<td><a href="#" class="sh_a"> 추천순</a></td>
+				<td><a href="#" class="sh_a2"> 낮은가격순</a></td>
+				<td><a href="#" class="sh_a2"> 높은가격순</a></td>
+				<td><a href="#" class="sh_a2"> 후기많은순</a></td>
+				<td><a href="#" class="sh_a3"> 추천순</a></td>
 			</tr>
 		</table>
 
 		<div class="sh_meat_main">
 			<div class="sh_meatimg_1" id="pork">
-				<img src="../../../resources/image/porkbelly.jpg" width="300px"
-					height="300px">
+				<img src="../../../resources/image/shop/porkbelly.jpg">
 				<div class="sh_sky">하늘배송</div>
 				<div class="sh_porkbelly">돼지고기 1kg</div>
 				<div class="sh_porkbelly_price">16,900원</div>
@@ -68,8 +67,7 @@
 			</div>
 
 			<div class="meatimg_1" id="sir">
-				<img src="../../../resources/image/sirloin.jpg" width="300px"
-					height="300px">
+				<img src="../../../resources/image/shop/sirloin.jpg">
 				<div class="sh_sky">하늘배송</div>
 				<div class="sh_sirloin">등심 300g</div>
 				<div class="sh_sirloin_price">14,900원</div>
@@ -77,8 +75,7 @@
 			</div>
 
 			<div class="sh_meatimg_1">
-				<img src="../../../resources/image/tip.jpg" width="300px"
-					height="310px">
+				<img src="../../../resources/image/shop/tip.jpg" id="tip">
 				<div class="sh_sky">하늘배송</div>
 				<div class="sh_tip">채끝살 300g</div>
 				<div class="sh_tip_price">69,900원</div>
@@ -87,7 +84,7 @@
 
 			<div class="sh_meat_middle">
 				<div class="sh_meatimg_1" id="chi">
-					<img src="../../../resources/image/chicken.jpg" width="300px">
+					<img src="../../../resources/image/shop/chicken.jpg">
 					<div class="sh_sky">하늘배송</div>
 					<div class="sh_chicken">생 닭 1마리</div>
 					<div class="sh_chicken_price">18,800원</div>
@@ -95,7 +92,7 @@
 				</div>
 
 				<div class="sh_meatimg_1" id="eg">
-					<img src="../../../resources/image/egg.jpg" width="300px">
+					<img src="../../../resources/image/shop/egg.jpg">
 					<div class="sh_sky">하늘배송</div>
 					<div class="sh_egg">신선 왕란 30구</div>
 					<div class="sh_egg_price">8,250원</div>
@@ -103,7 +100,7 @@
 				</div>
 
 				<div class="sh_meatimg_1" id="duck">
-					<img src="../../../resources/image/smokeduck.jpg" width="300px">
+					<img src="../../../resources/image/shop/smokeduck.jpg">
 					<div class="sh_sky">하늘배송</div>
 					<div class="sh_smokeduck">다향 훈제 오리 슬라이스 2묶음</div>
 					<div class="sh_smokeduck_price">11,250원</div>
@@ -112,5 +109,4 @@
 			</div>
 		</div>
 	</div>
-</body>
-</html>
+	<%@ include file="../Footer/footer.jsp"%>

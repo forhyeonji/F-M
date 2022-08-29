@@ -1,22 +1,65 @@
 package com.food.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
+import com.food.model.NotiBoardVO;
+import com.food.service.NotiBoardService;
 
 @Controller
 public class NoticeController {
 
+		@Autowired
+		NotiBoardService nbs;
+	
+	
+	
 
 		@RequestMapping(value = "/notice", method = RequestMethod.GET)
-		public String notice () {
+		public String notice (Model model) {
+			
+			model.addAttribute("list",nbs.list());
+			
 			return "/Notice/Notice";
 		}
 		
 	
 		@RequestMapping(value = "/notice_detail", method = RequestMethod.GET)
-		public String notice_detail () {
+		public String notice_detail (NotiBoardVO board, Model model) {
+			model.addAttribute("detail",nbs.detail(board));
+			
 			return "/Notice/Notice_detail";
+		}
+		
+		
+		// 글수정 화면
+		@RequestMapping(value = "/notice/modify", method = RequestMethod.GET)
+		public String notice_modify (NotiBoardVO board, Model model) {
+			model.addAttribute("modify", nbs.detail(board));
+			
+			return "/Notice/Notice_modify";
+		}
+		
+		
+		// 글수정 서버
+		@RequestMapping(value = "/notice/modify", method = RequestMethod.POST)
+		public String notice_modifyPost (NotiBoardVO board, RedirectAttributes rttr) {
+			nbs.modify(board);
+			rttr.addAttribute("bno", board.getBno());
+			
+			return "redirect:/notice_detail";
+		}
+		
+		// 글삭제
+		@RequestMapping(value = "/notice/remove", method = RequestMethod.POST)
+		public String notice_removePost (NotiBoardVO board) {
+			nbs.remove(board);
+			
+			return "redirect:/notice";
 		}
 		
 		
@@ -28,9 +71,9 @@ public class NoticeController {
 		
 		
 		@RequestMapping(value = "/notice_write", method = RequestMethod.POST)
-		public String notice_write_post () {
-
-			return "/Notice/Notice_write";
+		public String notice_write_post (NotiBoardVO board) {
+			nbs.write(board);
+			return "redirect:/notice";
 		}
 
 		

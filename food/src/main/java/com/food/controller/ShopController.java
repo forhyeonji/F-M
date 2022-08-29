@@ -21,5 +21,10 @@ public class ShopController {
 	public String serve() {
 		return "Shop/shopbeef";
 	}
+	
+	@RequestMapping(value = "/shopPurchase", method = RequestMethod.GET)
+	public String aaa() {
+		return "Shop/shopPurchase";
+	}
 
 }

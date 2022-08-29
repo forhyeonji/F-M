@@ -26,7 +26,7 @@
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">자주하는 질문</label>  <label>어쩌고 저쩌고~</label> <br><br>
 		
-		<input type="button" class="NOTI_button" value="글쓰기" onclick="location.href='http://localhost:8080/QnA_write'">
+		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/QnA_write'">
 		<hr>
 		<table>
 		<tr class="NOTI_bar">
