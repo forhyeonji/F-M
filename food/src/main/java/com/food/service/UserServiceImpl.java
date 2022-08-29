@@ -15,7 +15,7 @@ public class UserServiceImpl implements UserService {
         return userMapper.join(userVO);
     }
 
-    public void login(UserVO userVO) {
-        userMapper.login(userVO);
+    public UserVO login(UserVO userVO) {
+        return userMapper.login(userVO);
     }
 }

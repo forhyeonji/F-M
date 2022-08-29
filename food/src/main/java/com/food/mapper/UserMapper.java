@@ -7,6 +7,6 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
     int join(UserVO userVO);
 
-    void login(UserVO userVO);
+    UserVO login(UserVO userVO);
 
 }

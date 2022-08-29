@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.IOException;
 
 @RestController
-@RequestMapping("/Main")
 public class UserController extends CommonController{
 
     @Autowired
@@ -26,16 +25,19 @@ public class UserController extends CommonController{
     public ResponseEntity<UserVO> joinPost(@RequestBody UserVO userVO) {
         int result = userService.join(userVO);
             if(result==1){
-                return new ResponseEntity<>( HttpStatus.OK);
+                return new ResponseEntity<>(HttpStatus.OK);
             }else{
                 return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
             }
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
-    public void login(UserVO userVO) {
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public ResponseEntity<String> login(UserVO userVO) {
         userService.login(userVO);
-    }
+        System.out.println(userVO);
 
+
+        return new ResponseEntity<>("success",HttpStatus.OK);
+    }
 
 }
