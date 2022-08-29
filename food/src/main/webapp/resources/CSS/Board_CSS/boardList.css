@@ -69,7 +69,7 @@ a{
     color:green;
 }
 
-.b_dropdown-content > a:active{
+.b_dropdown-content > .b_menu:active{
     color:salmon;
     font-size: 1.2em;
     text:bolder;

@@ -8,21 +8,21 @@
                 <li class="b_dropdown">
                     <a href="#" class="b_dropdownbutton">레시피</a>
                     <div class="b_dropdown-content">
-                        <a href="#">빵</a>
-                        <a href="#">면</a>
-                        <a href="#">고기</a>
+                        <a href="#" class="b_menu">빵</a>
+                        <a href="#" class="b_menu">면</a>
+                        <a href="#" class="b_menu">고기</a>
                     </div>
                 </li>
                 <li class="b_dropdown">
-                    <a href="#" class="b_dropdownbutton">요리</a>
+                    <a href="#" class="b_dropdownbutton" class="b_menu">요리</a>
                     <div class="b_dropdown-content">
-                        <a href="#">한식</a>
-                        <a href="#">중식</a>
-                        <a href="#">양식</a>
+                        <a href="#" class="b_menu">한식</a>
+                        <a href="#" class="b_menu">중식</a>
+                        <a href="#" class="b_menu">양식</a>
                     </div>
                 </li>
-                <li><a href="#">잡담</a></li>
-                <li><a href="#">실시간채팅</a></li>
+                <li><a href="#" class="b_menu">잡담</a></li>
+                <li><a href="#" class="b_menu">실시간채팅</a></li>
             </ul>
         </div>
 
