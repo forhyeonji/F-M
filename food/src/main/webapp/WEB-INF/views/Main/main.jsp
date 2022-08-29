@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../Header/Header.jsp" %>
-
+ 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/main.css">
 
 <!-- 로그인과 회원가입, 공지사항은 추후 헤더 상단에 달자고 얘기하기 -->

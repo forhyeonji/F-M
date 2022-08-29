@@ -2,7 +2,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../Header/Header.jsp" %>
-
+ 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/insert.css">
 
 <div>
