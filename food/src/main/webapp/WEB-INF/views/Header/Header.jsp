@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/header.css">
     
     <!-- Notice Css -->
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/Notice_CSS/NoticeCss.css">
+    <link rel="stylesheet" type="text/css"
+    href="${pageContext.request.contextPath}/resources/CSS/Notice_CSS/NoticeCss.css">
 
     <!-- Board -->
     <link rel="stylesheet" type="text/css"

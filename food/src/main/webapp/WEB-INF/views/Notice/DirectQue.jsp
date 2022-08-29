@@ -9,7 +9,7 @@
 	
 	<div class="NOTI_King_main_left">
 	
-	<ul class="NOTI_leftBar">
+	<ul type="none" class="NOTI_leftBar">
 		<li><a href="http://localhost:8080/notice" class="NOTI_a">공지사항</a></li>
 		<li><a href="http://localhost:8080/QnA" class="NOTI_a">자주하는 질문</a></li>
 		<li><a href="http://localhost:8080/directQue" class="NOTI_a">1:1 문의</a></li>

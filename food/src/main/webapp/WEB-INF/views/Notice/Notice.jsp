@@ -1,6 +1,8 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../Header/Header.jsp" %>
+
 
 
 <div class="NOTI_King_container">
@@ -18,15 +20,12 @@
 		</div> <!-- main left -->
 		
 		
-		
-		
-		
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
 		
-		<input type="button" class="NOTI_button" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
+		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
 		<hr>
-		<table>
+		<table class="NOTI_Table">
 		<tr class="NOTI_bar">
 			<td class="NOTI_QnA_no" class="NOTI_title_effect">No</td>
 			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
@@ -34,13 +33,16 @@
 			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
 		</tr>
 		
-		<tr>
-			<td colspan="4" class="NOTI_title_effect"><a href="http://localhost:8080/notice_detail">자세히 보려면 여기 클릭하세요</a></td>
-		</tr>
+		<!-- for문 시작 -->
+		<c:forEach items="${list}" var="Notiboardlist">
+			<tr>
+				<td class="NOTI_list_no">${Notiboardlist.bno}</td>
+				<td class="NOTI_list_title"><a href="notice_detail?bno=${Notiboardlist.bno}" class="NOTI_a">${Notiboardlist.title}</a></td>
+				<td class="NOTI_list_writer">${Notiboardlist.user_id}</td>
+				<td class="NOTI_list_regdate">${Notiboardlist.reg_dt}</td>
+			</tr>
+		</c:forEach>
 		
-		<tr>
-			<td colspan="4" class="NOTI_title_effect"><a href="http://localhost:8080/notice_detail">자세히 보려면 여기 클릭하세요</a></td>
-		</tr>
 		
 		</table>
 		</div> <!-- main_center -->
