@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+
+#main_outborder{
+	width : 1050px;
+	margin : auto;
+}	
+
+
+h2{
+	text-align : center;
+}
+
+
+.main_display{
+	display : flex;
+	flex-direction: row;
+	justify-content : space-between;
+}
+
+.main_display_expl{
+	margin-top : 20px;
+	margin-bottom : 20px;
+}
+
+.main_pic{
+
+}
+
+

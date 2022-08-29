@@ -1,0 +1,39 @@
+@charset "UTF-8";
+
+h2 {
+	text-align : center;
+	}
+	
+	container{
+	display:flex; 
+	justify-content:center;
+	text-align : center;
+	}
+	
+	footer{
+	display:flex; justify-content:center;
+	}
+	
+	td{
+	text-align : center;
+	}
+	
+	.login_login{
+	width : 400px;
+	height : 40px;
+	border : 1px solid #dddddd;
+	text-align : center;
+	padding : 0;
+	border-radius : 5px;
+	}
+	
+	.login_button{
+	width : 402px;
+	height : 42px;
+	color : white;
+	border : none;
+	background-color : salmon;
+	box-sizing : content-box;
+	padding : 0px;
+	border-radius : 5px;
+	}
