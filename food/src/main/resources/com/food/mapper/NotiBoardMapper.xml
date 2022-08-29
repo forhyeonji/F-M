@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.food.mapper.NotiBoardMapper">
+	
+	<!-- 게시글 목록 -->
+	<select id="list" resultType="com.food.model.NotiBoardVO">
+		select * from noti_notiboard
+	</select>
+	
+	
+	<!-- 게시글 상세보기 -->
+	<select id="detail" resultType="com.food.model.NotiBoardVO">
+		select * from noti_notiboard where bno=#{bno}
+	</select>
+	
+	<!-- 게시글 수정 -->
+	<update id="modify">
+		update noti_notiboard
+		set title=#{title}, content=#{content}
+		where bno=#{bno}
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<delete id="remove">
+		delete from noti_notiboard
+		where bno=#{bno}
+	</delete>
+	
+	<!-- 게시글 글쓰기 -->
+	<insert id="write">
+	insert into noti_notiboard (title, content, reg_dt, user_id)
+	values(#{title}, #{content}, CURDATE(), #{user_id});
+	</insert>
+	
+	
+</mapper>

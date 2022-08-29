@@ -8,35 +8,36 @@
 
 <div class="NOTI_main">	
 
-	<form action="/notice_write" method="post">
+	<form action="/notice/modify" method="post">
 
 
-		<h3 class="NOTI_bigTitle">공지 글쓰기</h3>
+		<h3 class="NOTI_bigTitle">공지 수정하기</h3>
 		
 		<input type="checkbox"> 제목 강조
 		<input type="checkbox"> 우선
 		
 		
-		<div class="NOTI_Border">
+		<div>
 		<table class="NOTI_table">
 	
 		<tr>
-			<td><input type="text" class="NOTI_WriteTitle" placeholder="제목을 입력해 주세요" name="title"></td>
+			<td><input type="text" class="NOTI_WriteTitle" value="${modify.title}" name="title"></td>
 		</tr>
 		
 	
 		<tr>
-			<td><textarea class="NOTI_textarea" placeholder="내용을 입력해 주세요" name="content"></textarea></td>
+			<td><textarea class="NOTI_textarea" name="content" >${modify.content}</textarea></td>
 			
 		</tr>
 	
 		</table>
 		</div> <!-- NOTI_Border -->
 		
-		<div class="NOTI_button">
-			<input type="submit" class="NOTI_but" value="등록">
+		<div id="divTest">
+			<input type="submit" class="NOTI_but" value="수정">
 			<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://localhost:8080/notice'">
-		</div> <!-- NOTI_button -->
+			<input type="hidden" value="${modify.bno}" name="bno">
+		</div>
 		
 	
 	
