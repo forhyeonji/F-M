@@ -3,7 +3,7 @@
     <div id="container">
         <div id="content">
             <form method="get" action="/community/bread" accept-charset="UTF-8" id="bwrite_form">
-                <input type="text" name="id" id="userId" value="${id.user_id}">
+                <input type="text" name="uesr_id" id="userId" value="test">
                 <table class="b_table">
                     <thead>
                     <tr>
@@ -25,7 +25,7 @@
                     </tbody>
                 </table>
                 <div id="bw_foot">
-                    <button type="submit" class="btn_write">글쓰기</button>
+                    <button type="submit" class="btn_write b_write_btn">글쓰기</button>
                     <a href="http://localhost:8080/bread"><button type="button" class="btn_write btn_cancel">취소</button></a>
                 </div>
             </form>

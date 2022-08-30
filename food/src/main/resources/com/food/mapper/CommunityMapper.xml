@@ -6,8 +6,8 @@
 
 <mapper namespace="com.food.mapper.CommunityMapper">
     <insert id="boardWrite">
-        insert into tb_community(title, context)
-        values(#{title},#{context})
+        insert into tb_community(title, context, user_id)
+        values(#{title},#{context},#{user_id})
     </insert>
 
 <!--    <select id="list" resultType="com.food.model.BoardVO">-->
@@ -45,13 +45,13 @@
         where bno = #{bno}
     </update>
 
-    <update id="modify">
+    <update id="boardModify">
         update tb_community set
-                         title=#{title}, content=#{content}
+                         title=#{title}, context=#{context}, mod_dt=now()
         where bno=#{bno}
     </update>
 
-    <delete id="remove">
+    <delete id="boardDelete">
         delete from tb_community
         where bno=#{bno}
     </delete>

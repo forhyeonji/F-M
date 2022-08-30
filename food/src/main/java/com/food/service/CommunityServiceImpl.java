@@ -37,12 +37,12 @@ public class CommunityServiceImpl implements CommunityService {
 //        boardMapper.cntup(bno);
         return communityMapper.boardDetail(communityVO);
     }
-    public void modify(CommunityVO communityVO){
-        communityMapper.modify(communityVO);
+    public int boardModify(CommunityVO communityVO){
+        return communityMapper.boardModify(communityVO);
     }
 
-    public void remove(CommunityVO communityVO){
-        communityMapper.remove(communityVO);
+    public int boardDelete(CommunityVO communityVO){
+       return communityMapper.boardDelete(communityVO);
     }
     public int total(){
         return communityMapper.total();

@@ -21,10 +21,10 @@ public interface CommunityMapper {
     void cntup(CommunityVO communityVO);
 
     // 게시글 수정에 해당되는 DB작업 설계
-    public void modify(CommunityVO communityVO);
+    int boardModify(CommunityVO communityVO);
 
     // 게시글 삭제에 해당되는 DB작업 설계
-    public void remove(CommunityVO communityVO);
+    int boardDelete(CommunityVO communityVO);
 
     // 게시판 총 수
     int total();

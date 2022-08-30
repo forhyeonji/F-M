@@ -21,15 +21,15 @@ public class UserController extends CommonController{
     @Autowired
     private UserService userService;
 
-//    @RequestMapping(value = "/join")
-//    public ResponseEntity<UserVO> joinPost(@RequestBody UserVO userVO) {
-//        int result = userService.join(userVO);
-//            if(result==1){
-//                return new ResponseEntity<>(HttpStatus.OK);
-//            }else{
-//                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-//            }
-//    }
+    @RequestMapping(value = "/join")
+    public ResponseEntity<UserVO> joinPost(@RequestBody UserVO userVO) {
+        int result = userService.join(userVO);
+            if(result==1){
+                return new ResponseEntity<>(HttpStatus.OK);
+            }else{
+                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+            }
+    }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public ResponseEntity<String> login(UserVO userVO) {

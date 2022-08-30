@@ -23,7 +23,36 @@ public class CommunityController {
     @RequestMapping(value = "/community/write", method = RequestMethod.POST)
     public ResponseEntity<String> postBoardWrite(@RequestBody CommunityVO communityVO) {
         int result = communityService.boardWrite(communityVO);
-        System.out.println(communityVO);
+        if (result == 1) {
+            return new ResponseEntity<>("success", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @RequestMapping(value = "/community/modify", method = RequestMethod.POST)
+    public ResponseEntity<String> postBoardModify(@RequestBody CommunityVO communityVO) {
+        int result = communityService.boardModify(communityVO);
+        if (result == 1) {
+            return new ResponseEntity<>("success", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @RequestMapping(value = "/community/detail", method = RequestMethod.POST)
+    public ResponseEntity<String> postBoardDetail(@RequestBody CommunityVO communityVO) {
+        int result = communityService.boardModify(communityVO);
+        if (result == 1) {
+            return new ResponseEntity<>("success", HttpStatus.OK);
+        } else {
+            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    @RequestMapping(value = "/community/delete", method = RequestMethod.POST)
+    public ResponseEntity<String> postBoardDelete(@RequestBody CommunityVO communityVO) {
+        int result = communityService.boardDelete(communityVO);
         if (result == 1) {
             return new ResponseEntity<>("success", HttpStatus.OK);
         } else {
@@ -31,3 +60,4 @@ public class CommunityController {
         }
     }
 }
+

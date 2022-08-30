@@ -35,8 +35,7 @@ public class ViewController {
     }
 
     @RequestMapping(value="/community/write", method = RequestMethod.GET)
-    public String getBoardWrite(CommunityVO communityVO, Model model){
-        model.addAttribute("id", communityService.boardDetail(communityVO));
+    public String getBoardWrite(){
         return "/Board/BoardWrite";
     }
 
@@ -44,5 +43,10 @@ public class ViewController {
     public String getBoardDetail(CommunityVO communityVO, Model model){
         model.addAttribute("detail", communityService.boardDetail(communityVO));
         return "/Board/BoardDetail";
+    }
+    @RequestMapping(value="/community/modify", method = RequestMethod.GET)
+    public String getBoardModify(CommunityVO communityVO, Model model){
+        model.addAttribute("detail", communityService.boardDetail(communityVO));
+        return "/Board/BoardModify";
     }
 }

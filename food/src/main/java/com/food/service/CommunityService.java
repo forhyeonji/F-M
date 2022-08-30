@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public interface CommunityService {
     // 글쓰기 설계
 //    public void write(BoardVO board);
-    public int boardWrite(CommunityVO communityVO);
+    int boardWrite(CommunityVO communityVO);
 
     // 글 목록 리스트 설계
 //    public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
@@ -18,10 +18,10 @@ public interface CommunityService {
     CommunityVO boardDetail(CommunityVO communityVO);
 
     // 글 수정 설계
-    public void modify(CommunityVO communityVO);
+    int boardModify(CommunityVO communityVO);
 
     // 글 삭제 설계
-    public void remove(CommunityVO communityVO);
+    int boardDelete(CommunityVO communityVO);
 
     int total();
 }
