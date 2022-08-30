@@ -15,12 +15,6 @@ container{
 	font-family : sans-serif;
 	}
 
-hr{
-	width : 1050px;
-	vertical-align:center;
-	size : 20px;
-	}
-	
 #insert_cont{
 	vertical-align : center;
 	border : 1px solid #dddddd;
