@@ -25,8 +25,10 @@
                     </tbody>
                 </table>
                 <div id="bw_foot">
-                    <button type="submit" class="btn_write">수정하기</button>
-                    <a href="/community/bread"><button type="button" class="btn_write btn_cancel">취소</button></a>
+                    <c:if test="${customer != null}">
+                        <button type="submit" class="btn_write">수정하기</button>
+                    </c:if>
+                    <a href="/community/bread"><button type="button" class="btn_write btn_cancel">목록</button></a>
                 </div>
             </form>
         </div>

@@ -1,18 +1,17 @@
 package com.food.controller;
 
-import com.food.model.BoardVO;
-import com.food.service.BoardService;
+import com.food.model.CommunityVO;
+import com.food.service.CommunityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @Controller
 public class ViewController {
     @Autowired
-    BoardService boardService;
+    CommunityService communityService;
     @RequestMapping(value = "/join", method = RequestMethod.GET)
     public String join() {
         return "/Main/insert";
@@ -36,13 +35,14 @@ public class ViewController {
     }
 
     @RequestMapping(value="/community/write", method = RequestMethod.GET)
-    public String getBoardWrite(){
+    public String getBoardWrite(CommunityVO communityVO, Model model){
+        model.addAttribute("id", communityService.boardDetail(communityVO));
         return "/Board/BoardWrite";
     }
 
     @RequestMapping(value="/community/detail", method = RequestMethod.GET)
-    public String getBoardDetail(BoardVO boardVO,Model model){
-        model.addAttribute("detail",boardService.boardDetail(boardVO));
+    public String getBoardDetail(CommunityVO communityVO, Model model){
+        model.addAttribute("detail", communityService.boardDetail(communityVO));
         return "/Board/BoardDetail";
     }
 }

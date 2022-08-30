@@ -1,6 +1,6 @@
 package com.food.model;
 
-public class BoardVO {
+public class CommunityVO {
     private int bno;
     private String title;
     private String context;
