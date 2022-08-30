@@ -16,7 +16,7 @@
 		) as boardlist
 		
 		<![CDATA[
-		where rownum > 0 and rownum <= 10;
+		where rownum > #{pageNum} and rownum <= #{amount}
 		]]>
 	
 	</select>
