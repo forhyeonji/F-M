@@ -82,3 +82,9 @@ a.sh_a {
 	display: table;
 	clear: both;
 }
+
+img {
+    margin-top: 55px;
+    width: 530px;
+    height: 450px;
+}

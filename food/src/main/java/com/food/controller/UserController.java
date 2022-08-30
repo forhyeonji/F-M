@@ -21,7 +21,7 @@ public class UserController extends CommonController{
     @Autowired
     private UserService userService;
 
-    @RequestMapping(value = "/join", consumes = { MediaType.ALL_VALUE }, produces = { MediaType.APPLICATION_JSON_VALUE })
+    @RequestMapping(value = "/join")
     public ResponseEntity<UserVO> joinPost(@RequestBody UserVO userVO) {
         int result = userService.join(userVO);
             if(result==1){

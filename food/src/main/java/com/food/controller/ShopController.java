@@ -4,9 +4,11 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+
 @Controller
 public class ShopController {
 
+	
 	@RequestMapping(value = "/shop", method = RequestMethod.GET)
 	public String list() {
 		return "Shop/shop";
@@ -23,8 +25,11 @@ public class ShopController {
 	}
 	
 	@RequestMapping(value = "/shopPurchase", method = RequestMethod.GET)
-	public String aaa() {
+	public String Purchase() {
 		return "Shop/shopPurchase";
 	}
+	
+	
+	
 
 }

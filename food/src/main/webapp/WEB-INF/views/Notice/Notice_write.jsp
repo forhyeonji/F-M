@@ -26,7 +26,7 @@
 		
 	
 		<tr>
-			<td><textarea class="NOTI_textarea" placeholder="내용을 입력해 주세요" name="content"></textarea></td>
+			<td><textarea class="NOTI_textarea" placeholder="내용을 입력해 주세요" name="context"></textarea></td>
 			
 		</tr>
 	

@@ -2,8 +2,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"  pageEncoding="UTF-8"%>
     <div id="container">
         <div id="content">
-            <form method="get" action="/community/bread" accept-charset="UTF-8" id="bwrite_form">
-                <input type="text" name="bno" value="${detail.bno}">
+            <form method="get" action="/community/modify" accept-charset="UTF-8" id="bwrite_form">
+                <input type="text" id="b_bno" name="bno" value="${detail.bno}" readonly>
                 <table class="b_table">
                     <thead>
                     <tr>
@@ -25,8 +25,11 @@
                     </tbody>
                 </table>
                 <div id="bw_foot">
-                    <button type="submit" class="btn_write">수정하기</button>
-                    <a href="/community/bread"><button type="button" class="btn_write btn_cancel">취소</button></a>
+<%--                    <c:if test="${customer != null}">--%>
+                        <button type="submit" class="btn_write">수정하기</button>
+                        <button type="button" class="btn_write btn_delete">삭제하기</button>
+<%--                    </c:if>--%>
+                    <a href="/community/bread"><button type="button" class="btn_write btn_cancel">목록</button></a>
                 </div>
             </form>
         </div>
