@@ -1,11 +1,19 @@
 package com.food.controller;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import com.food.service.MypageService;
+
 @Controller
 public class MypageController {
+	
+	@Autowired
+	MypageService ms;
+	
 
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public String mypage() {
@@ -58,7 +66,9 @@ public class MypageController {
 	}
 	//내가 쓴 글 보기
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
-	public String mywrite() {
+	public String mywrite(Model model) {
+
+		model.addAttribute("mywrite", ms.mywrite());
 		return "Mypage/mywrite";
 	}
 	//내가 쓴 댓글 보기
