@@ -8,32 +8,48 @@
 	
 	<!-- 게시글 목록 -->
 	<select id="list" resultType="com.food.model.NotiBoardVO">
-		select * from noti_notiboard
+		select *
+		from(
+		select @rownum:= @rownum+1 rownum, c.*
+		from tb_notice c, (select @rownum:=0) as tmp
+		order by bno desc
+		) as boardlist
+		
+		<![CDATA[
+		where rownum > 0 and rownum <= 10;
+		]]>
+	
 	</select>
 	
 	
 	<!-- 게시글 상세보기 -->
 	<select id="detail" resultType="com.food.model.NotiBoardVO">
-		select * from noti_notiboard where bno=#{bno}
+		select * from tb_notice where bno=#{bno}
 	</select>
 	
 	<!-- 게시글 수정 -->
 	<update id="modify">
-		update noti_notiboard
-		set title=#{title}, content=#{content}
+		update tb_notice
+		set title=#{title}, context=#{context}
 		where bno=#{bno}
 	</update>
 	
 	<!-- 게시글 삭제 -->
 	<delete id="remove">
-		delete from noti_notiboard
+		delete from tb_notice
 		where bno=#{bno}
 	</delete>
 	
+	<!-- tb_notice테이블 전체 글 수 -->
+	<select id="total" resultType="int">
+		select count(*) from tb_notice
+	</select>
+	
+	
 	<!-- 게시글 글쓰기 -->
 	<insert id="write">
-	insert into noti_notiboard (title, content, reg_dt, user_id)
-	values(#{title}, #{content}, CURDATE(), #{user_id});
+	insert into tb_notice (title, context, reg_dt, user_id)
+	values(#{title}, #{context}, CURDATE(), #{user_id});
 	</insert>
 	
 	

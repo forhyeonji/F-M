@@ -3,7 +3,7 @@ package com.food.model;
 public class NotiBoardVO {
     private int bno;
     private String title;
-    private String content;
+    private String context;
     private int cnt;
     private String user_id;
     private String reg_dt;
@@ -30,11 +30,11 @@ public class NotiBoardVO {
 	public void setTitle(String title) {
 		this.title = title;
 	}
-	public String getContent() {
-		return content;
+	public String getcontext() {
+		return context;
 	}
-	public void setContent(String content) {
-		this.content = content;
+	public void setcontext(String context) {
+		this.context = context;
 	}
 	public int getCnt() {
 		return cnt;
@@ -50,7 +50,7 @@ public class NotiBoardVO {
 	}
 	@Override
 	public String toString() {
-		return "NotiBoardVO [bno=" + bno + ", title=" + title + ", content=" + content + ", cnt=" + cnt + ", user_id="
+		return "NotiBoardVO [bno=" + bno + ", title=" + title + ", context=" + context + ", cnt=" + cnt + ", user_id="
 				+ user_id + ", reg_dt=" + reg_dt + "]";
 	}
 	

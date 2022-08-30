@@ -42,11 +42,32 @@
 				<td class="NOTI_list_regdate">${Notiboardlist.reg_dt}</td>
 			</tr>
 		</c:forEach>
-		
-		
+		<!-- for문 끝 -->
 		</table>
-		</div> <!-- main_center -->
 		
+		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
+		<c:if test="${paging.prevBtn}">
+			<a href="/notice?pageNum=${paging.startPage-1}&amount=${paging.cri.amount}">이전</a>
+		</c:if>
+		
+		
+		<!-- begin(1)이 end(10)가 될 동안 반복 -->
+		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+			<a href="/notice?pageNum=${num}&amount=${paging.cri.amount}"> ${num} </a>
+		</c:forEach>
+		
+		
+		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
+		<c:if test="${paging.nextBtn}">
+			<a href="/notice?pageNum=${paging.startPage+1}&amount=${paging.cri.amount}">다음</a>
+		</c:if>
+		
+		
+		
+		
+		
+		
+		</div> <!-- main_center -->
 	
 	</div> <!-- main -->
 </div> <!-- container -->
