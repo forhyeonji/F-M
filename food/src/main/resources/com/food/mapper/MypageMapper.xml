@@ -6,7 +6,7 @@
 <mapper namespace="com.food.mapper.MypageMapper">
   
 	<select id="mywrite" resultType="com.food.model.MypageVO">
-		select * from tb_community order by reg_dt
+		select * from tb_community order by reg_dt desc
 	</select>
   
 </mapper>
