@@ -31,7 +31,7 @@
 		</tr>
 		
 		<tr>
-		<td colspan="2" height="600px">${detail.content}</td>
+		<td colspan="2" height="600px">${detail.context}</td>
 		</tr>
 	</table>
 	

@@ -35,7 +35,7 @@
         <div id="header_main">
             <div id="h_s1">
                 <div id="h_logoBox">
-                    <a href="/main"><img src="../../../resources/image/HeaderImg/코카콜라.jpg" id="h_banner"></a>
+                    <a href="/"><img src="../../../resources/image/HeaderImg/코카콜라.jpg" id="h_banner"></a>
                 </div> <!-- logoBox -->
                 <div id="h_search">
                             <div class="h_searchTd">
@@ -43,13 +43,16 @@
                                 <img src="../../../resources/image/HeaderImg/돋보기.jpg" id="h_mag">
                             </div>
                 </div>
+                <div>
+                    <a href="/login"><button>로그인</button></a>
+                </div>
             </div>
             <div class="h_navBox">
                 <table frame="void" id="h_menu">
                     <tr>
-                        <td class="h_nav"><a href="/bread">레시피</a></td>
+<%--                        <td class="h_nav"><a href="/community/bread">레시피</a></td>--%>
                         <td class="h_nav"><a href="/shop">쇼핑</a></td>
-                        <td class="h_nav"><a href="/bread">커뮤니티</a></td>
+                        <td class="h_nav"><a href="/community/bread">커뮤니티</a></td>
                         <td class="h_nav"><a href="/notice">고객센터</a></td>
                     </tr>
                 </table>

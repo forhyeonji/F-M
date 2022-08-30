@@ -26,7 +26,7 @@
 		
 	
 		<tr>
-			<td><textarea class="NOTI_textarea" name="content" >${modify.content}</textarea></td>
+			<td><textarea class="NOTI_textarea" name="context" >${modify.context}</textarea></td>
 			
 		</tr>
 	

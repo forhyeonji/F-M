@@ -12,7 +12,7 @@ function boardList(){
 
                 str += "<tr><td class='b_list'>" + data[i].bno + "</td>"
                 str += "<td class='b_list blist_title'><a href='detail?bno="
-                        + data[i].bno + "'>" + data[i].title + "</a></td>"
+                        + data[i].bno + "' class='b_detail'>" + data[i].title + "</a></td>"
                 str += "<td class='b_list'>" + data[i].cnt + "</td>"
                 str += "<td class='b_list'>" + data[i].mod_dt + "</td>"
                 str += "<td class='b_list'>" + data[i].user_id + "</td></tr>"

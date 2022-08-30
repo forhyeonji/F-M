@@ -7,7 +7,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.food.model.CriteriaVO;
 import com.food.model.NotiBoardVO;
+import com.food.model.PageVO;
 import com.food.service.NotiBoardService;
 
 @Controller
@@ -20,9 +22,13 @@ public class NoticeController {
 	
 
 		@RequestMapping(value = "/notice", method = RequestMethod.GET)
-		public String notice (Model model) {
+		public String notice (Model model, CriteriaVO cri) {
 			
-			model.addAttribute("list",nbs.list());
+			model.addAttribute("list", nbs.list(cri));
+			
+			int total = nbs.total();
+			
+			model.addAttribute("paging", new PageVO(cri, total));
 			
 			return "/Notice/Notice";
 		}
