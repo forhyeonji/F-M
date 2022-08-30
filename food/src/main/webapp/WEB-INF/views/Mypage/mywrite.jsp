@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -36,17 +37,16 @@
 			</div>
 				<table id="mywrite" border="1" style="width:500px;">
 					<tr>
-						<th>📝</th><th>제목</th><th>작성일자</th>
+						<th>제목</th><th>작성일자</th>
 					</tr>
+					<tr><p>DB 글에 아이디가 없어서 셀렉이 안됨 / 그래서 전체출력중</p></tr>
+					<!-- for문 시작 -->
+					<c:forEach items="${mywrite}" var="mywrite">
 					<tr>
-						<td style="height:80px">📝글 썸네일</td><td>맛있는 과일 고르기</td><td>2022/08/08</td>
+						<td>${mywrite.title}</td>
+						<td>${mywrite.reg_dt}</td>
 					</tr>
-					<tr>
-						<td style="height:80px">📝글 썸네일</td><td>여름에 제일 맛있는 과일</td><td>2022/08/01</td>
-					</tr>
-					<tr>
-						<td style="height:80px">📝글 썸네일</td><td>이번에도 글</td><td>2022/07/25</td>
-					</tr>				
+					</c:forEach>				
 				</table>
 		</div>
 		<div>최근본상품은 생략???</div>
