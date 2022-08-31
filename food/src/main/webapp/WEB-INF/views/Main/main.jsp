@@ -14,7 +14,7 @@
 
 	<div>
 		<div>
-			<img src="../../../resources/image/main_image/main_slide_ex.png">
+			<img src="../../../resources/image/main_image/main_slide_ex1.png">
 		</div>
 	</div>
 	
@@ -27,7 +27,7 @@
 		<div class="main_display">
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>색종이</p>
@@ -36,7 +36,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>고등어</p>
@@ -45,7 +45,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>컴퓨터</p>
@@ -54,8 +54,8 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
-				</div>
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
+				</div>	
 				<div>
 					<p>생수</p>
 					<p>3만원</p>
@@ -71,7 +71,7 @@
 		<div class="main_display">
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>색종이</p>
@@ -80,7 +80,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>고등어</p>
@@ -89,7 +89,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>컴퓨터</p>
@@ -98,7 +98,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>생수</p>
@@ -115,7 +115,7 @@
 		<div class="main_display">
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>색종이</p>
@@ -124,7 +124,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>고등어</p>
@@ -133,7 +133,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>컴퓨터</p>
@@ -142,7 +142,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>생수</p>
@@ -159,7 +159,7 @@
 		<div class="main_display">
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>색종이</p>
@@ -168,7 +168,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>고등어</p>
@@ -177,7 +177,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>컴퓨터</p>
@@ -186,7 +186,7 @@
 			</div>
 			<div>
 				<div class="main_pic">
-					<img src="../../../resources/image/main_image/main_main_ex.png">
+					<img src="../../../resources/image/main_image/main_main_ex1.png">
 				</div>
 				<div>
 					<p>생수</p>
