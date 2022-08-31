@@ -1,6 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ include file="../Header/Header.jsp" %>
 
 
@@ -26,7 +25,7 @@
 		
 		
 		<!-- 검색기능 -->
-	<form action="/notice" method="get">
+	<form action="/notice" id="searchForm" method="get">
 	
 		<select name="type">
 			<option value="T">제목</option>
@@ -40,7 +39,7 @@
 		<input type="text" name="pageNum" value="${paging.criteriaVO.pageNum}">
 		<input type="text" name="amount" value="${paging.criteriaVO.amount}">
 		
-		<input type="submit" value="검색">
+		<input type="button" value="검색">
 		
 	</form>
 		
