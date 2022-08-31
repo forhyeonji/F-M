@@ -37,7 +37,7 @@
 	
 
 	
-	<a href="notice_detail?bno=${Notiboardlist.bno}"><input type="button" value="이전글" class="NOTI_but"></a>
+	<a href="#"><input type="button" value="이전글" class="NOTI_but"></a>
 	<input type="button" value="다음글" class="NOTI_but">
 	<input type="button" value="목록"  class="NOTI_but" onclick="location.href='http://localhost:8080/notice'">
 	

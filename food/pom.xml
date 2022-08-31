@@ -173,7 +173,11 @@
 			<artifactId>javax.inject</artifactId>
 			<version>1</version>
 		</dependency>
-				
+		
+		
+		
+		
+		
 		<!-- Servlet -->
 		<dependency>
 			<groupId>javax.servlet</groupId>

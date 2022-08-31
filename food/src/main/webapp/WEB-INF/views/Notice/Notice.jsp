@@ -21,8 +21,8 @@
 		
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
-		
-		
+
+테스트
 		
 		<!-- 검색기능 -->
 	<form action="/notice" id="searchForm" method="get">
@@ -36,13 +36,13 @@
 		
 		
 		<input type="text" name="keyword">
-		<input type="text" name="pageNum" value="${paging.criteriaVO.pageNum}">
-		<input type="text" name="amount" value="${paging.criteriaVO.amount}">
 		
-		<input type="button" value="검색">
+		<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
+		<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
+		
+		<input type="button" value="검색" id="searchBtn">
 		
 	</form>
-		
 		
 		
 		
@@ -60,7 +60,21 @@
 		<c:forEach items="${list}" var="Notiboardlist">
 			<tr>
 				<td class="NOTI_list_no">${Notiboardlist.bno}</td>
-				<td class="NOTI_list_title"><a href="notice_detail?bno=${Notiboardlist.bno}" class="NOTI_a">${Notiboardlist.title}</a></td>
+				<td class="NOTI_list_title">
+
+
+
+				<c:choose>
+					<c:when test="${Notiboardlist.boldtitle}">
+						<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:red"><b>[중요] ${Notiboardlist.title}</b></a>
+					</c:when>
+					<c:otherwise>
+						<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:black">${Notiboardlist.title}</a>
+					</c:otherwise>
+				</c:choose>
+
+
+				</td>
 				<td class="NOTI_list_writer">${Notiboardlist.user_id}</td>
 				<td class="NOTI_list_regdate">${Notiboardlist.reg_dt}</td>
 			</tr>
@@ -86,10 +100,7 @@
 		<c:if test="${paging.nextBtn}">
 			<a href="/notice?type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 		</c:if>
-		
-		
-		
-		
+
 		
 		
 		</div> <!-- main_center -->
