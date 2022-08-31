@@ -1,24 +1,28 @@
 @charset "UTF-8";
 
-* {
+body {
+	width:100%;
 	margin: 0px;
 	padding: 0px;
-	
+
 }
 
 #my_con {
 	width: 1050px;
-	margin: 0px auto;
-	padding: 10px;
+	margin : 25px auto;
+
 }
 
-#main {
+#my_main {
+	margin:auto;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
+
 }
 
-#my_con div {
+#my_side_left {
 	margin: 5px;
+	padding: 5px;
 }
 
 #my_con a {
@@ -29,7 +33,8 @@
 	padding : 5px;
 }
 
-#page_title {
+
+#my_title {
 	display:flex;
 	justify-content: center;
 	font-size:150%;
@@ -40,34 +45,173 @@
 	display: flex;
 	justify-content: center;
 	align-items:center;
+	border : solid 1px rgb(234, 234, 234);
+	padding: 15px 0px;
 }
+
+#my_notice > div{
+	width : 200px;
+	border : solid 1px rgb(234, 234, 234);
+	padding: 15px 0px 15px 20px;
+	margin : 0px;
+}
+
 #my_con img{
 	height: 100px;
 }
 
-#my_con #center{	
-	width:500px;
+#my_center{	
+	width:700px;
 	border:1px solid;
+	padding: 15px;
+	margin : 10px;
 }
 
-#go_watched{
-	background-color:#ffcbb3;
-}
-
-.mypage_center_go{
-	display: flex;
-	justify-content: space-between;
-}
-
-.mypage_go{
+#my_side_right{
 	width:200px;
-	border:1px solid;
-	padding:10px;
+}
+
+/* mypage */
+
+.my_center_go{
+	display: flex;
+	justify-content: space-evenly;
+}
+
+.my_go{
+	width:170px;
+	height:60px;
+	vertical-align:middle;
 	text-align:center;
+	border:1px solid;
+	padding: 15px;
+	margin : 10px;
+}
+
+
+
+/* orderlist
+canclelist 
+*/
+
+.my_order1{
+	border: 1px solid;
+	margin:10px 0;
+}
+
+.my_order1 > table{
+	width:100%;
+
 }
 
 #order{
 	width:300px;
 	height:30px;
 	background-color:#ffcbb3;
+}
+
+
+
+/* cart */
+
+#my_cartlist > table{
+	border:1;
+	width:100%;
+}
+#my_cartorder{
+	display:flex;
+	justify-content: center;
+}
+#my_cartpay >table{
+	margin:auto;
+	border:1;
+	width:80%;
+}
+
+
+/* mylike */
+#my_like{
+	border : solid 1px rgb(234, 234, 234);
+	width:100%
+}
+
+
+
+/* myreply */
+#my_reply{
+	border : solid 1px rgb(234, 234, 234);
+	width:100%
+}
+
+
+
+/* mywrite */
+#my_write{
+	border : solid 1px rgb(234, 234, 234);
+	width:100%
+}
+
+
+/* ordercancle */
+#my_ordercancle{
+	border: 1px solid;
+}
+
+#my_ordercancle_Tb{
+	width:100%;
+}
+
+#my_ordercancle_why{
+	border: 1px solid;
+	width:100%;
+}
+
+
+/* orderdetail */
+#my_orderdetail{
+	border:1px solid;
+	
+}
+
+.my_orderdetail_Tb{
+	width:100%;
+	
+}
+
+#my_orderdetail_pay>table{
+	margin:auto;
+	border:1;
+	width:80%;
+}
+
+
+/*  orderrefund */
+#my_orderrefund{
+	border: 1px solid;
+}
+#my_orderrefund_Tb{
+	width:100%;
+}
+
+
+/* profile_edit */
+#my_profile_edit{
+	border:1px solid;
+	width:100%;
+}
+#my_resign_btn{
+	float:right;
+}
+
+
+/* myresign */
+#my_resign{
+	width:100%;
+}
+#my_resign_txt{
+	text-align:center;
+}
+
+#my_resign_go{
+	float:right;
 }
