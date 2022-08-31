@@ -4,8 +4,37 @@ package com.food.model;
 public class CriteriaVO {
     private int pageNum;
     private int amount;
+    private String keyword;
+    private String type;
 
-    public CriteriaVO(int pageNum, int amount) {
+    
+
+    
+    /* 검색기능 - keyword, type */
+    public String getKeyword() {
+		return keyword;
+	}
+
+	public void setKeyword(String keyword) {
+		this.keyword = keyword;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	
+	
+	
+	
+	
+	/* 페이징 처리 - pageNum, amount */
+	
+	public CriteriaVO(int pageNum, int amount) {
         this.pageNum = pageNum;
         this.amount = amount;
     }
@@ -15,12 +44,10 @@ public class CriteriaVO {
     }
 
     @Override
-    public String toString() {
-        return "CriteriaVO{" +
-                "pageNum=" + pageNum +
-                ", amount=" + amount +
-                '}';
-    }
+	public String toString() {
+		return "CriteriaVO [pageNum=" + pageNum + ", amount=" + amount + ", keyword=" + keyword + ", type=" + type
+				+ "]";
+	}
 
     public int getPageNum() {
         return pageNum;

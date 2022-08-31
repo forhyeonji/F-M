@@ -10,13 +10,30 @@
 	<select id="list" resultType="com.food.model.NotiBoardVO">
 		select *
 		from(
-		select @rownum:= @rownum+1 rownum, c.*
-		from tb_notice c, (select @rownum:=0) as tmp
-		order by bno desc
+			select @rownum:= @rownum+1 rownum, n.*
+			from tb_notice n, (select @rownum:=0) as tmp
+			
+			<if test = "keyword != null">
+                <choose>
+                   <when test="type == 'T'.toString()">
+                      where title like concat('%',#{keyword},'%')
+                   </when>
+                   <when test="type == 'C'.toString()">
+                      where context like concat('%',#{keyword},'%')
+                   </when>
+                   <otherwise>
+                      where title like concat('%',#{keyword},'%')
+                      or context like concat('%',#{keyword},'%')
+                   </otherwise>
+                </choose>
+             
+            </if>
+			
+			order by bno desc
 		) as boardlist
 		
 		<![CDATA[
-		where rownum > #{pageNum} and rownum <= #{amount}
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
 	
 	</select>
@@ -43,6 +60,22 @@
 	<!-- tb_notice테이블 전체 글 수 -->
 	<select id="total" resultType="int">
 		select count(*) from tb_notice
+		
+			<if test="keyword != null">
+	            <choose>
+	               <when test="type == 'T'.toString()">
+	                  where title like concat('%',#{keyword},'%')
+	               </when>
+	               <when test="type == 'C'.toString()">
+	                  where context like concat('%',#{keyword},'%')
+	               </when>
+	               <otherwise>
+	                  where title like concat('%',#{keyword},'%')
+	                  or context like concat('%',#{keyword},'%')
+	               </otherwise>
+	            </choose>
+	         </if>
+		
 	</select>
 	
 	

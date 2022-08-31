@@ -8,7 +8,7 @@ import com.food.model.NotiBoardVO;
 public interface NotiBoardMapper {
 	
 	// 게시글 목록
-	public ArrayList<NotiBoardVO> list(CriteriaVO cri);
+	public ArrayList<NotiBoardVO> list(CriteriaVO CriteriaVO);
 	// 게시글 상세보기
 	public NotiBoardVO detail(NotiBoardVO board);
 	// 게시글 수정
@@ -18,7 +18,7 @@ public interface NotiBoardMapper {
 	// 게시글 글쓰기
 	public void write(NotiBoardVO board);
 	// tb_notice테이블 전체 글 수
-	public int total();
+	public int total(CriteriaVO CriteriaVO);
 	
 	
 }

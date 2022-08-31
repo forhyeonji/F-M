@@ -22,13 +22,13 @@ public class NoticeController {
 	
 
 		@RequestMapping(value = "/notice", method = RequestMethod.GET)
-		public String notice (Model model, CriteriaVO cri) {
+		public String notice (Model model, CriteriaVO CriteriaVO) {
 			
-			model.addAttribute("list", nbs.list(cri));
+			model.addAttribute("list", nbs.list(CriteriaVO));
 			
-			int total = nbs.total();
+			int total = nbs.total(CriteriaVO);
 			
-			model.addAttribute("paging", new PageVO(cri, total));
+			model.addAttribute("paging", new PageVO(CriteriaVO, total));
 			
 			return "/Notice/Notice";
 		}
