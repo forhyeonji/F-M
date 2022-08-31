@@ -7,11 +7,18 @@ public class NotiBoardVO {
     private int cnt;
     private String user_id;
     private String reg_dt;
+    private boolean boldtitle;
     
     
     
     
-    
+
+	public boolean isBoldtitle() {
+		return boldtitle;
+	}
+	public void setBoldtitle(boolean boldtitle) {
+		this.boldtitle = boldtitle;
+	}
 	public String getReg_dt() {
 		return reg_dt;
 	}
@@ -51,7 +58,7 @@ public class NotiBoardVO {
 	@Override
 	public String toString() {
 		return "NotiBoardVO [bno=" + bno + ", title=" + title + ", context=" + context + ", cnt=" + cnt + ", user_id="
-				+ user_id + ", reg_dt=" + reg_dt + "]";
+				+ user_id + ", reg_dt=" + reg_dt + ", boldtitle=" + boldtitle + "]";
 	}
 	
     

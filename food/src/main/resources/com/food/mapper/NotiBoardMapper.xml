@@ -77,13 +77,15 @@
 	         </if>
 		
 	</select>
-	
+
 	
 	<!-- 게시글 글쓰기 -->
 	<insert id="write">
-	insert into tb_notice (title, context, reg_dt, user_id)
-	values(#{title}, #{context}, CURDATE(), #{user_id});
+	insert into tb_notice (title, context, reg_dt, user_id, boldtitle)
+	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle});
 	</insert>
+	
+	
 	
 	
 </mapper>
