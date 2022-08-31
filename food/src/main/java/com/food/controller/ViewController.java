@@ -41,8 +41,9 @@ public class ViewController {
     }
 
     @GetMapping("/detail/{bno}")
-    public ModelAndView getBoardDetail(@PathVariable(value="bno", required = true) String bno){
-        ModelAndView mav = new ModelAndView("detail");
+    public ModelAndView BoardDetail(@PathVariable(value="bno", required = true) String bno){
+        ModelAndView mav = new ModelAndView("BoardDetail");
+        mav.setViewName("/Board/BoardDetail");
         mav.addObject("bno",bno);
         mav.addObject("mode","detail");
 

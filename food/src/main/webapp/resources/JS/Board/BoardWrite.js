@@ -1,22 +1,4 @@
 $(function() {
-    const columns = ["bno", "title", "context", "cnt", "reg_dt", "user_id"];
-
-    const boardDetail = () => {
-        $.ajax({
-            type: 'GET',
-            url: `/api/bread/{bno}`,
-            success: (response) => {
-                if(response.code !== 'SUCCESS')
-                    return;
-
-                columns.map((key)=> $(`#${key}`).val(response.result.data[key]));
-            },
-            error: (error) => {
-                console.error(error)
-            }
-        });
-    }
-    boardDetail();
 
     $(".b_write_btn").on("click", function (){
         boardWrite();
