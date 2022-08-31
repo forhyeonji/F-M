@@ -21,6 +21,8 @@
 		
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
+
+테스트
 		
 		<!-- 검색기능 -->
 	<form action="/notice" id="searchForm" method="get">
