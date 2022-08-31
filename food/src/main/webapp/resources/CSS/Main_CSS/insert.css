@@ -45,29 +45,17 @@ container{
 
 #insert_add{
 	width : 400px;
-	height : 40px;
+	height : 42px;
 	color : white;
 	border : none;
 	background-color : salmon;
 	border-radius : 5px;
 }
 
-#insert_mailcf{
+.insert_insert_b{
 	margin : 0;
 	width : 100px;
-	height : 40px;
-	color : white;
-	border : none;
-	background-color : salmon;
-	box-sizing : content-box;
-	padding : 0px;
-	border-radius : 5px;
-}
-
-#insert_idcf{
-	margin : 0;
-	width : 100px;
-	height : 40px;
+	height : 42px;
 	color : white;
 	border : none;
 	background-color : salmon;
@@ -85,7 +73,7 @@ container{
 
 #insert_insert{
 	width : 100px;
-	height : 40px;
+	height : 42px;
 	color : white;
 	border : none;
 	background-color : salmon;
@@ -95,11 +83,11 @@ container{
 #insert_cellph{
 	box-sizing : content-box;
 	width : 400px;
-	height : 40px;
-	border : 1px solid #dddddd;
+	height : 42px;
 	text-align : center;
 	color : white;
 	background-color : salmon;
 	padding : 0px;
 	border-radius : 5px;
+	border : none;
 }

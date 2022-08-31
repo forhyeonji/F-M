@@ -1,10 +1,9 @@
-
 * {
 	margin: 0px;
 	padding: 0px;
 }
 
-.shopPurchase{
+.shopPurchase {
 	width: 1050px;
 	margin: auto;
 }
@@ -84,7 +83,95 @@ a.sh_a {
 }
 
 img {
-    margin-top: 55px;
-    width: 530px;
-    height: 450px;
+	margin-top: 37px;
+	margin-left: 37px;
+	width: 530px;
+	height: 450px;
+}
+
+.sh_purimg {
+	display: flex;
+	justify-content: space-between;
+}
+
+.sh_productex {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+.sh_Ex {
+	margin-top: 33px;
+	margin-right: 44px;
+}
+
+.sh_seller {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 25px;
+	margin-bottom: 25px;
+}
+
+.sh_pacakge {
+	display: flex;
+	justify-content: space-between;
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.sh_Num {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+#sh_amount {
+	margin-left: 36px;
+}
+
+#sh_s {
+	margin-right: 213px;
+	margin-left: 50px;
+}
+
+#sh_p {
+	margin-top: 20px;
+	margin-bottom: 15px;
+	font-size: 20pt;
+	font-family: monospace;
+	font-weight: 900;
+}
+
+#sh_penmanship {
+	color: #BDBDBD;
+	font-family: Lucida Console, Courier, monospace;
+}
+
+#sh_title {
+	font-size: 23pt;
+	font-family: fantasy;
+	margin-top: 5px;
+	margin-bottom: 6px;
+}
+
+#sh_ice {
+	margin-right: 217px;
+}
+
+#sh_pen {
+	color: #8C8C8C;
+	margin-top: 6px;
+	margin-bottom: 6px;
+}
+
+#sh_kg {
+	margin-right: 218px;
+}
+
+#sh_domestic {
+	margin-right: 197px;
+}
+
+#sh_im {
+	margin-right: 19px;
 }

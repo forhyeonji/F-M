@@ -17,6 +17,27 @@
 		<div id="login_inborder">
 		
 			<div>
+				<div>
+					<h3 id="login_sub">SNS계정으로 간편 로그인/회원가입</h3>
+				</div>
+				<div id="login_link">
+					<div>
+						<a href="네이버"><img src="../../../resources/image/main_image/icon_logo_ex.png"></a>
+					</div>
+					<div>
+						<a href="카카오톡"><img src="../../../resources/image/main_image/icon_logo_ex.png"></a>
+					</div>
+					<div>
+						<a href="인스타그램"><img src="../../../resources/image/main_image/icon_logo_ex.png"></a>
+					</div>
+				</div>
+			</div>
+			
+			<div>
+				<h3 id="login_sub2">ID 로그인</h3>
+			</div>
+		
+			<div>
 				<input type="text" id="login_id" placeholder="아이디">				
 			</div>
 				
@@ -26,31 +47,12 @@
 			<div>
 				<input type="submit" value="로그인" id="login_now">
 			</div>
-				
-		<hr style="width:350px;" color="#dddddd">
 			
-		<div>
-			<div>
-				<p id="login_sub">SNS계정으로 간편 로그인/회원가입</p>
-			</div>
-			<div id="login_link">
-				<div>
-					<a href="네이버"><img src="../../../resources/image/main_image/icon_logo_ex.png"></a>
-				</div>
-				<div>
-					<a href="카카오톡"><img src="../../../resources/image/main_image/icon_logo_ex.png"></a>
-				</div>
-				<div>
-					<a href="인스타그램"><img src="../../../resources/image/main_image/icon_logo_ex.png"></a>
-				</div>
-			</div>
-		</div>
-				
 			<div>
 				<div id="login_search">
-					<div><a href="http://localhost:8080/join">회원가입</a></div>
-					<div><a href="">아이디 찾기</a></div>
-					<div><a href="">비밀번호 찾기</a></div>
+					<div class="login_search_d"><a href="http://localhost:8080/join">회원가입</a></div>
+					<div class="login_search_d"><a href="">아이디 찾기</a></div>
+					<div class="login_search_d"><a href="">비밀번호 찾기</a></div>
 				</div>
 			</div>
 			

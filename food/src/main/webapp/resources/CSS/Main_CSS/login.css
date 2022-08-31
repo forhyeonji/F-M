@@ -13,8 +13,13 @@ p{
 	text-align : center;
 	}
 
+a{
+	text-decoration-line : none;
+	color : black;
+	}
 
 #login_homelogo{
+	margin-top : 50px;
 	display : flex;
 	justify-content : center;
 	align-items : center;
@@ -51,7 +56,11 @@ p{
 	}
 
 #login_sub{
-	font-size : 14px;
+	margin-top : 50px;
+	}
+	
+#login_sub2{
+	margin-top : 50px;
 	}
 
 #login_link{
@@ -65,9 +74,9 @@ p{
 
 #login_search{
 	margin-top : 20px;
-	margin-bottom : 30px;
+	margin-bottom : 50px;
 	width : 250px;
-	font-size : 8px;
+	font-size : 9px;
 	display : flex;
 	flex-direction : row;
 	justify-content : space-around;
@@ -89,3 +98,4 @@ p{
 	border-radius : 5px;
 	margin : 30px;
 	}
+
