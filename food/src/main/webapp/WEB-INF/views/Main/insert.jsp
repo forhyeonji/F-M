@@ -2,19 +2,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../Header/Header.jsp" %>
- 
+
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/insert.css">
 
 <div>
-	<form method ="post" action="/join">
+	<form action="/join" method ="post">
 	
 	
 		<header>
 		<h2>회원가입</h2>
 		</header>
 	
-		<container>
-		<form method ="post">
+		<div id="insert_border">
+		
 		
 		<div id="insert_cont">
 	
@@ -90,8 +90,8 @@
 			</div>
 	
 		</div>		
-		</form>
-		</container>
+	
+		</div>
 		
 		
 	

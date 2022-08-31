@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
@@ -38,11 +38,11 @@
 			</div>
 		
 			<div>
-				<input type="text" id="login_id" placeholder="아이디">				
+				<input type="text" id="login_id" name="user_id" placeholder="아이디">				
 			</div>
 				
 			<div>
-				<input type="text" id="login_pw" placeholder="비밀번호">
+				<input type="text" id="login_pw" name="user_pw" placeholder="비밀번호">
 			</div>
 			<div>
 				<input type="submit" value="로그인" id="login_now">
