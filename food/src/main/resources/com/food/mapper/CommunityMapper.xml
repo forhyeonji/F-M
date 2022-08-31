@@ -20,6 +20,18 @@
 <!--        where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum} * #{amount}-->
 <!--        ]]>-->
 <!--    </select>-->
+
+    <select id="selectCommunityOne" parameterType="java.lang.String" resultType="com.food.model.CommunityVO">
+        SELECT bno
+             , title
+             , context
+             , date_format(reg_dt, '%m-%d') reg_dt
+             , cnt
+             , user_id
+        FROM tb_community
+        WHERE bno = #{value}
+    </select>
+
     <sql id="communityListSQL">
         select
             bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id
@@ -36,6 +48,10 @@
         <include refid="commonSql.pagingSuffix" />
     </select>
 
+    <select id="selectCommunityCount" parameterType="com.food.model.ReqPageVO" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM (<include refid="communityListSQL" />) as A
+    </select>
 
     <select id="total" resultType="int" parameterType="com.food.model.CommunityVO">
         select count(*) from board

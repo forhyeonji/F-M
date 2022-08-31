@@ -16,8 +16,8 @@ public interface CommunityMapper {
 //    ArrayList<CommunityVO> boardList(CommunityVO communityVO);
 
     List<CommunityVO> selectBoardList(ReqPageVO reqPageVO);
-//    int selectCommunityCount(ReqPageVO reqPageVO);
-//    CommunityVO selectCommunityOne(String bno);
+    int selectCommunityCount(ReqPageVO reqPageVO);
+    CommunityVO selectCommunityOne(String bno);
 
     // 게시글 상세보기에 해당되는 DB작업 설계
     CommunityVO boardDetail(CommunityVO communityVO);

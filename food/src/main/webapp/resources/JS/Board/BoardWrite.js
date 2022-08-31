@@ -1,10 +1,10 @@
 $(function() {
-    const columns = ["bno", "title", "cnt", "reg_dt", "user_id"];
+    const columns = ["bno", "title", "context", "cnt", "reg_dt", "user_id"];
 
     const boardDetail = () => {
         $.ajax({
             type: 'GET',
-            url: `/${bno}`,
+            url: `/api/bread/{bno}`,
             success: (response) => {
                 if(response.code !== 'SUCCESS')
                     return;
@@ -16,7 +16,6 @@ $(function() {
             }
         });
     }
-
     boardDetail();
 
     $(".b_write_btn").on("click", function (){

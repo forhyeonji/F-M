@@ -40,11 +40,11 @@ public class ViewController {
         return "/Board/BoardWrite";
     }
 
-    @GetMapping("/community/detail/{bno}")
+    @GetMapping("/detail/{bno}")
     public ModelAndView getBoardDetail(@PathVariable(value="bno", required = true) String bno){
         ModelAndView mav = new ModelAndView("detail");
         mav.addObject("bno",bno);
-//        mav.addObject("mode","detail");
+        mav.addObject("mode","detail");
 
         return mav;
     }

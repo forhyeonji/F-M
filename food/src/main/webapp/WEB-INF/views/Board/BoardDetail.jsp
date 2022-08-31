@@ -3,7 +3,13 @@
     <div id="container">
         <div id="content">
             <form method="get" action="/community/modify" accept-charset="UTF-8" id="bwrite_form">
-                <input type="text" id="b_bno" name="bno" value="${detail.bno}" readonly>
+                <input type="text" id="b_bno" name="bno" readonly>
+                <div>cd : <input type="text" id="bno" /></div>
+                <div>title : <input type="text" id="title" /></div>
+                <div>content : <input type="text" id="context" /></div>
+                <div>regId : <input type="text" id="reg_dt" /></div>
+                <div>regDt : <input type="text" id="user_id" /></div>
+
                 <table class="b_table">
                     <thead>
                     <tr>
@@ -12,12 +18,12 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" class="b_title" maxlength="50" name="title" value="${detail.title}" readonly>
+                        <td><input type="text" class="b_title" maxlength="50" name="title" value="" readonly>
                         </td>
                     </tr>
                     <tr>
                         <td><textarea class="b_text"
-                                      maxlength="2048" name="context" readonly>${detail.context}</textarea></td>
+                                      maxlength="2048" name="context" readonly></textarea></td>
                     </tr>
                     <tr>
                         <td id="b_file"><input type="file" name="fileName" readonly></td>
@@ -35,5 +41,9 @@
         </div>
     </div>
 </div>
+<script>
+    let bno = '[[${bno}]]';
+    let mode = '[[${mode}]]';
+</script>
 </body>
 </html>

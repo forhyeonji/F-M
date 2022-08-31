@@ -28,6 +28,17 @@ public class CommunityController extends CommonController{
                 .build();
     }
 
+    @GetMapping(value="/api/bread/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO getCommunityOne(
+            @PathVariable(value="bno", required = true) String bno
+    ){
+        log.debug("request: {}", bno);
+
+        return ResCommonVO.builder()
+                .result(communityService.getBoardList(bno))
+                .code(ResCommonCode.SUCCESS)
+                .build();
+    }
 
     @PostMapping(value = "/community/write", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> postBoardWrite(@RequestBody CommunityVO communityVO) {

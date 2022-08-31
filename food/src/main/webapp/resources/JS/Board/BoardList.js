@@ -8,14 +8,6 @@ $(function (){
         title: ''
     }
 
-    const isNoticeListHead = () => {
-        let html = `<tr>`;
-        columns.map((key) => html += `<th>${key}</th>`);
-        html += `</tr>`;
-
-        $('#noticeListHead').append(html);
-    }
-
     const isCommunityListBody = (data = []) => {
         $('#b_tbody').empty();
 
@@ -32,10 +24,10 @@ $(function (){
 
         $('#b_tbody').append(html);
 
-        // $('.detail').click((e) => {
-        //     const bno = $(e.target).parent()[0].id.split("-")[1];
-        //     location.href = `/detail/${bno}`;
-        // })
+        $('.detail').click((e) => {
+            const bno = $(e.target).parent()[0].id.split("-")[1];
+            location.href = `/detail/${bno}`;
+        })
     };
 
     const isPagination = (count) => {
@@ -88,7 +80,7 @@ $(function (){
     }
 
     const onSearch = () => {
-        $('#search').click(()=> {
+        $('#b_so').click(()=> {
             pagination.title = $('#title').val();
             pagination.page = 1;
 
@@ -96,7 +88,6 @@ $(function (){
         });
     }
 
-    // isNoticeListHead();
     onCommunityList();
     onSearch();
 });

@@ -161,7 +161,7 @@ a{
     flex-direction: column;
 }
 #board_list{
-    height:auto;
+    height:440px;
     width:100%;
     box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
 }
@@ -302,4 +302,33 @@ a{
     height:40px;
     border:1px solid #dddddd;
 }
+#pagination{
+    display:flex;
+    justify-content: center;
+    margin: 10px 0;
+}
+#pagination > * {
+    margin-right: 8px;
+    cursor: pointer;
 
+    line-height: normal;
+    padding: 4px 6px 4px 6px;
+    border-radius: 20%;
+}
+
+#pagination > .select {
+    background-color: #E0EBFF;
+}
+#b_tbody > tr{
+    cursr:pointer;
+}
+#b_tbody > tr:hover{
+    cursr:pointer;
+    background-color: #E8F5FF;
+}
+.blist td{
+    padding: 6px;
+    text-align: left;
+    vertical-align: middle;
+    border-bottom: 1px solid #E0EBFF;
+}

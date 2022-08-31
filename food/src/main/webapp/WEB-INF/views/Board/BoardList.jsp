@@ -61,6 +61,8 @@
                         </tbody>
                     </table>
                 </div>
+                <div id="pagination">
+                </div>
                 <div id="board_footer">
                     <div id="b_search">
                         <div class="search_inside">
@@ -75,34 +77,6 @@
                     <div id="b_list_btns">
                             <input type="submit" value="글쓰기" id="btn_write">
                     </div>
-                </div>
-                <div id="pagination">
-<%--                    <div id="b_ps">--%>
-<%--                        <div class="b_pagingBtn">--%>
-<%--                            <c:if test="${paging.prevBtn}">--%>
-<%--                                <a href="/bread?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>--%>
-<%--                            </c:if>--%>
-<%--                        </div>--%>
-<%--                        <div id="b_pagingNum">--%>
-<%--                            <c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">--%>
-<%--                                <c:choose>--%>
-<%--                                    <c:when test="${num == paging.startPage}">--%>
-<%--                                        <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span--%>
-<%--                                                class="b_pageNum">${num}</span></a>--%>
-<%--                                    </c:when>--%>
-<%--                                    <c:when test="${num != paging.startPage}">--%>
-<%--                                        <a href="/bread?pageNum=${num}&amount=${paging.criteriaVO.amount}"><span--%>
-<%--                                                class="b_pageNum">${num}</span></a>--%>
-<%--                                    </c:when>--%>
-<%--                                </c:choose>--%>
-<%--                            </c:forEach>--%>
-<%--                        </div>--%>
-<%--                        <div class="b_pagingBtn">--%>
-<%--                            <c:if test="${paging.nextBtn}">--%>
-<%--                                <a href="/bread?pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>--%>
-<%--                            </c:if>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
                 </div>
             </div>
         </form>
