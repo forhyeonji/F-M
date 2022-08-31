@@ -23,6 +23,30 @@
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
 		
+		
+		
+		<!-- 검색기능 -->
+	<form action="/notice" method="get">
+	
+		<select name="type">
+			<option value="T">제목</option>
+			<option value="C">내용</option>
+			<option value="TC">제목+내용</option>
+		</select>
+		
+		
+		
+		<input type="text" name="keyword">
+		<input type="text" name="pageNum" value="${paging.criteriaVO.pageNum}">
+		<input type="text" name="amount" value="${paging.criteriaVO.amount}">
+		
+		<input type="submit" value="검색">
+		
+	</form>
+		
+		
+		
+		
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
 		<hr>
 		<table class="NOTI_Table">
@@ -49,19 +73,19 @@
 		
 		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
 		<c:if test="${paging.prevBtn}">
-			<a href="/notice?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+			<a href="/notice?type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 		</c:if>
 		
 		
 		<!-- begin(1)이 end(10)가 될 동안 반복 -->
 		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-			<a href="/notice?pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
+			<a href="/notice?type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
 		</c:forEach>
 		
 		
 		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
 		<c:if test="${paging.nextBtn}">
-			<a href="/notice?pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+			<a href="/notice?type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 		</c:if>
 		
 		

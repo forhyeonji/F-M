@@ -18,7 +18,7 @@ public interface NotiBoardMapper {
 	// 게시글 글쓰기
 	public void write(NotiBoardVO board);
 	// tb_notice테이블 전체 글 수
-	public int total();
+	public int total(CriteriaVO CriteriaVO);
 	
 	
 }

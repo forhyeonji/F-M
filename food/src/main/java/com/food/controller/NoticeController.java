@@ -26,7 +26,7 @@ public class NoticeController {
 			
 			model.addAttribute("list", nbs.list(CriteriaVO));
 			
-			int total = nbs.total();
+			int total = nbs.total(CriteriaVO);
 			
 			model.addAttribute("paging", new PageVO(CriteriaVO, total));
 			

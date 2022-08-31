@@ -18,5 +18,5 @@ public interface NotiBoardService {
 	// 글쓰기
 	public void write (NotiBoardVO board);
 	// tb_notice 테이블 전체 건수 설계
-	public int total();
+	public int total(CriteriaVO CriteriaVO);
 }
