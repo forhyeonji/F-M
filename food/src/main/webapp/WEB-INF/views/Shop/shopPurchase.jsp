@@ -29,32 +29,56 @@
 
 			<div class="sh_Ex">
 				<div class="sh_productName">
-					<p>한진택배</p>
-					<p>알배기배추 1kg</p>
-					<p>속이 꽉차고 달큰한 알배기 배추</p>
-					<p>배송</p>
-					<p>한진택배<br>
-					22시 전 주문 시 내일 18시 전 도착<br>
-					지역 별도 확인 요망</p>
-					<p>판매자</p>
-					<p>컬리</p>
-					<p>포장타입</p>
-					<p>냉장</p>
-					<p>판매단위</p>
-					<p>kg</p>
-					<p>1kg</p>
-					<p>원산지</p>
-					<p>국내산</p>
-					<p>안내사항</p>
-					<p>식품 특성상 중량은 3%내외 차이가 발생할 수 있습니다.</p>
-					<p>식품 특성상 이미지와 차이가 발생할 수 있습니다.</p>
-					<p>입고안내</p>
-					<p>매주 월,수 18시 이후 입고 예정</p>
-					구매수량
-					<input type="text" value="1" name="sh_amount" size="3" max="50">
-					<input type="button" value="+" name="sh_add">
-					<input type="button" value="-" name="sh_minus">
-				
+					<p id="sh_penmanship">한진택배</p>
+					<p id="sh_title">알배기배추 1kg</p>
+					<p id="sh_pen">속이 꽉차고 달큰한 알배기 배추</p>
+					<p id="sh_p">4,990원</p>
+
+					<hr>
+					<div class="sh_productex">
+						<p>배송</p>
+						<p id="sh_box">
+							한진택배<br> 22시 전 주문 시 내일 18시 전 도착<br> 지역 별도 확인 요망
+						</p>
+					</div>
+
+					<hr>
+					<div class="sh_seller">
+						<p>판매자</p>
+						<p id="sh_s">F&M</p>
+					</div>
+
+					<hr>
+					<div class="sh_pacakge">
+						<p>포장타입</p>
+						<p id="sh_ice">냉장</p>
+					</div>
+
+					<hr>
+					<div class="sh_pacakge">
+						<p>판매단위</p>
+						<p id="sh_kg">1kg</p>
+					</div>
+
+					<hr>
+					<div class="sh_pacakge">
+						<p>원산지</p>
+						<p id="sh_domestic">국내산</p>
+					</div>
+
+					<hr>
+					<div class="sh_pacakge">
+						<p>입고안내</p>
+						<p id="sh_im">매주 월,수 18시 이후 입고 예정</p>
+					</div>
+					<hr>
+
+					<div class="sh_Num">
+						구매수량 <input type="text" value="1" id="sh_amount" size="3" max="50">
+						<input type="button" value="+" id="sh_add"> <input
+							type="button" value="-" id="sh_minus">
+					</div>
+					<hr>
 				</div>
 			</div>
 		</div>
