@@ -19,42 +19,46 @@
 		<div id="insert_cont">
 	
 			<div>
-			<h4>이메일</h4>
-			<input type="text" id="" class="insert_inputext_b">
-			<input type="button" value="이메일 확인" id="insert_mailcf">
+				<h4>이메일</h4>
+				<input type="text" id="" class="insert_inputext_b">
+				<input type="button" value="이메일 확인" class="insert_insert_b">
 			</div><br>
 			
 			<div>
-			<h4>아이디</h4>
-			<input type="text" id="" class="insert_inputext_b" name="user_id">
-			<input type="button" value="중복 확인" id="insert_idcf">
+				<h4>아이디</h4>
+				<input type="text" id="" class="insert_inputext_b" name="user_id">
+				<input type="button" value="중복 확인" class="insert_insert_b">
 			</div><br>
 			
 			<div>
-			<h4>비밀번호</h4>
-			<input type="text" id="" class="insert_inputext" name="user_pw">
+				<h4>비밀번호</h4>
+				<input type="text" id="" class="insert_inputext" name="user_pw">
 			</div><br>
 			
 			<div>
-			<h4>비밀번호 재확인</h4>
-			<input type="text" id="" class="insert_inputext">
+				<h4>비밀번호 재확인</h4>
+				<input type="text" id="" class="insert_inputext">
 			</div><br>
 			
 			<div>
-			<h4>이름</h4>
-			<input type="text" id="" class="insert_inputext" name="user_name">
+				<h4>이름</h4>
+				<input type="text" id="" class="insert_inputext" name="user_name">
+			</div><br>
+			
+			<div>
+				<h4>닉네임</h4>
+				<input type="text" id="" class="insert_inputext_b" name="user_nick">
+				<input type="button" value="중복 확인" class="insert_insert_b">
 			</div><br>
 			
 	        <div>
-			<h4>주소</h4>
-			<input type="button" id="insert_add" class="" value="주소 검색">
+				<h4>주소</h4>
+				<input type="button" id="insert_add" class="" value="주소 검색">
 			</div><br>
 			
 			<div>
-			<h4>성별</h4>
-			<input type = "radio" name="gender">남자
-			<input type = "radio" name="gender">여자
-			<input type = "radio" name="gender">선택안함
+				<h4>성별</h4>																																																																																																																																																								<input type = "radio" name="gender">여자
+				<input type = "radio" name="gender">선택안함
 			</div><br>
 			
 			<div>
@@ -63,9 +67,9 @@
 			</div><br>
 			
 			<div>
-			<h4>휴대폰 번호</h4>
-			<input type="text" id="" class="insert_inputext" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br>
-			<input type="button" id="insert_cellph" class="" value="인증번호 받기">
+				<h4>휴대폰 번호</h4>
+				<input type="text" id="" class="insert_inputext" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br>
+				<input type="button" id="insert_cellph" class="" value="인증번호 받기">
 			</div><br>
 			
 			<div id=insert_term>
