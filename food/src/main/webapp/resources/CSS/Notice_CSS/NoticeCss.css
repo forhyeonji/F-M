@@ -49,12 +49,13 @@
 	}
 
 .NOTI_textarea {
-	width : 950px;
+	width : 1050px;
 	height : 400px;
 	margin : 0px auto;
 	margin-top : 10px;
 	border : none;
 	padding-left : 10px;
+	box-sizing : border-box;
 	}
 	
 
