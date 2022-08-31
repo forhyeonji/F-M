@@ -15,8 +15,8 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 	NotiBoardMapper nbm;
 	
 	// 게시글 목록
-	public ArrayList<NotiBoardVO> list(CriteriaVO cri) {
-		return nbm.list(cri);
+	public ArrayList<NotiBoardVO> list(CriteriaVO CriteriaVO) {
+		return nbm.list(CriteriaVO);
 	}	
 	// 게시글 상세보기
 	public NotiBoardVO detail(NotiBoardVO board) {

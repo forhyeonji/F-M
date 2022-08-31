@@ -45,6 +45,8 @@
 		<!-- for문 끝 -->
 		</table>
 		
+
+		
 		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
 		<c:if test="${paging.prevBtn}">
 			<a href="/notice?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
@@ -59,7 +61,7 @@
 		
 		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
 		<c:if test="${paging.nextBtn}">
-			<a href="/notice?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+			<a href="/notice?pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 		</c:if>
 		
 		

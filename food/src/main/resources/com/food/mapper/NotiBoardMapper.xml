@@ -10,13 +10,13 @@
 	<select id="list" resultType="com.food.model.NotiBoardVO">
 		select *
 		from(
-		select @rownum:= @rownum+1 rownum, c.*
-		from tb_notice c, (select @rownum:=0) as tmp
+		select @rownum:= @rownum+1 rownum, n.*
+		from tb_notice n, (select @rownum:=0) as tmp
 		order by bno desc
 		) as boardlist
 		
 		<![CDATA[
-		where rownum > #{pageNum} and rownum <= #{amount}
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
 	
 	</select>
