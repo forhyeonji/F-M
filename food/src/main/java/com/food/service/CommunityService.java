@@ -1,27 +1,51 @@
 package com.food.service;
 
+import com.food.mapper.CommunityMapper;
 import com.food.model.CommunityVO;
+import com.food.model.ReqPageVO;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 
-public interface CommunityService {
-    // 글쓰기 설계
-//    public void write(BoardVO board);
-    int boardWrite(CommunityVO communityVO);
+@Service
+@RequiredArgsConstructor
+public class CommunityService{
 
-    // 글 목록 리스트 설계
-//    public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
-    ArrayList<CommunityVO> boardList(CommunityVO communityVO);
+    private final CommunityMapper communityMapper;
 
-    // 글 상세 내용 보기 설계
-    CommunityVO boardDetail(CommunityVO communityVO);
+    public int boardWrite(CommunityVO communityVO){
+        return communityMapper.boardWrite(communityVO);
+    }
 
-    // 글 수정 설계
-    int boardModify(CommunityVO communityVO);
+//    public ArrayList<CommunityVO> boardList(CommunityVO communityVO){
+//        return communityMapper.boardList(communityVO);
+//    }
+    public Map<String, Object> getBoardList(ReqPageVO reqPageVO){
+        Map<String, Object> resultMap = new HashMap<>();
 
-    // 글 삭제 설계
-    int boardDelete(CommunityVO communityVO);
+        reqPageVO.setPage((reqPageVO.getPage() - 1) * reqPageVO.getSize());
+        resultMap.put("data", communityMapper.selectBoardList(reqPageVO));
+//        resultMap.put("count", communityMapper.selectCommunityCount(reqPageVO));
 
-    int total();
+        return resultMap;
+    }
+
+
+    public CommunityVO boardDetail(CommunityVO communityVO){
+//        boardMapper.cntup(bno);
+        return communityMapper.boardDetail(communityVO);
+    }
+    public int boardModify(CommunityVO communityVO){
+        return communityMapper.boardModify(communityVO);
+    }
+
+    public int boardDelete(CommunityVO communityVO){
+       return communityMapper.boardDelete(communityVO);
+    }
+    public int total(){
+        return communityMapper.total();
+    }
 }

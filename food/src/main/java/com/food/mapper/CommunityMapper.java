@@ -1,8 +1,10 @@
 package com.food.mapper;
 
 import com.food.model.CommunityVO;
+import com.food.model.ReqPageVO;
 import org.apache.ibatis.annotations.Mapper;
-import java.util.ArrayList;
+
+import java.util.List;
 
 @Mapper
 public interface CommunityMapper {
@@ -11,8 +13,11 @@ public interface CommunityMapper {
     public int boardWrite(CommunityVO communityVO);
 
     // 게시글 목록 리스트에 해당되는 DB작업 설계
-//    public ArrayList<BoardVO> list(CriteriaVO criteriaVO);
-    ArrayList<CommunityVO> boardList(CommunityVO communityVO);
+//    ArrayList<CommunityVO> boardList(CommunityVO communityVO);
+
+    List<CommunityVO> selectBoardList(ReqPageVO reqPageVO);
+//    int selectCommunityCount(ReqPageVO reqPageVO);
+//    CommunityVO selectCommunityOne(String bno);
 
     // 게시글 상세보기에 해당되는 DB작업 설계
     CommunityVO boardDetail(CommunityVO communityVO);

@@ -1,4 +1,23 @@
 $(function() {
+    const columns = ["bno", "title", "cnt", "reg_dt", "user_id"];
+
+    const boardDetail = () => {
+        $.ajax({
+            type: 'GET',
+            url: `/${bno}`,
+            success: (response) => {
+                if(response.code !== 'SUCCESS')
+                    return;
+
+                columns.map((key)=> $(`#${key}`).val(response.result.data[key]));
+            },
+            error: (error) => {
+                console.error(error)
+            }
+        });
+    }
+
+    boardDetail();
 
     $(".b_write_btn").on("click", function (){
         boardWrite();
@@ -48,6 +67,8 @@ function boardModify(){
         }
     })
 }
+
+
 
 function boardDelete(){
     let bno = $("#b_bno").val();

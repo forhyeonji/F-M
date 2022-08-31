@@ -4,7 +4,7 @@ public class CommunityVO {
     private int bno;
     private String title;
     private String context;
-    private String mod_dt;
+    private String reg_dt;
     private int cnt;
     private String user_id;
 
@@ -32,12 +32,12 @@ public class CommunityVO {
         this.context = context;
     }
 
-    public String getMod_dt() {
-        return mod_dt;
+    public String getReg_dt() {
+        return reg_dt;
     }
 
-    public void setMod_dt(String mod_dt) {
-        this.mod_dt = mod_dt;
+    public void setReg_dt(String reg_dt) {
+        this.reg_dt = reg_dt;
     }
 
     public int getCnt() {
@@ -62,7 +62,7 @@ public class CommunityVO {
                 "bno=" + bno +
                 ", title='" + title + '\'' +
                 ", context='" + context + '\'' +
-                ", mod_dt='" + mod_dt + '\'' +
+                ", reg_dt='" + reg_dt + '\'' +
                 ", cnt=" + cnt +
                 ", user_id='" + user_id + '\'' +
                 '}';

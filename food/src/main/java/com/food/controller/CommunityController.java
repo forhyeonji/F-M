@@ -1,27 +1,38 @@
 package com.food.controller;
 
+import com.food.common.ResCommonCode;
 import com.food.model.CommunityVO;
+import com.food.model.ReqPageVO;
+import com.food.model.ResCommonVO;
 import com.food.service.CommunityService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 
+@RequiredArgsConstructor
 @RestController
-public class CommunityController {
-    @Autowired
-    CommunityService communityService;
+public class CommunityController extends CommonController{
 
-    @RequestMapping(value = "/community/bread", method = RequestMethod.POST)
-    public ResponseEntity<ArrayList<CommunityVO>> postBoardList(CommunityVO communityVO) {
-        ArrayList<CommunityVO> list = communityService.boardList(communityVO);
-        return new ResponseEntity<>(list, HttpStatus.OK);
+    private final CommunityService communityService;
+
+    @PostMapping(value="/community/bread", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO getCommunityList(@RequestBody ReqPageVO reqVO){
+        isLog(reqVO);
+
+        return ResCommonVO.builder()
+                .result(communityService.getBoardList(reqVO))
+                .code(ResCommonCode.SUCCESS)
+                .build();
     }
 
-    @RequestMapping(value = "/community/write", method = RequestMethod.POST)
+
+    @PostMapping(value = "/community/write", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> postBoardWrite(@RequestBody CommunityVO communityVO) {
+        isLog(communityVO);
+
         int result = communityService.boardWrite(communityVO);
         if (result == 1) {
             return new ResponseEntity<>("success", HttpStatus.OK);
@@ -30,8 +41,10 @@ public class CommunityController {
         }
     }
 
-    @RequestMapping(value = "/community/modify", method = RequestMethod.POST)
+    @PostMapping(value = "/community/modify", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> postBoardModify(@RequestBody CommunityVO communityVO) {
+        isLog(communityVO);
+
         int result = communityService.boardModify(communityVO);
         if (result == 1) {
             return new ResponseEntity<>("success", HttpStatus.OK);
@@ -40,7 +53,7 @@ public class CommunityController {
         }
     }
 
-    @RequestMapping(value = "/community/detail", method = RequestMethod.POST)
+    @PostMapping(value = "/community/detail", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> postBoardDetail(@RequestBody CommunityVO communityVO) {
         int result = communityService.boardModify(communityVO);
         if (result == 1) {
@@ -50,7 +63,7 @@ public class CommunityController {
         }
     }
 
-    @RequestMapping(value = "/community/delete", method = RequestMethod.POST)
+    @PostMapping(value = "/community/delete", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<String> postBoardDelete(@RequestBody CommunityVO communityVO) {
         int result = communityService.boardDelete(communityVO);
         if (result == 1) {

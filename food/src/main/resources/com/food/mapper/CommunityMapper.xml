@@ -20,12 +20,20 @@
 <!--        where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum} * #{amount}-->
 <!--        ]]>-->
 <!--    </select>-->
-
-    <select id="boardList" resultType="com.food.model.CommunityVO">
+    <sql id="communityListSQL">
         select
-            bno, title, context, date_format(mod_dt, '%m-%d') mod_dt, cnt, user_id
+            bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id
         from tb_community
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="title != null and title != ''">
+                AND title LIKE CONCAT('%', #{title}, '%')
+            </if>
+        </trim>
         order by bno desc
+    </sql>
+    <select id="selectBoardList" parameterType="com.food.model.ReqPageVO" resultType="com.food.model.CommunityVO">
+        <include refid="communityListSQL" />
+        <include refid="commonSql.pagingSuffix" />
     </select>
 
 

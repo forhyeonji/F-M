@@ -5,46 +5,50 @@ import com.food.service.CommunityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class ViewController {
     @Autowired
     CommunityService communityService;
-    @RequestMapping(value = "/join", method = RequestMethod.GET)
+    @GetMapping(value = "/join")
     public String join() {
         return "/Main/insert";
     }
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @GetMapping(value = "/")
     public String main() {
         return "/Main/main";
 
     }
 
-    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    @GetMapping(value = "/login")
     public String login() {
         return "/Main/login";
 
     }
 
-    @RequestMapping(value="/community/bread", method = RequestMethod.GET)
+    @GetMapping("/community/bread")
     public String getBoardList(){
         return "/Board/BoardList";
     }
 
-    @RequestMapping(value="/community/write", method = RequestMethod.GET)
+    @GetMapping("/community/write")
     public String getBoardWrite(){
         return "/Board/BoardWrite";
     }
 
-    @RequestMapping(value="/community/detail", method = RequestMethod.GET)
-    public String getBoardDetail(CommunityVO communityVO, Model model){
-        model.addAttribute("detail", communityService.boardDetail(communityVO));
-        return "/Board/BoardDetail";
+    @GetMapping("/community/detail/{bno}")
+    public ModelAndView getBoardDetail(@PathVariable(value="bno", required = true) String bno){
+        ModelAndView mav = new ModelAndView("detail");
+        mav.addObject("bno",bno);
+//        mav.addObject("mode","detail");
+
+        return mav;
     }
-    @RequestMapping(value="/community/modify", method = RequestMethod.GET)
+    @GetMapping("/community/modify")
     public String getBoardModify(CommunityVO communityVO, Model model){
         model.addAttribute("detail", communityService.boardDetail(communityVO));
         return "/Board/BoardModify";
