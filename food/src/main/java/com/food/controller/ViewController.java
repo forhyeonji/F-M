@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
 
+
+
 @Controller
 public class ViewController {
     @Autowired
@@ -24,12 +26,6 @@ public class ViewController {
 
     }
 
-   /* @GetMapping(value = "/login")
-    public String login() {
-        return "/Main/login";
-
-    }*/
-
     @GetMapping("/community/bread")
     public String getBoardList(){
         return "/Board/BoardList";
@@ -41,17 +37,19 @@ public class ViewController {
     }
 
     @GetMapping("/detail/{bno}")
-    public ModelAndView BoardDetail(@PathVariable(value="bno", required = true) String bno){
+    public ModelAndView getBoardDetail(@PathVariable(value="bno", required = true) String bno){
         ModelAndView mav = new ModelAndView("BoardDetail");
         mav.setViewName("/Board/BoardDetail");
         mav.addObject("bno",bno);
-        mav.addObject("mode","detail");
 
         return mav;
     }
-   /* @GetMapping("/community/modify")
-    public String getBoardModify(CommunityVO communityVO, Model model){
-        model.addAttribute("detail", communityService.boardDetail(communityVO));
-        return "/Board/BoardModify";
-    }*/
+    @GetMapping("/modify/{bno}")
+    public ModelAndView getBoardModify(@PathVariable(value="bno", required = true) String bno){
+        ModelAndView mav = new ModelAndView("BoardModify");
+        mav.setViewName("/Board/BoardModify");
+        mav.addObject("bno",bno);
+
+        return mav;
+    }
 }

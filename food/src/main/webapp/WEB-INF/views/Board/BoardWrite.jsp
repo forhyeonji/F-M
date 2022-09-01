@@ -3,7 +3,7 @@
     <div id="container">
         <div id="content">
             <form method="get" action="/community/bread" accept-charset="UTF-8" id="bwrite_form">
-                <input type="text" name="uesr_id" id="userId" value="test">
+                <input type="text" name="uesr_id" id="userId" value="${user_id.user_id}" readonly hidden>
                 <table class="b_table">
                     <thead>
                     <tr>

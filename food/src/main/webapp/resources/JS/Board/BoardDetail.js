@@ -4,7 +4,7 @@ $(function(){
     const boardDetail = () => {
         $.ajax({
             type: 'GET',
-            url: `/api/bread/${bno}`,
+            url: `/api/detail/${bno}`,
             success: (response) => {
                 if(response.code !== 'SUCCESS')
                     return;
@@ -16,5 +16,11 @@ $(function(){
             }
         });
     }
+    const onModify = () => {
+        $("#btn_modify").click(() => {
+           location.href = `/modify/${bno}`;
+        });
+    }
     boardDetail();
+    onModify();
 })

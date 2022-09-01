@@ -13,7 +13,7 @@ import java.util.Map;
 @Service
 @RequiredArgsConstructor
 public class CommunityService{
-/*
+
     private final CommunityMapper communityMapper;
 
     public int boardWrite(CommunityVO communityVO){
@@ -52,7 +52,7 @@ public class CommunityService{
     }
     public int total(){
         return communityMapper.total();
-    }*/
+    }
 	
 	
 }

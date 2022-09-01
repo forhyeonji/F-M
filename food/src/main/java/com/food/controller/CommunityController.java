@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RestController
 public class CommunityController extends CommonController{
-/*
+
     private final CommunityService communityService;
 
     @PostMapping(value="/community/bread", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -28,7 +28,7 @@ public class CommunityController extends CommonController{
                 .build();
     }
 
-    @GetMapping(value="/api/bread/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value="/api/detail/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getCommunityOne(
             @PathVariable(value="bno", required = true) String bno
     ){
@@ -52,26 +52,16 @@ public class CommunityController extends CommonController{
         }
     }
 
-    @PostMapping(value = "/community/modify", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> postBoardModify(@RequestBody CommunityVO communityVO) {
-        isLog(communityVO);
+    @GetMapping(value="/api/modify/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO getBoardDetail(
+            @PathVariable(value="bno", required = true) String bno
+    ){
+        log.debug("request: {}", bno);
 
-        int result = communityService.boardModify(communityVO);
-        if (result == 1) {
-            return new ResponseEntity<>("success", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @PostMapping(value = "/community/detail", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> postBoardDetail(@RequestBody CommunityVO communityVO) {
-        int result = communityService.boardModify(communityVO);
-        if (result == 1) {
-            return new ResponseEntity<>("success", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        return ResCommonVO.builder()
+                .result(communityService.getBoardList(bno))
+                .code(ResCommonCode.SUCCESS)
+                .build();
     }
 
     @PostMapping(value = "/community/delete", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -82,6 +72,6 @@ public class CommunityController extends CommonController{
         } else {
             return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }*/
+    }
 }
 
