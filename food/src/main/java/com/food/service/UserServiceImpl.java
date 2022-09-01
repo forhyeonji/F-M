@@ -9,13 +9,14 @@ import org.springframework.stereotype.Service;
 public class UserServiceImpl implements UserService {
 
     @Autowired
-    UserMapper userMapper;
+    UserMapper um;
 
-    public int join(UserVO userVO) {
-        return userMapper.join(userVO);
+    public void join(UserVO userVO) {
+        um.join(userVO);
     }
 
     public UserVO login(UserVO userVO) {
-        return userMapper.login(userVO);
+      	System.out.println("로그인");
+      	return um.login(userVO);
     }
 }

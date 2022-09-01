@@ -13,32 +13,46 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.io.IOException;
+
+import javax.servlet.http.HttpSession;
 
 @Controller
 public class UserController{
 
     @Autowired
-    private UserService userService;
-
-    @RequestMapping(value = "/join")
-    public ResponseEntity<UserVO> joinPost(@RequestBody UserVO userVO) {
-        int result = userService.join(userVO);
-            if(result==1){
-                return new ResponseEntity<>(HttpStatus.OK);
-            }else{
-                return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
-            }
+    UserService us;
+    // private UserService userService;
+    
+    // 회원가입 
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    public String join() {
+    
+    	return "Main/insert";
     }
-
+    
+    //회원가입(insert 이루어짐)
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    public String joinPost(UserVO userVO) {
+    	us.join(userVO);
+    	return "redirect:/";
+    }
+    
+    // 로그인
+    @RequestMapping(value = "/login", method = RequestMethod.GET)
+    public String login(UserVO userVO) {
+    	return "Main/login";
+    }
+    
+    // 로그인 select
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public ResponseEntity<String> login(UserVO userVO) {
-        userService.login(userVO);
-        System.out.println(userVO);
-
-
-        return new ResponseEntity<>("success",HttpStatus.OK);
+    public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
+    	us.login(userVO);
+    	session.setAttribute("user_id", userVO.getUser_id());
+    	rttr.addAttribute("user_id", userVO.getUser_id());
+    	return "redirect:/";
     }
-
+    
 }
