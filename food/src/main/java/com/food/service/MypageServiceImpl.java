@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.mapper.MypageMapper;
+import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 
 @Service
@@ -15,8 +16,18 @@ public class MypageServiceImpl implements MypageService {
 	MypageMapper mm;
 	
 	//내가 쓴 글을 출력하기 위한 구현
-	public ArrayList<MypageVO> mywrite() {
-		return mm.mywrite();
+	public ArrayList<MypageVO> mywrite(CriteriaVO cri) {
+		return mm.mywrite(cri);
+	}
+	
+	//게시판 전체 건수 조회
+	public int total() {
+		return mm.total();
+	}
+	
+	//내가 쓴 글 상세보기
+	public MypageVO mywritedetail(MypageVO mypage) {
+		return mm.mywritedetail(mypage);
 	}
 
 }
