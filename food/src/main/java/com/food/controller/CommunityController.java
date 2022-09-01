@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 @RequiredArgsConstructor
 @RestController
 public class CommunityController extends CommonController{
-
+/*
     private final CommunityService communityService;
 
     @PostMapping(value="/community/bread", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
@@ -82,6 +82,6 @@ public class CommunityController extends CommonController{
         } else {
             return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
         }
-    }
+    }*/
 }
 

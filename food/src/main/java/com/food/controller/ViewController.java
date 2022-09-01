@@ -49,9 +49,9 @@ public class ViewController {
 
         return mav;
     }
-    @GetMapping("/community/modify")
+   /* @GetMapping("/community/modify")
     public String getBoardModify(CommunityVO communityVO, Model model){
         model.addAttribute("detail", communityService.boardDetail(communityVO));
         return "/Board/BoardModify";
-    }
+    }*/
 }
