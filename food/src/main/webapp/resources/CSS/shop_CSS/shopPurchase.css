@@ -82,11 +82,11 @@ a.sh_a {
 	clear: both;
 }
 
-img {
+.sh_img_cab {
 	margin-top: 37px;
 	margin-left: 37px;
 	width: 530px;
-	height: 450px;
+	height: 530px;
 }
 
 .sh_purimg {
@@ -106,13 +106,6 @@ img {
 	margin-right: 44px;
 }
 
-.sh_seller {
-	display: flex;
-	justify-content: space-between;
-	margin-top: 25px;
-	margin-bottom: 25px;
-}
-
 .sh_pacakge {
 	display: flex;
 	justify-content: space-between;
@@ -125,8 +118,56 @@ img {
 	margin-bottom: 20px;
 }
 
+.sh_sumprice {
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	margin-top: 20px;
+	margin-bottom: 10px;
+}
+
+.sh_point {
+	display: flex;
+	justify-content: flex-end;
+	color: #979797;
+}
+
+.sh_noti {
+	display: flex;
+	justify-content: flex-end;
+}
+
+.sh_box {
+	display: block;
+	margin-top: 20px;
+	width: 265px;
+	height: 55px;
+	text-align: center;
+	background-color: #FFD9EC;
+	border-radius: 10px;
+	border: none;
+	font-size: 17pt;
+	font-family: Lucida Console, Courier, monospace;
+	font-weight: 500;
+}
+
+.sh_steamed {
+	align-items: flex-end;
+	margin-right: 10px;
+	margin-top: 40px;
+}
+
+#sh_productprice {
+	font-family: Lucida Console, Courier, monospace;
+}
+
+#sh_principal {
+	font-size: 25pt;
+	font-weight: bolder;
+}
+
 #sh_amount {
-	margin-left: 36px;
+	margin-left: 53px;
 }
 
 #sh_s {
@@ -174,4 +215,10 @@ img {
 
 #sh_im {
 	margin-right: 19px;
+}
+
+#sh_boundary {
+	background: #D5D5D5;
+	height: 1px;
+	border: 0;
 }
