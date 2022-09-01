@@ -37,17 +37,46 @@
 			</div>
 				<table id="my_write">
 					<tr>
-						<th>제목</th><th>작성일자</th>
+						<th>글번호</th><th>제목</th><th>작성일자</th>
 					</tr>
 					<tr><p>DB 글에 아이디가 없어서 셀렉이 안됨 / 그래서 전체출력중</p></tr>
-					<!-- for문 시작 -->
+<!-- 원래 링크없던 버전 / for문 시작 -->	
 					<c:forEach items="${mywrite}" var="mywrite">
 					<tr>
-						<td>${mywrite.title}</td>
+						<td>${mywrite.bno }</td>
+						<td><a href="/community/detail?bno">${mywrite.title}</a></td>
 						<td>${mywrite.reg_dt}</td>
 					</tr>
-					</c:forEach>				
-				</table>
+					</c:forEach>
+				
+
+<!-- 글제목에 링크연결 for문
+					<c:forEach items="${mywritedetail }" var="mywrite" >
+						<tr>
+							<td>${mywrite.bno }</td>
+							<td><a href="/community/detail?bno">${mywrite.title }</a></td>
+							<td>${mywrite.reg_dt }</td>
+						</tr>
+					</c:forEach>
+ -->
+					</table>
+				<div>
+<!-- 이전버튼 -->			
+					<c:if test="${paging.prevBtn }">
+						<a href="/mypage/mywrite?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+					</c:if>
+
+<!-- 페이징 처리 -->		
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
+						<a href="/mypage/mywrite?pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
+					</c:forEach>
+
+<!-- 다음버튼 -->			
+					<c:if test="${paging.nextBtn }">
+						<a href="/mypage/mywrite?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+					</c:if>					
+				</div>			
+				
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

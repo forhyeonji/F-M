@@ -4,6 +4,7 @@ import com.food.model.UserVO;
 
 public interface UserService {
 
-    int join(UserVO userVO);
-    UserVO login(UserVO userVO);
+    public void join(UserVO userVO);
+    
+    public UserVO login(UserVO userVO);
 }

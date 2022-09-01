@@ -6,7 +6,23 @@
 <mapper namespace="com.food.mapper.MypageMapper">
   
 	<select id="mywrite" resultType="com.food.model.MypageVO">
-		select * from tb_community order by reg_dt desc
+		select * 
+		from (
+				select @rownum:= @rownum+1 rownum, co.*
+				from tb_community co, (select @rownum:=0) as tmp
+				order by reg_dt desc
+			 ) as mywrite
+			 <![CDATA[
+			 where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+			 ]]>	
+	</select>
+	
+	<select id="total" resultType="int">
+		select count(*) from tb_community
+	</select>
+	
+	<select id="mywritedetail" resultType="com.food.model.MypageVO">
+		select * from tb_community where bno=#{bno}
 	</select>
   
 </mapper>

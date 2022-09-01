@@ -6,12 +6,11 @@
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/insert.css">
 
 <div>
-	<form action="/join" method ="post">
-	
-	
-		<header>
+	<form action="/insert" method ="post">
+		
+		<div id="insert_head">
 		<h2>회원가입</h2>
-		</header>
+		</div>
 	
 		<div id="insert_border">
 		

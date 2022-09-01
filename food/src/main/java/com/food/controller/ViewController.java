@@ -24,11 +24,11 @@ public class ViewController {
 
     }
 
-    @GetMapping(value = "/login")
+   /* @GetMapping(value = "/login")
     public String login() {
         return "/Main/login";
 
-    }
+    }*/
 
     @GetMapping("/community/bread")
     public String getBoardList(){
