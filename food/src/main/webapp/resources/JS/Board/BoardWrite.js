@@ -1,11 +1,4 @@
 $(function() {
-
-    $(".b_write_btn").on("click", function (){
-        boardWrite();
-    })
-    $(".btn_modify").on("click", function (){
-        boardModify();
-    })
     $(".btn_delete").on("click",function(){
         let confirmflag = confirm("진짜 삭제함?");
 
@@ -15,49 +8,27 @@ $(function() {
             location.href = "/community/bread"
         }
     })
+    const onWriteCancel = () => {
+        $("#btn_write_cancel").click(() => {
+            location.href = `/community/bread`;
+        })
+    }
+    const onWrite = () => {
+        $("#b_write_btn").click(() => {
+            let title = $(".b_title").val();
+            let context = $(".b_text").val();
+            let id = $("#user_id").val();
+
+            $.ajax({
+                url: "/community/write",
+                type: "post",
+                data:  JSON.stringify({"title":title,"context":context,"user_id":id}),
+                contentType: "application/json; charset=utf-8",
+            })
+            location.href = `/detail/${bno}`;
+        })
+    }
+
+    onWriteCancel();
+    onWrite();
 })
-
-function boardWrite(){
-    let title = $(".b_title").val();
-    let context = $(".b_text").val();
-    let id = $("#userId").val();
-
-    $.ajax({
-        url: "/community/write",
-        type: "post",
-        data:  JSON.stringify({"title":title,"context":context,"user_id":id}),
-        dataType:"json",
-        contentType: "application/json; charset=utf-8",
-        success:function(){
-            boardList();
-        }
-    })
-}
-
-function boardModify(){
-    let title = $("#modify_title").val();
-    let context = $("#modify_context").val();
-    let bno = $("#b_bno").val();
-    $.ajax({
-        url: "/community/modify",
-        type: "post",
-        data:  JSON.stringify({"bno":bno,"title":title,"context":context}),
-        contentType: "application/json; charset=utf-8",
-        success:function (){
-            window.location = document.referrer;
-        }
-    })
-}
-
-
-
-function boardDelete(){
-    let bno = $("#b_bno").val();
-    $.ajax({
-        url:"/community/delete",
-        type:"post",
-        data:JSON.stringify({"bno":bno}),
-        contentType: "application/json; charset=utf-8"
-    })
-}
-

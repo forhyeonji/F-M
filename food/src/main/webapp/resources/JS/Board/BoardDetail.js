@@ -18,7 +18,7 @@ $(function(){
     }
     const onModify = () => {
         $("#btn_modify").click(() => {
-           location.href = `/modify/${bno}`;
+           location.href = `/write/${bno}`;
         });
     }
     boardDetail();

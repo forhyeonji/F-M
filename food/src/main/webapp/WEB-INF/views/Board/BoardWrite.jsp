@@ -2,8 +2,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java"  pageEncoding="UTF-8"%>
     <div id="container">
         <div id="content">
-            <form method="get" action="/community/bread" accept-charset="UTF-8" id="bwrite_form">
-                <input type="text" name="uesr_id" id="userId" value="${user_id.user_id}" readonly hidden>
+                <input type="text" name="uesr_id" id="user_id" value="${user_id}" readonly>
+                <input type="text" name="bno" id="bno" value="${bno}" readonly>
                 <table class="b_table">
                     <thead>
                     <tr>
@@ -12,11 +12,11 @@
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" class="b_title" placeholder="글 제목" maxlength="50" name="title">
+                        <td><input type="text" id="title" class="b_title" placeholder="글 제목" maxlength="50" name="title">
                         </td>
                     </tr>
                     <tr>
-                        <td><textarea class="b_text" placeholder="글 내용"
+                        <td><textarea class="b_text" id="context" placeholder="글 내용"
                                       maxlength="2048" name="context"></textarea></td>
                     </tr>
                     <tr>
@@ -25,12 +25,14 @@
                     </tbody>
                 </table>
                 <div id="bw_foot">
-                    <button type="submit" class="btn_write b_write_btn">글쓰기</button>
-                    <a href="http://localhost:8080/bread"><button type="button" class="btn_write btn_cancel">취소</button></a>
+                    <button type="button" id="b_write_btn" class="btn_write">글쓰기</button>
+                    <button type="button" id="btn_write_cancel" class="btn_write">취소</button>
                 </div>
-            </form>
         </div>
     </div>
 </div>
+<script>
+    let bno='${bno}';
+</script>
 </body>
 </html>

@@ -4,7 +4,6 @@ import com.food.model.CommunityVO;
 import com.food.service.CommunityService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.servlet.ModelAndView;
@@ -21,10 +20,7 @@ public class ViewController {
     }
 
     @GetMapping(value = "/")
-    public String main() {
-        return "/Main/main";
-
-    }
+    public String main() { return "/Main/main";  }
 
     @GetMapping("/community/bread")
     public String getBoardList(){
@@ -32,22 +28,27 @@ public class ViewController {
     }
 
     @GetMapping("/community/write")
-    public String getBoardWrite(){
-        return "/Board/BoardWrite";
+    public ModelAndView getBoardWrite(CommunityVO communityVO){
+        ModelAndView mav = new ModelAndView("/Board/BoardWrite");
+        int bno = communityService.rowCount(communityVO);
+
+        mav.addObject("bno", bno);
+
+        return mav;
     }
 
     @GetMapping("/detail/{bno}")
     public ModelAndView getBoardDetail(@PathVariable(value="bno", required = true) String bno){
-        ModelAndView mav = new ModelAndView("BoardDetail");
+        ModelAndView mav = new ModelAndView();
         mav.setViewName("/Board/BoardDetail");
         mav.addObject("bno",bno);
 
         return mav;
     }
-    @GetMapping("/modify/{bno}")
+    @GetMapping("/write/{bno}")
     public ModelAndView getBoardModify(@PathVariable(value="bno", required = true) String bno){
-        ModelAndView mav = new ModelAndView("BoardModify");
-        mav.setViewName("/Board/BoardModify");
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("/Board/BoardWrite");
         mav.addObject("bno",bno);
 
         return mav;

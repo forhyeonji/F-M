@@ -53,8 +53,8 @@
                             <th class="blist_date">글번호</th>
                             <th class="blist_title">제목</th>
                             <th class="blist_cnt">조회수</th>
-                            <th class="blist_user">날짜</th>
-                            <th class="blist_date">아이디</th>
+                            <th class="blist_date">날짜</th>
+                            <th class="blist_user">아이디</th>
                         </tr>
                         </thead>
                         <tbody id="b_tbody">

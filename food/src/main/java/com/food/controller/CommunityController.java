@@ -40,33 +40,22 @@ public class CommunityController extends CommonController{
                 .build();
     }
 
-    @PostMapping(value = "/community/write", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> postBoardWrite(@RequestBody CommunityVO communityVO) {
-        isLog(communityVO);
-
-        int result = communityService.boardWrite(communityVO);
-        if (result == 1) {
-            return new ResponseEntity<>("success", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
-    }
-
-    @GetMapping(value="/api/modify/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResCommonVO getBoardDetail(
+    // 업데이트시
+    @GetMapping(value="/api/write/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO getModifyOne(
             @PathVariable(value="bno", required = true) String bno
     ){
-        log.debug("request: {}", bno);
-
         return ResCommonVO.builder()
                 .result(communityService.getBoardList(bno))
                 .code(ResCommonCode.SUCCESS)
                 .build();
     }
 
-    @PostMapping(value = "/community/delete", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> postBoardDelete(@RequestBody CommunityVO communityVO) {
-        int result = communityService.boardDelete(communityVO);
+    @PostMapping(value = "/community/write", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<String> postBoardWrite(@RequestBody CommunityVO communityVO) {
+        isLog(communityVO);
+
+        int result = communityService.boardWrite(communityVO);
         if (result == 1) {
             return new ResponseEntity<>("success", HttpStatus.OK);
         } else {

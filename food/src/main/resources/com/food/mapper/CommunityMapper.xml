@@ -7,7 +7,7 @@
 <mapper namespace="com.food.mapper.CommunityMapper">
     <insert id="boardWrite">
         insert into tb_community(title, context, user_id)
-        values(#{title},#{context},#{user_id})
+        values (#{title}, #{context}, #{user_id})
     </insert>
 
     <select id="selectCommunityOne" parameterType="java.lang.String" resultType="com.food.model.CommunityVO">
@@ -23,7 +23,7 @@
 
     <sql id="communityListSQL">
         select
-            bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id
+        bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id
         from tb_community
         <trim prefix="WHERE" prefixOverrides="AND | OR">
             <if test="title != null and title != ''">
@@ -34,41 +34,19 @@
     </sql>
 
     <select id="selectBoardList" parameterType="com.food.model.ReqPageVO" resultType="com.food.model.CommunityVO">
-        <include refid="communityListSQL" />
-        <include refid="commonSql.pagingSuffix" />
+        <include refid="communityListSQL"/>
+        <include refid="commonSql.pagingSuffix"/>
     </select>
 
     <select id="selectCommunityCount" parameterType="com.food.model.ReqPageVO" resultType="java.lang.Integer">
         SELECT count(*)
-        FROM (<include refid="communityListSQL" />) as A
+        FROM (<include refid="communityListSQL"/>) as A
     </select>
 
-    <select id="total" resultType="int" parameterType="com.food.model.CommunityVO">
-        select count(*) from board
-    </select>
-
-    <select id="boardDetail" resultType="com.food.model.CommunityVO">
-        select bno, title, context, user_id
+    <select id="rowCount" parameterType="com.food.model.CommunityVO" resultType="int">
+        select max(bno)+1 bno
         from tb_community
-        where bno= #{bno}
     </select>
-
-    <update id="cntup">
-        update tb_community
-        set cnt = cnt + 1
-        where bno = #{bno}
-    </update>
-
-    <update id="boardModify">
-        update tb_community set
-                         title=#{title}, context=#{context}, mod_dt=now()
-        where bno=#{bno}
-    </update>
-
-    <delete id="boardDelete">
-        delete from tb_community
-        where bno=#{bno}
-    </delete>
 </mapper>
 
 

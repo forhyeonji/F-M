@@ -40,9 +40,10 @@ $(function (){
         let html = ``;
         const total = Math.floor(count / pagination.size) + (count % pagination.size !== 0 && 1);
 
-        for(let i=0; i<total; i++){
-            html += `<div class="page" id="page-${i+1}">${i+1}</div>`
-        }
+            for(let i=0; i<total; i++){
+                html += `<div class="page" id="page-${i+1}">${i+1}</div>`
+            }
+
 
         $('#pagination').append(html);
 
@@ -91,27 +92,3 @@ $(function (){
     onCommunityList();
     onSearch();
 });
-
-// $(function(){
-// boardList();
-// })
-//
-// function boardList(){
-//     $.ajax({
-//         url:"/community/bread",
-//         type:"post",
-//         success : function(data){
-//             let str = "";
-//             for(let i = 0; i<data.length; i++){
-//
-//                 str += "<tr><td class='b_list'>" + data[i].bno + "</td>"
-//                 str += "<td class='b_list blist_title'><a href='detail?bno="
-//                         + data[i].bno + "' class='b_detail'>" + data[i].title + "</a></td>"
-//                 str += "<td class='b_list'>" + data[i].cnt + "</td>"
-//                 str += "<td class='b_list'>" + data[i].reg_dt + "</td>"
-//                 str += "<td class='b_list'>" + data[i].user_id + "</td></tr>"
-//             }
-//             $("#b_tbody").append(str);
-//         }
-//     })
-// }

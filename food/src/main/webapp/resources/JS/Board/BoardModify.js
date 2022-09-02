@@ -4,7 +4,7 @@ $(function(){
     const boardModify = () => {
         $.ajax({
             type: 'GET',
-            url: `/api/modify/${bno}`,
+            url: `/api/write/${bno}`,
             success: (response) => {
                 if(response.code !== 'SUCCESS')
                     return;
@@ -16,5 +16,27 @@ $(function(){
             }
         });
     }
-    boardModify();
+    const onModifyCancel = () => {
+        $("#btn_modify_cancel").click(() => {
+            location.href = `/detail/${bno}`;
+        });
+    }
+    const onModify = () => {
+        $("#btn_BoardModify").click(() => {
+            $.ajax({
+                type:'PUT',
+                url: `/modify/${bno}`,
+                data: JSON.stringify({title:$("#title").val(),context:$("#context").val()}),
+                contentType: "application/json; charset=utf-8",
+                success: (data) => {
+                    location.href = `/detail/${bno}`
+                }
+            })
+        })
+    }
+
+
+    boardModify()
+    onModifyCancel();
+    onModify()
 })

@@ -20,9 +20,6 @@ public class CommunityService{
         return communityMapper.boardWrite(communityVO);
     }
 
-//    public ArrayList<CommunityVO> boardList(CommunityVO communityVO){
-//        return communityMapper.boardList(communityVO);
-//    }
     public Map<String, Object> getBoardList(ReqPageVO reqPageVO){
         Map<String, Object> resultMap = new HashMap<>();
 
@@ -38,21 +35,7 @@ public class CommunityService{
 
         return resultMap;
     }
-
-    public CommunityVO boardDetail(CommunityVO communityVO){
-//        boardMapper.cntup(bno);
-        return communityMapper.boardDetail(communityVO);
+    public int rowCount(CommunityVO communityVO){
+        return communityMapper.rowCount(communityVO);
     }
-    public int boardModify(CommunityVO communityVO){
-        return communityMapper.boardModify(communityVO);
-    }
-
-    public int boardDelete(CommunityVO communityVO){
-       return communityMapper.boardDelete(communityVO);
-    }
-    public int total(){
-        return communityMapper.total();
-    }
-	
-	
 }
