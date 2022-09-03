@@ -44,9 +44,19 @@
     </select>
 
     <select id="rowCount" parameterType="com.food.model.CommunityVO" resultType="int">
-        select max(bno)+1 bno
-        from tb_community
+        select auto_increment
+        from information_schema.tables
+        where table_name = 'tb_community'
+          and table_schema = database()
     </select>
+
+    <update id="putCommunity" parameterType="com.food.model.CommunityVO">
+        update tb_community
+        set title=#{title},
+            context=#{context},
+            mod_dt = now()
+        where bno = #{bno}
+    </update>
 </mapper>
 
 

@@ -5,7 +5,6 @@ import com.food.model.ReqPageVO;
 import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
-import java.util.Map;
 
 @Mapper
 public interface CommunityMapper {
@@ -18,4 +17,6 @@ public interface CommunityMapper {
     CommunityVO selectCommunityOne(String bno);
 
     int rowCount(CommunityVO communityVO);
+
+    int putCommunity(CommunityVO communityVO);
 }

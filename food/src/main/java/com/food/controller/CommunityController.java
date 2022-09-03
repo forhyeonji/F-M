@@ -11,15 +11,17 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 
 @RequiredArgsConstructor
 @RestController
-public class CommunityController extends CommonController{
+public class CommunityController extends CommonController {
 
     private final CommunityService communityService;
 
-    @PostMapping(value="/community/bread", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResCommonVO getCommunityList(@RequestBody ReqPageVO reqVO){
+    @PostMapping(value = "/community/bread", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO getCommunityList(@RequestBody ReqPageVO reqVO) {
         isLog(reqVO);
 
         return ResCommonVO.builder()
@@ -28,10 +30,10 @@ public class CommunityController extends CommonController{
                 .build();
     }
 
-    @GetMapping(value="/api/detail/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/api/detail/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getCommunityOne(
-            @PathVariable(value="bno", required = true) String bno
-    ){
+            @PathVariable(value = "bno", required = true) String bno
+    ) {
         log.debug("request: {}", bno);
 
         return ResCommonVO.builder()
@@ -41,10 +43,12 @@ public class CommunityController extends CommonController{
     }
 
     // 업데이트시
-    @GetMapping(value="/api/write/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
+    @GetMapping(value = "/api/write/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getModifyOne(
-            @PathVariable(value="bno", required = true) String bno
-    ){
+            @PathVariable(value = "bno", required = true) String bno
+    ) {
+        log.debug("request: {}", bno);
+
         return ResCommonVO.builder()
                 .result(communityService.getBoardList(bno))
                 .code(ResCommonCode.SUCCESS)
@@ -62,5 +66,15 @@ public class CommunityController extends CommonController{
             return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
         }
     }
+
+    @PutMapping(value = "/modify/{bno}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> putModifyOne(
+            @PathVariable(value = "bno", required = true) int bno,
+            @RequestBody CommunityVO communityVO
+    ) {
+        System.out.println(bno);
+        return ResponseEntity.ok(communityService.putCommunity(communityVO, bno));
+    }
+
 }
 

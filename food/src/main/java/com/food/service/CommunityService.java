@@ -38,4 +38,13 @@ public class CommunityService{
     public int rowCount(CommunityVO communityVO){
         return communityMapper.rowCount(communityVO);
     }
+
+    public Map<String, Object> putCommunity(CommunityVO communityVO, int bno){
+        Map<String, Object> resultMap = new HashMap<>();
+
+        communityVO.setBno(bno);
+        resultMap.put("data", communityMapper.putCommunity(communityVO));
+
+       return resultMap;
+    }
 }

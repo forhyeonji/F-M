@@ -34,5 +34,6 @@
 <script>
     let bno='${bno}';
 </script>
+<script src="${pageContext.request.contextPath}/resources/JS/Board/BoardModify.js"></script>
 </body>
 </html>
