@@ -12,15 +12,15 @@ import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
-public class CommunityService{
+public class CommunityService {
 
     private final CommunityMapper communityMapper;
 
-    public int boardWrite(CommunityVO communityVO){
+    public int boardWrite(CommunityVO communityVO) {
         return communityMapper.boardWrite(communityVO);
     }
 
-    public Map<String, Object> getBoardList(ReqPageVO reqPageVO){
+    public Map<String, Object> getBoardList(ReqPageVO reqPageVO) {
         Map<String, Object> resultMap = new HashMap<>();
 
         reqPageVO.setPage((reqPageVO.getPage() - 1) * reqPageVO.getSize());
@@ -29,22 +29,24 @@ public class CommunityService{
 
         return resultMap;
     }
-    public Map<String, Object> getBoardList(String bno){
+
+    public Map<String, Object> getBoardList(String bno) {
         Map<String, Object> resultMap = new HashMap<>();
         resultMap.put("data", communityMapper.selectCommunityOne(bno));
 
         return resultMap;
     }
-    public int rowCount(CommunityVO communityVO){
+
+    public int rowCount(CommunityVO communityVO) {
         return communityMapper.rowCount(communityVO);
     }
 
-    public Map<String, Object> putCommunity(CommunityVO communityVO, int bno){
+    public Map<String, Object> putCommunity(CommunityVO communityVO, int bno) {
         Map<String, Object> resultMap = new HashMap<>();
 
         communityVO.setBno(bno);
         resultMap.put("data", communityMapper.putCommunity(communityVO));
 
-       return resultMap;
+        return resultMap;
     }
 }
