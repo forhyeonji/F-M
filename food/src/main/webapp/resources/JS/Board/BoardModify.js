@@ -36,7 +36,8 @@ $(function () {
                             url: `/modify/${bno}`,
                             data: JSON.stringify(jsondata),
                             contentType: "application/json; charset=utf-8",
-                            success: (data) => {
+                            success: () => {
+                                alert("수정되었습니다.");
                                 location.href = `/detail/${bno}`
                             }
                         })

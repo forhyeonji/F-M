@@ -57,6 +57,12 @@
             mod_dt = now()
         where bno = #{bno}
     </update>
+
+    <delete id="deleteCommunity">
+        delete
+        from tb_community
+        where bno = #{bno}
+    </delete>
 </mapper>
 
 

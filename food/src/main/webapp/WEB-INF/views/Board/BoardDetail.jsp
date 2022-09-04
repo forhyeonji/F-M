@@ -24,7 +24,7 @@
                 <div id="bw_foot">
 <%--                    <c:if test="${customer != null}">--%>
                         <button type="button" id="btn_modify" class="btn_write btn_modify">수정하기</button>
-                        <button type="button" class="btn_write btn_delete">삭제하기</button>
+                        <button type="button" id="btn_delete" class="btn_write">삭제하기</button>
 <%--                    </c:if>--%>
                     <a href="/community/bread"><button type="button" class="btn_write btn_cancel">목록</button></a>
                 </div>

@@ -19,4 +19,6 @@ public interface CommunityMapper {
     int rowCount(CommunityVO communityVO);
 
     int putCommunity(CommunityVO communityVO);
+
+    int deleteCommunity(int bno);
 }

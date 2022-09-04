@@ -49,4 +49,8 @@ public class CommunityService {
 
         return resultMap;
     }
+
+    public int deleteCommunity(int bno){
+        return communityMapper.deleteCommunity(bno);
+    }
 }

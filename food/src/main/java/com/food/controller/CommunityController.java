@@ -72,9 +72,14 @@ public class CommunityController extends CommonController {
             @PathVariable(value = "bno", required = true) int bno,
             @RequestBody CommunityVO communityVO
     ) {
-        System.out.println(bno);
         return ResponseEntity.ok(communityService.putCommunity(communityVO, bno));
     }
 
+    @DeleteMapping(value = "/api/delete/{bno}" , consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResponseEntity<?> deleteOne(
+            @PathVariable(value = "bno", required = true) int bno
+    ){
+        return ResponseEntity.ok(communityService.deleteCommunity(bno));
+    }
 }
 
