@@ -15,14 +15,11 @@
 	<div id="my_main">
 	
 		<div id="my_side_left" >
-			<div><label id="my_title">🛒장바구니🛒</label></div>
-			<div id="my_profile">
-				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
-				<div><span id="my_id">회원id 님</span><br>
-					<a href="http://localhost:8080/mypage/profile_edit">
-					<input type="button" value="회원정보 수정"></a></div>
-			</div>
-			<div id="my_notice">
+			<div id="my_title">
+				<img id="my_titleim" alt="장바구니" src="../../../resources/image/mypage/cart.png">
+				<p id="my_titlep">장바구니</p></div>
+			<div id="my_menu">
+				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
 				<div><a href="http://localhost:8080/notice">공지사항</a></div>
 				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
@@ -42,24 +39,31 @@
 						<td><img src="../../../resources/image/lemon.jpg"></td>
 						<td>상품 이름 / 어쩌구 레몬</td>
 						<td>수량 1</td><td>가격 5000</td>
+						<td><input type="button" value="주문하기"><br>
+							<input type="button" value="삭제하기"></td>
 					</tr>
 					<tr>
 						<td><input type="checkbox" checked></td>
 						<td><img src="../../../resources/image/chicken.jpg"></td>
 						<td>상품 이름 / 어쩌구</td>
 						<td>수량 1</td><td>가격 4000</td>
-					</tr>	
+						<td><input type="button" value="주문하기"><br>
+							<input type="button" value="삭제하기"></td>					</tr>	
 					<tr>
 						<td><input type="checkbox" checked></td>
 						<td><img src="../../../resources/image/egg.jpg"></td>
 						<td>상품 이름 / 어쩌구</td>
 						<td>수량 1</td><td>가격 15000</td>
+						<td><input type="button" value="주문하기"><br>
+							<input type="button" value="삭제하기"></td>
 					</tr>	
 					<tr>
 						<td><input type="checkbox" checked></td>
 						<td><img src="../../../resources/image/granate.jpg"></td>
 						<td>상품 이름 / 어쩌구 </td>
 						<td>수량 1</td><td>가격 2000</td>
+						<td><input type="button" value="주문하기"><br>
+							<input type="button" value="삭제하기"></td>					
 					</tr>					
 				</table>
 			</div>
@@ -72,7 +76,7 @@
 			</div>
 			<br>
 			<div id="my_cartpay" > 
-				<table border="1">
+				<table id="my_cartpay_Tb">
 					<tr>
 						<th>합계</th><td>26,000원</td>
 					</tr>

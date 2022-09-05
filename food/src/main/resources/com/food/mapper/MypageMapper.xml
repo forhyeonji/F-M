@@ -4,7 +4,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.food.mapper.MypageMapper">
-  
+
+	<select id="mypage" resultType="com.food.model.UserVO">
+		select * from tb_user where user_id=#{user_id}
+	</select>
+	  
 	<select id="mywrite" resultType="com.food.model.MypageVO">
 		select * 
 		from (
@@ -14,7 +18,7 @@
 			 ) as mywrite
 			 <![CDATA[
 			 where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
-			 ]]>	
+			 ]]>
 	</select>
 	
 	<select id="total" resultType="int">
@@ -24,5 +28,6 @@
 	<select id="mywritedetail" resultType="com.food.model.MypageVO">
 		select * from tb_community where bno=#{bno}
 	</select>
+	
   
 </mapper>

@@ -15,14 +15,12 @@
 	<div id="my_main">
 	
 		<div id="my_side_left">
-			<div><label id="my_title">배송 조회</label></div>
-			<div id="my_profile">
-				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
-				<div><span id="my_id">회원id 님</span><br>
-					<a href="http://localhost:8080/mypage/profile_edit">
-					<input type="button" value="회원정보 수정"></a></div>
-			</div>
-			<div id="my_notice">
+			<div id="my_title">
+				<img id="my_titleim" alt="배송조회" src="../../../resources/image/mypage/delivery.png">
+				<p id="my_titlep">배송조회</p></div>
+
+			<div id="my_menu">
+				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
 				<div><a href="http://localhost:8080/notice">공지사항</a></div>
 				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>

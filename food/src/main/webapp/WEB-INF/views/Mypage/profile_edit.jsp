@@ -15,8 +15,11 @@
 	<div id="my_main">
 	
 		<div id="my_side_left" >
-			<div><label id="my_title">정보 수정</label></div>
-			<div id="my_notice">
+			<div id="my_title">
+				<img id="my_titleim" alt="정보수정" src="../../../resources/image/mypage/my.png">
+				<p id="my_titlep">회원<br>정보 수정</p></div>
+			<div id="my_menu">
+				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
 				<div><a href="http://localhost:8080/notice">공지사항</a></div>
 				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
@@ -26,38 +29,37 @@
 		<div id="my_center" >
 			<table id="my_profile_edit">
 				<tr>
-					<td rowspan="3">프로필 사진<br>
-					<img src="../../../resources/image/profile/profile01.jpeg"></td>
-					<th>ID</th>
+					<td class="my_edit_td">ID</td>
 					<td><input readonly type="text" placeholder="회원id(수정불가)" ></td>
 				</tr>
 				<tr>
-					<th>이름</th>
+					<td class="my_edit_td">비번</td>
+					<td><input type="password" placeholder="비번" ></td>
+				</tr>	
+				<tr>
+					<td class="my_edit_td">비번 재확인</td>
+					<td><input type="password" placeholder="비번재확인" ></td>
+				</tr>							
+				<tr>
+					<td class="my_edit_td">이름</td>
 					<td><input type="text" placeholder="회원이름" name="name"></td>
 				</tr>
 				<tr>
-					<th>주소</th>
+					<td class="my_edit_td">주소</td>
 					<td><input type="text" placeholder="회원주소" name="add"></td>
 				</tr>		
 				<tr>
-					<td rowspan="3">
-						<input type="file" id="my_profile" name="profile">
-						<input type="submit" value="사진 수정"> </td>
-					<th>전화</th>
+					<td class="my_edit_td">전화번호</td>
 					<td><input type="tel" placeholder="회원전화번호" name="phone"></td>
 				</tr>
 				<tr>
-					<th>이메일</th>
+					<td class="my_edit_td">이메일</td>
 					<td><input type="email" placeholder="이메일" name="email"></td>
 				</tr>
+
 				<tr>
-					<th>성별</th>
-					<td><input type="radio" id="man" name="gender" value="man">남자
-						<input type="radio" id="woman" name="gender" value="woman">여자</td>
-				</tr>
-				<tr>
-					<td colspan="3">
-					<input type="button" value="회원정보 수정"></td>
+					<th colspan="2">
+					<input type="button" value="회원정보 수정"></th>
 				</tr>
 			</table>
 		
