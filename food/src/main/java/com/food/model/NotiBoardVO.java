@@ -1,5 +1,13 @@
 package com.food.model;
 
+import lombok.Getter;
+import lombok.Setter;
+import lombok.ToString;
+
+@Getter
+@Setter
+@ToString
+
 public class NotiBoardVO {
     private int bno;
     private String title;
@@ -9,57 +17,5 @@ public class NotiBoardVO {
     private String reg_dt;
     private boolean boldtitle;
     
-    
-    
-    
-
-	public boolean isBoldtitle() {
-		return boldtitle;
-	}
-	public void setBoldtitle(boolean boldtitle) {
-		this.boldtitle = boldtitle;
-	}
-	public String getReg_dt() {
-		return reg_dt;
-	}
-	public void setReg_dt(String reg_dt) {
-		this.reg_dt = reg_dt;
-	}
-	public int getBno() {
-		return bno;
-	}
-	public void setBno(int bno) {
-		this.bno = bno;
-	}
-	public String getTitle() {
-		return title;
-	}
-	public void setTitle(String title) {
-		this.title = title;
-	}
-	public String getcontext() {
-		return context;
-	}
-	public void setcontext(String context) {
-		this.context = context;
-	}
-	public int getCnt() {
-		return cnt;
-	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
-	}
-	public String getUser_id() {
-		return user_id;
-	}
-	public void setUser_id(String user_id) {
-		this.user_id = user_id;
-	}
-	@Override
-	public String toString() {
-		return "NotiBoardVO [bno=" + bno + ", title=" + title + ", context=" + context + ", cnt=" + cnt + ", user_id="
-				+ user_id + ", reg_dt=" + reg_dt + ", boldtitle=" + boldtitle + "]";
-	}
-	
     
 }

@@ -1,10 +1,16 @@
 package com.food.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CriteriaVO;
@@ -19,16 +25,39 @@ public class NoticeController {
 		NotiBoardService nbs;
 	
 	
+		// 비동기 연습 get
+		@RequestMapping(value = "/listAjax", method = RequestMethod.GET)
+		public ResponseEntity<ArrayList<NotiBoardVO>> getList(CriteriaVO criteriaVO) {
+			
+			return new ResponseEntity<>(nbs.list(criteriaVO), HttpStatus.OK);
+		}
+		
+		
+/*		// 비동기 연습 post
+				@RequestMapping(value = "/listAjaxPost", method = RequestMethod.POST)
+				public ResponseEntity<NotiBoardVO> listAjaxPost(@RequestBody NotiBoardVO listajax) {
+					
+					System.out.println("sampleVO data...=" + listajax);
+					
+					ResponseEntity<NotiBoardVO> result = null;
+					result = ResponseEntity.status(HttpStatus.OK).body(listajax);
+					
+					return result;
+				}
+		*/
+		
+		
+		
 	
 
 		@RequestMapping(value = "/notice", method = RequestMethod.GET)
-		public String notice (Model model, CriteriaVO CriteriaVO) {
+		public String notice (Model model, CriteriaVO criteriaVO) {
 			
-			model.addAttribute("list", nbs.list(CriteriaVO));
+			model.addAttribute("list", nbs.list(criteriaVO));
 			
-			int total = nbs.total(CriteriaVO);
+			int total = nbs.total(criteriaVO);
 			
-			model.addAttribute("paging", new PageVO(CriteriaVO, total));
+			model.addAttribute("paging", new PageVO(criteriaVO, total));
 			
 			return "/Notice/Notice";
 		}
