@@ -28,23 +28,14 @@
 		
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/QnA_write'">
 		<hr>
-		<table>
-		<tr class="NOTI_bar">
-			<td class="NOTI_QnA_no" class="NOTI_title_effect">No</td>
-			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
-			<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
-			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
-		</tr>
 		
-		<tr>
-			<td colspan="4" class="NOTI_title_effect"><a href="http://localhost:8080/QnA_detail">자세히 보려면 여기 클릭하세요</a></td>
-		</tr>
 		
-		<tr>
-			<td colspan="4" class="NOTI_title_effect"><a href="http://localhost:8080/QnA_detail">자세히 보려면 여기 클릭하세요</a></td>
-		</tr>
-		
+		<table id="qnaTd">
+
 		</table>
+
+
+		
 		</div> <!-- main_center -->
 	
 	
