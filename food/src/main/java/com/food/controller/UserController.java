@@ -29,7 +29,7 @@ public class UserController{
     // 회원가입 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public String join() {
-    
+     
     	return "Main/insert";
     }
     

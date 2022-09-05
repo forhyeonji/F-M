@@ -5,15 +5,11 @@
 	margin : auto;
 	}
 
-img{
+.login_img{
 	
 	}
 
-p{
-	text-align : center;
-	}
-
-a{
+.login_a{
 	text-decoration-line : none;
 	color : black;
 	}

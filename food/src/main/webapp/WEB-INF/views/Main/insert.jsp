@@ -1,94 +1,108 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ include file="../Header/Header.jsp" %>
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/insert.css">
+
+
+<div class="insert_homelogo">
+	<a href="http://localhost:8080"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>
+</div>
 
 <div>
 	<form action="/insert" method ="post">
 		
-		<div id="insert_head">
-		<h2>회원가입</h2>
+		<div class="insert_head">
+			<h2 class="insert_h2">회원가입</h2>
 		</div>
 	
-		<div id="insert_border">
+		<div class="insert_border">
 		
+			<div class="insert_inborder">
 		
-		<div id="insert_cont">
-	
-			<div>
-				<h4>이메일</h4>
-				<input type="text" id="" class="insert_inputext_b">
-				<input type="button" value="이메일 확인" class="insert_insert_b">
-			</div><br>
-			
-			<div>
-				<h4>아이디</h4>
-				<input type="text" id="" class="insert_inputext_b" name="user_id">
-				<input type="button" value="중복 확인" class="insert_insert_b">
-			</div><br>
-			
-			<div>
-				<h4>비밀번호</h4>
-				<input type="text" id="" class="insert_inputext" name="user_pw">
-			</div><br>
-			
-			<div>
-				<h4>비밀번호 재확인</h4>
-				<input type="text" id="" class="insert_inputext">
-			</div><br>
-			
-			<div>
-				<h4>이름</h4>
-				<input type="text" id="" class="insert_inputext" name="user_name">
-			</div><br>
-			
-			<div>
-				<h4>닉네임</h4>
-				<input type="text" id="" class="insert_inputext_b" name="user_nick">
-				<input type="button" value="중복 확인" class="insert_insert_b">
-			</div><br>
-			
-	        <div>
-				<h4>주소</h4>
-				<input type="button" id="insert_add" class="" value="주소 검색">
-			</div><br>
-			
-			<div>
-				<h4>성별</h4>																																																																																																																																																								<input type = "radio" name="gender">여자
-				<input type = "radio" name="gender">선택안함
-			</div><br>
-			
-			<div>
-				<h4>생년월일</h4>	
-				<input type="text" id="insert_birth" class="insert_inputext" placeholder="생년월일을 숫자만 입력해주세요. 예)19801205">
-			</div><br>
-			
-			<div>
-				<h4>휴대폰 번호</h4>
-				<input type="text" id="" class="insert_inputext" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br>
-				<input type="button" id="insert_cellph" class="" value="인증번호 받기">
-			</div><br>
-			
-			<div id=insert_term>
-			<h4>이용 동의사항</h4>
-				<div>
-				<label><input type ="checkbox">전체 동의</label><br>
-				<label><input type ="checkbox">(필수)본인은 만 14세 이상입니다.</label><br>
-				<label><input type ="checkbox">(필수)이용 약관에 동의합니다.<a href="">약관 보기</a></label><br>
-				<label><input type ="checkbox">(필수)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></label><br>
-				<label><input type ="checkbox">(선택)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></label><br>
-				<label><input type ="checkbox">(선택)SMS로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></label><br>
-				<label><input type ="checkbox">(선택)휴대폰으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></label><br><br>
-				</div>
-			</div>
-			
-			<div>
-			<input type="submit" id = "insert_insert" value="가입하기">
-			</div>
-	
-		</div>		
+				<div id="insert_email">
+					<h4>이메일</h4><br>
+					<input type="text" id="user_email" class="insert_inputext_b" name="user_email">
+					<input type="button" value="이메일 확인" class="insert_insert_b">
+				</div><br>
+				
+				<div id="insert_id"><br>
+					<h4>아이디</h4><br>
+					<input type="text" id="user_id" class="insert_inputext_b" name="user_id">
+					<input type="button" value="중복 확인" class="insert_insert_b">
+				</div><br>
+				
+				<div id="insert_pw"><br>
+					<h4>비밀번호</h4><br>
+					<input type="text" id="user_pw" class="insert_inputext" name="user_pw">
+				</div><br>
+				
+				<div id="insert_pwcheck"><br>
+					<h4>비밀번호 재확인</h4><br>
+					<input type="text" id="user_repw" class="insert_inputext">
+				</div><br>
+				
+				<div id="insert_name"><br>
+					<h4>이름</h4><br>
+					<input type="text" id="user_name" class="insert_inputext" name="user_name">
+				</div><br>
+				
+				<div id="insert_nick"><br>
+					<h4>닉네임</h4><br>
+					<input type="text" id="user_nick" class="insert_inputext_b" name="user_nick">
+					<input type="button" value="중복 확인" class="insert_insert_b">
+				</div><br>
+				
+		        <div class="insert_addbox"><br>
+					<h4>주소</h4><br>
+					<input type="button" id="user_add" class="insert_add" name="user_add" value="주소 검색">
+				</div><br>
+				
+				<div class="insert_gender"><br>
+					<h4>성별</h4>	<br>
+					<div class="insert_gender_in">
+						<div><input type = "radio" id="user_male" name="user_gender" value="male">남자</div>
+						<div><input type = "radio" id="user_female" name="user_gender" value="female">여자</div>
+						<div><input type = "radio" id="user_none" name="user_gender" value="none">선택안함</div>
+					</div>
+				</div><br>
+				
+				<div id="insert_birth"><br>
+					<h4>생년월일</h4><br>
+					<input type="text" id="user_birth" class="insert_inputext" name="user_birth" placeholder="생년월일을 숫자만 입력해주세요. 예)19801205">
+				</div><br>
+				
+				<div id="insert_phone"><br>
+					<h4>휴대폰 번호</h4><br>
+					<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
+					<input type="button" id="insert_cellph" value="인증번호 받기">
+				</div><br>
+				
+				<div id=insert_term><br>
+				<h4>이용 동의사항</h4><br>
+					<div id=insert_term_in>
+						<div><input type ="checkbox"></div>
+						<div>전체 동의</div><br>
+						<div><input type ="checkbox"></div>
+						<div>(필수)본인은 만 14세 이상입니다.</div><br>
+						<div><input type ="checkbox"></div>
+						<div>(필수)이용 약관에 동의합니다.<a href="">약관 보기</a></div><br>
+						<div><input type ="checkbox"></div>
+						<div>(필수)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
+						<div><input type ="checkbox"></div>
+						<div>(선택)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
+						<div><input type ="checkbox"></div>
+						<div>(선택)SMS로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br>
+						<div><input type ="checkbox"></div>
+						<div>(선택)휴대폰으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br><br>
+					</div>
+				</div><br>
+				
+				<div id="insert_submit"><br>
+				<input type="submit" id = "insert_insert" value="가입하기">
+				</div><br>
+		
+			</div>		
 	
 		</div>
 		
@@ -96,4 +110,3 @@
 	
 	</form>
 </div>
-<%@ include file="../Footer/footer.jsp"%>
