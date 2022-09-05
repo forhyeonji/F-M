@@ -13,6 +13,9 @@ $(document).ready(function(){
 	function ajaxlist(){
 		$.getJSON("/listAjax.json",function(data){
 			
+			console.log(data);
+	
+			
 			var str="";
 			
 			str+="<tr class='NOTI_bar'>"
@@ -22,12 +25,12 @@ $(document).ready(function(){
 			str+="<td class='NOTI_QnA_regdate' class='NOTI_title_effect'>작성일</td>"
 			str+="</tr>"
 				
-			for(var i=0; i<data.length; i++){
+			for(var i=0; i<data.list.length; i++){
 				str+="<tr>"
-				str+="<td>"+data[i].bno+"</td>"
-				str+="<td>"+data[i].title+"</td>"
-				str+="<td>"+data[i].user_id+"</td>"
-				str+="<td>"+data[i].reg_dt+"</td>"
+				str+="<td>"+data.list[i].bno+"</td>"
+				str+="<td>"+data.list[i].title+"</td>"
+				str+="<td>"+data.list[i].user_id+"</td>"
+				str+="<td>"+data.list[i].reg_dt+"</td>"
 				str+="</tr>"
 			}
 			
@@ -42,3 +45,13 @@ $(document).ready(function(){
 		
 	}// list 함수 끝
 
+/*
+
+	// 글번호 함수 선언
+	function ajaxpaging(){
+		
+		
+		
+	} // ajaxpaging 함수 끝
+
+*/

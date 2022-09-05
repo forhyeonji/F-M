@@ -4,10 +4,10 @@ import java.util.ArrayList;
 
 import com.food.model.CriteriaVO;
 import com.food.model.NotiBoardVO;
+import com.food.model.PageVO;
 
 public interface NotiBoardService {
-	// ajax 연습
-/*	public ArrayList<NotiBoardVO> ajaxlist();*/
+
 	// 게시글 목록
 	public ArrayList<NotiBoardVO> list(CriteriaVO criteriaVO);
 	// 게시글 상세보기
@@ -19,5 +19,5 @@ public interface NotiBoardService {
 	// 글쓰기
 	public void write (NotiBoardVO board);
 	// tb_notice 테이블 전체 건수 설계
-	public int total(CriteriaVO CriteriaVO);
+	public int total();
 }

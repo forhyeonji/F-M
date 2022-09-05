@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 import com.food.model.CriteriaVO;
 import com.food.model.NotiBoardVO;
+import com.food.model.PageVO;
 
 public interface NotiBoardMapper {
 
@@ -18,7 +19,7 @@ public interface NotiBoardMapper {
 	// 게시글 글쓰기
 	public void write(NotiBoardVO board);
 	// tb_notice테이블 전체 글 수
-	public int total(CriteriaVO CriteriaVO);
+	public int total();
 	
 	
 }

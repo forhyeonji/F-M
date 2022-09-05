@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 import com.food.mapper.NotiBoardMapper;
 import com.food.model.CriteriaVO;
 import com.food.model.NotiBoardVO;
+import com.food.model.PageVO;
 @Service
 public class NotiBoardServiceImpl implements NotiBoardService  {
 
@@ -36,8 +37,8 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 			nbm.write(board);
 		}
 	// tb_notice테이블 전체 글 수
-		public int total(CriteriaVO CriteriaVO) {
-			return nbm.total(CriteriaVO);
+		public int total() {
+			return nbm.total();
 		}
 	
 	
