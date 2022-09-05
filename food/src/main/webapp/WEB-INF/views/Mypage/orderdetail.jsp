@@ -15,14 +15,12 @@
 	<div id="my_main">
 	
 		<div id="my_side_left">
-			<div><label id="my_title">주문 상세 보기</label></div>
-			<div id="my_profile">
-				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
-				<div><span id="my_id">회원id 님</span><br>
-					<a href="http://localhost:8080/mypage/profile_edit">
-					<input type="button" value="회원정보 수정"></a></div>
-			</div>
-			<div id="my_notice">
+			<div id="my_title">
+				<img id="my_titleim" alt="상세보기" src="../../../resources/image/mypage/detail.png">
+				<p id="my_titlep">상세보기</p></div>
+
+			<div id="my_menu">
+				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
 				<div><a href="http://localhost:8080/notice">공지사항</a></div>
 				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
@@ -31,16 +29,19 @@
 
 		<div id="my_center" >
 			<div>
-				<label>주문날짜 8/1</label> <label>주문 번호 123456789</label>	
 				<a href="http://localhost:8080/mypage/ordercancle">
 				<button>취소</button></a>
 				<a href="http://localhost:8080/mypage/orderrefund">
 				<button>반품</button></a>
+				<input type="hidden" value="1234-5678-9999">
 				<a href="http://localhost:8080/mypage/delivery">
 				<button>배송조회</button></a>
 			</div>
-			<div id="my_orderdetail">
+			<div class="my_orderdetail">
 				<table class="my_orderdetail_Tb">
+					<tr>
+						<td>주문날짜 8/1</td>
+						<td>주문번호 1234-5678-9999</td>
 					<tr>
 						<td rowspan="3">상품 사진</td>
 						<td>상품 이름(제목)</td>
@@ -54,8 +55,12 @@
 					</tr>		
 				</table>
 			</div>
-			<div style="border:1px solid;">
+			<div class="my_orderdetail">
 				<table class="my_orderdetail_Tb">
+					<tr>
+						<td>주문날짜 8/1</td>
+						<td>주문번호 1234-5678-9999</td>
+					<tr>
 					<tr>
 						<td rowspan="3">상품 사진</td>
 						<td>상품 이름(제목)</td>

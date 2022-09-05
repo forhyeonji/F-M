@@ -1,10 +1,19 @@
 package com.food.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CriteriaVO;
@@ -18,17 +27,67 @@ public class NoticeController {
 		@Autowired
 		NotiBoardService nbs;
 	
+		
+		@GetMapping("/listAjax.json")
+		@ResponseBody
+		public ResponseEntity   <Map<String, Object>> BoardTabListAjax(CriteriaVO cri,Model model) {
+		      
+		   Map<String, Object> map = new HashMap<>();
+		      
+		   map.put("list", nbs.list(cri));
+		   map.put("paging", new PageVO(cri, nbs.total()));
+		      
+		   return new ResponseEntity<>(map,HttpStatus.OK);
+		}
+		
+		
+	/*	// 비동기 연습 get
+		@RequestMapping(value = "/listAjax.json", method = RequestMethod.GET)
+		public ResponseEntity<ArrayList<NotiBoardVO>> getList(CriteriaVO criteriaVO) {
 	
+			
+			return new ResponseEntity<>(nbs.list(criteriaVO), HttpStatus.OK);
+			
+		}*/
+		
+		
+/*		
+		// 비동기 연습 get
+				@RequestMapping(value = "/listAjax.json", method = RequestMethod.GET)
+				public ResponseEntity<PageVO> getpaging(CriteriaVO criteriaVO) {
+			
+				int total = nbs.total();
+				
+					return new ResponseEntity<>(new PageVO(criteriaVO, total), HttpStatus.OK);
+					
+		}*/
+	
+		
+/*		// 비동기 연습 post
+				@RequestMapping(value = "/listAjaxPost", method = RequestMethod.POST)
+				public ResponseEntity<NotiBoardVO> listAjaxPost(@RequestBody NotiBoardVO listajax) {
+					
+					System.out.println("sampleVO data...=" + listajax);
+					
+					ResponseEntity<NotiBoardVO> result = null;
+					result = ResponseEntity.status(HttpStatus.OK).body(listajax);
+					
+					return result;
+				}
+		*/
+		
+		
+		
 	
 
-		@RequestMapping(value = "/notice", method = RequestMethod.GET)
-		public String notice (Model model, CriteriaVO CriteriaVO) {
+	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+		public String notice (Model model, CriteriaVO criteriaVO) {
 			
-			model.addAttribute("list", nbs.list(CriteriaVO));
+			model.addAttribute("list", nbs.list(criteriaVO));
 			
-			int total = nbs.total(CriteriaVO);
+			int total = nbs.total();
 			
-			model.addAttribute("paging", new PageVO(CriteriaVO, total));
+			model.addAttribute("paging", new PageVO(criteriaVO, total));
 			
 			return "/Notice/Notice";
 		}

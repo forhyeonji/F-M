@@ -16,14 +16,12 @@
 	<div id="my_main">
 	
 		<div id="my_side_left">
-			<div><label id="my_title">📝내가 올린 글</label></div>
-			<div id="my_profile">
-				<div><img src="../../../resources/image/profile/profile01.jpeg"></div>
-				<div><span id="my_id">회원id 님</span><br>
-					<a href="http://localhost:8080/mypage/profile_edit">
-					<input type="button" value="회원정보 수정"></a></div>
-			</div>
-			<div id="my_notice">
+			<div id="my_title">
+				<img id="my_titleim" alt="내글" src="../../../resources/image/mypage/mywrite.png">
+				<p id="my_titlep">내가 쓴 글</p></div>
+
+			<div id="my_menu">
+				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
 				<div><a href="http://localhost:8080/notice">공지사항</a></div>
 				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
@@ -44,7 +42,7 @@
 					<c:forEach items="${mywrite}" var="mywrite">
 					<tr>
 						<td>${mywrite.bno }</td>
-						<td><a href="/community/detail?bno">${mywrite.title}</a></td>
+						<td><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
 						<td>${mywrite.reg_dt}</td>
 					</tr>
 					</c:forEach>
