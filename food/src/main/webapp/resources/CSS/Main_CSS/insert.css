@@ -1,27 +1,29 @@
 @charset "UTF-8";
 
-*{
-margin : 5px;
-} 
+.insert_homelogo{
+	margin-top : 50px;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	}
 
-h2{
-	text-align:center;
-}
-
-#insert_head{
+.insert_head{
 	margin-top : 50px;
 }
 
-#insert_border{
+.insert_h2{
+	text-align:center;
+}
+
+.insert_border{
 	display:flex; 
 	justify-content:center;
 	text-align : center;
 	font-family : sans-serif;
 	}
 
-#insert_cont{
+.insert_inborder{
 	vertical-align : center;
-	border : 1px solid #dddddd;
 	margin : 20px;
 	padding : 20px;
 	width : 600px;
@@ -47,13 +49,19 @@ h2{
 	border-radius : 5px;
 }
 
-#insert_add{
+.insert_add{
 	width : 400px;
 	height : 42px;
 	color : white;
 	border : none;
 	background-color : salmon;
 	border-radius : 5px;
+}
+
+.insert_gender_in{
+	display : flex;
+	flex-direction: row;
+	justify-content : center;
 }
 
 .insert_insert_b{
@@ -71,8 +79,13 @@ h2{
 #insert_term{
 	margin-left : 50px;
 	margin-right : 50px;
-	text-align : center;
 	border-radius : 5px;
+}
+
+#insert_term_in{
+	display : flex;
+	flex-direction : row;
+	justify-content : center;
 }
 
 #insert_insert{

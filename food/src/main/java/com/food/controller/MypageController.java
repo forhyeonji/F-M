@@ -1,5 +1,7 @@
 package com.food.controller;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 import com.food.model.PageVO;
+import com.food.model.UserVO;
 import com.food.service.MypageService;
 
 @Controller
@@ -16,9 +19,14 @@ public class MypageController {
 	
 	@Autowired
 	MypageService ms;
-
+	
+	//마이페이지
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage() {
+	public String mypage(UserVO user, Model model, HttpSession session) {
+		
+		user.setUser_id((String)session.getAttribute("user_id"));
+		ms.mypage(user);
+		model.addAttribute("mypage", ms.mypage(user));
 		return "Mypage/mypage";
 	}
 	//프로필 수정
@@ -68,8 +76,10 @@ public class MypageController {
 	}
 	//내가 쓴 글 목록
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
-	public String mywrite(Model model, CriteriaVO cri) {
-
+	public String mywrite(MypageVO mypage, Model model, CriteriaVO cri, HttpSession session) {
+		String id = (String)session.getAttribute("user_id");
+		System.out.println("로그인된 아이디"+id);
+		mypage.setMyid(id);
 		model.addAttribute("mywrite", ms.mywrite(cri));
 		int total = ms.total();
 		model.addAttribute("paging", new PageVO(cri, total));
@@ -77,13 +87,12 @@ public class MypageController {
 	}
 	
 	//내가 쓴 글 상세보기
-	@RequestMapping(value = "/community/detail", method = RequestMethod.GET)
+	@RequestMapping(value = "/detail", method = RequestMethod.GET)
 	public String mywritedetail(MypageVO mypage, Model model) {
-	
 		model.addAttribute("mywritedetail", ms.mywritedetail(mypage));
-		return "community/detail";
+		return "/detail";
 	}	
-	
+
 	
 	//내가 쓴 댓글 목록
 	@RequestMapping(value = "mypage/myreply", method = RequestMethod.GET)
@@ -95,4 +104,16 @@ public class MypageController {
 	public String mylike() {
 		return "Mypage/mylike";
 	}
+	
+	//찜한 상품
+	@RequestMapping(value = "mypage/mykeep", method = RequestMethod.GET)
+	public String mykeep() {
+		return "Mypage/mykeep";
+	}	
+	
+	//내가쓴 상품평
+	@RequestMapping(value = "mypage/myreview", method = RequestMethod.GET)
+	public String myreview() {
+		return "Mypage/myreview";
+	}	
 }
