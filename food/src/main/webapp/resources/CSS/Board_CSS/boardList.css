@@ -319,3 +319,21 @@ a{
     vertical-align: middle;
     border-bottom: 1px solid #E0EBFF;
 }
+
+.blist_title{
+    width:730px;
+    text-align: left;
+    padding:0 0 0 10px;
+}
+.blist_date{
+    width:100px;
+    text-align:center;
+}
+.blist_user{
+    width:85px;
+    text-align:center;
+}
+.blist_cnt{
+    width:85px;
+    text-align:center;
+}
