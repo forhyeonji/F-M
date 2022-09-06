@@ -4,6 +4,7 @@
 
 $(document).ready(function(){
 	
+
 	ajaxlist();
 
 	
@@ -14,7 +15,7 @@ $(document).ready(function(){
 		$.getJSON("/listAjax.json",function(data){
 			
 			console.log(data);
-	
+			
 			
 			var str="";
 			
@@ -34,6 +35,25 @@ $(document).ready(function(){
 				str+="</tr>"
 			}
 			
+			
+			str+="<tr>"
+			str+="<td colspan=5>"	
+			if(data.paging.prev){
+				str+="<a href='/QnA?pageNum=" + (data.paging.startPage-1) + "&amount=" + data.paging.criteriaVO.amount +"'>이전</a>"
+				}
+			
+			for(i=data.paging.startPage;i<=data.paging.endPage;i++){
+				str+="<a href='/QnA?pageNum=" + i + "&amount=" + data.paging.criteriaVO.amount +"'>   "+ i +"   </a>"
+			}
+			
+			if(data.paging.next){
+				str+="<a href='/QnA?pageNum=" + (data.paging.startPage+1) + "&amount=" + data.paging.criteriaVO.amount +"'>다음</a>"
+				}
+			
+				
+			str+="</td>"		
+			str+="</tr>"
+				
 			
 			
 			

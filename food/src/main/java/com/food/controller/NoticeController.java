@@ -30,12 +30,12 @@ public class NoticeController {
 		
 		@GetMapping("/listAjax.json")
 		@ResponseBody
-		public ResponseEntity   <Map<String, Object>> BoardTabListAjax(CriteriaVO cri,Model model) {
+		public ResponseEntity   <Map<String, Object>> QnAListAjax(CriteriaVO criteriaVO,Model model) {
 		      
 		   Map<String, Object> map = new HashMap<>();
 		      
-		   map.put("list", nbs.list(cri));
-		   map.put("paging", new PageVO(cri, nbs.total()));
+		   map.put("list", nbs.list(criteriaVO));
+		   map.put("paging", new PageVO(criteriaVO, nbs.total()));
 		      
 		   return new ResponseEntity<>(map,HttpStatus.OK);
 		}
