@@ -20,5 +20,5 @@ public class ShopVO {
 	private boolean image;		
 	private String IMG_NAME;
 	
-	
+
 }

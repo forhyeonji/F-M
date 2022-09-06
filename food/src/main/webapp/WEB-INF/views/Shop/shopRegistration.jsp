@@ -21,7 +21,7 @@
 		</div>
 
 
-		<form role="form" method="post" autocomplete="off">
+		<form id="sh_form" name="sh_form" enctype="multipart/form-data" method="post">
 			<div class="sh_right">
 
 				<div class="sh_allenroll">
@@ -168,15 +168,28 @@
 					<tr>
 						<td>
 							<div class="sh_inputArea">
-								<label for="sh_gasDes" id="sh_m">상세정보</label>
+								<label for="gasDetail" id="sh_m">상세정보</label>
+							</div>
+						</td>
+					</tr>
+					
+					<tr>
+						<td><textarea rows="5" cols="50" id="gasDetail" name="gasDetail"></textarea>
+						</td>
+					</tr>
+	
+					<tr>
+						<td>
+							<div>
+								<label for="gasimg" id="sh_gasimg">상품이미지:</label>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td><textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
+						<td><input type="file" id="gasimg" name="gasimg">
 						</td>
 					</tr>
-
+	
 					<tr>
 						<td>
 							<div class="sh_inputArea">
