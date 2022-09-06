@@ -1,6 +1,5 @@
 $(function () {
     const dColumns = ["bno", "title", "context", "user_id"];
-
     const boardDetail = () => {
         $.ajax({
             type: 'GET',
@@ -10,6 +9,7 @@ $(function () {
                     return;
 
                 dColumns.map((key) => $(`#${key}`).val(response.result.data[key]));
+                console.log(response);
             },
             error: (error) => {
                 console.error(error)
@@ -37,8 +37,8 @@ $(function () {
                         location.href = "/community/bread";
                     }
                 })
-            }else{
-                location.href=`/detail/${bno}`
+            } else {
+                location.href = `/detail/${bno}`
             }
         })
     }

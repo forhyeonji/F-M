@@ -1,5 +1,5 @@
 $(function () {
-    const mColumns = ["bno", "title", "context", "user_id"];
+    const mColumns = ["bno", "title","context", "user_id"];
 
     const boardModify = () => {
         $.ajax({

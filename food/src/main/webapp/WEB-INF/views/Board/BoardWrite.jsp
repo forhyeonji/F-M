@@ -3,8 +3,8 @@
     <div id="container">
         <div id="content">
             <form id="form_register">
-                <input type="text" name="uesr_id" id="user_id" value="${user_id}" readonly hidden>
-                <input type="text" name="bno" id="bno" value="${bno}" readonly  hidden>
+                <input type="text" name="uesr_id" id="user_id" value="${user_id}" readonly>
+                <input type="text" name="bno" id="bno" value="${bno}" readonly>
                 <table class="b_table">
                     <thead id="write_head">
                     <tr>
@@ -34,5 +34,6 @@
     let bno='${bno}';
 </script>
 <script src="/resources/JS/Board/BoardWrite.js"></script>
+<script src="/resources/JS/Board/BoardModify.js"></script>
 </body>
 </html>

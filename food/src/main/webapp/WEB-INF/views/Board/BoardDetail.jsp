@@ -17,7 +17,7 @@
                     </tr>
                     <tr>
                         <td><textarea
-                                      id="summernote" name="context" readonly></textarea></td>
+                                      id="context" class="b_text" name="context" readonly></textarea></td>
                     </tr>
                     </tbody>
                 </table>
@@ -36,6 +36,6 @@
     let bno = '${bno}';
     let mode = '[[${mode}]]';
 </script>
-<script src="${pageContext.request.contextPath}/resources/JS/Board/BoardDetail.js"></script>
+<script src="/resources/JS/Board/BoardDetail.js"></script>
 </body>
 </html>
