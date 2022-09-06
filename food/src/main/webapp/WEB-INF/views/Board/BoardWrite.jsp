@@ -1,26 +1,24 @@
-<%@ include file="../Header/Header.jsp" %>
+<%@ include file="../Header/CommunityHeader.jsp" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java"  pageEncoding="UTF-8"%>
     <div id="container">
         <div id="content">
-                <input type="text" name="uesr_id" id="user_id" value="${user_id}" readonly>
-                <input type="text" name="bno" id="bno" value="${bno}" readonly>
+            <form id="form_register">
+                <input type="text" name="uesr_id" id="user_id" value="${user_id}" readonly hidden>
+                <input type="text" name="bno" id="bno" value="${bno}" readonly  hidden>
                 <table class="b_table">
-                    <thead>
+                    <thead id="write_head">
                     <tr>
                         <th>게시물 작성</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" id="title" class="b_title" placeholder="글 제목" maxlength="50" name="title">
+                        <td><input type="text" id="title" class="form-control mb-2 .b_title"  placeholder="제목을 입력하세요." name="title">
                         </td>
                     </tr>
                     <tr>
-                        <td><textarea class="b_text" id="context" placeholder="글 내용"
-                                      maxlength="2048" name="context"></textarea></td>
-                    </tr>
-                    <tr>
-                        <td id="b_file"><input type="file" name="fileName"></td>
+                        <td><textarea id="summernote"
+                                      name="context"></textarea></td>
                     </tr>
                     </tbody>
                 </table>
@@ -28,12 +26,13 @@
                     <button type="button" id="b_write_btn" class="btn_write">글쓰기</button>
                     <button type="button" id="btn_write_cancel" class="btn_write">취소</button>
                 </div>
+            </form>
         </div>
     </div>
 </div>
 <script>
     let bno='${bno}';
 </script>
-<script src="${pageContext.request.contextPath}/resources/JS/Board/BoardModify.js"></script>
+<script src="/resources/JS/Board/BoardWrite.js"></script>
 </body>
 </html>

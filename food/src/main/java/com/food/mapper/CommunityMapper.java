@@ -9,7 +9,7 @@ import java.util.List;
 @Mapper
 public interface CommunityMapper {
     // 글쓰기에 해당되는 DB작업 설계
-    public int boardWrite(CommunityVO communityVO);
+    void insertCommunity(CommunityVO communityVO);
 
     // 게시글 목록 리스트에 해당되는 DB작업 설계
     List<CommunityVO> selectBoardList(ReqPageVO reqPageVO);

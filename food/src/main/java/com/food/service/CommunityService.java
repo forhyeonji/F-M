@@ -16,9 +16,7 @@ public class CommunityService {
 
     private final CommunityMapper communityMapper;
 
-    public int boardWrite(CommunityVO communityVO) {
-        return communityMapper.boardWrite(communityVO);
-    }
+    public void writeCommunity(CommunityVO communityVO){ communityMapper.insertCommunity(communityVO); }
 
     public Map<String, Object> getBoardList(ReqPageVO reqPageVO) {
         Map<String, Object> resultMap = new HashMap<>();

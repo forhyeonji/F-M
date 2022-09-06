@@ -15,21 +15,23 @@
     margin:0 auto;
 }
 .b_table{
-    text-align: center;
     border: 1px solid #dddddd;
     width:100%;
     border-spacing: 30px;
+}
+#write_head{
+    text-align:center;
 }
 .b_title{
     width:100%;
     height:30px;
     text-indent: 5px;
 }
-.b_text{
+#summernote{
     width:100%;
     resize:none;
     height: 400px;
-    text-indent: 5px;
+    text-align:left;
     padding: 5px 0 0 0;
 }
 #b_file{

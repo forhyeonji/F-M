@@ -168,23 +168,7 @@ a{
 .tb_nav .blist{
     width:1050px;
 }
-.blist_title{
-    width:730px;
-    text-align: left;
-    padding:0 0 0 10px;
-}
-.blist_date{
-    width:100px;
-    text-align:center;
-}
-.blist_user{
-    width:85px;
-    text-align:center;
-}
-.blist_cnt{
-    width:85px;
-    text-align:center;
-}
+
 #blt{
     height:44px;
     margin: 2px 0;

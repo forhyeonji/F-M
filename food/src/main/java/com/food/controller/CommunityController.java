@@ -55,16 +55,22 @@ public class CommunityController extends CommonController {
                 .build();
     }
 
-    @PostMapping(value = "/community/write", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<String> postBoardWrite(@RequestBody CommunityVO communityVO) {
+    /**
+     * community 등록
+     * @param communityVO
+     * @return
+     */
+    @PostMapping(value="/community/write", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO writeCommunity(
+            @RequestBody CommunityVO communityVO
+    ){
         isLog(communityVO);
 
-        int result = communityService.boardWrite(communityVO);
-        if (result == 1) {
-            return new ResponseEntity<>("success", HttpStatus.OK);
-        } else {
-            return new ResponseEntity<>("error", HttpStatus.INTERNAL_SERVER_ERROR);
-        }
+        communityService.writeCommunity(communityVO);
+
+        return ResCommonVO.builder()
+                .code(ResCommonCode.SUCCESS)
+                .build();
     }
 
     @PutMapping(value = "/modify/{bno}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)

@@ -1,23 +1,23 @@
-<%@ include file="../Header/Header.jsp" %>
+<%@ include file="../Header/CommunityHeader.jsp" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java"  pageEncoding="UTF-8"%>
     <div id="container">
         <div id="content">
                 <input type="text" id="user_id" name="user_id" readonly>
             <input type="text" id="bno" name="bno" readonly>
             <table class="b_table">
-                    <thead>
+                    <thead id="write_head">
                     <tr>
                         <th>글 상세보기</th>
                     </tr>
                     </thead>
                     <tbody>
                     <tr>
-                        <td><input type="text" id="title" class="b_title" maxlength="50" name="title" readonly>
+                        <td><input type="text" id="title" class="form-control mb-2 b_title" name="title" readonly>
                         </td>
                     </tr>
                     <tr>
-                        <td><textarea class="b_text"
-                                      maxlength="2048" id="context" name="context" readonly></textarea></td>
+                        <td><textarea
+                                      id="summernote" name="context" readonly></textarea></td>
                     </tr>
                     </tbody>
                 </table>
