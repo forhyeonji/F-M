@@ -14,9 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.util.WebUtils;
 
 import java.io.IOException;
+import java.util.Date;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -51,13 +56,28 @@ public class UserController{
 	public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
     	boolean result = us.login(userVO, session);
     	if(result) {
-    		rttr.addAttribute("msg", "success");
+    		session.setAttribute("user_id", userVO);
+    		rttr.addAttribute("loginsuccess");
     		return "redirect:/";
     	}else {
-    		rttr.addAttribute("msg", "fail");
+    		session.setAttribute("user_id", userVO);
+    		rttr.addAttribute("loginfail");
     		return "redirect:/login";
     	}
     	
 	}
     
+    
+    //로그아웃
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session, RedirectAttributes rttr) {
+		session.invalidate();
+		rttr.addAttribute("ByeBye Logout");
+		return "redirect:/";
+	}
+    
+    
+    
+    
 }
+    
