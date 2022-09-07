@@ -13,7 +13,8 @@
 		select * 
 		from (
 				select @rownum:= @rownum+1 rownum, co.*
-				from tb_community co, (select @rownum:=0) as tmp					
+				from tb_community co, (select @rownum:=0) as tmp	
+			
 				order by reg_dt desc
 			 ) as mywrite
 			 <![CDATA[
