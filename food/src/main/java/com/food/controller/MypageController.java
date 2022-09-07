@@ -76,11 +76,12 @@ public class MypageController {
 	}
 	//내가 쓴 글 목록
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
-	public String mywrite(MypageVO mypage, Model model, CriteriaVO cri, HttpSession session) {
+	public String mywrite(UserVO user, MypageVO mypage, Model model, CriteriaVO cri, HttpSession session) {
 		String id = (String)session.getAttribute("user_id");
 		System.out.println("로그인된 아이디"+id);
-		mypage.setMyid(id);
-		model.addAttribute("mywrite", ms.mywrite(cri));
+		user.setUser_id(id);
+		model.addAttribute("mywrite", ms.mypage(user));
+		model.addAttribute("mywrite", ms.mywrite(cri));		
 		int total = ms.total();
 		model.addAttribute("paging", new PageVO(cri, total));
 		return "Mypage/mywrite";

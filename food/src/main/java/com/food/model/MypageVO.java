@@ -9,8 +9,15 @@ public class MypageVO {
 	private String mod_dt;	//수정일자
 	private int cnt;		//조회수
 	private String myid;	//작성자
+	private String user_id;	//작성자
 	
 
+	public String getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
 	public String getMyid() {
 		return myid;
 	}
@@ -58,7 +65,7 @@ public class MypageVO {
 	@Override
 	public String toString() {
 		return "MypageVO [bno=" + bno + ", title=" + title + ", context=" + context + ", reg_dt=" + reg_dt + ", mod_dt="
-				+ mod_dt + ", cnt=" + cnt + ", myid=" + myid + "]";
+				+ mod_dt + ", cnt=" + cnt + ", myid=" + myid + ", user_id=" + user_id + "]";
 	}
 
 }
