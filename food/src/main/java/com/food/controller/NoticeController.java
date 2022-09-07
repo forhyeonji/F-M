@@ -28,30 +28,31 @@ public class NoticeController {
 		NotiBoardService nbs;
 	
 		
-		@GetMapping("/listAjax.json")
+/*	
+ 
+ 		@GetMapping("/listAjax.json")
 		@ResponseBody
 		public ResponseEntity   <Map<String, Object>> QnAListAjax(CriteriaVO criteriaVO,Model model) {
 		      
 		   Map<String, Object> map = new HashMap<>();
 		      
-		   map.put("list", nbs.list(criteriaVO));
+		   map.put("list", nbs.list());
 		   map.put("paging", new PageVO(criteriaVO, nbs.total()));
 		      
 		   return new ResponseEntity<>(map,HttpStatus.OK);
 		}
 		
-		
-	/*	// 비동기 연습 get
+			
+			
+			// 비동기 연습 get
 		@RequestMapping(value = "/listAjax.json", method = RequestMethod.GET)
-		public ResponseEntity<ArrayList<NotiBoardVO>> getList(CriteriaVO criteriaVO) {
+		public ResponseEntity<ArrayList<NotiBoardVO>> getList() {
 	
 			
-			return new ResponseEntity<>(nbs.list(criteriaVO), HttpStatus.OK);
+			return new ResponseEntity<>(nbs.list(), HttpStatus.OK);
 			
-		}*/
+		}
 		
-		
-/*		
 		// 비동기 연습 get
 				@RequestMapping(value = "/listAjax.json", method = RequestMethod.GET)
 				public ResponseEntity<PageVO> getpaging(CriteriaVO criteriaVO) {
@@ -60,10 +61,10 @@ public class NoticeController {
 				
 					return new ResponseEntity<>(new PageVO(criteriaVO, total), HttpStatus.OK);
 					
-		}*/
-	
+		}
 		
-/*		// 비동기 연습 post
+				
+		// 비동기 연습 post
 				@RequestMapping(value = "/listAjaxPost", method = RequestMethod.POST)
 				public ResponseEntity<NotiBoardVO> listAjaxPost(@RequestBody NotiBoardVO listajax) {
 					
@@ -74,7 +75,7 @@ public class NoticeController {
 					
 					return result;
 				}
-		*/
+*/
 		
 		
 		
@@ -82,10 +83,11 @@ public class NoticeController {
 
 	@RequestMapping(value = "/notice", method = RequestMethod.GET)
 		public String notice (Model model, CriteriaVO criteriaVO) {
-			
+			// System.out.println(criteriaVO);
 			model.addAttribute("list", nbs.list(criteriaVO));
 			
-			int total = nbs.total();
+			int total = nbs.total(criteriaVO);
+			// System.out.println("controller="+total);
 			
 			model.addAttribute("paging", new PageVO(criteriaVO, total));
 			

@@ -37,8 +37,8 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 			nbm.write(board);
 		}
 	// tb_notice테이블 전체 글 수
-		public int total() {
-			return nbm.total();
+		public int total(CriteriaVO criteriaVO) {
+			return nbm.total(criteriaVO);
 		}
 	
 	

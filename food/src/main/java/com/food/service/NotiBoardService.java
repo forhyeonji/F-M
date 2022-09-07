@@ -13,11 +13,11 @@ public interface NotiBoardService {
 	// 게시글 상세보기
 	public NotiBoardVO detail(NotiBoardVO board);
 	// 글수정
-	public void modify (NotiBoardVO board);
+	public void modify(NotiBoardVO board);
 	// 글수정
-	public void remove (NotiBoardVO board);
+	public void remove(NotiBoardVO board);
 	// 글쓰기
-	public void write (NotiBoardVO board);
+	public void write(NotiBoardVO board);
 	// tb_notice 테이블 전체 건수 설계
-	public int total();
+	public int total(CriteriaVO criteriaVO);
 }

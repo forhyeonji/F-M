@@ -25,7 +25,7 @@
 		</ul>
 
 		<div class="sh_purimg">
-			<img src="../../../resources/image/shop/배추.jpg" class="sh_img_cab">
+			<img src="${path}/images/${vo.image}" class="sh_img_cab">
 
 			<div class="sh_Ex">
 				<div class="sh_productName">

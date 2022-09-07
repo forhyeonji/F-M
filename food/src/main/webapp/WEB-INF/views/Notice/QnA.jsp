@@ -28,12 +28,10 @@
 		
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/QnA_write'">
 		<hr>
-		
-		
+	
 		<table id="qnaTd">
 
 		</table>
-
 
 		
 		</div> <!-- main_center -->

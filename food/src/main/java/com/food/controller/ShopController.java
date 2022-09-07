@@ -2,11 +2,8 @@ package com.food.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
-
 import com.food.model.ShopVO;
 import com.food.service.ShopService;
 
@@ -49,6 +46,7 @@ public class ShopController {
 	
 	@RequestMapping(value = "/shopRegistration", method = RequestMethod.POST)
 	public String ProductregistrationPOST(ShopVO Shop) {
+		System.out.println("contoroller="+Shop);
 		shop.Shopenroll(Shop);
 		return "redirect:/shopProductlist";
 	}
