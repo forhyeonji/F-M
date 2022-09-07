@@ -47,4 +47,10 @@ public class ShopController {
 		return "Shop/shopRegistration";
 	}
 	
+	@RequestMapping(value = "/shopRegistration", method = RequestMethod.POST)
+	public String ProductregistrationPOST(ShopVO Shop) {
+		shop.Shopenroll(Shop);
+		return "redirect:/shopProductlist";
+	}
+	
 }

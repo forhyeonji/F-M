@@ -12,15 +12,15 @@ public class ShopServiceImpl implements ShopService {
 	@Autowired
 	ShopMapper Sm;
 	
-	public void Shopenroll(ShopVO shop) {
+	public void Shopenroll(ShopVO Shop) {
 		//ShopMapper에 있는 Shopenroll메서드 호출
 		//메서드의 매개변수를 통해 ShopVO값을 Shopenroll의 shop으로 전달
-		Sm.Shopenroll(shop);
+		Sm.Shopenroll(Shop);
 	}
 	
-	public ShopVO shop(ShopVO shop) {
+	public ShopVO shop(ShopVO Shop) {
 		System.out.println("등록완료");
-		return Sm.shop(shop);
+		return Sm.shop(Shop);
 		
 	}
 

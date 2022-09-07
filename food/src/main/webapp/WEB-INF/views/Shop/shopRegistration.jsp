@@ -5,6 +5,11 @@
 
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopRegistration.css">
+
+<script type="text/javascript" src="../../../resources/JS/Shop/ShopRegistration.js">
+
+</script>	
+	
 <meta charset="UTF-8">
 
 </head>
