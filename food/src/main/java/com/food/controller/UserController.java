@@ -46,13 +46,18 @@ public class UserController{
     	return "Main/login";
     }
     
-    // 로그인 select
+    // 로그인 기능
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
-    	us.login(userVO);
-    	session.setAttribute("user_id", userVO.getUser_id());
-    	rttr.addAttribute("user_id", userVO.getUser_id());
-    	return "redirect:/";
-    }
+	public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
+    	boolean result = us.login(userVO, session);
+    	if(result) {
+    		rttr.addAttribute("msg", "success");
+    		return "redirect:/";
+    	}else {
+    		rttr.addAttribute("msg", "fail");
+    		return "redirect:/login";
+    	}
+    	
+	}
     
 }
