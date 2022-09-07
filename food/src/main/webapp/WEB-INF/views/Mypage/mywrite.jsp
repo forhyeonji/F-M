@@ -35,7 +35,6 @@
 			</div>
 				<table id="my_write">
 				<tr><td>로그인해야됨!!!!!!!!!${sessionScope.user_id}
-				${sessionScope.user }
 				</td></tr>
 					<tr>
 						<th>글번호</th><th>제목</th><th>작성일자</th>
