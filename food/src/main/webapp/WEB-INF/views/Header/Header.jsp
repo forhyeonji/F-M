@@ -50,7 +50,9 @@
                             </div>
                 </div>
                 <div>
-                    <a href="/login"><button>로그인</button></a>
+                    <!--<a href="/login"><button>로그인</button></a> -->
+                    <c:if test="${empty sessionScope.user_id}"><a href="/login"><button>로그인</button></a></c:if>
+					<c:if test="${not empty sessionScope.user_id}"><a href="/logout"><button>로그아웃</button></a></c:if>
                 </div>
             </div>
             <div class="h_navBox">
