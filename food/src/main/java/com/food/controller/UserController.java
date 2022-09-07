@@ -14,9 +14,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+import org.springframework.web.util.WebUtils;
 
 import java.io.IOException;
+import java.util.Date;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 @Controller
@@ -46,13 +51,33 @@ public class UserController{
     	return "Main/login";
     }
     
-    // 로그인 select
+    // 로그인 기능
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-    public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
-    	us.login(userVO);
-    	session.setAttribute("user_id", userVO.getUser_id());
-    	rttr.addAttribute("user_id", userVO.getUser_id());
-    	return "redirect:/";
-    }
+	public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
+    	boolean result = us.login(userVO, session);
+    	if(result) {
+    		session.setAttribute("user_id", userVO.getUser_id());
+    		session.setAttribute("user_pw", userVO.getUser_pw());
+    		rttr.addAttribute("loginsuccess");
+    		return "redirect:/";
+    	}else {
+    		rttr.addAttribute("loginfail");
+    		return "redirect:/login";
+    	}
+    	
+	}
+    
+    
+    //로그아웃
+    @RequestMapping(value = "/logout", method = RequestMethod.GET)
+	public String logout(HttpSession session, RedirectAttributes rttr) {
+		session.invalidate();
+		rttr.addAttribute("logout");
+		return "redirect:/";
+	}
+    
+    
+    
     
 }
+    

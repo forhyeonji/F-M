@@ -1,4 +1,5 @@
 $(function () {
+    $('#save').hide();
     const dColumns = ["bno", "title", "context", "user_id"];
     const boardDetail = () => {
         $.ajax({
@@ -9,7 +10,7 @@ $(function () {
                     return;
 
                 dColumns.map((key) => $(`#${key}`).val(response.result.data[key]));
-                console.log(response);
+                // console.log(response);
             },
             error: (error) => {
                 console.error(error)
@@ -18,9 +19,39 @@ $(function () {
     }
     const onModify = () => {
         $("#btn_modify").click(() => {
-            location.href = `/write/${bno}`;
+            $('.click2edit').summernote({focus: true});
+
+            $("#title").attr("readOnly",false);
+            $('#save').show();
+            $("#btn_modify").hide();
+            $(`#btn_delete`).hide();
+            $(`.btn_cancel`).hide();
         });
     }
+
+    $('#save').click(() => {
+        let jsondata = {
+            "title": $("#title").val(),
+            "context": $(".card-block").html()
+        }
+        $.ajax({
+            type: 'put',
+            url: `/modify/${bno}`,
+            data: JSON.stringify(jsondata),
+            contentType: "application/json; charset=utf-8",
+            success: () => {
+                $('.click2edit').summernote('destroy');
+
+                $("#title").attr("readOnly",true);
+                $(`#btn_delete`).show();
+                $(`.btn_cancel`).show();
+                $("#btn_modify").show();
+                $('#save').hide();
+            }
+        })
+
+
+    })
 
     const onDelete = () => {
         $("#btn_delete").click(() => {

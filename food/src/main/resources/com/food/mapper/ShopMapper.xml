@@ -3,16 +3,17 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-  <mapper namespace="com.food.mapper.ShopMapper">
-  
- 	<insert id="shopRegistration">
-   insert into tb_shop(prodnum,NAME,KIND,CONTENT,useyn,today,price1,price2,IMG_NAME,Parcel,packaging,unit,Origin,import)
-   values(#{prodnum},#{NAME},#{KIND},#{CONTENT},#{useyn},#{today},#{price1},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{import});
-	</insert> 
- 	
- 	
- 
-  </mapper>
+<mapper namespace="com.food.mapper.ShopMapper">
+
+	<insert id="Shopenroll">
+		insert into
+		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail)
+		values(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail})
+	</insert>
+
+
+
+</mapper>
 
 
 

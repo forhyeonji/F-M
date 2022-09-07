@@ -5,6 +5,11 @@
 
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopRegistration.css">
+
+<script type="text/javascript" src="../../../resources/JS/Shop/ShopRegistration.js">
+
+</script>	
+	
 <meta charset="UTF-8">
 
 </head>
@@ -14,14 +19,14 @@
 		<div class="sh_left">
 			<ul id="sh_Regimenu">
 				<li><a href="#" id="sh_enroll">상품 등록</a></li>
-				<li><a href="#" id="sh_enroll">상품 목록</a></li>
+				<li><a href="http://localhost:8080/shopProductlist" id="sh_enroll">상품 목록</a></li>
 				<li><a href="#" id="sh_enroll">상품 후기</a></li>
 				<li><a href="#" id="sh_enroll">상품 문의</a></li>
 			</ul>
 		</div>
 
 
-		<form id="sh_form" name="sh_form" enctype="multipart/form-data" method="post">
+		<form action="shopRegistration" id="sh_form" name="sh_form" method="post">
 			<div class="sh_right">
 
 				<div class="sh_allenroll">
@@ -59,7 +64,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasName" name="gasName"></td>
+						<td><input type="text" id="gasName" name="NAME"></td>
 					</tr>
 
 
@@ -72,22 +77,35 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="subDes" name="subDes"></td>
+						<td><input type="text" id="subDes" name="subcontent"></td>
 					</tr>
 
 					<tr>
 						<td>
 							<div>
-								<label for="sh_gasPrice" id="sh_menuName">상품가격:</label>
+								<label for="sh_gasPrice" id="sh_menuName">상품원가:</label>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasPrice" name="gasPrice">
+						<td><input type="text" id="gasPrice" name="price2">
 
 						</td>
 					</tr>
+					
+					<tr>
+						<td>
+							<div>
+								<label for="sh_gasPrice" id="sh_menuName">상품할인가:</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="text" id="gasPrice" name="discountprice">
 
+						</td>
+					</tr>
+					
 					<tr>
 						<td>
 							<div class="sh_gasType">
@@ -96,11 +114,13 @@
 						</td>
 					</tr>
 					<tr>
-						<td><select>
+						<td>
+						<select name="packaging">
 								<option value="">냉장</option>
 								<option value="">냉동</option>
 								<option value="">실온</option>
-						</select></td>
+						</select>
+						</td>
 					</tr>
 
 
@@ -112,7 +132,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasunit" name="gasunit"></td>
+						<td><input type="text" id="gasunit" name="unit"></td>
 					</tr>
 
 					<tr>
@@ -123,7 +143,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><select>
+						<td><select name="Origin">
 								<option value="">미국산</option>
 								<option value="">국내산</option>
 								<option value="">중국산</option>
@@ -138,7 +158,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasNum" name="gasNum"></td>
+						<td><input type="text" id="gasNum" name="KIND"></td>
 					</tr>
 
 					<tr>
@@ -149,7 +169,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasinput" name="gasinput">
+						<td><input type="text" id="gasinput" name="Import">
 						</td>
 					</tr>
 
@@ -161,7 +181,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><textarea rows="5" cols="50" id="gdsDes" name="gdsDes"></textarea>
+						<td><textarea rows="5" cols="50" id="gdsDes" name="CONTENT"></textarea>
 						</td>
 					</tr>
 
@@ -174,7 +194,7 @@
 					</tr>
 					
 					<tr>
-						<td><textarea rows="5" cols="50" id="gasDetail" name="gasDetail"></textarea>
+						<td><textarea rows="5" cols="50" id="gasDetail" name="detail"></textarea>
 						</td>
 					</tr>
 	
@@ -186,7 +206,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="gasimg" name="gasimg">
+						<td><input type="file" id="gasimg" name="IMG_NAME">
 						</td>
 					</tr>
 	

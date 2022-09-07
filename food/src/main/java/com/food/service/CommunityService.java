@@ -27,6 +27,9 @@ public class CommunityService {
 
         return resultMap;
     }
+    public CommunityVO seleteComuunityOne(String bno){
+        return communityMapper.selectCommunityOne(bno);
+    }
 
     public Map<String, Object> getBoardList(String bno) {
         Map<String, Object> resultMap = new HashMap<>();

@@ -14,7 +14,7 @@
 <body>
 <div id="my_con">	
 	<div id="my_main">
-	
+		
 		<div id="my_side_left">
 			<div id="my_title">
 				<img id="my_titleim" alt="내글" src="../../../resources/image/mypage/mywrite.png">
@@ -37,29 +37,22 @@
 					<tr>
 						<th>글번호</th><th>제목</th><th>작성일자</th>
 					</tr>
-					<tr><p>DB 글에 아이디가 없어서 셀렉이 안됨 / 그래서 전체출력중</p></tr>
-<!-- 원래 링크없던 버전 / for문 시작 -->	
-					<c:forEach items="${mywrite}" var="mywrite">
+				
+<!-- for문 시작 -->
+				<c:forEach items="${mywrite}" var="mywrite">
+				<c:if test="${mywrite.user_id eq sessionScope.user_id }">				
 					<tr>
 						<td>${mywrite.bno }</td>
 						<td><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
 						<td>${mywrite.reg_dt}</td>
 					</tr>
-					</c:forEach>
-				
-
-<!-- 글제목에 링크연결 for문
-					<c:forEach items="${mywritedetail }" var="mywrite" >
-						<tr>
-							<td>${mywrite.bno }</td>
-							<td><a href="/community/detail?bno">${mywrite.title }</a></td>
-							<td>${mywrite.reg_dt }</td>
-						</tr>
-					</c:forEach>
- -->
-					</table>
+				</c:if>	
+				</c:forEach>
+				</table>
 				<div>
-<!-- 이전버튼 -->			
+<!-- 이전버튼 -->
+		
+${paging }
 					<c:if test="${paging.prevBtn }">
 						<a href="/mypage/mywrite?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 					</c:if>
