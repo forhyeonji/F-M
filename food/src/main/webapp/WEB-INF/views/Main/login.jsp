@@ -1,6 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/login.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
@@ -51,9 +51,7 @@
 				<input type="submit" value="로그인" id="login_now">
 			</div>
 			
-			<c:if test = "${result}">
-                <div class = "login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
-            </c:if>
+			<div class = "login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
 			
 			<div>
 				<div id="login_search">

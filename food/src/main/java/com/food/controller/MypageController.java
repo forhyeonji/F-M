@@ -23,9 +23,9 @@ public class MypageController {
 	//마이페이지
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
 	public String mypage(UserVO user, Model model, HttpSession session) {
-		
-		user.setUser_id((String)session.getAttribute("user_id"));
-		ms.mypage(user);
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+
 		model.addAttribute("mypage", ms.mypage(user));
 		return "Mypage/mypage";
 	}
@@ -77,12 +77,14 @@ public class MypageController {
 	//내가 쓴 글 목록
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
 	public String mywrite(UserVO user, MypageVO mypage, Model model, CriteriaVO cri, HttpSession session) {
-		String id = (String)session.getAttribute("user_id");
+		String id = (String) session.getAttribute("user_id");
 		System.out.println("로그인된 아이디"+id);
-		user.setUser_id(id);
-		model.addAttribute("mywrite", ms.mypage(user));
+		user.setUser_id(id);		
+		mypage.setUser_id(id);
+		
+		model.addAttribute("user", ms.mypage(user));
 		model.addAttribute("mywrite", ms.mywrite(cri));		
-		int total = ms.total();
+		int total = ms.total(user);
 		model.addAttribute("paging", new PageVO(cri, total));
 		return "Mypage/mywrite";
 	}

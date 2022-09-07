@@ -56,11 +56,11 @@ public class UserController{
 	public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
     	boolean result = us.login(userVO, session);
     	if(result) {
-    		session.setAttribute("user_id", userVO);
+    		session.setAttribute("user_id", userVO.getUser_id());
+    		session.setAttribute("user_pw", userVO.getUser_pw());
     		rttr.addAttribute("loginsuccess");
     		return "redirect:/";
     	}else {
-    		session.setAttribute("user_id", userVO);
     		rttr.addAttribute("loginfail");
     		return "redirect:/login";
     	}
@@ -72,7 +72,7 @@ public class UserController{
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session, RedirectAttributes rttr) {
 		session.invalidate();
-		rttr.addAttribute("ByeBye Logout");
+		rttr.addAttribute("logout");
 		return "redirect:/";
 	}
     

@@ -9,8 +9,10 @@
 
 
 <div id="main_outborder">
-<a href="/logout">로그아웃</a>
 
+<c:if test="${empty sessionScope.user_id}"><a href="/login">로그인</a></c:if>
+
+<c:if test="${not empty sessionScope.user_id}"><a href="/logout">로그아웃</a></c:if>
 
 
 	<div>

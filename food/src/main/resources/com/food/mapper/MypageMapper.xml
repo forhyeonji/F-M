@@ -9,14 +9,12 @@
 		select * from tb_user where user_id=#{user_id}
 	</select>
 	  
-	<select id="mywrite" parameterType="com.food.model.UserVO" resultType="com.food.model.MypageVO">
+	<select id="mywrite" resultType="com.food.model.MypageVO">
 		select * 
 		from (
 				select @rownum:= @rownum+1 rownum, co.*
-				from tb_community co, (select @rownum:=0) as tmp
-				<if test="user_id !=null">
-				where user_id=#{user_id}
-				</if>
+				from tb_community co, (select @rownum:=0) as tmp	
+			
 				order by reg_dt desc
 			 ) as mywrite
 			 <![CDATA[
@@ -24,9 +22,9 @@
 			 ]]>
 	</select>
 	
-	<select id="total" resultType="int" parameterType="com.food.model.UserVO">
-		select count(*) from tb_community
-		<if test="user_id != null">
+	<select id="total" resultType="int">
+		select count(*) from tb_community 
+		<if test="user_id != null and user_id !=''">
 		where user_id=#{user_id}
 		</if>		
 	</select>

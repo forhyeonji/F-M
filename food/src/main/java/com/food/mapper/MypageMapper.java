@@ -16,7 +16,7 @@ public interface MypageMapper {
 	public ArrayList<MypageVO> mywrite(CriteriaVO cri);
 	
 	//게시판 전체 건수 조회하는 DB작업
-	public int total();
+	public int total(UserVO user);
 	
 	//내가쓴글 상세보기
 	public MypageVO mywritedetail(MypageVO mypage);

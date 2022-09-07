@@ -40,18 +40,18 @@
 				
 <!-- for문 시작 -->
 				<c:forEach items="${mywrite}" var="mywrite">
-				<c:if test="${mywrite.user_id eq sessionScope.user_id}">
+				<c:if test="${mywrite.user_id eq sessionScope.user_id }">				
 					<tr>
 						<td>${mywrite.bno }</td>
 						<td><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
 						<td>${mywrite.reg_dt}</td>
 					</tr>
-				</c:if>
+				</c:if>	
 				</c:forEach>
 				</table>
 				<div>
 <!-- 이전버튼 -->
-${mywrite }			
+		
 ${paging }
 					<c:if test="${paging.prevBtn }">
 						<a href="/mypage/mywrite?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
