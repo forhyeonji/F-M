@@ -34,6 +34,9 @@
 				<a href="http://localhost:8080/mypage/mylike"><button>❤내가 좋아요 누른 글</button></a>
 			</div>
 				<table id="my_write">
+				<tr><td>로그인해야됨!!!!!!!!!
+				${sessionScope.user_id}
+				</td></tr>
 					<tr>
 						<th>글번호</th><th>제목</th><th>작성일자</th>
 					</tr>
@@ -51,7 +54,8 @@
 				</table>
 				<div>
 <!-- 이전버튼 -->
-${mywrite }			
+${mywrite}
+		
 ${paging }
 					<c:if test="${paging.prevBtn }">
 						<a href="/mypage/mywrite?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
