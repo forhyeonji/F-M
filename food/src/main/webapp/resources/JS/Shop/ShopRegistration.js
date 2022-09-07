@@ -5,16 +5,28 @@
 $(document).ready(function(){
 	// 상품 등록 유효성 검사
 	$("#addBTN").click(function(){
+		//상품명
 		var menuName = $("#gasName").val();
-		var menuName = $("#subDes").val();
-		var menuName = $("#gasPrice").val();
-		var menuName = $("#gasType").val();
-		var menuName = $("#gasunit").val();
-		var menuName = $("#gasorigin").val();
-		var menuName = $("#gasNum").val();
-		var menuName = $("#gasinput").val();
-		var menuName = $("#gdsDes").val();
-		var menuName = $("#gasDetail").val();
+		//한줄소개
+		var subDes = $("#subDes").val();
+		//상품가격
+		var gasPrice = $("#gasPrice").val();
+		//포장타입
+		var gasType = $("#gasType").val();
+		//판매단위
+		var gasunit = $("#gasunit").val();
+		//원산지
+		var gasorigin = $("#gasorigin").val();
+		//상품수량
+		var gasNum = $("#gasNum").val();
+		//입고예정
+		var gasinput = $("#gasinput").val();
+		//상품설명
+		var gdsDes = $("#gdsDes").val();
+		//상세정보
+		var gasDetail = $("#gasDetail").val();
+		//상품이미지
+		var gasimg = $("#gasimg").val();
 		
 		if(gasName==""){
 			alert("상품명을 입력해주세요");
@@ -58,7 +70,7 @@ $(document).ready(function(){
 	
 		//상품목록이동(관리자)
 		$("#listbtn").click(function(){
-			location.href='${path}/shopProductlist/list.do'
+			location.href='${path}/shopProductlist'
 		})
 			
 		

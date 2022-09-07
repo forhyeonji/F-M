@@ -83,4 +83,5 @@
     </div>
 </div>
 <script src="/resources/JS/Board/BoardList.js"></script>
-<%@ include file="../Footer/footer.jsp" %>
+</body>
+</html>
