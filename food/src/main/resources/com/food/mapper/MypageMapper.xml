@@ -14,9 +14,7 @@
 		from (
 				select @rownum:= @rownum+1 rownum, co.*
 				from tb_community co, (select @rownum:=0) as tmp
-				<if test="user_id !=null">
-				where user_id=#{user_id}
-				</if>
+				
 				order by reg_dt desc
 			 ) as mywrite
 			 <![CDATA[
@@ -24,11 +22,11 @@
 			 ]]>
 	</select>
 	
-	<select id="total" resultType="int" parameterType="com.food.model.UserVO">
+	<select id="total" resultType="int">
 		select count(*) from tb_community
 		<if test="user_id != null">
 		where user_id=#{user_id}
-		</if>		
+		</if>			
 	</select>
 	
 	<select id="mywritedetail" resultType="com.food.model.MypageVO">

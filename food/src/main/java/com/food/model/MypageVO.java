@@ -1,5 +1,7 @@
 package com.food.model;
 
+import java.util.List;
+
 public class MypageVO {
 	//tb_community
 	private int bno;		//글번호
@@ -8,9 +10,9 @@ public class MypageVO {
 	private String reg_dt;	//작성일자
 	private String mod_dt;	//수정일자
 	private int cnt;		//조회수
-	private String myid;	//작성자
 	private String user_id;	//작성자
 	
+	private List<MypageVO> mypageVOList;
 
 	public String getUser_id() {
 		return user_id;
@@ -18,11 +20,11 @@ public class MypageVO {
 	public void setUser_id(String user_id) {
 		this.user_id = user_id;
 	}
-	public String getMyid() {
-		return myid;
+	public List<MypageVO> getMypageVOList() {
+		return mypageVOList;
 	}
-	public void setMyid(String myid) {
-		this.myid = myid;
+	public void setMypageVOList(List<MypageVO> mypageVOList) {
+		this.mypageVOList = mypageVOList;
 	}
 	//getter&setter
 	public int getBno() {
@@ -65,7 +67,7 @@ public class MypageVO {
 	@Override
 	public String toString() {
 		return "MypageVO [bno=" + bno + ", title=" + title + ", context=" + context + ", reg_dt=" + reg_dt + ", mod_dt="
-				+ mod_dt + ", cnt=" + cnt + ", myid=" + myid + ", user_id=" + user_id + "]";
+				+ mod_dt + ", cnt=" + cnt + ", user_id=" + user_id + "]";
 	}
 
 }

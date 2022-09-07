@@ -1,5 +1,7 @@
 package com.food.controller;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,6 +82,9 @@ public class MypageController {
 		String id = (String)session.getAttribute("user_id");
 		System.out.println("로그인된 아이디"+id);
 		user.setUser_id(id);
+		
+		mypage.setUser_id(id);
+		
 		model.addAttribute("mywrite", ms.mypage(user));
 		model.addAttribute("mywrite", ms.mywrite(cri));		
 		int total = ms.total();
