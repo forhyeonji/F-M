@@ -13,23 +13,30 @@
 			select @rownum:= @rownum+1 rownum, n.*
 			from tb_notice n, (select @rownum:=0) as tmp
 			
+			
+			
 			<if test = "keyword != null">
                 <choose>
                    <when test="type == 'T'.toString()">
-                      where title like concat('%',#{keyword},'%')
+                      where sep=#{sep} and title like concat('%',#{keyword},'%') 
                    </when>
                    <when test="type == 'C'.toString()">
-                      where context like concat('%',#{keyword},'%')
+                      where sep=#{sep} and context like concat('%',#{keyword},'%')
                    </when>
                    <otherwise>
-                      where title like concat('%',#{keyword},'%')
-                      or context like concat('%',#{keyword},'%')
+                     where sep=#{sep} and (title like concat('%',#{keyword},'%')
+                      or context like concat('%',#{keyword},'%'))
                    </otherwise>
                 </choose>
              
             </if>
+
+			<if test="keyword==null">
+			where sep=#{sep}	
+			</if>
 			
 			order by bno desc
+			
 		) as boardlist
 		
 		<![CDATA[
@@ -59,29 +66,34 @@
 	<!-- tb_notice테이블 전체 글 수 -->
 	<select id="total" resultType="int">
 		select count(*) from tb_notice
-		
-			<if test="keyword != null">
-	            <choose>
-	               <when test="type == 'T'.toString()">
-	                  where title like concat('%',#{keyword},'%')
-	               </when>
-	               <when test="type == 'C'.toString()">
-	                  where context like concat('%',#{keyword},'%')
-	               </when>
-	               <otherwise>
-	                  where title like concat('%',#{keyword},'%')
-	                  or context like concat('%',#{keyword},'%')
-	               </otherwise>
-	            </choose>
-	         </if>
+
+			<if test="keyword==null">
+			where sep=#{sep}	
+			</if>
+			
+			<if test = "keyword != null">
+                <choose>
+                   <when test="type == 'T'.toString()">
+                      where sep=#{sep} and title like concat('%',#{keyword},'%') 
+                   </when>
+                   <when test="type == 'C'.toString()">
+                      where sep=#{sep} and context like concat('%',#{keyword},'%')
+                   </when>
+                   <otherwise>
+                     where sep=#{sep} and (title like concat('%',#{keyword},'%')
+                      or context like concat('%',#{keyword},'%'))
+                   </otherwise>
+                </choose>
+             
+            </if>
 		
 	</select>
 
 	
 	<!-- 게시글 글쓰기 -->
 	<insert id="write">
-	insert into tb_notice (title, context, reg_dt, user_id, BoldTitle)
-	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle});
+	insert into tb_notice (title, context, reg_dt, user_id, BoldTitle, sep)
+	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle}, #{sep})
 	</insert>
 	
 	

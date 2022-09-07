@@ -36,6 +36,7 @@
 		<div class="NOTI_button">
 			<input type="submit" class="NOTI_but" value="등록">
 			<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://localhost:8080/notice'">
+			<input type="text" value="공지" name="sep">
 		</div> <!-- NOTI_button -->
 		
 	

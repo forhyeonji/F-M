@@ -1,12 +1,11 @@
 /**
  * 
  */
-
+/*
 $(document).ready(function(){
 	
 
 	ajaxlist();
-
 	
 })
 
@@ -65,13 +64,6 @@ $(document).ready(function(){
 		
 	}// list 함수 끝
 
-/*
-
-	// 글번호 함수 선언
-	function ajaxpaging(){
-		
-		
-		
-	} // ajaxpaging 함수 끝
-
 */
+
+
