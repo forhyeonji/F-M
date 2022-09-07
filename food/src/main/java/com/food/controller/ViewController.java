@@ -43,6 +43,8 @@ public class ViewController {
         mav.setViewName("/Board/BoardDetail");
         mav.addObject("bno",bno);
 
+        mav.addObject("board", communityService.seleteComuunityOne(bno));
+
         return mav;
     }
     @GetMapping("/write/{bno}")
