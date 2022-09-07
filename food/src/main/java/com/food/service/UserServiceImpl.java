@@ -2,6 +2,9 @@ package com.food.service;
 
 import com.food.mapper.UserMapper;
 import com.food.model.UserVO;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -15,8 +18,14 @@ public class UserServiceImpl implements UserService {
         um.join(userVO);
     }
 
-    public UserVO login(UserVO userVO) {
-      	System.out.println("로그인");
-      	return um.login(userVO);
+    public boolean login(UserVO userVO, HttpSession session) {
+      	UserVO login=um.login(userVO);
+      	boolean result=false;
+      	if(login!=null) {
+      		session.setAttribute("login", login);
+      		System.out.println("세션값="+session.getAttribute("login"));
+      		result=true;
+      	}
+      	return result;
     }
 }

@@ -3,6 +3,9 @@
     pageEncoding="UTF-8"%>
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/login.css">
+<script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="/resources/JS/Main/login.js"></script>
+
 
 
 <div id="login_outborder">

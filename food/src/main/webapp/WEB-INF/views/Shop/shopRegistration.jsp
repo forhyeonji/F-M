@@ -14,7 +14,7 @@
 		<div class="sh_left">
 			<ul id="sh_Regimenu">
 				<li><a href="#" id="sh_enroll">상품 등록</a></li>
-				<li><a href="#" id="sh_enroll">상품 목록</a></li>
+				<li><a href="http://localhost:8080/shopProductlist" id="sh_enroll">상품 목록</a></li>
 				<li><a href="#" id="sh_enroll">상품 후기</a></li>
 				<li><a href="#" id="sh_enroll">상품 문의</a></li>
 			</ul>
