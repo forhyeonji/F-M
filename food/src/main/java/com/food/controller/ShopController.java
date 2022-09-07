@@ -39,7 +39,7 @@ public class ShopController {
 	
 	@RequestMapping(value="/shopProductlist", method=RequestMethod.GET)
 	public String Shoplist() {
-		return"shop/shopProductlist";
+		return"Shop/shopProductlist";
 	}
 	
 	@RequestMapping(value = "/shopRegistration", method = RequestMethod.GET)
