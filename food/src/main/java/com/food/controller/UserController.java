@@ -53,19 +53,21 @@ public class UserController{
     
     // 로그인 기능
     @RequestMapping(value = "/login", method = RequestMethod.POST)
-	public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
-    	boolean result = us.login(userVO, session);
-    	if(result) {
-    		session.setAttribute("user_id", userVO.getUser_id());
-    		session.setAttribute("user_pw", userVO.getUser_pw());
-    		rttr.addAttribute("loginsuccess");
-    		return "redirect:/";
-    	}else {
-    		rttr.addAttribute("loginfail");
-    		return "redirect:/login";
-    	}
+    public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
     	
-	}
+        boolean result = us.login(userVO, session);
+        
+        if(result) {
+         session.setAttribute("user_id", userVO.getUser_id());
+         session.setAttribute("user_pw", userVO.getUser_pw());
+         rttr.addAttribute("loginsuccess");
+         return "redirect:/";
+        }else {
+         rttr.addAttribute("loginfail");
+         return "redirect:/login";
+        }
+        
+    }
     
     
     //로그아웃

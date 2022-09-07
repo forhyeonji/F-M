@@ -51,8 +51,9 @@
 				<input type="submit" value="로그인" id="login_now">
 			</div>
 			
-			<div class = "login_warn">사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</div>
-			
+			<c:if test = "${session.setAttribute != result} ">
+				<div class = "login_warn"><p>사용자 ID 또는 비밀번호를 잘못 입력하셨습니다.</p></div>
+			</c:if>
 			<div>
 				<div id="login_search">
 					<div class="login_search_d"><a class="login_a" href="http://localhost:8080/insert">회원가입</a></div>

@@ -10,11 +10,6 @@
 
 <div id="main_outborder">
 
-<c:if test="${empty sessionScope.user_id}"><a href="/login">로그인</a></c:if>
-
-<c:if test="${not empty sessionScope.user_id}"><a href="/logout">로그아웃</a></c:if>
-
-
 	<div>
 		<div>
 			<img src="../../../resources/image/main_image/main_slide_ex1.png">
