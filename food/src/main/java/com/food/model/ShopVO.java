@@ -1,5 +1,7 @@
 package com.food.model;
 
+import java.util.Date;
+
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -11,14 +13,19 @@ import lombok.ToString;
 public class ShopVO {
 
 	private int prodnum; 
-	private String Name; 
-	private String content;
+	private String NAME; 
+	private String CONTENT;
+	private Date today;
 	private String useyn; 
-	private String kind ; 
+	private String KIND ; 
 	private int price1;
 	private int price2;
 	private boolean image;		
 	private String IMG_NAME;
-	
+	private String Parcel;
+	private String packaging;
+	private int unit;
+	private String Origin;
+	private String Import;
 
 }

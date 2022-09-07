@@ -5,9 +5,9 @@ import com.food.model.ShopVO;
 public interface ShopMapper {
 
 	// 상품 등록 
-	public void Shopenroll(ShopVO shop);
+	public void Shopenroll(ShopVO Shop);
 
-	public ShopVO shop(ShopVO shop);
+	public ShopVO shop(ShopVO Shop);
 
 	
 	

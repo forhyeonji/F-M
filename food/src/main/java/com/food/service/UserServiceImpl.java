@@ -3,6 +3,8 @@ package com.food.service;
 import com.food.mapper.UserMapper;
 import com.food.model.UserVO;
 
+import java.util.Date;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,4 +30,6 @@ public class UserServiceImpl implements UserService {
       	}
       	return result;
     }
+    
+  
 }

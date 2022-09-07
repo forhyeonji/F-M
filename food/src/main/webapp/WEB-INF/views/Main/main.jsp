@@ -9,6 +9,7 @@
 
 
 <div id="main_outborder">
+<a href="/logout">로그아웃</a>
 
 
 
