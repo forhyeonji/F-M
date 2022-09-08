@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
@@ -22,23 +23,53 @@ public class MypageController {
 	
 	//마이페이지
 	@RequestMapping(value = "/mypage", method = RequestMethod.GET)
-	public String mypage(UserVO user, Model model, HttpSession session) {
+	public String mypage(UserVO user, MypageVO mypage, Model model, HttpSession session) {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
+		mypage.setUser_id(id);
 
 		model.addAttribute("mypage", ms.mypage(user));
 		return "Mypage/mypage";
 	}
-	//프로필 수정
+	//회원정보페이지
 	@RequestMapping(value = "mypage/profile_edit", method = RequestMethod.GET)
-	public String profileedit() {
+	public String profile(UserVO user, Model model, HttpSession session) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		model.addAttribute("profile", ms.profile(user));
 		return "Mypage/profile_edit";
 	}
-	//회원 탈퇴
+	//회원정보 수정 (update)
+	@RequestMapping(value = "mypage/edit", method = RequestMethod.POST)
+	public String edit(UserVO user, HttpSession session, RedirectAttributes rttr) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		ms.edit(user);
+		rttr.addAttribute("id", user.getUser_id());
+		return "redirect:/mypage/profile_edit";
+	}
+		
+	//회원 탈퇴 화면 페이지
 	@RequestMapping(value = "mypage/resign", method = RequestMethod.GET)
-	public String resign() {
+	public String resign(UserVO user, Model model, HttpSession session) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		model.addAttribute("resign", ms.resign(user));
 		return "Mypage/resign";
 	}
+	
+	//회원 탈퇴 (delete)
+	@RequestMapping(value = "mypage/resign", method = RequestMethod.POST)
+	public String resignPost(UserVO user, HttpSession session) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		ms.resignPost(user);
+		System.out.println("어디서 안된느겨");
+		System.out.println(user);
+		session.invalidate();
+		return "Main/main";
+	}
+	
 	//장바구니
 	@RequestMapping(value = "mypage/cart", method = RequestMethod.GET)
 	public String cart() {
@@ -82,8 +113,9 @@ public class MypageController {
 		user.setUser_id(id);		
 		mypage.setUser_id(id);
 		
+		
 		model.addAttribute("user", ms.mypage(user));
-		model.addAttribute("mywrite", ms.mywrite(cri));		
+		model.addAttribute("mywrite", ms.mywrite(mypage));		
 		int total = ms.total(user);
 		model.addAttribute("paging", new PageVO(cri, total));
 		return "Mypage/mywrite";

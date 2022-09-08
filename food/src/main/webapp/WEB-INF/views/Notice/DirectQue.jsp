@@ -10,11 +10,11 @@
 	<div class="NOTI_King_main_left">
 	
 	<ul type="none" class="NOTI_leftBar">
-		<li><a href="http://localhost:8080/notice" class="NOTI_a">공지사항</a></li>
-		<li><a href="http://localhost:8080/QnA" class="NOTI_a">자주하는 질문</a></li>
-		<li><a href="http://localhost:8080/directQue" class="NOTI_a">1:1 문의</a></li>
-		<li><a href="http://localhost:8080/directKing" class="NOTI_a">1:1 문의 관리자</a></li>
-		<li><a class="NOTI_a">실시간 문의하기</a></li>
+		<li><a href="http://localhost:8080/notice?sep=공지" class="NOTI_a">공지사항</a></li>
+		<li><a href="http://localhost:8080/QnA?sep=자주하는질문" class="NOTI_a">자주하는 질문</a></li>
+		<li><a href="http://localhost:8080/directQue?sep=개인문의" class="NOTI_a">1:1 문의</a></li>
+		<li><a href="http://localhost:8080/directKing?sep=개인문의답변" class="NOTI_a">1:1 문의 관리자</a></li>
+		<li><a>실시간 문의</a></li>
 	</ul>
 	</div>	<!-- main_left -->
 	

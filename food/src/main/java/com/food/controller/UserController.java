@@ -42,7 +42,7 @@ public class UserController{
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String joinPost(UserVO userVO) {
     	us.join(userVO);
-    	return "redirect:/";
+    	return "redirect:/login";
     }
     
     // 로그인
@@ -78,6 +78,8 @@ public class UserController{
 		return "redirect:/";
 	}
     
+    
+    // 주소 api 연결
     
     
     
