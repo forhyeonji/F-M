@@ -5,6 +5,7 @@
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="/resources/JS/Main/insertAdd.js"></script>
+<script src="/resources/JS/Main/insert.js"></script>
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/insert.css">
 
@@ -34,6 +35,8 @@
 					<h4>아이디</h4><br>
 					<input type="text" id="user_id" class="insert_inputext_b" name="user_id">
 					<input type="button" value="중복 확인" class="insert_insert_b">
+					<span class="insert_re1">사용 가능한 아이디입니다.</span>
+					<span class="insert_re2">아이디가 이미 존재합니다.</span>
 				</div><br>
 				
 				<div id="insert_pw"><br>
@@ -57,13 +60,14 @@
 					<input type="button" value="중복 확인" class="insert_insert_b">
 				</div><br>
 				
-		        <div class="insert_addbox"><br>
+		        <div class="insert_addrbox"><br>
 					<h4>주소</h4><br>
-					<button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button>
-					<input class="insert_ad" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">                      
-					<input class="insert_ad" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
-					<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
-					    
+					<div class="insert_addr">
+						<button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button>
+						<input class="insert_ad" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">                      
+						<input class="insert_ad" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
+						<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
+					</div>    
 					<!-- <input type="button" id="user_add" class="insert_add" name="user_add" value="주소 검색"> -->
 					
 				</div><br>

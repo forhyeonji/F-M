@@ -33,7 +33,7 @@ function PostCode() {
                 console.log(data.zonecode);
                 console.log(fullRoadAddr);
                 
-                
+                 
                 $("[name=user_zip]").val(data.zonecode);
                 $("[name=user_addr1]").val(fullRoadAddr);
                 $("[name=user_addr2]").val(detailRoadAddr);
