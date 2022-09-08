@@ -29,30 +29,29 @@
 		</div><!-- my_side_left -->
 
 		<div id="my_center">
-			<div>
+			<div id="my_aBtn">
 				<a href="http://localhost:8080/mypage/myreply"><button>💬내 댓글</button></a>
 				<a href="http://localhost:8080/mypage/mylike"><button>❤내가 좋아요 누른 글</button></a>
 			</div>
 				<table id="my_write">
+				<tr>
+				<td>이건나중에 지울거야</td>
+				<td>세션아이디값: ${sessionScope.user_id }</td>
+					<td>글쓴아이디값: ${user.user_id }</td></tr>
 					<tr>
 						<th>글번호</th><th>제목</th><th>작성일자</th>
 					</tr>
-				
-<!-- for문 시작 -->
-				<c:forEach items="${mywrite}" var="mywrite">
-				<c:if test="${mywrite.user_id eq sessionScope.user_id }">				
-					<tr>
+					<c:forEach items="${mywrite}" var="mywrite">
+					<tr>					
 						<td>${mywrite.bno }</td>
 						<td><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
 						<td>${mywrite.reg_dt}</td>
-					</tr>
-				</c:if>	
-				</c:forEach>
+					</tr></c:forEach>						
 				</table>
-				<div>
+			
+			<div id="my_paging">	
+				<div>			
 <!-- 이전버튼 -->
-		
-${paging }
 					<c:if test="${paging.prevBtn }">
 						<a href="/mypage/mywrite?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 					</c:if>
@@ -66,8 +65,14 @@ ${paging }
 					<c:if test="${paging.nextBtn }">
 						<a href="/mypage/mywrite?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 					</c:if>					
+				</div>
+				<div>
+					<form action="/mypage/mywrite">
+						<input type="text" name="keyword">
+						<input type="submit" value="검색">
+					</form>
 				</div>			
-				
+			</div>	
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

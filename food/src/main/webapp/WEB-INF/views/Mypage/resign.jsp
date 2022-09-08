@@ -28,19 +28,19 @@
 		</div><!-- side_left -->
 
 		<div id="my_center">
-			<div id="my_resign">
+			<div id="my_resign">			
 				<div id="my_resign_txt">
-				<p><input readonly type="text" value="회원id">님~</p>
+				<p>${resign.user_name }님 😉😉</p>
 					정말로 탈퇴하실건가요???<br>
-					탈퇴하는 당신을 붙잡고 있어요<br>
-					어쩌구 저쩌구,,,<br>
-					탈퇴한 회원의 정보는 <br>
-					개인정보보호법에 의거<br>
-					어쩌구 저쩌구<br>
-					구질구질하게 매달리는 중</div>
+					탈퇴하는 당신을 붙잡고 있어요////어쩌구 저쩌구,,,<br>
+					탈퇴한 회원의 정보는 ///개인정보보호법에 의거<br>
+					어쩌구 저쩌구////구질구질하게 매달리는 중</div>
+				<h3>user테이블 물리적으로 외래키 연결되어있어서 탈퇴안됨 ㅠ</h3>	
+			<form action="/mypage/resign" method="post">		
 				<div id="my_resign_go">
 					<button>회원 탈퇴</button>
-				</div>	
+				</div>
+			</form>		
 			</div><!-- my_resign -->	
 		</div><!-- my_center -->
 		

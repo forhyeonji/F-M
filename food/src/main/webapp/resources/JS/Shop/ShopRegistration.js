@@ -6,61 +6,61 @@ $(document).ready(function(){
 	// 상품 등록 유효성 검사
 	$("#addBTN").click(function(){
 		//상품명
-		var menuName = $("#gasName").val();
+		var menuName = $("#NAME").val();
 		//한줄소개
-		var subDes = $("#subDes").val();
+		var subDes = $("#subcontent").val();
 		//상품가격
-		var gasPrice = $("#gasPrice").val();
+		var gasPrice = $("#price2").val();
 		//포장타입
-		var gasType = $("#gasType").val();
+		var gasType = $("#packaging").val();
 		//판매단위
-		var gasunit = $("#gasunit").val();
+		var gasunit = $("#unit").val();
 		//원산지
-		var gasorigin = $("#gasorigin").val();
+		var gasorigin = $("#Origin").val();
 		//상품수량
-		var gasNum = $("#gasNum").val();
+		var gasNum = $("#KIND").val();
 		//입고예정
-		var gasinput = $("#gasinput").val();
+		var gasinput = $("#Import").val();
 		//상품설명
-		var gdsDes = $("#gdsDes").val();
+		var gdsDes = $("#CONTENT").val();
 		//상세정보
-		var gasDetail = $("#gasDetail").val();
+		var gasDetail = $("#detail").val();
 		//상품이미지
-		var gasimg = $("#gasimg").val();
+		var gasimg = $("#image").val();
 		
-		if(gasName==""){
+		if(NAME==""){
 			alert("상품명을 입력해주세요");
-			gasName.focus();
-		}else if(subDes==""){
+			NAME.focus();
+		}else if(subcontent==""){
 			alert("한줄소개를 입력해주세요")
-			subDes.focus();
-		}else if(gasPrice==""){
+			subcontent.focus();
+		}else if(price2==""){
 			alert("상품가격을 입력해주세요");
-			gasPrice.focus();
-		}else if(gasType=""){
+			price2.focus();
+		}else if(packaging=""){
 			alert("포장타입을 선택해주세요")
-			gasType.focus();
-		}else if(gasunit=""){
+			packaging.focus();
+		}else if(unit=""){
 			alert("판매단위를 입력해주세요")
-			gasunit.focus();
-		}else if(gasorigin=""){
+			unit.focus();
+		}else if(Origin=""){
 			alert("원산지를 선택해주세요")
-			gasorigin.focus();
-		}else if(gasNum=""){
+			Origin.focus();
+		}else if(KIND=""){
 			alert("상품수량을 입력해주세요")
-			gasNum.focus();
-		}else if(gasinput=""){
+			KIND.focus();
+		}else if(Import=""){
 			alert("입고예정일을 입력해주세요")
-			gasNum.focus();	
-		}else if(gdsDes=""){
+			Import.focus();	
+		}else if(CONTENT=""){
 			alert("상품설명을 입력해주세요")
-			gasDes.focus();
-		}else if(gasDetail=""){
+			CONTENT.focus();
+		}else if(detail=""){
 			alert("상세정보를 입력해주세요")
-			gasDetail.focus();
-		}else if(gasimg=""){
+			detail.focus();
+		}else if(image=""){
 			alert("이미지를 등록해주세요")
-			gasimg.focus();
+			image.focus();
 		}
 		
 		//상품 정보 전송(관리자)

@@ -33,7 +33,8 @@
 					<label>주문날짜 8/1</label>
 					<label>주문 번호 123456789</label>
 				</div>
-			배송조회 API ::::: https://tracker.delivery/guide/
+			<a href="https://tracker.delivery/guide/">👉 클릭////배송조회 API ::::: </a>
+			
 			</div>
 		</div><!-- my_center -->
 			

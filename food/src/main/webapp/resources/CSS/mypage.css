@@ -176,6 +176,10 @@ canclelist
 	width:100%
 }
 
+#my_paging{
+	display: flex;
+	justify-content: space-between;
+}
 
 /* ordercancle */
 #my_ordercancle{
@@ -245,6 +249,7 @@ canclelist
 	text-align:center;
 	border-radius:15px;
 }
+
 
 #my_resign_btn{
 	float:right;

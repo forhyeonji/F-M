@@ -1,0 +1,47 @@
+@charset "EUC-KR";
+
+* {
+	margin: 0px;
+	padding: 0px;
+}
+
+.Editheight{
+	height: 37px;
+}
+
+#sh_edith2{
+	margin-top:20px;
+	margin-bottom:15px;
+	margin-left: 650px;
+}
+
+#sh_edittd{
+	border-right:solid;
+	border-bottom:solid;
+	border-right-width:thin;
+	border-right-color:#ff80c0;
+	border-bottom: 1px;
+	border-left: 1px;
+	padding: 10px;
+}
+
+#sh_form{
+	width: 1050px;
+	align-content: center;
+	margin-left: 650px;
+}
+
+#sh_inputtext{
+	border: none; 
+}
+
+#sh_delete{
+	border:none;
+	margin-top: 20px;
+	padding-top: 10px;
+	border-top: solid;
+	border-top-width: thin;
+	border-top-color: #ff80c0;
+	 
+}
+

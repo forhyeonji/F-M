@@ -21,7 +21,9 @@ public class ShopServiceImpl implements ShopService {
 	public ShopVO shop(ShopVO Shop) {
 		System.out.println("등록완료");
 		return Sm.shop(Shop);
-		
 	}
 
+	public void ShopEdit(ShopVO Shop) {
+		Sm.ShopEdit(Shop);
+	}
 }

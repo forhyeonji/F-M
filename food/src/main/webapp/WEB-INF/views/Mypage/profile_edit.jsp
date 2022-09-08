@@ -27,45 +27,49 @@
 		</div><!-- my_side_left -->
 
 		<div id="my_center" >
+		<form action="/mypage/edit" method="post">
 			<table id="my_profile_edit">
 				<tr>
 					<td class="my_edit_td">ID</td>
-					<td><input readonly type="text" placeholder="회원id(수정불가)" ></td>
+					<td><input readonly type="text" value="${sessionScope.user_id }">
+						</td>
 				</tr>
 				<tr>
 					<td class="my_edit_td">비번</td>
-					<td><input type="password" placeholder="비번" ></td>
+					<td><input type="password" value="${profile.user_pw }" name="user_pw"></td>
 				</tr>	
-				<tr>
-					<td class="my_edit_td">비번 재확인</td>
-					<td><input type="password" placeholder="비번재확인" ></td>
-				</tr>							
+						
 				<tr>
 					<td class="my_edit_td">이름</td>
-					<td><input type="text" placeholder="회원이름" name="name"></td>
+					<td><input readonly type="text" value="${profile.user_name }" name="user_name"></td>
+				</tr>
+				<tr>
+					<td class="my_edit_td">닉네임</td>
+					<td><input type="text" value="${profile.user_nick}" name="user_nick"></td>
 				</tr>
 				<tr>
 					<td class="my_edit_td">주소</td>
-					<td><input type="text" placeholder="회원주소" name="add"></td>
+					<td><input type="text" value="${profile.user_pw }" name="user_zip"><p>주소는변경필요</p></td>
 				</tr>		
 				<tr>
 					<td class="my_edit_td">전화번호</td>
-					<td><input type="tel" placeholder="회원전화번호" name="phone"></td>
+					<td><input type="tel" value="${profile.user_phone }" name="user_phone"></td>
 				</tr>
 				<tr>
 					<td class="my_edit_td">이메일</td>
-					<td><input type="email" placeholder="이메일" name="email"></td>
+					<td><input type="email" value="${profile.user_email }" name="user_email"></td>
 				</tr>
-
 				<tr>
-					<th colspan="2">
-					<input type="button" value="회원정보 수정"></th>
-				</tr>
+					<th colspan="2" id="my_editBtn">
+					<input  type="submit" value="회원정보 수정"></th>
+				</tr>				
 			</table>
+			</form>
 		
-			<div id="my_resign_btn">
+				<div id="my_resign_btn">
 				<a href="http://localhost:8080/mypage/resign">
 				<input type="button" value="회원탈퇴"></a></div>
+					
 		</div><!-- my_center -->	
 		
 		<div id="my_side_right"></div>

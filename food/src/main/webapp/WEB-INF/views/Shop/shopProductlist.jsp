@@ -18,8 +18,9 @@
 <body>
 
 	<p>상품목록</p>
-
-	<c:if test="${sessionScope.adminId !=null}">
+	
+	<!-- session에 저장된 id가 관리자면 상품등록버튼 출력 -->
+	<c:if test="${sessionScope.Id !=null}">
 		<button type="button" id="shReg">상품등록</button>
 	</c:if>
 
@@ -38,11 +39,17 @@
 			<tr>
 				<td>${row.prodnum}</td>
 
-				<td><a href="${path}/shopPurchase/${row.prodnum}"> 
-				<img src="${path}/images/${row.imgName}" width="120px" height="110px"></a>
+				<td><a href="${path}/webapp/WEB-INF/views/Shop/shopPurchase/${row.prodnum}"> 
+				<img src="${path}/image/shop/${row.imgName}" width="120px" height="110px"></a>
 				</td>
 
-				<td><a href="${path}/shopPurchase/${row.prodnum}">${row.NAME}</a>
+				<td align="center">
+				<a href="${path}/shopPurchase/${row.prodnum}">${row.NAME}</a>
+				
+				<!-- session에 저장된 id가 관리자 id면 상품편집 링크 출력 -->
+				<c:if test="${sessionScope.ID !=null}">
+				<a href="${path}/webapp/WEB-INF/views/Shop/shopProductEdit/${row.prodnum}">상품편집</a>				
+				</c:if>	
 				</td>
 
 				<td><fmt:formatNumber value="${row.price2}" pattern="###,###,###" /></td>
