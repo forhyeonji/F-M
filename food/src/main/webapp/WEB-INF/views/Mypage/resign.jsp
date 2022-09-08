@@ -28,9 +28,9 @@
 		</div><!-- side_left -->
 
 		<div id="my_center">
-			<div id="my_resign">
+			<div id="my_resign">			
 				<div id="my_resign_txt">
-				<p><input readonly type="text" value="회원id">님~</p>
+				<p>${resign.user_name }님 😉😉</p>
 					정말로 탈퇴하실건가요???<br>
 					탈퇴하는 당신을 붙잡고 있어요<br>
 					어쩌구 저쩌구,,,<br>
@@ -38,9 +38,11 @@
 					개인정보보호법에 의거<br>
 					어쩌구 저쩌구<br>
 					구질구질하게 매달리는 중</div>
+			<form action="/mypage/resign" method="post">		
 				<div id="my_resign_go">
 					<button>회원 탈퇴</button>
-				</div>	
+				</div>
+			</form>		
 			</div><!-- my_resign -->	
 		</div><!-- my_center -->
 		

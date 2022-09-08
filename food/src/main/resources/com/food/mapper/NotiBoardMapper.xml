@@ -13,27 +13,27 @@
 			select @rownum:= @rownum+1 rownum, n.*
 			from tb_notice n, (select @rownum:=0) as tmp
 			
-			
+			<if test="keyword==null">
+			where sep=#{sep}	
+			</if>
 			
 			<if test = "keyword != null">
                 <choose>
                    <when test="type == 'T'.toString()">
-                      where sep=#{sep} and title like concat('%',#{keyword},'%') 
+                      where title like concat('%',#{keyword},'%') and sep = #{sep}
                    </when>
                    <when test="type == 'C'.toString()">
-                      where sep=#{sep} and context like concat('%',#{keyword},'%')
+                      where context like concat('%',#{keyword},'%') and sep = #{sep}
                    </when>
                    <otherwise>
-                     where sep=#{sep} and (title like concat('%',#{keyword},'%')
-                      or context like concat('%',#{keyword},'%'))
+                     where (title like concat('%',#{keyword},'%')
+                      or context like concat('%',#{keyword},'%')) and sep = #{sep}
                    </otherwise>
                 </choose>
              
             </if>
 
-			<if test="keyword==null">
-			where sep=#{sep}	
-			</if>
+		
 			
 			order by bno desc
 			
@@ -74,14 +74,14 @@
 			<if test = "keyword != null">
                 <choose>
                    <when test="type == 'T'.toString()">
-                      where sep=#{sep} and title like concat('%',#{keyword},'%') 
+                      where title like concat('%',#{keyword},'%') and sep = #{sep}
                    </when>
                    <when test="type == 'C'.toString()">
-                      where sep=#{sep} and context like concat('%',#{keyword},'%')
+                      where context like concat('%',#{keyword},'%') and sep = #{sep}
                    </when>
                    <otherwise>
-                     where sep=#{sep} and (title like concat('%',#{keyword},'%')
-                      or context like concat('%',#{keyword},'%'))
+                     where (title like concat('%',#{keyword},'%')
+                      or context like concat('%',#{keyword},'%')) and sep = #{sep}
                    </otherwise>
                 </choose>
              
