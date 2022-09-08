@@ -10,14 +10,14 @@ public class ShopVO {
 	private String KIND ; 
 	private int price2;
 	private int discountprice;
-	private boolean image;		
+	private String image;		
 	private String IMG_NAME;
-	private String Parcel;
+	private String Parcel;		/*택배회사이름*/
 	private String packaging;
-	private int unit;
+	private String unit;
 	private String Origin;
 	private String Import;
-	private int boundary;
+	private int boundary;		/*구매수량*/
 	private String detail;
 	
 	public int getProdnum() {
@@ -69,10 +69,10 @@ public class ShopVO {
 	public void setDiscountprice(int discountprice) {
 		this.discountprice = discountprice;
 	}
-	public boolean isImage() {
+	public String getImage() {
 		return image;
 	}
-	public void setImage(boolean image) {
+	public void setImage(String image) {
 		this.image = image;
 	}
 	public String getIMG_NAME() {
@@ -93,10 +93,10 @@ public class ShopVO {
 	public void setPackaging(String packaging) {
 		this.packaging = packaging;
 	}
-	public int getUnit() {
+	public String getUnit() {
 		return unit;
 	}
-	public void setUnit(int unit) {
+	public void setUnit(String unit) {
 		this.unit = unit;
 	}
 	public String getOrigin() {

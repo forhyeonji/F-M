@@ -39,10 +39,14 @@ public class ShopController {
 		return"Shop/shopProductlist";
 	}
 	
+	//상품등록 매핑
+	
 	@RequestMapping(value = "/shopRegistration", method = RequestMethod.GET)
 	public String Productregistration() {
 		return "Shop/shopRegistration";
 	}
+	
+	//상품등록 처리 매핑
 	
 	@RequestMapping(value = "/shopRegistration", method = RequestMethod.POST)
 	public String ProductregistrationPOST(ShopVO Shop) {
@@ -50,5 +54,20 @@ public class ShopController {
 		shop.Shopenroll(Shop);
 		return "redirect:/shopProductlist";
 	}
+	
+	
+	@RequestMapping(value="/shopProductEdit", method=RequestMethod.GET)
+	public String ShopEdit() {
+		return"Shop/shopProductEdit";
+	}
+	
+	@RequestMapping(value="/shopProductEdit", method=RequestMethod.POST)
+	public String ShopEditPOST(ShopVO Shop) {
+		System.out.println("controller="+Shop);
+		shop.ShopEdit(Shop);
+		return"Shop/shopProductEdit";
+	}
+	
+
 	
 }

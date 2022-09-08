@@ -26,7 +26,7 @@ public interface MypageService {
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
 	
 	//게시판 전체 건수 설계
-	public int total(UserVO user);
+	public int total(MypageVO mypage);
 	
 	//내가 쓴 글 상세보기
 	public MypageVO mywritedetail(MypageVO mypage);

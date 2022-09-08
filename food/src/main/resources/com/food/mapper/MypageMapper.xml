@@ -23,9 +23,9 @@
 	
 	<delete id="resignPost">
 		delete from tb_user 
-		where user_id=#{user_id}
+		where user_id=#{user_id}		
 	</delete>
-	  
+	
 	<select id="mywrite" resultType="com.food.model.MypageVO">
 		select * 
 		from (
@@ -35,8 +35,11 @@
 			<if test = "user_id != null">
              	where user_id=#{user_id}
             </if>
-						
-				order by reg_dt desc
+			<if test = "keyword != null">
+             	and title like concat('%',#{keyword},'%')
+            </if>
+            						
+			order by reg_dt desc
 			 ) as mywrite
 			 <![CDATA[
 			 where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
@@ -46,8 +49,12 @@
 	<select id="total" resultType="int">
 		select count(*) from tb_community 
 		<if test="user_id != null and user_id !=''">
-		where user_id=#{user_id}
-		</if>		
+			where user_id=#{user_id}
+		</if>
+		<if test = "keyword != null">
+            and title like concat('%',#{keyword},'%')
+        </if>		
+				
 	</select>
 	
 	<select id="mywritedetail" resultType="com.food.model.MypageVO">
