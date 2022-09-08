@@ -33,7 +33,7 @@
 		
 	
 		
-		
+		<input type="hidden" name="sep" value="공지">
 		<input type="text" name="keyword">
 		<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
 		<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
