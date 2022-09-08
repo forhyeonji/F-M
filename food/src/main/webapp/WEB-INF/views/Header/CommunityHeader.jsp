@@ -8,7 +8,7 @@
     <title>Insert title here</title>
 
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/header.css">
-
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/footer.css">
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
@@ -42,7 +42,16 @@
                             </div>
                 </div>
                 <div>
-                    <a href="/login"><button>로그인</button></a>
+                    <c:if test="${empty sessionScope.user_id}">
+                        <a href="/insert"><button>회원가입</button></a>
+                        <a href="/login"><button>로그인</button></a>
+                    </c:if>
+                    <c:if test="${not empty sessionScope.user_id}">
+                        <span>${sessionScope.user_id}님 환영합니다.</span>
+                        <a href="/logout"><button>로그아웃</button></a>
+                        <a href="/shopRegistration"><button>상품등록</button></a>
+                        <a href="/mypage"><button>마이페이지</button></a>
+                    </c:if>
                 </div>
             </div>
             <div class="h_navBox">

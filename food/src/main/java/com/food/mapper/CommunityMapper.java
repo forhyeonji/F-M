@@ -8,17 +8,57 @@ import java.util.List;
 
 @Mapper
 public interface CommunityMapper {
-    // 글쓰기에 해당되는 DB작업 설계
+    /**
+     * community 등록 쿼리
+     * @param communityVO
+     */
     void insertCommunity(CommunityVO communityVO);
 
-    // 게시글 목록 리스트에 해당되는 DB작업 설계
+    /**
+     * community 리스트 출력 쿼리
+     * @param reqPageVO
+     * @return
+     */
     List<CommunityVO> selectBoardList(ReqPageVO reqPageVO);
+
+    /**
+     * community 리스트 전체 카운터 쿼리
+     * @param reqPageVO
+     * @return
+     */
     int selectCommunityCount(ReqPageVO reqPageVO);
+
+    /**
+     * community 상세 쿼리
+     * @param bno
+     * @return
+     */
     CommunityVO selectCommunityOne(String bno);
 
+    /**
+     * community 번호 출력 쿼리
+     * @param communityVO
+     * @return
+     */
     int rowCount(CommunityVO communityVO);
 
+    /**
+     * community 수정 쿼리
+     * @param communityVO
+     * @return
+     */
     int putCommunity(CommunityVO communityVO);
 
+    /**
+     * community 삭제 쿼리
+     * @param bno
+     * @return
+     */
     int deleteCommunity(int bno);
+
+    /**
+     * community 조회수 출력 쿼리
+     * @param bno
+     */
+    void cntUp(String bno);
 }

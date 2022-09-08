@@ -49,7 +49,7 @@
 				</tr>
 				<tr>
 					<td class="my_edit_td">주소</td>
-					<td><input type="text" value="${profile.user_add }" name="user_add"></td>
+					<td><input type="text" value="${profile.user_pw }" name="user_zip"><p>주소는변경필요</p></td>
 				</tr>		
 				<tr>
 					<td class="my_edit_td">전화번호</td>

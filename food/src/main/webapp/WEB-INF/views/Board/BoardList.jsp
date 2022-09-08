@@ -50,7 +50,7 @@
                     <table class="tb_nav blist">
                         <thead class="b_thead">
                         <tr>
-                            <th class="blist_date">글번호</th>
+                            <th class="blist_bno">글번호</th>
                             <th class="blist_title">제목</th>
                             <th class="blist_cnt">조회수</th>
                             <th class="blist_date">날짜</th>
@@ -66,22 +66,20 @@
                 <div id="board_footer">
                     <div id="b_search">
                         <div class="search_inside">
-                            <input type="text" size="10" id="b_so">
-                            <input type="submit" value="🔍" id="search_btn" formaction="#">
-                            <select id="b_select">
-                                <option id="b_option">닉네임</option>
-                                <option>제목</option>
-                            </select>
+                            <input type="text" size="10" id="b_so" name="keyword">
+                            <input type="button" value="🔍" id="search_btn">
+                            <span id="b_select">제목 검색</span>
                         </div>
                     </div>
-                    <div id="b_list_btns">
+                    <c:if test="${user_id != null}">
+                        <div id="b_list_btns">
                             <input type="submit" value="글쓰기" id="btn_write">
-                    </div>
+                        </div>
+                    </c:if>
                 </div>
             </div>
         </form>
     </div>
 </div>
 <script src="/resources/JS/Board/BoardList.js"></script>
-</body>
-</html>
+<%@ include file="../Footer/footer.jsp" %>

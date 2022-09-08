@@ -10,8 +10,8 @@
 	
 		<div class="NOTI_King_main_left">
 		<ul type="none" class="NOTI_leftBar">
-			<li><a href="http://localhost:8080/notice?sep=공지" class="NOTI_a">공지사항</a></li>
-			<li><a href="http://localhost:8080/QnA?sep=자주하는질문" class="NOTI_a">자주하는 질문</a></li>
+			<li><a href="http://localhost:8080/notice?sep=noti" class="NOTI_a">공지사항</a></li>
+			<li><a href="http://localhost:8080/QnA?sep=qna" class="NOTI_a">자주하는 질문</a></li>
 			<li><a href="http://localhost:8080/directQue?sep=개인문의" class="NOTI_a">1:1 문의</a></li>
 			<li><a href="http://localhost:8080/directKing?sep=개인문의답변" class="NOTI_a">1:1 문의 관리자</a></li>
 			<li><a>실시간 문의</a></li>
@@ -33,7 +33,7 @@
 		
 	
 		
-		<input type="hidden" name="sep" value="공지">
+		<input type="hidden" name="sep" value="noti">
 		<input type="text" name="keyword">
 		<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
 		<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
@@ -62,7 +62,7 @@
 		
 							<c:choose>
 								<c:when test="${Notiboardlist.boldtitle}">
-									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:red"><b>[중요] ${Notiboardlist.title}</b></a>
+									<a href="notice_detail?bno=${Notiboardlist.bno}&sep=" style="color:red"><b>[중요] ${Notiboardlist.title}</b></a>
 								</c:when>
 								<c:otherwise>
 									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:black">${Notiboardlist.title}</a>
@@ -82,19 +82,19 @@
 		
 		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
 		<c:if test="${paging.prevBtn}">
-			<a href="/notice?sep=공지&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 		</c:if>
 		
 		
 		<!-- begin(1)이 end(10)가 될 동안 반복 -->
 		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-			<a href="/notice?sep=공지&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
+			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
 		</c:forEach>
 		
 		
 		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
 		<c:if test="${paging.nextBtn}">
-			<a href="/notice?sep=공지&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 		</c:if>
 
 		

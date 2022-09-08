@@ -49,8 +49,8 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	//게시판 전체 건수 조회
-	public int total(UserVO user) {
-		return mm.total(user);
+	public int total(MypageVO mypage) {
+		return mm.total(mypage);
 	}
 	
 	//내가 쓴 글 상세보기

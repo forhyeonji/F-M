@@ -108,3 +108,26 @@
 	border-radius : 5px;
 	border : none;
 }
+
+
+
+
+
+
+
+
+
+
+
+/* 중복아이디 존재하지 않는경우 */
+	.insert_re1{
+		color : green;
+		display : none;
+	}
+	/* 중복아이디 존재하는 경우 */
+	.insert_re2{
+		color : red;
+		display : none;
+	}
+
+
