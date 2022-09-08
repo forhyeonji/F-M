@@ -1,6 +1,10 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="/resources/JS/Main/insertAdd.js"></script>
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/insert.css">
 
@@ -55,7 +59,13 @@
 				
 		        <div class="insert_addbox"><br>
 					<h4>주소</h4><br>
-					<input type="button" id="user_add" class="insert_add" name="user_add" value="주소 검색">
+					<button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button>
+					<input class="insert_ad" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">                      
+					<input class="insert_ad" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
+					<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
+					    
+					<!-- <input type="button" id="user_add" class="insert_add" name="user_add" value="주소 검색"> -->
+					
 				</div><br>
 				
 				<div class="insert_gender"><br>
