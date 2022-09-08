@@ -63,6 +63,12 @@
         from tb_community
         where bno = #{bno}
     </delete>
+
+    <update id="cntUp">
+        update tb_community
+        set cnt = cnt + 1
+        where bno = #{bno}
+    </update>
 </mapper>
 
 

@@ -81,8 +81,8 @@ $(function (){
     }
 
     const onSearch = () => {
-        $('#b_so').click(()=> {
-            pagination.title = $('#title').val();
+        $('#search_btn').click(()=> {
+            pagination.title = $('#b_so').val();
             pagination.page = 1;
 
             onCommunityList();

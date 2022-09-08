@@ -5,6 +5,7 @@ import com.food.model.CommunityVO;
 import com.food.model.ReqPageVO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -27,7 +28,10 @@ public class CommunityService {
 
         return resultMap;
     }
+
+    @Transactional
     public CommunityVO seleteComuunityOne(String bno){
+        communityMapper.cntUp(bno);
         return communityMapper.selectCommunityOne(bno);
     }
 
