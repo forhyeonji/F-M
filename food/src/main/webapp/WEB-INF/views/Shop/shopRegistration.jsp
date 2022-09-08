@@ -42,6 +42,9 @@
 									<option value="">전체</option>
 									<option value="">육류</option>
 									<option value="">과일</option>
+									<option value="">채소</option>
+									<option value="">생선</option>
+									<option value="">음료</option>
 							</select>
 							</td>
 							<td id="sh_menutd">
