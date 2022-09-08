@@ -149,7 +149,15 @@ public class NoticeController {
 		
 		
 		@RequestMapping(value = "/QnA", method = RequestMethod.GET)
-		public String QnA () {
+		public String QnA (Model model, CriteriaVO criteriaVO) {
+			
+			model.addAttribute("list", nbs.list(criteriaVO));
+			
+			int total = nbs.total(criteriaVO);
+			// System.out.println("controller="+total);
+			
+			model.addAttribute("paging", new PageVO(criteriaVO, total));
+			
 			return "/Notice/QnA";
 		}
 		
