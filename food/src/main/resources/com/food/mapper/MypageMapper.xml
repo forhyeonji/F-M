@@ -8,13 +8,34 @@
 	<select id="mypage" resultType="com.food.model.UserVO">
 		select * from tb_user where user_id=#{user_id}
 	</select>
+	
+	<select id="profile" resultType="com.food.model.UserVO">
+		select * from tb_user where user_id=#{user_id}
+	</select>
+	
+	<update id="edit">
+		update tb_user set 
+			user_pw=#{user_pw}, user_nick=#{user_nick},
+			user_add=#{user_add}, user_phone=#{user_phone}, 
+			user_email=#{user_email}
+		where tb_user.user_id=#{user_id}
+	</update>
+	
+	<delete id="resignPost">
+		delete from tb_user 
+		where user_id=#{user_id}
+	</delete>
 	  
 	<select id="mywrite" resultType="com.food.model.MypageVO">
 		select * 
 		from (
 				select @rownum:= @rownum+1 rownum, co.*
 				from tb_community co, (select @rownum:=0) as tmp	
-			
+	
+			<if test = "user_id != null">
+             	where user_id=#{user_id}
+            </if>
+						
 				order by reg_dt desc
 			 ) as mywrite
 			 <![CDATA[
