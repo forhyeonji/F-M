@@ -16,24 +16,25 @@
 	<table class="NOTI_table">
 	<tr>
 		<td>
-			<input type="checkbox"> 제목 강조
-			<input type="checkbox"> 우선
+			<input type="checkbox" name="boldtitle"> 제목 강조
+			<input type="checkbox" name="FirstBoard"> 우선
 		</td>
 	</tr>
 	
 	<tr>
-		<td><input type="text" class="NOTI_WriteTitle" placeholder="제목을 입력해 주세요"></td>
+		<td><input type="text" class="NOTI_WriteTitle" placeholder="제목을 입력해 주세요" name="title"></td>
 	</tr>
 	
 	<tr>
-		<td><textarea class="NOTI_textarea" placeholder="내용을 입력해 주세요" ></textarea></td>
+		<td><textarea class="NOTI_textarea" placeholder="내용을 입력해 주세요" name="context"></textarea></td>
 	</tr>
 	
 	</table>
 	
 	<div class="NOTI_button">
 		<input type="submit" class="NOTI_but" value="등록">
-		<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://localhost:8080/QnA'">
+		<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://localhost:8080/QnA?sep=qna'">
+		<input type="hidden" value="qna" name="sep">
 	</div> <!-- button -->
 
 	</form>

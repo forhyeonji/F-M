@@ -126,7 +126,7 @@ public class NoticeController {
 		public String notice_removePost (NotiBoardVO board) {
 			nbs.remove(board);
 			
-			return "redirect:/notice";
+			return "redirect:/notice?sep=noti";
 		}
 		
 		
@@ -163,7 +163,9 @@ public class NoticeController {
 		
 		
 		@RequestMapping(value = "/QnA_detail", method = RequestMethod.GET)
-		public String QnA_detail () {
+		public String QnA_detail (NotiBoardVO board, Model model) {
+			model.addAttribute("detail",nbs.detail(board));
+			
 			return "/Notice/QnA_detail";
 		}
 		
@@ -174,9 +176,40 @@ public class NoticeController {
 		}
 		
 		@RequestMapping(value = "/QnA_write", method = RequestMethod.POST)
-		public String QnA_write_post () {
-			return "/Notice/QnA_write";
+		public String QnA_write_post (NotiBoardVO board) {
+			nbs.write(board);
+			return "redirect:/QnA";
 		}
+		
+		// 자주하는질문 글수정
+		@RequestMapping(value = "/QnA/modify", method = RequestMethod.GET)
+		public String QnA_modify (NotiBoardVO board, Model model) {
+			model.addAttribute("modify", nbs.detail(board));
+			
+			return "/Notice/QnA_modify";
+		}
+		
+		// 자주하는질문 글수정 서버
+		@RequestMapping(value = "/QnA/modify", method = RequestMethod.POST)
+		public String QnA_modifyPost (NotiBoardVO board, RedirectAttributes rttr) {
+			nbs.modify(board);
+			rttr.addAttribute("bno", board.getBno());
+					
+			return "redirect:/QnA_detail";
+		}
+		// 글삭제
+		@RequestMapping(value = "/QnA/remove", method = RequestMethod.POST)
+		public String QnA_removePost (NotiBoardVO board) {
+			nbs.remove(board);
+					
+			return "redirect:/QnA?sep=qna";
+		}
+		
+		
+		
+		
+		
+		
 		
 		
 		

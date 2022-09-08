@@ -37,14 +37,14 @@
 	
 
 	
-	<a href="#"><input type="button" value="이전글" class="NOTI_but"></a>
+	<input type="button" value="이전글" class="NOTI_but">
 	<input type="button" value="다음글" class="NOTI_but">
-	<input type="button" value="목록"  class="NOTI_but" onclick="location.href='http://localhost:8080/notice'">
+	<input type="button" value="목록"  class="NOTI_but" onclick="location.href='http://localhost:8080/notice?sep=noti'">
 	
 	
 	<input type="button" value="수정" onclick="location.href='/notice/modify?bno=${detail.bno}'">
 	<input type="submit" value="삭제" formaction="/notice/remove">
-	<input type="text" value="${detail.bno}" name="bno">
+	<input type="hidden" value="${detail.bno}" name="bno">
 	
 	
 </form>
