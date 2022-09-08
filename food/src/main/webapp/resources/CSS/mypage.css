@@ -176,6 +176,10 @@ canclelist
 	width:100%
 }
 
+#my_paging{
+	display: flex;
+	justify-content: space-between;
+}
 
 /* ordercancle */
 #my_ordercancle{

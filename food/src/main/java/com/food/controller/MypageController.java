@@ -116,7 +116,7 @@ public class MypageController {
 		
 		model.addAttribute("user", ms.mypage(user));
 		model.addAttribute("mywrite", ms.mywrite(mypage));		
-		int total = ms.total(user);
+		int total = ms.total(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));
 		return "Mypage/mywrite";
 	}
