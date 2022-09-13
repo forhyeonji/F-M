@@ -2,6 +2,8 @@ package com.food.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.food.model.ShopVO;
@@ -41,8 +43,11 @@ public class ShopController {
 	
 	//상품등록 매핑
 	
-	@RequestMapping(value = "/shopRegistration", method = RequestMethod.GET)
-	public String Productregistration() {
+
+	@GetMapping("/shopRegistration")
+	public String shopRegistration(ShopVO Shop,Model model) {
+		
+		model.addAttribute("shopdivision",shop.shopdivision(Shop));	
 		return "Shop/shopRegistration";
 	}
 	

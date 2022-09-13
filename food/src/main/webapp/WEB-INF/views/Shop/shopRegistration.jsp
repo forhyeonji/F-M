@@ -6,10 +6,11 @@
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopRegistration.css">
 
-<script type="text/javascript" src="../../../resources/JS/Shop/ShopRegistration.js">
-
-</script>	
+<script type="text/javascript"
+	src="../../../resources/JS/Shop/ShopRegistration.js">
 	
+</script>
+
 <meta charset="UTF-8">
 
 </head>
@@ -19,14 +20,16 @@
 		<div class="sh_left">
 			<ul id="sh_Regimenu">
 				<li><a href="#" id="sh_enroll">상품 등록</a></li>
-				<li><a href="http://localhost:8080/shopProductlist" id="sh_enroll">상품 목록</a></li>
+				<li><a href="http://localhost:8080/shopProductlist"
+					id="sh_enroll">상품 목록</a></li>
 				<li><a href="#" id="sh_enroll">상품 후기</a></li>
 				<li><a href="#" id="sh_enroll">상품 문의</a></li>
 			</ul>
 		</div>
 
 
-		<form action="shopRegistration" id="sh_form" name="sh_form" method="post">
+		<form action="shopRegistration" id="sh_form" name="sh_form"
+			method="post">
 			<div class="sh_right">
 
 				<div class="sh_allenroll">
@@ -37,23 +40,20 @@
 					<table id="sh_inputArea">
 						<tr>
 							<td id="sh_menutd">
-							<label id="sh_menuName"> 1차분류 </label> 
-							<select>
-									<option value="">전체</option>
-									<option value="">육류</option>
-									<option value="">과일</option>
-									<option value="">채소</option>
-									<option value="">생선</option>
-									<option value="">음료</option>
+							<select id="sh_State">
+									<option selected>1차분류</option>
+									<c:forEach items="${shopdivision}" var="divi">
+										<option><c:out value="${divi.class1}" /></option>
+									</c:forEach>
 							</select>
 							</td>
-							<td id="sh_menutd">
-							<label id="sh_menuName"> 2차분류 </label> 
-							<select>
-									<option value="">전체</option>
-									<option value="">소고기</option>
+
+							<td><select>
+									<option selected>2차분류</option>
+									<c:forEach items="${shopdivision}" var="divi">
+										<option><c:out value="${divi.class2}" /></option>
+									</c:forEach>
 							</select>
-							</td>
 						</tr>
 					</table>
 				</div>
@@ -91,11 +91,9 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasPrice" name="price2">
-
-						</td>
+						<td><input type="text" id="gasPrice" name="price2"></td>
 					</tr>
-					
+
 					<tr>
 						<td>
 							<div>
@@ -108,7 +106,7 @@
 
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td>
 							<div class="sh_gasType">
@@ -117,13 +115,11 @@
 						</td>
 					</tr>
 					<tr>
-						<td>
-						<select name="packaging">
+						<td><select name="packaging">
 								<option value="">냉장</option>
 								<option value="">냉동</option>
 								<option value="">실온</option>
-						</select>
-						</td>
+						</select></td>
 					</tr>
 
 
@@ -172,8 +168,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasinput" name="Import">
-						</td>
+						<td><input type="text" id="gasinput" name="Import"></td>
 					</tr>
 
 					<tr>
@@ -195,12 +190,12 @@
 							</div>
 						</td>
 					</tr>
-					
+
 					<tr>
 						<td><textarea rows="5" cols="50" id="gasDetail" name="detail"></textarea>
 						</td>
 					</tr>
-	
+
 					<tr>
 						<td>
 							<div>
@@ -209,10 +204,9 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="gasimg" name="IMG_NAME">
-						</td>
+						<td><input type="file" id="gasimg" name="IMG_NAME"></td>
 					</tr>
-	
+
 					<tr>
 						<td>
 							<div class="sh_inputArea">
