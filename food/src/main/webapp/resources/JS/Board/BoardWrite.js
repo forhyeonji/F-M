@@ -19,7 +19,7 @@ $(function () {
                 location.href = `/detail/${bno}`;
             },
             error: (error) => {
-                console.error(error)
+                console.log(error)
             }
         });
     }
