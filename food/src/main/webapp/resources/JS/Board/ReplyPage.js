@@ -13,7 +13,7 @@ $(function (){
 
         let html = ``;
         data.map((value) => {
-            html += `<div class="cm_reply" id="reply-${value['bno']}">`
+            html += `<div class="cm_reply" id="reply-${value['rno']}">`
             rColumns.map((key) => html += `<div>${value[key]}</div>`);
             html += `</div>`
         });

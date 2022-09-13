@@ -7,7 +7,7 @@
 <mapper namespace="com.food.mapper.CommunityReplyMapper">
     <sql id="communityReplyListSQL">
         select
-        context, date_format(reg_dt, '%m-%d') reg_dt, user_id
+        context, date_format(reg_dt, '%m-%d') reg_dt, user_id, rno
         from tb_community_reply
         where bno = #{bno}
     </sql>

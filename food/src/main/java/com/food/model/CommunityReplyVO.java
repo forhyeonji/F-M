@@ -8,4 +8,5 @@ public class CommunityReplyVO {
     private String reg_dt;
     private String user_id;
     private int bno;
+    private int rno;
 }
