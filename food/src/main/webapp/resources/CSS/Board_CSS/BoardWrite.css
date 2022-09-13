@@ -1,7 +1,3 @@
-*{
-    margin:0;
-    padding:0;
-}
 #wrap{
     height: 100vh;
     weight:100%;
@@ -18,6 +14,7 @@
     border: 1px solid #dddddd;
     width:100%;
     border-spacing: 30px;
+    height:auto;
 }
 #write_head{
     text-align:center;
@@ -25,17 +22,12 @@
 .b_title{
     width:100%;
     height:30px;
-    text-indent: 5px;
 }
 .b_text{
     width:100%;
-    resize:none;
     height: 400px;
     text-align:left;
     padding: 5px 10px;
-}
-#b_file{
-    text-align: left;
 }
 
 .btn_write {
@@ -81,4 +73,13 @@
     display: flex;
     justify-content: flex-end;
     margin:20px 10px;
+}
+#context{
+    height:auto;
+}
+#b_tbody {
+    height:auto;
+}
+#write_head > tr > th{
+    height:30px;
 }

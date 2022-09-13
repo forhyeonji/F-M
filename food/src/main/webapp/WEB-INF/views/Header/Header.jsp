@@ -56,6 +56,7 @@
                     	<a href="/login"><button>로그인</button></a>
                     </c:if>
 					<c:if test="${not empty sessionScope.user_id}">
+                        <span>${sessionScope.user_id}님 환영합니다.</span>
 						<a href="/logout"><button>로그아웃</button></a>
 						<a href="/shopRegistration"><button>상품등록</button></a>
 						<a href="/mypage"><button>마이페이지</button></a>

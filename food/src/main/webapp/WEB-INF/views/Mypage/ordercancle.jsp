@@ -28,33 +28,42 @@
 		</div><!-- my_side_left -->
 
 		<div id="my_center">
-			<h3 >취소 사유를 입력해주세요.</h3>
-			<div>
-				<label>주문날짜 8/1</label> <label>주문 번호 123456789</label>
-			</div>
+		
 			<div id="my_ordercancle">
-				<a href="http://localhost:8080/mypage/orderdetail">
+				<a href="http://localhost:8080/mypage/orderlist">
 				<table id="my_ordercancle_Tb">
 					<tr>
-						<td rowspan="3">상품 사진</td>
-						<td>상품 이름(제목)</td>
+						<td id="my_cancleDetail" colspan="2">
+							<label>주문날짜 8/1</label>
+							<label style="display:none">주문 번호 123456789</label>
+						</td>
+					</tr>				
+					<tr>
+						<td class="my_orderImg" rowspan="3">
+						<img class="my_orderImg" alt="상품사진" src="../../../resources/image/lemon.jpg"></td>
+						<td>shop테이블의 name</td>
 					</tr>
-					<tr><td>수량: 3</td></tr>
-					<tr><td>금액 30,000</td></tr>
+					<tr>
+						<td>가격 <span>shop테이블 price2</span></td>
+					</tr>
+					<tr>
+						<td>수량<span>shop테이블 수량???</span></td>
+					</tr>
 				</table></a>
 			</div>
 			<div>
+				<h3 >취소 사유를 입력해주세요.😢😢</h3>	
 				<table id="my_ordercancle_why">
 					<tr>
-						<td align="center"><input type="radio" name="cancle"
-							value="단순 변심">단순 변심 <input type="radio" name="cancle"
-							value="배송 지연">배송 지연 <br> <input type="radio"
-							name="cancle" value="주문 실수">주문 실수 <input type="radio"
-							name="cancle" value="서비스 불만족">서비스 불만족 <input type="radio"
-							name="cancle" value="기타">기타</td>
+						<td id="my_ordercancleRadio">
+						<input type="radio" name="cancle" value="단순 변심">단순 변심
+						<input type="radio" name="cancle" value="배송 지연">배송 지연 <br>
+						<input type="radio" name="cancle" value="주문 실수">주문 실수
+						<input type="radio" name="cancle" value="서비스 불만족">서비스 불만족 
+						<input type="radio" name="cancle" value="기타">기타</td>
 					</tr>
 					<tr>
-					<td><textarea rows="10" cols="60" placeholder="상세사유를  입력해주세요."></textarea></td>
+					<td><textarea rows="10" cols="80" placeholder="상세사유를  입력해주세요."></textarea></td>
 					</tr>
 					<tr>
 						<td><input type="submit" value="취소 신청"></td>
