@@ -1,6 +1,6 @@
 "use strict"
 $(function (){
-    const rColumns = ["context", "reg_dt", "user_id","bno"];
+    const rColumns = ["context", "reg_dt", "user_id"];
     const replyPagination = {
         page : 1,
         size: 10,
@@ -54,12 +54,13 @@ $(function (){
 
     const onReply = () => {
         $.ajax({
-            type:`POST`,
+            type:`post`,
             url:`/api/reply/${bno}`,
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(replyPagination),
             success: (data) => {
                 console.log(data);
+
                 isCommunityReplyListBody(data.result.data);
                 isPagination(data.result.count);
             }

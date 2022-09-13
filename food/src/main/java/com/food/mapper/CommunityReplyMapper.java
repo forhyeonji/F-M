@@ -3,6 +3,7 @@ package com.food.mapper;
 import com.food.model.CommunityReplyVO;
 import com.food.model.ReplyPageVO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -14,7 +15,6 @@ public interface CommunityReplyMapper {
      * @return
      */
     List<CommunityReplyVO> selectCommunityReplyList(ReplyPageVO replyPageVO);
-    List<CommunityReplyVO> selectCommunityReplyList(int bno);
 
     /**
      * community 리스트 전체 카운터 쿼리
