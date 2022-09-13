@@ -7,7 +7,7 @@
 			<div class="NOTI_Que_main_center">
 			<div class="NOTI_Que_main_top">
 			<label class="NOTI_notice_lable">1:1 문의</label>  <label>갠적으로 궁금해?~~</label> <br><br>
-			
+			111${list}222
 	<form action="/directQue" method="post">		
 			<table class="NOTI_Que_Table">
 			
@@ -69,18 +69,18 @@
 				<c:forEach items="${list}" var="Notiboardlist">
 			
 							<tr>
-			<%-- 					<td>
+								<td>
 				
 									<c:choose>
-										<c:when test="${Notiboardlist.sep==inquiry_recipe}">
+										<c:when test="${Notiboardlist.sep eq 'inquiry_recipe'}">
 											레시피
 										</c:when>
 										
-										<c:when test="${Notiboardlist.sep==inquiry_store}">
+										<c:when test="${Notiboardlist.sep eq 'inquiry_store'}">
 											스토어
 										</c:when>
 										
-										<c:when test="${Notiboardlist.sep==inquiry_commu}">
+										<c:when test="${Notiboardlist.sep eq 'inquiry_commu'}">
 											커뮤니티
 										</c:when>
 										
@@ -89,8 +89,7 @@
 										</c:otherwise>
 									</c:choose>
 				
-								</td> --%>
-								<td></td>
+								</td>
 								<td>${Notiboardlist.title}</td>
 								<td>${Notiboardlist.reg_dt}</td>
 								<td>답변여부</td>

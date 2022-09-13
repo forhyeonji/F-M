@@ -17,6 +17,9 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 	
 	// 게시글 목록
 	public ArrayList<NotiBoardVO> list(CriteriaVO criteriaVO) {
+
+		System.out.println("서비스="+nbm.list(criteriaVO));
+		
 		return nbm.list(criteriaVO);
 	}	
 	// 게시글 상세보기
