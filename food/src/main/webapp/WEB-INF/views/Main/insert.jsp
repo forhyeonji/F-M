@@ -15,7 +15,7 @@
 </div>
 
 <div>
-	<form action="/insert" method ="post">
+	<form action="/insert" method ="post" name="insert_form	">
 		
 		<div class="insert_head">
 			<h2 class="insert_h2">회원가입</h2>
@@ -97,11 +97,11 @@
 					<div id=insert_term_in>
 						<div><input type ="checkbox"></div>
 						<div>전체 동의</div><br>
-						<div><input type ="checkbox"></div>
+						<div><input type ="checkbox" id="user_term_1"></div>
 						<div>(필수)본인은 만 14세 이상입니다.</div><br>
-						<div><input type ="checkbox"></div>
+						<div><input type ="checkbox" id="user_term_2"></div>
 						<div>(필수)이용 약관에 동의합니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox"></div>
+						<div><input type ="checkbox" id="user_term_3"></div>
 						<div>(필수)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
 						<div><input type ="checkbox"></div>
 						<div>(선택)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
@@ -113,7 +113,8 @@
 				</div><br>
 				
 				<div id="insert_submit"><br>
-				<input type="submit" id = "insert_insert" value="가입하기">
+				<button type="button" id = "insert_insert" onclick="join_check();">가입하기</button>
+				<!-- <input type="submit" id = "insert_insert" value="가입하기"> -->
 				</div><br>
 		
 			</div>		
