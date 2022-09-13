@@ -17,6 +17,7 @@ public class NotiBoardVO {
     private String reg_dt;
     private boolean boldtitle;
     private String sep;
+    private int user_tel;
     
     
 }

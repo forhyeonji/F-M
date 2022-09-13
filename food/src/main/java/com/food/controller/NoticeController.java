@@ -79,9 +79,9 @@ public class NoticeController {
 		
 		
 		
-	
-
-	@RequestMapping(value = "/notice", method = RequestMethod.GET)
+	/* 공지사항 */
+		
+		@RequestMapping(value = "/notice", method = RequestMethod.GET)
 		public String notice (Model model, CriteriaVO criteriaVO) {
 			// System.out.println(criteriaVO);
 			model.addAttribute("list", nbs.list(criteriaVO));
@@ -118,7 +118,7 @@ public class NoticeController {
 			nbs.modify(board);
 			rttr.addAttribute("bno", board.getBno());
 			
-			return "redirect:/notice_detail";
+			return "redirect:/notice_detail?sep=";
 		}
 		
 		// 글삭제
@@ -140,13 +140,14 @@ public class NoticeController {
 		@RequestMapping(value = "/notice_write", method = RequestMethod.POST)
 		public String notice_write_post (NotiBoardVO board) {
 			nbs.write(board);
-			return "redirect:/notice";
+			return "redirect:/notice?sep=noti";
 		}
 
 		
 		
 		
 		
+	/* 자주하는질문 */		
 		
 		@RequestMapping(value = "/QnA", method = RequestMethod.GET)
 		public String QnA (Model model, CriteriaVO criteriaVO) {
@@ -178,7 +179,7 @@ public class NoticeController {
 		@RequestMapping(value = "/QnA_write", method = RequestMethod.POST)
 		public String QnA_write_post (NotiBoardVO board) {
 			nbs.write(board);
-			return "redirect:/QnA";
+			return "redirect:/QnA?sep=qna";
 		}
 		
 		// 자주하는질문 글수정
@@ -212,12 +213,27 @@ public class NoticeController {
 		
 		
 		
-		
+	/* 1:1문의 질문 */	
 		
 		@RequestMapping(value = "/directQue", method = RequestMethod.GET)
-		public String directQue () {
+		public String directQue (Model model, CriteriaVO criteriaVO) {
+			
+			System.out.println(criteriaVO);
+			model.addAttribute("list", nbs.list(criteriaVO));
+			int total = nbs.total(criteriaVO);
+			model.addAttribute("paging", new PageVO(criteriaVO, total));
+			
 			return "/Notice/DirectQue";
 		}
+		
+		
+		@RequestMapping(value = "/directQue", method = RequestMethod.POST)
+		public String directQuePost (NotiBoardVO board) {
+			nbs.write(board);
+			return "redirect:/directQue";
+		}
+		
+
 		
 		
 		@RequestMapping(value = "/directQue_detail", method = RequestMethod.GET)
@@ -226,7 +242,11 @@ public class NoticeController {
 		}
 		
 		
-	
+		
+		
+		
+	/* 1:1문의 답변 */
+		
 		@RequestMapping(value = "/directKing", method = RequestMethod.GET)
 		public String directKing () {
 			return "/Notice/DirectKing";
