@@ -7,12 +7,12 @@
 			<div class="NOTI_Que_main_center">
 			<div class="NOTI_Que_main_top">
 			<label class="NOTI_notice_lable">1:1 문의</label>  <label>갠적으로 궁금해?~~</label> <br><br>
-			111${list}222
+		
 	<form action="/directQue" method="post">		
 			<table class="NOTI_Que_Table">
 			
 				<tr>	
-					<td width="260px"> 연락처 <input type="text" placeholder="원하시는 분만 남겨주세요" class="NOTI_Tel" name="user_tel"> </td>
+					<td width="260px"> 연락처 <input type="text" placeholder="꼭 남겨주세요" class="NOTI_Tel" name="user_tel"> </td>
 			
 					<td>
 						<select class="NOTI_Que_select" name="sep">
@@ -24,7 +24,9 @@
 					</td>
 					
 					<td>
+						<input type="text" value="${sessionScope.user_id}" name="user_id">
 						<input type="submit" class="NOTI_but" value="등록">
+						
 					</td>
 					
 				</tr>
@@ -36,7 +38,7 @@
 				<tr>
 					<td colspan="3" height="400px" width="750px"><textarea class="NOTI_Que_Textarea" placeholder="문의사항을 남겨주세요." name="context"></textarea></td>
 				</tr>
-			
+
 			</table>
 	</form>	
 			
@@ -66,7 +68,7 @@
 			
 			
 					<!-- for문 시작 -->
-				<c:forEach items="${list}" var="Notiboardlist">
+				<c:forEach items="${list2}" var="Notiboardlist">
 			
 							<tr>
 								<td>
@@ -98,6 +100,24 @@
 		
 				</c:forEach> <!-- for문 끝 -->
 			</table>
+			
+			
+				<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
+		<c:if test="${paging.prevBtn}">
+			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+		</c:if>
+		
+		
+		<!-- begin(1)이 end(10)가 될 동안 반복 -->
+		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
+		</c:forEach>
+		
+		
+		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
+		<c:if test="${paging.nextBtn}">
+			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+		</c:if>
 			
 			</div> <!-- main_bottom -->
 			</div> <!-- main_center -->

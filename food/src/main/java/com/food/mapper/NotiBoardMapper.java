@@ -5,11 +5,16 @@ import java.util.ArrayList;
 import com.food.model.CriteriaVO;
 import com.food.model.NotiBoardVO;
 import com.food.model.PageVO;
+import com.food.model.UserVO;
 
 public interface NotiBoardMapper {
 
 	// 게시글 목록
 	public ArrayList<NotiBoardVO> list(CriteriaVO criteriaVO);
+	
+	// 게시글 목록
+	public ArrayList<NotiBoardVO> list2(UserVO user, CriteriaVO criteriaVO);
+	
 	// 게시글 상세보기
 	public NotiBoardVO detail(NotiBoardVO board);
 	// 게시글 수정

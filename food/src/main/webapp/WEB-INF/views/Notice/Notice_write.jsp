@@ -34,6 +34,7 @@
 		</div> <!-- NOTI_Border -->
 		
 		<div class="NOTI_button">
+			<input type="text" value="${sessionScope.user_id}" name="user_id">
 			<input type="submit" class="NOTI_but" value="등록">
 			<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://localhost:8080/notice?sep=noti'">
 			<input type="hidden" value="noti" name="sep">

@@ -45,6 +45,26 @@
 	</select>
 	
 	
+	
+
+	<!-- 게시글 목록 -->
+	<select id="list2" resultType="com.food.model.NotiBoardVO">
+	
+		select *
+		from(
+			select @rownum:= @rownum+1 rownum, n.*
+			from tb_notice n, (select @rownum:=0) as tmp
+			where user_id=#{user_id}
+			order by bno desc
+			
+		) as boardlist
+		
+		<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
+	</select>
+	
+	
 	<!-- 게시글 상세보기 -->
 	<select id="detail" resultType="com.food.model.NotiBoardVO">
 		select * from tb_notice where bno=#{bno}
@@ -88,12 +108,20 @@
             </if>
 		
 	</select>
+	
+	
+	<!-- tb_notice테이블 전체 글 수2 -->
+	<select id="total2" resultType="int">
+		select count(*) from tb_notice where user_id=#{user_id}
+	</select>
 
 	
 	<!-- 게시글 글쓰기 -->
 	<insert id="write">
+	
 	insert into tb_notice (title, context, reg_dt, user_id, BoldTitle, sep, user_tel)
 	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle}, #{sep}, #{user_tel})
+	
 	</insert>
 	
 	

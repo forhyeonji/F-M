@@ -1,24 +1,18 @@
 package com.food.controller;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Map;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CriteriaVO;
 import com.food.model.NotiBoardVO;
 import com.food.model.PageVO;
+import com.food.model.UserVO;
 import com.food.service.NotiBoardService;
 
 @Controller
@@ -118,7 +112,7 @@ public class NoticeController {
 			nbs.modify(board);
 			rttr.addAttribute("bno", board.getBno());
 			
-			return "redirect:/notice_detail?sep=";
+			return "redirect:/notice_detail";
 		}
 		
 		// 글삭제
@@ -216,13 +210,24 @@ public class NoticeController {
 	/* 1:1문의 질문 */	
 		
 		@RequestMapping(value = "/directQue", method = RequestMethod.GET)
-		public String directQue (Model model, CriteriaVO criteriaVO) {
+		public String directQue (UserVO user, Model model, CriteriaVO criteriaVO, HttpSession session) {
 			
-			System.out.println(criteriaVO);
-			model.addAttribute("list", nbs.list(criteriaVO));
-			int total = nbs.total(criteriaVO);
-			model.addAttribute("paging", new PageVO(criteriaVO, total));
 			
+			
+			String id = (String) session.getAttribute("user_id");
+			System.out.println("로그인된 아이디="+id);
+			
+			user.setUser_id(id);
+			System.out.println(user.getUser_id());
+			
+			
+			model.addAttribute("list2", nbs.list2(user, criteriaVO));
+			
+			int total2 = nbs.total(criteriaVO);
+			// System.out.println("controller="+total);
+			
+			model.addAttribute("paging", new PageVO(criteriaVO, total2));
+
 			return "/Notice/DirectQue";
 		}
 		
