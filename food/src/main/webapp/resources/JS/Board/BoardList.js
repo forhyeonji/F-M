@@ -75,7 +75,7 @@ $(function (){
                 isPagination(response.result.count);
             },
             error: (error) => {
-                console.error(error)
+                console.log(error)
             }
         });
     }

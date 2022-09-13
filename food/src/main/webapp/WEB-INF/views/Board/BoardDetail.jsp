@@ -2,8 +2,8 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <div id="container">
     <div id="content">
-        <input type="text" id="user_id" name="user_id" readonly>
-        <input type="text" id="bno" name="bno" readonly>
+        <input type="text" id="user_id" name="user_id" hidden>
+        <input type="text" id="bno" name="bno" hidden>
         <table class="b_table">
             <thead id="write_head">
             <tr>
@@ -36,11 +36,11 @@
         </div>
     </div>
 </div>
-</div>
+
 
 <script>
     let bno = '${bno}';
 </script>
 <script src="/resources/JS/Board/BoardDetail.js"></script>
-</body>
-</html>
+<%@ include file="../Footer/footer.jsp" %>
+

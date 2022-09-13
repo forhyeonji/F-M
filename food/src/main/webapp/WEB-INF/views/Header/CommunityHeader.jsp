@@ -22,8 +22,8 @@
     <script src="/resources/JS/Board/Common.js"></script>
 
 
-    <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/boardList.css" />
+<%--    <link rel="stylesheet" type="text/css"--%>
+<%--          href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/boardList.css" />--%>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/BoardWrite.css" />
 </head>
@@ -60,7 +60,7 @@
 <%--                        <td class="h_nav"><a href="/community/bread">레시피</a></td>--%>
                         <td class="h_nav"><a href="/shop">쇼핑</a></td>
                         <td class="h_nav"><a href="/community/bread">커뮤니티</a></td>
-                        <td class="h_nav"><a href="/notice">고객센터</a></td>
+                        <td class="h_nav"><a href="/notice?sep=noti">고객센터</a></td>
                     </tr>
                 </table>
             </div> <!-- navBox -->

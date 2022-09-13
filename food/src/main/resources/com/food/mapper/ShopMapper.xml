@@ -16,7 +16,11 @@
 		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail)
 		values(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail})
 	</insert>
-
+	
+	<select id="shopdivision" resultType="com.food.model.ShopdivisionVO">
+		select*from sh_division;
+	
+	</select>
 
 </mapper>
 

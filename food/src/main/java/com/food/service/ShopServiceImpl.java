@@ -1,10 +1,13 @@
 package com.food.service;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.mapper.ShopMapper;
 import com.food.model.ShopVO;
+import com.food.model.ShopdivisionVO;
 
 @Service
 public class ShopServiceImpl implements ShopService {
@@ -25,5 +28,9 @@ public class ShopServiceImpl implements ShopService {
 
 	public void ShopEdit(ShopVO Shop) {
 		Sm.ShopEdit(Shop);
+	}
+	
+	public ArrayList<ShopdivisionVO> shopdivision(ShopVO Shop) {
+		return Sm.shopdivision(Shop);
 	}
 }
