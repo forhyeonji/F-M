@@ -79,6 +79,17 @@ $(function (){
             }
         });
     }
+    const onReply = () => {
+        $.ajax({
+            type:`POST`,
+            url:`/api/reply`,
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(pagination),
+            success: (data) => {
+                console.log(data);
+            }
+        })
+    }
 
     const onSearch = () => {
         $('#search_btn').click(()=> {
@@ -91,4 +102,5 @@ $(function (){
 
     onCommunityList();
     onSearch();
+    onReply();
 });

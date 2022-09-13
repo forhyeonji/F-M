@@ -35,6 +35,5 @@
     let bno='${bno}';
 </script>
 <script src="/resources/JS/Board/BoardWrite.js"></script>
-<script src="/resources/JS/Board/BoardModify.js"></script>
 </body>
 </html>

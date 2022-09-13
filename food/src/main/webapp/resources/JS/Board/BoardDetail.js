@@ -17,9 +17,21 @@ $(function () {
             }
         });
     }
+
     const onModify = () => {
         $("#btn_modify").click(() => {
-            $('.click2edit').summernote({focus: true});
+            $('.click2edit').summernote({
+                height: 300,
+                minHeight: 300,
+                maxHeight: 500,
+                toolbar: [
+                    ['style', ['style']],
+                    ['font', ['bold', 'underline', 'clear']],
+                    ['color', ['color']],
+                    ['para', ['ul', 'ol', 'paragraph']],
+                    ['table', ['table']],
+                    ['insert', ['picture']],
+                ]});
 
             $("#title").attr("readOnly",false);
             $('#save').show();
