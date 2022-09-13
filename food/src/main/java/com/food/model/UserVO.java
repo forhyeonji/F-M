@@ -1,5 +1,7 @@
 package com.food.model;
 
+import java.sql.Timestamp;
+
 public class UserVO {
 	private String user_email;
     private String user_id;
@@ -13,8 +15,12 @@ public class UserVO {
     private String user_birth;
     private String user_phone;
     private int auth_grp_cd;
-    private String reg_dt;
-    private String mod_dt;
+    private Timestamp reg_dt;
+    private Timestamp mod_dt;
+    
+    
+    
+    
 	public String getUser_email() {
 		return user_email;
 	}
@@ -87,16 +93,16 @@ public class UserVO {
 	public void setAuth_grp_cd(int auth_grp_cd) {
 		this.auth_grp_cd = auth_grp_cd;
 	}
-	public String getReg_dt() {
+	public Timestamp getReg_dt() {
 		return reg_dt;
 	}
-	public void setReg_dt(String reg_dt) {
+	public void setReg_dt(Timestamp reg_dt) {
 		this.reg_dt = reg_dt;
 	}
-	public String getMod_dt() {
+	public Timestamp getMod_dt() {
 		return mod_dt;
 	}
-	public void setMod_dt(String mod_dt) {
+	public void setMod_dt(Timestamp mod_dt) {
 		this.mod_dt = mod_dt;
 	}
 	

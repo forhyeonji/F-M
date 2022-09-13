@@ -25,17 +25,22 @@
 				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
 			</div>
+			
+			
 		</div><!-- side_left -->
 		
 		<div id="my_center">
 			<div id="my_delivery" >
-				<div>
-					<label>주문날짜 8/1</label>
-					<label>주문 번호 123456789</label>
-				</div>
-			<a href="https://tracker.delivery/guide/">👉 클릭////배송조회 API ::::: </a>
 			
+				<div id="my_deliTop">
+					<button onclick="http://localhost:8080/mypage/orderlist">
+					주문 목록 바로 가기</button>					
+				</div>
+				<div id="my_deliMain">
+					<iframe style="width:100%; height:800px; border:none" src='https://tracker.delivery/#/kr.lotte/241743423084'></iframe>
+				</div>
 			</div>
+			
 		</div><!-- my_center -->
 			
 		<div id="my_side_right"></div>

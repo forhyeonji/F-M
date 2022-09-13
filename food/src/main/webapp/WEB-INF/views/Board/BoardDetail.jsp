@@ -3,7 +3,7 @@
 <div id="container">
     <div id="content">
         <input type="text" id="user_id" name="user_id" hidden>
-        <input type="text" id="bno" name="bno" hidden>
+        <input type="text" id="bno" name="bno" >
         <table class="b_table">
             <thead id="write_head">
             <tr>
@@ -24,6 +24,11 @@
             </tr>
             </tbody>
         </table>
+        <div id="cm_reply">
+            <textarea ></textarea>
+            <div id="reply_body"></div>
+            <div id="pagination">
+        </div>
         <div id="bw_foot">
             <c:if test="${sessionScope.user_id == board.user_id || sessionScope.user_id == 'root' || sessionScope.user_id == 'manager'}">
                 <button type="button" id="btn_modify" class="btn_write btn_modify">수정하기</button>
@@ -42,5 +47,6 @@
     let bno = '${bno}';
 </script>
 <script src="/resources/JS/Board/BoardDetail.js"></script>
+<script src="/resources/JS/Board/ReplyPage.js"></script>
 <%@ include file="../Footer/footer.jsp" %>
 

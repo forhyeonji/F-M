@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.food.mapper.CommunityReplyMapper">
+    <sql id="communityReplyListSQL">
+        select
+        bno, context, date_format(reg_dt, '%yy-%m-%d') reg_dt, user_id
+        from tb_community_reply
+        where bno = bno
+    </sql>
+
+    <select id="selectCommunityReplyList" parameterType="com.food.model.ReplyPageVO" resultType="com.food.model.CommunityReplyVO">
+        <include refid="communityReplyListSQL"/>
+        <include refid="commonSql.pagingSuffix"/>
+    </select>
+
+    <select id="selectCommunityReplyCount" parameterType="com.food.model.ReplyPageVO" resultType="java.lang.Integer">
+        SELECT count(*)
+        FROM (<include refid="communityReplyListSQL"/>) as A
+    </select>
+</mapper>

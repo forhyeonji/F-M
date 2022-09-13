@@ -19,6 +19,7 @@ public class ShopVO {
 	private String Import;
 	private int boundary;		/*구매수량*/
 	private String detail;
+
 	
 	public int getProdnum() {
 		return prodnum;

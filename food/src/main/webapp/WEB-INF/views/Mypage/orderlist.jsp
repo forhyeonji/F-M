@@ -27,81 +27,94 @@
 		</div><!-- my_side_left -->
 		
 		<div id="my_center">
-			<div class="my_order1">
-				<h3>주문내역을 확인하세요~😁😁</h3>
+			<h3>주문내역을 확인하세요~😁😁</h3>
+			<div class="my_order1">				
+<!-- 주문날짜별로 나누고, 상품별로 하나씩 생성 -->					
 				<table>
-					<tr>
-						<td colspan="3">주문날짜 8/1</td>
+					<tr>				
+						<td class="my_orderDate" colspan="3">주문날짜 8/1
+						<input type="hidden" value="1234-5678-9999"></td>
 					</tr>
 					<tr>
-						<td rowspan="3">상품 사진</td>
-						<td>상품 이름(제목)</td>
-						<td>
+						<td class="my_orderTb" rowspan="3"><img class="my_orderImg" alt="상품사진" src="../../../resources/image/egg.jpg"></td>
+						<td>shop테이블의 name</td>
+						<td class="my_orderTb">
 						<a href="http://localhost:8080/mypage/orderdetail">
 						<input type="button" value="상세 보기"></a></td>
 					</tr>
 					<tr>
-						<td>외 2품목</td>
-						<td>
-						<input type="hidden" value="1234-5678-9999">
-						<a href="http://localhost:8080/mypage/delivery">
+						<td>shop테이블의 content</td>
+						<td class="my_orderTb"><a href="http://localhost:8080/mypage/delivery">
 						<input type="button" value="배송 조회"></a></td>
 					</tr>
 					<tr>
-						<td>금액 80,000</td>
-						<td>
+						<td>가격 <span>shop테이블 price2</span>
+							/ 수량<span>shop테이블 수량???</span></td>
+						<td class="my_orderTb">
 						<a href="http://localhost:8080/mypage/ordercancle">
 						<input type="button" value="취소"></a>
 						<a href="http://localhost:8080/mypage/orderrefund">
 						<input type="button" value="반품"></a></td>
 					</tr>
 				</table>
-			</div>
-			<div class="my_order1">
+
 				<table>
-					<tr>
-						<td colspan="3">주문날짜 8/1</td>
+					<tr>				
+						<td class="my_orderDate" colspan="3">주문날짜 8/1
+						<input type="hidden" value="1234-5678-9999"></td>
 					</tr>
 					<tr>
-						<td rowspan="3">상품 사진</td>
-						<td>상품 이름(제목)</td>
-						<td><a href="http://localhost:8080/mypage/orderdetail">
+						<td class="my_orderTb" rowspan="3"><img class="my_orderImg" alt="상품사진" src="../../../resources/image/chicken.jpg"></td>
+						<td>shop테이블의 name</td>
+						<td class="my_orderTb">
+						<a href="http://localhost:8080/mypage/orderdetail">
 						<input type="button" value="상세 보기"></a></td>
 					</tr>
 					<tr>
-						<td>외 5품목</td>
-						<td>
-						<a href="http://localhost:8080/mypage/delivery">
-						<input type="button" value="배송 완료"></a></td>
+						<td>shop테이블의 content</td>
+						<td class="my_orderTb"><a href="http://localhost:8080/mypage/delivery">
+						<input type="button" value="배송 조회"></a></td>
 					</tr>
 					<tr>
-						<td>금액 130,000</td>
-						<td></td>
+						<td>가격 <span>shop테이블 price2</span>
+							/ 수량<span>shop테이블 수량???</span></td>
+						<td class="my_orderTb">
+						<a href="http://localhost:8080/mypage/ordercancle">
+						<input type="button" value="취소"></a>
+						<a href="http://localhost:8080/mypage/orderrefund">
+						<input type="button" value="반품"></a></td>
 					</tr>
-				</table>
+				</table>								
 			</div>
+			
 			<div class="my_order1">
 				<table>
-					<tr>
-						<td colspan="3">주문날짜 8/1</td>
+					<tr>				
+						<td class="my_orderDate" colspan="3">주문날짜 7/25
+						<input type="hidden" value="1234-5678-9999"></td>
 					</tr>
 					<tr>
-						<td rowspan="3">상품 사진</td>
-						<td>상품 이름(제목)</td>
-						<td><a href="http://localhost:8080/mypage/orderdetail">
+						<td class="my_orderTb" rowspan="3"><img class="my_orderImg" alt="상품사진" src="../../../resources/image/lemon.jpg"></td>
+						<td>shop테이블의 name</td>
+						<td class="my_orderTb">
+						<a href="http://localhost:8080/mypage/orderdetail">
 						<input type="button" value="상세 보기"></a></td>
 					</tr>
 					<tr>
-						<td>외 1품목</td>
-						<td><a href="http://localhost:8080/mypage/delivery">
-						<input type="button" value="배송 완료"></a></td>
+						<td>shop테이블의 content</td>
+						<td class="my_orderTb"><a href="http://localhost:8080/mypage/delivery">
+						<input type="button" value="배송 조회"></a></td>
 					</tr>
 					<tr>
-						<td>금액 40,000</td>
-						<td></td>
+						<td>가격 <span>shop테이블 price2</span>
+							/ 수량<span>shop테이블 수량???</span></td>
+						<td class="my_orderTb">
+						<a href="http://localhost:8080/mypage/shopPurchase">
+						<input type="button" value="상품평"></a>
+						</td>
 					</tr>
 				</table>
-			</div>		
+			</div>
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

@@ -16,7 +16,8 @@
 	<update id="edit">
 		update tb_user set 
 			user_pw=#{user_pw}, user_nick=#{user_nick},
-			user_add=#{user_add}, user_phone=#{user_phone}, 
+			user_zip=#{user_zip}, user_addr1=#{user_addr1},
+			user_addr2=#{user_addr2}, user_phone=#{user_phone}, 
 			user_email=#{user_email}
 		where tb_user.user_id=#{user_id}
 	</update>

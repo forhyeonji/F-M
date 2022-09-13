@@ -15,4 +15,16 @@
         from tb_user
         where user_id = #{user_id} and user_pw = #{user_pw}
     </select>
+    
+    <!-- 이메일 중복 체크 -->
+	<select id="user_emailChk" resultType="int">
+	  SELECT COUNT(*) FROM member
+	  WHERE user_email = #{user_email}
+	</select>
+	
+	<!-- 아이디 중복 체크 -->
+	<select id="user_idChk" resultType="int">
+	  SELECT COUNT(*) FROM member
+	  WHERE user_id = #{user_id}
+	</select>
 </mapper>
