@@ -25,9 +25,6 @@
 
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<%--    <script src="${pageContext.request.contextPath}/resources/JS/Board/BoardList.js" type="text/javascript"></script>--%>
-<%--    <script src="${pageContext.request.contextPath}/resources/JS/Board/BoardWrite.js" type="text/javascript"></script>--%>
-
 
 	<!-- notice script -->
 	<script src="/resources/JS/Notice/NoticeList.js" type="text/javascript"></script>

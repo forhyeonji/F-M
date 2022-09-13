@@ -10,7 +10,6 @@
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/header.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/footer.css">
 
-
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
 
@@ -21,9 +20,6 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-bs4.min.js"></script>
     <script src="/resources/JS/Board/Common.js"></script>
 
-
-<%--    <link rel="stylesheet" type="text/css"--%>
-<%--          href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/boardList.css" />--%>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/BoardWrite.css" />
 </head>
