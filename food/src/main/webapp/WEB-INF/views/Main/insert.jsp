@@ -15,7 +15,7 @@
 </div>
 
 <div>
-	<form action="/insert" method ="post" name="insert_form	">
+	<form action="/insert" method ="post" name="insert_form" onsubmit="return join_check()">
 		
 		<div class="insert_head">
 			<h2 class="insert_h2">회원가입</h2>
@@ -26,13 +26,13 @@
 			<div class="insert_inborder">
 		
 				<div id="insert_email">
-					<h4>이메일</h4><br>
+					<h4>이메일*</h4><br>
 					<input type="text" id="user_email" class="insert_inputext_b" name="user_email">
-					<input type="button" value="이메일 확인" class="insert_insert_b">
+					<input type="button" value="중복 확인" class="insert_insert_b">
 				</div><br>
 				
 				<div id="insert_id"><br>
-					<h4>아이디</h4><br>
+					<h4>아이디*</h4><br>
 					<input type="text" id="user_id" class="insert_inputext_b" name="user_id">
 					<input type="button" value="중복 확인" class="insert_insert_b">
 					<span class="insert_re1">사용 가능한 아이디입니다.</span>
@@ -40,17 +40,17 @@
 				</div><br>
 				
 				<div id="insert_pw"><br>
-					<h4>비밀번호</h4><br>
+					<h4>비밀번호*</h4><br>
 					<input type="text" id="user_pw" class="insert_inputext" name="user_pw">
 				</div><br>
 				
 				<div id="insert_pwcheck"><br>
-					<h4>비밀번호 재확인</h4><br>
+					<h4>비밀번호 확인*</h4><br>
 					<input type="text" id="user_repw" class="insert_inputext">
 				</div><br>
 				
 				<div id="insert_name"><br>
-					<h4>이름</h4><br>
+					<h4>이름*</h4><br>
 					<input type="text" id="user_name" class="insert_inputext" name="user_name">
 				</div><br>
 				
@@ -61,9 +61,9 @@
 				</div><br>
 				
 		        <div class="insert_addrbox"><br>
-					<h4>주소</h4><br>
+					<h4>주소*</h4><br>
 					<div class="insert_addr">
-						<button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button>
+						<button type="button" class="btn btn-default" onclick="PostCode();">주소 찾기</button>
 						<input class="insert_ad" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">                      
 						<input class="insert_ad" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
 						<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
@@ -87,13 +87,13 @@
 				</div><br>
 				
 				<div id="insert_phone"><br>
-					<h4>휴대폰 번호</h4><br>
+					<h4>휴대폰 번호*</h4><br>
 					<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
 					<input type="button" id="insert_cellph" value="인증번호 받기">
 				</div><br>
 				
 				<div id=insert_term><br>
-				<h4>이용 동의사항</h4><br>
+				<h4>이용 동의사항*</h4><br>
 					<div id=insert_term_in>
 						<div><input type ="checkbox"></div>
 						<div>전체 동의</div><br>
@@ -113,7 +113,7 @@
 				</div><br>
 				
 				<div id="insert_submit"><br>
-				<button type="button" id = "insert_insert" onclick="join_check();">가입하기</button>
+				<input type="submit" id = "insert_insert" value="가입하기">
 				<!-- <input type="submit" id = "insert_insert" value="가입하기"> -->
 				</div><br>
 		
