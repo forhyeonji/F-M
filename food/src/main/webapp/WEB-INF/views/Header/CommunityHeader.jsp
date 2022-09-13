@@ -22,8 +22,8 @@
     <script src="/resources/JS/Board/Common.js"></script>
 
 
-    <link rel="stylesheet" type="text/css"
-          href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/boardList.css" />
+<%--    <link rel="stylesheet" type="text/css"--%>
+<%--          href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/boardList.css" />--%>
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/BoardWrite.css" />
 </head>
