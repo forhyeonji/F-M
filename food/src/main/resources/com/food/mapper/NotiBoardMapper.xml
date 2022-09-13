@@ -92,8 +92,8 @@
 	
 	<!-- 게시글 글쓰기 -->
 	<insert id="write">
-	insert into tb_notice (title, context, reg_dt, user_id, BoldTitle, sep)
-	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle}, #{sep})
+	insert into tb_notice (title, context, reg_dt, user_id, BoldTitle, sep, user_tel)
+	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle}, #{sep}, #{user_tel})
 	</insert>
 	
 	

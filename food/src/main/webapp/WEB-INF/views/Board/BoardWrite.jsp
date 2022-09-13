@@ -3,8 +3,8 @@
     <div id="container">
         <div id="content">
             <form id="form_register">
-                <input type="text" name="uesr_id" id="user_id" value="${user_id}" readonly>
-                <input type="text" name="bno" id="bno" value="${bno}" readonly>
+                <input type="text" name="uesr_id" id="user_id" value="${user_id}" hidden>
+                <input type="text" name="bno" id="bno" value="${bno}" hidden>
                 <div class="click2edit">${context}</div>
                 <table class="b_table">
                     <thead id="write_head">
