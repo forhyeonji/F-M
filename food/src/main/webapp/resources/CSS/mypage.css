@@ -75,6 +75,7 @@ body {
 	border:1px solid rgb(234, 234, 234);
 	padding: 15px;
 	margin : 10px;
+
 }
 
 #my_side_right{
@@ -153,6 +154,8 @@ canclelist
 	width:80%;
 }
 
+/* delivery */
+
 
 /* mylike */
 #my_like{
@@ -184,7 +187,7 @@ canclelist
 /* ordercancle */
 #my_ordercancle{
 	border: 1px solid rgb(234, 234, 234);
-	margin: 20px 0px;
+	margin:0px 0px 20px;
 }
 
 #my_ordercancle_Tb{
@@ -197,6 +200,17 @@ canclelist
 	text-align:center;
 }
 
+#my_ordercancleRadio{
+	background-color:#ff8080;
+	font-weight:bold;
+}
+
+#my_cancleDetail{
+	width:100%;
+	padding:5px;
+	font-weight:bold;
+	color:#ff8080;	
+}
 
 /* orderdetail */
 .my_orderdetail{
@@ -216,23 +230,58 @@ canclelist
 	width:80%;
 }
 
+.my_orderdetailTB{
+	text-align:center;
+	padding:5px;
+	font-weight:bold;
+	color:#ff8080;
+}
+
+/* orderlist */
+.my_orderDate{
+	width:100%;
+	padding:5px;
+	font-weight:bold;
+	color:#ff8080;	
+}
+
+.my_orderImg{
+	width:100px;
+}
+
+.my_orderTb{
+	width:auto;
+	text-align:center;
+}
 
 /*  orderrefund */
 #my_orderrefund{
 	border: 1px solid rgb(234, 234, 234);
-	margin: 20px 0px;
-}
-
-#my_orderrefund_de{
-	width:100%;
+	margin: 0px 0px 20px;
 }
 
 #my_orderrefund_Tb{
+	width:100%;
+}
+
+#my_orderrefund_why{
 	border: 1px solid rgb(234, 234, 234);
 	width:100%;
 	text-align:center;
 }
 
+.my_refundOpt{
+	background-color:#ff8080;
+	font-weight:bold;
+	padding:10px;
+}
+
+#my_refundDetail{
+	width:100%;
+	padding:5px;
+	font-weight:bold;
+	color:#ff8080;	
+}
 
 /* profile_edit */
 #my_profile_edit{

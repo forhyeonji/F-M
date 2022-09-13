@@ -8,6 +8,11 @@
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 <link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
+<script src="/resources/JS/Main/insertAdd.js"></script>
+
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
@@ -48,16 +53,25 @@
 					<td><input type="text" value="${profile.user_nick}" name="user_nick"></td>
 				</tr>
 				<tr>
-					<td class="my_edit_td">주소</td>
-					<td><input type="text" value="${profile.user_pw }" name="user_zip"><p>주소는변경필요</p></td>
+					<td class="my_edit_td">우편번호</td>
+					<td><input class="insert_ad" id="user_zip" type="text" value="${profile.user_zip}" name="user_zip" readonly>
+						<button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button></td>
+				</tr>
+				<tr>
+					<td class="my_edit_td">도로명주소</td>
+					<td><input class="insert_ad" id="user_addr1" type="text" value="${profile.user_addr1}" name="user_addr1" readonly></td>
+				</tr>
+				<tr>
+					<td class="my_edit_td">상세주소</td>
+					<td><input class="insert_ad" id="user_addr2" type="text" value="${profile.user_addr2}" name="user_addr2"></td>
 				</tr>		
 				<tr>
 					<td class="my_edit_td">전화번호</td>
-					<td><input type="tel" value="${profile.user_phone }" name="user_phone"></td>
+					<td><input type="tel" value="${profile.user_phone}" name="user_phone"></td>
 				</tr>
 				<tr>
 					<td class="my_edit_td">이메일</td>
-					<td><input type="email" value="${profile.user_email }" name="user_email"></td>
+					<td><input type="email" value="${profile.user_email}" name="user_email"></td>
 				</tr>
 				<tr>
 					<th colspan="2" id="my_editBtn">

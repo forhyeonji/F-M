@@ -43,7 +43,7 @@
 						<img src="../../../resources/image/mypage/list.png">
 					</div>
 					<div class="my_intexttop">
-						<h3>주문 배송<br> 조회</h3>
+						<h3>주문 목록<br>배송 조회</h3>
 					</div>
 				</div>	
 				
