@@ -3,17 +3,15 @@ package com.food.mapper;
 import java.util.ArrayList;
 
 import com.food.model.CriteriaVO;
+import com.food.model.MypageVO;
 import com.food.model.NotiBoardVO;
-import com.food.model.PageVO;
 import com.food.model.UserVO;
 
 public interface NotiBoardMapper {
 
 	// 게시글 목록
 	public ArrayList<NotiBoardVO> list(CriteriaVO criteriaVO);
-	
-	// 게시글 목록
-	public ArrayList<NotiBoardVO> list2(UserVO user, CriteriaVO criteriaVO);
+
 	
 	// 게시글 상세보기
 	public NotiBoardVO detail(NotiBoardVO board);
@@ -25,6 +23,11 @@ public interface NotiBoardMapper {
 	public void write(NotiBoardVO board);
 	// tb_notice테이블 전체 글 수
 	public int total(CriteriaVO criteriaVO);
-	
+	// 1:1질의 전체 글 수
+	public int total2(MypageVO criteriaVO);
+	// 1:1질의 내가쓴 글
+	public ArrayList<MypageVO> mywrite(MypageVO mypage);
+
+	public UserVO mypage(UserVO user);
 	
 }

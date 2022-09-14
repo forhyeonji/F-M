@@ -23,9 +23,8 @@
 	</beans:bean>
 	<beans:bean id="multipartResolver" class="org.springframework.web.multipart.support.StandardServletMultipartResolver"> </beans:bean>
 
-	<context:component-scan base-package="com.food.controller" />
-	<context:component-scan base-package="com.food.config" />
-	<context:component-scan base-package="com.food.handler" />
+	<context:component-scan base-package="com.food.*" />
+
 
 
 

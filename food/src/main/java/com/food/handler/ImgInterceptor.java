@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  * 이미지 interceptor
- * @author byoungyoon
+ * @author kimseongmin0301
  */
 @Component
 @RequiredArgsConstructor

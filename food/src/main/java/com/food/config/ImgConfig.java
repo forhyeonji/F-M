@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * img 임시 저장을 위한 config
- * @author byoungyoon
+ * @author kimseongmin0301
  */
 @Component
 @Slf4j

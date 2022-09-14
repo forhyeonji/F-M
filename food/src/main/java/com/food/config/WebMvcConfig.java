@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 /**
  * Web 사용할 configuration 정리
- * @author byoungyoon
+ * @author kimseongmin0301
  */
 @Configuration
 @RequiredArgsConstructor
