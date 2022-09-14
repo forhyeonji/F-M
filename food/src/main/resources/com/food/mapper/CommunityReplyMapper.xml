@@ -7,7 +7,7 @@
 <mapper namespace="com.food.mapper.CommunityReplyMapper">
     <sql id="communityReplyListSQL">
         select
-        context, date_format(reg_dt, '%m-%d') reg_dt, user_id, rno
+        context, date_format(reg_dt, '%Y-%b-%d %H:%i:%S') reg_dt, user_id, rno
         from tb_community_reply
         where bno = #{bno}
     </sql>
@@ -21,4 +21,9 @@
         SELECT count(*)
         FROM (<include refid="communityReplyListSQL"/>) as A
     </select>
+
+    <insert id="insertCommunityReply">
+        insert into tb_community_reply(user_id, context, bno)
+        values(#{user_id}, #{context}, #{bno})
+    </insert>
 </mapper>

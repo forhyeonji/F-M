@@ -22,4 +22,6 @@ public interface CommunityReplyMapper {
      * @return
      */
     int selectCommunityReplyCount(ReplyPageVO replyPageVO);
+
+    void insertCommunityReply(CommunityReplyVO communityReplyVO);
 }

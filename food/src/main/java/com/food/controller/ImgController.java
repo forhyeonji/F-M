@@ -16,7 +16,7 @@ import java.util.Map;
 
 /**
  * 이미지 제어 controller
- * @author byoungyoon
+ * @author kimseongmin0301
  */
 @RestController
 @RequiredArgsConstructor
