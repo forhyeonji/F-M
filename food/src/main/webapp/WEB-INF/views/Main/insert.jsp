@@ -54,12 +54,13 @@
 					<input type="text" id="user_name" class="insert_inputext" name="user_name">
 				</div><br>
 				
-				<div id="insert_nick"><br>
+				<!-- <div id="insert_nick"><br>
 					<h4>닉네임</h4><br>
 					<input type="text" id="user_nick" class="insert_inputext_b" name="user_nick">
 					<input type="button" value="중복 확인" class="insert_insert_b">
 				</div><br>
-				
+				 -->
+				 
 		        <div class="insert_addrbox"><br>
 					<h4>주소*</h4><br>
 					<div class="insert_addr">
