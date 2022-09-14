@@ -11,7 +11,7 @@ public interface ShopService {
 	public void Shopenroll(ShopVO Shop);
 
 	//상품등록(분류)
-	public ArrayList<ShopdivisionVO>shopdivision(ShopVO Shop); 
+	public ArrayList<ShopdivisionVO>shopdivision(String shop); 
 	
 	//상품등록수정
 	public void ShopEdit(ShopVO Shop);

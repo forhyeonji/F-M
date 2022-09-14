@@ -45,7 +45,7 @@ public class ShopController {
 	
 
 	@GetMapping("/shopRegistration")
-	public String shopRegistration(ShopVO Shop,Model model) {
+	public String shopRegistration(String Shop,Model model) {
 		
 		model.addAttribute("shopdivision",shop.shopdivision(Shop));	
 		return "Shop/shopRegistration";

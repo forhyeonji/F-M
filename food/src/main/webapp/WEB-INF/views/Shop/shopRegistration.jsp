@@ -40,18 +40,18 @@
 					<table id="sh_inputArea">
 						<tr>
 							<td id="sh_menutd">
-							<select id="sh_State">
+							<select id="class1">
 									<option selected>1차분류</option>
 									<c:forEach items="${shopdivision}" var="divi">
-										<option><c:out value="${divi.class1}" /></option>
+										<option value="<c:out value="${divi.class1}" />"><c:out value="${divi.class1}" /></option>
 									</c:forEach>
 							</select>
 							</td>
 
-							<td><select>
+							<td><select id="sh_class2">
 									<option selected>2차분류</option>
 									<c:forEach items="${shopdivision}" var="divi">
-										<option><c:out value="${divi.class2}" /></option>
+										<option ><c:out value="${divi.class2}" /></option>
 									</c:forEach>
 							</select>
 						</tr>
