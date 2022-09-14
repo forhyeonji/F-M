@@ -49,6 +49,7 @@
 
     <script>
         let bno = '${bno}';
+        let session_id = "<%=(String) session.getAttribute("user_id")%>"
     </script>
     <script src="/resources/JS/Board/BoardDetail.js"></script>
     <script src="/resources/JS/Board/ReplyPage.js"></script>
