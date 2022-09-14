@@ -1,4 +1,6 @@
 
+
+
 function join_check() {
 	
  
@@ -7,7 +9,6 @@ var user_id = document.getElementById("user_id");
 var user_pw = document.getElementById("user_pw");
 var user_repw = document.getElementById("user_repw");
 var user_name = document.getElementById("user_name");
-var user_nick = document.getElementById("user_nick");
 var user_zip = document.getElementById("user_zip");
 var user_addr1 = document.getElementById("user_addr1");
 var user_addr2 = document.getElementById("user_addr2");
@@ -34,6 +35,7 @@ var user_term_3 = document.getElementById("user_term_3");
 		return false;
 	};
 	
+	
 	if (user_id.value == "") { 
 	   alert("아이디를 입력하세요.");
 	    user_id.focus(); 
@@ -48,6 +50,7 @@ var user_term_3 = document.getElementById("user_term_3");
 		return false;
 	};
 
+	
 	if (user_pw.value == "") {
 	    alert("비밀번호를 입력하세요.");
 	    user_pw.focus();
@@ -71,12 +74,6 @@ var user_term_3 = document.getElementById("user_term_3");
 	if (user_name.value == "") {
 	    alert("이름을 입력하세요.");
 	    user_name.focus();
-	    return false;
-	};
-	
-	if (user_nick.value == "") {
-	    alert("별명을 입력하세요.");
-	    user_nick.focus();
 	    return false;
 	};
 	
@@ -124,4 +121,73 @@ function id_check() {
   window.open("", "", "width=600, height=200, left=200, top=100");
   
 }*/
+
+/*
+$(function(){
+		//아이디 중복검사
+	var check = 0;
+	var user_idChk = function(){
+		var request = $.ajax({
+			url: "/ddd",
+			method: "POST",			
+			data: { user_id : $('#user_id').val() },		
+			dataType: "json"			
+		});
+		
+		request.done(function(data) {
+			console.log(data);
+			if(data != undefined && data != ''){
+				if(data.result == "Y"){
+					alert("사용 가능한 아이디 입니다.");
+					check++;
+				}else if(data == ''){
+					alert("아이디는 비울 수 없습니다");
+				}else{
+					alert("사용 불가능한 아이디입니다.")
+				} 	
+			}
+		});
+		request.fail(function( jqXHR, textStatus ) {
+			alert( "Request failed: " + textStatus );
+		});
+	};
+	var insert_insert = function(){
+		if($('#user_id').val() == ''){
+			alert('아이디를 입력하세요');
+			return;
+		}else if($('#user_pw').val() == ''){
+			alert('비밀번호를 입력하세요');
+			return;
+		}else if($('#user_repw').val() == ''){
+			alert('비밀번호 확인을 입력하세요');
+			return;
+		}else if($('#user_pw').val() != $('#user_repw').val()){
+			alert('비밀번호와 비밀번호 확인이 다릅니다');	
+		}else if($('#user_name').val() == ''){
+			alert('이름을 입력하세요');
+			return;
+		}else if($('#user_email').val() == ''){
+			alert('이메일을 입력하세요');
+			return;
+		}else if($('[name="user_gender"]:checked').length == 0){
+			alert('성별을 입력하세요');
+			return;
+		}else if(check==0){
+			user_idChk();
+		}else{
+			alert('회원가입 완료');
+		}		
+	};
+	$('#user_idChk').click(function(){
+		if(check == 0){
+			user_idChk();
+		}
+	})
+	$('#insert_insert').click(function(){
+		insert_insert();
+	});
+});
+
+
+*/
 

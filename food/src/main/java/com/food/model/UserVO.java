@@ -7,7 +7,6 @@ public class UserVO {
     private String user_id;
     private String user_pw;
     private String user_name;
-    private String user_nick;
     private String user_zip;
     private String user_addr1;
     private String user_addr2;
@@ -44,12 +43,6 @@ public class UserVO {
 	}
 	public void setUser_name(String user_name) {
 		this.user_name = user_name;
-	}
-	public String getUser_nick() {
-		return user_nick;
-	}
-	public void setUser_nick(String user_nick) {
-		this.user_nick = user_nick;
 	}
 	public String getUser_zip() {
 		return user_zip;
@@ -110,11 +103,13 @@ public class UserVO {
 	@Override
 	public String toString() {
 		return "UserVO [user_email=" + user_email + ", user_id=" + user_id + ", user_pw=" + user_pw + ", user_name="
-				+ user_name + ", user_nick=" + user_nick + ", user_zip=" + user_zip + ", user_addr1=" + user_addr1
-				+ ", user_addr2=" + user_addr2 + ", user_gender=" + user_gender + ", user_birth=" + user_birth
-				+ ", user_phone=" + user_phone + ", auth_grp_cd=" + auth_grp_cd + ", reg_dt=" + reg_dt + ", mod_dt="
-				+ mod_dt + "]";
+				+ user_name + ", user_zip=" + user_zip + ", user_addr1=" + user_addr1 + ", user_addr2=" + user_addr2
+				+ ", user_gender=" + user_gender + ", user_birth=" + user_birth + ", user_phone=" + user_phone
+				+ ", auth_grp_cd=" + auth_grp_cd + ", reg_dt=" + reg_dt + ", mod_dt=" + mod_dt + "]";
 	}
+	
+	
+
     
     
 	

@@ -16,3 +16,9 @@ $(document).ready(function(){
 	
 });
 */
+
+$(function(){
+	$("#login_find_id").click(function(){
+		location.href="../Main/find_id"
+	})
+})
