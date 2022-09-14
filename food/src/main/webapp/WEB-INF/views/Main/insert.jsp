@@ -27,16 +27,14 @@
 		
 				<div id="insert_email">
 					<h4>이메일*</h4><br>
-					<input type="text" id="user_email" class="insert_inputext_b" name="user_email">
+					<input type="text" id="user_email" class="insert_inputext_b" name="user_email" oninput="idCheck()">
 					<input type="button" value="중복 확인" class="insert_insert_b">
 				</div><br>
 				
 				<div id="insert_id"><br>
 					<h4>아이디*</h4><br>
 					<input type="text" id="user_id" class="insert_inputext_b" name="user_id">
-					<input type="button" value="중복 확인" class="insert_insert_b">
-					<span class="insert_re1">사용 가능한 아이디입니다.</span>
-					<span class="insert_re2">아이디가 이미 존재합니다.</span>
+					<input type="button" id="idCheck" value="중복 확인" class="insert_insert_b">
 				</div><br>
 				
 				<div id="insert_pw"><br>
@@ -54,13 +52,7 @@
 					<input type="text" id="user_name" class="insert_inputext" name="user_name">
 				</div><br>
 				
-				<div id="insert_nick"><br>
-					<h4>닉네임</h4><br>
-					<input type="text" id="user_nick" class="insert_inputext_b" name="user_nick">
-					<input type="button" value="중복 확인" class="insert_insert_b">
-				</div><br>
-				
-		        <div class="insert_addrbox"><br>
+				<div class="insert_addrbox"><br>
 					<h4>주소*</h4><br>
 					<div class="insert_addr">
 						<button type="button" class="btn btn-default" onclick="PostCode();">주소 찾기</button>

@@ -17,6 +17,12 @@ public class CommunityReplyService {
 
     private final CommunityReplyMapper communityReplyMapper;
 
+    /**
+     * 댓글 리스트 출력
+     * @param replyPageVO
+     * @param bno
+     * @return
+     */
     public Map<String, Object> getReplyList(ReplyPageVO replyPageVO, int bno){
         Map<String, Object> resultMap = new HashMap<>();
 
@@ -26,5 +32,13 @@ public class CommunityReplyService {
         resultMap.put("count", communityReplyMapper.selectCommunityReplyCount(replyPageVO));
 
         return resultMap;
+    }
+
+    /**
+     * 댓글 작성
+     * @param communityReplyVO
+     */
+    public void insertCommunityReply(CommunityReplyVO communityReplyVO){
+        communityReplyMapper.insertCommunityReply(communityReplyVO);
     }
 }

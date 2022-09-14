@@ -10,7 +10,9 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CriteriaVO;
+import com.food.model.MypageVO;
 import com.food.model.NotiBoardVO;
+import com.food.model.Page2VO;
 import com.food.model.PageVO;
 import com.food.model.UserVO;
 import com.food.service.NotiBoardService;
@@ -210,7 +212,7 @@ public class NoticeController {
 	/* 1:1문의 질문 */	
 		
 		@RequestMapping(value = "/directQue", method = RequestMethod.GET)
-		public String directQue (UserVO user, Model model, CriteriaVO criteriaVO, HttpSession session) {
+		public String directQue (UserVO user, MypageVO mypage, Model model, CriteriaVO criteriaVO, HttpSession session) {
 			
 			
 			
@@ -218,15 +220,15 @@ public class NoticeController {
 			System.out.println("로그인된 아이디="+id);
 			
 			user.setUser_id(id);
-			System.out.println(user.getUser_id());
+			mypage.setUser_id(id);
+		
 			
 			
-			model.addAttribute("list2", nbs.list2(user, criteriaVO));
+			model.addAttribute("user", nbs.mypage(user));
+			model.addAttribute("mywrite", nbs.mywrite(mypage));
 			
-			int total2 = nbs.total(criteriaVO);
-			// System.out.println("controller="+total);
-			
-			model.addAttribute("paging", new PageVO(criteriaVO, total2));
+			int total2 = nbs.total2(mypage);	
+			model.addAttribute("paging", new Page2VO(criteriaVO, total2));
 
 			return "/Notice/DirectQue";
 		}

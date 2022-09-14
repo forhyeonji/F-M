@@ -3,7 +3,7 @@
 <div id="container">
     <div id="content">
         <input type="text" id="user_id" name="user_id" hidden>
-        <input type="text" id="bno" name="bno" >
+        <input type="text" id="bno" name="bno" hidden>
         <table class="b_table">
             <thead id="write_head">
             <tr>
@@ -24,11 +24,6 @@
             </tr>
             </tbody>
         </table>
-        <div id="cm_reply">
-            <textarea ></textarea>
-            <div id="reply_body"></div>
-            <div id="pagination">
-        </div>
         <div id="bw_foot">
             <c:if test="${sessionScope.user_id == board.user_id || sessionScope.user_id == 'root' || sessionScope.user_id == 'manager'}">
                 <button type="button" id="btn_modify" class="btn_write btn_modify">수정하기</button>
@@ -39,14 +34,23 @@
                 <button type="button" class="btn_write btn_cancel">목록</button>
             </a>
         </div>
+        <div id="cm_reply">
+            <div id="cm_reply_textarea">
+                <div id="cm_editor" contenteditable="true" name="context">a
+                    <label>댓글을 입력하세요</label>
+                </div>
+            </div>
+            <div id="reply_body"></div>
+            <div id="pagination">
+            </div>
+        </div>
     </div>
-</div>
 
 
-<script>
-    let bno = '${bno}';
-</script>
-<script src="/resources/JS/Board/BoardDetail.js"></script>
-<script src="/resources/JS/Board/ReplyPage.js"></script>
-<%@ include file="../Footer/footer.jsp" %>
+    <script>
+        let bno = '${bno}';
+    </script>
+    <script src="/resources/JS/Board/BoardDetail.js"></script>
+    <script src="/resources/JS/Board/ReplyPage.js"></script>
+    <%@ include file="../Footer/footer.jsp" %>
 

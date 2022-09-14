@@ -7,8 +7,8 @@ import org.springframework.stereotype.Service;
 
 import com.food.mapper.NotiBoardMapper;
 import com.food.model.CriteriaVO;
+import com.food.model.MypageVO;
 import com.food.model.NotiBoardVO;
-import com.food.model.PageVO;
 import com.food.model.UserVO;
 @Service
 public class NotiBoardServiceImpl implements NotiBoardService  {
@@ -24,15 +24,6 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 		return nbm.list(criteriaVO);
 	}	
 	
-	
-	
-	// 게시글 목록
-		public ArrayList<NotiBoardVO> list2(UserVO user, CriteriaVO criteriaVO) {
-
-
-			return nbm.list2(user, criteriaVO);
-		}	
-		
 		
 		
 	// 게시글 상세보기
@@ -55,6 +46,21 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 	// tb_notice테이블 전체 글 수
 		public int total(CriteriaVO criteriaVO) {
 			return nbm.total(criteriaVO);
+		}
+		
+	// 1:1 질의 내가 쓴 글
+		public int total2(MypageVO mypage) {
+			return nbm.total2(mypage);
+		}
+		
+	// 1:1 질의 내가 쓴 글
+		public ArrayList<MypageVO> mywrite(MypageVO mypage) {
+			return nbm.mywrite(mypage);
+		}
+		
+		
+		public UserVO mypage(UserVO user) {
+			return nbm.mypage(user);
 		}
 	
 	

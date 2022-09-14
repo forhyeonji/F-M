@@ -44,7 +44,6 @@
                 </table>
             </div>
         </div>
-        <form action="/community/write" method="get">
             <div id="board_main">
                 <div id="board_list">
                     <table class="tb_nav blist">
@@ -73,12 +72,11 @@
                     </div>
                     <c:if test="${user_id != null}">
                         <div id="b_list_btns">
-                            <input type="submit" value="글쓰기" id="btn_write">
+                            <a href="/community/write"><input type="button" value="글쓰기" id="btn_write"></a>
                         </div>
                     </c:if>
                 </div>
             </div>
-        </form>
     </div>
 </div>
 <script src="/resources/JS/Board/BoardList.js"></script>

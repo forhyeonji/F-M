@@ -22,6 +22,8 @@
 
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/BoardWrite.css" />
+    <link rel="stylesheet" type="text/css"
+          href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/BoardDetail.css" />
 </head>
 <body>
 <div id="wrap">
@@ -43,7 +45,8 @@
                         <a href="/login"><button>로그인</button></a>
                     </c:if>
                     <c:if test="${not empty sessionScope.user_id}">
-                        <span>${sessionScope.user_id}님 환영합니다.</span>
+                        <span id="session_id">${sessionScope.user_id}</span>
+                        <span>님 환영합니다.</span>
                         <a href="/logout"><button>로그아웃</button></a>
                         <a href="/shopRegistration"><button>상품등록</button></a>
                         <a href="/mypage"><button>마이페이지</button></a>

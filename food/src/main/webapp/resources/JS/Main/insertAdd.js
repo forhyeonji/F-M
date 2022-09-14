@@ -38,10 +38,11 @@ function PostCode() {
                 $("[name=user_addr1]").val(fullRoadAddr);
                 $("[name=user_addr2]").val(detailRoadAddr);
                 
-                
+                /*
                 document.getElementById('signUpUserPostNo').value = data.zonecode; //5자리 새우편번호 사용
                 document.getElementById('signUpUserCompanyAddress').value = fullRoadAddr;
                 document.getElementById('signUpUserCompanyAddressDetail').value = data.jibunAddress;
+            	*/
             }
          }).open();
      }
