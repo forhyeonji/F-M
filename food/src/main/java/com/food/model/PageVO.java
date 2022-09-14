@@ -13,8 +13,14 @@ public class PageVO {
     private CriteriaVO criteriaVO;
     // board테이블의 전체 건수를 저장
     private int total;
+    
 
-    public PageVO(CriteriaVO criteriaVO,int total){
+    
+    
+ 
+
+
+	public PageVO(CriteriaVO criteriaVO,int total){
         this.criteriaVO = criteriaVO;
         this.total = total;
 
@@ -39,7 +45,10 @@ public class PageVO {
         // 다음버튼 활성화
         this.nextBtn = this.endPage < realEnd;
     }
+    
 
+    
+    
     public int getStartPage() {
         return startPage;
     }
@@ -88,15 +97,16 @@ public class PageVO {
         this.total = total;
     }
 
-    @Override
-    public String toString() {
-        return "PageVO{" +
-                "startPage=" + startPage +
-                ", endPage=" + endPage +
-                ", prevBtn=" + prevBtn +
-                ", nextBtn=" + nextBtn +
-                ", criteriaVO=" + criteriaVO +
-                ", total=" + total +
-                '}';
-    }
+
+
+
+	@Override
+	public String toString() {
+		return "PageVO [startPage=" + startPage + ", endPage=" + endPage + ", prevBtn=" + prevBtn + ", nextBtn="
+				+ nextBtn + ", criteriaVO=" + criteriaVO + ", total=" + total + "]";
+	}
+    
+
+
+   
 }
