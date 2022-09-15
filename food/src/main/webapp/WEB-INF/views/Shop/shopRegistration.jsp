@@ -49,8 +49,9 @@
 							</td>
 
 							<td><select id="class2">
-									
+								<option>2차분류</option>
 							</select>
+							</td>
 						</tr>
 					</table>
 				</div>
@@ -113,9 +114,9 @@
 					</tr>
 					<tr>
 						<td><select name="packaging">
-								<option value="">냉장</option>
-								<option value="">냉동</option>
-								<option value="">실온</option>
+								<option value="냉장">냉장</option>
+								<option value="냉동">냉동</option>
+								<option value="실온">실온</option>
 						</select></td>
 					</tr>
 
@@ -140,10 +141,10 @@
 					</tr>
 					<tr>
 						<td><select name="Origin">
-								<option value="">미국산</option>
-								<option value="">베트남산</option>
-								<option value="">국내산</option>
-								<option value="">중국산</option>
+								<option value="미국산">미국산</option>
+								<option value="베트남산">베트남산</option>
+								<option value="국산">국산</option>
+								<option value="중국산">중국산</option>
 						</select></td>
 					</tr>
 
@@ -202,7 +203,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="gasimg" name="IMG_NAME"></td>
+						<td><input type="file" id="gasimg" name="image" style="height: 30px;"></td>
 					</tr>
 
 					<tr>

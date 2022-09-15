@@ -75,6 +75,11 @@ public class ShopController {
 		return "redirect:/shopProductlist";
 	}
 	
+	//이미지 Ajax 주소 매핑
+	@RequestMapping(value="/shopRegistrationAjaxAction",method=RequestMethod.GET)
+	public void shopRegistration() {
+		
+	}
 	
 	@RequestMapping(value="/shopProductEdit", method=RequestMethod.GET)
 	public String ShopEdit() {
