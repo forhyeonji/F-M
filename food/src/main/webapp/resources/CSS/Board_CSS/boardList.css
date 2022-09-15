@@ -166,7 +166,7 @@ ul li{
 #board_list{
     height:440px;
     width:100%;
-    box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);
+    /*box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);*/
 }
 .tb_nav .blist{
     width:1050px;
