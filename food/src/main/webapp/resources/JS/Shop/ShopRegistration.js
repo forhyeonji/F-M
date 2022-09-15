@@ -3,6 +3,7 @@
  */
 
 $(document).ready(function() {
+
 	// 상품 등록 유효성 검사
 	$("#addBTN").click(function() {
 		// 상품명
@@ -75,16 +76,22 @@ $(document).ready(function() {
 
 	// ajax를 통해 select box안에 들어갈 값 부르기
 	$("#class1").on("change", function() {
-			console.log("분류됨")
-			
-			var s = $("#class1").val();
-			
-			$.getJSON("/Shop/"+s+".json",function(data){
-				
-			})
-			
-			
-		});
+
+		var s = $("#class1").val();
+		console.log(s)
+
+		$.getJSON("/Shop/" + s + ".json", function(data) {
+			var str = "";
+			str += "";
+
+			for (var i = 0; i < data.length; i++) {
+				str += "<option>" + data[i].class2 + "</option>"
+			}
+			$("#class2").html(str);
+		})
+		
 		
 
-	})
+	});
+
+})
