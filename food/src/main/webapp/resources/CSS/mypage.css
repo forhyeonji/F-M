@@ -171,7 +171,11 @@ canclelist
 	width:100%
 }
 
-
+.my_fsmall{
+	font-size:50%;
+	font-weight:bold;
+	color:rgb(234, 234, 234);
+}
 
 /* mywrite */
 #my_write{

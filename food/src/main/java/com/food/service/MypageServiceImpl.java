@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.mapper.MypageMapper;
+import com.food.model.CommunityReplyVO;
 import com.food.model.MypageVO;
 import com.food.model.UserVO;
 
@@ -17,7 +18,7 @@ public class MypageServiceImpl implements MypageService {
 	
 	//마이페이지를 출력하기 위한 구현(아이디연동)
 	public UserVO mypage(UserVO user) {
-		System.out.println("로그인정보"+user);
+		System.out.println("마페이지로그인정보"+user);
 		return mm.mypage(user);
 	}
 	
@@ -38,7 +39,7 @@ public class MypageServiceImpl implements MypageService {
 	
 	//회원탈퇴를 위한 구현
 	public void resignPost(UserVO user) {
-		System.out.println("서비스임플 되는겨");
+		System.out.println("탈퇴서비스임플 되는겨");
 		System.out.println(user);
 		mm.resignPost(user);
 	}
@@ -57,5 +58,17 @@ public class MypageServiceImpl implements MypageService {
 	public MypageVO mywritedetail(MypageVO mypage) {
 		return mm.mywritedetail(mypage);
 	}
+	
+	//내 댓글 글번호 가져오기
+	public int bno(MypageVO mypage) {
+		return mm.bno(mypage);
+	}
+	
+	//내가쓴 댓글 상세보기
+	public ArrayList<CommunityReplyVO> myreply(CommunityReplyVO reply) {
+		System.out.println("댓글서비스임플되는겨?");
+		return mm.myreply(reply);
+	}
+
 
 }

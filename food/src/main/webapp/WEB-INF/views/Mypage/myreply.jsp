@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,25 +33,25 @@
 				<a href="http://localhost:8080/mypage/mylike"><button>❤내가 좋아요 누른 글</button></a>
 			</div>
 				<table id="my_reply">
+
+				<tr><td>이건나중에 지울거야</td>
+					<td>세션아이디값: ${sessionScope.user_id }</td>
+					<td>글쓴아이디값: ${user.user_id }</td></tr>
+
 					<tr>
-						<th>💬</th><th>제목</th><th>작성일자</th>
+						<th>글번호</th><th>작성한 댓글</th><th>작성일자</th>
 					</tr>
-					<tr>
-						<td style="font-size:150%">💬</td><td>좋아요!</td><td>2022/08/08</td>
+					<c:forEach items="${myreply}" var="myreply">
+					<tr>					
+						<td>${myreply.bno }</td>
+						<td>${myreply.context }</td>
+						<td>${myreply.reg_dt}</td>
 					</tr>
-					<tr>
-						<td style="font-size:150%">💬</td><td>잘 보고 가요!</td><td>2022/08/01</td>
-					</tr>
-					<tr>
-						<td style="font-size:150%">💬</td><td>푸하하핳ㅋㅋ</td><td>2022/07/30</td>
-					</tr>					
-					<tr>
-						<td style="font-size:150%">💬</td><td>얼만가요?</td><td>2022/07/26</td>
-					</tr>				
-					<tr>
-						<td style="font-size:150%">💬</td><td>ㅋㅋㅋㅋㅋ</td><td>2022/07/25</td>
-					</tr>				
+					</c:forEach>						
 				</table>
+				
+${myreply }			
+				
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

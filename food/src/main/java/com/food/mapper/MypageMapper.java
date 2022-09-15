@@ -2,6 +2,7 @@ package com.food.mapper;
 
 import java.util.ArrayList;
 
+import com.food.model.CommunityReplyVO;
 import com.food.model.MypageVO;
 import com.food.model.UserVO;
 
@@ -28,5 +29,11 @@ public interface MypageMapper {
 	
 	//내가쓴글 상세보기
 	public MypageVO mywritedetail(MypageVO mypage);
+	
+	//내 댓글 글번호 가져오기
+	public int bno(MypageVO mypage);
+	
+	//내가쓴 댓글 상세보기
+	public ArrayList<CommunityReplyVO> myreply(CommunityReplyVO reply);
 
 }
