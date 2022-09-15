@@ -1,6 +1,8 @@
 package com.food.service;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -58,15 +60,11 @@ public class MypageServiceImpl implements MypageService {
 	public MypageVO mywritedetail(MypageVO mypage) {
 		return mm.mywritedetail(mypage);
 	}
-	
-	//내 댓글 글번호 가져오기
-	public int bno(MypageVO mypage) {
-		return mm.bno(mypage);
-	}
-	
+
 	//내가쓴 댓글 상세보기
-	public ArrayList<CommunityReplyVO> myreply(CommunityReplyVO reply) {
+	public List<Map<String, Object>> myreply(CommunityReplyVO reply) {
 		System.out.println("댓글서비스임플되는겨?");
+		
 		return mm.myreply(reply);
 	}
 

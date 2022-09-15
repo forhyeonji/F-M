@@ -1,6 +1,8 @@
 package com.food.service;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 import com.food.model.CommunityReplyVO;
 import com.food.model.MypageVO;
@@ -32,10 +34,8 @@ public interface MypageService {
 	//내가 쓴 글 상세보기
 	public MypageVO mywritedetail(MypageVO mypage);
 	
-	//댓글에서 글번호 가져오기
-	public int bno(MypageVO mypage);
-	
 	//내 댓글 상세보기
-	public ArrayList<CommunityReplyVO> myreply(CommunityReplyVO reply);
+	public List<Map<String, Object>> myreply(CommunityReplyVO reply);
+	
 
 }

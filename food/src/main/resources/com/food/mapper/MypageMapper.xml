@@ -5,6 +5,19 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.food.mapper.MypageMapper">
 
+	<resultMap type="com.food.model.CommunityReplyVO" id="sqlmyreply">
+		<id property="rno" column="rno"/>
+		<id property="context" column="Recontext"/>
+		<id property="reg_dt" column="Rereg_dt"/>
+		<id property="user_id" column="Reuser_id"/>
+		<id property="bno" column="Rebno"/>
+	</resultMap>
+	
+	<resultMap type="com.food.model.MypageVO" id="Mypage">
+		<collection property="reply" resultMap="sqlmyreply"/>
+	</resultMap>
+	
+
 	<select id="mypage" resultType="com.food.model.UserVO">
 		select * from tb_user where user_id=#{user_id}
 	</select>
@@ -69,13 +82,14 @@
 	</select>
 	
 	
-	<select id="myreply" resultType="com.food.model.CommunityReplyVO">
-		select *
+	<select id="myreply" parameterType="com.food.model.MypageVO" resultType="com.ring.model.CommunityReplyVO">
+		select * 
 		from tb_community_reply
 
 			<if test = "user_id != null">
              	where user_id=#{user_id}
-            </if>
+            </if>				
+			order by reg_dt desc
 	</select>
 
 	

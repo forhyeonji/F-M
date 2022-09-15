@@ -29,7 +29,9 @@ public class MypageVO {
     private String sep;
     private String subsep;
     
-
+    //댓글VO포함
+    private List<CommunityReplyVO> replyVOList;
+    
     
     public MypageVO() {
     	this(1,10);
@@ -39,6 +41,5 @@ public class MypageVO {
     	this.pageNum = pageNum;
     	this.amount = amount;
     }
-
 
 }
