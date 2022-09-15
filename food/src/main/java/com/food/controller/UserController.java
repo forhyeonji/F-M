@@ -4,6 +4,8 @@ import com.food.model.UserVO;
 import com.food.service.UserService;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
@@ -33,6 +35,8 @@ public class UserController{
     @Autowired
     UserService us;
     // private UserService userService;
+    
+    private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     
     // 회원가입 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
@@ -82,23 +86,40 @@ public class UserController{
     
     
     // 아이디 찾기
-    @RequestMapping(value ="/find_id", method = RequestMethod.GET)
-    public String find_id() {
-    	return "Main/find_id";
-    }
+    //@RequestMapping(value ="/find_id", method = RequestMethod.GET)
+    //public String find_id() {
+    //	return "Main/find_id";
+    //}
     
     
   
-    
-    /*
-    @RequestMapping(value="/uploadAjax", method= RequestMethod.POST)
-    public void uploadAjax(){
-
-    }
-    */
-    // 주소 api 연결
-    
-    
-    
+    // 아이디 중복 검사
+ 	@RequestMapping(value = "/insertIdChk", method = RequestMethod.POST)
+ 	@ResponseBody
+ 	public String insertIdChkPOST(String user_id) throws Exception{
+ 		System.out.println("user_id="+user_id);
+ 		int result = us.idCheck(user_id);
+		logger.info("결과값 = " + result);
+		if(result != 0) {
+			return "fail";	// 중복 아이디가 존재
+		} else {
+			return "success";	// 중복 아이디 x
+		}	
+ 	} 
+ 	
+ 	
+ 	// 이메일 중복 검사
+  	@RequestMapping(value = "/insertemailChk", method = RequestMethod.POST)
+  	@ResponseBody
+  	public String insertemailChkPOST(String user_email) throws Exception{
+  		int result = us.emailCheck(user_email);
+ 		logger.info("결과값 = " + result);
+ 		if(result != 0) {			
+ 			return "fail";	// 중복 아이디가 존재		
+ 		} else {		
+ 			return "success";	// 중복 아이디 x			
+ 		}	
+	} 
+        
 }
     

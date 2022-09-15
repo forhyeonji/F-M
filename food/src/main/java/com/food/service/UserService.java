@@ -11,6 +11,10 @@ public interface UserService {
     public void join(UserVO userVO);
     
     public boolean login(UserVO userVO, HttpSession session);
+    
+ 	public int idCheck(String user_id) throws Exception;
+ 	
+ 	public int emailCheck(String user_email) throws Exception;
 
 
     

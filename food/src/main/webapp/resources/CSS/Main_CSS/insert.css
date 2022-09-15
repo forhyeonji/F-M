@@ -76,13 +76,13 @@
 	border-radius : 5px;
 }
 
-#insert_term{
+#insert_agree{
 	margin-left : 50px;
 	margin-right : 50px;
 	border-radius : 5px;
 }
 
-#insert_term_in{
+#insert_agree_in{
 	display : flex;
 	flex-direction : row;
 	justify-content : center;
@@ -114,18 +114,77 @@
 
 
 
+/*
+↓유효성 검사 관련 태그
+*/
 
+.insert_emailNone{
+	color : red;
+	display : none;
+}
 
+.insert_emailY{
+	color : green;
+	display : none; 
+}
 
-/* 중복아이디 존재하지 않는경우 */
-	.insert_re1{
-		color : green;
-		display : none;
-	}
-	/* 중복아이디 존재하는 경우 */
-	.insert_re2{
-		color : red;
-		display : none;
-	}
+.insert_emailMs{
+	color : red;
+	display : none;
+}
 
+.insert_emailHave{
+	color : red;
+	display : none; 
+}
 
+.insert_idNone{
+	color : red;
+	display : none;
+}
+
+.insert_idY{
+	color : green;
+	display : none; 
+}
+
+.insert_idHave{
+	color : red;
+	display : none; 
+}
+
+.insert_idMs{
+	color : red;
+	display : none;
+}
+
+.insert_pwN{
+	color : red;
+	display : none;
+}
+
+.insert_repwN{
+	color : red;
+	display : none;
+}
+
+.insert_nameN{
+	color : red;
+	display : none;
+}
+
+.insert_addrN{
+	color : red;
+	display : none;
+}
+
+.insert_phoneN{
+	color : red;
+	display : none;
+}
+
+.insert_agreeN{
+	color : red;
+	display : none;
+}
+.

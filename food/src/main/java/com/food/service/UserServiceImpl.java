@@ -31,6 +31,16 @@ public class UserServiceImpl implements UserService {
       	return result;
     }
     
+    public int idCheck(String user_id) throws Exception {
+		
+		return um.idCheck(user_id);
+	}
+    
+    public int emailCheck(String user_email) throws Exception {
+		
+		return um.emailCheck(user_email);
+	}
+  
     
 
     
