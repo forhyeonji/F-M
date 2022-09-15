@@ -212,18 +212,13 @@ public class NoticeController {
 		}
 		
 		
-		
 		@RequestMapping(value = "/directKing_answer", method = RequestMethod.GET)
-		public String directKing_answer () {
+		public String directKing_answer (NotiBoardVO board, Model model) {
+			model.addAttribute("detail",nbs.detail(board));
 			return "/Notice/DirectKing_answer";
 	}
 		
 		
-		@RequestMapping(value = "/directKing_detail", method = RequestMethod.GET)
-		public String directKing_detail () {
-			return "/Notice/DirectKing_detail";
-		}
-
 	
 	
 }

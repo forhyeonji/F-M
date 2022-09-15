@@ -14,22 +14,50 @@
 		
 		<table class="NOTI_table">
 			<tr>
+				<td class="NOTI_label">카테고리</td>
+				<td class="NOTI_label_answer">
+				
+				<c:choose>
+					<c:when test="${detail.subsep eq 'inquiry_recipe'}">
+					레시피
+					</c:when>
+										
+					<c:when test="${detail.subsep eq 'inquiry_store'}">
+					스토어
+					</c:when>
+										
+					<c:when test="${detail.subsep eq 'inquiry_commu'}">
+					커뮤니티
+					</c:when>
+										
+					<c:otherwise>
+					기타
+					</c:otherwise>
+				</c:choose>
+				
+				
+				</td>
+			</tr>
+			
+			<tr>
+				<td class="NOTI_label">제목</td>
+				<td class="NOTI_label_answer">${detail.title}</td>
+			</tr>
+			
+			<tr>
 				<td class="NOTI_label">작성자</td>
-				<td class="NOTI_label_answer">핸지</td>
+				<td class="NOTI_label_answer">${detail.user_id}</td>
 			</tr>
 			
 			<tr>
 				<td class="NOTI_label">작성일자</td>
-				<td class="NOTI_label_answer">오늘내일내일오늘</td>
+				<td class="NOTI_label_answer">${detail.reg_dt}</td>
 			</tr>
 			
-			<tr>
-				<td class="NOTI_label">카테고리</td>
-				<td class="NOTI_label_answer">커뮤니티 문의</td>
-			</tr>
+			
 			
 			<tr>
-				<td colspan="2" class="NOTI_text"><p>요로쿵저러쿵 어쩌나요?</p></td>
+				<td colspan="2" class="NOTI_text"><p>${detail.context}</p></td>
 			</tr>
 			
 			</table>
