@@ -69,14 +69,13 @@
 	</select>
 	
 	
-	<select id="myreply" parameterType="com.food.model.MypageVO" resultType="com.food.model.CommunityReplyVO">
+	<select id="myreply" resultType="com.food.model.CommunityReplyVO">
 		select *
 		from tb_community_reply
 
 			<if test = "user_id != null">
              	where user_id=#{user_id}
             </if>
-            						
 	</select>
 
 	

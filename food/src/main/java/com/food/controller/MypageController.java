@@ -1,5 +1,7 @@
 package com.food.controller;
 
+import java.util.HashMap;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -106,7 +108,9 @@ public class MypageController {
 	public String delivery() {
 		return "Mypage/delivery";
 	}
+	
 	//내가 쓴 글 목록
+	//MypageVO에 몰빵해서 페이징(완료)
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
 	public String mywrite(UserVO user, MypageVO mypage, Model model, CriteriaVO cri, HttpSession session) {
 		String id = (String) session.getAttribute("user_id");
@@ -129,15 +133,24 @@ public class MypageController {
 		return "/detail";
 	}	
 
-	
-	//내가 쓴 댓글 목록	
+	//내가 쓴 [[[댓]]]글 목록
+	//VO를 list로 보내서 페이징 (도전!!)
 	@RequestMapping(value = "mypage/myreply", method = RequestMethod.GET)
-	public String myreply(UserVO user, MypageVO mypage, CommunityReplyVO reply, CriteriaVO cri, Model model, HttpSession session) {
+	public String myreply(UserVO user, MypageVO mypage, 
+			CommunityReplyVO reply, CriteriaVO cri, Model model, 
+			HttpSession session) {
 		String id = (String)session.getAttribute("user_id");
 		System.out.println("내[[[댓글]]]아이디"+id);
 		user.setUser_id(id);
 		reply.setUser_id(id);
 		mypage.setUser_id(id);
+
+		//해시맵에다가 다 때려박아서 그거 xml에서 불러오면 되는데 왜 그게 안되지
+//		HashMap <String, Object> map = new HashMap<>();
+//		map.put("pageNum", ms.myreply(reply));
+//		map.put(id, mypage);
+//		System.out.println(map);
+
 		
 		model.addAttribute("user", ms.mypage(user));
 		model.addAttribute("myreply", ms.myreply(reply));

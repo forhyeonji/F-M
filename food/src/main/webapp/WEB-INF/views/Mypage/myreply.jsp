@@ -44,13 +44,32 @@
 					<c:forEach items="${myreply}" var="myreply">
 					<tr>					
 						<td>${myreply.bno }</td>
-						<td>${myreply.context }</td>
+						<td><a href="/detail/${myreply.bno }">${myreply.context}</a></td>
 						<td>${myreply.reg_dt}</td>
 					</tr>
 					</c:forEach>						
 				</table>
-				
-${myreply }			
+
+${paging}
+
+			<div id="my_paging">	
+				<div>			
+<!-- 이전버튼 -->
+					<c:if test="${paging.prevBtn }">
+						<a href="/mypage/myreply?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+					</c:if>
+
+<!-- 페이징 처리 -->		
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
+						<a href="/mypage/myreply?pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
+					</c:forEach>
+
+<!-- 다음버튼 -->			
+					<c:if test="${paging.nextBtn }">
+						<a href="/mypage/myreply?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+					</c:if>					
+				</div>			
+			</div>			
 				
 		</div><!-- my_center -->
 		
