@@ -42,17 +42,14 @@
 							<td id="sh_menutd">
 							<select id="class1">
 									<option selected>1차분류</option>
-									<c:forEach items="${shopdivision}" var="divi">
-										<option value="<c:out value="${divi.class1}" />"><c:out value="${divi.class1}" /></option>
+									<c:forEach items="${class1}" var="divi1">
+										<option value="<c:out value="${divi1.class1}" />"><c:out value="${divi1.class1}" /></option>
 									</c:forEach>
 							</select>
 							</td>
 
-							<td><select id="sh_class2">
-									<option selected>2차분류</option>
-									<c:forEach items="${shopdivision}" var="divi">
-										<option ><c:out value="${divi.class2}" /></option>
-									</c:forEach>
+							<td><select id="class2">
+									
 							</select>
 						</tr>
 					</table>
@@ -144,6 +141,7 @@
 					<tr>
 						<td><select name="Origin">
 								<option value="">미국산</option>
+								<option value="">베트남산</option>
 								<option value="">국내산</option>
 								<option value="">중국산</option>
 						</select></td>

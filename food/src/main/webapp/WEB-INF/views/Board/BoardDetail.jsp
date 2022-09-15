@@ -36,8 +36,8 @@
         </div>
         <div id="cm_reply">
             <div id="cm_reply_textarea">
-                <div id="cm_editor" contenteditable="true" name="context">a
-                    <label>댓글을 입력하세요</label>
+                <div id="cm_editor" contenteditable="true" name="context">
+                    <label id="cm_reply_label">댓글을 입력하세요</label>
                 </div>
             </div>
             <div id="reply_body"></div>
@@ -45,13 +45,11 @@
             </div>
         </div>
     </div>
-
-
-    <script>
-        let bno = '${bno}';
-        let session_id = "<%=(String) session.getAttribute("user_id")%>"
-    </script>
     <script src="/resources/JS/Board/BoardDetail.js"></script>
     <script src="/resources/JS/Board/ReplyPage.js"></script>
+    <script>
+        let bno = '${bno}';
+        let session_id = '<%=session.getAttribute("user_id")%>'
+    </script>
     <%@ include file="../Footer/footer.jsp" %>
 

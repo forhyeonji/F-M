@@ -26,4 +26,9 @@
         insert into tb_community_reply(user_id, context, bno)
         values(#{user_id}, #{context}, #{bno})
     </insert>
+
+    <delete id="deleteCommunityReply">
+        delete from tb_community_reply
+        where rno = #{rno}
+    </delete>
 </mapper>

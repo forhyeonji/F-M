@@ -17,17 +17,15 @@
 		values(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail})
 	</insert>
 
-	<select id="shopdivision"
+	<select id="class1"
 		resultType="com.food.model.ShopdivisionVO">
 		select distinct(class1) from sh_division
 	</select>
 	
-	<select id="shopdivision2"
+	<select id="class2"
 		resultType="com.food.model.ShopdivisionVO">
-	
 		select class2 from sh_division
 		where class1=#{class1}
-		
 	</select>
 
 

@@ -14,7 +14,9 @@ public interface ShopMapper {
 	//상품등록 수정
 	public void ShopEdit(ShopVO Shop);
 	
-	public ArrayList<ShopdivisionVO> shopdivision(String shop);
+	public ArrayList<ShopdivisionVO> class1();
+	
+	public ArrayList<ShopdivisionVO> class2(String shop);
 	
 	
 	
