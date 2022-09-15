@@ -18,20 +18,68 @@
 		<table>	
 		
 			<tr class="NOTI_bar">
-				<td width="300px" class="NOTI_title_effect" id="NOTI_title">제목</td>
-				<td width="100px" class="NOTI_title_effect" id="NOTI_regdate">작성일</td>
-				<td width="100px" class="NOTI_title_effect" id="NOTI_check">답변여부</td>
+				<td width="70px" class="NOTI_Que_title_effect">카테고리</td>
+				<td width="330px" class="NOTI_Que_title_effect">제목</td>
+				<td width="100px" class="NOTI_Que_title_effect">작성일</td>
+				<td width="100px" class="NOTI_Que_title_effect">답변여부</td>
 			</tr>
 			
-			<tr>
-				<td colspan="3" class="NOTI_title_effect"><a href="http://localhost:8080/directKing_answer" class="NOTI_a">여기를 클릭하세요</a></td>
-			</tr>
-			
-			<tr>
-				<td colspan="3" class="NOTI_title_effect"><a href="http://localhost:8080/directKing_answer" class="NOTI_a">여기를 클릭하세요</a></td>
-			</tr>
-		
+			<!-- for문 시작 -->
+		<c:forEach items="${list}" var="Notiboardlist">
+	
+					<tr>
+						<td>
+						
+									<c:choose>
+										<c:when test="${mywrite.subsep eq 'inquiry_recipe'}">
+											레시피
+										</c:when>
+										
+										<c:when test="${mywrite.subsep eq 'inquiry_store'}">
+											스토어
+										</c:when>
+										
+										<c:when test="${mywrite.subsep eq 'inquiry_commu'}">
+											커뮤니티
+										</c:when>
+										
+										<c:otherwise>
+											기타
+										</c:otherwise>
+									</c:choose>
+				
+						</td>
+						
+						<td>
+								<a href="directKing_detail?bno=${Notiboardlist.bno}">${Notiboardlist.title}</a>
+						</td>
+						
+						<td>${Notiboardlist.reg_dt}</td>
+						<td>답변여부</td>
+				</tr>
+
+
+		</c:forEach> <!-- for문 끝 -->
 		</table>
+		
+		
+		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
+		<c:if test="${paging.prevBtn}">
+			<a href="/directKing?sep=inquiry&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+		</c:if>
+		
+		
+		<!-- begin(1)이 end(10)가 될 동안 반복 -->
+		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+			<a href="/directKing?sep=inquiry&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
+		</c:forEach>
+		
+		
+		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
+		<c:if test="${paging.nextBtn}">
+			<a href="/directKing?sep=inquiry&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+		</c:if>
+		
 		
 	</div> <!-- main_center -->
 	

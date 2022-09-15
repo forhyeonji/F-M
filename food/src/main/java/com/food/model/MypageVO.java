@@ -27,6 +27,8 @@ public class MypageVO {
     private String keyword;
     private String type;
     private String sep;
+    private String subsep;
+    
 
     
     public MypageVO() {
