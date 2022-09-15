@@ -82,7 +82,7 @@
 	</select>
 	
 	
-	<select id="myreply" parameterType="com.food.model.MypageVO" resultType="com.ring.model.CommunityReplyVO">
+	<select id="myreply" parameterType="com.food.model.MypageVO" resultType="com.food.model.CommunityReplyVO">
 		select * 
 		from tb_community_reply
 
