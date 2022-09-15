@@ -59,3 +59,11 @@
     width:900px;
     margin:0 auto;
 }
+#cm_reply_btn{
+    width:100%;
+    display:flex;
+}
+#cm_reply_btn{
+    display:flex;
+    justify-content: flex-end;
+}

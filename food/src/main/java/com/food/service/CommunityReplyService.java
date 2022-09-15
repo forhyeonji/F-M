@@ -18,7 +18,7 @@ public class CommunityReplyService {
     private final CommunityReplyMapper communityReplyMapper;
 
     /**
-     * 댓글 리스트 출력
+     * Reply List 출력
      * @param replyPageVO
      * @param bno
      * @return
@@ -35,10 +35,18 @@ public class CommunityReplyService {
     }
 
     /**
-     * 댓글 작성
+     * Reply 작성
      * @param communityReplyVO
      */
     public void insertCommunityReply(CommunityReplyVO communityReplyVO){
         communityReplyMapper.insertCommunityReply(communityReplyVO);
+    }
+
+    /**
+     * Reply 삭제
+     * @param rno
+     */
+    public void deleteCommunityReply(int rno){
+        communityReplyMapper.deleteCommunityReply(rno);
     }
 }

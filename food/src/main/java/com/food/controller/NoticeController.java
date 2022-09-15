@@ -22,57 +22,6 @@ public class NoticeController {
 
 		@Autowired
 		NotiBoardService nbs;
-	
-		
-/*	
- 
- 		@GetMapping("/listAjax.json")
-		@ResponseBody
-		public ResponseEntity   <Map<String, Object>> QnAListAjax(CriteriaVO criteriaVO,Model model) {
-		      
-		   Map<String, Object> map = new HashMap<>();
-		      
-		   map.put("list", nbs.list());
-		   map.put("paging", new PageVO(criteriaVO, nbs.total()));
-		      
-		   return new ResponseEntity<>(map,HttpStatus.OK);
-		}
-		
-			
-			
-			// 비동기 연습 get
-		@RequestMapping(value = "/listAjax.json", method = RequestMethod.GET)
-		public ResponseEntity<ArrayList<NotiBoardVO>> getList() {
-	
-			
-			return new ResponseEntity<>(nbs.list(), HttpStatus.OK);
-			
-		}
-		
-		// 비동기 연습 get
-				@RequestMapping(value = "/listAjax.json", method = RequestMethod.GET)
-				public ResponseEntity<PageVO> getpaging(CriteriaVO criteriaVO) {
-			
-				int total = nbs.total();
-				
-					return new ResponseEntity<>(new PageVO(criteriaVO, total), HttpStatus.OK);
-					
-		}
-		
-				
-		// 비동기 연습 post
-				@RequestMapping(value = "/listAjaxPost", method = RequestMethod.POST)
-				public ResponseEntity<NotiBoardVO> listAjaxPost(@RequestBody NotiBoardVO listajax) {
-					
-					System.out.println("sampleVO data...=" + listajax);
-					
-					ResponseEntity<NotiBoardVO> result = null;
-					result = ResponseEntity.status(HttpStatus.OK).body(listajax);
-					
-					return result;
-				}
-*/
-		
 		
 		
 	/* 공지사항 */
@@ -255,7 +204,10 @@ public class NoticeController {
 	/* 1:1문의 답변 */
 		
 		@RequestMapping(value = "/directKing", method = RequestMethod.GET)
-		public String directKing () {
+		public String directKing (Model model, CriteriaVO criteriaVO) {
+			model.addAttribute("list", nbs.list(criteriaVO));
+			int total = nbs.total(criteriaVO);
+			model.addAttribute("paging", new PageVO(criteriaVO, total));
 			return "/Notice/DirectKing";
 		}
 		
@@ -265,6 +217,12 @@ public class NoticeController {
 		public String directKing_answer () {
 			return "/Notice/DirectKing_answer";
 	}
+		
+		
+		@RequestMapping(value = "/directKing_detail", method = RequestMethod.GET)
+		public String directKing_detail () {
+			return "/Notice/DirectKing_detail";
+		}
 
 	
 	

@@ -30,7 +30,11 @@ public class ShopServiceImpl implements ShopService {
 		Sm.ShopEdit(Shop);
 	}
 	
-	public ArrayList<ShopdivisionVO> shopdivision(String Shop) {
-		return Sm.shopdivision(Shop);
+	public ArrayList<ShopdivisionVO> class1() {
+		return Sm.class1();
+	}
+	
+	public ArrayList<ShopdivisionVO> class2(String Shop) {
+		return Sm.class2(Shop);
 	}
 }

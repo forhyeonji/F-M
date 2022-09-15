@@ -1,12 +1,18 @@
 package com.food.controller;
 
+import java.util.ArrayList;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.food.model.ShopVO;
+import com.food.model.ShopdivisionVO;
 import com.food.service.ShopService;
 
 
@@ -44,12 +50,21 @@ public class ShopController {
 	//상품등록 매핑
 	
 
-	@GetMapping("/shopRegistration")
+	@GetMapping("/shopRegistration")	// 상품등록 페이지를 실행하기 위한 url주소 매핑
 	public String shopRegistration(String Shop,Model model) {
 		
-		model.addAttribute("shopdivision",shop.shopdivision(Shop));	
-		return "Shop/shopRegistration";
+		model.addAttribute("class1",shop.class1());		// // shopRegistration.jsp가 실행하자마자 1분류 select
+		return "Shop/shopRegistration";	// url주소가 매핑이 되면, Shop폴더 안에 있는 shopRegistration.jsp 실행
 	}
+	// 1차 분류를 change하면 2차분류 select
+	@RequestMapping(value="/Shop/{s}",method=RequestMethod.GET)	
+	public ResponseEntity<ArrayList<ShopdivisionVO>> getshopdivision(@PathVariable String s){
+		System.out.println(s);
+		
+		return new ResponseEntity<>(shop.class2(s),HttpStatus.OK);
+	}
+	
+	
 	
 	//상품등록 처리 매핑
 	

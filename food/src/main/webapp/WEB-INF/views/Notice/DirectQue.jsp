@@ -15,7 +15,7 @@
 					<td width="260px"> 연락처 <input type="text" placeholder="꼭 남겨주세요" class="NOTI_Tel" name="user_tel"> </td>
 			
 					<td>
-						<select class="NOTI_Que_select" name="sep">
+						<select class="NOTI_Que_select" name="subsep">
 							<option value="inquiry_recipe">레시피 문의</option>
 							<option value="inquiry_store">스토어 문의</option>
 							<option value="inquiry_commu">커뮤니티 문의</option>
@@ -24,7 +24,8 @@
 					</td>
 					
 					<td>
-						<input type="text" value="${sessionScope.user_id}" name="user_id">
+						<input type="hidden" value="${sessionScope.user_id}" name="user_id">
+						<input type="hidden" value="inquiry" name="sep">
 						<input type="submit" class="NOTI_but" value="등록">
 						
 					</td>
@@ -74,15 +75,15 @@
 								<td>
 				
 									<c:choose>
-										<c:when test="${mywrite.sep eq 'inquiry_recipe'}">
+										<c:when test="${mywrite.subsep eq 'inquiry_recipe'}">
 											레시피
 										</c:when>
 										
-										<c:when test="${mywrite.sep eq 'inquiry_store'}">
+										<c:when test="${mywrite.subsep eq 'inquiry_store'}">
 											스토어
 										</c:when>
 										
-										<c:when test="${mywrite.sep eq 'inquiry_commu'}">
+										<c:when test="${mywrite.subsep eq 'inquiry_commu'}">
 											커뮤니티
 										</c:when>
 										
