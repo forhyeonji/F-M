@@ -21,7 +21,7 @@ public class MypageVO {
 		
 	//리스트 선언
 	private List<MypageVO> mypageVOList;
-	
+	//페이징처리
     private int pageNum;
     private int amount;
     private String keyword;
