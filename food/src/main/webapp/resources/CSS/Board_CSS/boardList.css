@@ -164,7 +164,7 @@ ul li{
     flex-direction: column;
 }
 #board_list{
-    height:440px;
+    height:380px;
     width:100%;
     /*box-shadow: 0 0 2px 0 rgba(0, 0, 0, 0.2);*/
 }
