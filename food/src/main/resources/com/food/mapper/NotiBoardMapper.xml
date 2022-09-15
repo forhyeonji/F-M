@@ -135,5 +135,15 @@
 	
 	
 	
+	<!-- 관리자 답변 글쓰기 -->
+	<insert id="answer">
+	
+	insert into tb_notianswer (bno, ans_context, ans_id, ans_check)
+	values(#{bno}, #{ans_context}, #{ans_id}, 1)
+	
+	</insert>
+	
+	
+	
 	
 </mapper>

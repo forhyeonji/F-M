@@ -51,7 +51,7 @@
 						</td>
 						
 						<td>
-								<a href="directKing_detail?bno=${Notiboardlist.bno}">${Notiboardlist.title}</a>
+								<a href="directKing_answer?bno=${Notiboardlist.bno}">${Notiboardlist.title}</a>
 						</td>
 						
 						<td>${Notiboardlist.reg_dt}</td>

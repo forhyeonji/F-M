@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.food.model.AnswerVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 import com.food.model.NotiBoardVO;
@@ -212,18 +213,18 @@ public class NoticeController {
 		}
 		
 		
-		
 		@RequestMapping(value = "/directKing_answer", method = RequestMethod.GET)
-		public String directKing_answer () {
+		public String directKing_answer (NotiBoardVO board, Model model) {
+			model.addAttribute("detail",nbs.detail(board));
 			return "/Notice/DirectKing_answer";
 	}
 		
-		
-		@RequestMapping(value = "/directKing_detail", method = RequestMethod.GET)
-		public String directKing_detail () {
-			return "/Notice/DirectKing_detail";
+		@RequestMapping(value = "/directKing_answer", method = RequestMethod.POST)
+		public String directKing_answer_post (AnswerVO ans) {
+			nbs.answer(ans);
+			return "redirect:/notice?sep=noti";
 		}
-
+		
 	
 	
 }
