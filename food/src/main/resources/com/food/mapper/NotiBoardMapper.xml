@@ -14,8 +14,9 @@
 			from tb_notice n, (select @rownum:=0) as tmp
 			
 			<if test="keyword==null">
-			where sep=#{sep}	
+			where sep=#{sep}
 			</if>
+	
 			
 			<if test = "keyword != null">
                 <choose>
@@ -43,6 +44,12 @@
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
 	</select>
+	
+<!-- 	<select id="anslist" resultType="com.food.model.AnsBoardVO">
+		select * from tb_notianswer as ans, tb_notice as noti
+ 		where ans.#{bno} = noti.#{bno};
+	</select>
+	 -->
 	
 	<!-- 유저정보 -->
 	<select id="mypage" resultType="com.food.model.UserVO">
@@ -101,13 +108,12 @@
 		from (
 				select @rownum:= @rownum+1 rownum, n.*
 				from tb_notice n, (select @rownum:=0) as tmp	
-             	where user_id=#{user_id}
+             	where user_id=#{user_id} and sep=#{sep}
 				order by bno desc
 			 ) as mywrite
 			 <![CDATA[
 			 where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 			]]>
-			
 	</select>
 	
 	
@@ -115,15 +121,25 @@
 	
 	<!-- tb_notice테이블 전체 글 수2 -->
 	<select id="total2" resultType="int">
-		select count(*) from tb_notice where user_id=#{user_id}
+		select count(*) from tb_notice where user_id=#{user_id} and sep=#{sep}
 	</select>
 
 	
 	<!-- 게시글 글쓰기 -->
 	<insert id="write">
 	
-	insert into tb_notice (title, context, reg_dt, user_id, BoldTitle, sep, user_tel)
-	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle}, #{sep}, #{user_tel})
+	insert into tb_notice (title, context, reg_dt, user_id, BoldTitle, sep, subsep, user_tel)
+	values(#{title}, #{context}, CURDATE(), #{user_id}, #{boldtitle}, #{sep}, #{subsep}, #{user_tel})
+	
+	</insert>
+	
+	
+	
+	<!-- 관리자 답변 글쓰기 -->
+	<insert id="answer">
+	
+	insert into tb_notianswer (bno, ans_context, ans_id, ans_check)
+	values(#{bno}, #{ans_context}, #{ans_id}, 1)
 	
 	</insert>
 	

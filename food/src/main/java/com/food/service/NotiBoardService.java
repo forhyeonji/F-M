@@ -2,10 +2,10 @@ package com.food.service;
 
 import java.util.ArrayList;
 
+import com.food.model.AnswerVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 import com.food.model.NotiBoardVO;
-import com.food.model.PageVO;
 import com.food.model.UserVO;
 
 public interface NotiBoardService {
@@ -21,6 +21,10 @@ public interface NotiBoardService {
 	public void remove(NotiBoardVO board);
 	// 글쓰기
 	public void write(NotiBoardVO board);
+	
+	// 관리자 답변 글쓰기
+	public void answer(AnswerVO ans);
+	
 	// tb_notice 테이블 전체 건수 설계
 	public int total(CriteriaVO criteriaVO);
 	// 1:1질의 전체 글 수
