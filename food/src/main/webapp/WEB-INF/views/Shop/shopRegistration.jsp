@@ -141,6 +141,7 @@
 					<tr>
 						<td><select name="Origin">
 								<option value="">미국산</option>
+								<option value="">베트남산</option>
 								<option value="">국내산</option>
 								<option value="">중국산</option>
 						</select></td>
