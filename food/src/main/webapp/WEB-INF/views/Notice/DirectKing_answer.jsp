@@ -64,31 +64,39 @@
 			
 			</div> <!-- main_top -->
 			
+			<c:choose>
 			
-			<form action="/directKing_answer" method="post">
-			
-				<div id="NOTI_main_bottom">
+				<c:when test="">
+						<form action="/directKing_answer" method="post">
+						
+							<div id="NOTI_main_bottom">
+							
+								<h3 class="NOTI_bigTitle">답변</h3>
+						
+								<table class="NOTI_table">
+									<tr>
+										<td colspan="2" class="NOTI_text"><textarea name="ans_context" placeholder="답변을 입력해 주세요." class="NOTI_textarea"></textarea></td>
+									</tr>
+								</table>
+							
+							</div> <!-- main_bottom -->
+							
+							
+							<div class="NOTI_button">
+								<input type="submit" value="등록" class="NOTI_but">
+								<input type="button" value="취소" onclick="location.href='http://localhost:8080/directKing'" class="NOTI_but">
+								<input type="text" value="${sessionScope.user_id}" name="ans_id">
+								<input type="text" value="${detail.bno}" name="bno">
+							</div> <!-- button -->
+							
+						</form>
+				</c:when>
 				
-					<h3 class="NOTI_bigTitle">답변</h3>
-			
-					<table class="NOTI_table">
-						<tr>
-							<td colspan="2" class="NOTI_text"><textarea name="ans_context" placeholder="답변을 입력해 주세요." class="NOTI_textarea"></textarea></td>
-						</tr>
-					</table>
-				
-				</div> <!-- main_bottom -->
 				
 				
-				<div class="NOTI_button">
-					<input type="submit" value="등록" class="NOTI_but">
-					<input type="button" value="취소" onclick="location.href='http://localhost:8080/directKing'" class="NOTI_but">
-					<input type="text" value="${sessionScope.user_id}" name="ans_id">
-					<input type="text" value="${detail.bno}" name="bno">
-				</div> <!-- button -->
 				
-			</form>
-		
+				
+			</c:choose>
 		
 		
 
