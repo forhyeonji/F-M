@@ -29,8 +29,12 @@ $(function () {
         $('#reply_body').append(html);
 
         data.map((value) => {
-            if( value[`user_id`] != session_id){
-                $(`#cm_reply_delete-${value[`rno`]}`).hide();
+            if(session_id == `root`){
+                $(`#cm_reply_delete-${value[`rno`]}`).show();
+            }else {
+                if (value[`user_id`] != session_id) {
+                    $(`#cm_reply_delete-${value[`rno`]}`).hide();
+                }
             }
         })
         data.map((value) => {
