@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.food.mapper.ShopMapper;
 import com.food.model.ShopVO;
@@ -30,7 +32,23 @@ public class ShopServiceImpl implements ShopService {
 		Sm.ShopEdit(Shop);
 	}
 	
-	public ArrayList<ShopdivisionVO> shopdivision(String Shop) {
-		return Sm.shopdivision(Shop);
+	public ArrayList<ShopdivisionVO> class1() {
+		return Sm.class1();
+	}
+	
+	public ArrayList<ShopdivisionVO> class2(String Shop) {
+		return Sm.class2(Shop);
+	}
+	
+	//첨부파일 업로드
+	@PostMapping("/shopRegistration")
+	public void shopRegistrationActionPOST(MultipartFile image) {
+		System.out.println("shopRegistrationAjaxActionPOST...");
+
+		System.out.println("파일 이름:"+image.getOriginalFilename());
+		System.out.println("파일 타입:"+image.getContentType());
+		System.out.println("파일 크기:"+image.getSize());
+	
+		
 	}
 }

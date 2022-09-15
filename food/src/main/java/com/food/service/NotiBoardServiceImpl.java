@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.mapper.NotiBoardMapper;
+import com.food.model.AnswerVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 import com.food.model.NotiBoardVO;
@@ -43,7 +44,13 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 		public void write(NotiBoardVO board) {
 			nbm.write(board);
 		}
-	// tb_notice테이블 전체 글 수
+		
+	// 게시글 글쓰기
+		public void answer(AnswerVO ans) {
+			nbm.answer(ans);	
+		}
+		
+	// 관리자 답변 글쓰기
 		public int total(CriteriaVO criteriaVO) {
 			return nbm.total(criteriaVO);
 		}

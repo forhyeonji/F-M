@@ -1,7 +1,13 @@
 "use strict"
 $(function () {
-    console.log(document.getElementById("cm_editor").innerText);
-    const rColumns = ["user_id", "reg_dt", "context"];
+    if(session_id == 'null'){
+        $('#cm_editor').html('로그인하세요');
+        $('#cm_editor').attr("contenteditable","false");
+
+        $('#cm_reply_add').disabled= true;
+    }
+
+    const rColumns = ["user_id", "reg_dt", "context", "rno"];
     const replyPagination = {
         page: 1,
         size: 10,
@@ -15,11 +21,29 @@ $(function () {
         let html = ``;
         data.map((value) => {
             html += `<div class="cm_reply" id="reply-${value['rno']}">`
-            rColumns.map((key) => html += `<div class="cm_reply-${key}">${value[key]}</div>`);
+            rColumns.map((key) => html += `<div class="cm_reply-${key}" id="cm_reply-${key}-${value['rno']}">${value[key]}</div>`);
+            html += `<div id="cm_reply_btn"><div id="cm_reply_delete-${value['rno']}" style="display:block"><input type="button" id="cm_reply_delete_btn-${value['rno']}" value="삭제"></div></div>`
             html += `</div>`
         });
 
         $('#reply_body').append(html);
+
+        data.map((value) => {
+            if(session_id == `root`){
+                $(`#cm_reply_delete-${value[`rno`]}`).show();
+            }else {
+                if (value[`user_id`] != session_id) {
+                    $(`#cm_reply_delete-${value[`rno`]}`).hide();
+                }
+            }
+        })
+        data.map((value) => {
+            $(`#cm_reply-rno-${value[`rno`]}`).hide();
+            $(`#cm_reply_delete_btn-${value['rno']}`).click(() => {
+                let rno = `${value['rno']}`
+                onReplyDelete(rno)
+            })
+        })
     };
 
     const onReplyOption = () => {
@@ -96,9 +120,22 @@ $(function () {
             data: JSON.stringify({context: text, bno: bno, user_id: id}),
             success: (data) => {
                 document.getElementById("cm_editor").innerText = '';
+
                 onReply();
             }
         })
+    }
+
+    const onReplyDelete = (rno) => {
+        $.ajax({
+                type:`delete`,
+                url:`/api/reply/delete`,
+                contentType: "application/json; charset=utf-8",
+                data:JSON.stringify(rno),
+                success:() => {
+                    onReply();
+                }
+            })
     }
 
     onReplyOption();

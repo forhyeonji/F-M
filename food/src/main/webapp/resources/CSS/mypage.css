@@ -168,10 +168,14 @@ canclelist
 /* myreply */
 #my_reply{
 	border : solid 1px rgb(234, 234, 234);
-	width:100%
+	width:100%;
 }
 
-
+.my_fsmall{
+	font-size:50%;
+	font-weight:bold;
+	color:rgb(234, 234, 234);
+}
 
 /* mywrite */
 #my_write{

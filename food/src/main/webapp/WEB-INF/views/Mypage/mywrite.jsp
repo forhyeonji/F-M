@@ -68,7 +68,7 @@
 				</div>
 				<div>
 					<form action="/mypage/mywrite">
-						<input type="text" name="keyword">
+						<input type="text" placeholder="제목" name="keyword">
 						<input type="submit" value="검색">
 					</form>
 				</div>			

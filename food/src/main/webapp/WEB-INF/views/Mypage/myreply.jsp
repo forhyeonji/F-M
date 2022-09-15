@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -32,25 +33,44 @@
 				<a href="http://localhost:8080/mypage/mylike"><button>❤내가 좋아요 누른 글</button></a>
 			</div>
 				<table id="my_reply">
+
+				<tr><td>이건나중에 지울거야</td>
+					<td>세션아이디값: ${sessionScope.user_id }</td>
+					<td>글쓴아이디값: ${user.user_id }</td></tr>
+
 					<tr>
-						<th>💬</th><th>제목</th><th>작성일자</th>
+						<th>글번호</th><th>작성한 댓글</th><th>작성일자</th>
 					</tr>
-					<tr>
-						<td style="font-size:150%">💬</td><td>좋아요!</td><td>2022/08/08</td>
+					<c:forEach items="${myreply}" var="myreply">
+					<tr>					
+						<td>${myreply.bno }</td>
+						<td><a href="/detail/${myreply.bno }">${myreply.context}</a></td>
+						<td>${myreply.reg_dt}</td>
 					</tr>
-					<tr>
-						<td style="font-size:150%">💬</td><td>잘 보고 가요!</td><td>2022/08/01</td>
-					</tr>
-					<tr>
-						<td style="font-size:150%">💬</td><td>푸하하핳ㅋㅋ</td><td>2022/07/30</td>
-					</tr>					
-					<tr>
-						<td style="font-size:150%">💬</td><td>얼만가요?</td><td>2022/07/26</td>
-					</tr>				
-					<tr>
-						<td style="font-size:150%">💬</td><td>ㅋㅋㅋㅋㅋ</td><td>2022/07/25</td>
-					</tr>				
+					</c:forEach>						
 				</table>
+
+${paging}
+
+			<div id="my_paging">	
+				<div>			
+<!-- 이전버튼 -->
+					<c:if test="${paging.prevBtn }">
+						<a href="/mypage/myreply?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+					</c:if>
+
+<!-- 페이징 처리 -->		
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
+						<a href="/mypage/myreply?pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
+					</c:forEach>
+
+<!-- 다음버튼 -->			
+					<c:if test="${paging.nextBtn }">
+						<a href="/mypage/myreply?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+					</c:if>					
+				</div>			
+			</div>			
+				
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

@@ -49,10 +49,6 @@
 					<td><input readonly type="text" value="${profile.user_name }" name="user_name"></td>
 				</tr>
 				<tr>
-					<td class="my_edit_td">닉네임</td>
-					<td><input type="text" value="${profile.user_nick}" name="user_nick"></td>
-				</tr>
-				<tr>
 					<td class="my_edit_td">우편번호</td>
 					<td><input class="insert_ad" id="user_zip" type="text" value="${profile.user_zip}" name="user_zip" readonly>
 						<button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button></td>

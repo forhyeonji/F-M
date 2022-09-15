@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.food.model.CommunityReplyVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 import com.food.model.PageVO;
@@ -27,9 +28,16 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		mypage.setUser_id(id);
+		
+		String result="";
+		if(id != null) {			//로그인된 아이디있으면
+			result = "Mypage/mypage"; //마이페지로 이동
+		}else {
+			result = "/Main/insert";	//없으면 회원가입으로 이동
+		}
 
 		model.addAttribute("mypage", ms.mypage(user));
-		return "Mypage/mypage";
+		return result;
 	}
 	//회원정보페이지
 	@RequestMapping(value = "mypage/profile_edit", method = RequestMethod.GET)
@@ -105,11 +113,13 @@ public class MypageController {
 	public String delivery() {
 		return "Mypage/delivery";
 	}
+	
 	//내가 쓴 글 목록
+	//MypageVO에 몰빵해서 페이징(완료)
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
 	public String mywrite(UserVO user, MypageVO mypage, Model model, CriteriaVO cri, HttpSession session) {
 		String id = (String) session.getAttribute("user_id");
-		System.out.println("로그인된 아이디"+id);
+		System.out.println("내글아이디"+id);
 		user.setUser_id(id);		
 		mypage.setUser_id(id);
 		
@@ -127,13 +137,32 @@ public class MypageController {
 		model.addAttribute("mywritedetail", ms.mywritedetail(mypage));
 		return "/detail";
 	}	
-
 	
-	//내가 쓴 댓글 목록
+	//내가 쓴 [[[댓]]]글 목록
+	//VO를 list로 보내서 페이징 (도전!!)
 	@RequestMapping(value = "mypage/myreply", method = RequestMethod.GET)
-	public String myreply() {
+	public String myreply(UserVO user, MypageVO mypage, 
+			CommunityReplyVO reply, CriteriaVO cri, Model model, HttpSession session) {
+		String id = (String)session.getAttribute("user_id");
+		System.out.println("내[[[댓글]]]아이디"+id);
+		user.setUser_id(id);
+		reply.setUser_id(id);
+		mypage.setUser_id(id);
+		
+		//해시맵에다가 다 때려박아서 그거 xml에서 불러오면 되는데 왜 그게 안되지
+//		Map <String, Object> map = new HashMap<>();
+//		map.put(id, ms.myreply(reply));
+		
+		model.addAttribute("user", ms.mypage(user));
+		model.addAttribute("myreply", ms.myreply(reply));
+		
+		int total = ms.total(mypage);
+		model.addAttribute("paging", new PageVO(cri, total));		
 		return "Mypage/myreply";
 	}
+
+		
+
 	//내가 좋아요 누른 글 목록
 	@RequestMapping(value = "mypage/mylike", method = RequestMethod.GET)
 	public String mylike() {

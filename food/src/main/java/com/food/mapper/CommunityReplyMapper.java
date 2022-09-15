@@ -17,11 +17,21 @@ public interface CommunityReplyMapper {
     List<CommunityReplyVO> selectCommunityReplyList(ReplyPageVO replyPageVO);
 
     /**
-     * community 리스트 전체 카운터 쿼리
+     * Reply 리스트 전체 카운터 쿼리
      * @param replyPageVO
      * @return
      */
     int selectCommunityReplyCount(ReplyPageVO replyPageVO);
 
+    /**
+     * Reply 입력 쿼리
+     * @param communityReplyVO
+     */
     void insertCommunityReply(CommunityReplyVO communityReplyVO);
+
+    /**
+     * Reply 삭제 쿼리
+     * @param rno
+     */
+    void deleteCommunityReply(int rno);
 }

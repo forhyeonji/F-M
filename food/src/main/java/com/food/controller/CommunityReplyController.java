@@ -7,6 +7,7 @@ import com.food.model.ResCommonVO;
 import com.food.service.CommunityReplyService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 @RestController
@@ -45,5 +46,12 @@ public class CommunityReplyController {
         return ResCommonVO.builder()
                 .code(ResCommonCode.SUCCESS)
                 .build();
+    }
+
+    @DeleteMapping(value="/api/reply/delete", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public void deleteCommunityReply(
+            @RequestBody int rno
+    ){
+        communityReplyService.deleteCommunityReply(rno);
     }
 }
