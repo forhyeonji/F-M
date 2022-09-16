@@ -79,7 +79,7 @@ $(document).ready(function(){
 			$(".insert_emailNone").css("display","block");
 			emailCheck = false;
 		}else{
-			$(".insert_emailY").css("display", "block");
+			$(".insert_emailTrue").css("display", "block");
 			emailCheck = true;
 		}
 		
@@ -94,10 +94,10 @@ $(document).ready(function(){
 		
 		/* 비밀번호 유효성 검사 */
 		if(user_pw == ""){
-			$(".insert_pwN").css("display","block");
+			$(".insert_pwNone").css("display","block");
 			pwCheck = false;
 		}else{
-			$(".insert_pwN").css("display", "none");
+			$(".insert_pwNone").css("display", "none");
 			pwCheck = true;
 		}
 		
@@ -305,12 +305,12 @@ $("#user_name").on("blur", function(){
 	var user_name = $("#user_name").val();
 	
 	if(nameFormCheck(user_name)){
-		$('.insert_nameY').css('display','block');
+		$('.insert_nameTrue').css('display','block');
 		$('.insert_nameN').css('display','none');
 		$('.insert_nameNone').css('display','none');
 		nameCheck = true;
 	}else{
-		$('.insert_nameY').css('display','none');
+		$('.insert_nameTrue').css('display','none');
 		$('.insert_nameN').css('display','none');
 		$('.insert_nameNone').css('display','block');
 		nameCheck = false;

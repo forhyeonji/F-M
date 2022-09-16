@@ -13,104 +13,222 @@
 	<a href="http://localhost:8080"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>
 </div>
 
-<div>
+<div class="insert_border">
+
 	<form action="/insert" method ="post" name="insert_form"  id="insert_form">
 		
-		<div class="insert_head">
+		<div class="insert_top">
 			<h2 class="insert_h2">회원가입</h2>
 		</div>
 	
-		<div class="insert_border">
+		<div class="insert_wrap">
 		
-			<div class="insert_inborder">
+			<div class="insert_inWrap">
 		
 				<div id="insert_email">
-					<h4>이메일*</h4><br>
-					<input type="text" id="user_email" class="insert_inputext_b" name="user_email">
-					<!-- <input type="button" value="중복 확인" class="insert_insert_b"> -->
+					<div class="insert_h4">
+						<h4>이메일*</h4><br>
+					</div>
+					<div>
+						<input type="text" id="user_email" class="insert_inputext" name="user_email">
+					</div><br>
+					<div>
+						<span class="insert_emailNone">이메일을 입력하세요.</span>
+					</div>
 					<br>
-					<span class="insert_emailNone">이메일을 입력하세요.</span>
+					<div>
+						<span class="insert_emailHave">이메일이 이미 존재합니다.</span>
+					</div>
 					<br>
-					<span class="insert_emailHave">이메일이 이미 존재합니다.</span>
+					<div>
+						<span class="insert_emailFalse">이메일 양식을 다시 확인하세요.</span>
+					</div>
 					<br>
-					<span class="insert_emailMs">이메일 양식을 다시 확인하세요.</span>
-					<br>
-					<span class="insert_emailY">사용 가능한 이메일입니다.</span>
+					<div>
+						<span class="insert_emailTrue">사용 가능한 이메일입니다.</span>
+					</div>
 				</div><br>
 				
 				<div id="insert_id"><br>
-					<h4>아이디*</h4><br>
-					<input type="text" id="user_id" class="insert_inputext_b" name="user_id">
-					<!-- <input type="button" id="idCheck" value="중복 확인" class="insert_insert_b"> -->
+					<div>
+						<h4>아이디*</h4><br>
+					</div>
 					<br>
-					<span class="insert_idNone">아이디를 입력하세요.</span>
+					<div>
+						<input type="text" id="user_id" class="insert_inputext" name="user_id">
+					</div>
 					<br>
-					<span class="insert_idHave">아이디가 이미 존재합니다.</span>
+					<div>
+						<span class="insert_idNone">아이디를 입력하세요.</span>
+					</div>
 					<br>
-					<span class="insert_idMs">아이디로는 영문과 숫자가 혼합된 8~16자만 허용합니다.</span>
+					<div>
+						<span class="insert_idHave">아이디가 이미 존재합니다.</span>
+					</div>
 					<br>
-					<span class="insert_idY">사용 가능한 아이디입니다.</span>
+					<div>
+						<span class="insert_idFalse">아이디로는 영문과 숫자가 혼합된 8~16자만 허용합니다.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_idTrue">사용 가능한 아이디입니다.</span>
+					</div>
+					<br>
 				</div><br>
+				
 				
 				<div id="insert_pw"><br>
-					<h4>비밀번호*</h4><br>
-					<input type="text" id="user_pw" class="insert_inputext" name="user_pw">
-					<span class="insert_pwN">비밀번호를 입력하세요.</span>
-					<span class="insert_pwNone">8~16자의 영문자에 대문자, 특수기호, 숫자 중 하나 이상을 사용하세요.</span>
+					<div>
+						<h4>비밀번호*</h4><br>
+					</div>
+					<br>
+					<div>
+						<input type="text" id="user_pw" class="insert_inputext" name="user_pw">
+					</div>
+					<br>
+					<div>
+						<span class="insert_pwNone">비밀번호를 입력하세요.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_pwFalse">8~16자의 영문자에 대문자, 특수기호, 숫자 중 하나 이상을 사용하세요.</span>
+					</div>
+					<br>
 				</div><br>
 				
+
 				<div id="insert_pwcheck"><br>
-					<h4>비밀번호 확인*</h4><br>
-					<input type="text" id="user_repw" class="insert_inputext">
-					<span class="insert_repwN">비밀번호가 일치하지 않습니다.</span>
-					<span class="insert_repwY">사용 가능한 비밀번호입니다.</span>
+					<div>
+						<h4>비밀번호 확인*</h4><br>
+					</div>
+					<br>
+					<div>
+						<input type="text" id="user_repw" class="insert_inputext">
+					</div>
+					<br>
+					<div>
+						<span class="insert_repwFalse">비밀번호가 일치하지 않습니다.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_repwTrue">사용 가능한 비밀번호입니다.</span>
+					</div>
+					<br>
 				</div><br>
+				
 				
 				<div id="insert_name"><br>
-					<h4>이름*</h4><br>
-					<input type="text" id="user_name" class="insert_inputext" name="user_name">
-					<span class="insert_nameN">이름을 입력하세요.</span>
-					<span class="insert_nameY">사용 가능한 이름입니다.</span>
-					<span class="insert_nameNone">이름에는 한글과 영문 대소문자만을 사용하세요.</span>
+					<div>
+						<h4>이름*</h4><br>
+					</div>
+					<br>
+					<div>
+						<input type="text" id="user_name" class="insert_inputext" name="user_name">
+					</div>
+					<br>
+					<div>
+						<span class="insert_nameNone">이름을 입력하세요.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_nameFalse">이름에는 한글과 영문 대소문자만을 사용하세요.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_nameTrue">사용 가능한 이름입니다.</span>
+					</div>
+					<br>
 				</div><br>
+				
 				
 				<div class="insert_addrbox"><br>
 					<h4>주소*</h4><br>
 					<div class="insert_addr">
-						<button type="button" class="btn btn-default" onclick="PostCode();">주소 찾기</button>
-						<input class="insert_ad" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">                      
-						<input class="insert_ad" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
-						<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
+						<div>
+							<button type="button" class="insert_add" onclick="PostCode();">주소 찾기</button>
+						</div><br>
+						<div>
+							<input class="insert_ad" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">
+						</div><br>
+						<div>
+							<input class="insert_ad" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
+						</div><br>
+						<div>
+							<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
+						</div><br>
 					</div> 
 					<span class="insert_addrN">주소를 입력하세요.</span>   
-					<!-- <input type="button" id="user_add" class="insert_add" name="user_add" value="주소 검색"> -->	
 				</div><br>
 				
+				
 				<div id="insert_phone"><br>
-					<h4>휴대폰 번호*</h4><br>
-					<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
-					<input type="button" id="insert_cellph" value="인증번호 받기">
-					<span class="insert_phoneN">휴대폰 번호를 입력하세요.</span>
-					<span class="insert_phoneY">사용 가능한 휴대폰 번호입니다.</span>
-					<span class="insert_phoneNone">휴대폰 번호에는 숫자와 하이픈(-)만을 입력해주세요.</span>
+					<div>
+						<h4>휴대폰 번호*</h4><br>
+					</div>
+					<br>
+					<div>
+						<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
+					</div>
+					<br>
+					<div>
+						<input type="button" id="insert_cellph" value="인증번호 받기">
+					</div>
+					<br>
+					<div>
+						<span class="insert_phoneNone">휴대폰 번호를 입력하세요.</span>
+					</div>
+					<div>
+						<span class="insert_phoneFalse">휴대폰 번호에는 숫자와 하이픈(-)만을 입력해주세요.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_phoneTrue">사용 가능한 휴대폰 번호입니다.</span>
+					</div>
+					<br>
 				</div><br>
+				
+				
 				
 				<div class="insert_gender"><br>
 					<h4>성별</h4>	<br>
 					<div class="insert_gender_in">
-						<div><input type = "radio" id="user_male" name="user_gender" value="male">남자</div>
-						<div><input type = "radio" id="user_female" name="user_gender" value="female">여자</div>
-						<div><input type = "radio" id="user_none" name="user_gender" value="none">선택안함</div>
+						<div>
+							<input type = "radio" id="user_male" name="user_gender" value="male">남자
+						</div>
+						<div>
+							<input type = "radio" id="user_female" name="user_gender" value="female">여자
+						</div>
+						<div>
+							<input type = "radio" id="user_none" name="user_gender" value="none" checked>선택안함
+							</div>
 					</div>
 				</div><br>
 				
+				
 				<div id="insert_birth"><br>
-					<h4>생년월일</h4><br>
-					<input type="text" id="user_birth" class="insert_inputext" name="user_birth" placeholder="생년월일을 숫자만 입력해주세요. 예)19801205">
-					<span class="insert_birthN">생일을 입력하세요.</span>
-					<span class="insert_birthY">사용 가능한 생일입니다.</span>
-					<span class="insert_birthNone">생일에는 숫자만을 입력해주세요.</span>
+					<div>
+						<h4>생년월일</h4><br>
+					</div>
+					<br>
+					<div>
+						<input type="text" id="user_birth" class="insert_inputext" name="user_birth" placeholder="생년월일을 숫자만 입력해주세요. 예)19801205">
+					</div>
+					<br>
+					<div>
+						<span class="insert_birthNone">생일을 입력하세요.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_birthFalse">생일에는 숫자만을 입력해주세요.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_birthTrue">사용 가능한 생일입니다.</span>
+					</div>
+					<br>
 				</div><br>
+				
+				
 				
 				<div id=insert_agree><br>
 				<h4>이용 동의사항*</h4><br>
@@ -135,13 +253,10 @@
 				
 				<div id="insert_submit"><br>
 				<input type="button" id = "insert_insert" value="가입하기">
-				<!-- <input type="submit" id = "insert_insert" value="가입하기"> -->
 				</div><br>
 		
-			</div>		
-	
+			</div>			
 		</div>
-		
 		
 	
 	</form>
