@@ -13,7 +13,6 @@ public class AnswerVO {
 	private String ans_context;
 	private boolean ans_check;
 	private String ans_id;
-	private NotiBoardVO board;
 	
 	
 }

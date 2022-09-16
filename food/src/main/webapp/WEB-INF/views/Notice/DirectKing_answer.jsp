@@ -66,7 +66,30 @@
 			
 			<c:choose>
 			
-				<c:when test="">
+				<c:when test="${answercheck!=null}">
+						
+						<div id="NOTI_main_bottom">
+							
+								<h3 class="NOTI_bigTitle">답변</h3>
+						
+								<table class="NOTI_table">
+									<tr>
+										<td colspan="2" class="NOTI_text">${answercheck.ans_context}</td>
+									</tr>
+								</table>
+							
+						</div> <!-- main_bottom -->
+						<div class="NOTI_button">
+							
+								<input type="button" value="목록" onclick="location.href='http://localhost:8080/directKing'" class="NOTI_but">
+							
+						</div> <!-- button -->
+				
+				
+				
+				</c:when>
+				<c:otherwise>
+					
 						<form action="/directKing_answer" method="post">
 						
 							<div id="NOTI_main_bottom">
@@ -90,7 +113,8 @@
 							</div> <!-- button -->
 							
 						</form>
-				</c:when>
+				
+				</c:otherwise>
 				
 				
 				
@@ -98,8 +122,6 @@
 				
 			</c:choose>
 		
-		
-
 
 	</div> <!-- main -->
 

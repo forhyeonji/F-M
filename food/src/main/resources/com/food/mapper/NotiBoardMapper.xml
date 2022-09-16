@@ -8,8 +8,57 @@
 	
 	<!-- 게시글 목록 -->
 	<select id="list" resultType="com.food.model.NotiBoardVO">
+					
+			select *
+			from(
+			
+				select @rownum:= @rownum+1 rownum, t.*
+				from (
+						select n.bno, title, reg_dt, cnt, user_id, context, BoldTitle, sep, user_tel, subsep, ans_context, ans_check
+						from tb_notice as n left outer join tb_notianswer as a
+						on n.bno=a.bno
+				) t , (select @rownum:=0) as tmp
+				
+				<if test="keyword==null">
+			where sep=#{sep}
+			</if>
+	
+			
+			<if test = "keyword != null">
+                <choose>
+                   <when test="type == 'T'.toString()">
+                      where title like concat('%',#{keyword},'%') and sep = #{sep}
+                   </when>
+                   <when test="type == 'C'.toString()">
+                      where context like concat('%',#{keyword},'%') and sep = #{sep}
+                   </when>
+                   <otherwise>
+                     where (title like concat('%',#{keyword},'%')
+                      or context like concat('%',#{keyword},'%')) and sep = #{sep}
+                   </otherwise>
+                </choose>
+             
+            </if>
+
+		
+			
+			order by bno desc
+				
+			) as boardlist
+		
+		<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
+		
+		
+		</select>
+		
+		
+		
+	<!-- 	
 		select *
 		from(
+		
 			select @rownum:= @rownum+1 rownum, n.*
 			from tb_notice n, (select @rownum:=0) as tmp
 			
@@ -38,18 +87,16 @@
 			
 			order by bno desc
 			
-		) as boardlist
+		) as boardlist 
 		
 		<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
-		]]>
-	</select>
+		]]>  -->
+		
+		
 	
-<!-- 	<select id="anslist" resultType="com.food.model.AnsBoardVO">
-		select * from tb_notianswer as ans, tb_notice as noti
- 		where ans.#{bno} = noti.#{bno};
-	</select>
-	 -->
+	
+
 	
 	<!-- 유저정보 -->
 	<select id="mypage" resultType="com.food.model.UserVO">
@@ -142,6 +189,14 @@
 	values(#{bno}, #{ans_context}, #{ans_id}, 1)
 	
 	</insert>
+	
+	
+	<!-- 관리자 답변 글쓰기 -->
+	<select id="answercheck" resultType="com.food.model.AnswerVO">
+	
+	select * from tb_notianswer where bno=#{bno}
+	
+	</select>
 	
 	
 	

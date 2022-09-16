@@ -61,7 +61,7 @@
 				<div id="insert_pwcheck"><br>
 					<h4>비밀번호 확인*</h4><br>
 					<input type="text" id="user_repw" class="insert_inputext">
-					<span class="insert_repwN">비밀번호를 확인하세요.</span>
+					<span class="insert_repwN">비밀번호가 일치하지 않습니다.</span>
 				</div><br>
 				
 				<div id="insert_name"><br>
