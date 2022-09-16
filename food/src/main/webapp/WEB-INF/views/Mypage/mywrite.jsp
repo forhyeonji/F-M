@@ -55,23 +55,25 @@
 				<div>			
 <!-- 이전버튼 -->
 					<c:if test="${paging.prevBtn }">
-						<a href="/mypage/mywrite?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+						<a href="/mypage/mywrite?keyword=${paging.criteriaVO.keyword }&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 					</c:if>
 
 <!-- 페이징 처리 -->		
 					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
-						<a href="/mypage/mywrite?pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
+						<a href="/mypage/mywrite?keyword=${paging.criteriaVO.keyword }&pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
 					</c:forEach>
 
 <!-- 다음버튼 -->			
 					<c:if test="${paging.nextBtn }">
-						<a href="/mypage/mywrite?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+						<a href="/mypage/mywrite?keyword=${paging.criteriaVO.keyword }&pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 					</c:if>					
 				</div>
 				<div>
 					<form action="/mypage/mywrite">
 						<input type="text" placeholder="제목" name="keyword">
 						<input type="submit" value="검색">
+						<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum }">
+						<input type="hidden" name="amount" value="${paging.criteriaVO.amount }">
 					</form>
 				</div>			
 			</div>	

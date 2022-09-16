@@ -54,6 +54,7 @@ public class MypageController {
 		user.setUser_id(id);
 		ms.edit(user);
 		rttr.addAttribute("id", user.getUser_id());
+
 		return "redirect:/mypage/profile_edit";
 	}
 		
