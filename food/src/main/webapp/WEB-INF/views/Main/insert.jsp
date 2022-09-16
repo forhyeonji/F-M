@@ -107,7 +107,7 @@
 				<div id="insert_birth"><br>
 					<h4>생년월일</h4><br>
 					<input type="text" id="user_birth" class="insert_inputext" name="user_birth" placeholder="생년월일을 숫자만 입력해주세요. 예)19801205">
-					<span class="insert_bithN">생일을 입력하세요.</span>
+					<span class="insert_birthN">생일을 입력하세요.</span>
 					<span class="insert_birthY">사용 가능한 생일입니다.</span>
 					<span class="insert_birthNone">생일에는 숫자만을 입력해주세요.</span>
 				</div><br>
