@@ -47,7 +47,6 @@ public class ShopController {
 		return"Shop/shopProductlist";
 	}
 	
-	//상품등록 매핑
 	
 
 	@GetMapping("/shopRegistration")	// 상품등록 페이지를 실행하기 위한 url주소 매핑
@@ -74,12 +73,12 @@ public class ShopController {
 		shop.Shopenroll(Shop);
 		return "redirect:/shopProductlist";
 	}
-	
+	/*
 	//이미지 Ajax 주소 매핑
 	@RequestMapping(value="/shopRegistrationAjaxAction",method=RequestMethod.GET)
 	public void shopRegistration() {
 		
-	}
+	}*/
 	
 	@RequestMapping(value="/shopProductEdit", method=RequestMethod.GET)
 	public String ShopEdit() {

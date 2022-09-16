@@ -18,13 +18,13 @@ public class ShopVO {
 	private int boundary;		/*구매수량*/
 	private String detail;
 	/*이미지 VO*/
-	private String uploadPath;
-	private String fileName;
+	/*private String uploadPath;
+	private String fileName;*/
 	private String IMG_NAME;
-	private String uuid;
-	private boolean image;
+	/*private String uuid;
+	private boolean image;*/
 	
-	public String getUploadPath() {
+	/*public String getUploadPath() {
 		return uploadPath;
 	}
 	public void setUploadPath(String uploadPath) {
@@ -44,7 +44,7 @@ public class ShopVO {
 	}
 	public void setImage(boolean image) {
 		this.image = image;
-	}
+	}*/
 	public int getProdnum() {
 		return prodnum;
 	}
@@ -147,8 +147,8 @@ public class ShopVO {
 		return "ShopVO [prodnum=" + prodnum + ", NAME=" + NAME + ", CONTENT=" + CONTENT + ", subcontent=" + subcontent
 				+ ", useyn=" + useyn + ", KIND=" + KIND + ", price2=" + price2 + ", discountprice=" + discountprice
 				+ ", Parcel=" + Parcel + ", packaging=" + packaging + ", unit=" + unit + ", Origin=" + Origin
-				+ ", Import=" + Import + ", boundary=" + boundary + ", detail=" + detail + ", uploadPath=" + uploadPath
-				+ ", fileName=" + fileName + ", IMG_NAME=" + IMG_NAME + ", uuid=" + uuid + ", image=" + image + "]";
+				+ ", Import=" + Import + ", boundary=" + boundary + ", detail=" + detail + ", IMG_NAME=" + IMG_NAME
+				+ "]";
 	}
 
 	
