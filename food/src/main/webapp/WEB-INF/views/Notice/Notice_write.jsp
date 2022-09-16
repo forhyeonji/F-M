@@ -14,7 +14,7 @@
 		<h3 class="NOTI_bigTitle">공지 글쓰기</h3>
 		
 		<input type="checkbox" name="boldtitle"> 제목 강조
-		<input type="checkbox" name="FirstBoard"> 우선
+
 		
 		
 		<div class="NOTI_Border">
