@@ -16,7 +16,7 @@
 </head>
 <body>
 	<div class="sh_enrollmain">
-
+		<div class="sh_submain">
 		<div class="sh_left">
 			<ul id="sh_Regimenu">
 				<li><a href="#" id="sh_enroll">상품 등록</a></li>
@@ -29,7 +29,7 @@
 
 
 		<form action="shopRegistration" id="sh_form" name="sh_form"
-			method="post">
+			method="post" enctype="multipart/form-data">
 			<div class="sh_right">
 
 				<div class="sh_allenroll">
@@ -194,20 +194,34 @@
 						<td><textarea rows="5" cols="50" id="gasDetail" name="detail"></textarea>
 						</td>
 					</tr>
-				
+					
 					<tr>
 						<td>
 							<div>
-								<label for="gasimg" id="sh_gasimg">상품이미지:</label>
+								<label for="gasimg" id="sh_gasimg">상품이미지(메인):</label>
 							</div>
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="gasimg" name="image" style="height: 30px;">
+						<td><input type="file" id="gasimg" name="imagemain" style="height: 30px;">
 						<ul></ul>
 						</td>
 					</tr>
-
+					
+					<tr>
+						<td>
+							<div>
+								<label for="gasimg" id="sh_gasimg">상품이미지(서브):</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="file" id="gasimg" name="imagesub" style="height: 30px;" multiple>
+						<ul></ul>
+						</td>
+					</tr>
+					
+					
 					<tr>
 						<td>
 							<div class="sh_inputArea">
@@ -215,10 +229,15 @@
 							</div>
 						</td>
 					</tr>
+					
+				
 				</table>
 			</div>
 		</form>
 
+	</div>
+		
+		
 	</div>
 
 </body>

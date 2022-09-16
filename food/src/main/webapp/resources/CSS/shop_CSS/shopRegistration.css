@@ -38,6 +38,11 @@
 	float: right;
 }
 
+.sh_uploadimg{
+    padding: 7px;
+}
+
+
 #sh_enrollpage {
 	margin-top: 20px;
 	margin-bottom: 15px;

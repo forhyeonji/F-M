@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import com.food.model.ShopVO;
@@ -68,13 +69,13 @@ public class ShopController {
 	//상품등록 처리 매핑
 	
 	@RequestMapping(value = "/shopRegistration", method = RequestMethod.POST)
-	public String ProductregistrationPOST(ShopVO Shop) {
+	public String ProductregistrationPOST(@RequestBody ShopVO Shop) {
 		System.out.println("contoroller="+Shop);
 		shop.Shopenroll(Shop);
 		return "redirect:/shopProductlist";
 	}
-	/*
-	//이미지 Ajax 주소 매핑
+	
+	/*//이미지 Ajax 주소 매핑
 	@RequestMapping(value="/shopRegistrationAjaxAction",method=RequestMethod.GET)
 	public void shopRegistration() {
 		

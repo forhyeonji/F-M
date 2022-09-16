@@ -9,14 +9,14 @@
 	<!-- 상품등록(일대일 이미지라 같이 넣음) -->
 	<insert id="Shopenroll">
 		insert into
-		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail<!-- ,uploadPath,fileName,image,uuid -->)
-		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail});
+		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail,uploadPath,fileName,image,uuid)
+		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail},#{uploadPath},#{fileName},#{image},#{uuid});
 	</insert>
 
 	<insert id="ShopEdit">
 			insert into
-		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail<!-- ,uploadPath,fileName,image,uuid -->)
-		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail});
+		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail,uploadPath,fileName,image,uuid)
+		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail},#{uploadPath},#{fileName},#{image},#{uuid});
 	</insert>
 
 	<!-- 상품등록시 분류 -->

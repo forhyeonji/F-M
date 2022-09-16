@@ -6,6 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 /*import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;*/
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.multipart.MultipartFile;
 
 import com.food.mapper.ShopMapper;
 import com.food.model.ShopVO;
@@ -40,7 +42,7 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.class2(Shop);
 	}
 	
-	/*//첨부파일 업로드
+	//첨부파일 업로드
 	@PostMapping("/shopRegistration")
 	public void shopRegistrationActionPOST(MultipartFile image) {
 		System.out.println("shopRegistrationPOST...");
@@ -50,5 +52,5 @@ public class ShopServiceImpl implements ShopService {
 		System.out.println("파일 크기:"+image.getSize());
 	
 		
-	}*/
+	}
 }

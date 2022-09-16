@@ -91,7 +91,7 @@ $(document).ready(function() {
 	});
 	
 	//이미지 업로드
-/*	
+	
 	//FileList 객체에 접근하기 위해 input태그의 files속성에 접근 -> change 이벤트를 통해 접근
 	//이미지 제한 변수
 	//jpg,png파일만 허용
@@ -115,10 +115,10 @@ $(document).ready(function() {
 	$("#register_Btn").on("click",function(e){
 			e.preventDefault()
 		
-			var fromData= new FormData();
+			var formData= new FormData();
 			//FileList객체에 접근
 			//fileList객체가 맞는지 확인하기 위해 변수를 선언하고 fileList로 초기화한 뒤 해당 객체가 fileList인지 확인
-			var inputFile = $("input[name='image']");
+			var inputFile = $("input[name='imagemain']");
 			var files = inputFile[0].files;
 
 			console.log(files);	
@@ -128,14 +128,14 @@ $(document).ready(function() {
 			if(!checkExtension(files[i].name,files[i].size)){
 				return false;
 			}
-			formData.append("image",files[i]);
+			formData.append("imagemain",files[i]);
 			}
 			//ajax를 사용하여 서버를 전송
 			$.ajax({
-				url:'/shopRegistration',
+				url:'/uploadAjaxAction',
 				data:formData,
 				contentType:false,
-				prossData:false,
+				processData:false,
 				dataType:"json",
 				type:"POST",
 				success:function(result){
@@ -171,7 +171,69 @@ $(document).ready(function() {
 			
 			})
 	
-	});*/
+	});
+	
+
+	$("#register_Btn").on("click",function(e){
+			e.preventDefault()
+		
+			var formData= new FormData();
+			//FileList객체에 접근
+			//fileList객체가 맞는지 확인하기 위해 변수를 선언하고 fileList로 초기화한 뒤 해당 객체가 fileList인지 확인
+			var inputFile = $("input[name='imagesub']");
+			var files = inputFile[0].files;
+
+			console.log(files);	
+			
+			for(var i=0;i<files.length;i++){
+			
+			if(!checkExtension(files[i].name,files[i].size)){
+				return false;
+			}
+			formData.append("imagesub",files[i]);
+			}
+			//ajax를 사용하여 서버를 전송
+			$.ajax({
+				url:'/uploadAjaxAction',
+				data:formData,
+				contentType:false,
+				processData:false,
+				dataType:"json",
+				type:"POST",
+				success:function(result){
+					console.log(result);
+					
+					var str="";
+					var input="";
+					$(result).each(function(i,obj){
+						console.log(obj)
+						console.log(obj.fileName)
+						
+						input+="<input type='text' name='attach["+i+"].fileName' value='"+obj.fileName+"'>";
+						input+="<input type='text' name='attach["+i+"].uuid' value='"+obj.uuid+"'>";
+						input+="<input type='text' name='attach["+i+"].uploadPath' value='"+obj.uploadPath+"'>";
+						input+="<input type='text' name='attach["+i+"].IMG_NAME' value='"+obj.IMG_NAME+"'>";
+						input+="<input type='text' name='attach["+i+"].image' value='"+obj.image+"'>";
+						
+						if(obj.image){
+							var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"-"+obj.fileName);
+							console.log(filePath)
+							
+							str+="<li><img src='display?fileName="+filePath+"'></li>"
+						}else{
+							var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"-"+obj.fileName)
+							str+="<li><a href='/download?fileName="+filePath+"'>"+obj.fileName+"</a></li>"
+						}
+						
+					})
+					$("#gasimg ul").html(str);
+					$("#form").append(input).submit();
+					
+				}
+			
+			})
+	
+	});
 		
 
 })
