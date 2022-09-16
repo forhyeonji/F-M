@@ -43,7 +43,7 @@ public class ShopServiceImpl implements ShopService {
 	//첨부파일 업로드
 	@PostMapping("/shopRegistration")
 	public void shopRegistrationActionPOST(MultipartFile image) {
-		System.out.println("shopRegistrationAjaxActionPOST...");
+		System.out.println("shopRegistrationPOST...");
 
 		System.out.println("파일 이름:"+image.getOriginalFilename());
 		System.out.println("파일 타입:"+image.getContentType());

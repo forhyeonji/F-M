@@ -194,7 +194,7 @@
 						<td><textarea rows="5" cols="50" id="gasDetail" name="detail"></textarea>
 						</td>
 					</tr>
-
+				
 					<tr>
 						<td>
 							<div>
@@ -203,7 +203,9 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="gasimg" name="image" style="height: 30px;"></td>
+						<td><input type="file" id="gasimg" name="image" style="height: 30px;">
+						<ul></ul>
+						</td>
 					</tr>
 
 					<tr>
