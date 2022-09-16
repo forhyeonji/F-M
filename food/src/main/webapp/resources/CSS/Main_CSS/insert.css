@@ -7,7 +7,7 @@
 	align-items : center;
 	}
 
-.insert_head{
+.insert_top{
 	margin-top : 50px;
 }
 
@@ -15,14 +15,14 @@
 	text-align:center;
 }
 
-.insert_border{
+.insert_wrap{
 	display:flex; 
 	justify-content:center;
 	text-align : center;
 	font-family : sans-serif;
 	}
 
-.insert_inborder{
+.insert_inWrap{
 	vertical-align : center;
 	margin : 20px;
 	padding : 20px;
@@ -32,16 +32,6 @@
 
 .insert_inputext{
 	width : 400px;
-	height : 40px;
-	border : 1px solid #dddddd;
-	text-align : center;
-	padding : 0;
-	border-radius : 5px;
-}
-
-.insert_inputext_b{
-	margin : 0 10px 0 0;
-	width : 290px;
 	height : 40px;
 	border : 1px solid #dddddd;
 	text-align : center;
@@ -123,22 +113,34 @@
 	display : none;
 }
 
-.insert_emailY{
-	color : green;
-	display : none; 
-}
-
-.insert_emailMs{
-	color : red;
-	display : none;
-}
-
 .insert_emailHave{
 	color : red;
 	display : none; 
 }
 
+.insert_emailFalse{
+	color : red;
+	display : none;
+}
+
+.insert_emailTrue{
+	color : green;
+	display : none; 
+}
+
+
+
 .insert_idNone{
+	color : red;
+	display : none;
+}
+
+.insert_idHave{
+	color : red;
+	display : none; 
+}
+
+.insert_idFalse{
 	color : red;
 	display : none;
 }
@@ -148,85 +150,85 @@
 	display : none; 
 }
 
-.insert_idHave{
-	color : red;
-	display : none; 
-}
 
-.insert_idMs{
-	color : red;
-	display : none;
-}
 
-.insert_pwN{
-	color : red;
-	display : none;
-}
+
 
 .insert_pwNone{
 	color : red;
 	display : none;
 }
 
-.insert_repwN{
+.insert_pwFalse{
 	color : red;
 	display : none;
 }
 
-.insert_repwY{
+
+
+.insert_repwFalse{
+	color : red;
+	display : none;
+}
+
+.insert_repwTrue{
 	color : green;
 	display : none;
 }
 
-.insert_nameN{
-	color : red;
-	display : none;
-}
+
 
 .insert_nameNone{
 	color : red;
 	display : none;
 }
 
-.insert_nameY{
-	color : Green;
-	display : none;
-}
-
-.insert_addrN{
+.insert_nameFalse{
 	color : red;
 	display : none;
 }
 
-.insert_phoneN{
-	color : red;
-	display : none;
-}
-
-.insert_phoneY{
+.insert_nameTrue{
 	color : green;
 	display : none;
 }
+
 
 .insert_phoneNone{
 	color : red;
 	display : none;
 }
 
-.insert_birthN{
+.insert_phoneFalse{
 	color : red;
 	display : none;
 }
 
-.insert_birthY{
+.insert_phoneTrue{
 	color : green;
 	display : none;
 }
+
+
+
 
 .insert_birthNone{
 	color : red;
 	display : none;
 }
+
+.insert_birthFalse{
+	color : red;
+	display : none;
+}
+
+.insert_birthTrue{
+	color : green;
+	display : none;
+}
+
+
+
 
 .insert_agreeN{
 	color : red;

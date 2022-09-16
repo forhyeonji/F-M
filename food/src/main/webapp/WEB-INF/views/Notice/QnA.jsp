@@ -52,7 +52,7 @@
 		
 							<c:choose>
 								<c:when test="${Notiboardlist.boldtitle}">
-									<a href="QnA_detail?bno=${Notiboardlist.bno}&sep=${Notiboardlist.sep}" style="color:red"><b>[중요] ${Notiboardlist.title}</b></a>
+									<a href="QnA_detail?bno=${Notiboardlist.bno}&sep=${Notiboardlist.sep}" style="color:red"><b>${Notiboardlist.title}</b></a>
 								</c:when>
 								<c:otherwise>
 									<a href="QnA_detail?bno=${Notiboardlist.bno}&sep=${Notiboardlist.sep}" style="color:black">${Notiboardlist.title}</a>

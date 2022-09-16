@@ -17,7 +17,6 @@
 	<tr>
 		<td>
 			<input type="checkbox" name="boldtitle"> 제목 강조
-			<input type="checkbox" name="FirstBoard"> 우선
 		</td>
 	</tr>
 	

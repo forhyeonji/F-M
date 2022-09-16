@@ -18,7 +18,7 @@ public class MypageVO {
 	private String mod_dt;	//수정일자
 	private int cnt;		//조회수
 	private String user_id;	//작성자
-		
+	private boolean ans_check; //1:1문의 답변확인
 	//리스트 선언
 	private List<MypageVO> mypageVOList;
 	//페이징처리
