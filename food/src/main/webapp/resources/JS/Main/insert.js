@@ -6,7 +6,7 @@ var idCheck = false;			// 아이디
 var idckCheck = false;			// 아이디 중복 검사
 var pwCheck = false;			// 비번
 var repwCheck = false;			// 비번 확인
-var repwchCheck = false;		// 비번 확인 일치 확인
+var repwckCheck = false;		// 비번 확인 일치 확인
 var nameCheck = false;			// 이름
 var addrzipCheck = false; 		// 우편번호
 var addr1Check = false;			// 도로명주소
@@ -38,10 +38,11 @@ function nameFormCheck(user_name){
 	return nameForm.test(user_name);
 }
 //전화번호
-function phoneFormCheck(user_phone){
-	var phoneForm = /^[0-9]/g;
-	return phoneForm.test(user_phone);
-}
+//function phoneFormCheck(user_phone){
+//	var phoneForm = /^\d{3}-\d{3,4}-\d{4}$/;
+//	return phoneForm.test(user_phone);
+//}
+
 //생년월일
 function birthFormCheck(user_birth){
 	var birthForm = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
@@ -153,7 +154,7 @@ $(document).ready(function(){
 		}
 		
 		/* 최종 유효성 검사 */
-		if(emailCheck && emailckCheck && idCheck && idckCheck && pwCheck && repwCheck && repwckCheck && nameCheck && addr1Check && addr2Check && phoneCheck && birthCheck && agreeCheck ){
+		if(emailCheck && emailckCheck && idCheck && idckCheck && pwCheck && repwCheck && repwckCheck && nameCheck && addr1Check && addr2Check && birthCheck && agreeCheck ){
 			$("#insert_form").attr("action", "/insert");
 			$("#insert_form").submit();		
 			
@@ -264,25 +265,38 @@ $("#user_pw").on("blur", function(){
 	var user_pw = $("#user_pw").val();
 	var user_repw = $("#user_repw").val();
 	
-	// 비밀번호 형식이 맞고 일치할 때 (일치하든 안되든 틀리면 무조건 입력되면 안됨) 
+	// 비밀번호 형식이 맞고 일치할 때 
 	if(user_pw == user_repw && pwFormCheck(user_pw) ){
-		//$('.insert_repwN').css('display','block');
-		//alert("용용");
+		$('.insert_repwY').css('display','block');
+		$('.insert_repwN').css('display','none');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','none');
 		repwckCheck = true;
+		
 	// 비밀번호 형식이 틀렸을 때 (일치하든 안되든 틀리면 무조건 입력되면 안됨)
 	}else if(user_pw == user_repw && !pwFormCheck(user_pw)){
-//		$('.insert_repwN').css('display','none');
-	//	$('.insert_repwN').css('display','block');
-		//alert("일치하나 형식이 틀림");
+		$('.insert_repwY').css('display','none');
+		$('.insert_repwN').css('display','none');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','block');
 		repwckCheck = false;
+	
+	// 비밀번호가 일치하지 않을 때 (형식은 맞음)
 	}else if(user_pw != user_repw && pwFormCheck(user_pw)){
-//		$('.insert_repwN').css('display','none');
-		//	$('.insert_repwN').css('display','block');
-			//alert("일치안하는데 형식은 맞음");
+		$('.insert_repwY').css('display','none');
+		$('.insert_repwN').css('display','block');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','none');
 		repwckCheck = false;
-		}else{
-			//alert("호랑호랑");
-		}
+	
+	// 틀렸는데 일치도 안함
+	}else{
+		$('.insert_repwY').css('display','none');
+		$('.insert_repwN').css('display','none');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','block');
+		repwckCheck = false;
+	}
 });
 
 
@@ -291,9 +305,15 @@ $("#user_name").on("blur", function(){
 	var user_name = $("#user_name").val();
 	
 	if(nameFormCheck(user_name)){
-		//alert("용용");
+		$('.insert_nameY').css('display','block');
+		$('.insert_nameN').css('display','none');
+		$('.insert_nameNone').css('display','none');
+		nameCheck = true;
 	}else{
-		//alert("호랑ㅇ");
+		$('.insert_nameY').css('display','none');
+		$('.insert_nameN').css('display','none');
+		$('.insert_nameNone').css('display','block');
+		nameCheck = false;
 	}
 });
 
@@ -302,9 +322,15 @@ $("#user_phone").on("blur", function(){
 	var user_phone = $("#user_phone").val();
 	
 	if(phoneFormCheck(user_phone)){
-		//alert("용용");
+		$('.insert_phoneY').css('display','block');
+		$('.insert_phoneN').css('display','none');
+		$('.insert_phoneNone').css('display','none');
+		phoneCheck = true;
 	}else{
-		//alert("호랑ㅇ");
+		$('.insert_phoneY').css('display','none');
+		$('.insert_phoneN').css('display','none');
+		$('.insert_phoneNone').css('display','block');
+		phoneCheck = false;
 	}
 });
 
@@ -313,9 +339,15 @@ $("#user_birth").on("blur", function(){
 	var user_birth = $("#user_birth").val();
 	
 	if(birthFormCheck(user_birth)){
-		alert("용용");
+		$('.insert_birthY').css('display','block');
+		$('.insert_birthN').css('display','none');
+		$('.insert_birthNone').css('display','none');
+		birthCheck = true;
 	}else{
-		alert("호랑ㅇ");
+		$('.insert_birthY').css('display','none');
+		$('.insert_birthN').css('display','none');
+		$('.insert_birthNone').css('display','block');
+		birthCheck = false;
 	}
 });
 

@@ -194,7 +194,14 @@ public class NoticeController {
 		
 		
 		@RequestMapping(value = "/directQue_detail", method = RequestMethod.GET)
-		public String directQue_detail () {
+		public String directQue_detail (NotiBoardVO board, Model model, AnswerVO ans) {
+
+			model.addAttribute("detail",nbs.detail(board));
+			
+			System.out.println("answercheck="+nbs.answercheck(ans));
+			model.addAttribute("answercheck",nbs.answercheck(ans));
+			
+			
 			return "/Notice/DirectQue_detail";
 		}
 		
@@ -234,7 +241,7 @@ public class NoticeController {
 			nbs.answer(ans);
 			System.out.println(ans);
 			
-			return "redirect:/notice?sep=noti";
+			return "redirect:/directKing?sep=inquiry";
 		}
 		
 	

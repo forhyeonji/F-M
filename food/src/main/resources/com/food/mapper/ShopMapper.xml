@@ -5,25 +5,27 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.food.mapper.ShopMapper">
 
+
+	<!-- 상품등록(일대일 이미지라 같이 넣음) -->
 	<insert id="Shopenroll">
 		insert into
-		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail)
-		values(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail})
+		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail<!-- ,uploadPath,fileName,image,uuid -->)
+		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail});
 	</insert>
 
 	<insert id="ShopEdit">
-		insert into
-		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail)
-		values(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail})
+			insert into
+		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail<!-- ,uploadPath,fileName,image,uuid -->)
+		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail});
 	</insert>
 
-	<select id="class1"
-		resultType="com.food.model.ShopdivisionVO">
-		select distinct(class1) from sh_division
+	<!-- 상품등록시 분류 -->
+	<select id="class1" resultType="com.food.model.ShopdivisionVO">
+		select distinct(class1) from
+		sh_division
 	</select>
-	
-	<select id="class2"
-		resultType="com.food.model.ShopdivisionVO">
+
+	<select id="class2" resultType="com.food.model.ShopdivisionVO">
 		select class2 from sh_division
 		where class1=#{class1}
 	</select>

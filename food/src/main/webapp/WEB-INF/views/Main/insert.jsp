@@ -27,7 +27,7 @@
 				<div id="insert_email">
 					<h4>이메일*</h4><br>
 					<input type="text" id="user_email" class="insert_inputext_b" name="user_email">
-					<input type="button" value="중복 확인" class="insert_insert_b">
+					<!-- <input type="button" value="중복 확인" class="insert_insert_b"> -->
 					<br>
 					<span class="insert_emailNone">이메일을 입력하세요.</span>
 					<br>
@@ -56,18 +56,22 @@
 					<h4>비밀번호*</h4><br>
 					<input type="text" id="user_pw" class="insert_inputext" name="user_pw">
 					<span class="insert_pwN">비밀번호를 입력하세요.</span>
+					<span class="insert_pwNone">8~16자의 영문자에 대문자, 특수기호, 숫자 중 하나 이상을 사용하세요.</span>
 				</div><br>
 				
 				<div id="insert_pwcheck"><br>
 					<h4>비밀번호 확인*</h4><br>
 					<input type="text" id="user_repw" class="insert_inputext">
 					<span class="insert_repwN">비밀번호가 일치하지 않습니다.</span>
+					<span class="insert_repwY">사용 가능한 비밀번호입니다.</span>
 				</div><br>
 				
 				<div id="insert_name"><br>
 					<h4>이름*</h4><br>
 					<input type="text" id="user_name" class="insert_inputext" name="user_name">
 					<span class="insert_nameN">이름을 입력하세요.</span>
+					<span class="insert_nameY">사용 가능한 이름입니다.</span>
+					<span class="insert_nameNone">이름에는 한글과 영문 대소문자만을 사용하세요.</span>
 				</div><br>
 				
 				<div class="insert_addrbox"><br>
@@ -87,6 +91,8 @@
 					<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
 					<input type="button" id="insert_cellph" value="인증번호 받기">
 					<span class="insert_phoneN">휴대폰 번호를 입력하세요.</span>
+					<span class="insert_phoneY">사용 가능한 휴대폰 번호입니다.</span>
+					<span class="insert_phoneNone">휴대폰 번호에는 숫자와 하이픈(-)만을 입력해주세요.</span>
 				</div><br>
 				
 				<div class="insert_gender"><br>
@@ -101,6 +107,9 @@
 				<div id="insert_birth"><br>
 					<h4>생년월일</h4><br>
 					<input type="text" id="user_birth" class="insert_inputext" name="user_birth" placeholder="생년월일을 숫자만 입력해주세요. 예)19801205">
+					<span class="insert_birthN">생일을 입력하세요.</span>
+					<span class="insert_birthY">사용 가능한 생일입니다.</span>
+					<span class="insert_birthNone">생일에는 숫자만을 입력해주세요.</span>
 				</div><br>
 				
 				<div id=insert_agree><br>
