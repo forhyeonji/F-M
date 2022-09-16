@@ -91,7 +91,7 @@ $(document).ready(function() {
 	});
 	
 	//이미지 업로드
-	
+/*	
 	//FileList 객체에 접근하기 위해 input태그의 files속성에 접근 -> change 이벤트를 통해 접근
 	//이미지 제한 변수
 	//jpg,png파일만 허용
@@ -113,7 +113,7 @@ $(document).ready(function() {
 	}
 	
 	$("#register_Btn").on("click",function(e){
-			/*e.preventDefault()*/
+			e.preventDefault()
 		
 			var fromData= new FormData();
 			//FileList객체에 접근
@@ -144,8 +144,8 @@ $(document).ready(function() {
 					var str="";
 					var input="";
 					$(result).each(function(i,obj){
-						/*console.log(obj)
-						console.log(obj.fileName)*/
+						console.log(obj)
+						console.log(obj.fileName)
 						
 						input+="<input type='text' name='attach["+i+"].fileName' value='"+obj.fileName+"'>";
 						input+="<input type='text' name='attach["+i+"].uuid' value='"+obj.uuid+"'>";
@@ -171,7 +171,7 @@ $(document).ready(function() {
 			
 			})
 	
-	});
+	});*/
 		
 
 })
