@@ -205,12 +205,13 @@ public class NoticeController {
 	/* 1:1문의 답변 */
 		
 		@RequestMapping(value = "/directKing", method = RequestMethod.GET)
-		public String directKing (Model model, CriteriaVO criteriaVO) {
+		public String directKing (Model model, CriteriaVO criteriaVO, AnswerVO ans) {
+			
 			model.addAttribute("list", nbs.list(criteriaVO));
+			
 			int total = nbs.total(criteriaVO);
+			
 			model.addAttribute("paging", new PageVO(criteriaVO, total));
-			
-			
 			
 			return "/Notice/DirectKing";
 		}

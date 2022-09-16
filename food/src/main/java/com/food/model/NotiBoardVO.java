@@ -18,6 +18,7 @@ public class NotiBoardVO {
     private String sep;
     private String subsep;
     private int user_tel;
+    private boolean ans_check;
     
     
 }
