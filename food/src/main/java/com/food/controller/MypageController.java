@@ -139,28 +139,22 @@ public class MypageController {
 	}	
 	
 	//내가 쓴 [[[댓]]]글 목록
-	//VO를 list로 보내서 페이징 (도전!!)
+	//VO를 list로 보내서 페이징 (완료!!)
 	@RequestMapping(value = "mypage/myreply", method = RequestMethod.GET)
 	public String myreply(UserVO user, MypageVO mypage, 
 			CommunityReplyVO reply, CriteriaVO cri, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("user_id");
 		System.out.println("내[[[댓글]]]아이디"+id);
 		user.setUser_id(id);
-		reply.setUser_id(id);
 		mypage.setUser_id(id);
-		
-		//해시맵에다가 다 때려박아서 그거 xml에서 불러오면 되는데 왜 그게 안되지
-//		Map <String, Object> map = new HashMap<>();
-//		map.put(id, ms.myreply(reply));
-		
+	
 		model.addAttribute("user", ms.mypage(user));
-		model.addAttribute("myreply", ms.myreply(reply));
+		model.addAttribute("myreply", ms.myreply(mypage));
 		
-		int total = ms.total(mypage);
+		int total = ms.retotal(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));		
 		return "Mypage/myreply";
 	}
-
 		
 
 	//내가 좋아요 누른 글 목록

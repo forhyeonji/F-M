@@ -39,16 +39,18 @@
 				<td>세션아이디값: ${sessionScope.user_id }</td>
 					<td>글쓴아이디값: ${user.user_id }</td></tr>
 					<tr>
-						<th>글번호</th><th>제목</th><th>작성일자</th>
+						<th>글번호</th>
+						<th>제목</th>
+						<th>작성일자</th>
 					</tr>
 					<c:forEach items="${mywrite}" var="mywrite">
 					<tr>					
-						<td>${mywrite.bno }</td>
-						<td><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
-						<td>${mywrite.reg_dt}</td>
+						<td id="my_Tsize1">${mywrite.bno }</td>
+						<td id="my_Tsize2"><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
+						<td id="my_Tsize3">${mywrite.reg_dt}</td>
 					</tr></c:forEach>						
 				</table>
-			
+		
 			<div id="my_paging">	
 				<div>			
 <!-- 이전버튼 -->

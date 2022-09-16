@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.mapper.MypageMapper;
-import com.food.model.CommunityReplyVO;
 import com.food.model.MypageVO;
 import com.food.model.UserVO;
 
@@ -62,10 +61,13 @@ public class MypageServiceImpl implements MypageService {
 	}
 
 	//내가쓴 댓글 상세보기
-	public List<Map<String, Object>> myreply(CommunityReplyVO reply) {
-		System.out.println("댓글서비스임플되는겨?");
-		
-		return mm.myreply(reply);
+	public List<Map<String, Object>> myreply(MypageVO mypage) {
+		return mm.myreply(mypage);
+	}
+	
+	//댓글용 전체 건수 조회
+	public int retotal(MypageVO mypage) {
+		return mm.retotal(mypage);
 	}
 
 

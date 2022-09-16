@@ -39,17 +39,19 @@
 					<td>글쓴아이디값: ${user.user_id }</td></tr>
 
 					<tr>
-						<th>글번호</th><th>작성한 댓글</th><th>작성일자</th>
+						<th>글번호</th>
+						<th>작성한 댓글</th>
+						<th>작성일자</th>
 					</tr>
 					<c:forEach items="${myreply}" var="myreply">
 					<tr>					
-						<td>${myreply.bno }</td>
-						<td><a href="/detail/${myreply.bno }">${myreply.context}</a></td>
-						<td>${myreply.reg_dt}</td>
+						<td id="my_Tsize1">${myreply.bno }</td>
+						<td id="my_Tsize2"><a href="/detail/${myreply.bno }">${myreply.context}</a></td>
+						<td id="my_Tsize3">${myreply.reg_dt}</td>
 					</tr>
 					</c:forEach>						
 				</table>
-
+페이징 확인용이야
 ${paging}
 
 			<div id="my_paging">	

@@ -69,7 +69,7 @@
 					<h3>반품 사유를 입력해주세요.👈👈</h3>
 					<table id="my_orderrefund_why">
 						<tr>
-							<td class="my_refundOpt">구매자가 반품배송비 부담</td>
+							<td class="my_refundOpt">😣<i>구매자</i>😣가 반품배송비 부담</td>
 						</tr>
 						<tr>
 							<td><select>
@@ -77,7 +77,7 @@
 									<option value="잘못선택">옵션 잘못 선택함</option>
 							</select></td>
 						<tr>
-							<td class="my_refundOpt">판매자가 반품배송비 부담</td>
+							<td class="my_refundOpt">😲<i>판매자</i>😲가 반품배송비 부담</td>
 						</tr>
 						<tr>
 							<td><select>
