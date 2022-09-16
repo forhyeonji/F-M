@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
-import com.food.model.CommunityReplyVO;
 import com.food.model.MypageVO;
 import com.food.model.UserVO;
 
@@ -33,6 +32,9 @@ public interface MypageMapper {
 	public MypageVO mywritedetail(MypageVO mypage);
 
 	//내가쓴 댓글 상세보기
-	public List<Map<String, Object>> myreply(CommunityReplyVO reply);
+	public List<Map<String, Object>> myreply(MypageVO mypage);
+	
+	//댓글용 전체 건수 조회하는 DB작업
+	public int retotal(MypageVO mypage);
 
 }

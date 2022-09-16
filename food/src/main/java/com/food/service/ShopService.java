@@ -16,6 +16,8 @@ public interface ShopService {
 	
 	//상품등록수정
 	public void ShopEdit(ShopVO Shop);
+	
+	
 
 
 	

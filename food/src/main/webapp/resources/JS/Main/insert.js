@@ -6,7 +6,7 @@ var idCheck = false;			// 아이디
 var idckCheck = false;			// 아이디 중복 검사
 var pwCheck = false;			// 비번
 var repwCheck = false;			// 비번 확인
-var repwchCheck = false;		// 비번 확인 일치 확인
+var repwckCheck = false;		// 비번 확인 일치 확인
 var nameCheck = false;			// 이름
 var addrzipCheck = false; 		// 우편번호
 var addr1Check = false;			// 도로명주소
@@ -15,6 +15,39 @@ var phoneCheck = false; 		// 휴대폰
 var genderCheck = false;		// 성별
 var birthCheck = false; 		// 생일
 var agreeCheck = false; 		// 약관동의
+
+//정규식 모음
+//이메일
+function emailFormCheck(user_email){
+	var emailForm = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return emailForm.test(user_email);
+}
+//아이디
+function idFormCheck(user_id){
+	var idForm =  /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
+	return idForm.test(user_id);
+}
+//비밀번호
+function pwFormCheck(user_pw){
+	var pwForm = /^[A-Za-z0-9`\-=\\\[\];',\./~!@#\$%\^&\*\(\)_\+|\{\}:"<>\?]{8,16}$/;
+	return pwForm.test(user_pw);		
+}
+//이름
+function nameFormCheck(user_name){
+	var nameForm = /^[가-힣a-zA-Z0-9]/gi;
+	return nameForm.test(user_name);
+}
+//전화번호
+//function phoneFormCheck(user_phone){
+//	var phoneForm = /^\d{3}-\d{3,4}-\d{4}$/;
+//	return phoneForm.test(user_phone);
+//}
+
+//생년월일
+function birthFormCheck(user_birth){
+	var birthForm = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
+	return birthForm.test(user_birth);
+}
 
 
 
@@ -121,48 +154,70 @@ $(document).ready(function(){
 		}
 		
 		/* 최종 유효성 검사 */
-		if(emailCheck && idCheck && idckCheck && pwCheck && repwCheck && nameCheck && addr1Check && addr2Check && phoneCheck && agreeCheck ){
+		if(emailCheck && emailckCheck && idCheck && idckCheck && pwCheck && repwCheck && repwckCheck && nameCheck && addr1Check && addr2Check && birthCheck && agreeCheck ){
 			$("#insert_form").attr("action", "/insert");
 			$("#insert_form").submit();		
 			
 		}
 		
-		/*
-		if (!user_male.checked && !user_female.checked && !user_none.checked) {
-		    alert("성별을 선택해 주세요.");
-		    user_none.focus();
-		    return false;
-		}
-		
-		var user_phone_reg = /^[0-9]+/g; //숫자만 입력하는 정규식
 
-		if (!user_phone_reg.test(user_phone.value)) {
-		    alert("전화번호는 숫자만 입력할 수 있습니다.");
-		    user_phone.focus();
-		    return false;
-		};
-
-		if (!user_term_1.checked && !user_term_2 && !user_term_3) { //체크박스 미체크시
-		    alert("이용 동의사항을 확인하세요.");
-		    user_term_1.focus();
-		    return false;
-		};
-		*/
-		
 		return false;
 	});
 		
 });
 
 
+// 형식 검사
+$("#user_email").on("blur", function(){
+
+	var user_email = $("#user_email").val();			
+	var data = {user_email : user_email}			
+	var warnMsg = $(".emailMs");    
+	
+	$.ajax({
+		type : "post",
+		url : "/insertemailChk",
+		data : data,
+		success : function(result){
+			// 중복되지 않고 이메일 형식도 맞을 때
+			if(result != "fail" && emailFormCheck(user_email)){
+				$(".insert_emailY").css("display","inline-block");
+				$(".insert_emailNone").css("display","none");
+				$(".insert_emailHave").css("display","none");
+				$(".insert_emailMs").css("display","none");
+				emailckCheck = true;
+			// 중복되지 않으나 이메일 형식이 틀렸을 때
+			}else if(result != "fail" && !emailFormCheck(user_email)){
+				$(".insert_emailY").css("display","none");
+				$(".insert_emailNone").css("display","none");
+				$(".insert_emailHave").css("display","none");
+				$(".insert_emailMs").css("display","inline-block");
+				emailckCheck = false;
+			// 이메일 형식은 맞으나 중복될 때		
+			}else if(result == "fail" && emailFormCheck(user_email)){
+				$(".insert_emailY").css("display","none");
+				$(".insert_emailNone").css("display","none");
+				$(".insert_emailHave").css("display","inline-block");
+				$(".insert_emailMs").css("display","none");
+				emailckCheck = false;
+			// 둘 다 틀렸을 때	
+			}else{
+				$(".insert_emailY").css("display","none");
+				$(".insert_emailNone").css("display","none");
+				$(".insert_emailHave").css("display","inline-block");
+				$(".insert_emailMs").css("display","inline-block");
+				emailckCheck = false;
+			}
+		}
+	}); // ajax 종료
+	
+});
 
 $("#user_id").on("blur", function(){
 
 	var user_id = $("#user_id").val();			// .id_input에 입력되는 값
 	var data = {user_id : user_id}				// "컨트롤에 넘길 데이터 이름" : "데이터(.id_input에 입력되는 값)"
 	var idwarnMsg = $(".insert_idMs");
-	
-
 
 	$.ajax({
 		type : "post",
@@ -204,63 +259,100 @@ $("#user_id").on("blur", function(){
 });
 
 
-$("#user_email").on("blur", function(){
-
-	var user_email = $("#user_email").val();			
-	var data = {user_email : user_email}			
-	var warnMsg = $(".emailMs");    
+//비밀번호 일치 및 형식 검사
+$("#user_pw").on("blur", function(){
 	
-	$.ajax({
-		type : "post",
-		url : "/insertemailChk",
-		data : data,
-		success : function(result){
-			// 중복되지 않고 아이디 형식도 맞을 때
-			if(result != "fail" && emailFormCheck(user_email)){
-				$(".insert_emailY").css("display","inline-block");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","none");
-				$(".insert_emailMs").css("display","none");
-				idckCheck = true;
-			// 중복되지 않으나 아이디 형식이 틀렸을 때
-			}else if(result != "fail" && !emailFormCheck(user_email)){
-				$(".insert_emailY").css("display","none");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","none");
-				$(".insert_emailMs").css("display","inline-block");
-				idckCheck = false;
-			// 아이디 형식은 맞으나 중복될 때		
-			}else if(result == "fail" && emailFormCheck(user_email)){
-				$(".insert_emailY").css("display","none");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","inline-block");
-				$(".insert_emailMs").css("display","none");
-				idckCheck = false;
-			// 둘 다 틀렸을 때	
-			}else{
-				$(".insert_emailY").css("display","none");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","inline-block");
-				$(".insert_emailMs").css("display","inline-block");
-				idckCheck = false;
-			}
-		}
-	}); // ajax 종료
+	var user_pw = $("#user_pw").val();
+	var user_repw = $("#user_repw").val();
 	
+	// 비밀번호 형식이 맞고 일치할 때 
+	if(user_pw == user_repw && pwFormCheck(user_pw) ){
+		$('.insert_repwY').css('display','block');
+		$('.insert_repwN').css('display','none');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','none');
+		repwckCheck = true;
+		
+	// 비밀번호 형식이 틀렸을 때 (일치하든 안되든 틀리면 무조건 입력되면 안됨)
+	}else if(user_pw == user_repw && !pwFormCheck(user_pw)){
+		$('.insert_repwY').css('display','none');
+		$('.insert_repwN').css('display','none');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','block');
+		repwckCheck = false;
+	
+	// 비밀번호가 일치하지 않을 때 (형식은 맞음)
+	}else if(user_pw != user_repw && pwFormCheck(user_pw)){
+		$('.insert_repwY').css('display','none');
+		$('.insert_repwN').css('display','block');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','none');
+		repwckCheck = false;
+	
+	// 틀렸는데 일치도 안함
+	}else{
+		$('.insert_repwY').css('display','none');
+		$('.insert_repwN').css('display','none');
+		$('.insert_pwN').css('display','none');
+		$('.insert_pwNone').css('display','block');
+		repwckCheck = false;
+	}
 });
 
 
-function idFormCheck(user_id){
+$("#user_name").on("blur", function(){
 	
-	var idForm =  /^(?=.*\d)(?=.*[a-zA-Z])[0-9a-zA-Z]{8,16}$/;
+	var user_name = $("#user_name").val();
 	
-	return idForm.test(user_id);
-}
+	if(nameFormCheck(user_name)){
+		$('.insert_nameY').css('display','block');
+		$('.insert_nameN').css('display','none');
+		$('.insert_nameNone').css('display','none');
+		nameCheck = true;
+	}else{
+		$('.insert_nameY').css('display','none');
+		$('.insert_nameN').css('display','none');
+		$('.insert_nameNone').css('display','block');
+		nameCheck = false;
+	}
+});
+
+$("#user_phone").on("blur", function(){
+	
+	var user_phone = $("#user_phone").val();
+	
+	if(phoneFormCheck(user_phone)){
+		$('.insert_phoneY').css('display','block');
+		$('.insert_phoneN').css('display','none');
+		$('.insert_phoneNone').css('display','none');
+		phoneCheck = true;
+	}else{
+		$('.insert_phoneY').css('display','none');
+		$('.insert_phoneN').css('display','none');
+		$('.insert_phoneNone').css('display','block');
+		phoneCheck = false;
+	}
+});
+
+$("#user_birth").on("blur", function(){
+	
+	var user_birth = $("#user_birth").val();
+	
+	if(birthFormCheck(user_birth)){
+		$('.insert_birthY').css('display','block');
+		$('.insert_birthN').css('display','none');
+		$('.insert_birthNone').css('display','none');
+		birthCheck = true;
+	}else{
+		$('.insert_birthY').css('display','none');
+		$('.insert_birthN').css('display','none');
+		$('.insert_birthNone').css('display','block');
+		birthCheck = false;
+	}
+});
 
 
-function emailFormCheck(user_email){
-	
-	var emailForm = /^[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*@[0-9a-zA-Z]([-_.]?[0-9a-zA-Z])*.[a-zA-Z]{2,3}$/i;
-	
-	return emailForm.test(user_email);
-}
+
+
+
+
