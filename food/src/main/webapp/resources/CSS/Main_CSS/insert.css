@@ -163,13 +163,33 @@
 	display : none;
 }
 
+.insert_pwNone{
+	color : red;
+	display : none;
+}
+
 .insert_repwN{
 	color : red;
 	display : none;
 }
 
+.insert_repwY{
+	color : green;
+	display : none;
+}
+
 .insert_nameN{
 	color : red;
+	display : none;
+}
+
+.insert_nameNone{
+	color : red;
+	display : none;
+}
+
+.insert_nameY{
+	color : Green;
 	display : none;
 }
 
@@ -179,6 +199,31 @@
 }
 
 .insert_phoneN{
+	color : red;
+	display : none;
+}
+
+.insert_phoneY{
+	color : green;
+	display : none;
+}
+
+.insert_phoneNone{
+	color : red;
+	display : none;
+}
+
+.insert_birthN{
+	color : red;
+	display : none;
+}
+
+.insert_birthY{
+	color : green;
+	display : none;
+}
+
+.insert_birthNone{
 	color : red;
 	display : none;
 }
