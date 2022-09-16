@@ -144,6 +144,14 @@
 	</insert>
 	
 	
+	<!-- 관리자 답변 글쓰기 -->
+	<select id="answercheck" resultType="com.food.model.AnswerVO">
+	
+	select * from tb_notianswer where bno=#{bno}
+	
+	</select>
+	
+	
 	
 	
 </mapper>

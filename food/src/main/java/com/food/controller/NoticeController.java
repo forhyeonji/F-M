@@ -209,19 +209,30 @@ public class NoticeController {
 			model.addAttribute("list", nbs.list(criteriaVO));
 			int total = nbs.total(criteriaVO);
 			model.addAttribute("paging", new PageVO(criteriaVO, total));
+			
+			
+			
 			return "/Notice/DirectKing";
 		}
 		
 		
 		@RequestMapping(value = "/directKing_answer", method = RequestMethod.GET)
-		public String directKing_answer (NotiBoardVO board, Model model) {
+		public String directKing_answer (NotiBoardVO board, Model model, AnswerVO ans) {
+			
 			model.addAttribute("detail",nbs.detail(board));
+			
+			System.out.println("answercheck="+nbs.answercheck(ans));
+			model.addAttribute("answercheck",nbs.answercheck(ans));
+			
+			
 			return "/Notice/DirectKing_answer";
 	}
 		
 		@RequestMapping(value = "/directKing_answer", method = RequestMethod.POST)
 		public String directKing_answer_post (AnswerVO ans) {
 			nbs.answer(ans);
+			System.out.println(ans);
+			
 			return "redirect:/notice?sep=noti";
 		}
 		
