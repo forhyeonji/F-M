@@ -71,15 +71,17 @@
 					<td><input type="email" value="${profile.user_email}" name="user_email"></td>
 				</tr>
 				<tr>
-					<th colspan="2" id="my_editBtn">
-					<input  type="submit" value="회원정보 수정"></th>
+					<th colspan="2">
+					<input  id="my_editBtn" type="submit" value="회원정보 수정">
+					<input id="my_editResult" type="hidden" value="${edit }"></th>
 				</tr>				
 			</table>
+			
 			</form>
 		
 				<div id="my_resign_btn">
 				<a href="http://localhost:8080/mypage/resign">
-				<input id="my_editBtn" type="button" value="회원탈퇴"></a></div>
+				<input id="my_editResignBtn" type="button" value="회원탈퇴"></a></div>
 					
 		</div><!-- my_center -->	
 		

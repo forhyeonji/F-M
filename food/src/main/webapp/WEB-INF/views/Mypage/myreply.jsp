@@ -51,8 +51,6 @@
 					</tr>
 					</c:forEach>						
 				</table>
-페이징 확인용이야
-${paging}
 
 			<div id="my_paging">	
 				<div>			
