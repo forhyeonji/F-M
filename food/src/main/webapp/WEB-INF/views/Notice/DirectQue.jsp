@@ -93,7 +93,7 @@
 									</c:choose>
 				
 								</td>
-								<td>${mywrite.title}</td>
+								<td><a href="directQue_detail?bno=${mywrite.bno}">${mywrite.title}</a></td>
 								<td>${mywrite.reg_dt}</td>
 								<td>답변여부</td>
 						</tr>
@@ -104,19 +104,19 @@
 		
 				<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
 		<c:if test="${paging.prevBtn}">
-			<a href="/directQue?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+			<a href="/directQue?sep=inquiry&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 		</c:if>
 		
 		
 		<!-- begin(1)이 end(10)가 될 동안 반복 -->
 		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-			<a href="/directQue?pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
+			<a href="/directQue?sep=inquiry&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
 		</c:forEach>
 		
 		
 		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
 		<c:if test="${paging.nextBtn}">
-			<a href="/directQue?pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+			<a href="/directQue?sep=inquiry&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 		</c:if>
 			
 			</div> <!-- main_bottom -->
