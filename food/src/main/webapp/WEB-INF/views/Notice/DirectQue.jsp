@@ -95,7 +95,20 @@
 								</td>
 								<td><a href="directQue_detail?bno=${mywrite.bno}">${mywrite.title}</a></td>
 								<td>${mywrite.reg_dt}</td>
-								<td>답변여부</td>
+								<td>
+								
+									<c:choose>
+						
+										<c:when test="${mywrite.ans_check!=false}">
+											<span style="color:red"><b>응답완료</b></span>
+										</c:when>
+										
+										<c:otherwise>
+											<span style="color:gray">미완료</span>
+										</c:otherwise>
+									</c:choose>
+								
+								</td>
 						</tr>
 		
 		

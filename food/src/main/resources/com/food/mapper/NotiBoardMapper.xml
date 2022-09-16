@@ -6,6 +6,41 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.food.mapper.NotiBoardMapper">
 	
+	
+	<!-- 1:1문의 내가 쓴 문의 -->
+	<select id="mywrite" resultType="com.food.model.MypageVO">
+		
+		select *
+		from(
+				select @rownum:= @rownum+1 rownum, t.*
+				from (
+					select n.bno, title, reg_dt, cnt, user_id, context, BoldTitle, sep, user_tel, ans_check
+					from tb_notice as n left outer join tb_notianswer as a
+					on n.bno=a.bno
+				) t , (select @rownum:=0) as tmp
+		        where user_id = #{user_id} and sep=#{sep}
+		        order by bno desc
+			) as mywrite
+			<![CDATA[
+			 where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+			]]>	
+			
+				
+	</select>
+		
+		<!-- select * 
+		from (
+				select @rownum:= @rownum+1 rownum, n.*
+				from tb_notice n, (select @rownum:=0) as tmp	
+             	where user_id=#{user_id} and sep=#{sep}
+				order by bno desc
+			 ) as mywrite
+			 <![CDATA[
+			 where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+			]]> -->
+	
+	
+	
 	<!-- 게시글 목록 -->
 	<select id="list" resultType="com.food.model.NotiBoardVO">
 					
@@ -49,8 +84,7 @@
 		<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
 		]]>
-		
-		
+	
 		</select>
 		
 		
@@ -150,19 +184,7 @@
 		
 	</select>
 	
-	<select id="mywrite" resultType="com.food.model.MypageVO">
-		select * 
-		from (
-				select @rownum:= @rownum+1 rownum, n.*
-				from tb_notice n, (select @rownum:=0) as tmp	
-             	where user_id=#{user_id} and sep=#{sep}
-				order by bno desc
-			 ) as mywrite
-			 <![CDATA[
-			 where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
-			]]>
-	</select>
-	
+
 	
 	
 	
