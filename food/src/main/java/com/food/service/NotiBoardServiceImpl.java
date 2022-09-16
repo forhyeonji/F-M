@@ -70,6 +70,11 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 			return nbm.mypage(user);
 		}
 	
+		
+		// 관리자 답변 유무 확인
+		public AnswerVO answercheck(AnswerVO ans) {
+			return nbm.answercheck(ans);
+		}
 	
 	
 	

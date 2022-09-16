@@ -33,4 +33,8 @@ public interface NotiBoardService {
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
 	
 	public UserVO mypage(UserVO user);
+	
+	// 관리자 답변 유무 확인
+	public AnswerVO answercheck(AnswerVO ans);
+	
 }

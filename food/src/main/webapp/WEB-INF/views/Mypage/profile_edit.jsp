@@ -12,6 +12,7 @@
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="/resources/JS/Main/insertAdd.js"></script>
+<script src="../../../resources/JS/Mypage/messege.js"></script>
 
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
@@ -78,7 +79,7 @@
 		
 				<div id="my_resign_btn">
 				<a href="http://localhost:8080/mypage/resign">
-				<input type="button" value="회원탈퇴"></a></div>
+				<input id="my_editBtn" type="button" value="회원탈퇴"></a></div>
 					
 		</div><!-- my_center -->	
 		

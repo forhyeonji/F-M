@@ -8,6 +8,10 @@
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 <link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../../../resources/JS/Mypage/messege.js" charset="utf-8"></script>
+
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
@@ -34,11 +38,11 @@
 					정말로 탈퇴하실건가요???<br>
 					탈퇴하는 당신을 붙잡고 있어요////어쩌구 저쩌구,,,<br>
 					탈퇴한 회원의 정보는 ///개인정보보호법에 의거<br>
-					어쩌구 저쩌구////구질구질하게 매달리는 중</div>
-				<h3>user테이블 물리적으로 외래키 연결되어있어서 탈퇴안됨 ㅠ</h3>	
+					어쩌구 저쩌구////구질구질하게 매달리는 중<br>
+					정말로 가실거예요????😢😢😢</div>
 			<form action="/mypage/resign" method="post">		
 				<div id="my_resign_go">
-					<button>회원 탈퇴</button>
+					<button id="my_bye">회원 탈퇴</button>
 				</div>
 			</form>		
 			</div><!-- my_resign -->	

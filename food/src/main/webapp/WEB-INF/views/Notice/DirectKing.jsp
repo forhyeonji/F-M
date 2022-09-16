@@ -55,10 +55,23 @@
 						</td>
 						
 						<td>${Notiboardlist.reg_dt}</td>
-						<td>답변여부</td>
+						<td>
+		
+						<c:choose>
+			
+							<c:when test="${Notiboardlist.ans_check!=false}">
+								<span style="color:red"><b>응답완료</b></span>
+							</c:when>
+							
+							<c:otherwise>
+								<span style="color:gray">미완료</span>
+							</c:otherwise>
+						</c:choose>
+						</td>
 				</tr>
 
-
+	
+	
 		</c:forEach> <!-- for문 끝 -->
 		</table>
 		
@@ -82,9 +95,7 @@
 		
 		
 	</div> <!-- main_center -->
-	
-	
-	
+
 	
 </div> <!-- main -->
 </div> <!-- container -->	
