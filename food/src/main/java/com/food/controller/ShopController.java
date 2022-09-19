@@ -67,19 +67,14 @@ public class ShopController {
 	
 	
 	//상품등록 처리 매핑
-	
 	@RequestMapping(value = "/shopRegistration", method = RequestMethod.POST)
-	public String ProductregistrationPOST(@RequestBody ShopVO Shop) {
+	public String ProductregistrationPOST(ShopVO Shop) {
 		System.out.println("contoroller="+Shop);
 		shop.Shopenroll(Shop);
 		return "redirect:/shopProductlist";
 	}
 	
-	/*//이미지 Ajax 주소 매핑
-	@RequestMapping(value="/shopRegistrationAjaxAction",method=RequestMethod.GET)
-	public void shopRegistration() {
-		
-	}*/
+
 	
 	@RequestMapping(value="/shopProductEdit", method=RequestMethod.GET)
 	public String ShopEdit() {

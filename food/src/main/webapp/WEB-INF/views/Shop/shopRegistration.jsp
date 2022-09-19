@@ -203,7 +203,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="gasimg" name="imagemain" style="height: 30px;">
+						<td><input type="file" id="gasimgmain" name="imagemain" style="height: 30px;">
 						<ul></ul>
 						</td>
 					</tr>
@@ -216,7 +216,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="gasimg" name="imagesub" style="height: 30px;" multiple>
+						<td><input type="file" id="gasimgsub" name="imagesub" style="height: 30px;" multiple>
 						<ul></ul>
 						</td>
 					</tr>
@@ -225,7 +225,7 @@
 					<tr>
 						<td>
 							<div class="sh_inputArea">
-								<button type="submit" id="register_Btn">등록</button>
+								<button type="button" id="register_Btn">등록</button>
 							</div>
 						</td>
 					</tr>

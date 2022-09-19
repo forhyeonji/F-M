@@ -1,5 +1,9 @@
 package com.food.model;
 
+import java.util.ArrayList;
+
+import com.food.model.ShopAttachVO;
+
 public class ShopVO {
 
 	private int prodnum; 
@@ -24,6 +28,15 @@ public class ShopVO {
 	private String uuid;
 	private boolean image;
 	
+	//AttachFileVO(파일 업로드 관련 model)
+	private ArrayList<ShopAttachVO> attach;
+	
+	public ArrayList<ShopAttachVO> getAttach() {
+		return attach;
+	}
+	public void setAttach(ArrayList<ShopAttachVO> attach) {
+		this.attach = attach;
+	}
 	public boolean isImage() {
 		return image;
 	}
@@ -151,7 +164,8 @@ public class ShopVO {
 				+ ", useyn=" + useyn + ", KIND=" + KIND + ", price2=" + price2 + ", discountprice=" + discountprice
 				+ ", Parcel=" + Parcel + ", packaging=" + packaging + ", unit=" + unit + ", Origin=" + Origin
 				+ ", Import=" + Import + ", boundary=" + boundary + ", detail=" + detail + ", uploadPath=" + uploadPath
-				+ ", fileName=" + fileName + ", IMG_NAME=" + IMG_NAME + ", uuid=" + uuid + ", image=" + image + "]";
+				+ ", fileName=" + fileName + ", IMG_NAME=" + IMG_NAME + ", uuid=" + uuid + ", image=" + image
+				+ ", attach=" + attach + "]";
 	}
 
 	

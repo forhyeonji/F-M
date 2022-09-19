@@ -6,10 +6,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 /*import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.multipart.MultipartFile;*/
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.multipart.MultipartFile;
+//import org.springframework.web.bind.annotation.PostMapping;
+//import org.springframework.web.multipart.MultipartFile;
 
 import com.food.mapper.ShopMapper;
+import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
 
@@ -43,14 +44,23 @@ public class ShopServiceImpl implements ShopService {
 	}
 	
 	//첨부파일 업로드
-	@PostMapping("/shopRegistration")
-	public void shopRegistrationActionPOST(MultipartFile image) {
-		System.out.println("shopRegistrationPOST...");
+	/*@PostMapping("/uploadAjaxAction")
+	public void shopuploadAjaxActionPOST(MultipartFile image) {
+		System.out.println("shopuploadAjaxActionPOST...");
 
 		System.out.println("파일 이름:"+image.getOriginalFilename());
 		System.out.println("파일 타입:"+image.getContentType());
 		System.out.println("파일 크기:"+image.getSize());
 	
 		
+	}*/
+	//첨부파일 조회 구현
+	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum){
+		return Sm.Shopattachlist(prodnum);
+	}
+	
+	@Override
+	public int cntup() {
+		return 0;
 	}
 }

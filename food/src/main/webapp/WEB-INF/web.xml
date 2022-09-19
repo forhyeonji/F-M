@@ -26,7 +26,7 @@
         <load-on-startup>1</load-on-startup>
 
         <multipart-config>
-            <location>D:\\01-STUDY\\upload</location> <!-- 위치 -->
+            <location>C:\\upload</location> <!-- 위치 -->
             <max-file-size>20971520</max-file-size> <!-- 20MB -->
             <max-request-size>41943040</max-request-size> <!-- 한번에 40MB -->
             <file-size-threshold>20971520</file-size-threshold> <!-- 특정 사이즈 메모리 사용 : 20MB -->

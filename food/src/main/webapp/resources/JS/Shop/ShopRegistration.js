@@ -111,10 +111,10 @@ $(document).ready(function() {
 		
 		return true;
 	}
-	
-	$("#register_Btn").on("click",function(e){
+	var input="";
+	$("#gasimgmain").on("change",function(e){
 			e.preventDefault()
-		
+
 			var formData= new FormData();
 			//FileList객체에 접근
 			//fileList객체가 맞는지 확인하기 위해 변수를 선언하고 fileList로 초기화한 뒤 해당 객체가 fileList인지 확인
@@ -132,7 +132,7 @@ $(document).ready(function() {
 			}
 			//ajax를 사용하여 서버를 전송
 			$.ajax({
-				url:'/uploadAjaxAction',
+				url:'/uploadMain',
 				data:formData,
 				contentType:false,
 				processData:false,
@@ -142,39 +142,37 @@ $(document).ready(function() {
 					console.log(result);
 					
 					var str="";
-					var input="";
-					$(result).each(function(i,obj){
-						console.log(obj)
-						console.log(obj.fileName)
+					//var input="";
+					//$(result).each(function(i,obj){
+						input+="<input type='text' name='attach["+0+"].fileName' value='"+result.fileName+"'>";
+						input+="<input type='text' name='attach["+0+"].uuid' value='"+result.uuid+"'>";
+						input+="<input type='text' name='attach["+0+"].uploadPath' value='"+result.uploadPath+"'>";
+						input+="<input type='text' name='attach["+0+"].image' value='"+result.image+"'>";
 						
-						input+="<input type='text' name='attach["+i+"].fileName' value='"+obj.fileName+"'>";
-						input+="<input type='text' name='attach["+i+"].uuid' value='"+obj.uuid+"'>";
-						input+="<input type='text' name='attach["+i+"].uploadPath' value='"+obj.uploadPath+"'>";
-						input+="<input type='text' name='attach["+i+"].IMG_NAME' value='"+obj.IMG_NAME+"'>";
-						input+="<input type='text' name='attach["+i+"].image' value='"+obj.image+"'>";
-						
-						if(obj.image){
-							var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"-"+obj.fileName);
+						if(result.image){
+							var filePath = encodeURIComponent(result.uploadPath+"/s_"+result.uuid+"-"+result.fileName);
 							console.log(filePath)
 							
 							str+="<li><img src='display?fileName="+filePath+"'></li>"
 						}else{
-							var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"-"+obj.fileName)
-							str+="<li><a href='/download?fileName="+filePath+"'>"+obj.fileName+"</a></li>"
+							var filePath = encodeURIComponent(result.uploadPath+"/"+result.uuid+"-"+result.fileName)
+							str+="<li><a href='/download?fileName="+filePath+"'>"+result.fileName+"</a></li>"
 						}
 						
-					})
-					$("#gasimg ul").html(str);
-					$("#form").append(input).submit();
+					//})
+					$("#gasimgmain ul").html(str);
+					console.log(input)
+					//$("#form").append(input).submit();
 					
 				}
 			
 			})
+			
 	
 	});
 	
-
-	$("#register_Btn").on("click",function(e){
+	//subpage
+	$("#gasimgsub").on("change",function(e){
 			e.preventDefault()
 		
 			var formData= new FormData();
@@ -194,7 +192,7 @@ $(document).ready(function() {
 			}
 			//ajax를 사용하여 서버를 전송
 			$.ajax({
-				url:'/uploadAjaxAction',
+				url:'/uploadSub',
 				data:formData,
 				contentType:false,
 				processData:false,
@@ -204,16 +202,14 @@ $(document).ready(function() {
 					console.log(result);
 					
 					var str="";
-					var input="";
+					//var input="";
 					$(result).each(function(i,obj){
 						console.log(obj)
 						console.log(obj.fileName)
-						
-						input+="<input type='text' name='attach["+i+"].fileName' value='"+obj.fileName+"'>";
-						input+="<input type='text' name='attach["+i+"].uuid' value='"+obj.uuid+"'>";
-						input+="<input type='text' name='attach["+i+"].uploadPath' value='"+obj.uploadPath+"'>";
-						input+="<input type='text' name='attach["+i+"].IMG_NAME' value='"+obj.IMG_NAME+"'>";
-						input+="<input type='text' name='attach["+i+"].image' value='"+obj.image+"'>";
+						input+="<input type='text' name='attach["+(i+1)+"].fileName' value='"+obj.fileName+"'>";
+						input+="<input type='text' name='attach["+(i+1)+"].uuid' value='"+obj.uuid+"'>";
+						input+="<input type='text' name='attach["+(i+1)+"].uploadPath' value='"+obj.uploadPath+"'>";
+						input+="<input type='text' name='attach["+(i+1)+"].image' value='"+obj.image+"'>";
 						
 						if(obj.image){
 							var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"-"+obj.fileName);
@@ -226,14 +222,15 @@ $(document).ready(function() {
 						}
 						
 					})
-					$("#gasimg ul").html(str);
-					$("#form").append(input).submit();
-					
+					$("#gasimgsub ul").html(str);
+					console.log(input)
+					//$("#form").append(input).submit();
 				}
-			
 			})
-	
 	});
-		
+	// 등록버튼을 클릭하면
+	$("#register_Btn").on("click",function(){
+		$("#sh_form").append(input).submit();
+	})
 
 })

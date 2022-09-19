@@ -94,10 +94,10 @@ public class UploadController {
 		return false;
 	}
 	// 상품이미지(메인)
-	@RequestMapping(value = "/uploadAjax", method = RequestMethod.POST)
-	public ResponseEntity<ShopAttachVO> uploadAjaxPost1(MultipartFile[] uploadFile) {
+	@RequestMapping(value = "/uploadMain", method = RequestMethod.POST)
+	public ResponseEntity<ShopAttachVO> uploadAjaxPost1(MultipartFile imagemain) {
 		// AttachFileVO
-		ArrayList<ShopAttachVO> list = new ArrayList<>();
+		ShopAttachVO shopattachvo = new ShopAttachVO();
 		// 폴더 경로
 		String uploadFolder = "D:\\upload";
 
@@ -110,13 +110,13 @@ public class UploadController {
 		}
 		// for(변수명:배열명)
 
-		for (MultipartFile multipartFile : uploadFile) {
+		//for (MultipartFile multipartFile : uploadFile) {
 			// AttachFileVO클래스의 새로운 주소를 반복적으로 생성하여
 			// ArrayList에 저장
-			ShopAttachVO shopattachvo = new ShopAttachVO();
+			//ShopAttachVO shopattachvo = new ShopAttachVO();
 
-			System.out.println(multipartFile.getOriginalFilename());
-			System.out.println(multipartFile.getSize());
+			System.out.println(imagemain.getOriginalFilename());
+			System.out.println(imagemain.getSize());
 			// 실제 파일명( multiparFile.getOriginalFilename())
 			// UUID 적용(UUID_ multiparFile.getOriginalFilename());
 			UUID uuid = UUID.randomUUID();
@@ -125,17 +125,17 @@ public class UploadController {
 			// ShopAttachVO의 uploadPath 변수에 저장()
 			shopattachvo.setUploadPath(getFolder());
 			// ShopAttachVO의 fileName 변수에 저장()
-			shopattachvo.setFileName(multipartFile.getOriginalFilename());
+			shopattachvo.setFileName(imagemain.getOriginalFilename());
 			// ShopAttachVO의 uuid 변수에 저장()
 			shopattachvo.setUuid(uuid.toString());
 
 			// 파일 저장 어느폴더에( D:\\upload\\ 현재날짜) ,어떤 파일이름으로 (비정규식.png)
-			File saveFile = new File(uploadPath, uuid.toString() + "-" + multipartFile.getOriginalFilename());
+			File saveFile = new File(uploadPath, uuid.toString() + "-" + imagemain.getOriginalFilename());
 
 			// D:\\upload\\비정규식.png에 파일을 전송(transferTo)
 
 			try {// transferTo() 메소드에 예외가 있으면
-				multipartFile.transferTo(saveFile); // 서버로 원본파일 전송
+				imagemain.transferTo(saveFile); // 서버로 원본파일 전송
 				// 내가 서버에 올리고자 하는 파일이 이미지이면,
 				if (checkImageType(saveFile)) {
 
@@ -144,7 +144,7 @@ public class UploadController {
 
 					// 파일 생성
 					FileOutputStream thumnail = new FileOutputStream(
-							new File(uploadPath, "s_" + uuid.toString() + "-" + multipartFile.getOriginalFilename()));
+							new File(uploadPath, "s_" + uuid.toString() + "-" + imagemain.getOriginalFilename()));
 					// 섬네일형식의 파일 생성
 					/*Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumnail, 100, 100);*/
 
@@ -152,20 +152,20 @@ public class UploadController {
 				} // checkImageType메서드 끝
 
 				// ShopAttachVO에 저장된 데이터를 배열의 추가
-				list.add(shopattachvo);
+				//shopattachvo.add(shopattachvo);
 
 			} catch (Exception e) {// 예외를 처리하라.
 				System.out.println(e.getMessage());
 			}
 
-		} // for문 끝
-		return new ResponseEntity<ShopAttachVO>(HttpStatus.OK);
+		//} // for문 끝
+		return new ResponseEntity<>(shopattachvo,HttpStatus.OK);
 	}// uploadAjax 끝
 	
 	
 	// 상품이미지(서브)
-	@RequestMapping(value = "/uploadAjaxAction", method = RequestMethod.POST)
-	public ResponseEntity<ShopAttachVO> uploadAjaxPost(MultipartFile[] uploadFile) {
+	@RequestMapping(value = "/uploadSub", method = RequestMethod.POST)
+	public ResponseEntity<ArrayList<ShopAttachVO>> uploadAjaxPost(MultipartFile[] imagesub) {
 		// AttachFileVO
 		ArrayList<ShopAttachVO> list = new ArrayList<>();
 		// 폴더 경로
@@ -180,7 +180,7 @@ public class UploadController {
 		}
 		// for(변수명:배열명)
 
-		for (MultipartFile multipartFile : uploadFile) {
+		for (MultipartFile multipartFile : imagesub) {
 			// ShopAttachVO클래스의 새로운 주소를 반복적으로 생성하여
 			// ArrayList에 저장
 			ShopAttachVO shopattachvo = new ShopAttachVO();
@@ -222,7 +222,7 @@ public class UploadController {
 			}
 
 		} // for문 끝
-		return new ResponseEntity<ShopAttachVO>(HttpStatus.OK);
+		return new ResponseEntity<>(list,HttpStatus.OK);
 	}// uploadAjax 끝
 		// 이미지 주소 생성
 
