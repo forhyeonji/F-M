@@ -103,53 +103,53 @@ $(document).ready(function(){
 		
 		/* 비밀번호 확인 유효성 검사 */
 		if(user_repw == ""){
-			$(".insert_repwN").css("display","block");
+			$(".insert_repwNone").css("display","block");
 			repwCheck = false;
 			
 		}else{
-			$(".insert_repwN").css("display", "none");
+			$(".insert_repwNone").css("display", "none");
 			repwCheck = true;
 		}
 		
 		/* 이름 유효성 검사 */
 		if(user_name == ""){
-			$(".insert_nameN").css("display","block");
+			$(".insert_nameNone").css("display","block");
 			nameCheck = false;
 		}else{
-			$(".insert_nameN").css("display", "none");
+			$(".insert_nameNone").css("display", "none");
 			nameCheck = true;
 		}
 		
 		/* 주소 유효성 검사 */
 		if(user_addr1 == ""){
-			$(".insert_addrN").css("display","block");
+			$(".insert_addrNone").css("display","block");
 			addr1Check = false;
 		}else{
-			$(".insert_addrN").css("display", "none");
+			$(".insert_addrNone").css("display", "none");
 			addr1Check = true;
 		}
 		
 		if(user_addr2 == ""){
-			$(".insert_addrN").css("display","block");
+			$(".insert_addrNone").css("display","block");
 			addr2Check = false;
 		}else{
-			$(".insert_addrN").css("display", "none");
+			$(".insert_addrNone").css("display", "none");
 			addr2Check = true;
 		}
 		
 		if(user_phone == ""){
-			$(".insert_phoneN").css("display","block");
+			$(".insert_phoneNone").css("display","block");
 			phoneCheck = false;
 		}else{
-			$(".insert_phoneN").css("display", "none");
+			$(".insert_phoneNone").css("display", "none");
 			phoneCheck = true;
 		}
 		
 		if($("input[name=insert_agree]:checkbox:checked").length < 3){
-			$(".insert_agreeN").css("display","block");
+			$(".insert_agreeNone").css("display","block");
 			agreeCheck = false;
 		}else{
-			$(".insert_agreeN").css("display", "none");
+			$(".insert_agreeNone").css("display", "none");
 			agreeCheck = true;
 		}
 		
@@ -181,31 +181,31 @@ $("#user_email").on("blur", function(){
 		success : function(result){
 			// 중복되지 않고 이메일 형식도 맞을 때
 			if(result != "fail" && emailFormCheck(user_email)){
-				$(".insert_emailY").css("display","inline-block");
+				$(".insert_emailTrue").css("display","inline-block");
 				$(".insert_emailNone").css("display","none");
 				$(".insert_emailHave").css("display","none");
-				$(".insert_emailMs").css("display","none");
+				$(".insert_emailFalse").css("display","none");
 				emailckCheck = true;
 			// 중복되지 않으나 이메일 형식이 틀렸을 때
 			}else if(result != "fail" && !emailFormCheck(user_email)){
-				$(".insert_emailY").css("display","none");
+				$(".insert_emailTrue").css("display","none");
 				$(".insert_emailNone").css("display","none");
 				$(".insert_emailHave").css("display","none");
-				$(".insert_emailMs").css("display","inline-block");
+				$(".insert_emailFalse").css("display","inline-block");
 				emailckCheck = false;
 			// 이메일 형식은 맞으나 중복될 때		
 			}else if(result == "fail" && emailFormCheck(user_email)){
-				$(".insert_emailY").css("display","none");
+				$(".insert_emailTrue").css("display","none");
 				$(".insert_emailNone").css("display","none");
 				$(".insert_emailHave").css("display","inline-block");
-				$(".insert_emailMs").css("display","none");
+				$(".insert_emailFalse").css("display","none");
 				emailckCheck = false;
 			// 둘 다 틀렸을 때	
 			}else{
-				$(".insert_emailY").css("display","none");
+				$(".insert_emailTrue").css("display","none");
 				$(".insert_emailNone").css("display","none");
 				$(".insert_emailHave").css("display","inline-block");
-				$(".insert_emailMs").css("display","inline-block");
+				$(".insert_emailFalse").css("display","inline-block");
 				emailckCheck = false;
 			}
 		}
@@ -226,31 +226,31 @@ $("#user_id").on("blur", function(){
 		success : function(result){
 			// 중복되지 않고 아이디 형식도 맞을 때
 			if(result != "fail" && idFormCheck(user_id)){
-				$(".insert_idY").css("display","inline-block");
+				$(".insert_idTrue").css("display","inline-block");
 				$(".insert_idNone").css("display","none");
 				$(".insert_idHave").css("display","none");
-				$(".insert_idMs").css("display","none");
+				$(".insert_idFalse").css("display","none");
 				idckCheck = true;
 			// 중복되지 않으나 아이디 형식이 틀렸을 때
 			}else if(result != "fail" && !idFormCheck(user_id)){
-				$(".insert_idY").css("display","none");
+				$(".insert_idTrue").css("display","none");
 				$(".insert_idNone").css("display","none");
 				$(".insert_idHave").css("display","none");
-				$(".insert_idMs").css("display","inline-block");
+				$(".insert_idFalse").css("display","inline-block");
 				idckCheck = false;
 			// 아이디 형식은 맞으나 중복될 때		
 			}else if(result == "fail" && idFormCheck(user_id)){
-				$(".insert_idY").css("display","none");
+				$(".insert_idTrue").css("display","none");
 				$(".insert_idNone").css("display","none");
 				$(".insert_idHave").css("display","inline-block");
-				$(".insert_idMs").css("display","none");
+				$(".insert_idFalse").css("display","none");
 				idckCheck = false;
 			// 둘 다 틀렸을 때	
 			}else{
-				$(".insert_idY").css("display","none");
+				$(".insert_idTrue").css("display","none");
 				$(".insert_idNone").css("display","none");
 				$(".insert_idHave").css("display","inline-block");
-				$(".insert_idMs").css("display","inline-block");
+				$(".insert_idFalse").css("display","inline-block");
 				idckCheck = false;
 			}
 		}
@@ -267,34 +267,38 @@ $("#user_pw").on("blur", function(){
 	
 	// 비밀번호 형식이 맞고 일치할 때 
 	if(user_pw == user_repw && pwFormCheck(user_pw) ){
-		$('.insert_repwY').css('display','block');
-		$('.insert_repwN').css('display','none');
-		$('.insert_pwN').css('display','none');
-		$('.insert_pwNone').css('display','none');
+		$('.insert_pwNone').css('display', 'none');
+		$('.insert_pwFalse').css('display', 'none');
+		$('.insert_pwTrue').css('display','block');
+		$('.insert_repwNone').css('display','none');
+		$('.insert_repwFalse').css('display','none');
 		repwckCheck = true;
 		
 	// 비밀번호 형식이 틀렸을 때 (일치하든 안되든 틀리면 무조건 입력되면 안됨)
 	}else if(user_pw == user_repw && !pwFormCheck(user_pw)){
-		$('.insert_repwY').css('display','none');
-		$('.insert_repwN').css('display','none');
-		$('.insert_pwN').css('display','none');
-		$('.insert_pwNone').css('display','block');
+		$('.insert_pwNone').css('display', 'none');
+		$('.insert_pwFalse').css('display', 'block');
+		$('.insert_pwTrue').css('display','none');
+		$('.insert_repwNone').css('display','none');
+		$('.insert_repwFalse').css('display','none');
 		repwckCheck = false;
 	
 	// 비밀번호가 일치하지 않을 때 (형식은 맞음)
 	}else if(user_pw != user_repw && pwFormCheck(user_pw)){
-		$('.insert_repwY').css('display','none');
-		$('.insert_repwN').css('display','block');
-		$('.insert_pwN').css('display','none');
-		$('.insert_pwNone').css('display','none');
+		$('.insert_pwNone').css('display', 'none');
+		$('.insert_pwFalse').css('display', 'none');
+		$('.insert_pwTrue').css('display','none');
+		$('.insert_repwNone').css('display','none');
+		$('.insert_repwFalse').css('display','block');
 		repwckCheck = false;
 	
 	// 틀렸는데 일치도 안함
 	}else{
-		$('.insert_repwY').css('display','none');
-		$('.insert_repwN').css('display','none');
-		$('.insert_pwN').css('display','none');
-		$('.insert_pwNone').css('display','block');
+		$('.insert_pwNone').css('display', 'none');
+		$('.insert_pwFalse').css('display', 'block');
+		$('.insert_pwTrue').css('display','none');
+		$('.insert_repwNone').css('display','none');
+		$('.insert_repwFalse').css('display','block');
 		repwckCheck = false;
 	}
 });
@@ -306,13 +310,13 @@ $("#user_name").on("blur", function(){
 	
 	if(nameFormCheck(user_name)){
 		$('.insert_nameTrue').css('display','block');
-		$('.insert_nameN').css('display','none');
 		$('.insert_nameNone').css('display','none');
+		$('.insert_nameFalse').css('display','none');
 		nameCheck = true;
 	}else{
 		$('.insert_nameTrue').css('display','none');
-		$('.insert_nameN').css('display','none');
-		$('.insert_nameNone').css('display','block');
+		$('.insert_nameNone').css('display','none');
+		$('.insert_nameFalse').css('display','block');
 		nameCheck = false;
 	}
 });
@@ -322,14 +326,14 @@ $("#user_phone").on("blur", function(){
 	var user_phone = $("#user_phone").val();
 	
 	if(phoneFormCheck(user_phone)){
-		$('.insert_phoneY').css('display','block');
-		$('.insert_phoneN').css('display','none');
+		$('.insert_phoneTrue').css('display','block');
 		$('.insert_phoneNone').css('display','none');
+		$('.insert_phoneFalse').css('display','none');
 		phoneCheck = true;
 	}else{
-		$('.insert_phoneY').css('display','none');
-		$('.insert_phoneN').css('display','none');
-		$('.insert_phoneNone').css('display','block');
+		$('.insert_phoneTrue').css('display','none');
+		$('.insert_phoneNone').css('display','none');
+		$('.insert_phoneFalse').css('display','block');
 		phoneCheck = false;
 	}
 });
@@ -339,14 +343,14 @@ $("#user_birth").on("blur", function(){
 	var user_birth = $("#user_birth").val();
 	
 	if(birthFormCheck(user_birth)){
-		$('.insert_birthY').css('display','block');
-		$('.insert_birthN').css('display','none');
+		$('.insert_birthTrue').css('display','block');
 		$('.insert_birthNone').css('display','none');
+		$('.insert_birthFalse').css('display','none');
 		birthCheck = true;
 	}else{
-		$('.insert_birthY').css('display','none');
-		$('.insert_birthN').css('display','none');
-		$('.insert_birthNone').css('display','block');
+		$('.insert_birthTrue').css('display','none');
+		$('.insert_birthNone').css('display','none');
+		$('.insert_birthFalse').css('display','block');
 		birthCheck = false;
 	}
 });

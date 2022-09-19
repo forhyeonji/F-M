@@ -94,6 +94,10 @@
 						<span class="insert_pwFalse">8~16자의 영문자에 대문자, 특수기호, 숫자 중 하나 이상을 사용하세요.</span>
 					</div>
 					<br>
+					<div>
+						<span class="insert_pwTrue">사용 가능한 비밀번호입니다.</span>
+					</div>
+					<br>
 				</div><br>
 				
 
@@ -107,11 +111,11 @@
 					</div>
 					<br>
 					<div>
-						<span class="insert_repwFalse">비밀번호가 일치하지 않습니다.</span>
+						<span class="insert_repwNone">비밀번호 중복 확인을 하세요.</span>
 					</div>
 					<br>
 					<div>
-						<span class="insert_repwTrue">사용 가능한 비밀번호입니다.</span>
+						<span class="insert_repwFalse">비밀번호가 일치하지 않습니다.</span>
 					</div>
 					<br>
 				</div><br>
@@ -157,7 +161,7 @@
 							<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
 						</div><br>
 					</div> 
-					<span class="insert_addrN">주소를 입력하세요.</span>   
+					<span class="insert_addrNone">주소를 입력하세요.</span>   
 				</div><br>
 				
 				
@@ -247,7 +251,7 @@
 						<div>(선택)SMS로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br>
 						<div><input type ="checkbox"></div>
 						<div>(선택)휴대폰으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br><br>
-						<span class="insert_agreeN">동의사항을 확인하세요.</span>
+						<span class="insert_agreeNone">동의사항을 확인하세요.</span>
 					</div>
 				</div><br>
 				
