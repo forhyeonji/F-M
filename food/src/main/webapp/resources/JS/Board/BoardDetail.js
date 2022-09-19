@@ -1,6 +1,6 @@
 $(function () {
     $('#save').hide();
-    const dColumns = ["bno", "title", "context", "user_id"];
+    const dColumns = ["bno", "title", "user_id"];
     const boardDetail = () => {
         $.ajax({
             type: 'GET',
@@ -10,12 +10,19 @@ $(function () {
                     return;
 
                 dColumns.map((key) => $(`#${key}`).val(response.result.data[key]));
-                // console.log(response);
+                $('.b_title').val(ChangeOutputValue($('.b_title').val()));
+
             },
             error: (error) => {
                 console.error(error)
             }
         });
+    }
+    //특수문자 함수
+    function ChangeOutputValue(pValue) {
+        var strReturenValue = "";
+        strReturenValue = pValue.replace(/&amp;/gi, '&').replace(/&lt;/gi, '<').replace(/&gt;/gi, '>').replace(/&quot;/gi, '"').replace(/&apos;/gi, '\'').replace(/&nbsp;/gi, ' ');
+        return strReturenValue;
     }
 
     const onModify = () => {

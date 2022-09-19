@@ -36,8 +36,7 @@
         </div>
         <div id="cm_reply">
             <div id="cm_reply_textarea">
-                <div id="cm_editor" contenteditable="true" name="context">
-                    <label id="cm_reply_label">댓글을 입력하세요</label>
+                <div id="cm_editor" contenteditable="true" name="context" aria-placeholder="댓글을 입력하세요">
                 </div>
             </div>
             <div id="reply_body"></div>
