@@ -4,7 +4,6 @@
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/login.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
-<script src="/resources/JS/Main/login.js"></script>
 
 
 
@@ -43,12 +42,19 @@
 			<div>
 				<input type="text" id="login_id" name="user_id" placeholder="아이디">				
 			</div>
+			<div>
+				<span class="login_idNone">아이디를 입력하세요.</span>
+			</div>
 				
 			<div>
 				<input type="text" id="login_pw" name="user_pw" placeholder="비밀번호">
 			</div>
 			<div>
-				<input type="submit" value="로그인" id="login_now">
+				<span class="login_pwNone">비밀번호를 입력하세요.</span>
+			</div>
+			
+			<div>
+				<input type="submit" value="로그인" id="login_login">
 			</div>
 			
 			<c:if test = "${session.setAttribute != result} ">
@@ -69,3 +75,4 @@
 
 </div>
 
+<script src="/resources/JS/Main/login.js"></script>

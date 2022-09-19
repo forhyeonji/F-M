@@ -20,6 +20,7 @@ public class UserServiceImpl implements UserService {
         um.join(userVO);
     }
 
+   
     public boolean login(UserVO userVO, HttpSession session) {
       	UserVO login=um.login(userVO);
       	boolean result=false;

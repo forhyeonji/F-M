@@ -1,6 +1,7 @@
 /**
  * 
  */
+
 /*
 $(document).ready(function(){
 	$("#login_now").click(function(){
@@ -8,8 +9,11 @@ $(document).ready(function(){
 	var user_pw = $("#user_pw").val()
 
 	if(user_id == "" || user_pw == ""){
-		alert("아이디와 비밀번호를 입력하세요.");
-		return;
+		$(".login_idNone").css("display","block");
+		$(".login_pwNone").css("display", "block");
+	}else{
+		$(".login_idNone").css("display","none");
+		$(".login_pwNone").css("display", "none");
 	}
 	
 	});
@@ -17,8 +21,48 @@ $(document).ready(function(){
 });
 */
 
-$(function(){
-	$("#login_find_id").click(function(){
-		location.href="../Main/find_id"
-	})
-})
+
+/*
+var login_idCheck = false;
+var login_pwCheck = false;
+
+$(document).ready(function(){
+	
+	$("#login_login").click(function(){
+		
+		
+		var login_id = $("#login_id").val();
+		var login_pw = $("#login_pw").val();
+		
+		if(login_id == ""){
+			$(".login_idNone").css("display","block");
+		}else{
+			$(".login_idNone").css("display","none");
+			login_idCheck = true;
+		}
+		
+		if(login_pw == ""){
+			$(".login_pwNone").css("display", "block");
+		}else{
+			$(".login_pwNone").css("display","none");
+			login_pwCheck = false;
+		}
+		
+		alert("확인1!");
+		
+		if(login_idCheck && login_pwCheck){
+			$("#login_form").attr("action", "/login");
+			alert("확인2!");
+			$("#login_form").submit();
+			alert("확인3!");
+		}
+		
+		alert("확인4!");
+		return false;
+		alert("확인5!");
+		
+		
+	});
+	
+});
+*/
