@@ -94,7 +94,7 @@ public class UploadController {
 		return false;
 	}
 	// 상품이미지(메인)
-	@RequestMapping(value = "/uploadAjaxAction", method = RequestMethod.POST)
+	@RequestMapping(value = "/uploadAjax", method = RequestMethod.POST)
 	public ResponseEntity<ShopAttachVO> uploadAjaxPost1(MultipartFile[] uploadFile) {
 		// AttachFileVO
 		ArrayList<ShopAttachVO> list = new ArrayList<>();
