@@ -4,7 +4,6 @@
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/login.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
-<script src="/resources/JS/Main/login.js"></script>
 
 
 
@@ -55,7 +54,7 @@
 			</div>
 			
 			<div>
-				<input type="submit" value="로그인" id="login_now">
+				<input type="submit" value="로그인" id="login_login">
 			</div>
 			
 			<c:if test = "${session.setAttribute != result} ">
@@ -76,3 +75,4 @@
 
 </div>
 
+<script src="/resources/JS/Main/login.js"></script>

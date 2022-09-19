@@ -83,7 +83,7 @@
 	}
 
 
-#login_now{
+#login_login{
 	width : 300px;
 	height : 47px;
 	color : white;
@@ -95,3 +95,21 @@
 	margin : 30px;
 	}
 
+
+
+
+
+
+/*
+↓유효성 검사 관련 태그
+*/
+
+.login_idNone{
+	color : red;
+	display : none;
+}
+
+.login_pwNone{
+	color : red;
+	display : none;
+}

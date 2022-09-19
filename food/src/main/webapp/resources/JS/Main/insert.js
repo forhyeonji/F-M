@@ -154,7 +154,8 @@ $(document).ready(function(){
 		}
 		
 		/* 최종 유효성 검사 */
-		if(emailCheck && emailckCheck && idCheck && idckCheck && pwCheck && repwCheck && repwckCheck && nameCheck && addr1Check && addr2Check && birthCheck && agreeCheck ){
+		if(emailCheck && emailckCheck && idCheck && idckCheck && pwCheck && repwCheck && repwckCheck 
+			&& nameCheck && addr1Check && addr2Check && birthCheck && agreeCheck ){
 			$("#insert_form").attr("action", "/insert");
 			$("#insert_form").submit();		
 			
