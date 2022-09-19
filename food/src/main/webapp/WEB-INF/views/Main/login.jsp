@@ -43,10 +43,17 @@
 			<div>
 				<input type="text" id="login_id" name="user_id" placeholder="아이디">				
 			</div>
+			<div>
+				<span class="login_idNone">아이디를 입력하세요.</span>
+			</div>
 				
 			<div>
 				<input type="text" id="login_pw" name="user_pw" placeholder="비밀번호">
 			</div>
+			<div>
+				<span class="login_pwNone">비밀번호를 입력하세요.</span>
+			</div>
+			
 			<div>
 				<input type="submit" value="로그인" id="login_now">
 			</div>

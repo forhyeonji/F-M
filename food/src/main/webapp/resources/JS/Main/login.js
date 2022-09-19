@@ -22,3 +22,5 @@ $(function(){
 		location.href="../Main/find_id"
 	})
 })
+
+
