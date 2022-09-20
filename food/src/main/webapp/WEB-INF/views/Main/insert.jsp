@@ -209,30 +209,6 @@
 				</div><br>
 				
 				
-				<div id="insert_birth"><br>
-					<div>
-						<h4>생년월일</h4><br>
-					</div>
-					<br>
-					<div>
-						<input type="text" id="user_birth" class="insert_inputext" name="user_birth" placeholder="생년월일을 숫자만 입력해주세요. 예)19801205">
-					</div>
-					<br>
-					<div>
-						<span class="insert_birthNone">생일을 입력하세요.</span>
-					</div>
-					<br>
-					<div>
-						<span class="insert_birthFalse">생일에는 숫자만을 입력해주세요.</span>
-					</div>
-					<br>
-					<div>
-						<span class="insert_birthTrue">사용 가능한 생일입니다.</span>
-					</div>
-					<br>
-				</div><br>
-				
-				
 				
 				<div id=insert_agree><br>
 				<h4>이용 동의사항*</h4><br>

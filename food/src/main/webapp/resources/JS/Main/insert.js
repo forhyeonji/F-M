@@ -13,7 +13,6 @@ var addr1Check = false;			// 도로명주소
 var addr2Check = false;			// 세부주소
 var phoneCheck = false; 		// 휴대폰
 var genderCheck = false;		// 성별
-var birthCheck = false; 		// 생일
 var agreeCheck = false; 		// 약관동의
 
 //정규식 모음
@@ -39,15 +38,9 @@ function nameFormCheck(user_name){
 }
 //전화번호
 //function phoneFormCheck(user_phone){
-//	var phoneForm = /^\d{3}-\d{3,4}-\d{4}$/;
+//	var phoneForm = /^((01[1|6|7|8|9])[1-9][0-9]{6,7})$|(010[1-9][0-9]{7})$/;;
 //	return phoneForm.test(user_phone);
 //}
-
-//생년월일
-function birthFormCheck(user_birth){
-	var birthForm = /^(19[0-9][0-9]|20\d{2})(0[0-9]|1[0-2])(0[1-9]|[1-2][0-9]|3[0-1])$/;
-	return birthForm.test(user_birth);
-}
 
 
 
@@ -137,6 +130,15 @@ $(document).ready(function(){
 			addr2Check = true;
 		}
 		
+		/* 성별 관련 검사 */
+		if(user_gender == "male"){
+			$user_gender = "male"
+		}else if(user_gender == "female"){
+			$user_gender = "female"
+		}else if(user_gender == "none"){
+			$user_gender = "none"
+		}
+		
 		if(user_phone == ""){
 			$(".insert_phoneNone").css("display","block");
 			phoneCheck = false;
@@ -155,7 +157,7 @@ $(document).ready(function(){
 		
 		/* 최종 유효성 검사 */
 		if(emailCheck && emailckCheck && idCheck && idckCheck && pwCheck && repwCheck && repwckCheck 
-			&& nameCheck && addr1Check && addr2Check && birthCheck && agreeCheck ){
+			&& nameCheck && addr1Check && addr2Check && agreeCheck ){
 			$("#insert_form").attr("action", "/insert");
 			$("#insert_form").submit();		
 			
@@ -339,22 +341,7 @@ $("#user_phone").on("blur", function(){
 	}
 });
 
-$("#user_birth").on("blur", function(){
-	
-	var user_birth = $("#user_birth").val();
-	
-	if(birthFormCheck(user_birth)){
-		$('.insert_birthTrue').css('display','block');
-		$('.insert_birthNone').css('display','none');
-		$('.insert_birthFalse').css('display','none');
-		birthCheck = true;
-	}else{
-		$('.insert_birthTrue').css('display','none');
-		$('.insert_birthNone').css('display','none');
-		$('.insert_birthFalse').css('display','block');
-		birthCheck = false;
-	}
-});
+
 
 
 

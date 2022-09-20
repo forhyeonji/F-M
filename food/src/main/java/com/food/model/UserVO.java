@@ -11,7 +11,6 @@ public class UserVO {
     private String user_addr1;
     private String user_addr2;
     private String user_gender;
-    private String user_birth;
     private String user_phone;
     private int auth_grp_cd;
     private Timestamp reg_dt;
@@ -68,12 +67,6 @@ public class UserVO {
 	public void setUser_gender(String user_gender) {
 		this.user_gender = user_gender;
 	}
-	public String getUser_birth() {
-		return user_birth;
-	}
-	public void setUser_birth(String user_birth) {
-		this.user_birth = user_birth;
-	}
 	public String getUser_phone() {
 		return user_phone;
 	}
@@ -104,7 +97,7 @@ public class UserVO {
 	public String toString() {
 		return "UserVO [user_email=" + user_email + ", user_id=" + user_id + ", user_pw=" + user_pw + ", user_name="
 				+ user_name + ", user_zip=" + user_zip + ", user_addr1=" + user_addr1 + ", user_addr2=" + user_addr2
-				+ ", user_gender=" + user_gender + ", user_birth=" + user_birth + ", user_phone=" + user_phone
+				+ ", user_gender=" + user_gender + ", user_phone=" + user_phone
 				+ ", auth_grp_cd=" + auth_grp_cd + ", reg_dt=" + reg_dt + ", mod_dt=" + mod_dt + "]";
 	}
 	
