@@ -13,6 +13,5 @@
 			<li><a href="http://localhost:8080/QnA?sep=qna" class="NOTI_a">자주하는 질문</a></li>
 			<li><a href="http://localhost:8080/directQue?sep=inquiry" class="NOTI_a">1:1 문의</a></li>
 			<li><a href="http://localhost:8080/directKing?sep=inquiry" class="NOTI_a">1:1 문의 관리자</a></li>
-			<li><a>실시간 문의</a></li>
 		</ul>
 		</div> <!-- main left -->

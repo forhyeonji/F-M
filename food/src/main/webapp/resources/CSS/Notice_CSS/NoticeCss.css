@@ -23,6 +23,33 @@
 
 
 
+.NOTI_search{
+    display: flex;
+    width: 384px;
+    height: 46px;
+    align-items: center;
+}
+
+.NOTI_searchTd {
+    padding: 13px;
+}
+.NOTI_searchBar {
+    width: 300px;
+    height: 20px;
+}
+
+.NOTI_mag {
+    height: 20px;
+    width: 20px;
+}
+
+
+
+
+
+
+
+
 /*
 	DirectKing_answer
 	DirectQue_detail

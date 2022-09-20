@@ -17,12 +17,17 @@
 		</select>
 		
 	
-		
-		<input type="hidden" name="sep" value="noti">
-		<input type="text" name="keyword">
 		<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
 		<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
-		<input type="button" value="검색" id="searchBtn">
+		<input type="hidden" name="sep" value="noti">
+		
+		<div class="NOTI_search">
+		   <div class="NOTI_searchTd">
+				<input type="text" name="keyword" class="NOTI_searchBar" placeholder="검색어를 입력해주세요.">
+				<img src="../../../resources/image/HeaderImg/돋보기.jpg" class="NOTI_mag" id="searchBtn">
+		   </div>
+        </div>
+		
 		
 	</form>
 		
