@@ -35,6 +35,5 @@
 		
 	<mybatis-spring:scan base-package="com.food.mapper"/>	
 	<context:component-scan base-package="com.food.service"/>
-	<context:component-scan base-package="com.food.mapper"/>
 
 </beans>

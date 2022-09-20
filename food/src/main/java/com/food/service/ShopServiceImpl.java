@@ -4,11 +4,8 @@ import java.util.ArrayList;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-/*import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.multipart.MultipartFile;*/
-//import org.springframework.web.bind.annotation.PostMapping;
-//import org.springframework.web.multipart.MultipartFile;
 
+import com.food.mapper.ShopAttachMapper;
 import com.food.mapper.ShopMapper;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
@@ -20,10 +17,20 @@ public class ShopServiceImpl implements ShopService {
 	@Autowired
 	ShopMapper Sm;
 	
+	@Autowired
+	ShopAttachMapper sam;
+
 	public void Shopenroll(ShopVO Shop) {
 		//ShopMapper에 있는 Shopenroll메서드 호출
 		//메서드의 매개변수를 통해 ShopVO값을 Shopenroll의 shop으로 전달
-		Sm.Shopenroll(Shop);
+		Sm.Shopenroll(Shop);		//tb_shop에 관한것
+		
+		Shop.getAttach().forEach(attach->{
+			
+				//ShopAttachFileVO의 prodnum에 ShopVO의 prodnum 저장
+			attach.setProdnum(Shop.getProdnum());
+			sam.insert(attach);
+		});
 	}
 	
 	public ShopVO shop(ShopVO Shop) {
@@ -43,17 +50,7 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.class2(Shop);
 	}
 	
-	//첨부파일 업로드
-	/*@PostMapping("/uploadAjaxAction")
-	public void shopuploadAjaxActionPOST(MultipartFile image) {
-		System.out.println("shopuploadAjaxActionPOST...");
 
-		System.out.println("파일 이름:"+image.getOriginalFilename());
-		System.out.println("파일 타입:"+image.getContentType());
-		System.out.println("파일 크기:"+image.getSize());
-	
-		
-	}*/
 	//첨부파일 조회 구현
 	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum){
 		return Sm.Shopattachlist(prodnum);

@@ -1,73 +1,115 @@
 /**
+/**
  * 상품등록 js
  */
 
 $(document).ready(function() {
-
-	// 상품 등록 유효성 검사
-	$("#addBTN").click(function() {
-		// 상품명
-		var menuName = $("#NAME").val();
+	var input="";
+	//상품등록 체크변수
+	$("#register_Btn").click(function(){
+		var menuNamechk = false;
 		// 한줄소개
-		var subDes = $("#subcontent").val();
+		var subDeschk =false;
 		// 상품가격
-		var gasPrice = $("#price2").val();
+		var gasPricechk =false;
 		// 포장타입
-		var gasType = $("#packaging").val();
+		var gasTypechk = false;
 		// 판매단위
-		var gasunit = $("#unit").val();
+		var gasunitchk = false;
 		// 원산지
-		var gasorigin = $("#Origin").val();
-		// 상품수량
-		var gasNum = $("#KIND").val();
-		// 입고예정
-		var gasinput = $("#Import").val();
+		var gasoriginchk = false;
 		// 상품설명
-		var gdsDes = $("#CONTENT").val();
+		var gdsDeschk = false;
 		// 상세정보
-		var gasDetail = $("#detail").val();
-		// 상품이미지
-		var gasimg = $("#image").val();
+		var gasDetailchk = false;
+		
+		  /*체크대상변수*/
+	      var menuName= $("input[name='NAME']").val();	// 상품명
+	      var subDes= $("input[name='subcontent']").val();// 한줄소개
+	      var gasPrice= $("input[name='price2']").val();	// 상품원가
+	      var gasType= $("select[name='packaging']").val();	// 포장타입
+	      var gasunit= $("input[name='unit']").val();	// 판매단위
+	      var gasorigin= $("select[name='Origin']").val();	// 원산지
+	      var gdsDes= $("textarea[name='CONTENT']").val();	// 상품설명
+	      var gasDetail= $("textarea[name='detail']").val();	// 상세정보
+	      
+	      
+	      
+	      /*입력란 공란 체크*/
 
-		if (NAME == "") {
-			alert("상품명을 입력해주세요");
-			NAME.focus();
-		} else if (subcontent == "") {
-			alert("한줄소개를 입력해주세요")
-			subcontent.focus();
-		} else if (price2 == "") {
-			alert("상품가격을 입력해주세요");
-			price2.focus();
-		} else if (packaging = "") {
-			alert("포장타입을 선택해주세요")
-			packaging.focus();
-		} else if (unit = "") {
-			alert("판매단위를 입력해주세요")
-			unit.focus();
-		} else if (Origin = "") {
-			alert("원산지를 선택해주세요")
-			Origin.focus();
-		} else if (KIND = "") {
-			alert("상품수량을 입력해주세요")
-			KIND.focus();
-		} else if (Import = "") {
-			alert("입고예정일을 입력해주세요")
-			Import.focus();
-		} else if (CONTENT = "") {
-			alert("상품설명을 입력해주세요")
-			CONTENT.focus();
-		} else if (detail = "") {
-			alert("상세정보를 입력해주세요")
-			detail.focus();
-		} else if (image = "") {
-			alert("이미지를 등록해주세요")
-			image.focus();
+		if (menuName.length>0) {
+			$(".sh_gasNameinput").css('display','none');
+			menuNamechk=true;
+		} else {
+			$(".sh_gasNameinput").css('display','block');
+			menuNamechk=false;
 		}
-
-		// 상품 정보 전송(관리자)
-		document.sh_form.action = "${path}/shopRegistration/insert.do";
-		document.sh_form.submit();
-	})
+		if (subDes.length>0) {
+			$(".sh_susDesinput").css('display','none');
+			subDeschk=true;
+		} else {
+			$(".sh_susDesinput").css('display','block');
+			subDeschk=false;
+		}
+		if (gasPrice.length>0) {
+			$(".sh_gasPrice").css('display','none');
+			gasPricechk=true;
+		} else {
+			$(".sh_gasPrice").css('display','block');
+			gasPricechk=false;
+		}
+		if (gasType.length>0) {
+			$(".sh_gasType").css('display','none');
+			gasTypechk=true;
+		} else {
+			$(".sh_gasType").css('display','block');
+			gasTypechk=false;
+		}
+		if (gasunit.length>0) {
+			$(".sh_gasunit").css('display','none');
+			gasunitchk=true;
+		} else {
+			$(".sh_gasunit").css('display','block');
+			gasunitchk=false;
+		}
+		if (gasorigin.length>0) {
+			$(".sh_gasorigin").css('display','none');
+			gasoriginchk=true;
+		} else {
+			$(".sh_gasorigin").css('display','block');
+			gasoriginchk=false;
+		}
+		if (gdsDes.length>0) {
+			$(".sh_gdsDes").css('display','none');
+			gdsDeschk=true;
+		} else {
+			$(".sh_gdsDes").css('display','block');
+			gdsDeschk=false;
+		}
+		if (gasDetail.length>0) {
+			$(".sh_gasDetail").css('display','none');
+			gasDetailchk=true;
+		} else {
+			$(".sh_gasDetail").css('display','block');
+			gasDetailchk=false;
+		}
+		
+		if(menuNamechk && subDeschk && gasPricechk && gasTypechk && gasunitchk && gasoriginchk && gdsDeschk && gasDetailchk){
+			 alert('통과');
+			 //sh_form.submit();
+			 $("#sh_form").append(input).submit();
+		}else{
+			return false;
+		}
+	});
+	
+	
+/*	//할인율 inut 설정
+	$("#sh_discount").on("propertychange change keyup paste input",function(){						//propertychange change keyup paste input=> input 변화 감지
+			var userInput = $("sh_discount")
+			var discount
+	})*/
+	
 
 	// 상품목록이동(관리자)
 	$("#listbtn").click(function() {
@@ -111,7 +153,7 @@ $(document).ready(function() {
 		
 		return true;
 	}
-	var input="";
+	//var input="";
 	$("#gasimgmain").on("change",function(e){
 			e.preventDefault()
 
@@ -148,6 +190,7 @@ $(document).ready(function() {
 						input+="<input type='text' name='attach["+0+"].uuid' value='"+result.uuid+"'>";
 						input+="<input type='text' name='attach["+0+"].uploadPath' value='"+result.uploadPath+"'>";
 						input+="<input type='text' name='attach["+0+"].image' value='"+result.image+"'>";
+						input+="<input type='text' name='attach["+0+"].division' value='"+result.division+"'>";
 						
 						if(result.image){
 							var filePath = encodeURIComponent(result.uploadPath+"/s_"+result.uuid+"-"+result.fileName);
@@ -210,6 +253,7 @@ $(document).ready(function() {
 						input+="<input type='text' name='attach["+(i+1)+"].uuid' value='"+obj.uuid+"'>";
 						input+="<input type='text' name='attach["+(i+1)+"].uploadPath' value='"+obj.uploadPath+"'>";
 						input+="<input type='text' name='attach["+(i+1)+"].image' value='"+obj.image+"'>";
+						input+="<input type='text' name='attach["+(i+1)+"].division' value='"+obj.division+"'>";
 						
 						if(obj.image){
 							var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"-"+obj.fileName);
@@ -229,8 +273,8 @@ $(document).ready(function() {
 			})
 	});
 	// 등록버튼을 클릭하면
-	$("#register_Btn").on("click",function(){
-		$("#sh_form").append(input).submit();
-	})
+	//$("#register_Btn").on("click",function(){
+		//$("#sh_form").append(input).submit();
+	//})
 
 })

@@ -24,7 +24,7 @@ import com.food.model.ShopAttachVO;
 
 
 @Controller
-public class UploadController {
+public class ShopUploadController {
 	@RequestMapping(value = "/uploadform", method = RequestMethod.GET)
 	public void uploadform() {
 
@@ -128,6 +128,8 @@ public class UploadController {
 			shopattachvo.setFileName(imagemain.getOriginalFilename());
 			// ShopAttachVO의 uuid 변수에 저장()
 			shopattachvo.setUuid(uuid.toString());
+			// ShopAttachVO의 division 변수에 저장
+			shopattachvo.setDivision("m");
 
 			// 파일 저장 어느폴더에( D:\\upload\\ 현재날짜) ,어떤 파일이름으로 (비정규식.png)
 			File saveFile = new File(uploadPath, uuid.toString() + "-" + imagemain.getOriginalFilename());
@@ -143,12 +145,12 @@ public class UploadController {
 					shopattachvo.setImage(true);
 
 					// 파일 생성
-					FileOutputStream thumnail = new FileOutputStream(
-							new File(uploadPath, "s_" + uuid.toString() + "-" + imagemain.getOriginalFilename()));
+					//FileOutputStream thumnail = new FileOutputStream(
+					//		new File(uploadPath, "s_" + uuid.toString() + "-" + imagemain.getOriginalFilename()));
 					// 섬네일형식의 파일 생성
 					/*Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumnail, 100, 100);*/
 
-					thumnail.close();
+					//thumnail.close();
 				} // checkImageType메서드 끝
 
 				// ShopAttachVO에 저장된 데이터를 배열의 추가
@@ -198,6 +200,8 @@ public class UploadController {
 			shopattachvo.setFileName(multipartFile.getOriginalFilename());
 			// ShopAttachVO의 uuid 변수에 저장()
 			shopattachvo.setUuid(uuid.toString());
+			// ShopAttachVO의 division 변수에 저장
+			shopattachvo.setDivision("s");
 
 			// 파일 저장 어느폴더에( D:\\upload\\ 현재날짜) ,어떤 파일이름으로 (비정규식.png)
 			File saveFile = new File(uploadPath, uuid.toString() + "-" + multipartFile.getOriginalFilename());

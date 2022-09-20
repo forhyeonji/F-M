@@ -10,6 +10,7 @@ public interface ShopMapper {
 
 	// 상품 등록 
 	public void Shopenroll(ShopVO Shop);
+	
 	public ShopVO shop(ShopVO Shop);
 	
 	//상품등록 수정
@@ -21,6 +22,7 @@ public interface ShopMapper {
 	
 	//첨부파일 조회
 	public ArrayList<ShopAttachVO> Shopattachlist(int bno);
+	public void insert(ShopAttachVO attach);
 	
 	
 }

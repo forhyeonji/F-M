@@ -42,6 +42,13 @@
     padding: 7px;
 }
 
+.sh_spaninput{
+	display: none;
+	padding-top: 10px;
+	text-align: center;
+	color: #e05757;
+	font-weight: 300;
+}
 
 #sh_enrollpage {
 	margin-top: 20px;

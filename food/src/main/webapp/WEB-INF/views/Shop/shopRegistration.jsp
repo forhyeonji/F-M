@@ -61,6 +61,7 @@
 						<td>
 							<div>
 								<label for="sh_gasName" id="sh_menuName">상품명:</label>
+								<span class="sh_spaninput" id="sh_gasNameinput">상품명을 입력하세요.</span>
 							</div>
 						</td>
 					</tr>
@@ -74,6 +75,7 @@
 						<td>
 							<div>
 								<label for="sh_subDes" id="sh_menuName">한줄소개:</label>
+								<span class="sh_spaninput" id="sh_subDesinput">한줄소개를 적어주세요</span>
 							</div>
 						</td>
 					</tr>
@@ -97,11 +99,16 @@
 							<div>
 								<label for="sh_gasPrice" id="sh_menuName">상품할인가:</label>
 							</div>
+							<div>
+								<!-- <input id="sh_discount" maxlength="2" value="0">
+								<input name="sh_productdiscount" type="hidden" value="0"> -->
+								<span class="sh_spaninput" id="sh_gasPriceinput">판매될 가격을 적어주세요</span>
+							</div>
 						</td>
 					</tr>
 					<tr>
 						<td><input type="text" id="gasPrice" name="discountprice">
-
+	
 						</td>
 					</tr>
 
@@ -109,6 +116,7 @@
 						<td>
 							<div class="sh_gasType">
 								<label id="sh_menuName"> 포장타입 </label>
+								<span class="sh_spaninput" id="sh_gasTypeinput">포장 타입을 선택해주세요</span>
 							</div>
 						</td>
 					</tr>
@@ -136,6 +144,7 @@
 						<td>
 							<div class="sh_gasorigin">
 								<label id="sh_menuName"> 원산지 </label>
+								<span class="sh_spaninput" id="sh_gasorigininput">원산지를 선택해주세요</span>
 							</div>
 						</td>
 					</tr>
@@ -151,29 +160,8 @@
 					<tr>
 						<td>
 							<div class="sh_inputArea">
-								<label for="sh_gasNum" id="sh_menuName">상품수량:</label>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="text" id="gasNum" name="KIND"></td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="sh_inputArea">
-								<label for="sh_gasinput" id="sh_menuName">입고안내:</label>
-							</div>
-						</td>
-					</tr>
-					<tr>
-						<td><input type="text" id="gasinput" name="Import"></td>
-					</tr>
-
-					<tr>
-						<td>
-							<div class="sh_inputArea">
 								<label for="sh_gasDes" id="sh_menuName">상품설명:</label>
+									<span class="sh_spaninput" id="sh_gasDesinput">상품설명해주세요</span>
 							</div>
 						</td>
 					</tr>
@@ -186,6 +174,7 @@
 						<td>
 							<div class="sh_inputArea">
 								<label for="gasDetail" id="sh_m">상세정보</label>
+								<span class="sh_spaninput" id="sh_Detailinput">상세정보를 입력해주세요</span>
 							</div>
 						</td>
 					</tr>

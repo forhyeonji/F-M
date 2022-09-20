@@ -8,21 +8,22 @@
 
 	<!-- 상품등록(일대일 이미지라 같이 넣음) -->
 	<insert id="Shopenroll">
-		insert into
-		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail,uploadPath,fileName,image,uuid)
-		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail},#{uploadPath},#{fileName},#{image},#{uuid});
-		
-		
-		
-		
-		
-		
+	
+	 	<selectKey keyProperty="prodnum" order="BEFORE" resultType="int">
+			select ifnull(max(prodnum),0)+1 prodnum
+			from tb_shop;
+  		</selectKey>
+	
+		insert into	tb_shop(prodnum,NAME,Origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
+		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail});
 	</insert>
+		
+		
 
 	<insert id="ShopEdit">
 		insert into
-		tb_shop(prodnum,NAME,KIND,subcontent,CONTENT,useyn,price2,discountprice,IMG_NAME,Parcel,packaging,unit,Origin,Import,boundary,detail,uploadPath,fileName,image,uuid)
-		value(#{prodnum},#{NAME},#{KIND},#{subcontent},#{CONTENT},#{useyn},#{discountprice},#{price2},#{IMG_NAME},#{Parcel},#{packaging},#{unit},#{Origin},#{Import},#{boundary},#{detail},#{uploadPath},#{fileName},#{image},#{uuid});
+		tb_shop(prodnum,NAME,Origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
+		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail});
 	</insert>
 
 
@@ -38,14 +39,6 @@
 		where class1=#{class1}
 	</select>
 
-	<insert id="insert">
-		insert into sh_appatch(prodnum,division,uuid,uploadPath,filename,image)
-		value(#{prodnum},#{division},#{uuid},#{uploadPath},#{filename},#{image});
-	</insert>
-
-	<select id="Shopattachlist" resultType="com.food.model.ShopAttachVO">
-		select*from sh_appatch where prodnum=#{prodnum}
-	</select>
 
 </mapper>
 

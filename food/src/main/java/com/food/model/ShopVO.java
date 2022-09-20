@@ -10,23 +10,15 @@ public class ShopVO {
 	private String NAME; 
 	private String CONTENT;
 	private String subcontent;
-	private String useyn; 
-	private String KIND ; 
 	private int price2;
 	private int discountprice;
 	private String Parcel;		/*택배회사이름*/
 	private String packaging;
 	private String unit;
 	private String Origin;
-	private String Import;
 	private int boundary;		/*구매수량*/
 	private String detail;
-	/*이미지 VO*/
-	private String uploadPath;
-	private String fileName;
-	private String IMG_NAME;
-	private String uuid;
-	private boolean image;
+	
 	
 	//AttachFileVO(파일 업로드 관련 model)
 	private ArrayList<ShopAttachVO> attach;
@@ -37,30 +29,7 @@ public class ShopVO {
 	public void setAttach(ArrayList<ShopAttachVO> attach) {
 		this.attach = attach;
 	}
-	public boolean isImage() {
-		return image;
-	}
-	public String getUploadPath() {
-		return uploadPath;
-	}
-	public void setUploadPath(String uploadPath) {
-		this.uploadPath = uploadPath;
-	}
-	public String getFileName() {
-		return fileName;
-	}
-	public void setFileName(String fileName) {
-		this.fileName = fileName;
-	}
-	public String getUuid() {
-		return uuid;
-	}
-	public void setUuid(String uuid) {
-		this.uuid = uuid;
-	}
-	public void setImage(boolean image) {
-		this.image = image;
-	}
+	
 	public int getProdnum() {
 		return prodnum;
 	}
@@ -86,18 +55,6 @@ public class ShopVO {
 		this.subcontent = subcontent;
 	}
 
-	public String getUseyn() {
-		return useyn;
-	}
-	public void setUseyn(String useyn) {
-		this.useyn = useyn;
-	}
-	public String getKIND() {
-		return KIND;
-	}
-	public void setKIND(String kIND) {
-		KIND = kIND;
-	}
 	public int getPrice2() {
 		return price2;
 	}
@@ -110,12 +67,7 @@ public class ShopVO {
 	public void setDiscountprice(int discountprice) {
 		this.discountprice = discountprice;
 	}
-	public String getIMG_NAME() {
-		return IMG_NAME;
-	}
-	public void setIMG_NAME(String iMG_NAME) {
-		IMG_NAME = iMG_NAME;
-	}
+	
 	public String getParcel() {
 		return Parcel;
 	}
@@ -140,12 +92,6 @@ public class ShopVO {
 	public void setOrigin(String origin) {
 		Origin = origin;
 	}
-	public String getImport() {
-		return Import;
-	}
-	public void setImport(String import1) {
-		Import = import1;
-	}
 	public int getBoundary() {
 		return boundary;
 	}
@@ -161,10 +107,8 @@ public class ShopVO {
 	@Override
 	public String toString() {
 		return "ShopVO [prodnum=" + prodnum + ", NAME=" + NAME + ", CONTENT=" + CONTENT + ", subcontent=" + subcontent
-				+ ", useyn=" + useyn + ", KIND=" + KIND + ", price2=" + price2 + ", discountprice=" + discountprice
-				+ ", Parcel=" + Parcel + ", packaging=" + packaging + ", unit=" + unit + ", Origin=" + Origin
-				+ ", Import=" + Import + ", boundary=" + boundary + ", detail=" + detail + ", uploadPath=" + uploadPath
-				+ ", fileName=" + fileName + ", IMG_NAME=" + IMG_NAME + ", uuid=" + uuid + ", image=" + image
+				+ ", price2=" + price2 + ", discountprice=" + discountprice + ", Parcel=" + Parcel + ", packaging="
+				+ packaging + ", unit=" + unit + ", Origin=" + Origin + ", boundary=" + boundary + ", detail=" + detail
 				+ ", attach=" + attach + "]";
 	}
 
