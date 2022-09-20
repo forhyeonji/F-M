@@ -69,6 +69,18 @@
         set cnt = cnt + 1
         where bno = #{bno}
     </update>
+
+    <update id="plusCount">
+        update tb_community
+        set like_count = like_count + 1
+        where bno = #{bno}
+    </update>
+
+    <update id="minusCount">
+        update tb_community
+        set like_count = like_count - 1
+        where bno = #{bno}
+    </update>
 </mapper>
 
 

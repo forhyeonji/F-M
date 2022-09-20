@@ -12,7 +12,8 @@ $(function () {
         page: 1,
         size: 10,
         count: 0,
-        context: ''
+        context: '',
+        endPage : 1
     }
 
     const isCommunityReplyListBody = (data = []) => {
@@ -74,6 +75,7 @@ $(function () {
 
         let html = ``;
         const replyTotal = Math.floor(count / replyPagination.size) + (count % replyPagination.size !== 0 && 1);
+        replyPagination.after_page = replyTotal;
 
         for (let i = 0; i < replyTotal; i++) {
             html += `<div class="page" id="page-${i + 1}">${i + 1}</div>`
@@ -95,6 +97,7 @@ $(function () {
         replyPagination.page = page;
         onReply();
     }
+
 
     const onReply = () => {
         $.ajax({

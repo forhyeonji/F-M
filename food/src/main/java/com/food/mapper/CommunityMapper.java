@@ -61,4 +61,8 @@ public interface CommunityMapper {
      * @param bno
      */
     void cntUp(String bno);
+
+    void plusCount(int bno);
+
+    int minusCount(int bno);
 }

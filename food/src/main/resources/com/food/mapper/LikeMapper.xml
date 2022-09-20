@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.food.mapper.LikeMapper">
+    <insert id="addLike">
+        insert into tb_like(user_id, bno, like_check)
+        select #{user_id}, #{bno}, 1
+        from dual
+        WHERE NOT EXISTS (
+                select like_check
+                from tb_like
+                where user_id = #{user_id}
+                  and bno = #{bno});
+    </insert>
+
+    <delete id="removeLike">
+        delete from tb_like
+        where user_id = #{user_id}
+        and bno = #{bno}
+    </delete>
+
+    <select id="likeCount" parameterType="com.food.model.LikeVo">
+        select like_count
+        from tb_community
+        where bno = #{bno}
+    </select>
+</mapper>
+
