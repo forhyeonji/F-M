@@ -28,7 +28,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
+ 
 @Controller
 public class UserController{
 
@@ -120,6 +120,8 @@ public class UserController{
  			return "success";	// 중복 아이디 x			
  		}	
 	} 
+  	
+  
         
 }
     
