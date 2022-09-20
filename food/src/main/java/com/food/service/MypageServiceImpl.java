@@ -59,7 +59,12 @@ public class MypageServiceImpl implements MypageService {
 	public MypageVO mywritedetail(MypageVO mypage) {
 		return mm.mywritedetail(mypage);
 	}
-
+	
+	//내글에 달린 댓글수 카운트
+	public int replycnt(MypageVO mypage) {
+		return mm.replycnt(mypage);
+	}
+	
 	//내가쓴 댓글 상세보기
 	public List<Map<String, Object>> myreply(MypageVO mypage) {
 		return mm.myreply(mypage);

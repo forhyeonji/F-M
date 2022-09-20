@@ -18,6 +18,7 @@ $(function () {
             }
         });
     }
+
     //특수문자 함수
     function ChangeOutputValue(pValue) {
         var strReturenValue = "";
@@ -38,9 +39,10 @@ $(function () {
                     ['para', ['ul', 'ol', 'paragraph']],
                     ['table', ['table']],
                     ['insert', ['picture']],
-                ]});
+                ]
+            });
 
-            $("#title").attr("readOnly",false);
+            $("#title").attr("readOnly", false);
             $('#save').show();
             $("#btn_modify").hide();
             $(`#btn_delete`).hide();
@@ -61,7 +63,7 @@ $(function () {
             success: () => {
                 $('.click2edit').summernote('destroy');
 
-                $("#title").attr("readOnly",true);
+                $("#title").attr("readOnly", true);
                 $(`#btn_delete`).show();
                 $(`.btn_cancel`).show();
                 $("#btn_modify").show();
@@ -93,6 +95,52 @@ $(function () {
         })
     }
 
+    const onLikeClick = () => {
+        let likeCheck = 0;
+
+        $('#like_btn').click(() => {
+            let id = document.getElementById("session_id").innerText;
+            let b_num = document.getElementById("bno").value;
+
+            if(likeCheck === 0) {
+                $.ajax({
+                    type: `post`,
+                    url: `/api/like/insert/${bno}`,
+                    data: JSON.stringify({user_id: id, bno: b_num}),
+                    contentType: `application/json; charset=utf-8`,
+                    success: () => {
+                        likeCheck = 1;
+                        onLikeCount();
+                    }
+                })
+            }else{
+                $.ajax({
+                    type: `post`,
+                    url: `/api/like/remove/${bno}`,
+                    data: JSON.stringify({user_id: id, bno: b_num}),
+                    contentType: `application/json; charset=utf-8`,
+                    success: () => {
+                        likeCheck = 0;
+                        onLikeCount();
+                    }
+                })
+            }
+        })
+    }
+
+    const onLikeCount = () => {
+        $.ajax({
+            type:`get`,
+            url:`/api/lie/count/${bno}`,
+            contentType:`application/json; charset=utf-8`,
+            success:(data) => {
+                $('#like_cnt').html(data.result.bno);
+            }
+        })
+    }
+
+    onLikeCount();
+    onLikeClick();
     boardDetail();
     onModify();
     onDelete();

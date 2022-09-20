@@ -82,6 +82,12 @@
 		where user_id=#{user_id}
 	</select>
 	
+	<select id="replycnt" resultType="int">
+		select count(*) as replycnt 
+		from tb_community_reply
+		where bno=#{bno}
+	</select>
+	
 	<select id="total" resultType="int">
 		select count(*) from tb_community 
 		<if test="user_id != null and user_id !=''">
