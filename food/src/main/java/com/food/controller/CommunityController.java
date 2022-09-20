@@ -20,6 +20,11 @@ public class CommunityController extends CommonController {
 
     private final CommunityService communityService;
 
+    /**
+     * 게시글 리스트
+     * @param reqVO
+     * @return
+     */
     @PostMapping(value = "/community/bread", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getCommunityList(@RequestBody ReqPageVO reqVO) {
         isLog(reqVO);
@@ -30,6 +35,11 @@ public class CommunityController extends CommonController {
                 .build();
     }
 
+    /**
+     * 게시글 상세보기
+     * @param bno
+     * @return
+     */
     @GetMapping(value = "/api/detail/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getCommunityOne(
             @PathVariable(value = "bno", required = true) String bno
@@ -42,7 +52,11 @@ public class CommunityController extends CommonController {
                 .build();
     }
 
-    // 업데이트시
+    /**
+     * 게시글 쓰기
+     * @param bno
+     * @return
+     */
     @GetMapping(value = "/api/write/{bno}", produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getModifyOne(
             @PathVariable(value = "bno", required = true) String bno
@@ -73,6 +87,12 @@ public class CommunityController extends CommonController {
                 .build();
     }
 
+    /**
+     * 게시글 수정
+     * @param bno
+     * @param communityVO
+     * @return
+     */
     @PutMapping(value = "/modify/{bno}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> putModifyOne(
             @PathVariable(value = "bno", required = true) int bno,
@@ -81,11 +101,33 @@ public class CommunityController extends CommonController {
         return ResponseEntity.ok(communityService.putCommunity(communityVO, bno));
     }
 
+    /**
+     * 게시글 삭제
+     * @param bno
+     * @return
+     */
+
     @DeleteMapping(value = "/api/delete/{bno}" , consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResponseEntity<?> deleteOne(
             @PathVariable(value = "bno", required = true) int bno
     ){
         return ResponseEntity.ok(communityService.deleteCommunity(bno));
+    }
+
+    /**
+     * 좋아요 Count 출력
+     * @param bno
+     * @return
+     */
+    @GetMapping(value = "/api/lie/count/{bno}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO likeCount(
+            @PathVariable(value = "bno") int bno
+    ){
+
+        return ResCommonVO.builder()
+                .result(communityService.likeCount(bno))
+                .code(ResCommonCode.SUCCESS)
+                .build();
     }
 }
 

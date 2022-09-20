@@ -22,6 +22,9 @@
                 </td>
 
             </tr>
+            <td>
+                <span id="like_cnt"></span><button id="like_btn">좋아요</button>
+            </td>
             </tbody>
         </table>
         <div id="bw_foot">

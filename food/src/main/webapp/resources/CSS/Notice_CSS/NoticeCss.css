@@ -23,6 +23,63 @@
 
 
 
+
+
+.NOTI_searchbox {
+	position : inline;
+	width : 500px;
+	height : 30px;
+	margin-top : 50px;
+	margin : 0px auto;
+}
+
+
+
+
+.NOTI_select {
+    width: 85px; /* 원하는 너비설정 */
+    
+    padding: .5em .5em; /* 여백으로 높이 설정 */
+    font-family: inherit;  /* 폰트 상속 */
+    border: 1px solid #999;
+    border-radius: 3px;
+  /*   -webkit-appearance: none; 네이티브 외형 감추기
+    -moz-appearance: none;
+    appearance: none; */
+}
+
+
+
+.NOTI_searchTd {
+	display : inline;
+    padding: 6px 13px 6px 13px;
+    border: solid #999 1px;
+    vertical-align:middle;
+    border-radius: 3px;
+}
+
+.NOTI_searchBar {
+    width: 300px;
+    height: 20px;
+    border : 0px;
+    vertical-align:middle;
+    margin-bottom: 4px;
+}
+
+.NOTI_mag {
+    height: 20px;
+    width: 20px;
+	vertical-align:middle;
+	margin-bottom: 4px;
+}
+
+
+
+
+
+
+
+
 /*
 	DirectKing_answer
 	DirectQue_detail
@@ -84,6 +141,7 @@
 	height : 32px;
 	padding : 5px;
 	display : inline;
+	margin-top : 30px;
 	}
 
 .NOTI_button {
@@ -180,7 +238,6 @@
 .NOTI_notice_lable{
 	
 	font-size : 50px;
-	margin-bottom : 60px;
 	
 }
 
