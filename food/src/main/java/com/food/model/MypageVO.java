@@ -31,6 +31,8 @@ public class MypageVO {
     
     //댓글VO포함
     private List<CommunityReplyVO> replyVOList;
+    //내글에 달린 댓글 수 카운트
+    private int replycnt;
     
     
     public MypageVO() {

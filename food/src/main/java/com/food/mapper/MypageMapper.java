@@ -30,7 +30,10 @@ public interface MypageMapper {
 	
 	//내가쓴글 상세보기
 	public MypageVO mywritedetail(MypageVO mypage);
-
+	
+	//내글 댓글수 카운트
+	public int replycnt(MypageVO mypage);
+	
 	//내가쓴 댓글 상세보기
 	public List<Map<String, Object>> myreply(MypageVO mypage);
 	

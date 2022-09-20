@@ -118,13 +118,15 @@ public class MypageController {
 	//내가 쓴 글 목록
 	//MypageVO에 몰빵해서 페이징(완료)
 	@RequestMapping(value = "mypage/mywrite", method = RequestMethod.GET)
-	public String mywrite(UserVO user, MypageVO mypage, Model model, CriteriaVO cri, HttpSession session) {
+	public String mywrite(UserVO user, MypageVO mypage, 
+			Model model, CriteriaVO cri, 
+			HttpSession session) {
 		String id = (String) session.getAttribute("user_id");
 		System.out.println("내글아이디"+id);
 		user.setUser_id(id);		
 		mypage.setUser_id(id);
 		
-		
+		model.addAttribute("replycnt", ms.replycnt(mypage));
 		model.addAttribute("user", ms.mypage(user));
 		model.addAttribute("mywrite", ms.mywrite(mypage));		
 		int total = ms.total(mypage);

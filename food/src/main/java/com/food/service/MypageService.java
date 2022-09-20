@@ -33,6 +33,9 @@ public interface MypageService {
 	//내가 쓴 글 상세보기
 	public MypageVO mywritedetail(MypageVO mypage);
 	
+	//내글에 달린 댓글 수
+	public int replycnt(MypageVO mypage);
+	
 	//내 댓글 상세보기
 	public List<Map<String, Object>> myreply(MypageVO mypage);
 	
