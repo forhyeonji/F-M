@@ -6,27 +6,31 @@
 		
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
-		
+		<br>
 		<!-- 검색기능 -->
 	<form action="/notice" id="searchForm" method="get">
 	
-		<select name="type">
-			<option value="T">제목</option>
-			<option value="C">내용</option>
-			<option value="TC">제목+내용</option>
-		</select>
+		
 		
 	
 		<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
 		<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
 		<input type="hidden" name="sep" value="noti">
 		
-		<div class="NOTI_search">
+		
+		
+	<div class="NOTI_searchbox">
+		<select name="type" class="NOTI_select">
+			<option value="T">제목</option>
+			<option value="C">내용</option>
+			<option value="TC">제목+내용</option>
+		</select>
+		
 		   <div class="NOTI_searchTd">
 				<input type="text" name="keyword" class="NOTI_searchBar" placeholder="검색어를 입력해주세요.">
 				<img src="../../../resources/image/HeaderImg/돋보기.jpg" class="NOTI_mag" id="searchBtn">
 		   </div>
-        </div>
+	</div>
 		
 		
 	</form>
