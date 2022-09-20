@@ -110,6 +110,7 @@ $(function () {
                     contentType: `application/json; charset=utf-8`,
                     success: () => {
                         likeCheck = 1;
+                        onLikeCount();
                     }
                 })
             }else{
@@ -120,13 +121,25 @@ $(function () {
                     contentType: `application/json; charset=utf-8`,
                     success: () => {
                         likeCheck = 0;
+                        onLikeCount();
                     }
                 })
             }
         })
     }
 
+    const onLikeCount = () => {
+        $.ajax({
+            type:`get`,
+            url:`/api/lie/count/${bno}`,
+            contentType:`application/json; charset=utf-8`,
+            success:(data) => {
+                $('#like_cnt').html(data.result.bno);
+            }
+        })
+    }
 
+    onLikeCount();
     onLikeClick();
     boardDetail();
     onModify();

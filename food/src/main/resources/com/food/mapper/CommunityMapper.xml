@@ -81,6 +81,13 @@
         set like_count = like_count - 1
         where bno = #{bno}
     </update>
+
+
+    <select id="likeCount" parameterType="com.food.model.CommunityVO" resultType="int">
+        select like_count
+        from tb_community
+        where bno = #{bno}
+    </select>
 </mapper>
 
 

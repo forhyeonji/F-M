@@ -65,4 +65,6 @@ public interface CommunityMapper {
     void plusCount(int bno);
 
     int minusCount(int bno);
+
+    int likeCount(int bno);
 }

@@ -21,11 +21,5 @@
         where user_id = #{user_id}
         and bno = #{bno}
     </delete>
-
-    <select id="likeCount" parameterType="com.food.model.LikeVo">
-        select like_count
-        from tb_community
-        where bno = #{bno}
-    </select>
 </mapper>
 
