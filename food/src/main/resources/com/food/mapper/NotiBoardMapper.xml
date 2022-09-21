@@ -14,7 +14,7 @@
 		from(
 				select @rownum:= @rownum+1 rownum, t.*
 				from (
-					select n.bno, title, reg_dt, cnt, user_id, context, BoldTitle, sep, user_tel, ans_check
+					select n.bno, title, reg_dt, cnt, user_id, context, BoldTitle, sep, user_tel, subsep, ans_check
 					from tb_notice as n left outer join tb_notianswer as a
 					on n.bno=a.bno
 				) t , (select @rownum:=0) as tmp
@@ -54,10 +54,12 @@
 						on n.bno=a.bno
 				) t , (select @rownum:=0) as tmp
 				
+			
+			
 			<if test="keyword==null">
 				where sep=#{sep}
 				<if test="sep=='inquiry'.toString()">
-					and subsep=#{subsep}
+				and subsep=#{subsep}
 				</if>
 			</if>
 	
@@ -173,7 +175,10 @@
 		select count(*) from tb_notice
 
 			<if test="keyword==null">
-			where sep=#{sep}	
+			where sep=#{sep}
+				<if test="sep=='inquiry'.toString()">
+				and subsep=#{subsep}
+				</if>	
 			</if>
 			
 			<if test = "keyword != null">

@@ -15,8 +15,7 @@
 						<option value="inquiry_ect">기타 문의</option>
 					</select>
 					
-	
-					
+
 		<hr>	
 		<table>	
 		
@@ -34,15 +33,15 @@
 						<td>
 						
 									<c:choose>
-										<c:when test="${mywrite.subsep eq 'inquiry_recipe'}">
+										<c:when test="${Notiboardlist.subsep eq 'inquiry_recipe'}">
 											레시피
 										</c:when>
 										
-										<c:when test="${mywrite.subsep eq 'inquiry_store'}">
+										<c:when test="${Notiboardlist.subsep eq 'inquiry_store'}">
 											스토어
 										</c:when>
 										
-										<c:when test="${mywrite.subsep eq 'inquiry_commu'}">
+										<c:when test="${Notiboardlist.subsep eq 'inquiry_comm'}">
 											커뮤니티
 										</c:when>
 										
@@ -81,19 +80,19 @@
 		
 		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
 		<c:if test="${paging.prevBtn}">
-			<a href="/directKing?sep=inquiry&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+			<a href="/directKing?sep=inquiry&subsep=${subsep}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 		</c:if>
 		
 		
 		<!-- begin(1)이 end(10)가 될 동안 반복 -->
 		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-			<a href="/directKing?sep=inquiry&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
+			<a href="/directKing?sep=inquiry&subsep=${subsep}&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
 		</c:forEach>
 		
 		
 		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
 		<c:if test="${paging.nextBtn}">
-			<a href="/directKing?sep=inquiry&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+			<a href="/directKing?sep=inquiry&subsep=${subsep}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 		</c:if>
 		
 		
