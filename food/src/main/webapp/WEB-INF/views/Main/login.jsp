@@ -5,6 +5,7 @@
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/login.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
 
 
 <div id="login_outborder">
@@ -32,6 +33,7 @@
 					<div>
 						<a class="login_a" href="https://developers.facebook.com/products/instagram/?locale=ko_KR"><img class="login_img" src="../../../resources/image/main_image/icon_logo_ex.png"></a>
 					</div>
+					  <a href="javascript:kakaoLogin();"><img src="./kakao_login.png" alt="카카오계정 로그인" style="height: 100px;"/></a>
 				</div>
 			</div>
 			
@@ -75,4 +77,6 @@
 
 </div>
 
+
 <script src="/resources/JS/Main/login.js"></script>
+ 

@@ -12,6 +12,6 @@ public interface UserMapper {
     
     public int idCheck(String user_id);
     
-    public int emailCheck(String user_email);
+    public int phoneCheck(String user_phone);
 
 }

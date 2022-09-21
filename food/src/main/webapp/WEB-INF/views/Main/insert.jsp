@@ -6,6 +6,7 @@
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 <script src="/resources/JS/Main/insertAdd.js"></script>
 
+
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/insert.css">
 
 
@@ -27,11 +28,15 @@
 		
 				<div id="insert_email">
 					<div class="insert_h4">
-						<h4>이메일*</h4><br>
+						<h4>이메일</h4><br>
 					</div>
-					<div>
+					<div class="mail_check_wrap">
 						<input type="text" id="user_email" class="insert_inputext" name="user_email">
 					</div><br>
+					<div>
+						<input type="button" id="insert_emailbtn" value="인증번호 받기">
+					</div>
+					<br>
 					<div>
 						<span class="insert_emailNone">이메일을 입력하세요.</span>
 					</div>
@@ -49,9 +54,36 @@
 					</div>
 				</div><br>
 				
+				<div id="insert_phone"><br>
+					<div>
+						<h4>휴대폰 번호</h4><br>
+					</div>
+					<br>
+					<div>
+						<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
+					</div>
+					<br>
+					<div>
+						<span class="insert_phoneNone">휴대폰 번호를 입력하세요.</span>
+					</div>
+					<div>
+						<span class="insert_phoneHave">번호가 이미 존재합니다.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_phoneFalse">휴대폰 번호에는 숫자와 하이픈(-)만을 입력해주세요.</span>
+					</div>
+					<br>
+					<div>
+						<span class="insert_phoneTrue">사용 가능한 휴대폰 번호입니다.</span>
+					</div>
+					<br>
+				</div><br>
+				
+				
 				<div id="insert_id"><br>
 					<div>
-						<h4>아이디*</h4><br>
+						<h4>아이디</h4><br>
 					</div>
 					<br>
 					<div>
@@ -79,7 +111,7 @@
 				
 				<div id="insert_pw"><br>
 					<div>
-						<h4>비밀번호*</h4><br>
+						<h4>비밀번호</h4><br>
 					</div>
 					<br>
 					<div>
@@ -103,7 +135,7 @@
 
 				<div id="insert_pwcheck"><br>
 					<div>
-						<h4>비밀번호 확인*</h4><br>
+						<h4>비밀번호 확인</h4><br>
 					</div>
 					<br>
 					<div>
@@ -123,7 +155,7 @@
 				
 				<div id="insert_name"><br>
 					<div>
-						<h4>이름*</h4><br>
+						<h4>이름</h4><br>
 					</div>
 					<br>
 					<div>
@@ -146,7 +178,7 @@
 				
 				
 				<div class="insert_addrbox"><br>
-					<h4>주소*</h4><br>
+					<h4>주소</h4><br>
 					<div class="insert_addr">
 						<div>
 							<button type="button" class="insert_add" onclick="PostCode();">주소 찾기</button>
@@ -163,34 +195,6 @@
 					</div> 
 					<span class="insert_addrNone">주소를 입력하세요.</span>   
 				</div><br>
-				
-				
-				<div id="insert_phone"><br>
-					<div>
-						<h4>휴대폰 번호*</h4><br>
-					</div>
-					<br>
-					<div>
-						<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
-					</div>
-					<br>
-					<div>
-						<input type="button" id="insert_cellph" value="인증번호 받기">
-					</div>
-					<br>
-					<div>
-						<span class="insert_phoneNone">휴대폰 번호를 입력하세요.</span>
-					</div>
-					<div>
-						<span class="insert_phoneFalse">휴대폰 번호에는 숫자와 하이픈(-)만을 입력해주세요.</span>
-					</div>
-					<br>
-					<div>
-						<span class="insert_phoneTrue">사용 가능한 휴대폰 번호입니다.</span>
-					</div>
-					<br>
-				</div><br>
-				
 				
 				
 				<div class="insert_gender"><br>

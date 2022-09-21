@@ -14,9 +14,9 @@ public interface UserService {
     
  	public int idCheck(String user_id) throws Exception;
  	
- 	public int emailCheck(String user_email) throws Exception;
+ 	public int phoneCheck(String user_phone) throws Exception;
 
-
+ 	
     
     
 }

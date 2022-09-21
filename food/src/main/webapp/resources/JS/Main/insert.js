@@ -12,6 +12,7 @@ var addrzipCheck = false; 		// 우편번호
 var addr1Check = false;			// 도로명주소
 var addr2Check = false;			// 세부주소
 var phoneCheck = false; 		// 휴대폰
+var phoneckCheck = false;		// 휴대폰 중복 체크
 var genderCheck = false;		// 성별
 var agreeCheck = false; 		// 약관동의
 
@@ -36,11 +37,12 @@ function nameFormCheck(user_name){
 	var nameForm = /^[가-힣a-zA-Z0-9]/gi;
 	return nameForm.test(user_name);
 }
+
 //전화번호
-//function phoneFormCheck(user_phone){
-//	var phoneForm = /^((01[1|6|7|8|9])[1-9][0-9]{6,7})$|(010[1-9][0-9]{7})$/;;
-//	return phoneForm.test(user_phone);
-//}
+function phoneFormCheck(user_phone){
+	var phoneForm = /^((01[1|6|7|8|9])[1-9][0-9]{6,7})$|(010[1-9][0-9]{7})$/;;
+	return phoneForm.test(user_phone);
+}
 
 
 
@@ -58,6 +60,7 @@ $(document).ready(function(){
 		var user_zip = $("#user_zip").val();		
 		var user_addr1 = $("#user_addr1").val();
 		var user_addr2 = $("#user_addr2").val();
+		var user_gender = $("#user_gender").val();
 		var user_male = $("#user_male").val();
 		var user_female = $("#user_female").val();
 		var user_none = $("#user_none").val();
@@ -139,6 +142,7 @@ $(document).ready(function(){
 			$user_gender = "none"
 		}
 		
+		/*휴대폰 검사*/
 		if(user_phone == ""){
 			$(".insert_phoneNone").css("display","block");
 			phoneCheck = false;
@@ -157,7 +161,7 @@ $(document).ready(function(){
 		
 		/* 최종 유효성 검사 */
 		if(emailCheck && emailckCheck && idCheck && idckCheck && pwCheck && repwCheck && repwckCheck 
-			&& nameCheck && addr1Check && addr2Check && agreeCheck ){
+			&& nameCheck && addr1Check && addr2Check && phoneCheck && phoneckCheck && agreeCheck ){
 			$("#insert_form").attr("action", "/insert");
 			$("#insert_form").submit();		
 			
@@ -171,45 +175,45 @@ $(document).ready(function(){
 
 
 // 형식 검사
-$("#user_email").on("blur", function(){
+$("#user_phone").on("blur", function(){
 
-	var user_email = $("#user_email").val();			
-	var data = {user_email : user_email}			
-	var warnMsg = $(".emailMs");    
+	var user_phone = $("#user_phone").val();			
+	var data = {user_phone : user_phone}			
+	var warnMsg = $(".phoneMs");    
 	
 	$.ajax({
 		type : "post",
-		url : "/insertemailChk",
+		url : "/insertphoneChk",
 		data : data,
 		success : function(result){
-			// 중복되지 않고 이메일 형식도 맞을 때
-			if(result != "fail" && emailFormCheck(user_email)){
-				$(".insert_emailTrue").css("display","inline-block");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","none");
-				$(".insert_emailFalse").css("display","none");
-				emailckCheck = true;
-			// 중복되지 않으나 이메일 형식이 틀렸을 때
-			}else if(result != "fail" && !emailFormCheck(user_email)){
-				$(".insert_emailTrue").css("display","none");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","none");
-				$(".insert_emailFalse").css("display","inline-block");
-				emailckCheck = false;
-			// 이메일 형식은 맞으나 중복될 때		
-			}else if(result == "fail" && emailFormCheck(user_email)){
-				$(".insert_emailTrue").css("display","none");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","inline-block");
-				$(".insert_emailFalse").css("display","none");
-				emailckCheck = false;
+			// 중복되지 않고 휴대폰 형식도 맞을 때
+			if(result != "fail" && phoneFormCheck(user_phone)){
+				$(".insert_phoneTrue").css("display","inline-block");
+				$(".insert_phoneNone").css("display","none");
+				$(".insert_phoneHave").css("display","none");
+				$(".insert_phoneFalse").css("display","none");
+				phoneckCheck = true;
+			// 중복되지 않으나 휴대폰 형식이 틀렸을 때
+			}else if(result != "fail" && !phoneFormCheck(user_phone)){
+				$(".insert_phoneTrue").css("display","none");
+				$(".insert_phoneNone").css("display","none");
+				$(".insert_phoneHave").css("display","none");
+				$(".insert_phoneFalse").css("display","inline-block");
+				phoneckCheck = false;
+			// 휴대폰 형식은 맞으나 중복될 때		
+			}else if(result == "fail" && phoneFormCheck(user_phone)){
+				$(".insert_phoneTrue").css("display","none");
+				$(".insert_phoneNone").css("display","none");
+				$(".insert_phoneHave").css("display","inline-block");
+				$(".insert_phoneFalse").css("display","none");
+				phoneckCheck = false;
 			// 둘 다 틀렸을 때	
 			}else{
-				$(".insert_emailTrue").css("display","none");
-				$(".insert_emailNone").css("display","none");
-				$(".insert_emailHave").css("display","inline-block");
-				$(".insert_emailFalse").css("display","inline-block");
-				emailckCheck = false;
+				$(".insert_phoneTrue").css("display","none");
+				$(".insert_phoneNone").css("display","none");
+				$(".insert_phoneHave").css("display","inline-block");
+				$(".insert_phoneFalse").css("display","inline-block");
+				phoneckCheck = false;
 			}
 		}
 	}); // ajax 종료
@@ -324,20 +328,20 @@ $("#user_name").on("blur", function(){
 	}
 });
 
-$("#user_phone").on("blur", function(){
+$("#user_email").on("blur", function(){
 	
-	var user_phone = $("#user_phone").val();
+	var user_email = $("#user_email").val();
 	
-	if(phoneFormCheck(user_phone)){
-		$('.insert_phoneTrue').css('display','block');
-		$('.insert_phoneNone').css('display','none');
-		$('.insert_phoneFalse').css('display','none');
-		phoneCheck = true;
+	if(emailFormCheck(user_email)){
+		$('.insert_emailTrue').css('display','block');
+		$('.insert_emailNone').css('display','none');
+		$('.insert_emailFalse').css('display','none');
+		emailckCheck = true;
 	}else{
-		$('.insert_phoneTrue').css('display','none');
-		$('.insert_phoneNone').css('display','none');
-		$('.insert_phoneFalse').css('display','block');
-		phoneCheck = false;
+		$('.insert_emailTrue').css('display','none');
+		$('.insert_emailNone').css('display','none');
+		$('.insert_emailFalse').css('display','block');
+		emailckCheck = false;
 	}
 });
 

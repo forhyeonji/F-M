@@ -84,15 +84,7 @@ public class UserController{
 		return "redirect:/";
 	}
     
-    
-    // 아이디 찾기
-    //@RequestMapping(value ="/find_id", method = RequestMethod.GET)
-    //public String find_id() {
-    //	return "Main/find_id";
-    //}
-    
-    
-  
+
     // 아이디 중복 검사
  	@RequestMapping(value = "/insertIdChk", method = RequestMethod.POST)
  	@ResponseBody
@@ -109,10 +101,10 @@ public class UserController{
  	
  	
  	// 이메일 중복 검사
-  	@RequestMapping(value = "/insertemailChk", method = RequestMethod.POST)
+  	@RequestMapping(value = "/insertphoneChk", method = RequestMethod.POST)
   	@ResponseBody
-  	public String insertemailChkPOST(String user_email) throws Exception{
-  		int result = us.emailCheck(user_email);
+  	public String insertphoneChkPOST(String user_phone) throws Exception{
+  		int result = us.phoneCheck(user_phone);
  		logger.info("결과값 = " + result);
  		if(result != 0) {			
  			return "fail";	// 중복 아이디가 존재		
@@ -120,6 +112,34 @@ public class UserController{
  			return "success";	// 중복 아이디 x			
  		}	
 	} 
+  	
+ 
+  	/*
+ // 아이디 찾기
+ 	@RequestMapping(value = "/user/userSearch", method = RequestMethod.POST)
+ 	@ResponseBody
+ 	public String userIdSearch(@RequestParam("inputName_1") String user_name, 
+ 			@RequestParam("inputPhone_1") String user_phone) {
+ 		
+ 		String result = us.get_searchId(user_name, user_phone);
+
+ 		return result;
+ 	}
+ 	
+ 	// 비밀번호 찾기
+ 	@RequestMapping(value = "/user/searchPassword", method = RequestMethod.GET)
+ 	@ResponseBody
+ 	public String passwordSearch(@RequestParam("userId")String user_id,
+ 			@RequestParam("userEmail")String user_email,
+ 			HttpServletRequest request) {
+
+ 		mailsender.mailSendWithPassword(user_id, user_email, request);
+ 		
+ 		return "user/userSearchPassword";
+ 	}
+ 	
+ }
+ */
   	
   
         

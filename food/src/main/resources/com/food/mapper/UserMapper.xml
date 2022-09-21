@@ -6,8 +6,8 @@
 
 <mapper namespace="com.food.mapper.UserMapper">
     <insert id="join">
-        insert into tb_user(user_email, user_id, user_pw, user_name, user_zip, user_addr1, user_addr2, user_gender, user_birth, user_phone)
-        values(#{user_email},#{user_id},#{user_pw},#{user_name},#{user_zip},#{user_addr1},#{user_addr2},#{user_gender},#{user_birth},#{user_phone})
+        insert into tb_user(user_email, user_id, user_pw, user_name, user_zip, user_addr1, user_addr2, user_gender, user_phone)
+        values(#{user_email},#{user_id},#{user_pw},#{user_name},#{user_zip},#{user_addr1},#{user_addr2},#{user_gender},#{user_phone})
     </insert>
 
     <select id="login" resultType="com.food.model.UserVO">
@@ -23,11 +23,11 @@
   		where user_id = #{user_id} 	
   	</select>
 	
-	<!-- 이메일 중복검사 -->
-  	<select id="emailCheck" resultType="int">
+	<!-- 휴대폰 중복검사 -->
+  	<select id="phoneCheck" resultType="int">
   		select count(*) 
   		from tb_user 
-  		where user_email = #{user_email}
+  		where user_phone = #{user_phone}
   	</select>
 	
 	
