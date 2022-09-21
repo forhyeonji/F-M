@@ -16,7 +16,6 @@
 	<resultMap type="com.food.model.MypageVO" id="Mypage">
 		<collection property="reply" resultMap="sqlmyreply"/>
 	</resultMap>
-	
 
 	<select id="mypage" resultType="com.food.model.UserVO">
 		select * from tb_user where user_id=#{user_id}
@@ -39,12 +38,18 @@
 		delete from tb_user 
 		where user_id=#{user_id}		
 	</delete>
-	
+
+	<sql id="shop">
+		from tb_shop sh where sh.prodnum = c.c_prodnum
+	</sql>
 	
 	<select id="cartlist" resultType="com.food.model.CartVO">
-		select * 
-		from tb_shop sh join tb_cart c on sh.prodnum=c.c_prodnum
-		where user_id=#{user_id}
+		select c.*, 
+				(select NAME <include refid="shop"></include>) as s_name,
+				(select CONTENT <include refid="shop"></include>) as s_content,
+				(select price2 <include refid="shop"></include>) as s_price
+		from tb_cart c
+		where c.user_id = #{user_id}
 	</select>
 	
 	

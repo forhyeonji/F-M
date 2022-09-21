@@ -140,16 +140,21 @@ canclelist
 
 /* cart */
 
-#my_cartlistTable{
+#my_cartlist{
 	border:1 solid rgb(234, 234, 234);
 	width:100%;
+	text-align:center;
 }
 
 #my_tableHead{
-	border:none;
-	text-align:center;
+	border:none;	
 	background-color:#ffcbb3;
 }
+
+#my_cartCon{
+	font-size:50%;
+}
+
 #my_cartorder{
 	display:flex;
 	justify-content: center;

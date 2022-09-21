@@ -13,4 +13,9 @@ public class CartVO {
 	private int c_cnt;		//장바구니 속 상품 수량
 	private String user_id;		//장바구니에 담은 id
 	private String c_dt;			//장바구니에 넣은 시각
+	   
+    //shopVO이랑 조인해서 필요한거만  추출 
+    private String s_name;
+    private String s_content;
+    private int s_price;
 }

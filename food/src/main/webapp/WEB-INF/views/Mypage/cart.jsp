@@ -16,7 +16,7 @@
 <body>
 <div id="my_con">
 	<div id="my_main">
-	
+		
 		<div id="my_side_left" >
 			<div id="my_title">
 				<img id="my_titleim" alt="장바구니" src="../../../resources/image/mypage/cart.png">
@@ -35,47 +35,11 @@
 				<input type="checkbox" checked> 전체 선택
 				<input type="button" value="선택 삭제">			
 			</div>
-			<div id="my_cartlist">
-				<table id="my_cartlistTable">
-					<tr id="my_tableHead">
-						<td colspan="3">상품</td>
-						<td>수량</td>
-						<td>가격</td>
-						<td></td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/lemon.jpg"></td>
-						<td>상품 이름 / 어쩌구 레몬</td>
-						<td>수량 1</td><td>가격 5000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/chicken.jpg"></td>
-						<td>상품 이름 / 어쩌구</td>
-						<td>수량 1</td><td>가격 4000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>					</tr>	
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/egg.jpg"></td>
-						<td>상품 이름 / 어쩌구</td>
-						<td>수량 1</td><td>가격 15000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>
-					</tr>	
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/granate.jpg"></td>
-						<td>상품 이름 / 어쩌구 </td>
-						<td>수량 1</td><td>가격 2000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>					
-					</tr>					
+			<div id="my_cart">
+				<table id="my_cartlist">
 				</table>
 			</div>
+			
 			<div class="my_check">
 				<input type="checkbox" checked> 전체 선택
 				<input type="button" value="선택 삭제">			
