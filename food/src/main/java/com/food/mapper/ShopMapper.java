@@ -1,7 +1,6 @@
 package com.food.mapper;
 
 import java.util.ArrayList;
-
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
@@ -23,6 +22,10 @@ public interface ShopMapper {
 	//첨부파일 조회
 	public ArrayList<ShopAttachVO> Shopattachlist(int bno);
 	public void insert(ShopAttachVO attach);
+	
+	//상품목록
+	public void shoplist();
+	public ArrayList<ShopVO> list();
 	
 	
 }

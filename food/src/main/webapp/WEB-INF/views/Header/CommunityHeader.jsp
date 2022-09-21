@@ -24,6 +24,8 @@
           href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/BoardWrite.css" />
     <link rel="stylesheet" type="text/css"
           href="${pageContext.request.contextPath}/resources/CSS/Board_CSS/BoardDetail.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 </head>
 <body>
 <div id="wrap">

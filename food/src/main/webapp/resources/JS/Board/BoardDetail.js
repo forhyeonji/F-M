@@ -70,8 +70,6 @@ $(function () {
                 $('#save').hide();
             }
         })
-
-
     })
 
     const onDelete = () => {
@@ -95,52 +93,65 @@ $(function () {
         })
     }
 
-    const onLikeClick = () => {
-        let likeCheck = 0;
-
-        $('#like_btn').click(() => {
-            let id = document.getElementById("session_id").innerText;
-            let b_num = document.getElementById("bno").value;
-
-            if(likeCheck === 0) {
-                $.ajax({
-                    type: `post`,
-                    url: `/api/like/insert/${bno}`,
-                    data: JSON.stringify({user_id: id, bno: b_num}),
-                    contentType: `application/json; charset=utf-8`,
-                    success: () => {
-                        likeCheck = 1;
-                        onLikeCount();
-                    }
-                })
-            }else{
-                $.ajax({
-                    type: `post`,
-                    url: `/api/like/remove/${bno}`,
-                    data: JSON.stringify({user_id: id, bno: b_num}),
-                    contentType: `application/json; charset=utf-8`,
-                    success: () => {
-                        likeCheck = 0;
-                        onLikeCount();
-                    }
-                })
-            }
-        })
-    }
-
-    const onLikeCount = () => {
+    const onCheckVote = () => {
         $.ajax({
-            type:`get`,
-            url:`/api/lie/count/${bno}`,
-            contentType:`application/json; charset=utf-8`,
-            success:(data) => {
-                $('#like_cnt').html(data.result.bno);
+            type:`post`,
+            url:`/api/vote/check`,
+            data:JSON.stringify({"user_id":session_id,"bno":bno}),
+            contentType: "application/json; charset=utf-8",
+            success: (data) => {
+                if(data.result.check == 1){
+                    $('#vote_btn').attr("value", "favorite");
+                }else{
+                    $('#vote_btn').attr("value", "favorite_border");
+                }
             }
         })
     }
 
-    onLikeCount();
-    onLikeClick();
+    const onAddVote = () => {
+        $('.material-icons').click(() => {
+          $.ajax({
+              url:`/api/vote/add`,
+              type:`put`,
+              data:JSON.stringify({"user_id":session_id,"bno":bno}),
+              contentType: "application/json; charset=utf-8",
+              success: (data) => {
+                  onVote();
+                  onCheckVote();
+                  console.log(data);
+              }
+          })
+        })
+    }
+
+    const onRemoveVote = () => {
+        $('.material-icons').click(() => {
+            $.ajax({
+                url:`/api/vote/remove`,
+                type:`delete`,
+                data:JSON.stringify({"user_id":session_id,"bno":bno}),
+                contentType: "application/json; charset=utf-8",
+                success: (data) => {
+                    onEmptyVote();
+                    onCheckVote();
+                    console.log(data);
+                }
+            })
+        })
+    }
+
+    const onVote = () => {
+        $('#vote_btn').attr("value", "favorite")
+        $(':focus').blur();
+    }
+    const onEmptyVote = () => {
+        $('#vote_btn').attr("value", "favorite_border")
+        $(':focus').blur();
+    }
+
+
+    onCheckVote();
     boardDetail();
     onModify();
     onDelete();

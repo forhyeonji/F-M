@@ -29,6 +29,8 @@ public class NotiBoardServiceImpl implements NotiBoardService  {
 		
 	// 게시글 상세보기
 	public NotiBoardVO detail(NotiBoardVO board) {
+		
+		nbm.cntup(board);
 		return nbm.detail(board);
 	}
 	// 게시글 수정

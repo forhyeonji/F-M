@@ -54,7 +54,7 @@ public class UserController{
     // 로그인
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(UserVO userVO) {
-    	return "Main/login";
+		return "Main/login";
     }
     
     // 로그인 기능

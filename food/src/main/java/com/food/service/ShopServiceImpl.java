@@ -60,4 +60,10 @@ public class ShopServiceImpl implements ShopService {
 	public int cntup() {
 		return 0;
 	}
+	
+	//상품목록 구현
+	public ArrayList<ShopVO> list() {
+		return Sm.list();
+	}
+	
 }

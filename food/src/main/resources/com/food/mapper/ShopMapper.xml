@@ -39,9 +39,16 @@
 		where class1=#{class1}
 	</select>
 
+	<!-- 상품리스트 -->
+	<select id="list" resultType="com.food.model.ShopVO">
+	select
+	s.prodnum,Name,discountprice,today,Concat(Replace(uploadpath,'\\','/'),<![CDATA['/']]>,uuid,'-',filename)filename
+	from tb_shop s,
+	sh_appatch a
+	where s.prodnum = a.prodnum
+	order by prodnum asc;
+	</select>
+	
+	
 
 </mapper>
-
-
-
-

@@ -30,7 +30,7 @@
 		</tr>
 		
 		<tr>
-		<td colspan="2" height="600px">${detail.context}</td>
+		<td colspan="2" height="600px" class="NOTI_detailText">${detail.context}</td>
 		</tr>
 		
 	</table>
@@ -39,7 +39,7 @@
 	<input type="button" value="이전글" class="NOTI_but">
 	<input type="button" value="다음글" class="NOTI_but">
 	<input type="button" value="목록" class="NOTI_but" onclick="location.href='http://localhost:8080/QnA?sep=qna'">
-	<input type="text" value="${detail.sep}" name="sep">
+	<input type="hidden" value="${detail.sep}" name="sep">
 	
 	<input type="button" value="수정" onclick="location.href='/QnA/modify?bno=${detail.bno}'">
 	<input type="submit" value="삭제" formaction="/QnA/remove">

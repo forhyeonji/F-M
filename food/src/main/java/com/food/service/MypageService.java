@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.food.model.CartVO;
 import com.food.model.MypageVO;
 import com.food.model.UserVO;
 //마이페이지 관련 serivece
@@ -23,6 +24,9 @@ public interface MypageService {
 	
 	//회원 탈퇴를 출력하기 위한 설계
 	public void resignPost(UserVO user);
+	
+	//장바구니 출력하기 위한 설계
+	public ArrayList<CartVO> cartlist(String user_id);
 	
 	//내가 쓴글을 출력하기 위한 설계
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
