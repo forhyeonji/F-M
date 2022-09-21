@@ -8,12 +8,15 @@
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 <link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../../../resources/JS/Mypage/cart.js" charset="utf-8"></script>
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
 <div id="my_con">
 	<div id="my_main">
-	
+		
 		<div id="my_side_left" >
 			<div id="my_title">
 				<img id="my_titleim" alt="장바구니" src="../../../resources/image/mypage/cart.png">
@@ -25,48 +28,18 @@
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
 			</div>
 		</div><!-- side_left -->
-
+	<input type="hidden" name="user" value="${sessionScope.user_id }">
 		<div id="my_center">
 			<h3>🛒🛒🛒장바구니에 담긴 상품들을 확인하세요!</h3><br>
 			<div class="my_check">
 				<input type="checkbox" checked> 전체 선택
 				<input type="button" value="선택 삭제">			
 			</div>
-			<div id="my_cartlist">
-				<table>
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/lemon.jpg"></td>
-						<td>상품 이름 / 어쩌구 레몬</td>
-						<td>수량 1</td><td>가격 5000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>
-					</tr>
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/chicken.jpg"></td>
-						<td>상품 이름 / 어쩌구</td>
-						<td>수량 1</td><td>가격 4000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>					</tr>	
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/egg.jpg"></td>
-						<td>상품 이름 / 어쩌구</td>
-						<td>수량 1</td><td>가격 15000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>
-					</tr>	
-					<tr>
-						<td><input type="checkbox" checked></td>
-						<td><img src="../../../resources/image/granate.jpg"></td>
-						<td>상품 이름 / 어쩌구 </td>
-						<td>수량 1</td><td>가격 2000</td>
-						<td><input type="button" value="주문하기"><br>
-							<input type="button" value="삭제하기"></td>					
-					</tr>					
+			<div id="my_cart">
+				<table id="my_cartlist">
 				</table>
 			</div>
+			
 			<div class="my_check">
 				<input type="checkbox" checked> 전체 선택
 				<input type="button" value="선택 삭제">			

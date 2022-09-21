@@ -23,7 +23,9 @@
 
             </tr>
             <td>
-                <span id="like_cnt"></span><button id="like_btn">좋아요</button>
+                    <span id="vote_cnt"></span>
+                    <input type="button" id="vote_btn" class="material-icons" value="favorite">
+                <input id="vote_check" type="text" readonly>
             </td>
             </tbody>
         </table>

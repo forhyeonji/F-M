@@ -9,6 +9,7 @@ public class ShopVO {
 	private int prodnum; 
 	private String NAME; 
 	private String CONTENT;
+	private String today;
 	private String subcontent;
 	private int price2;
 	private int discountprice;
@@ -18,8 +19,15 @@ public class ShopVO {
 	private String Origin;
 	private int boundary;		/*구매수량*/
 	private String detail;
+	private String filename;
 	
 	
+	public String getFilename() {
+		return filename;
+	}
+	public void setFilename(String filename) {
+		this.filename = filename;
+	}
 	//AttachFileVO(파일 업로드 관련 model)
 	private ArrayList<ShopAttachVO> attach;
 	
@@ -30,6 +38,14 @@ public class ShopVO {
 		this.attach = attach;
 	}
 	
+	
+	
+	public String getToday() {
+		return today;
+	}
+	public void setToday(String today) {
+		this.today = today;
+	}
 	public int getProdnum() {
 		return prodnum;
 	}

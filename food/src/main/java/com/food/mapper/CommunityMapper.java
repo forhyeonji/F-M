@@ -62,9 +62,6 @@ public interface CommunityMapper {
      */
     void cntUp(String bno);
 
-    void plusCount(int bno);
-
-    int minusCount(int bno);
-
-    int likeCount(int bno);
+    int votePlus(int bno);
+    int voteMinus(int bno);
 }
