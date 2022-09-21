@@ -40,6 +40,14 @@
 		where user_id=#{user_id}		
 	</delete>
 	
+	
+	<select id="cartlist" resultType="com.food.model.CartVO">
+		select * 
+		from tb_shop sh join tb_cart c on sh.prodnum=c.c_prodnum
+		where user_id=#{user_id}
+	</select>
+	
+	
 	<select id="mywrite" resultType="com.food.model.MypageVO">
 		select * 
 		from (

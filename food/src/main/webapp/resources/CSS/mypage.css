@@ -140,9 +140,15 @@ canclelist
 
 /* cart */
 
-#my_cartlist > table{
+#my_cartlistTable{
 	border:1 solid rgb(234, 234, 234);
 	width:100%;
+}
+
+#my_tableHead{
+	border:none;
+	text-align:center;
+	background-color:#ffcbb3;
 }
 #my_cartorder{
 	display:flex;

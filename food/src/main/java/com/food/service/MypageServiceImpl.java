@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.food.mapper.MypageMapper;
+import com.food.model.CartVO;
 import com.food.model.MypageVO;
 import com.food.model.UserVO;
 
@@ -19,7 +20,7 @@ public class MypageServiceImpl implements MypageService {
 	
 	//마이페이지를 출력하기 위한 구현(아이디연동)
 	public UserVO mypage(UserVO user) {
-		System.out.println("마페이지로그인정보"+user);
+//		System.out.println("마페이지로그인정보"+user);
 		return mm.mypage(user);
 	}
 	
@@ -40,9 +41,14 @@ public class MypageServiceImpl implements MypageService {
 	
 	//회원탈퇴를 위한 구현
 	public void resignPost(UserVO user) {
-		System.out.println("탈퇴서비스임플 되는겨");
-		System.out.println(user);
+//		System.out.println("탈퇴서비스임플 되는겨");
+//		System.out.println(user);
 		mm.resignPost(user);
+	}
+	
+	//장바구니 리스트 출력하기 위한 구현
+	public ArrayList<CartVO> cartlist(String user_id){
+		return mm.cartlist(user_id);
 	}
 	
 	//내가 쓴 글을 출력하기 위한 구현

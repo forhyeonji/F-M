@@ -8,6 +8,9 @@
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 <link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../../../resources/JS/Mypage/cart.js" charset="utf-8"></script>
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
@@ -25,7 +28,7 @@
 				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
 			</div>
 		</div><!-- side_left -->
-
+	<input type="hidden" name="user" value="${sessionScope.user_id }">
 		<div id="my_center">
 			<h3>🛒🛒🛒장바구니에 담긴 상품들을 확인하세요!</h3><br>
 			<div class="my_check">
@@ -33,7 +36,13 @@
 				<input type="button" value="선택 삭제">			
 			</div>
 			<div id="my_cartlist">
-				<table>
+				<table id="my_cartlistTable">
+					<tr id="my_tableHead">
+						<td colspan="3">상품</td>
+						<td>수량</td>
+						<td>가격</td>
+						<td></td>
+					</tr>
 					<tr>
 						<td><input type="checkbox" checked></td>
 						<td><img src="../../../resources/image/lemon.jpg"></td>

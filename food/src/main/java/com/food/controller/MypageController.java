@@ -1,14 +1,20 @@
 package com.food.controller;
 
+import java.util.ArrayList;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.food.model.CartVO;
 import com.food.model.CommunityReplyVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
@@ -73,8 +79,8 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		ms.resignPost(user);
-		System.out.println("어디서 안된느겨");
-		System.out.println(user);
+//		System.out.println("어디서 안된느겨");
+//		System.out.println(user);
 		session.invalidate();
 		return "Main/main";
 	}
@@ -83,7 +89,16 @@ public class MypageController {
 	@RequestMapping(value = "mypage/cart", method = RequestMethod.GET)
 	public String cart() {
 		return "Mypage/cart";
+	}
+	//비동기 도전!!
+	//장바구니 리스트 출력
+	@RequestMapping(value="/mypage/cart/{user_id}", method=RequestMethod.GET)
+	public ResponseEntity<ArrayList<CartVO>> cartlist(@PathVariable String user_id){
+		System.out.println(user_id);
+		
+		return new ResponseEntity<>(ms.cartlist(user_id), HttpStatus.OK);		
 	}	
+	
 	//주문 리스트
 	@RequestMapping(value = "mypage/orderlist", method = RequestMethod.GET)
 	public String orderlist() {

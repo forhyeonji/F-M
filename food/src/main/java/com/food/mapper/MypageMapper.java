@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import com.food.model.CartVO;
 import com.food.model.MypageVO;
 import com.food.model.UserVO;
 
@@ -21,6 +22,9 @@ public interface MypageMapper {
 	
 	//회원탈퇴를 하기 위한 DB작업
 	public void resignPost(UserVO user);
+	
+	//장바구니 리스트를 출력하기 위한 DB작업
+	public ArrayList<CartVO> cartlist(String user_id);
 	
 	//내가쓴글을 출력하기위한 DB작업
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
