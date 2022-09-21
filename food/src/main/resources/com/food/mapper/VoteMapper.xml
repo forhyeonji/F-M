@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.food.mapper.VoteMapper">
+    <insert id="addVote" parameterType="com.food.model.VoteVo">
+        insert into tb_vote(user_id, bno)
+        values(#{user_id}, #{bno})
+    </insert>
+
+    <delete id="removeVote" parameterType="com.food.model.VoteVo">
+        delete from tb_vote
+        where user_id = #{user_id} and bno = #{bno}
+    </delete>
+
+    <select id="checkVote" parameterType="com.food.model.VoteVo" resultType="int">
+        select count(*)
+        from tb_vote
+        where user_id = #{user_id} and bno = #{bno}
+    </select>
+</mapper>
+

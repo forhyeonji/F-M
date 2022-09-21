@@ -58,11 +58,4 @@ public class CommunityService {
     public int deleteCommunity(int bno){
         return communityMapper.deleteCommunity(bno);
     }
-
-    public Map<String, Object> likeCount(int bno){
-        Map<String, Object> resultMap = new HashMap<>();
-        resultMap.put("bno", communityMapper.likeCount(bno));
-
-        return resultMap;
-    }
 }

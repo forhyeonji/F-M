@@ -28,7 +28,7 @@
 
 	<!-- notice script -->
 	<script src="/resources/JS/Notice/NoticeList.js" type="text/javascript"></script>
-<!-- <script src="/resources/JS/Notice/listAjax.js" type="text/javascript"></script> -->
+	<script src="/resources/JS/Notice/DirectSelect.js" type="text/javascript"></script>
 
 
 </head>

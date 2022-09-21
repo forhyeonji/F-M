@@ -14,7 +14,7 @@
 		from(
 				select @rownum:= @rownum+1 rownum, t.*
 				from (
-					select n.bno, title, reg_dt, cnt, user_id, context, BoldTitle, sep, user_tel, ans_check
+					select n.bno, title, reg_dt, cnt, user_id, context, BoldTitle, sep, user_tel, subsep, ans_check
 					from tb_notice as n left outer join tb_notianswer as a
 					on n.bno=a.bno
 				) t , (select @rownum:=0) as tmp
@@ -54,8 +54,13 @@
 						on n.bno=a.bno
 				) t , (select @rownum:=0) as tmp
 				
-				<if test="keyword==null">
-			where sep=#{sep}
+			
+			
+			<if test="keyword==null">
+				where sep=#{sep}
+				<if test="sep=='inquiry'.toString()">
+				and subsep=#{subsep}
+				</if>
 			</if>
 	
 			
@@ -77,7 +82,7 @@
 
 		
 			
-			order by bno desc
+			order by BoldTitle desc, bno desc
 				
 			) as boardlist
 		
@@ -145,10 +150,17 @@
 		select * from tb_notice where bno=#{bno}
 	</select>
 	
+	<update id="cntup">
+		update tb_notice
+		set cnt=cnt+1
+		where bno=#{bno} 
+	</update>
+	
+	
 	<!-- 게시글 수정 -->
 	<update id="modify">
 		update tb_notice
-		set title=#{title}, context=#{context}
+		set title=#{title}, context=#{context}, BoldTitle=#{boldtitle}
 		where bno=#{bno}
 	</update>
 	
@@ -163,7 +175,10 @@
 		select count(*) from tb_notice
 
 			<if test="keyword==null">
-			where sep=#{sep}	
+			where sep=#{sep}
+				<if test="sep=='inquiry'.toString()">
+				and subsep=#{subsep}
+				</if>	
 			</if>
 			
 			<if test = "keyword != null">

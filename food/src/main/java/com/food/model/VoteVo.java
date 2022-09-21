@@ -3,9 +3,9 @@ package com.food.model;
 import lombok.Data;
 
 @Data
-public class LikeVo {
-   private int like_number;
+public class VoteVo {
+   private int v_number;
    private String user_id;
    private int bno;
-   private int lick_check;
+   private int v_check;
 }

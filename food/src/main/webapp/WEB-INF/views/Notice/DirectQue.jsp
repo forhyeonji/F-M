@@ -54,8 +54,7 @@
 			
 			<div class="NOTI_Que_main_bottom">
 			<h3 class="NOTI_Que_lable">내가 남긴 문의</h3>
-			
-			
+		
 				
 			<table class="NOTI_Que_Table">	
 			
