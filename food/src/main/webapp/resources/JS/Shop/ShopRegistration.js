@@ -272,9 +272,5 @@ $(document).ready(function() {
 				}
 			})
 	});
-	// 등록버튼을 클릭하면
-	//$("#register_Btn").on("click",function(){
-		//$("#sh_form").append(input).submit();
-	//})
 
 })

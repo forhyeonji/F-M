@@ -22,7 +22,8 @@ public interface ShopService {
 	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum);
 	public int cntup();
 	
-	
+	//상품목록
+	public ArrayList<ShopVO> list();
 
 
 	
