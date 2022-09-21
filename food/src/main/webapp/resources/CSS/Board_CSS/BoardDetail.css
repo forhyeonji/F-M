@@ -67,3 +67,20 @@
     display:flex;
     justify-content: flex-end;
 }
+.material-icons{
+    border:none;
+    background:none;
+    color:red;
+}
+.material-icons:hover{
+    border:none;
+    background:none;
+    color:red;
+    font-size:30px;
+}
+.material-icons:focus{
+    border:none;
+    background:none;
+    color:red;
+    font-size:30px;
+}

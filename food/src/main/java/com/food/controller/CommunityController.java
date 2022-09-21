@@ -113,21 +113,5 @@ public class CommunityController extends CommonController {
     ){
         return ResponseEntity.ok(communityService.deleteCommunity(bno));
     }
-
-    /**
-     * 좋아요 Count 출력
-     * @param bno
-     * @return
-     */
-    @GetMapping(value = "/api/lie/count/{bno}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResCommonVO likeCount(
-            @PathVariable(value = "bno") int bno
-    ){
-
-        return ResCommonVO.builder()
-                .result(communityService.likeCount(bno))
-                .code(ResCommonCode.SUCCESS)
-                .build();
-    }
 }
 
