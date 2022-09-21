@@ -13,8 +13,7 @@
 
 		<h3 class="NOTI_bigTitle">공지 수정하기</h3>
 		
-		<input type="checkbox"> 제목 강조
-		<input type="checkbox"> 우선
+		<input type="checkbox" name="boldtitle"> 제목 강조
 		
 		
 		<div>

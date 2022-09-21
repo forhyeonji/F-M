@@ -18,6 +18,7 @@
 .NOTI_main {
 		width:1050px;
 		height:1400px;
+		
 
 }
 
@@ -100,10 +101,16 @@
 	}
 
 .NOTI_label_answer {
-	width : 600px;
+	width : 1040px;
 	padding-left : 30px;
 	background-color : rgba(255, 252, 252)
 	}
+	
+.NOTI_detailText{
+	padding : 20px;
+	vertical-align:top;
+}
+	
 
 .NOTI_textarea {
 	width : 1050px;
@@ -159,24 +166,13 @@
 }
 
 #divTest{
-	width : 100px;
+	width : 150px;
 	height : 50px;
 	margin : 0px auto;
+
 	
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -399,15 +395,10 @@
  */
  
  
-.NOTI_QnA_no{
-	width : 60px;
-	height: 51px;
-	text-align : center;
-	vertical-align :middle;
-}
+
 
 .NOTI_QnA_title{
-	width : 490px;
+	width : 520px;
 	text-align : center;
 
 }
@@ -422,6 +413,17 @@
 	width : 120px;
 	text-align : center;
 }
+
+.NOTI_QnA_cnt{
+	width : 30px;
+	height: 51px;
+	text-align : center;
+	vertical-align :middle;
+}
+
+
+
+
 
 
 .NOTI_list_no{

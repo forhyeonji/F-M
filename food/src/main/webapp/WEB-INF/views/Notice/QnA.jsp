@@ -8,12 +8,17 @@
 
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">자주하는 질문</label>  <label>어쩌고 저쩌고~</label> <br><br>
-		
+		<br>
 		
 		<!-- 검색기능 -->
 		<form action="/QnA" id="searchForm" method="get">
 		
-			<select name="type">
+			<input type="hidden" name="sep" value="qna">
+			<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
+			<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
+
+		<div class="NOTI_searchbox">
+			<select name="type" class="NOTI_select">
 				<option value="T">제목</option>
 				<option value="C">내용</option>
 				<option value="TC">제목+내용</option>
@@ -21,11 +26,11 @@
 			
 		
 			
-			<input type="hidden" name="sep" value="qna">
-			<input type="text" name="keyword">
-			<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
-			<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
-			<input type="button" value="검색" id="searchBtn">
+			<div class="NOTI_searchTd">
+				<input type="text" name="keyword" class="NOTI_searchBar" placeholder="검색어를 입력해주세요.">
+				<img src="../../../resources/image/HeaderImg/돋보기.jpg" class="NOTI_mag" id="searchBtn">
+			</div>
+		</div>
 			
 		</form>
 		
@@ -38,16 +43,16 @@
 	
 		<table class="NOTI_Table">
 		<tr class="NOTI_bar">
-			<td class="NOTI_QnA_no" class="NOTI_title_effect">No</td>
+			
 			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
 			<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
 			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
+			<td class="NOTI_QnA_cnt" class="NOTI_title_effect">조회수</td>
 		</tr>
 		<!-- for문 시작 -->
 		<c:forEach items="${list}" var="Notiboardlist">
 	
 					<tr>
-						<td class="NOTI_list_no">${Notiboardlist.bno}</td>
 						<td class="NOTI_list_title">
 		
 							<c:choose>
@@ -62,6 +67,7 @@
 						</td>
 						<td class="NOTI_list_writer">${Notiboardlist.user_id}</td>
 						<td class="NOTI_list_regdate">${Notiboardlist.reg_dt}</td>
+						<td class="NOTI_list_no">${Notiboardlist.cnt}</td>
 				</tr>
 
 

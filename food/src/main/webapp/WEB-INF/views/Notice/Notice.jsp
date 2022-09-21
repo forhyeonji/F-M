@@ -7,12 +7,13 @@
 		<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
 		<br>
-		<!-- 검색기능 -->
+	
+	
+	
+	<!-- 검색기능 -->
 	<form action="/notice" id="searchForm" method="get">
 	
 		
-		
-	
 		<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}">
 		<input type="hidden" name="amount" value="${paging.criteriaVO.amount}">
 		<input type="hidden" name="sep" value="noti">
@@ -41,17 +42,17 @@
 		<hr>
 		<table class="NOTI_Table">
 		<tr class="NOTI_bar">
-			<td class="NOTI_QnA_no" class="NOTI_title_effect">No</td>
 			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
 			<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
 			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
+			<td class="NOTI_QnA_cnt" class="NOTI_title_effect">조회수</td>
 		</tr>
 		
 		<!-- for문 시작 -->
 		<c:forEach items="${list}" var="Notiboardlist">
 	
 					<tr>
-						<td class="NOTI_list_no">${Notiboardlist.bno}</td>
+						
 						<td class="NOTI_list_title">
 		
 							<c:choose>
@@ -66,6 +67,7 @@
 						</td>
 						<td class="NOTI_list_writer">${Notiboardlist.user_id}</td>
 						<td class="NOTI_list_regdate">${Notiboardlist.reg_dt}</td>
+						<td class="NOTI_list_no">${Notiboardlist.cnt}</td>
 				</tr>
 
 
