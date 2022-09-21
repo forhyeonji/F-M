@@ -7,12 +7,15 @@
 	<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">1:1 문의 관리자</label>  <label>내가 말해주께~~~</label> <br><br>
 		
-					<select class="NOTI_King_select">
-						<option>레시피 문의</option>
-						<option>스토어 문의</option>
-						<option>커뮤니티 문의</option>
-						<option>기타 문의</option>
+					<select class="NOTI_King_select" name="subsep" id="subselect">
+						<option value="inquiry_total">전체 문의</option>
+						<option value="inquiry_recipe">레시피 문의</option>
+						<option value="inquiry_store">스토어 문의</option>
+						<option value="inquiry_comm">커뮤니티 문의</option>
+						<option value="inquiry_ect">기타 문의</option>
 					</select>
+					
+	
 					
 		<hr>	
 		<table>	
@@ -99,4 +102,5 @@
 	
 </div> <!-- main -->
 </div> <!-- container -->	
+
 <%@ include file="../Footer/footer.jsp"%>

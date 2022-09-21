@@ -56,6 +56,9 @@
 				
 			<if test="keyword==null">
 				where sep=#{sep}
+				<if test="sep=='inquiry'.toString()">
+					and subsep=#{subsep}
+				</if>
 			</if>
 	
 			

@@ -15,6 +15,7 @@ public class CriteriaVO {
     private String keyword;
     private String type;
     private String sep;
+    private String subsep;
 
     
     public CriteriaVO() {
