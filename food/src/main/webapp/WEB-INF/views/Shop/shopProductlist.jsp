@@ -44,7 +44,7 @@
 					<td>${ShopList.prodnum}</td>
 					<td>${ShopList.NAME}</td>
 					<td class="sh_listimage"><img
-						src="/display?fileName=${ShopList.filename}" width="100px"
+						src="/Shopdisplay?fileName=${ShopList.filename}" width="100px"
 						height="100px"></td>
 					<td>${ShopList.discountprice}</td>
 					<td>${ShopList.today}</td>
