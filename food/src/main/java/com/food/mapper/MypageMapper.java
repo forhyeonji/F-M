@@ -26,6 +26,9 @@ public interface MypageMapper {
 	//장바구니 리스트를 출력하기 위한 DB작업
 	public ArrayList<CartVO> cartlist(String user_id);
 	
+	//장바구니 상품을 삭제하기 위한 DB 작업
+	public int cartdelete(int c_no);
+	
 	//내가쓴글을 출력하기위한 DB작업
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
 	

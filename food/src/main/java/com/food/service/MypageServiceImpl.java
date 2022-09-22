@@ -51,6 +51,11 @@ public class MypageServiceImpl implements MypageService {
 		return mm.cartlist(user_id);
 	}
 	
+	//장바구니 상품을 삭제하기 위한 구현
+	public int cartdelete(int c_no) {
+		return mm.cartdelete(c_no);
+	}
+	
 	//내가 쓴 글을 출력하기 위한 구현
 	public ArrayList<MypageVO> mywrite(MypageVO mypage) {
 		return mm.mywrite(mypage);

@@ -50,7 +50,12 @@
 				(select price2 <include refid="shop"></include>) as s_price
 		from tb_cart c
 		where c.user_id = #{user_id}
+		order by c_dt desc
 	</select>
+
+	<delete id="cartdelete">
+		delete from tb_cart where c_no=#{c_no}
+	</delete>
 	
 	
 	<select id="mywrite" resultType="com.food.model.MypageVO">

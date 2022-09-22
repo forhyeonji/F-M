@@ -152,13 +152,20 @@ canclelist
 }
 
 #my_cartCon{
-	font-size:50%;
+	font-size:65%;
+	color:#c0c0c0;
+	font-weight:bold;
 }
 
-#my_cartorder{
-	display:flex;
-	justify-content: center;
+#my_cartAll{
+	font-size:25px;
+	background-color:#ffcbb3;
+	border:none;
+	border-radius:10px;
+	margin:5px;
+	padding:10px;
 }
+
 #my_cartpay_Tb{
 	margin:auto;
 	border:1 solid rgb(234, 234, 234);
