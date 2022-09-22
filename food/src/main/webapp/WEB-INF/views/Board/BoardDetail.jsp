@@ -22,13 +22,14 @@
                 </td>
 
             </tr>
-            <td>
-                    <span id="vote_cnt"></span>
-                    <input type="button" id="vote_btn" class="material-icons" value="favorite">
-                <input id="vote_check" type="text" readonly>
-            </td>
             </tbody>
         </table>
+        <div id="cm_vote_session">
+            <div id="cm_vote">
+                <span id="vote_cnt"></span>
+                <input type="button" disabled="disabled" id="vote_btn" class="material-icons" value="favorite">
+            </div>
+        </div>
         <div id="bw_foot">
             <c:if test="${sessionScope.user_id == board.user_id || sessionScope.user_id == 'root' || sessionScope.user_id == 'manager'}">
                 <button type="button" id="btn_modify" class="btn_write btn_modify">수정하기</button>
@@ -41,7 +42,7 @@
         </div>
         <div id="cm_reply">
             <div id="cm_reply_textarea">
-                <div id="cm_editor" contenteditable="true" name="context" aria-placeholder="댓글을 입력하세요">
+                <div id="cm_editor" contenteditable="true" name="context">
                 </div>
             </div>
             <div id="reply_body"></div>

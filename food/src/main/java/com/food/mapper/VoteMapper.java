@@ -24,4 +24,11 @@ public interface VoteMapper {
      * @param voteVo
      */
     int removeVote(VoteVo voteVo);
+
+    /**
+     * 총 투표수
+     * @param bno
+     * @return
+     */
+    int countVote(int bno);
 }

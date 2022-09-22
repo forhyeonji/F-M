@@ -4,8 +4,9 @@
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/login.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
+<script src="/resources/JS/Main/login_kakao.js"></script>
 
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js"  integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
 
 
 <div id="login_outborder">
@@ -33,7 +34,16 @@
 					<div>
 						<a class="login_a" href="https://developers.facebook.com/products/instagram/?locale=ko_KR"><img class="login_img" src="../../../resources/image/main_image/icon_logo_ex.png"></a>
 					</div>
-					  <a href="javascript:kakaoLogin();"><img src="./kakao_login.png" alt="카카오계정 로그인" style="height: 100px;"/></a>
+					
+					
+					<a id="kakao-login-btn" href="javascript:loginWithKakao()">
+						<img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
+							alt="카카오 로그인 버튼" />
+					</a>
+					<button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
+					<p id="token-result"></p>
+
+
 				</div>
 			</div>
 			

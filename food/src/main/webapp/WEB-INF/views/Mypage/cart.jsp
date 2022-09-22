@@ -30,42 +30,28 @@
 		</div><!-- side_left -->
 	<input type="hidden" name="user" value="${sessionScope.user_id }">
 		<div id="my_center">
-			<h3>🛒🛒🛒장바구니에 담긴 상품들을 확인하세요!</h3><br>
-			<div class="my_check">
-				<input type="checkbox" checked> 전체 선택
-				<input type="button" value="선택 삭제">			
-			</div>
-			<div id="my_cart">
-				<table id="my_cartlist">
-				</table>
-			</div>
 			
-			<div class="my_check">
-				<input type="checkbox" checked> 전체 선택
-				<input type="button" value="선택 삭제">			
-			</div>
-			<div id="my_cartorder">
-				<input type="submit" value="👉주문하기👈" style="font-size:30px"> 
+			<div id="my_cart">
+				<div id="my_cartIn">
+					<h3>🛒🛒🛒장바구니에 담긴 상품들을 확인하세요!</h3>
+					<div class="my_allcheck">
+						<input type="checkbox" checked name="my_allcheck" id="my_allck">
+						<label for="my_allcheck">전체 선택</label>
+					</div>
+					<div class="my_delBtn">
+						<button id="my_selectdelBtn">선택 삭제</button>
+					</div>
+				</div>
+				<div id="my_cartIn2"></div>				
 			</div>
 			<br>
 			<div id="my_cartpay" > 
 				<table id="my_cartpay_Tb">
-					<tr>
-						<th>합계</th><td>26,000원</td>
-					</tr>
-					<tr>	
-						<th>할인 금액</th><td>2,000원</td>
-					</tr>
-					<tr>			
-						<th>배송비</th>
-						<td>3,000원<p>30,000원 이상 주문 시, 무료배송</p></td>
-					</tr>
-					<tr>			
-						<th>결제 예정 금액</th>
-						<td>27,00원<p>(=합계-할인금액+배송비)</p></td>
-					</tr>		
+		
 				</table>
 			</div>
+
+			
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>
