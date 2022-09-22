@@ -39,7 +39,7 @@
 						<label for="my_allcheck">전체 선택</label>
 					</div>
 					<div class="my_delBtn">
-						<button class="my_selectdelBtn">선택 삭제</button>
+						<button id="my_selectdelBtn">선택 삭제</button>
 					</div>
 				</div>
 				<div id="my_cartIn2"></div>				

@@ -27,16 +27,33 @@ $(document).ready(function(){
 		}			
 	})
 	
-	var onecheck = $("input[name='my_onecheck']").is(":checked");
-	console.log(onecheck);	
+
 	
+	//왜 이게 반응이 없지?
 	//"개별" 체크박스를 클릭하면
 	$(".my_onecheck").on("click", function(){
 		//"전체" 체크박스 체크를 풀어라
 		alert("전체 해제");
+		var onecheck = $("input[name='my_onecheck']").is(":checked");
+		console.log(onecheck);	
 	})
+	
+	
+	//선택 삭제 버튼을 클릭하면
+	$("#my_selectdelBtn").on("click",function(){
+		var selectdelBtn = confirm("정말 삭제하시겠습니까?");
+		alert("지금 배열 넣는거 진행중");
 
-
+		
+		//장바구니 속 상품번호 저장해둘 배열 선언
+		var selectdelArr = new Array();
+		//confirm창 확인하면,
+		if(selectdelBtn){
+			var onecheck = $(".my_onecheck").is(":checked");
+			console.log(onecheck);
+		
+		}//if닫음
+	})
 
 	
 	//삭제하기 버튼 클릭하면
@@ -76,7 +93,7 @@ function cartlist(userid){
 		str+="<table id='my_cartlist'><tr id='my_tableHead'>"
 		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
 		for(var i=0; i<data.length; i++){
-			str+="<tr><td><div class='my_checkbox'><input type='checkbox'checked name='my_onecheck' class='my_onecheck' data-c_no="+data[i].c_no+"></div></td>"
+			str+="<tr><td><div class='my_checkbox'><input type='checkbox'checked name='my_onecheck' class='my_onecheck' value="+data[i].c_no+"></div></td>"
 			str+="<td>사진</td>"
 			str+="<td>"+data[i].s_name+"<br>"
 			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"

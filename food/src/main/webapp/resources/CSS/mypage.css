@@ -174,8 +174,11 @@ canclelist
 
 #my_cartpay_Tb{
 	margin:auto;
-	border:1 solid rgb(234, 234, 234);
-	width:80%;
+	width:60%;
+}
+
+#my_cartpay_Tb >tr{
+	height:50px;
 }
 
 /* delivery */
