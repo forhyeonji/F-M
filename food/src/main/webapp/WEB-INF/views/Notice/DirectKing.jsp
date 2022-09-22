@@ -6,8 +6,8 @@
 	
 	<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">1:1 문의 관리자</label>  <label>내가 말해주께~~~</label> <br><br>
-		
-					<select class="NOTI_King_select" name="subsep" id="subselect">
+		<form action="/directKing" method="get">
+					<select class="NOTI_King_select" name="type" id="subselect">
 						<option value="inquiry_total">전체 문의</option>
 						<option value="inquiry_recipe" id="1">레시피 문의</option>
 						<option value="inquiry_store" id="2">스토어 문의</option>
@@ -16,7 +16,9 @@
 					</select>
 					
 					<input type="text" value="${subsep}" name="subwhat">
-
+		</form>
+		
+		
 		<hr>	
 		<table>	
 		
