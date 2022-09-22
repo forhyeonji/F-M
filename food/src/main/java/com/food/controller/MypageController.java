@@ -93,9 +93,9 @@ public class MypageController {
 	//비동기 도전!!
 	//장바구니 리스트 출력
 	@RequestMapping(value="/mypage/cart/{user_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<CartVO>> cartlist(@PathVariable String user_id){
+	public ResponseEntity<ArrayList<CartVO>> cartlist(Model model, @PathVariable String user_id){
 		System.out.println(user_id);
-		
+		model.addAttribute("cartlist", ms.cartlist(user_id));
 		return new ResponseEntity<>(ms.cartlist(user_id), HttpStatus.OK);		
 	}	
 	

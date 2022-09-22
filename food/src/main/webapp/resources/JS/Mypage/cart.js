@@ -13,6 +13,31 @@ $(document).ready(function(){
 	//3qjs, cartpay 함수 호출
 	var multi = $("#multi").val();
 	cartpay(userid);
+
+
+	//"전체" 체크박스를 클릭하면
+	$("#my_allck").on("click", function(){	
+		var allcheck = $("#my_allck").prop("checked");
+		//전부 checked하게 해라
+		if(allcheck){
+			$(".my_onecheck").prop("checked", true);
+		//전부 체크 풀어라
+		}else{
+			$(".my_onecheck").prop("checked", false);
+		}			
+	})
+	
+	var onecheck = $("input[name='my_onecheck']").is(":checked");
+	console.log(onecheck);	
+	
+	//"개별" 체크박스를 클릭하면
+	$(".my_onecheck").on("click", function(){
+		//"전체" 체크박스 체크를 풀어라
+		alert("전체 해제");
+	})
+
+
+
 	
 	//삭제하기 버튼 클릭하면
 	$("#my_cart").on("click",".cartdelete",function(){
@@ -43,21 +68,15 @@ function cartdelete(c_no){
 	
 //cartlist 함수 선언
 function cartlist(userid){
-	alert("장바구니 오픈!!!");
 	$.getJSON("/mypage/cart/"+userid+".json", function(data){
 		console.log(data);
 		var str="";
-
 	//장바구니 담긴 상품이 있으면
 	if(data.length != 0){
-		str+="<h3>🛒🛒🛒장바구니에 담긴 상품들을 확인하세요!</h3><br>"
-		str+="<div class='my_check'><input type='checkbox' checked> 전체 선택"
-		str+="<input type='button' value='선택 삭제'></div>"
 		str+="<table id='my_cartlist'><tr id='my_tableHead'>"
-		str+="<td colspan='3'>상품</td><td>수량</td>"
-		str+="<td>상품별 합계</td><td></td></tr>"					
+		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
 		for(var i=0; i<data.length; i++){
-			str+="<tr><td><input type='checkbox' checked></td>"
+			str+="<tr><td><div class='my_checkbox'><input type='checkbox'checked name='my_onecheck' class='my_onecheck' data-c_no="+data[i].c_no+"></div></td>"
 			str+="<td>사진</td>"
 			str+="<td>"+data[i].s_name+"<br>"
 			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
@@ -69,15 +88,16 @@ function cartlist(userid){
 		}
 		str+="<tr><th colspan='6'>"
 		str+="<input id='my_cartAll' type='submit' value='👉전체주문👈'>"
-		str+="</th></tr></table>"	
+		str+="</th></tr></table>"				
 	}	
 	//장바구니에 담긴 상품이 없으면
 	else{
 		str+="<h3>장바구니에 담긴 상품이 없습니다 😢😢</h3>"
-			
+		$("#my_cartIn").hide();
 	}
 	//해당 위치에 str 전부 출력
-	$("#my_cart").html(str);	
+	$("#my_cartIn2").html(str);
+	
 	})
 }//cartlist 닫음
 	
@@ -110,8 +130,6 @@ function cartpay(userid){
 	$("#my_cartpay_Tb").html(str)
 	})	
 }
-	
-	
 	
 	
 	
