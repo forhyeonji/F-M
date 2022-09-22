@@ -11,7 +11,7 @@ $(function () {
 
                 dColumns.map((key) => $(`#${key}`).val(response.result.data[key]));
                 $('.b_title').val(ChangeOutputValue($('.b_title').val()));
-
+                loginCheck();
             },
             error: (error) => {
                 console.error(error)
@@ -94,50 +94,64 @@ $(function () {
     }
 
     const onCheckVote = () => {
+        let voteCheck;
         $.ajax({
-            type:`post`,
-            url:`/api/vote/check`,
-            data:JSON.stringify({"user_id":session_id,"bno":bno}),
+            type: `post`,
+            url: `/api/vote/check`,
+            data: JSON.stringify({"user_id": session_id, "bno": bno}),
+            async:false,
             contentType: "application/json; charset=utf-8",
             success: (data) => {
-                if(data.result.check == 1){
+                if (data.result.check == 1) {
                     $('#vote_btn').attr("value", "favorite");
-                }else{
+                } else {
                     $('#vote_btn').attr("value", "favorite_border");
                 }
+
+                voteCheck = data.result.check;
             }
         })
+        return voteCheck;
     }
 
-    const onAddVote = () => {
+    const onClickVote = () => {
         $('.material-icons').click(() => {
-          $.ajax({
-              url:`/api/vote/add`,
-              type:`put`,
-              data:JSON.stringify({"user_id":session_id,"bno":bno}),
-              contentType: "application/json; charset=utf-8",
-              success: (data) => {
-                  onVote();
-                  onCheckVote();
-                  console.log(data);
-              }
-          })
+            if(onCheckVote() == 0) {
+                $.ajax({
+                    url: `/api/vote/add`,
+                    type: `put`,
+                    data: JSON.stringify({"user_id": session_id, "bno": bno}),
+                    contentType: "application/json; charset=utf-8",
+                    success: (data) => {
+                        onVote();
+                    }
+                })
+            }else{
+                $.ajax({
+                    url: `/api/vote/remove`,
+                    type: `delete`,
+                    data: JSON.stringify({"user_id": session_id, "bno": bno}),
+                    contentType: "application/json; charset=utf-8",
+                    success: (data) => {
+                        onEmptyVote();
+                    }
+                })
+                onVoteCount();
+            }
+            onCheckVote();
+            onVoteCount();
         })
     }
 
-    const onRemoveVote = () => {
-        $('.material-icons').click(() => {
-            $.ajax({
-                url:`/api/vote/remove`,
-                type:`delete`,
-                data:JSON.stringify({"user_id":session_id,"bno":bno}),
-                contentType: "application/json; charset=utf-8",
-                success: (data) => {
-                    onEmptyVote();
-                    onCheckVote();
-                    console.log(data);
-                }
-            })
+    const onVoteCount = () => {
+        $.ajax({
+            url:`/api/vote/count/${bno}`,
+            type:`post`,
+            data:JSON.stringify({"bno":bno}),
+            contentType: "application/json; charset=utf-8",
+            success: (data) => {
+                $('#vote_cnt').text(data.result.count);
+            }
         })
     }
 
@@ -149,9 +163,16 @@ $(function () {
         $('#vote_btn').attr("value", "favorite_border")
         $(':focus').blur();
     }
+    const loginCheck = () => {
+        if(session_id !== 'null'){
+            $('#vote_btn').removeAttr("disabled");
+        }
+    }
 
 
     onCheckVote();
+    onVoteCount();
+    onClickVote();
     boardDetail();
     onModify();
     onDelete();

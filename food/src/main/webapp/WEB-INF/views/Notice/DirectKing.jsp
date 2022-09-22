@@ -6,7 +6,7 @@
 	
 	<div class="NOTI_King_main_center">
 		<label class="NOTI_notice_lable">1:1 문의 관리자</label>  <label>내가 말해주께~~~</label> <br><br>
-		
+		<form id="searchForm" action="/directKing" method="get">
 					<select class="NOTI_King_select" name="subsep" id="subselect">
 						<option value="inquiry_total">전체 문의</option>
 						<option value="inquiry_recipe" id="1">레시피 문의</option>
@@ -15,8 +15,10 @@
 						<option value="inquiry_ect" id="4">기타 문의</option>
 					</select>
 					
-					<input type="text" value="${subsep}" name="subwhat">
-
+					<input type="hidden" value="inquiry" name="sep">
+		</form>
+		
+		
 		<hr>	
 		<table>	
 		
@@ -81,19 +83,19 @@
 		
 		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
 		<c:if test="${paging.prevBtn}">
-			<a href="/directKing?sep=inquiry&subsep=#&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}" id="prepage">이전</a>
+			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}" id="prepage">이전</a>
 		</c:if>
 		
 		
 		<!-- begin(1)이 end(10)가 될 동안 반복 -->
 		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-			<a href="/directKing?sep=inquiry&subsep=#&pageNum=${num}&amount=${paging.criteriaVO.amount}" class="nowpage"> ${num} </a>
+			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${num}&amount=${paging.criteriaVO.amount}" class="nowpage"> ${num} </a>
 		</c:forEach>
 		
 		
 		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
 		<c:if test="${paging.nextBtn}">
-			<a href="/directKing?sep=inquiry&subsep=#&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}" id="nextpage">다음</a>
+			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}" id="nextpage">다음</a>
 		</c:if>
 		
 		

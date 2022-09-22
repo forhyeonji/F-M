@@ -43,4 +43,13 @@ public class VoteController {
                 .code(ResCommonCode.SUCCESS)
                 .build();
     }
+
+    @PostMapping(value="/api/vote/count/{bno}", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO countVote(@PathVariable(value="bno") int bno){
+
+        return ResCommonVO.builder()
+                .result(voteService.countVote(bno))
+                .code(ResCommonCode.SUCCESS)
+                .build();
+    }
 }

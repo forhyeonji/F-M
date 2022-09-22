@@ -36,4 +36,10 @@ public class VoteService {
         return resultMap;
     }
 
+    public Map<String, Object> countVote(int bno){
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("count",voteMapper.countVote(bno));
+
+        return resultMap;
+    }
 }

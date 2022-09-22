@@ -76,11 +76,25 @@
     border:none;
     background:none;
     color:red;
-    font-size:30px;
+    text-shadow: 0 0 10px deeppink;
 }
 .material-icons:focus{
     border:none;
     background:none;
     color:red;
-    font-size:30px;
+}
+#cm_vote{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height:40px;
+}
+#cm_vote_session{
+    height:40px;
+    width:100%;
+    margin:5px 0;
+}
+#vote_cnt{
+    font-size:20px;
+    font-weight: bold;
 }
