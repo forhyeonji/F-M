@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.food.mapper.ShopAttachMapper;
 import com.food.mapper.ShopMapper;
+import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
@@ -50,6 +51,9 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.class2(Shop);
 	}
 	
+	public int total(CriteriaVO criteriaVO) {
+		return Sm.total(criteriaVO);
+	}
 
 	//첨부파일 조회 구현
 	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum){
@@ -62,8 +66,8 @@ public class ShopServiceImpl implements ShopService {
 	}
 	
 	//상품목록 구현
-	public ArrayList<ShopVO> list() {
-		return Sm.list();
+	public ArrayList<ShopVO> list(CriteriaVO cri) {
+		return Sm.list(cri);
 	}
 	
 }

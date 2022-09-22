@@ -40,15 +40,82 @@
 	</select>
 
 	<!-- 상품리스트 -->
+	<!-- <select id="listsub" resultType="com.food.model.ShopVO">
+		select*
+		from(
+		select @rownum :=@rownum+1 rownum,s.*
+		from (select
+		s.prodnum,Name,discountprice,today,Concat(Replace(uploadpath,'\\','/'),'/',uuid,'-',filename)filename
+		from tb_shop s, sh_appatch a
+		where s.prodnum = a.prodnum)s, (select @rownum:=0) as tmp) as
+		shopProductlist
+		order by prodnum asc
+		
+		<if test = "keyword != null">
+                <choose>
+                   <when test="type == 'sh_Tp'.toString()">
+                      where title like concat('%',#{keyword},'%') 
+                   </when>
+                   <when test="type == 'sh_Tk'.toString()">
+                      where context like concat('%',#{keyword},'%') 
+                   </when>
+                   <otherwise>
+                     where (Name like concat('%',#{keyword},'%')
+                      or prodnum like concat('%',#{keyword},'%')) 
+                   </otherwise>
+                </choose>
+            </if>
+		<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} and division = "m"
+		]]>
+	</select> -->
+	
 	<select id="list" resultType="com.food.model.ShopVO">
-	select
-	s.prodnum,Name,discountprice,today,Concat(Replace(uploadpath,'\\','/'),<![CDATA['/']]>,uuid,'-',filename)filename
-	from tb_shop s,
-	sh_appatch a
-	where s.prodnum = a.prodnum
-	order by prodnum asc;
+	select*
+	from(
+	select @rownum :=@rownum+1 rownum,s.*
+	from (select
+	s.prodnum,Name,discountprice,today,Concat(Replace(uploadpath,'\\','/'),'/',uuid,'-',filename)filename
+	from tb_shop s inner join sh_appatch a
+	on s.prodnum = a.prodnum
+	<if test = "keyword != null">
+                <choose>
+                   <when test="type == 'sh_Tp'.toString()">
+                      where title like concat('%',#{keyword},'%') 
+                   </when>
+                   <when test="type == 'sh_Tk'.toString()">
+                      where context like concat('%',#{keyword},'%') 
+                   </when>
+                   <otherwise>
+                     where (Name like concat('%',#{keyword},'%')
+                      or prodnum like concat('%',#{keyword},'%')) 
+                   </otherwise>
+                </choose>
+            </if>
+            )as s, (select @rownum:=0) as tmp) as
+	shopProductlist
+	<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} 
+		]]>
+	order by prodnum desc;
+
 	</select>
-	
-	
+
+<select id="total" resultType="int">
+
+	select count(*)
+	from tb_shop t join sh_appatch s
+	on t.prodnum = s.prodnum;
+	<if test = "keyword != null">
+                <choose>
+                   <when test="type == 'sh_Tp'.toString()">
+                      where title like concat('%',#{keyword},'%') 
+                   </when>
+                   <when test="type == 'sh_Tk'.toString()">
+                      where context like concat('%',#{keyword},'%') 
+                   </when>
+                    </choose>
+            </if>
+</select>
 
 </mapper>

@@ -19,6 +19,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 /*import org.springframework.web.bind.annotation.RequestParam;*/
 
+import com.food.model.CriteriaVO;
+import com.food.model.PageVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
 import com.food.service.ShopService;
@@ -56,8 +58,13 @@ public class ShopController {
 	
 	//상품목록
 	@RequestMapping(value="/shopProductlist", method=RequestMethod.GET)
-	public String Shoplist(Model model) {
-		model.addAttribute("shoplist", shop.list());
+	public String Shoplist(Model model,CriteriaVO criteriaVO) {
+		model.addAttribute("shoplist", shop.list(criteriaVO));
+		
+		int total = shop.total(criteriaVO);
+		
+		model.addAttribute("paging",new PageVO(criteriaVO,total));
+		
 		return"Shop/shopProductlist";
 	}
 	

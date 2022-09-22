@@ -2,7 +2,6 @@
  * 상품목록 JS
  */
 
-/* var sh_serchform = $('sh_serchform'); */
 
 // 상품등록 버튼 클릭이벤트가 발생하면 상품등록 페이지로 이동
 $(document).ready(function() {
@@ -11,8 +10,8 @@ $(document).ready(function() {
 	});
 
 	// 검색버튼 동작
-	var sh_serchform = $('sh_serchform');
-
+	var sh_serchform = $('#sh_serchform');
+ 	var sh_moveForm = $('#sh_moveForm');
 	$("#sh_searchFormbtn").on("click", function(e) {
 		e.preventDefault();
 
@@ -25,4 +24,12 @@ $(document).ready(function() {
 
 		sh_searchform.submit();
 	});
+	
+	//페이지 이동 버튼
+	$(".sh_pageBtn").on("click",function(e){
+			e.preventDefault();
+			
+			sh_moveForm.find("input[name='pageNum']").val($(this).attr("href"));
+			sh_moveForm.submit();
+	})
 })

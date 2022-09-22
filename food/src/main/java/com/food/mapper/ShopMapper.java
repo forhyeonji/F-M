@@ -1,6 +1,8 @@
 package com.food.mapper;
 
 import java.util.ArrayList;
+
+import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
@@ -25,7 +27,9 @@ public interface ShopMapper {
 	
 	//상품목록
 	public void shoplist();
-	public ArrayList<ShopVO> list();
+	public ArrayList<ShopVO> list(CriteriaVO cri);
+
+	public int total(CriteriaVO criteriaVO);
 	
 	
 }

@@ -174,7 +174,7 @@ $(document).ready(function() {
 			}
 			//ajax를 사용하여 서버를 전송
 			$.ajax({
-				url:'/uploadMain',
+				url:'/ShopuploadMain',
 				data:formData,
 				contentType:false,
 				processData:false,
@@ -235,7 +235,7 @@ $(document).ready(function() {
 			}
 			//ajax를 사용하여 서버를 전송
 			$.ajax({
-				url:'/uploadSub',
+				url:'/ShopuploadSub',
 				data:formData,
 				contentType:false,
 				processData:false,

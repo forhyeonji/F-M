@@ -27,7 +27,7 @@
 			<legend>serch 필드</legend>
 			<div class="sh_serchinput">
 					<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}"> 
-					<input type="hidden" name="keyword" value="${paging.citeriaVO.keyword}"> 
+					<input type="hidden" name="amount" value="${paging.citeriaVO.amount}"> 
 					<input type="hidden" name="sep" value="Shop">
 					
 				<div class="sh_serchbox">
@@ -37,7 +37,7 @@
 						<option value="sh_PK">제품명+상품번호</option>
 					</select>		
 				<label>검색어</label>						
-					<input type="text" name="Ser" value=""/>
+					<input type="text" name="keyword" value=""/>
 					<input type="submit" value="검색" id="sh_searchFormbtn">
 				</div>
 			</div>
@@ -63,6 +63,7 @@
 				<td>상품가격</td>
 
 				<td>등록일자</td>
+
 			</tr>
 		
 			<!-- for문 시작-->
@@ -77,21 +78,32 @@
 					<td>${ShopList.today}</td>
 				</tr>
 			</c:forEach>
+			<!-- for문 끝 -->
 		</table>
 		<!-- 상품목록 끝-->
 		
 		<!-- 페이지이름 인터페이스 영역 -->
 		<div class="Shoppage">
-			<ul class="sh_pageMarker">
-					
 					<!-- 이전버튼 -->
-					<c:if test="ShopList.prev">
+					<c:if test="${paging.prevBtn}">
+						<a href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+					</c:if>		
 					
-					</c:if>			
-			
-			</ul>
+					<!-- 페이지번호 -->	
+					<c:forEach begin="${paging.startPage }" end="${sh_pageMarker.pageEnd }" var="sh_num">
+							<a href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}${paging.startPage-1}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
+					</c:forEach>
+					
+					<!-- 다음버튼 -->
+					<c:if test="${paging.nextBtn}">
+							<a href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>			
+					</c:if>
 		</div>
-		
+				<%-- <form id="sh_moveForm" action="/shopProductlist" method="get">
+						<input type="hidden" name="pageNum" value="${sh_pageMarker.cri.pageNum}">	
+						<input type="hidden" name="amount" value="${sh_pageMarker.cri.amount}">	
+						<input type="hidden" name="keyword" value="${sh_pageMarker.cri.keyword}">	
+				</form> --%>
 	</div>
 </body>
 </html>
