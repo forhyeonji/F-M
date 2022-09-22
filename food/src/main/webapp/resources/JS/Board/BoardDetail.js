@@ -136,6 +136,7 @@ $(function () {
                         onEmptyVote();
                     }
                 })
+                onVoteCount();
             }
             onCheckVote();
             onVoteCount();
