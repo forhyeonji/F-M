@@ -1,6 +1,6 @@
 $(function () {
     $('#save').hide();
-    const dColumns = ["bno", "title", "user_id"];
+    const dColumns = ["vote", "bno", "title", "user_id"];
     const boardDetail = () => {
         $.ajax({
             type: 'GET',
@@ -47,6 +47,9 @@ $(function () {
             $("#btn_modify").hide();
             $(`#btn_delete`).hide();
             $(`.btn_cancel`).hide();
+            $('#cm_vote').hide();
+            $('#cm_reply').hide();
+            $('#footer').hide();
         });
     }
 
@@ -68,6 +71,9 @@ $(function () {
                 $(`.btn_cancel`).show();
                 $("#btn_modify").show();
                 $('#save').hide();
+                $('#cm_vote').show();
+                $('#cm_reply').show();
+                $('#footer').show();
             }
         })
     })
@@ -168,6 +174,7 @@ $(function () {
             $('#vote_btn').removeAttr("disabled");
         }
     }
+
 
 
     onCheckVote();
