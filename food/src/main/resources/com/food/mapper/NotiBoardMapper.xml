@@ -58,7 +58,8 @@
 			
 			<if test="keyword==null">
 				where sep=#{sep}
-				<if test="sep=='inquiry'.toString()">
+				<!-- <if test="sep=='inquiry'.toString()"> -->
+				<if test="subsep=='inquiry_recipe'.toString()||subsep=='inquiry_store'.toString()||subsep=='inquiry_comm'.toString()||subsep=='inquiry_ect'.toString()">
 				and subsep=#{subsep}
 				</if>
 			</if>
@@ -176,7 +177,8 @@
 
 			<if test="keyword==null">
 			where sep=#{sep}
-				<if test="sep=='inquiry'.toString()">
+				<!-- <if test="sep=='inquiry'.toString()"> -->
+				<if test="subsep=='inquiry_recipe'.toString()||subsep=='inquiry_store'.toString()||subsep=='inquiry_comm'.toString()||subsep=='inquiry_ect'.toString()">
 				and subsep=#{subsep}
 				</if>	
 			</if>
