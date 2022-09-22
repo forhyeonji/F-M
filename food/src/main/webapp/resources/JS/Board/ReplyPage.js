@@ -51,7 +51,7 @@ $(function () {
         let str = ``;
         str += `<div class="cm_reply_option">`
         str += `<div class="cm_reply_option cm_reply_bottom">`;
-        str += `<span>3000/3000</span><input type="button" id="cm_reply_add" class="btn_write" value="작성">`;
+        str += `<span id="reply_size"></span><span> / 3000</span><input type="button" id="cm_reply_add" class="btn_write" value="작성">`;
         str += `</div></div>`;
 
         $('#cm_reply_textarea').append(str);
@@ -140,6 +140,16 @@ $(function () {
                 }
             })
     }
+
+    $('#cm_editor').on("propertychange change keyup paste input", function (){
+        var newValue = $(this).text();
+        if(newValue.length <= 3000) {
+            $('#reply_size').text(newValue.length);
+        }else{
+            alert("글자가 넘었습니다.");
+            $(this).text($(this).text().substring(0, 3000));
+        }
+    })
 
     onReplyOption();
     onReply();
