@@ -187,7 +187,7 @@ public class NoticeController {
 		@RequestMapping(value = "/directQue", method = RequestMethod.POST)
 		public String directQuePost (NotiBoardVO board) {
 			nbs.write(board);
-			return "redirect:/directQue";
+			return "redirect:/directQue?sep=inquiry";
 		}
 		
 

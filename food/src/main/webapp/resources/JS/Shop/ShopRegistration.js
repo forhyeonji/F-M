@@ -259,10 +259,10 @@ $(document).ready(function() {
 							var filePath = encodeURIComponent(obj.uploadPath+"/s_"+obj.uuid+"-"+obj.fileName);
 							console.log(filePath)
 							
-							str+="<li><img src='display?fileName="+filePath+"'></li>"
+							str+="<li><img src='Shopdisplay?fileName="+filePath+"'></li>"
 						}else{
 							var filePath = encodeURIComponent(obj.uploadPath+"/"+obj.uuid+"-"+obj.fileName)
-							str+="<li><a href='/download?fileName="+filePath+"'>"+obj.fileName+"</a></li>"
+							str+="<li><a href='/Shopdownload?fileName="+filePath+"'>"+obj.fileName+"</a></li>"
 						}
 						
 					})
