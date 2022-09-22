@@ -9,10 +9,10 @@
 		<form id="searchForm" action="/directKing" method="get">
 					<select class="NOTI_King_select" name="subsep" id="subselect">
 						<option value="inquiry_total">전체 문의</option>
-						<option value="inquiry_recipe" id="1">레시피 문의</option>
-						<option value="inquiry_store" id="2">스토어 문의</option>
-						<option value="inquiry_comm" id="3">커뮤니티 문의</option>
-						<option value="inquiry_ect" id="4">기타 문의</option>
+						<option value="inquiry_recipe">레시피 문의</option>
+						<option value="inquiry_store">스토어 문의</option>
+						<option value="inquiry_comm">커뮤니티 문의</option>
+						<option value="inquiry_ect">기타 문의</option>
 					</select>
 					
 					<input type="hidden" value="inquiry" name="sep">
