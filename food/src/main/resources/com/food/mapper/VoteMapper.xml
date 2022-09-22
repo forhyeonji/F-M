@@ -7,7 +7,13 @@
 <mapper namespace="com.food.mapper.VoteMapper">
     <insert id="addVote" parameterType="com.food.model.VoteVo">
         insert into tb_vote(user_id, bno)
-        values(#{user_id}, #{bno})
+        select #{user_id}, #{bno}
+        from dual
+        WHERE NOT EXISTS (
+                select *
+                from tb_vote
+                where user_id = #{user_id}
+                  and bno = #{bno})
     </insert>
 
     <delete id="removeVote" parameterType="com.food.model.VoteVo">
@@ -19,6 +25,12 @@
         select count(*)
         from tb_vote
         where user_id = #{user_id} and bno = #{bno}
+    </select>
+
+    <select id="countVote" parameterType="com.food.model.VoteVo" resultType="int">
+        select count(*)
+        from tb_vote
+        where bno = #{bno}
     </select>
 </mapper>
 
