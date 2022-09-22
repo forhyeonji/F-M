@@ -24,12 +24,12 @@ import com.food.model.ShopAttachVO;
 
 @Controller
 public class ShopUploadController {
-	@RequestMapping(value = "/uploadform", method = RequestMethod.GET)
-	public void uploadform() {
+	@RequestMapping(value = "/Shopuploadform", method = RequestMethod.GET)
+	public void Shopuploadform() {
 
 	}
 
-	@RequestMapping(value = "/uploadFormAction", method = RequestMethod.POST)
+	@RequestMapping(value = "/ShopuploadFormAction", method = RequestMethod.POST)
 	public void uploadFormPost(MultipartFile[] uploadFile) {
 
 		// 폴더 경로
@@ -56,7 +56,7 @@ public class ShopUploadController {
 
 	}
 
-	@RequestMapping(value = "/uploadAjax", method = RequestMethod.GET)
+	@RequestMapping(value = "/ShopuploadAjax", method = RequestMethod.GET)
 	public void uploadAjax() {
 
 	}
@@ -93,7 +93,7 @@ public class ShopUploadController {
 		return false;
 	}
 	// 상품이미지(메인)
-	@RequestMapping(value = "/uploadMain", method = RequestMethod.POST)
+	@RequestMapping(value = "/ShopuploadMain", method = RequestMethod.POST)
 	public ResponseEntity<ShopAttachVO> uploadAjaxPost1(MultipartFile imagemain) {
 		// AttachFileVO
 		ShopAttachVO shopattachvo = new ShopAttachVO();
@@ -108,11 +108,6 @@ public class ShopUploadController {
 			uploadPath.mkdirs();
 		}
 		// for(변수명:배열명)
-
-		//for (MultipartFile multipartFile : uploadFile) {
-			// AttachFileVO클래스의 새로운 주소를 반복적으로 생성하여
-			// ArrayList에 저장
-			//ShopAttachVO shopattachvo = new ShopAttachVO();
 
 			System.out.println(imagemain.getOriginalFilename());
 			System.out.println(imagemain.getSize());
@@ -143,17 +138,9 @@ public class ShopUploadController {
 					// ShopAttachVO의 image 변수에 true값 저장()
 					shopattachvo.setImage(true);
 
-					// 파일 생성
-					//FileOutputStream thumnail = new FileOutputStream(
-					//		new File(uploadPath, "s_" + uuid.toString() + "-" + imagemain.getOriginalFilename()));
-					// 섬네일형식의 파일 생성
-					/*Thumbnailator.createThumbnail(multipartFile.getInputStream(), thumnail, 100, 100);*/
-
-					//thumnail.close();
+				
 				} // checkImageType메서드 끝
 
-				// ShopAttachVO에 저장된 데이터를 배열의 추가
-				//shopattachvo.add(shopattachvo);
 
 			} catch (Exception e) {// 예외를 처리하라.
 				System.out.println(e.getMessage());
@@ -165,7 +152,7 @@ public class ShopUploadController {
 	
 	
 	// 상품이미지(서브)
-	@RequestMapping(value = "/uploadSub", method = RequestMethod.POST)
+	@RequestMapping(value = "/ShopuploadSub", method = RequestMethod.POST)
 	public ResponseEntity<ArrayList<ShopAttachVO>> uploadAjaxPost(MultipartFile[] imagesub) {
 		// AttachFileVO
 		ArrayList<ShopAttachVO> list = new ArrayList<>();
@@ -229,7 +216,7 @@ public class ShopUploadController {
 	}// uploadAjax 끝
 		// 이미지 주소 생성
 
-	@RequestMapping(value = "/display", method = RequestMethod.GET)
+	@RequestMapping(value = "/Shopdisplay", method = RequestMethod.GET)
 	public ResponseEntity<byte[]> getFile(String fileName) {
 		System.out.println(fileName);
 
@@ -248,7 +235,7 @@ public class ShopUploadController {
 		return result;
 	}//getFile메소드 끝
 	//다운로드 주소 생성
-	@RequestMapping(value = "/download", method = RequestMethod.GET)
+	@RequestMapping(value = "/Shopdownload", method = RequestMethod.GET)
 	public ResponseEntity<Resource>downloadFile(String fileName){
 		Resource resource = new FileSystemResource("D:\\upload\\" + fileName);
 		
