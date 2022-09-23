@@ -1,6 +1,7 @@
 package com.food.controller;
 
 import com.food.model.UserVO;
+import com.food.service.MailSendService;
 import com.food.service.UserService;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -10,6 +11,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
+import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -23,7 +26,9 @@ import org.springframework.web.util.WebUtils;
 
 import java.io.IOException;
 import java.util.Date;
+import java.util.Random;
 
+import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -35,6 +40,12 @@ public class UserController{
     @Autowired
     UserService us;
     // private UserService userService;
+
+    @Autowired
+	private MailSendService mailService;
+    
+    @Autowired
+	private JavaMailSender mailSender;
     
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     
@@ -100,7 +111,7 @@ public class UserController{
  	} 
  	
  	
- 	// 이메일 중복 검사
+ 	// 폰번호 중복 검사
   	@RequestMapping(value = "/insertphoneChk", method = RequestMethod.POST)
   	@ResponseBody
   	public String insertphoneChkPOST(String user_phone) throws Exception{
@@ -112,6 +123,54 @@ public class UserController{
  			return "success";	// 중복 아이디 x			
  		}	
 	} 
+  	
+  	
+
+  	/* 이메일 인증 */
+	@RequestMapping(value="/mailCheck", method=RequestMethod.GET)
+	@ResponseBody
+	public String mailCheckGET(String email) throws Exception{
+
+		/* 뷰(View)로부터 넘어온 데이터 확인 */
+		logger.info("이메일 데이터 전송 확인");
+		logger.info("인증번호 : " + email);
+		logger.info("이메일 : " + email);
+
+		/* 인증번호(난수) 생성 */
+		Random random = new Random();
+		int checkNum = random.nextInt(888888) + 111111;
+		logger.info("인증번호 " + checkNum);
+
+		/* 이메일 보내기 */
+		String setFrom = "foodMarket00@gmail.com";
+		String toMail = email;
+		String title = "회원가입 인증 이메일 입니다.";
+		String content = 
+				"홈페이지를 방문해주셔서 감사합니다." +
+				"<br><br>" + 
+				"인증 번호는 " + checkNum + "입니다." + 
+				"<br>" + 
+				"해당 인증번호를 인증번호 확인란에 기입하여 주세요.";		
+
+		try {
+
+			MimeMessage message = mailSender.createMimeMessage();
+			MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+			helper.setFrom(setFrom);
+			helper.setTo(toMail);
+			helper.setSubject(title);
+			helper.setText(content,true);
+			mailSender.send(message);
+
+		}catch(Exception e) {
+			e.printStackTrace();
+		}		
+
+		String num = Integer.toString(checkNum);		
+
+		return num;
+
+	}	
   	
  
   	/*

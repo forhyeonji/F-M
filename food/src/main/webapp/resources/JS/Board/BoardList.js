@@ -1,6 +1,6 @@
 "use strict"
 $(function (){
-    const columns = ["bno", "title", "cnt", "reg_dt", "user_id"];
+    const columns = ["bno", "title", "cnt", "reg_dt", "user_id", "vote"];
     const pagination = {
         page : 1,
         size: 10,
@@ -9,6 +9,28 @@ $(function (){
     }
 
     const isCommunityListBody = (data = []) => {
+        $('#b_tbody').empty();
+
+        let html = ``;
+        if(data.length === 0){
+            html += `<tr><td>데이터 없음</td></tr>`
+        } else{
+            data.map((value) => {
+                html += `<tr class="detail" id="detail-${value['bno']}">`
+                columns.map((key) => html += `<td class="cmList-${value[key]}">${value[key]}</td>`);
+                html += `</tr>`
+            });
+        }
+
+        $('#b_tbody').append(html);
+
+        $('.detail').click((e) => {
+            const bno = $(e.target).parent()[0].id.split("-")[1];
+            location.href = `/detail/${bno}`;
+        })
+    };
+
+    const isCommunityRankListBody = (data = []) => {
         $('#b_tbody').empty();
 
         let html = ``;
@@ -29,6 +51,30 @@ $(function (){
             location.href = `/detail/${bno}`;
         })
     };
+
+    const onCommunityRankList = () => {
+        $.ajax({
+            type: 'POST',
+            url: "/community/bread/rank",
+            contentType: "application/json; charset=utf-8",
+            data: JSON.stringify(pagination),
+            success: (response) => {
+                console.log(response)
+                if(response.code !== 'SUCCESS')
+                    return;
+                isCommunityRankListBody(response.result.data);
+                isPagination(response.result.count);
+            },
+            error: (error) => {
+                console.log(error)
+            }
+        });
+    }
+    const onPopular =() =>{
+        $('#cm_popular').click(() => {
+            onCommunityRankList();
+        })
+    }
 
     const isPagination = (count) => {
         if(pagination.count === count)
@@ -60,6 +106,7 @@ $(function (){
 
         pagination.page = page;
         onCommunityList();
+        onPopular();
     }
 
     const onCommunityList = () => {
@@ -86,9 +133,17 @@ $(function (){
             pagination.page = 1;
 
             onCommunityList();
+            onPopular();
         });
     }
+    const onHomeClick = () =>{
+        $('#cm_home').click(() => {
+            onCommunityList();
+        })
+    }
 
+    onHomeClick();
+    onPopular();
     onCommunityList();
     onSearch();
 });

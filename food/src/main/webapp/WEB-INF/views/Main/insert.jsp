@@ -30,11 +30,14 @@
 					<div class="insert_h4">
 						<h4>이메일</h4><br>
 					</div>
-					<div class="mail_check_wrap">
+					<div class="email_check_wrap">
 						<input type="text" id="user_email" class="insert_inputext" name="user_email">
 					</div><br>
 					<div>
-						<input type="button" id="insert_emailbtn" value="인증번호 받기">
+						<input type="text" id="insert_emailnumber" disabled="disabled">
+					</div>
+					<div>
+						<button type="button" id="insert_emailbtn" >인증번호</button>
 					</div>
 					<br>
 					<div>
@@ -79,6 +82,23 @@
 					</div>
 					<br>
 				</div><br>
+				
+				<div class="mail_wrap">
+				<div class="mail_name">이메일</div> 
+				<div class="mail_input_box">
+					<input class="mail_input" name="memberMail">
+				</div>
+				<div class="mail_check_wrap">
+					<div class="mail_check_input_box" id="mail_check_input_box_false">
+						<input class="mail_check_input" disabled="disabled">
+					</div>
+					<div class="mail_check_button">
+						<span>인증번호 전송</span>
+					</div>
+					<div class="clearfix"></div>
+					<span id="mail_check_input_box_warn"></span>
+				</div>
+			</div>
 				
 				
 				<div id="insert_id"><br>
