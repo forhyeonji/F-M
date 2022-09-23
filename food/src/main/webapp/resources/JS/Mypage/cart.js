@@ -11,50 +11,61 @@ $(document).ready(function(){
 	cartlist(userid);
 	
 	//3qjs, cartpay 함수 호출
-	var multi = $("#multi").val();
 	cartpay(userid);
 
+	//수정 버튼 클릭하면
+	$("#my_cart").on("click",".my_cntmodify",function(){
+		console.log("sdfsdf");
+	})
 
 	//"전체" 체크박스를 클릭하면
 	$("#my_allck").on("click", function(){	
 		var allcheck = $("#my_allck").prop("checked");
 		//전부 checked하게 해라
 		if(allcheck){
-			$(".my_onecheck").prop("checked", true);
+			$(".my_oneck").prop("checked", true);
 		//전부 체크 풀어라
 		}else{
-			$(".my_onecheck").prop("checked", false);
+			$(".my_oneck").prop("checked", false);
 		}			
 	})
-	
+
+
+	//"개별" 체크박스를 클릭하면
+	$("#my_cart").on("click", ".my_oneck", function(){
+		//"전체" 체크박스 체크를 풀어라
+		$("#my_allck").prop("checked",false);			
+	})
 
 	
-	//왜 이게 반응이 없지?
-	//"개별" 체크박스를 클릭하면
-	$(".my_onecheck").on("click", function(){
-		//"전체" 체크박스 체크를 풀어라
-		alert("전체 해제");
-		var onecheck = $("input[name='my_onecheck']").is(":checked");
-		console.log(onecheck);	
-	})
-	
-	
-	//선택 삭제 버튼을 클릭하면
+	//선택 삭제 버튼을 클릭하면 (다중 선택 삭제)
 	$("#my_selectdelBtn").on("click",function(){
 		var selectdelBtn = confirm("정말 삭제하시겠습니까?");
-		alert("지금 배열 넣는거 진행중");
-
 		
 		//장바구니 속 상품번호 저장해둘 배열 선언
 		var selectdelArr = new Array();
 		//confirm창 확인하면,
 		if(selectdelBtn){
-			var onecheck = $(".my_onecheck").is(":checked");
-			console.log(onecheck);
-		
+			//체크박스 체크된 상품번호만 배열에 저장 
+			$("input:checkbox[name='my_onecheck']:checked").each(function(){				
+				selectdelArr.push($(this).val());				
+			});
 		}//if닫음
+		console.log(selectdelArr);
+		//배열로 삭제 진행
+		for(var i=0; i<selectdelArr.length; i++){
+			$.ajax({
+				type:"delete",
+				url: "/mypage/cart/delete/"+selectdelArr[i],
+				success: function(result){
+				},
+				error:function(e){
+					alert("다중 선택 상품 삭제 실패 👽👽");
+				}		
+			})//ajax 닫음
+		}
+		location.reload();
 	})
-
 	
 	//삭제하기 버튼 클릭하면
 	$("#my_cart").on("click",".cartdelete",function(){
@@ -70,16 +81,15 @@ function cartdelete(c_no){
 		type:"delete",
 		url: "/mypage/cart/delete/"+c_no,
 		success: function(result){
-			if(result == "success"){
-				alert("상품 삭제 성공 'ㅅ'");
-				location.reload();	
-			}
+			alert("상품 삭제 성공 'ㅅ'");
+			location.reload();
 		},
 		error:function(e){
 			alert("상품 삭제 실패 👽👽");
-		}		
+		}
+		
 	})
-
+	
 }//cartdelete 닫음
 	
 	
@@ -93,13 +103,12 @@ function cartlist(userid){
 		str+="<table id='my_cartlist'><tr id='my_tableHead'>"
 		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
 		for(var i=0; i<data.length; i++){
-			str+="<tr><td><div class='my_checkbox'><input type='checkbox'checked name='my_onecheck' class='my_onecheck' value="+data[i].c_no+"></div></td>"
+			str+="<tr><td><input type='checkbox' checked name='my_onecheck' class='my_oneck' value="+data[i].c_no+"></td>"
 			str+="<td>사진</td>"
 			str+="<td>"+data[i].s_name+"<br>"
 			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
-			str+="<td>"+data[i].c_cnt+"</td>"
-			//상품별 합계를 어떻게 표현할 것인가
-			str+="<td><span id='multi'>"+data[i].c_cnt*data[i].s_price+"</span>원</td>"
+			str+="<td>"+data[i].c_cnt+"<input type='button' class='my_cntmodify' value='수정'></td>"
+			str+="<td>"+addComma(data[i].c_sumprod)+" 원</td>"
 			str+="<td><input type='button' value='주문하기'><br>"
 			str+="<input class='cartdelete' type='button' value='삭제하기' data-c_no="+data[i].c_no+"></td></tr>"
 		}
@@ -126,29 +135,39 @@ function cartpay(userid){
 	//장바구니 담긴 상품이 있으면
 	if(data.length != 0){
 		var str="";
-		str+="<tr><th>합계</th><td>??원</td></tr>"
-		str+="<tr><th>할인금액</th><td>얼마???원</td></tr>"
-		str+="<tr><th>배송비</th><td>얼마???원</td></tr>"
-		str+="<tr><th>결제 예정 금액</th><td>얼마???원"
-		str+="<br>(=합계 - 할인금액 + 배송비)</td></tr>"	
-			
+
+		var sum = 0;	//결제예정금액
+		var cnt = 0;	//선택한 상품 수
 		for(var i=0; i<data.length; i++){
-			var sum = parseInt(data[i].s_price);
-			sum += sum;
+			//상품수 카운트
+			sum += parseInt(data[i].c_sumprod);				
+			//결제 예정금액
+			cnt += parseInt(data[i].c_cnt);
 		}
-		str+="<tr><td colspan='2'>합계 도대체 얼마냐고"+sum+"</td></tr>"
-		str+="<tr><td colspan='2'>이거 아니자나...어휴..</td></tr>"	
+		str+="<tr><th>선택한 상품수</th><td>"+cnt+"</td></tr>"
+		str+="<tr><th>선택한 상품 합계</th><td>"+addComma(sum)+"원</td></tr>"
+		//합계가 3만원 이상이면 무료배송
+		if(sum>=30000){
+			str+="<tr><th>배송비</th><th>무료 배송</th></tr>"
+			str+="<tr><th>결제 예정 금액</th><td>"+addComma(sum)+"원</td></tr>"	
+		}else{
+			sum += 3000;
+			str+="<tr><th>배송비</th><th>3,000 원</th></tr>"
+			str+="<tr><th>결제 예정 금액</th><td>"+addComma(sum)+"원</td></tr>"
+		}
 	}	
 	//장바구니 담긴 상품 없으면
-	else{
-		
+	else{		
 	}
 	//해당 위치에 str 전부 출력
 	$("#my_cartpay_Tb").html(str)
 	})	
 }
 	
-	
+//천단위 콤마 함수 선언
+function addComma(won){
+	return won.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
 	
 	
 	

@@ -28,6 +28,9 @@ public interface MypageService {
 	//장바구니 출력하기 위한 설계
 	public ArrayList<CartVO> cartlist(String user_id);
 	
+	//장바구니 상품 수량을 수정하기 위한 설계
+	public int cartmodify(CartVO cart);
+	
 	//장바구니 상품을 삭제하기 위한 설계
 	public int cartdelete(int c_no);
 	
