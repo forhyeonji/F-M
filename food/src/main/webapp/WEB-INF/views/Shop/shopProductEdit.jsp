@@ -3,113 +3,118 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../Header/Header.jsp"%>
 
-
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopProductEdit.css">
 
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<script type="text/javascript"
+	src="../../../resources/JS/Shop/ShopProductEdit.js">
+	
+</script>
+
+<meta charset="UTF-8">
+
 </head>
 <body>
-	<h2 id="sh_edith2">상품 등록 삭제 및 수정</h2>
-	<form id="sh_form" name="sh_form" enctype="multipart/form-data"
-		method="post">
-		<table>
-			<tr>
-				<td id="sh_edittd">상품명</td>
-				<td id="sh_inputtext"><input type="text" class="Editheight" id="NAME" name="NAME"
-					value="${ShopVO.NAME}" ></td>
-			</tr>
+<div class="sh_Editmain">
+		<form action="shopProductEdit" id="sh_Editform" name="sh_Editform"
+			method="post" enctype="multipart/form-data">
+			<div class="sh_Edit">
 
-			<tr>
-				<td id="sh_edittd">한줄소개</td>
-				<td id="sh_inputtext"><input type="text" class="Editheight" id="subcontent" name="subcontent"
-					value="${ShopVO.subcontent}"></td>
-			</tr>
+				<div class="sh_EditTitle">
+					<h1 id="sh_Editpage">상품수정/삭제 페이지 입니다.</h1>
+					${ProductEdit}
+				</div>
 
-			<tr>
-				<td id="sh_edittd">상품원가</td>
-				<td id="sh_inputtext"><input type="number" class="Editheight" id="price2" name="price2"
-					value="${ShopVO.price2}"></td>
-			</tr>
+				<table id="sh_EditinputArea">
+					<tr>
+						<td>상품명</td>
+					</tr>
+					<tr>
+						<td><input type="text" id="EditName" name="NAME" value="${ShopVO.NAME}"></td>
+					</tr>
 
-			<tr>
-				<td id="sh_edittd">상품할인가</td>
-				<td id="sh_inputtext"><input type="number" class="Editheight" id="discountprice"
-					name="discountprice" value="${ShopVO.discountprice }"></td>
-			</tr>
+					<tr>
+						<td>한줄소개</td>
+					</tr>
+					<tr>
+						<td><input type="text" id="Editsub" name="subcontent" value="${ShopVO.subcontent}"></td>
+					</tr>
 
-			<tr>
-				<td id="sh_edittd">포장타입</td>
-				<td id="sh_inputtext"> <select
-					id="ShopEdit">
-						<option value="${ShopVO.packaging}">냉장</option>
-						<option value="${ShopVO.packaging}">냉동</option>
-						<option value="${ShopVO.packaging}">실온</option>
-				</select></td>
-			</tr>
+					<tr>
+						<td>상품원가</td>
+					</tr>
+					<tr>
+						<td><input type="text" id="gasPrice" name="price2" value="${ShopVO.price2}" ></td>
+					</tr>
 
-			<tr>
-				<td id="sh_edittd">판매단위</td>
-				<td id="sh_inputtext"><input type="text" class="Editheight" id="unit" name="unit"
-					value="${ShopVO.unit}"></td>
-			</tr>
+					<tr>
+						<td>상품할인가</td>
+					</tr>
+					<tr>
+						<td><input type="text" id="gasPrice" name="discountprice" value="${ShopVO.discountprice}"></td>
+					</tr>
 
-			<tr>
-				<td id="sh_edittd">원산지</td>
-				<td id="sh_inputtext"><select name="Origin">
-						<option value="${ShopVO.Origin}">미국산</option>
-						<option value="${ShopVO.Origin}">국내산</option>
-						<option value="${ShopVO.Origin}">중국산</option>
-				</select></td>
-			</tr>
+					<tr>
+						<td>상품설명</td>
+					</tr>
+					<tr>
+						<td><textarea rows="5" cols="50" id="EditgdsDes" name="CONTENT">${ShopVO.CONTENT}</textarea>
+						</td>
+					</tr>
 
-			<tr>
-				<td id="sh_edittd">상품수량</td>
-				<td id="sh_inputtext"><input type="number" class="Editheight" id="KIND" name="KIND"
-					value="${ShopVO.KIND}"></td>
-			</tr>
+					<tr>
+						<td>상세정보</td>
+					</tr>
 
-			<tr>
-				<td id="sh_edittd">입고안내</td>
-				<td id="sh_inputtext"><input type="text" class="Editheight" id="Import" name="Import"
-					value="${ShopVO.Import}"></td>
-			</tr>
-
-			<tr>
-				<td id="sh_edittd">상품설명</td>
-				<td id="sh_inputtext"><textarea id="CONTENT" class="Editheight" name="CONTENT" rows="5" cols="60">${ShopVO.CONTENT}</textarea>
-				</td>
-			</tr>
-
-			<tr>
-				<td id="sh_edittd">상세정보</td>
-				<td id="sh_inputtext"><textarea id="detail" class="Editheight" name="detail" rows="10" cols="60">${ShopVO.detail}</textarea>
-				</td>
-			</tr>
-
-			<tr>
-				<td id="sh_edittd">상품이미지</td>
-				<td id="sh_inputtext"><img src="${path}/image/${ShopVO.image}" height="300px"
-					width="310px"> <input type="file" id="image" name="image">
-				</td>
-			</tr>
-			
-			
-			<tr>
-				<td colspan="2" align="center"  id="sh_delete">
-					<input type="hidden" name="prodnum" value="${ShopVO.prodnum}">			
-					<input type="button" id="editBtn" value="수정">
-					<input type="button" id="deleteBtn" value="삭제">
-					<input type="button" id="listBtn" value="상품목록">
+					<tr>
+						<td><textarea rows="5" cols="50" id="gasDetail" name="detail">${ShopVO.detail}</textarea>
+						</td>
+					</tr>
 					
-				</td>
-			</tr>	
-			
-
-		</table>
-	</form>
-
+					<tr>
+						<td>
+							<div>
+								<label for="Editimg" id="sh_Editimg">상품이미지(메인):</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="file" id="Editimgmain" name="imagemain" style="height: 30px;">
+						<ul></ul>
+						</td>
+					</tr>
+					
+					<tr>
+						<td>
+							<div>
+								<label for="Editimg" id="sh_Editimg">상품이미지(서브):</label>
+							</div>
+						</td>
+					</tr>
+					<tr>
+						<td><input type="file" id="Editimgsub" name="imagesub" style="height: 30px;" multiple>
+						<ul></ul>
+						</td>
+					</tr>
+					
+					
+					<tr>
+						<td>
+							<div class="sh_EditArea">
+								<button type="button" id="correction_Btn">수정</button>
+								<button type="button" id="delete_Btn">삭제</button>
+								<button type="button" id="list_Btn">상품목록</button>
+							</div>
+						</td>
+					</tr>
+					
+				
+				</table>
+			</div>
+		</form>
+</div>
+		
+		
 
 </body>
 </html>

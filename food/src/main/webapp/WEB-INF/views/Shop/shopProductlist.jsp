@@ -27,7 +27,7 @@
 			<legend>serch 필드</legend>
 			<div class="sh_serchinput">
 					<input type="hidden" name="pageNum" value="${paging.criteriaVO.pageNum}"> 
-					<input type="hidden" name="amount" value="${paging.citeriaVO.amount}"> 
+					<input type="hidden" name="amount" value="${paging.criteriaVO.amount}"> 
 					<input type="hidden" name="sep" value="Shop">
 					
 				<div class="sh_serchbox">
@@ -70,7 +70,9 @@
 			<c:forEach items="${shoplist}" var="ShopList">
 				<tr>
 					<td>${ShopList.prodnum}</td>
-					<td>${ShopList.NAME}</td>
+					<td>${ShopList.NAME}<br>
+						<a href="${path}/shopProductEdit" id="sh_Edit">[상품편집]</a>
+					</td>
 					<td class="sh_listimage"><img
 						src="/Shopdisplay?fileName=${ShopList.filename}" width="100px"
 						height="100px"></td>
@@ -90,8 +92,8 @@
 					</c:if>		
 					
 					<!-- 페이지번호 -->	
-					<c:forEach begin="${paging.startPage }" end="${sh_pageMarker.pageEnd }" var="sh_num">
-							<a href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}${paging.startPage-1}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="sh_num">
+							<a href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
 					</c:forEach>
 					
 					<!-- 다음버튼 -->

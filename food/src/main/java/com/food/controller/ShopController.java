@@ -1,13 +1,6 @@
 package com.food.controller;
 
-/*import java.io.File;
-import java.io.FileInputStream;*/
 import java.util.ArrayList;
-/*import java.util.Map;
-
-import javax.servlet.ServletOutputStream;
-import javax.servlet.http.HttpServletResponse;
-*/
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -17,8 +10,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-/*import org.springframework.web.bind.annotation.RequestParam;*/
-
 import com.food.model.CriteriaVO;
 import com.food.model.PageVO;
 import com.food.model.ShopVO;
@@ -56,18 +47,7 @@ public class ShopController {
 		return "Shop/shopPurchase";
 	}
 	
-	//상품목록
-	@RequestMapping(value="/shopProductlist", method=RequestMethod.GET)
-	public String Shoplist(Model model,CriteriaVO criteriaVO) {
-		model.addAttribute("shoplist", shop.list(criteriaVO));
-		
-		int total = shop.total(criteriaVO);
-		
-		model.addAttribute("paging",new PageVO(criteriaVO,total));
-		
-		return"Shop/shopProductlist";
-	}
-	
+
 	
 	
 	
@@ -96,10 +76,31 @@ public class ShopController {
 		return "redirect:/shopProductlist";
 	}
 	
+	
+	
 
+	//상품목록
+	@RequestMapping(value="/shopProductlist", method=RequestMethod.GET)
+	public String Shoplist(Model model,CriteriaVO criteriaVO) {
+		model.addAttribute("shoplist", shop.list(criteriaVO));
+		
+		int total = shop.total(criteriaVO);
+		System.out.println("total="+total);
+		
+		
+		//페이지 인터페이스 데이터
+		model.addAttribute("paging",new PageVO(criteriaVO,total));
+		
+		return"Shop/shopProductlist";
+	}
+	
+	
+	
 	//상품 등록 후 수정
 	@RequestMapping(value="/shopProductEdit", method=RequestMethod.GET)
-	public String ShopEdit() {
+	public String ShopEdit(ShopVO Shop, Model model) {
+		model.addAttribute("ProductEdit", shop.ShopEdit(Shop));
+		
 		return"Shop/shopProductEdit";
 	}
 	

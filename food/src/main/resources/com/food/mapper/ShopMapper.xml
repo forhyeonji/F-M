@@ -11,21 +11,25 @@
 	
 	 	<selectKey keyProperty="prodnum" order="BEFORE" resultType="int">
 			select ifnull(max(prodnum),0)+1 prodnum
-			from tb_shop;
+			from tb_shop
   		</selectKey>
-	
+	 
 		insert into	tb_shop(prodnum,NAME,Origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
-		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail});
+		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail})
 	</insert>
 		
 		
 
-	<insert id="ShopEdit">
-		insert into
+	<select id="ShopEdit" resultType="com.food.model.ShopVO">
+		select * from tb_shop  	
+	</select>
+	
+<!-- 
+	insert into
 		tb_shop(prodnum,NAME,Origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
 		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail});
-	</insert>
 
+ -->
 
 
 	<!-- 상품등록시 분류 -->
@@ -70,50 +74,56 @@
 		]]>
 	</select> -->
 	
+	<!-- 상품리스트(페이징 및 검색) -->
 	<select id="list" resultType="com.food.model.ShopVO">
 	select*
 	from(
 	select @rownum :=@rownum+1 rownum,s.*
 	from (select
-	s.prodnum,Name,discountprice,today,Concat(Replace(uploadpath,'\\','/'),'/',uuid,'-',filename)filename
+	s.prodnum,NAME,discountprice,today,Concat(Replace(uploadpath,'\\','/'),'/',uuid,'-',filename)filename
 	from tb_shop s inner join sh_appatch a
 	on s.prodnum = a.prodnum
 	<if test = "keyword != null">
                 <choose>
                    <when test="type == 'sh_Tp'.toString()">
-                      where title like concat('%',#{keyword},'%') 
+                      where NAME like concat('%',#{keyword},'%') 
                    </when>
                    <when test="type == 'sh_Tk'.toString()">
-                      where context like concat('%',#{keyword},'%') 
+                      where s.prodnum like concat('%',#{keyword},'%') 
                    </when>
                    <otherwise>
-                     where (Name like concat('%',#{keyword},'%')
-                      or prodnum like concat('%',#{keyword},'%')) 
+                     where (NAME like concat('%',#{keyword},'%')
+                      or s.prodnum like concat('%',#{keyword},'%')) 
                    </otherwise>
                 </choose>
             </if>
+            order by s.prodnum desc
             )as s, (select @rownum:=0) as tmp) as
 	shopProductlist
 	<![CDATA[
 		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} 
 		]]>
-	order by prodnum desc;
+	
 
 	</select>
 
-<select id="total" resultType="int">
-
+	<!-- 상품리스트 총갯수 -->
+	<select id="total" resultType="int">
 	select count(*)
 	from tb_shop t join sh_appatch s
-	on t.prodnum = s.prodnum;
+	on t.prodnum = s.prodnum
 	<if test = "keyword != null">
                 <choose>
                    <when test="type == 'sh_Tp'.toString()">
-                      where title like concat('%',#{keyword},'%') 
+                      and NAME like concat('%',#{keyword},'%') 
                    </when>
                    <when test="type == 'sh_Tk'.toString()">
-                      where context like concat('%',#{keyword},'%') 
+                      and s.prodnum like concat('%',#{keyword},'%') 
                    </when>
+                   <otherwise>
+                     where (NAME like concat('%',#{keyword},'%')
+                      or s.prodnum like concat('%',#{keyword},'%')) 
+                   </otherwise>
                     </choose>
             </if>
 </select>
