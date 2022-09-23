@@ -17,6 +17,7 @@ $(document).ready(function(){
 		})
 
 		
+		
 		$("#NOTI_textarea").on("keyup", function(){
 			
 			var texts = $(this).val();
