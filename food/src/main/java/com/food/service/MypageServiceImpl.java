@@ -51,6 +51,12 @@ public class MypageServiceImpl implements MypageService {
 		return mm.cartlist(user_id);
 	}
 	
+	//장바구니 상품 수량을 수정하기 위한 구현
+	public int cartmodify(CartVO cart) {
+		System.out.println("수정하는거 연결된겨?");
+		return mm.cartmodify(cart);
+	}
+	
 	//장바구니 상품을 삭제하기 위한 구현
 	public int cartdelete(int c_no) {
 		return mm.cartdelete(c_no);
