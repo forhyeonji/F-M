@@ -103,11 +103,11 @@ public class MypageController {
 	
 	//장바구니 상품 수량 수정
 	@ResponseBody
-	@RequestMapping(value="/mypage/cart/modify/{c_no}", method=RequestMethod.PUT)
+	@RequestMapping(value="/mypage/cart/modify", method=RequestMethod.PUT)
 	public ResponseEntity<String> cartmodify(HttpSession session, @RequestBody CartVO cart){
 		int result = ms.cartmodify(cart);
 		System.out.println("수정하는거 콘트롤러 연결된겨?");
-		
+		System.out.println(cart);
 		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
 						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
