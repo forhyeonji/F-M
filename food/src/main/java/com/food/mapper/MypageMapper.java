@@ -49,5 +49,11 @@ public interface MypageMapper {
 	
 	//댓글용 전체 건수 조회하는 DB작업
 	public int retotal(MypageVO mypage);
+	
+	//내가 좋아요 한 글 보기
+	public List<Map<String, Object>> mylike(MypageVO mypage);
+	
+	//내가 좋아요 한 글 수
+	public int liketotal(MypageVO mypage);
 
 }

@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CartVO;
-import com.food.model.CommunityReplyVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 import com.food.model.PageVO;
@@ -182,7 +181,7 @@ public class MypageController {
 	//VO를 list로 보내서 페이징 (완료!!)
 	@RequestMapping(value = "mypage/myreply", method = RequestMethod.GET)
 	public String myreply(UserVO user, MypageVO mypage, 
-			CommunityReplyVO reply, CriteriaVO cri, Model model, HttpSession session) {
+			CriteriaVO cri, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("user_id");
 		System.out.println("내[[[댓글]]]아이디"+id);
 		user.setUser_id(id);
@@ -199,7 +198,17 @@ public class MypageController {
 
 	//내가 좋아요 누른 글 목록
 	@RequestMapping(value = "mypage/mylike", method = RequestMethod.GET)
-	public String mylike() {
+	public String mylike(HttpSession session, UserVO user, MypageVO mypage, Model model,
+			CriteriaVO cri ) {
+		String id = (String)session.getAttribute("user_id");
+		user.setUser_id(id);
+		mypage.setUser_id(id);
+		
+		model.addAttribute("user", ms.mypage(user));
+		model.addAttribute("mylike", ms.mylike(mypage));
+		
+		int total = ms.liketotal(mypage);
+		model.addAttribute("paging", new PageVO(cri, total));
 		return "Mypage/mylike";
 	}
 	

@@ -97,6 +97,20 @@
 		]]>
 	</select>
 	
+	<select id="mylike" parameterType="com.food.model.VoteVo" resultType="com.food.model.MypageVO">
+		select v.*,
+			(select title from tb_community co where co.bno = v.bno) as title,
+			(select vote from tb_community co where co.bno = v.bno) as likecnt
+		from  tb_vote v 
+		where user_id=#{user_id}
+		order by v.bno desc 
+	</select>
+	
+	<select id="liketotal" resultType="int">
+		select count(*) from tb_vote
+		where user_id=#{user_id}
+	</select>
+	
 	<select id="retotal" resultType="int">
 		select count(*) from tb_community_reply
 		where user_id=#{user_id}

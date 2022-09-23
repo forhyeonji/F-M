@@ -52,5 +52,9 @@ public interface MypageService {
 	//댓글용 전체 건수 설계
 	public int retotal(MypageVO mypage);
 	
-
+	//내가 좋아요한 글 보기
+	public List<Map<String, Object>> mylike(MypageVO mypage);
+	
+	//내가 좋아요한 글 수
+	public int liketotal(MypageVO mypage);
 }

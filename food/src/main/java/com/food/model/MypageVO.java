@@ -34,6 +34,11 @@ public class MypageVO {
     //내글에 달린 댓글 수 카운트
     private int replycnt;
     
+    //좋아요글VO포함
+    private List<VoteVo> voteVOList;
+    //좋아요 갯수
+    private int likecnt;
+    
     
     public MypageVO() {
     	this(1,10);

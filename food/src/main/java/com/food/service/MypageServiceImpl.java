@@ -92,5 +92,13 @@ public class MypageServiceImpl implements MypageService {
 		return mm.retotal(mypage);
 	}
 
-
+	//내가 좋아요 한 글 보기
+	public List<Map<String, Object>> mylike(MypageVO mypage){
+		return mm.mylike(mypage);
+	}
+	
+	//내가 좋아요한 글 수
+	public int liketotal(MypageVO mypage) {
+		return mm.liketotal(mypage);
+	}
 }
