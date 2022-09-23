@@ -52,7 +52,7 @@
 	</select>
 	
 	<update id="cartmodify">
-		update tb_cart set c_cnt=#{c_cnt} c_prodnum=#{c_prodnum}
+		update tb_cart set c_cnt=#{c_cnt} where c_no=#{c_no}
 	</update>
 
 	<delete id="cartdelete">
