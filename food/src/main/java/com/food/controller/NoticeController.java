@@ -1,5 +1,6 @@
 package com.food.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -179,9 +180,15 @@ public class NoticeController {
 			
 			int total2 = nbs.total2(mypage);	
 			model.addAttribute("paging", new Page2VO(criteriaVO, total2));
-
+			
+			if(id==null) {
+				
+				return "/Notice/directAlert";
+			}
+			
 			return "/Notice/DirectQue";
 		}
+		
 		
 		
 		@RequestMapping(value = "/directQue", method = RequestMethod.POST)
@@ -191,6 +198,7 @@ public class NoticeController {
 		}
 		
 
+		
 		
 		
 		@RequestMapping(value = "/directQue_detail", method = RequestMethod.GET)

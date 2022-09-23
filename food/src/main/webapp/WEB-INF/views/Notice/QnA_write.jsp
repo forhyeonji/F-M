@@ -27,13 +27,14 @@
 	<tr>
 		<td>
 			<textarea style="resize: none" class="NOTI_textarea" placeholder="내용을 입력해 주세요" name="context" id="NOTI_textarea"></textarea>
-			<p id="check_context">(0 / 최대 2000자)</p>
+			<p id="check_context" class="check_css">(0 / 최대 2000자)</p>
 		</td>
 	</tr>
 	
 	</table>
 	
 	<div class="NOTI_button">
+		<input type="hidden" value="${sessionScope.user_id}" name="user_id">
 		<input type="submit" class="NOTI_but" value="등록">
 		<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://localhost:8080/QnA?sep=qna'">
 		<input type="hidden" value="qna" name="sep">

@@ -38,7 +38,7 @@
 						<input type="checkbox" checked name="my_allcheck" id="my_allck">
 						<label for="my_allcheck">전체 선택</label>
 						<button id="my_selectdelBtn">선택 삭제</button>
-					</div>
+					</div>					
 				</div>
 			
 				<div id="my_cartIn2"></div>				

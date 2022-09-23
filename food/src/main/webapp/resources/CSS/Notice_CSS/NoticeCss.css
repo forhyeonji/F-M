@@ -122,7 +122,11 @@
 	box-sizing : border-box;
 	}
 	
-
+	
+.check_css {
+	color : gray;
+	font-size : 15px;
+}
 
 
 .NOTI_text {

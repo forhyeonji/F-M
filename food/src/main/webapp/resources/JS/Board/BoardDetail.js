@@ -130,6 +130,7 @@ $(function () {
                     contentType: "application/json; charset=utf-8",
                     success: (data) => {
                         onVote();
+                        votePlus()
                     }
                 })
             }else{
@@ -140,6 +141,7 @@ $(function () {
                     contentType: "application/json; charset=utf-8",
                     success: (data) => {
                         onEmptyVote();
+                        voteMinus()
                     }
                 })
                 onVoteCount();
@@ -175,7 +177,25 @@ $(function () {
         }
     }
 
-
+    const votePlus = () => {
+        $.ajax({
+            url:`/api/vote/cntup`,
+            type:`post`,
+            data:JSON.stringify({"bno":bno}),
+            contentType: "application/json; charset=utf-8",
+            success: (data) => {
+                console.log(data);
+            }
+        })
+    }
+    const voteMinus = () => {
+        $.ajax({
+            url:`/api/vote/cntdown`,
+            type:`post`,
+            data:JSON.stringify({"bno":bno}),
+            contentType: "application/json; charset=utf-8"
+        })
+    }
 
     onCheckVote();
     onVoteCount();

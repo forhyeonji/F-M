@@ -28,6 +28,15 @@ public class CommunityService {
 
         return resultMap;
     }
+    public Map<String, Object> getBoardRankList(ReqPageVO reqPageVO) {
+        Map<String, Object> resultMap = new HashMap<>();
+
+        reqPageVO.setPage((reqPageVO.getPage() - 1) * reqPageVO.getSize());
+        resultMap.put("data", communityMapper.selectBoardRankList(reqPageVO));
+        resultMap.put("count", communityMapper.selectCommunityCount(reqPageVO));
+
+        return resultMap;
+    }
 
     @Transactional
     public CommunityVO seleteComuunityOne(String bno){
@@ -57,5 +66,18 @@ public class CommunityService {
 
     public int deleteCommunity(int bno){
         return communityMapper.deleteCommunity(bno);
+    }
+
+    public Map<String, Object> votePlus(CommunityVO communityVO){
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("data",communityMapper.votePlus(communityVO));
+
+        return resultMap;
+    }
+    public Map<String, Object> voteMinus(CommunityVO communityVO){
+        Map<String, Object> resultMap = new HashMap<>();
+        resultMap.put("data",communityMapper.voteMinus(communityVO));
+
+        return resultMap;
     }
 }
