@@ -34,13 +34,14 @@ public class ShopServiceImpl implements ShopService {
 		});
 	}
 	
+	
 	public ShopVO shop(ShopVO Shop) {
 		System.out.println("등록완료");
 		return Sm.shop(Shop);
 	}
 
-	public void ShopEdit(ShopVO Shop) {
-		Sm.ShopEdit(Shop);
+	public ShopVO ShopEdit(ShopVO Shop) {
+		return Sm.ShopEdit(Shop);
 	}
 	
 	public ArrayList<ShopdivisionVO> class1() {
@@ -51,13 +52,10 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.class2(Shop);
 	}
 	
-	public int total(CriteriaVO criteriaVO) {
-		return Sm.total(criteriaVO);
-	}
 
 	//첨부파일 조회 구현
 	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum){
-		return Sm.Shopattachlist(prodnum);
+		return sam.Shopattachlist(prodnum);
 	}
 	
 	@Override
@@ -70,4 +68,15 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.list(cri);
 	}
 	
+	//상품 총 갯수
+		public int total(CriteriaVO criteriaVO) {
+			return Sm.total(criteriaVO);
+		}
+
+		@Override
+		public void insert(ShopAttachVO attach) {
+			// TODO Auto-generated method stub
+			
+		}
+
 }

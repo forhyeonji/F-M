@@ -163,7 +163,7 @@ public class NoticeController {
 	/* 1:1문의 질문 */	
 		
 		@RequestMapping(value = "/directQue", method = RequestMethod.GET)
-		public String directQue (HttpServletRequest request, UserVO user, MypageVO mypage, Model model, CriteriaVO criteriaVO, HttpSession session) {
+		public String directQue (UserVO user, MypageVO mypage, Model model, CriteriaVO criteriaVO, HttpSession session) {
 			
 			
 			
@@ -183,15 +183,12 @@ public class NoticeController {
 			
 			if(id==null) {
 				
-				System.out.println("로그인 회원만 이용가능합니다.");
-				
 				return "/Notice/directAlert";
 			}
 			
-			
-
 			return "/Notice/DirectQue";
 		}
+		
 		
 		
 		@RequestMapping(value = "/directQue", method = RequestMethod.POST)
@@ -201,6 +198,7 @@ public class NoticeController {
 		}
 		
 
+		
 		
 		
 		@RequestMapping(value = "/directQue_detail", method = RequestMethod.GET)

@@ -15,7 +15,7 @@ public interface ShopMapper {
 	public ShopVO shop(ShopVO Shop);
 	
 	//상품등록 수정
-	public void ShopEdit(ShopVO Shop);
+	public ShopVO ShopEdit(ShopVO Shop);
 	
 	public ArrayList<ShopdivisionVO> class1();
 	
@@ -27,9 +27,14 @@ public interface ShopMapper {
 	
 	//상품목록
 	public void shoplist();
+	
+	//페이징관련
 	public ArrayList<ShopVO> list(CriteriaVO cri);
-
+	
+	//상품 총 갯수
 	public int total(CriteriaVO criteriaVO);
 	
+	//상품목록 검색
+	public ArrayList<ShopVO> goodsGetList(CriteriaVO cri);
 	
 }
