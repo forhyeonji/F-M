@@ -1,5 +1,6 @@
 package com.food.controller;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -162,7 +163,7 @@ public class NoticeController {
 	/* 1:1문의 질문 */	
 		
 		@RequestMapping(value = "/directQue", method = RequestMethod.GET)
-		public String directQue (UserVO user, MypageVO mypage, Model model, CriteriaVO criteriaVO, HttpSession session) {
+		public String directQue (HttpServletRequest request, UserVO user, MypageVO mypage, Model model, CriteriaVO criteriaVO, HttpSession session) {
 			
 			
 			
@@ -179,6 +180,15 @@ public class NoticeController {
 			
 			int total2 = nbs.total2(mypage);	
 			model.addAttribute("paging", new Page2VO(criteriaVO, total2));
+			
+			if(id==null) {
+				
+				System.out.println("로그인 회원만 이용가능합니다.");
+				
+				return "/Notice/directAlert";
+			}
+			
+			
 
 			return "/Notice/DirectQue";
 		}
