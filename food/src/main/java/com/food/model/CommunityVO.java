@@ -10,5 +10,5 @@ public class CommunityVO {
     private String reg_dt;
     private int cnt;
     private String user_id;
-    private int vote_cnt;
+    private int vote;
 }

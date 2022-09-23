@@ -22,6 +22,13 @@ public interface CommunityMapper {
     List<CommunityVO> selectBoardList(ReqPageVO reqPageVO);
 
     /**
+     * 인기순 출력 쿼리
+     * @param reqPageVO
+     * @return
+     */
+    List<CommunityVO> selectBoardRankList(ReqPageVO reqPageVO);
+
+    /**
      * community 리스트 전체 카운터 쿼리
      * @param reqPageVO
      * @return
@@ -62,6 +69,6 @@ public interface CommunityMapper {
      */
     void cntUp(String bno);
 
-    int votePlus(int bno);
-    int voteMinus(int bno);
+    int votePlus(CommunityVO communityVO);
+    int voteMinus(CommunityVO communityVO);
 }

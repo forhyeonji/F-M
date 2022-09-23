@@ -15,6 +15,7 @@ import java.util.Map;
 public class VoteService {
 
     private final VoteMapper voteMapper;
+    private final CommunityMapper communityMapper;
 
     public Map<String, Object> checkVote(VoteVo voteVo){
         Map<String, Object> resultMap = new HashMap<>();

@@ -224,11 +224,12 @@ ul li{
     width:150px;
 }
 #search_btn{
-    height: 23px;
+    height: 25px;
     border:1px solid #dddddd;
     border-left:0;
     width:23px;
     color:#212121;
+    cursor:pointer;
 }
 #search_btn:hover, #abc:hover{
     background: aliceblue;
@@ -351,4 +352,17 @@ ul li{
 #b_tbody > tr > td{
     text-align: center;
     border: 1px solid #dddddd;
+}
+.cursorPoint{
+    cursor:pointer;
+    background:none;
+    border:none;
+    font-size:1.2em;
+}
+.cursorPoint:active{
+    font-size:1.5em;
+}
+.blist_vote{
+    width:85px;
+    text-align:center;
 }
