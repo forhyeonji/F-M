@@ -21,8 +21,6 @@
                         <a href="#" class="b_menu">양식</a>
                     </div>
                 </li>
-                <li><a href="#" class="b_menu">잡담</a></li>
-                <li><a href="#" class="b_menu">실시간채팅</a></li>
             </ul>
         </div>
 
@@ -35,11 +33,8 @@
             <div>
                 <table class="tb_nav" id="b_table">
                     <tr>
-                        <td id="b_home"><a href="#" class="b_tag"><span class="b_span">🏠</span></a></td>
-                        <td id="b_best"><a href="#" class="b_tag"><span class="b_span">인기</span></a></td>
-                        <td class="b_show_view"><a href="###">👍</a>
-                            <a href="###">👍</a>
-                        </td>
+                        <td id="b_home"><button id="cm_home" class="b_span cursorPoint">🏠</button></td>
+                        <td id="b_best"><button id="cm_popular" class="b_span cursorPoint">인기</button></td>
                     </tr>
                 </table>
             </div>
@@ -54,6 +49,7 @@
                             <th class="blist_cnt">조회수</th>
                             <th class="blist_date">날짜</th>
                             <th class="blist_user">아이디</th>
+                            <th class="blist_vote">추천수</th>
                         </tr>
                         </thead>
                         <tbody id="b_tbody">

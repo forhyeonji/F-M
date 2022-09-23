@@ -34,6 +34,15 @@ public class CommunityController extends CommonController {
                 .code(ResCommonCode.SUCCESS)
                 .build();
     }
+    @PostMapping(value = "/community/bread/rank", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO getCommunityRankList(@RequestBody ReqPageVO reqVO) {
+        isLog(reqVO);
+
+        return ResCommonVO.builder()
+                .result(communityService.getBoardRankList(reqVO))
+                .code(ResCommonCode.SUCCESS)
+                .build();
+    }
 
     /**
      * 게시글 상세보기
@@ -112,6 +121,21 @@ public class CommunityController extends CommonController {
             @PathVariable(value = "bno", required = true) int bno
     ){
         return ResponseEntity.ok(communityService.deleteCommunity(bno));
+    }
+
+    @PostMapping(value="/api/vote/cntup", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO votePlus(@RequestBody CommunityVO communityVO){
+        return ResCommonVO.builder()
+                .result(communityService.votePlus(communityVO))
+                .code(ResCommonCode.SUCCESS)
+                .build();
+    }
+    @PostMapping(value="/api/vote/cntdown", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    public ResCommonVO voteMinus(@RequestBody CommunityVO communityVO){
+        return ResCommonVO.builder()
+                .result(communityService.voteMinus(communityVO))
+                .code(ResCommonCode.SUCCESS)
+                .build();
     }
 }
 

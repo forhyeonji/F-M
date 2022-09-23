@@ -10,8 +10,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CartVO;
@@ -90,14 +92,25 @@ public class MypageController {
 	public String cart() {
 		return "Mypage/cart";
 	}
-	//비동기 도전!!
+	//장바구니는 비동기 도전!!
 	//장바구니 리스트 출력
 	@RequestMapping(value="/mypage/cart/{user_id}", method=RequestMethod.GET)
 	public ResponseEntity<ArrayList<CartVO>> cartlist(Model model, @PathVariable String user_id){
 		System.out.println(user_id);
 		model.addAttribute("cartlist", ms.cartlist(user_id));
 		return new ResponseEntity<>(ms.cartlist(user_id), HttpStatus.OK);		
-	}	
+	}
+	
+	//장바구니 상품 수량 수정
+	@ResponseBody
+	@RequestMapping(value="/mypage/cart/modify", method=RequestMethod.PUT)
+	public ResponseEntity<String> cartmodify(HttpSession session, @RequestBody CartVO cart){
+		int result = ms.cartmodify(cart);
+		System.out.println("수정하는거 콘트롤러 연결된겨?");
+		System.out.println(cart);
+		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
+						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
 	
 	//장바구니 상품 삭제
 	@RequestMapping(value="/mypage/cart/delete/{c_no}", method=RequestMethod.DELETE)
@@ -107,7 +120,7 @@ public class MypageController {
 		return result==1? new ResponseEntity<>("success",HttpStatus.OK)
 						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
-	
+		
 	//주문 리스트
 	@RequestMapping(value = "mypage/orderlist", method = RequestMethod.GET)
 	public String orderlist() {

@@ -17,13 +17,14 @@
              , date_format(reg_dt, '%m-%d') reg_dt
              , cnt
              , user_id
+             , vote
         FROM tb_community
         WHERE bno = #{value}
     </select>
 
     <sql id="communityListSQL">
         select
-        bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id
+        bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id, vote
         from tb_community
         <trim prefix="WHERE" prefixOverrides="AND | OR">
             <if test="title != null and title != ''">
@@ -33,8 +34,25 @@
         order by bno desc
     </sql>
 
+    <sql id="communityRankListSQL">
+        select
+        bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id, vote
+        from tb_community
+        <trim prefix="WHERE" prefixOverrides="AND | OR">
+            <if test="title != null and title != ''">
+                AND title LIKE CONCAT('%', #{title}, '%')
+            </if>
+        </trim>
+        order by vote desc, reg_dt desc
+    </sql>
+
     <select id="selectBoardList" parameterType="com.food.model.ReqPageVO" resultType="com.food.model.CommunityVO">
         <include refid="communityListSQL"/>
+        <include refid="commonSql.pagingSuffix"/>
+    </select>
+
+    <select id="selectBoardRankList" parameterType="com.food.model.ReqPageVO" resultType="com.food.model.CommunityVO">
+        <include refid="communityRankListSQL"/>
         <include refid="commonSql.pagingSuffix"/>
     </select>
 
@@ -72,13 +90,13 @@
 
     <update id="votePlus">
         update tb_community
-        set vote_cnt = vote_cnt + 1
+        set vote = vote + 1
         where bno = #{bno}
     </update>
 
     <update id="voteMinus">
         update tb_community
-        set vote_cnt = vote_cnt - 1
+        set vote = vote - 1
         where bno = #{bno}
     </update>
 </mapper>

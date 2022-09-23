@@ -174,11 +174,26 @@ canclelist
 
 #my_cartpay_Tb{
 	margin:auto;
-	width:60%;
+	width:50%;
+	text-align:center;
 }
 
 #my_cartpay_Tb >tr{
-	height:50px;
+	height:30px;
+}
+
+#my_cartpay_Tb >tr>td{
+	background-color:#ffcbb3;	
+	font-weight:bold;
+	font-size:20px;
+	border:none;
+	border-radius:10px;	
+}
+
+.my_cntnow{
+	width:30px;
+	height:20px;
+	text-align:center;
 }
 
 /* delivery */
