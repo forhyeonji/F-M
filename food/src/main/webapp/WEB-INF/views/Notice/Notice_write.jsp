@@ -26,8 +26,10 @@
 		
 	
 		<tr>
-			<td><textarea class="NOTI_textarea" placeholder="내용을 입력해 주세요" name="context"></textarea></td>
-			
+			<td>
+				<textarea style="resize: none" class="NOTI_textarea" placeholder="내용을 입력해 주세요" name="context" id="NOTI_textarea"></textarea>
+				<p id="check_context">(0 / 최대 2000자)</p>
+			</td>
 		</tr>
 	
 		</table>

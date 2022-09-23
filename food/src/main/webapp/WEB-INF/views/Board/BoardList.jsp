@@ -21,8 +21,6 @@
                         <a href="#" class="b_menu">양식</a>
                     </div>
                 </li>
-                <li><a href="#" class="b_menu">잡담</a></li>
-                <li><a href="#" class="b_menu">실시간채팅</a></li>
             </ul>
         </div>
 
@@ -37,9 +35,6 @@
                     <tr>
                         <td id="b_home"><a href="#" class="b_tag"><span class="b_span">🏠</span></a></td>
                         <td id="b_best"><a href="#" class="b_tag"><span class="b_span">인기</span></a></td>
-                        <td class="b_show_view"><a href="###">👍</a>
-                            <a href="###">👍</a>
-                        </td>
                     </tr>
                 </table>
             </div>
