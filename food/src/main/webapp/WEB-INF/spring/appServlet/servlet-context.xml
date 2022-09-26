@@ -33,7 +33,28 @@
 				</beans:bean>
 			</mvc:message-converters>
 		</mvc:annotation-driven>
-
+		
+	
+	
+	<!-- 회원가입 메일 인증 -->
+	<beans:bean id="mailSender"	class="org.springframework.mail.javamail.JavaMailSenderImpl">
+		<beans:property name="host" value="smtp.daum.net" />
+		<beans:property name="port" value="465" /><!-- 465 or 25 -->
+		<beans:property name="username" value="ssnow000" />
+		<beans:property name="password" value="example1234!" />
+		<beans:property name="defaultEncoding" value="utf-8" />
+		<beans:property name="javaMailProperties">
+			<beans:props>
+				<beans:prop key="mail.transport.protocol">smtp</beans:prop>
+				<beans:prop key="mail.smtp.auth">true</beans:prop>
+				<beans:prop key="mail.smtp.starttls.enable">true</beans:prop>
+				<beans:prop key="mail.debug">true</beans:prop>
+		
+			</beans:props>
+		</beans:property>
+	</beans:bean>
+	<!-- <beans:prop key="mail.smtp.ssl.trust">smtp.daum.net</beans:prop>
+	<beans:prop key="mail.smtp.ssl.protocols">TLSv1.2</beans:prop> -->
 
 
 </beans:beans>
