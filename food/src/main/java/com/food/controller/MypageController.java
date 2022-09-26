@@ -21,6 +21,7 @@ import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
 import com.food.model.PageVO;
 import com.food.model.UserVO;
+import com.food.model.VoteVo;
 import com.food.service.MypageService;
 
 @Controller
@@ -198,10 +199,11 @@ public class MypageController {
 
 	//내가 좋아요 누른 글 목록
 	@RequestMapping(value = "mypage/mylike", method = RequestMethod.GET)
-	public String mylike(HttpSession session, UserVO user, MypageVO mypage, Model model,
+	public String mylike(HttpSession session, UserVO user, VoteVo vote, MypageVO mypage, Model model,
 			CriteriaVO cri ) {
 		String id = (String)session.getAttribute("user_id");
 		user.setUser_id(id);
+		vote.setUser_id(id);
 		mypage.setUser_id(id);
 		
 		model.addAttribute("user", ms.mypage(user));

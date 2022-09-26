@@ -37,7 +37,7 @@ public class MypageVO {
     //좋아요글VO포함
     private List<VoteVo> voteVOList;
     //좋아요 갯수
-    private int likecnt;
+    private int vote;
     
     
     public MypageVO() {
