@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
+
 import com.food.model.CriteriaVO;
 import com.food.model.PageVO;
 import com.food.model.ShopVO;
@@ -95,21 +97,30 @@ public class ShopController {
 	}
 	
 	
-	
-	//상품 등록 후 수정
-	@RequestMapping(value="/shopProductEdit", method=RequestMethod.GET)
-	public String ShopEdit(ShopVO Shop, Model model) {
-		model.addAttribute("ProductEdit", shop.ShopEdit(Shop));
+	// 상품수정 화면
+	@RequestMapping(value = "/shopProductEdit", method = RequestMethod.GET)
+	// 상품목록리스트 화면에서 prodnum을 넘겨서 ShopVO에 저장
+	public String ShopProductEdit(ShopVO shopvo, Model model) {
+		System.out.println(shopvo);
 		
-		return"Shop/shopProductEdit";
+		// 저장된 prdnum을 db에 보내기 위해 ShopService를 연결
+		model.addAttribute("detail", shop.prodEdit(shopvo));
+		
+		return "Shop/shopProductEdit";
+	}
+			
+	
+	//상품 등록 후 수정(서버)
+	@RequestMapping(value = "/shopProductEdit", method = RequestMethod.POST)
+	public String ShopEditPOST(ShopVO Shop,RedirectAttributes rttr) {
+		System.out.println("contoroller="+Shop);
+		shop.ShopEdit(Shop);
+		rttr.addAttribute("prodnum", Shop.getProdnum());
+		// 수정하고 난 뒤 확인을 위해 상품목록페이지로 화면이동
+		return "redirect:/shopProductlist";
+	
 	}
 	
-	@RequestMapping(value="/shopProductEdit", method=RequestMethod.POST)
-	public String ShopEditPOST(ShopVO Shop) {
-		System.out.println("controller="+Shop);
-		shop.ShopEdit(Shop);
-		return"Shop/shopProductEdit";
-	}
 	
 
 	

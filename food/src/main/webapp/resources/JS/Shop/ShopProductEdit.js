@@ -6,15 +6,15 @@
 $(document).ready(function() {
 	
 	//상품 수정 버튼 클릭 이벤트
-	$("correction_Btn").click(function(){
-		  var NAME= $("#NAME").val();	// 상품명
-		  var subcontent= $("#subcontent").val();	// 한줄소개
-		  var price2= $("#price2").val();	// 상품원가
-		  var packaging= $("#packaging").val();	// 포장타입
-		  var unit= $("#unit").val();	// 판매단위
-		  var Origin= $("#Origin").val();	// 원산지
-		  var CONTENT= $("#CONTENT").val();	// 상품설명
-		  var detail= $("#detail").val();	// 상세정보
+	$("correction_Btn").on("click",".update",function(){
+		  var NAME= $(this).val("#NAME");	// 상품명
+		  var subcontent= $(this).val("#subcontent");	// 한줄소개
+		  var price2= $(this).val("#price2");	// 상품원가
+		  var packaging= $(this).val("#packaging");	// 포장타입
+		  var unit= $(this).val("#unit");	// 판매단위
+		  var Origin= $(this).val("#Origin");	// 원산지
+		  var CONTENT= $(this).val("#CONTENT");	// 상품설명
+		  var detail= $(this).val("#detail");	// 상세정보
 	
 		  //상품 수정 폼 유효성 검사
 
@@ -43,10 +43,16 @@ $(document).ready(function() {
 				alert("상세정보 입력해주세요");
 				detail.focus();
 			}
-			//상품정보 전송
-			document.sh_Editform.action = "${path}/shopProductlist";
-			document.sh_Editform.submit();
 			
+		ShopProductEdit({
+							NAME : NAME,
+							subcontent : subcontent,
+							price2 : price2,
+							unit : unit,
+							Origin : Origin,
+							CONTENT : CONTENT,
+							detail : detail
+						});
 	});
 	
 	
@@ -65,7 +71,41 @@ $(document).ready(function() {
 	})
 	
 	
-	//이미지 업로드
+// 함수 선언(댓글 수정을 하기 위한 함수 선언)
+function ShopProductEdit(Shop) {
+	console.log(Shop);
+	$.ajax({ // ajax 준비 (비동기식으로 준비)
+		type : "put", // method 방식(get,post,put,delete)
+		url : "/ShopProductEdit",
+		data : JSON.stringify(Shop),
+		// contentType : ajax ->Controller로 데이터 전송 시 타입
+		// contentType을 생략하면 web Browser에 위임하게 됨
+		contentType : "application/json; charset=utf-8",
+		success : function(result) {
+			if (result == "sucess") {
+				alert("수정 성공")
+			}
+		}
+	})
+}
+	
+function add(Shop) { // add 함수 선언 시작
+		console.log(Shop);
+		$.ajax({ // ajax 준비 (비동기식으로 준비)
+			type : "post", // method 방식(get,post,put,delete)
+			url : "/ShopProductEdit",
+			data : JSON.stringify(Shop),
+			contentType : "application/json; charset=utf-8",
+			success : function(result) {
+				if (result == "sucess") {
+					alert("댓글수정 성공")
+				}
+			}
+		})
+	} // add 함수 선언 끝
+	
+	
+	/*//이미지 업로드
 	//FileList 객체에 접근하기 위해 input태그의 files속성에 접근 -> change 이벤트를 통해 접근
 	//이미지 제한 변수
 	//jpg,png파일만 허용
@@ -205,4 +245,5 @@ $(document).ready(function() {
 			})
 	});
 
+*/
 })

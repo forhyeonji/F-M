@@ -11,6 +11,7 @@
 
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="../../../resources/JS/Mypage/cart.js" charset="utf-8"></script>
+<script src="../../../resources/JS/Mypage/order.js" charset="utf-8"></script>
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
@@ -40,8 +41,8 @@
 						<button id="my_selectdelBtn">선택 삭제</button>
 					</div>					
 				</div>
-			
-				<div id="my_cartIn2"></div>				
+				<div id="my_cartIn2">
+				</div>				
 			</div>
 			<br>
 			<div id="my_cartpay" > 
@@ -53,8 +54,7 @@
 			
 		</div><!-- my_center -->
 		
-		<div id="my_side_right"></div>
-		
+		<div id="my_side_right"></div>		
 	</div><!-- my_main -->	
 </div><!-- my_con -->
 </body>
