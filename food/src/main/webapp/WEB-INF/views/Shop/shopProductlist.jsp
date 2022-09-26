@@ -71,7 +71,7 @@
 				<tr>
 					<td>${ShopList.prodnum}</td>
 					<td>${ShopList.NAME}<br>
-						<a href="${path}/shopProductEdit" id="sh_Edit">[상품편집]</a>
+						<a href="${path}/shopProductEdit?prodnum=${ShopList.prodnum}" id="sh_Edit">[상품편집]</a>
 					</td>
 					<td class="sh_listimage"><img
 						src="/Shopdisplay?fileName=${ShopList.filename}" width="100px"

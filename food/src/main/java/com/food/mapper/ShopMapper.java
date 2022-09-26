@@ -15,10 +15,10 @@ public interface ShopMapper {
 	public ShopVO shop(ShopVO Shop);
 	
 	//상품등록 수정
-	public ShopVO ShopEdit(ShopVO Shop);
+	public void ShopEdit(ShopVO Shop);
 	
+	//상품 등록시 분류
 	public ArrayList<ShopdivisionVO> class1();
-	
 	public ArrayList<ShopdivisionVO> class2(String shop);
 	
 	//첨부파일 조회
@@ -27,6 +27,9 @@ public interface ShopMapper {
 	
 	//상품목록
 	public void shoplist();
+	
+	// 상품편집
+	public ShopVO prodEdit(ShopVO Shop);
 	
 	//페이징관련
 	public ArrayList<ShopVO> list(CriteriaVO cri);
