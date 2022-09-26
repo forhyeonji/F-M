@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import com.food.mapper.MypageMapper;
 import com.food.model.CartVO;
 import com.food.model.MypageVO;
+import com.food.model.OrderlistVO;
 import com.food.model.UserVO;
 
 @Service
@@ -60,6 +61,16 @@ public class MypageServiceImpl implements MypageService {
 	//장바구니 상품을 삭제하기 위한 구현
 	public int cartdelete(int c_no) {
 		return mm.cartdelete(c_no);
+	}
+	
+	//장바구니 상품을 주문하기 위한 구현
+	public int order(OrderlistVO order) {
+		return mm.order(order);
+	}
+	
+	//주문목록을 출력하기 위한 구현
+	public ArrayList<OrderlistVO> orderlist(String user_id){
+		return mm.orderlist(user_id);
 	}
 	
 	//내가 쓴 글을 출력하기 위한 구현

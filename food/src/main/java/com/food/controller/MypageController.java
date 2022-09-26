@@ -19,6 +19,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.food.model.CartVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
+import com.food.model.OrderlistVO;
 import com.food.model.PageVO;
 import com.food.model.UserVO;
 import com.food.model.VoteVo;
@@ -125,12 +126,37 @@ public class MypageController {
 		return result==1? new ResponseEntity<>("success",HttpStatus.OK)
 						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	//장바구니 상품 주문하기
+	@RequestMapping(value="/mypage/cart/order", method = RequestMethod.POST)
+	public ResponseEntity<String> order(HttpSession session, @RequestBody OrderlistVO order){
+		//로그인한 아이디로 주문
+		String id = (String)session.getAttribute("user_id");
+		order.setUser_id(id);
 		
+		int result = ms.order(order);
+		
+		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
+						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
 	//주문 리스트
 	@RequestMapping(value = "mypage/orderlist", method = RequestMethod.GET)
-	public String orderlist() {
+	public String order(Model model, HttpSession session, UserVO user) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		model.addAttribute("orderlist", ms.orderlist(id));
 		return "Mypage/orderlist";
+	}		
+	
+	//주문 리스트
+	@RequestMapping(value="/mypage/orderlist/{user_id}", method=RequestMethod.GET)
+	public ResponseEntity<ArrayList<OrderlistVO>> orderlist(Model model, @PathVariable String user_id){
+		System.out.println(user_id);
+		model.addAttribute("orderlist", ms.orderlist(user_id));
+		return new ResponseEntity<>(ms.orderlist(user_id), HttpStatus.OK);		
 	}
+		
 	//주문 상세보기
 	@RequestMapping(value = "mypage/orderdetail", method = RequestMethod.GET)
 	public String orderdetail() {
