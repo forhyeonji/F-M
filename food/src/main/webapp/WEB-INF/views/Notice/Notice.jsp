@@ -37,9 +37,11 @@
 		<!-- 검색기능 끝 -->
 		
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
+		
 		<hr>
-		<table class="NOTI_mainTable">
-					<tr class="NOTI_bar">
+		<table class="NOTI_Que_Table">
+					
+					<tr>
 						<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
 						<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
 						<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
@@ -51,11 +53,11 @@
 	
 					<tr>
 						
-						<td class="NOTI_list_title">
+						<td class="NOTI_list_title" class="NOTI_Que_title_effect">
 		
 							<c:choose>
 								<c:when test="${Notiboardlist.boldtitle}">
-									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:red"><b>${Notiboardlist.title}</b></a>
+									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:red" ><b>${Notiboardlist.title}</b></a>
 								</c:when>
 								<c:otherwise>
 									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:black">${Notiboardlist.title}</a>
@@ -63,9 +65,9 @@
 							</c:choose>
 		
 						</td>
-						<td class="NOTI_list_writer">${Notiboardlist.user_id}</td>
-						<td class="NOTI_list_regdate">${Notiboardlist.reg_dt}</td>
-						<td class="NOTI_list_no">${Notiboardlist.cnt}</td>
+						<td class="NOTI_list_writer"  class="NOTI_Que_title_effect">${Notiboardlist.user_id}</td>
+						<td class="NOTI_list_regdate"  class="NOTI_Que_title_effect">${Notiboardlist.reg_dt}</td>
+						<td class="NOTI_list_no"  class="NOTI_Que_title_effect">${Notiboardlist.cnt}</td>
 				</tr>
 
 
