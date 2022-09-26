@@ -8,7 +8,6 @@
 		<label class="NOTI_notice_lable">공지사항</label>  <label>어쩌고 저쩌고~</label> <br><br>
 		<br>
 	
-	
 	<!-- 검색기능 -->
 	<form action="/notice" id="searchForm" method="get">
 	
@@ -39,13 +38,13 @@
 		
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
 		<hr>
-		<table class="NOTI_Table">
-		<tr class="NOTI_bar">
-			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
-			<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
-			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
-			<td class="NOTI_QnA_cnt" class="NOTI_title_effect">조회수</td>
-		</tr>
+		<table class="NOTI_mainTable">
+					<tr class="NOTI_bar">
+						<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
+						<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
+						<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
+						<td class="NOTI_QnA_cnt" class="NOTI_title_effect">조회수</td>
+					</tr>
 		
 		<!-- for문 시작 -->
 		<c:forEach items="${list}" var="Notiboardlist">

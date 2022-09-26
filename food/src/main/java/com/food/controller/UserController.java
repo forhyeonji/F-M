@@ -125,7 +125,7 @@ public class UserController{
 	} 
   	
   	
-
+  	
   	/* 이메일 인증 */
 	@RequestMapping(value="/mailCheck", method=RequestMethod.GET)
 	@ResponseBody

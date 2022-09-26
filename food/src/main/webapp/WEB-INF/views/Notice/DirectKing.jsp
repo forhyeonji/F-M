@@ -20,7 +20,7 @@
 		
 		
 		<hr>	
-		<table>	
+		<table class="NOTI_mainTable">	
 		
 			<tr class="NOTI_bar">
 				<td width="70px" class="NOTI_Que_title_effect">카테고리</td>
