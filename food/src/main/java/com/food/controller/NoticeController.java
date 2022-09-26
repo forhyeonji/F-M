@@ -24,8 +24,7 @@ public class NoticeController {
 
 		@Autowired
 		NotiBoardService nbs;
-		
-		
+	
 	/* 공지사항 */
 		
 		@RequestMapping(value = "/notice", method = RequestMethod.GET)

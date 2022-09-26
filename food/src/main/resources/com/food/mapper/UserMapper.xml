@@ -29,6 +29,16 @@
   		from tb_user 
   		where user_phone = #{user_phone}
   	</select>
+  	
+  	
+  	<!-- 이메일 중복 검사 -->
+  	<insert id="createAuthKey">
+		insert into MP_MEMBER_AUTH values(#{memberEmail}, #{authKey})
+	</insert>
+
+	<update id="memberAuth">
+		<![CDATA[update MP_MEMBER set MEMBER_AUTH = 1 where (select count(*) from MP_MEMBER_AUTH where MEMBER_EMAIL = #{memberEmail}) > 0]]>
+	</update>
 	
 	
 </mapper>

@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.food.model.CartVO;
 import com.food.model.MypageVO;
+import com.food.model.OrderlistVO;
 import com.food.model.UserVO;
 
 //마이페이지 관련 mapper
@@ -31,6 +32,12 @@ public interface MypageMapper {
 	
 	//장바구니 상품을 삭제하기 위한 DB 작업
 	public int cartdelete(int c_no);
+	
+	//장바구니 상품을 주문하기 위한 DB작업
+	public int order(OrderlistVO order);
+	
+	//주문목록을 위한 DB작업
+	public ArrayList<OrderlistVO> orderlist(String user_id);
 	
 	//내가쓴글을 출력하기위한 DB작업
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);

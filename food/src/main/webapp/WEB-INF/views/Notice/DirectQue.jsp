@@ -59,10 +59,10 @@
 			<table class="NOTI_Que_Table">	
 			
 				<tr>
-					<td width="70px" class="NOTI_Que_title_effect">카테고리</td>
-					<td width="330px" class="NOTI_Que_title_effect">제목</td>
-					<td width="100px" class="NOTI_Que_title_effect">작성일</td>
-					<td width="100px" class="NOTI_Que_title_effect">답변여부</td>
+					<td width="70px" class="NOTI_title_effect">카테고리</td>
+					<td width="330px" class="NOTI_title_effect">제목</td>
+					<td width="100px" class="NOTI_title_effect">작성일</td>
+					<td width="100px" class="NOTI_title_effect">답변여부</td>
 				</tr>
 			
 			
@@ -71,7 +71,7 @@
 				<c:forEach items="${mywrite}" var="mywrite">
 			
 							<tr>
-								<td>
+								<td class="NOTI_Que_title_effect">
 				
 									<c:choose>
 										<c:when test="${mywrite.subsep eq 'inquiry_recipe'}">
@@ -92,9 +92,9 @@
 									</c:choose>
 				
 								</td>
-								<td><a href="directQue_detail?bno=${mywrite.bno}">${mywrite.title}</a></td>
-								<td>${mywrite.reg_dt}</td>
-								<td>
+								<td class="NOTI_Que_title_effect"><a href="directQue_detail?bno=${mywrite.bno}" class="NOTI_a">${mywrite.title}</a></td>
+								<td class="NOTI_Que_title_effect">${mywrite.reg_dt}</td>
+								<td class="NOTI_Que_title_effect">
 								
 									<c:choose>
 						

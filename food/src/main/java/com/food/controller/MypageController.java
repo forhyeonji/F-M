@@ -19,8 +19,10 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.food.model.CartVO;
 import com.food.model.CriteriaVO;
 import com.food.model.MypageVO;
+import com.food.model.OrderlistVO;
 import com.food.model.PageVO;
 import com.food.model.UserVO;
+import com.food.model.VoteVo;
 import com.food.service.MypageService;
 
 @Controller
@@ -88,7 +90,10 @@ public class MypageController {
 	
 	//장바구니
 	@RequestMapping(value = "mypage/cart", method = RequestMethod.GET)
-	public String cart() {
+	public String cart(Model model, HttpSession session, UserVO user) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		model.addAttribute("cartlist", ms.cartlist(id));
 		return "Mypage/cart";
 	}
 	//장바구니는 비동기 도전!!
@@ -104,6 +109,8 @@ public class MypageController {
 	@ResponseBody
 	@RequestMapping(value="/mypage/cart/modify", method=RequestMethod.PUT)
 	public ResponseEntity<String> cartmodify(HttpSession session, @RequestBody CartVO cart){
+		String id = (String)session.getAttribute("user_id");
+		cart.setUser_id(id);
 		int result = ms.cartmodify(cart);
 		System.out.println("수정하는거 콘트롤러 연결된겨?");
 		System.out.println(cart);
@@ -119,12 +126,37 @@ public class MypageController {
 		return result==1? new ResponseEntity<>("success",HttpStatus.OK)
 						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
+	//장바구니 상품 주문하기
+	@RequestMapping(value="/mypage/cart/order", method = RequestMethod.POST)
+	public ResponseEntity<String> order(HttpSession session, @RequestBody OrderlistVO order){
+		//로그인한 아이디로 주문
+		String id = (String)session.getAttribute("user_id");
+		order.setUser_id(id);
 		
+		int result = ms.order(order);
+		
+		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
+						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
+	}
+	
 	//주문 리스트
 	@RequestMapping(value = "mypage/orderlist", method = RequestMethod.GET)
-	public String orderlist() {
+	public String order(Model model, HttpSession session, UserVO user) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		model.addAttribute("orderlist", ms.orderlist(id));
 		return "Mypage/orderlist";
+	}		
+	
+	//주문 리스트
+	@RequestMapping(value="/mypage/orderlist/{user_id}", method=RequestMethod.GET)
+	public ResponseEntity<ArrayList<OrderlistVO>> orderlist(Model model, @PathVariable String user_id){
+		System.out.println(user_id);
+		model.addAttribute("orderlist", ms.orderlist(user_id));
+		return new ResponseEntity<>(ms.orderlist(user_id), HttpStatus.OK);		
 	}
+		
 	//주문 상세보기
 	@RequestMapping(value = "mypage/orderdetail", method = RequestMethod.GET)
 	public String orderdetail() {
@@ -198,10 +230,11 @@ public class MypageController {
 
 	//내가 좋아요 누른 글 목록
 	@RequestMapping(value = "mypage/mylike", method = RequestMethod.GET)
-	public String mylike(HttpSession session, UserVO user, MypageVO mypage, Model model,
+	public String mylike(HttpSession session, UserVO user, VoteVo vote, MypageVO mypage, Model model,
 			CriteriaVO cri ) {
 		String id = (String)session.getAttribute("user_id");
 		user.setUser_id(id);
+		vote.setUser_id(id);
 		mypage.setUser_id(id);
 		
 		model.addAttribute("user", ms.mypage(user));

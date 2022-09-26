@@ -52,13 +52,30 @@
 	</select>
 	
 	<update id="cartmodify">
-		update tb_cart set c_cnt=#{c_cnt} where c_no=#{c_no}
+		update tb_cart set c_cnt=#{c_cnt} where c_no=#{c_no} 
 	</update>
 
 	<delete id="cartdelete">
 		delete from tb_cart where c_no=#{c_no}
 	</delete>
 	
+	<insert id="order">
+		insert into tb_orderlist(o_prodnum, o_cnt, o_sum, user_id)
+		values(#{o_prodnum}, #{o_cnt}, #{o_sum}, #{user_id})
+	</insert>
+	
+	<select id="orderlist" resultType="com.food.model.OrderlistVO">
+		select o.*,
+				date_format(o_dt, '%m/%d') as o_date,
+				sh.NAME as s_name,
+				sh.CONTENT as s_content,
+				sh.price2 as s_price
+		from tb_orderlist o left outer join tb_shop sh
+		on o.o_prodnum = sh.prodnum
+		where o.user_id = #{user_id}
+		order by o_no desc
+	</select>
+			
 	
 	<select id="mywrite" resultType="com.food.model.MypageVO">
 		select * 
@@ -98,12 +115,21 @@
 	</select>
 	
 	<select id="mylike" parameterType="com.food.model.VoteVo" resultType="com.food.model.MypageVO">
-		select v.*,
-			(select title from tb_community co where co.bno = v.bno) as title,
-			(select vote from tb_community co where co.bno = v.bno) as likecnt
-		from  tb_vote v 
-		where user_id=#{user_id}
-		order by v.bno desc 
+		select likelist.*, co.*  
+		from (
+			select @rownum:= @rownum+1 rownum, v.*
+			from tb_vote v, (select @rownum:=0) as tmp
+			
+			<if test="user_id != null">
+				where user_id = #{user_id}
+			</if> 
+		
+		order by bno desc 
+		)as likelist left outer join tb_community co
+		on likelist.bno = co.bno
+		<![CDATA[
+		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
 	</select>
 	
 	<select id="liketotal" resultType="int">

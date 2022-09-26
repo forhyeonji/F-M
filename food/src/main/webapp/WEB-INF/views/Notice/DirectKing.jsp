@@ -20,20 +20,20 @@
 		
 		
 		<hr>	
-		<table>	
+		<table class="NOTI_Que_Table">	
 		
-			<tr class="NOTI_bar">
-				<td width="70px" class="NOTI_Que_title_effect">카테고리</td>
-				<td width="330px" class="NOTI_Que_title_effect">제목</td>
-				<td width="100px" class="NOTI_Que_title_effect">작성일</td>
-				<td width="100px" class="NOTI_Que_title_effect">답변여부</td>
+			<tr>
+				<td width="70px" class="NOTI_title_effect">카테고리</td>
+				<td width="330px" class="NOTI_title_effect">제목</td>
+				<td width="100px" class="NOTI_title_effect">작성일</td>
+				<td width="100px" class="NOTI_title_effect">답변여부</td>
 			</tr>
 			
 			<!-- for문 시작 -->
 		<c:forEach items="${list}" var="Notiboardlist">
 	
 					<tr>
-						<td>
+						<td class="NOTI_Que_title_effect">
 						
 									<c:choose>
 										<c:when test="${Notiboardlist.subsep eq 'inquiry_recipe'}">
@@ -55,12 +55,12 @@
 				
 						</td>
 						
-						<td>
-								<a href="directKing_answer?bno=${Notiboardlist.bno}">${Notiboardlist.title}</a>
+						<td class="NOTI_Que_title_effect">
+								<a href="directKing_answer?bno=${Notiboardlist.bno}" class="NOTI_a">${Notiboardlist.title}</a>
 						</td>
 						
-						<td>${Notiboardlist.reg_dt}</td>
-						<td>
+						<td class="NOTI_Que_title_effect">${Notiboardlist.reg_dt}</td>
+						<td class="NOTI_Que_title_effect">
 		
 						<c:choose>
 			

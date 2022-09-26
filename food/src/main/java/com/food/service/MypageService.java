@@ -6,6 +6,7 @@ import java.util.Map;
 
 import com.food.model.CartVO;
 import com.food.model.MypageVO;
+import com.food.model.OrderlistVO;
 import com.food.model.UserVO;
 //마이페이지 관련 serivece
 public interface MypageService {
@@ -33,6 +34,12 @@ public interface MypageService {
 	
 	//장바구니 상품을 삭제하기 위한 설계
 	public int cartdelete(int c_no);
+	
+	//장바구니 상품을 주문하기 위한 설계
+	public int order(OrderlistVO order);
+	
+	//주문목록을 출력하기 위한 설계
+	public ArrayList<OrderlistVO> orderlist(String user_id);
 	
 	//내가 쓴글을 출력하기 위한 설계
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
