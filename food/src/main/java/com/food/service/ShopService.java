@@ -13,21 +13,19 @@ public interface ShopService {
 	
 	//상품 등록 설계
 	public void Shopenroll(ShopVO Shop);
-	//상품등록수정
-	public ShopVO ShopEdit(ShopVO Shop);
+	//상품 등록 수정 설계
+	public void ShopEdit(ShopVO Shop);
 
 	//상품등록(분류)
 	public ArrayList<ShopdivisionVO> class1(); 
 	public ArrayList<ShopdivisionVO> class2(String shop); 
-	
-	
-	 
-	
+		
 	//상품목록
 	public ArrayList<ShopVO> list(CriteriaVO cri);
 	public int total(CriteriaVO criteriaVO);
 	
-	
+	// 상품편집 클릭시 상품 상세 내용
+	public ShopVO prodEdit(ShopVO Shop);
 	
 	/* ShopAttach */
 	

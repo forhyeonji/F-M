@@ -141,8 +141,13 @@ canclelist
 /* cart */
 
 #my_cartlist{
-	border:1 solid rgb(234, 234, 234);
+	border:1px solid rgb(234, 234, 234);
 	width:100%;
+	text-align:center;
+}
+
+#my_cartlist, #my_cartlist td{
+	border:1px solid rgb(234, 234, 234);
 	text-align:center;
 }
 
@@ -158,7 +163,10 @@ canclelist
 }
 
 .my_cnt{
-	width:50px;
+	width:30px;
+	height:20px;
+	font-size:15px;
+	text-align:center;
 }
 
 #my_cartCon{
@@ -192,12 +200,6 @@ canclelist
 	font-size:20px;
 	border:none;
 	border-radius:10px;	
-}
-
-.my_cntnow{
-	width:30px;
-	height:20px;
-	text-align:center;
 }
 
 /* delivery */
@@ -315,6 +317,12 @@ canclelist
 
 .my_orderImg{
 	width:100px;
+}
+
+.my_orderCon{
+	font-size:65%;
+	color:#c0c0c0;
+	font-weight:bold;
 }
 
 .my_orderTb{
