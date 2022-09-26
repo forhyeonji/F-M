@@ -5,6 +5,7 @@ $(function (){
         page : 1,
         size: 10,
         count: 0,
+        total: 0,
         title: ''
     }
 
@@ -85,28 +86,58 @@ $(function (){
 
         let html = ``;
         const total = Math.floor(count / pagination.size) + (count % pagination.size !== 0 && 1);
+        pagination.total = total;
 
-            for(let i=0; i<total; i++){
-                html += `<div class="page" id="page-${i+1}">${i+1}</div>`
-            }
-
+        html += `<div class="page" id="page-pre">이전</div>`;
+        for(let i=0; i<pagination.size; i++){
+            html += `<div class="page" id="page-${i+1}">${i+1}</div>`;
+        }
+        html += `<div class="page" id="page-next">다음</div>`;
 
         $('#pagination').append(html);
 
         $('.page').click((e)=> {
-            const page = +e.target.id.split("-")[1];
+            const page = e.target.id.split("-")[1];
             onPagination(page);
         });
         $(`#page-1`).attr("class", "select");
     }
 
+    const isPaginationByGroup = () => {
+        if(pagination.page > pagination.size / 2 && pagination.page < pagination.total - pagination.size / 2){
+            $('#pagination').empty();
+
+            let html = ``;
+            html += `<div class="page" id="page-pre">이전</div>`;
+            for(let i=pagination.page - pagination.size/2; i< pagination.size; i++){
+                html += `<div className="page" id="page-${i+1}">${i + 1}</div>`;
+            }
+            html += `<div class="page" id="page-next">다음</div>`;
+
+            $('#pagination').append(html);
+        }
+    }
+
     const onPagination = (page) => {
         $(`#page-${pagination.page}`).removeAttr("class", "select");
-        $(`#page-${page}`).attr("class", "select");
+        if(page == 'pre' || page == 'next'){
+            let temp = page == 'pre' ? pagination.page - 1 : pagination.page + 1;
+            if(temp < 1) temp = 1;
+            else if(temp > pagination.total) temp = pagination.total;
 
-        pagination.page = page;
+            $(`#page-${temp}`).attr("class", "select");
+
+            pagination.page = temp;
+
+        } else{
+            $(`#page-${page}`).attr("class", "select");
+
+            pagination.page = +page;
+        }
+
         onCommunityList();
         onPopular();
+        isPaginationByGroup();
     }
 
     const onCommunityList = () => {

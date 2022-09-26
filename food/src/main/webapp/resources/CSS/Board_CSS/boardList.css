@@ -302,7 +302,7 @@ ul li{
     justify-content: center;
     margin: 10px 0;
 }
-#pagination > * {
+#pagination * {
     margin-right: 8px;
     cursor: pointer;
 
@@ -311,7 +311,7 @@ ul li{
     border-radius: 20%;
 }
 
-#pagination > .select {
+#pagination .select {
     background-color: #E0EBFF;
 }
 #b_tbody > tr{
