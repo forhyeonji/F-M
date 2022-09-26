@@ -39,19 +39,25 @@ public class ShopServiceImpl implements ShopService {
 		System.out.println("등록완료");
 		return Sm.shop(Shop);
 	}
-
-	public ShopVO ShopEdit(ShopVO Shop) {
-		return Sm.ShopEdit(Shop);
+	
+	//상품등록 후 수정
+	public void ShopEdit(ShopVO shop) {
+		System.out.println(shop);
+		Sm.ShopEdit(shop);
 	}
 	
+	//상품 등록시 분류
 	public ArrayList<ShopdivisionVO> class1() {
 		return Sm.class1();
 	}
-	
 	public ArrayList<ShopdivisionVO> class2(String Shop) {
 		return Sm.class2(Shop);
 	}
-	
+
+	// 상품편집 클릭시 상품 상세 내용
+	public ShopVO prodEdit(ShopVO Shop) {
+		return Sm.prodEdit(Shop);
+	}
 
 	//첨부파일 조회 구현
 	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum){

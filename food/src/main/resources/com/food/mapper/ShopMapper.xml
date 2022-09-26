@@ -13,25 +13,11 @@
 			select ifnull(max(prodnum),0)+1 prodnum
 			from tb_shop
   		</selectKey>
-	 
 		insert into	tb_shop(prodnum,NAME,Origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
 		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail})
 	</insert>
 		
 		
-
-	<select id="ShopEdit" resultType="com.food.model.ShopVO">
-		select * from tb_shop  	
-	</select>
-	
-<!-- 
-	insert into
-		tb_shop(prodnum,NAME,Origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
-		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail});
-
- -->
-
-
 	<!-- 상품등록시 분류 -->
 	<select id="class1" resultType="com.food.model.ShopdivisionVO">
 		select distinct(class1) from
@@ -41,6 +27,26 @@
 	<select id="class2" resultType="com.food.model.ShopdivisionVO">
 		select class2 from sh_division
 		where class1=#{class1}
+	</select>
+		
+	<!-- 상품수정 -->
+	<update id="ShopEdit">
+	update tb_shop inner join sh_appatch
+	set
+	NAME=#{NAME},
+	CONTENT=#{CONTENT},
+	price2=#{price2},
+	discountprice=#{discountprice},
+	subcontent=#{subcontent},
+	detail=#{detail}
+	where tb_shop.prodnum= #{prodnum};
+	</update>
+
+	<!-- 상품 편집 -->
+	<select id="prodEdit" resultType="com.food.model.ShopVO">
+	
+		select*from  tb_shop where prodnum=#{prodnum}
+	
 	</select>
 
 	<!-- 상품리스트 -->

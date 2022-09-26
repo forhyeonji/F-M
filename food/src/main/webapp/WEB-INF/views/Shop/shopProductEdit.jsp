@@ -6,23 +6,17 @@
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopProductEdit.css">
 
-<script type="text/javascript"
-	src="../../../resources/JS/Shop/ShopProductEdit.js">
-	
-</script>
-
 <meta charset="UTF-8">
 
 </head>
 <body>
 <div class="sh_Editmain">
-		<form action="shopProductEdit" id="sh_Editform" name="sh_Editform"
+		<form  id="sh_Editform" name="sh_Editform"
 			method="post" enctype="multipart/form-data">
 			<div class="sh_Edit">
 
 				<div class="sh_EditTitle">
-					<h1 id="sh_Editpage">상품수정/삭제 페이지 입니다.</h1>
-					${ProductEdit}
+					<h1 id="sh_Editpage">상품수정 페이지 입니다.</h1>
 				</div>
 
 				<table id="sh_EditinputArea">
@@ -30,35 +24,38 @@
 						<td>상품명</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="EditName" name="NAME" value="${ShopVO.NAME}"></td>
+						<td>
+							<input type="hidden" id="EditName" name="prodnum" value="${detail.prodnum}">
+							<input type="text" id="EditName" name="NAME" value="${detail.NAME}">
+						</td>
 					</tr>
 
 					<tr>
 						<td>한줄소개</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="Editsub" name="subcontent" value="${ShopVO.subcontent}"></td>
+						<td><input type="text" id="Editsub" name="subcontent" value="${detail.subcontent}"></td>
 					</tr>
 
 					<tr>
 						<td>상품원가</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasPrice" name="price2" value="${ShopVO.price2}" ></td>
+						<td><input type="text" id="gasPrice" name="price2" value="${detail.price2}" ></td>
 					</tr>
 
 					<tr>
 						<td>상품할인가</td>
 					</tr>
 					<tr>
-						<td><input type="text" id="gasPrice" name="discountprice" value="${ShopVO.discountprice}"></td>
+						<td><input type="text" id="gasPrice" name="discountprice" value="${detail.discountprice}"></td>
 					</tr>
 
 					<tr>
 						<td>상품설명</td>
 					</tr>
 					<tr>
-						<td><textarea rows="5" cols="50" id="EditgdsDes" name="CONTENT">${ShopVO.CONTENT}</textarea>
+						<td><textarea rows="5" cols="50" id="EditgdsDes" name="CONTENT">${detail.CONTENT}</textarea>
 						</td>
 					</tr>
 
@@ -67,7 +64,7 @@
 					</tr>
 
 					<tr>
-						<td><textarea rows="5" cols="50" id="gasDetail" name="detail">${ShopVO.detail}</textarea>
+						<td><textarea rows="5" cols="50" id="gasDetail" name="detail">${detail.detail}</textarea>
 						</td>
 					</tr>
 					
@@ -101,9 +98,9 @@
 					<tr>
 						<td>
 							<div class="sh_EditArea">
-								<button type="button" id="correction_Btn">수정</button>
-								<button type="button" id="delete_Btn">삭제</button>
-								<button type="button" id="list_Btn">상품목록</button>
+								<input type="submit" value="수정" formaction="/shopProductEdit" >
+								<!-- //<input type="submit" value="삭제" > -->
+								<input type="button" value="상품목록" onclick="location.href='http://localhost:8080/shopProductlist'">
 							</div>
 						</td>
 					</tr>

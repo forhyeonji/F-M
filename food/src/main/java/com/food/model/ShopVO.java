@@ -37,8 +37,7 @@ public class ShopVO {
 	public void setAttach(ArrayList<ShopAttachVO> attach) {
 		this.attach = attach;
 	}
-	
-	
+
 	
 	public String getToday() {
 		return today;
