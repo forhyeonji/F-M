@@ -11,6 +11,7 @@
 
 <script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="../../../resources/JS/Mypage/cart.js" charset="utf-8"></script>
+<script src="../../../resources/JS/Mypage/order.js" charset="utf-8"></script>
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>

@@ -9,6 +9,9 @@
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 <link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
+
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../../../resources/JS/Mypage/order.js" charset="utf-8"></script>
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
@@ -28,6 +31,7 @@
 		</div><!-- my_side_left -->
 		
 		<div id="my_center">
+			<input type="hidden" name="user" value="${sessionScope.user_id }">
 			<h3>주문내역을 확인하세요~😁😁</h3>
 			<div class="my_order1">	
 ${orderlist}						

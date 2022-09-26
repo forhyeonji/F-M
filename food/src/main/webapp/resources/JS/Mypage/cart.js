@@ -139,7 +139,7 @@ function cartlist(userid){
 			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
 //			str+="<button class='my_cntplus' data-c_cnt="+data[i].c_cnt+">+</button>"
 			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
-			str+="<td>"+addComma(data[i].c_sumprod)+" 원</td>"
+			str+="<td><span id='my_sum"+data[i].c_no+"' data-c_sum="+data[i].c_sumprod+">"+addComma(data[i].c_sumprod)+" 원</td>"
 			str+="<td><input type='button' value='주문하기'><br>"
 			str+="<input class='cartdelete' type='button' value='삭제하기' data-c_no="+data[i].c_no+"></td></tr>"
 		}

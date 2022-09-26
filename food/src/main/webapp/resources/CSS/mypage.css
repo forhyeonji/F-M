@@ -141,8 +141,13 @@ canclelist
 /* cart */
 
 #my_cartlist{
-	border:1 solid rgb(234, 234, 234);
+	border:1px solid rgb(234, 234, 234);
 	width:100%;
+	text-align:center;
+}
+
+#my_cartlist, #my_cartlist td{
+	border:1px solid rgb(234, 234, 234);
 	text-align:center;
 }
 
