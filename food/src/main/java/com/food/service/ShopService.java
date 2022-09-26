@@ -27,12 +27,22 @@ public interface ShopService {
 	// 상품편집 클릭시 상품 상세 내용
 	public ShopVO prodEdit(ShopVO Shop);
 	
+	// 상품 상세 내용보기 메인 이미지 설계
+	public ShopVO main(ShopVO shop);
+
+	// 상품 상세 내용보기 서브 이미지 설계
+	public ArrayList<ShopVO> sub(ShopVO shop);
+
+	
+	
 	/* ShopAttach */
 	
 	//상품등록 이미지(첨부파일 조회 설계)
 	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum);
 	public int cntup();
 	public void insert(ShopAttachVO attach);
+	
+	
 	
 	
 }

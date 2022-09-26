@@ -37,8 +37,8 @@
 				</div>
 
 				<div class="sh_division">
-					<table id="sh_inputArea">
-						<tr>
+					<table>
+						<tr id="sh_TableSt">
 							<td id="sh_menutd">
 							<select id="class1">
 									<option selected>1차분류</option>
@@ -48,7 +48,7 @@
 							</select>
 							</td>
 
-							<td><select id="class2">
+							<td id="sh_TableSt"><select id="class2">
 								<option>2차분류</option>
 							</select>
 							</td>
@@ -57,23 +57,23 @@
 				</div>
 
 				<table id="sh_inputArea">
-					<tr>
-						<td>
-							<div>
+					<tr id="sh_inputArea">
+						<td id="sh_inputArea">
+							<div id="sh_div">
 								<label for="sh_gasName" id="sh_menuName">상품명:</label>
 								<span class="sh_spaninput" id="sh_gasNameinput">상품명을 입력하세요.</span>
 							</div>
 						</td>
 					</tr>
-					<tr>
-						<td><input type="text" id="gasName" name="NAME"></td>
+					<tr id="sh_inputArea">
+						<td id="sh_inputArea"><input type="text" id="gasName" name="NAME"></td>
 					</tr>
 
 
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div>
+							<div id="sh_div">
 								<label for="sh_subDes" id="sh_menuName">한줄소개:</label>
 								<span class="sh_spaninput" id="sh_subDesinput">한줄소개를 적어주세요</span>
 							</div>
@@ -83,9 +83,9 @@
 						<td><input type="text" id="subDes" name="subcontent"></td>
 					</tr>
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div>
+							<div id="sh_div">
 								<label for="sh_gasPrice" id="sh_menuName">상품원가:</label>
 							</div>
 						</td>
@@ -94,9 +94,9 @@
 						<td><input type="text" id="gasPrice" name="price2"></td>
 					</tr>
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div>
+							<div id="sh_div">
 								<label for="sh_gasPrice" id="sh_menuName">상품할인가:</label>
 							</div>
 							<div>
@@ -112,9 +112,9 @@
 						</td>
 					</tr>
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div class="sh_gasType">
+							<div class="sh_gasType" id="sh_div">
 								<label id="sh_menuName"> 포장타입 </label>
 								<span class="sh_spaninput" id="sh_gasTypeinput">포장 타입을 선택해주세요</span>
 							</div>
@@ -129,9 +129,9 @@
 					</tr>
 
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div class="sh_gasunit">
+							<div class="sh_gasunit" id="sh_div">
 								<label id="sh_menuName"> 판매단위 </label>
 							</div>
 						</td>
@@ -140,9 +140,9 @@
 						<td><input type="text" id="gasunit" name="unit"></td>
 					</tr>
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div class="sh_gasorigin">
+							<div class="sh_gasorigin" id="sh_div">
 								<label id="sh_menuName"> 원산지 </label>
 								<span class="sh_spaninput" id="sh_gasorigininput">원산지를 선택해주세요</span>
 							</div>
@@ -157,9 +157,9 @@
 						</select></td>
 					</tr>
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div class="sh_inputArea">
+							<div class="sh_inputArea" id="sh_div">
 								<label for="sh_gasDes" id="sh_menuName">상품설명:</label>
 									<span class="sh_spaninput" id="sh_gasDesinput">상품설명해주세요</span>
 							</div>
@@ -170,9 +170,9 @@
 						</td>
 					</tr>
 
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
-							<div class="sh_inputArea">
+							<div class="sh_inputArea" id="sh_div">
 								<label for="gasDetail" id="sh_m">상세정보</label>
 								<span class="sh_spaninput" id="sh_Detailinput">상세정보를 입력해주세요</span>
 							</div>
@@ -184,7 +184,7 @@
 						</td>
 					</tr>
 					
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
 							<div>
 								<label for="gasimg" id="sh_gasimg">상품이미지(메인):</label>
@@ -197,7 +197,7 @@
 						</td>
 					</tr>
 					
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
 							<div>
 								<label for="gasimg" id="sh_gasimg">상품이미지(서브):</label>
@@ -211,7 +211,7 @@
 					</tr>
 					
 					
-					<tr>
+					<tr id="sh_inputArea">
 						<td>
 							<div class="sh_inputArea">
 								<button type="button" id="register_Btn">등록</button>

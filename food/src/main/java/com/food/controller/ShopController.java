@@ -121,7 +121,15 @@ public class ShopController {
 	
 	}
 	
-	
+
+	// 상품 상세설명
+	@RequestMapping(value = "/shoppage/Detail", method = RequestMethod.GET)
+	public String detail(ShopVO Shop, Model model) {
+		System.out.println(shop);
+		model.addAttribute("main", shop.main(Shop));
+		model.addAttribute("sub", shop.sub(Shop));
+		return "/shoppage/Detail";
+	}
 
 	
 }

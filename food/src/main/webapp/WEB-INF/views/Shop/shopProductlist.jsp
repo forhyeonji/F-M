@@ -53,31 +53,31 @@
 		</c:if>
 
 		<table id="sh_listTable">
-			<tr>
-				<td>상품번호</td>
+			<tr id="sh_Tabletr">
+				<td id="sh_Tabletr">상품번호</td>
 
-				<td>상품명</td>
+				<td id="sh_Tabletr">상품명</td>
 
-				<td>상품이미지</td>
+				<td id="sh_Tabletr">상품이미지</td>
 
-				<td>상품가격</td>
+				<td id="sh_Tabletr">상품가격</td>
 
-				<td>등록일자</td>
+				<td id="sh_Tabletr">등록일자</td>
 
 			</tr>
 		
 			<!-- for문 시작-->
 			<c:forEach items="${shoplist}" var="ShopList">
-				<tr>
-					<td>${ShopList.prodnum}</td>
-					<td>${ShopList.NAME}<br>
+				<tr id="sh_Tabletr">
+					<td id="sh_Tabletr">${ShopList.prodnum}</td>
+					<td id="sh_Tabletr">${ShopList.NAME}<br>
 						<a href="${path}/shopProductEdit?prodnum=${ShopList.prodnum}" id="sh_Edit">[상품편집]</a>
 					</td>
-					<td class="sh_listimage"><img
+					<td id="sh_Tabletr" class="sh_listimage"><img
 						src="/Shopdisplay?fileName=${ShopList.filename}" width="100px"
 						height="100px"></td>
-					<td>${ShopList.discountprice}</td>
-					<td>${ShopList.today}</td>
+					<td id="sh_Tabletr">${ShopList.discountprice}</td>
+					<td id="sh_Tabletr">${ShopList.today}</td>
 				</tr>
 			</c:forEach>
 			<!-- for문 끝 -->
@@ -101,11 +101,6 @@
 							<a href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>			
 					</c:if>
 		</div>
-				<%-- <form id="sh_moveForm" action="/shopProductlist" method="get">
-						<input type="hidden" name="pageNum" value="${sh_pageMarker.cri.pageNum}">	
-						<input type="hidden" name="amount" value="${sh_pageMarker.cri.amount}">	
-						<input type="hidden" name="keyword" value="${sh_pageMarker.cri.keyword}">	
-				</form> --%>
 	</div>
 </body>
 </html>

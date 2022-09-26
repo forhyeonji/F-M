@@ -18,7 +18,6 @@
 	margin-top: 50px;
 }
 
-
 .sh_Edit {
 	width: 790px;
 	height: 1000px;
@@ -27,19 +26,29 @@
 	float: right;
 }
 
-
 #sh_Editpage {
 	margin-top: 20px;
 	margin-bottom: 15px;
 }
-
 
 #sh_Editmenutd {
 	width: 177px;
 	text-align: center;
 }
 
+#sh_EditArea {
+	border-spacing: 10px;
+	font-size: 20px;
+	
+}
+
 #sh_EditinputArea {
 	border-spacing: 10px;
 	font-size: 20px;
+	border: 1px solid;
+	border-collapse: collapse;
+	border-left: none;
+	border-right: none;
+	border-top: none;
+	border-color: #D5D5D5;
 }

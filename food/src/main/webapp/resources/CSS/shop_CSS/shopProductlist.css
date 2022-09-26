@@ -21,6 +21,12 @@
 
 #sh_listTable{
 	text-align: center;
+	border:1px solid;
+}
+
+#sh_Tabletr{
+	border:1px solid;
+	border-collapse: collapse;
 }
 
 #searchfield{

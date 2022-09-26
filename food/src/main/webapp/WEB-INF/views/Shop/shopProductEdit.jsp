@@ -19,48 +19,48 @@
 					<h1 id="sh_Editpage">상품수정 페이지 입니다.</h1>
 				</div>
 
-				<table id="sh_EditinputArea">
-					<tr>
-						<td>상품명</td>
+				<table id="sh_EditArea">
+					<tr id="sh_EditinputArea">
+						<td id="sh_EditinputArea">상품명</td>
 					</tr>
-					<tr>
+					<tr id="sh_EditinputArea">
 						<td>
 							<input type="hidden" id="EditName" name="prodnum" value="${detail.prodnum}">
 							<input type="text" id="EditName" name="NAME" value="${detail.NAME}">
 						</td>
 					</tr>
 
-					<tr>
-						<td>한줄소개</td>
+					<tr id="sh_EditinputArea">
+						<td id="sh_EditinputArea">한줄소개</td>
 					</tr>
 					<tr>
 						<td><input type="text" id="Editsub" name="subcontent" value="${detail.subcontent}"></td>
 					</tr>
 
-					<tr>
-						<td>상품원가</td>
+					<tr id="sh_EditinputArea">
+						<td id="sh_EditinputArea">상품원가</td>
 					</tr>
 					<tr>
 						<td><input type="text" id="gasPrice" name="price2" value="${detail.price2}" ></td>
 					</tr>
 
-					<tr>
-						<td>상품할인가</td>
+					<tr id="sh_EditinputArea">
+						<td id="sh_EditinputArea">상품할인가</td>
 					</tr>
 					<tr>
 						<td><input type="text" id="gasPrice" name="discountprice" value="${detail.discountprice}"></td>
 					</tr>
 
-					<tr>
-						<td>상품설명</td>
+					<tr id="sh_EditinputArea">
+						<td id="sh_EditinputArea">상품설명</td>
 					</tr>
 					<tr>
 						<td><textarea rows="5" cols="50" id="EditgdsDes" name="CONTENT">${detail.CONTENT}</textarea>
 						</td>
 					</tr>
 
-					<tr>
-						<td>상세정보</td>
+					<tr id="sh_EditinputArea">
+						<td id="sh_EditinputArea">상세정보</td>
 					</tr>
 
 					<tr>
@@ -76,7 +76,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="Editimgmain" name="imagemain" style="height: 30px;">
+						<td id="sh_EditinputArea"><input type="file" id="Editimgmain" name="imagemain" style="height: 30px;">
 						<ul></ul>
 						</td>
 					</tr>
@@ -89,7 +89,7 @@
 						</td>
 					</tr>
 					<tr>
-						<td><input type="file" id="Editimgsub" name="imagesub" style="height: 30px;" multiple>
+						<td id="sh_EditinputArea"><input type="file" id="Editimgsub" name="imagesub" style="height: 30px;" multiple>
 						<ul></ul>
 						</td>
 					</tr>

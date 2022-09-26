@@ -74,15 +74,23 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.list(cri);
 	}
 	
-	//상품 총 갯수
-		public int total(CriteriaVO criteriaVO) {
-			return Sm.total(criteriaVO);
-		}
+	// 상품 총 갯수
+	public int total(CriteriaVO criteriaVO) {
+		return Sm.total(criteriaVO);
+	}
 
-		@Override
-		public void insert(ShopAttachVO attach) {
-			// TODO Auto-generated method stub
-			
-		}
+	@Override
+	public void insert(ShopAttachVO attach) {
 
+	}
+
+	// 상품 상세 내용보기 메인 이미지 구현
+	public ShopVO main(ShopVO shop) {
+		return Sm.main(shop);
+	}
+
+	// 상품 상세 내용보기 서브 이미지 구현
+	public ArrayList<ShopVO> sub(ShopVO shop) {
+		return Sm.sub(shop);
+	}
 }

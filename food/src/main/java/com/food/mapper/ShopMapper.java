@@ -40,4 +40,10 @@ public interface ShopMapper {
 	//상품목록 검색
 	public ArrayList<ShopVO> goodsGetList(CriteriaVO cri);
 	
+	
+	//상품 상세 내용보기 메인 이미지 설계
+	public ShopVO main(ShopVO shop);
+	
+	//상품 상세 내용보기 서브 이미지 설계
+	public ArrayList<ShopVO> sub(ShopVO shop);
 }

@@ -16,9 +16,7 @@
 					<li><a href="#" class="sh_a">juice</a></li>
 				</ul></li>
 
-			<li><a href="#" class="sh_a">Best</a></li>
 			<li><a href="#" class="sh_a">New</a></li>
-			<li><a href="#" class="sh_a">Sale</a></li>
 			<li><a href="#" class="sh_a">Event</a></li>
 		</ul>
 		<div class="sh_main">
@@ -26,56 +24,34 @@
 				<a href="#" class="sh_a"><h2 class="sh_h2">인기 상품></h2></a>
 			</div>
 			<div class="sh_main_top">
-				<div class="sh_main_image_1">
-					<a href="/shopPurchase" class="sh_a">
-						<div class="sh_img">
-							<img src="../../../resources/image/shop/배추.jpg">
-						</div>
-						<div class="sh_text">
-							한진택배<br> 알배기 배추 1kg<br> 4,990원<br> 속이 꽉차고 달큰한 알배기
-							배추
-						</div>
-					</a>
+				<ul class="sh_mainpart">
+						<c:forEach items="${shopVO}" var="shlist">
+							<li>
+								<div>
+									<input type="text" value="${shopVO.prodnum}" hidden="">
+								</div>
+							
+								<div>
+									<a href="/shopProductlist/ShopList?prodnum=${ShopProductlist.prodnum}" class="shmain_img" >
+									<img class="shmain_img" src="/display?filename=${shopProductlist.filename }"></a>
+								</div>
+								
+								<div>
+									상품명<span class="font">${ShopProductlist.NAME}</span>
+								</div>
+								<div>
+									가격<span class="font">${ShopProductlist.discountprice}</span>
+								</div>
+								<div>
+									<span class="font">${ShopProductlist.subcontent}</span>
+								</div>
+							</li>
+						</c:forEach>
+				</ul>
+				</div>
 				</div>
 
-				<div class="sh_main_image_1">
-					<a href="#" class="sh_a">
-						<div class="sh_img">
-							<img src="../../../resources/image/shop/복숭아.jpg">
-						</div>
-						<div class="sh_parcel">한진택배</div>
-						<div class="sh_cabbage">복숭아 1kg</div>
-						<div class="sh_cabbage_price">9,900원</div>
-						<p class="sh_cabbage_ex">아삭달콤 딱딱이 복숭아</p>
-					</a>
-				</div>
-
-				<div class="sh_main_image_1">
-					<a href="#" class="sh_a">
-						<div class="sh_img">
-							<img src="../../../resources/image/shop/고등어.jpg">
-						</div>
-						<div class="sh_parcel">한진택배</div>
-						<div class="sh_pish">고등어 3마리</div>
-						<div class="sh_pish_price">12,000원</div>
-						<p class="sh_pish_ex">싱싱하고 등푸른 고등어</p>
-					</a>
-				</div>
-
-				<div class="sh_main_image_1">
-					<a href="#" class="sh_a">
-						<div class="sh_img">
-							<img src="../../../resources/image/shop/안심.jpg">
-						</div>
-						<div class="sh_parcel">한진택배</div>
-						<div class="sh_meat">안심 250g</div>
-						<div class="sh_meat_price">17,130원</div>
-						<p class="sh_meat_ex">부드럽고 신선한 누구나 좋아하는 부위</p>
-					</a>
-				</div>
-			</div>
-
-			<div class="sh_division_2">
+	<!-- 		<div class="sh_division_2">
 				<a href="#" class="sh_a"><h2 class="sh_h2">F&M이 추천하는 신상 제품></h2></a>
 			</div>
 
@@ -132,6 +108,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
+</div>
 </div>
 <%@ include file="../Footer/footer.jsp"%>
