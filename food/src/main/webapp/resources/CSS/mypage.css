@@ -211,12 +211,21 @@ canclelist
 	width:100%
 }
 
+#my_like td{
+	border : solid 1px rgb(234, 234, 234);
+	padding: 5px;
+}
+
 
 
 /* myreply */
 #my_reply{
 	border : solid 1px rgb(234, 234, 234);
-	width:600px;
+	width:100%;
+}
+
+#my_reply td{
+	border : solid 1px rgb(234, 234, 234);
 }
 
 #my_Tsize1{
@@ -247,6 +256,10 @@ canclelist
 #my_write{
 	border : solid 1px rgb(234, 234, 234);
 	width:100%
+}
+
+#my_write td{
+	border : solid 1px rgb(234, 234, 234);
 }
 
 #my_paging{
@@ -317,12 +330,20 @@ canclelist
 
 .my_orderImg{
 	width:100px;
+	border:1px solid rgb(234, 234, 234);
 }
 
 .my_orderCon{
 	font-size:65%;
 	color:#c0c0c0;
 	font-weight:bold;
+	text-align:center;
+}
+
+#my_orderlist{
+	margin:15px;
+	width:95%;
+	border:1px solid rgb(234, 234, 234);
 }
 
 .my_orderTb{

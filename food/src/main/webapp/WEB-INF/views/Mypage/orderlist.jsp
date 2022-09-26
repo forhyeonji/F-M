@@ -34,10 +34,10 @@
 			<input type="hidden" name="user" value="${sessionScope.user_id }">
 			<h3>주문내역을 확인하세요~😁😁</h3>
 			<div class="my_order1">	
-${orderlist}						
+						
 <!-- 주문날짜별로 나누고, 상품별로 하나씩 생성 -->	
 			<c:forEach items="${orderlist}" var="orderlist">
-				<table>
+				<table id="my_orderlist">
 					<tr>				
 						<td class="my_orderDate" colspan="3">주문날짜 ${orderlist.o_date}
 						<input type="hidden" value="${orderlist.o_no}"></td>
@@ -45,7 +45,7 @@ ${orderlist}
 					<tr>
 						<td class="my_orderTb" rowspan="3">
 							<img class="my_orderImg" alt="상품사진" src=""></td>
-						<td>${orderlist.s_name}</td>
+						<td class="my_orderTb">${orderlist.s_name}</td>
 						<td class="my_orderTb">
 						<a href="http://localhost:8080/mypage/orderdetail">
 						<input type="button" value="상세 보기"></a></td>
@@ -56,7 +56,7 @@ ${orderlist}
 						<input type="button" value="배송 조회"></a></td>
 					</tr>
 					<tr>
-						<td>수량 <span>${orderlist.o_cnt}</span>
+						<td class="my_orderTb">수량 <span>${orderlist.o_cnt}</span>
 							/ 가격 <span>${orderlist.o_sum}</span></td>
 						<td class="my_orderTb">
 							<a href="http://localhost:8080/mypage/ordercancle">
@@ -67,7 +67,7 @@ ${orderlist}
 					</tr>
 				</table>
 			</c:forEach>
-								
+${orderlist}								
 			</div><!-- my_order1 -->
 			
 		</div><!-- my_center -->

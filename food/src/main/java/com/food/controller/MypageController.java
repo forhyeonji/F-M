@@ -128,8 +128,8 @@ public class MypageController {
 	}
 	
 	//장바구니 상품 주문하기
-	@RequestMapping(value="/mypage/cart/order", method = RequestMethod.POST)
-	public ResponseEntity<String> order(HttpSession session, @RequestBody OrderlistVO order){
+	@RequestMapping(value="/mypage/cart/order/{o_no}", method = RequestMethod.POST)
+	public ResponseEntity<String> order(HttpSession session, @RequestBody OrderlistVO order, @PathVariable int o_no){
 		//로그인한 아이디로 주문
 		String id = (String)session.getAttribute("user_id");
 		order.setUser_id(id);
@@ -142,7 +142,7 @@ public class MypageController {
 	
 	//주문 리스트
 	@RequestMapping(value = "mypage/orderlist", method = RequestMethod.GET)
-	public String order(Model model, HttpSession session, UserVO user) {
+	public String orderlist(Model model, HttpSession session, UserVO user) {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("orderlist", ms.orderlist(id));
@@ -151,7 +151,7 @@ public class MypageController {
 	
 	//주문 리스트
 	@RequestMapping(value="/mypage/orderlist/{user_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<OrderlistVO>> orderlist(Model model, @PathVariable String user_id){
+	public ResponseEntity<ArrayList<OrderlistVO>> orderlistget(Model model, @PathVariable String user_id){
 		System.out.println(user_id);
 		model.addAttribute("orderlist", ms.orderlist(user_id));
 		return new ResponseEntity<>(ms.orderlist(user_id), HttpStatus.OK);		
