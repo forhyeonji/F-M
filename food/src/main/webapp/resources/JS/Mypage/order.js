@@ -9,38 +9,48 @@ $(document).ready(function(){
 	
 	//전체 주문 클릭하면
 	$("#my_cart").on("click", "#my_cartAll", function(){
-		
-		var cartOrderArr = new Array();
-		var c_no = $(".my_oneck").val();
-
-		$("input:checkbox[name='my_onecheck']:checked").each(function(){			
-			//상품번호
-			cartOrderArr.push($(this).val());
-			//상품수량
-			var cntnow = $("#my_cntnow"+c_no).val();
-			cartOrderArr.push(cntnow);
-			//상품별 합계
-			var c_sum = $("#my_sum"+c_no).data("c_sum");
-			cartOrderArr.push(c_sum);
-		})
-		console.log(cartOrderArr);
+		alert("호잇호잇");
+//		var cnoArr = new Array();
+//		var cntArr = new Array();
+//		var sumArr = new Array();
+//
+//		$("input:checkbox[name='my_onecheck']:checked").each(function(){			
+//			//상품번호
+//			var c_no = $(this).val()
+//			cnoArr.push(c_no);
+//			//상품수량
+//			var c_cnt = $("#my_cntnow"+$(this).val()).val()
+//			cntArr.push(c_cnt);
+//			//상품별 합계
+//			var c_sum = $("#my_sum"+$(this).val()).data("c_sum");
+//			sumArr.push(c_sum);
+//		})
+//		console.log(cnoArr);
+//		console.log(cntArr);
+//		console.log(sumArr);
+//		cartorder({cnoArr:cnoArr, cntArr:cntArr, sumArr:sumArr, userid:userid});
+//	
+//	for(var i=0; i<cnoArr.length; i++){
+//		$.ajax({
+//			type:"post",
+//			url:"/mypage/cart/order/"+cnoArr[i],
+//			success:function(result){
+//				if(result=="success"){
+//					alert("성공햇냐?")
+//				}
+//			}
+//			
+//		});	
+//	}
+	
+	
+	
 	})
 	
 //전체 주문 클릭 함수 선언
-function cartorder(data){
+function cartorder(cartOrderArr, userid){
+		console.log(cartOrderArr);
 
-	$.ajax({
-		type:"post",
-		url:"/mypage/cart/order",
-		data:JSON.stringify(data),
-		contentType: "application/json; charset=utf-8",
-		success:function(result){
-			if(result=="success"){
-				alert("성공햇냐?")
-			}
-		}
-		
-	});	
 
 }//cartorder 닫음	
 

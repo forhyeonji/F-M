@@ -6,44 +6,29 @@
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/main.css">
 
 
-
 <div id="main_outborder">
 
-	
-	<div class="main_slide_wrap">
-			<div class="main_slider">
-				<i class="fa fa-chevron-right fa-2x next-slide" id="next-slide"></i>	
-				<i class="fa fa-chevron-left fa-2x prev-slide" id="prev-slide"></i>
-				
-				<div class="slider-screen" id="slider-screen">
-					<div class="slider-img active" id="slider-img" data-img="1">
-						<img src="../../../resources/image/shop/안심.jpg" alt="01" />			
-					</div>
-					<div class="slider-img" id="slider-img" data-img="2">
-						<img src="../../../resources/image/shop/고등어.jpg" alt="02" />			
-					</div>
-					<div class="slider-img" id="slider-img" data-img="3">
-						<img src="../../../resources/image/shop/신라면.jpg" alt="03" />			
-					</div>
-					<div class="slider-img" id="slider-img" data-img="4">
-						<img src="../../../resources/image/shop/밀키트 된장찌개.jpg" alt="04"  />			
-					</div>
-					<div class="slider-img" id="slider-img" data-img="5">
-						<img src="../../../resources/image/shop/신라면.jpg" alt="05"  />		
-					</div>
-					
-				</div>
-				<ul class="bullets">
-						<li class="active" data-bull="1"></li>
-						<li data-bull="2"></li>
-						<li data-bull="3"></li>
-						<li data-bull="4"></li>
-						<li data-bull="5"></li>
-					</ul>
-			</div>
-		</div>
- 
-	
+	<div class="slider slider-1">
+	    <div class="slides">
+	        <div class="active" style="background-color:red;"></div>
+	        <div style="background-color:blue;"></div>
+	        <div style="background-color:green;"></div>
+	        <div style="background-color:gold;"></div>
+	    </div>
+	    
+	    <div class="main_slidepages">
+	        <div class="active"></div>
+	        <div></div>
+	        <div></div>
+	        <div></div>
+	    </div>
+	    
+	    <div class="side-btns">
+	        <div></div>
+	        <div></div>
+	    </div>
+	</div>
+
 	
 	<div>
 		<div>
