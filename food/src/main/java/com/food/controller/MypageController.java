@@ -89,7 +89,10 @@ public class MypageController {
 	
 	//장바구니
 	@RequestMapping(value = "mypage/cart", method = RequestMethod.GET)
-	public String cart() {
+	public String cart(Model model, HttpSession session, UserVO user) {
+		String id = (String) session.getAttribute("user_id");
+		user.setUser_id(id);
+		model.addAttribute("cartlist", ms.cartlist(id));
 		return "Mypage/cart";
 	}
 	//장바구니는 비동기 도전!!
@@ -105,6 +108,8 @@ public class MypageController {
 	@ResponseBody
 	@RequestMapping(value="/mypage/cart/modify", method=RequestMethod.PUT)
 	public ResponseEntity<String> cartmodify(HttpSession session, @RequestBody CartVO cart){
+		String id = (String)session.getAttribute("user_id");
+		cart.setUser_id(id);
 		int result = ms.cartmodify(cart);
 		System.out.println("수정하는거 콘트롤러 연결된겨?");
 		System.out.println(cart);
