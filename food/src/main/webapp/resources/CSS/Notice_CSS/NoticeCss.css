@@ -357,6 +357,7 @@
 	margin-bottom : 7px;
 	box-sizing : border-box;
 	padding-left : 10px;
+	border : none;
 }
 
 
@@ -408,34 +409,6 @@
 	QnA
  */
  
- 
-
-
-.NOTI_QnA_title{
-	width : 520px;
-	text-align : center;
-
-}
-
-.NOTI_QnA_writer{
-	width : 120px;
-	text-align : center;
-}
-
-
-.NOTI_QnA_regdate{
-	width : 120px;
-	text-align : center;
-}
-
-.NOTI_QnA_cnt{
-	width : 30px;
-	height: 51px;
-	text-align : center;
-	vertical-align :middle;
-}
-
-
 
 
 

@@ -14,7 +14,7 @@ public interface NotiBoardMapper {
 	public ArrayList<NotiBoardVO> list(CriteriaVO criteriaVO);
 	
 	//조회수
-		public void cntup(NotiBoardVO board);
+	public void cntup(NotiBoardVO board);
 	
 	// 게시글 상세보기
 	public NotiBoardVO detail(NotiBoardVO board);
@@ -31,7 +31,7 @@ public interface NotiBoardMapper {
 	// tb_notice테이블 전체 글 수
 	public int total(CriteriaVO criteriaVO);
 	// 1:1질의 전체 글 수
-	public int total2(MypageVO criteriaVO);
+	public int total2(MypageVO mypage);
 	// 1:1질의 내가쓴 글
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
 

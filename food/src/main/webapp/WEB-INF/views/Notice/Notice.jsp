@@ -42,10 +42,10 @@
 		<table class="NOTI_Que_Table">
 					
 					<tr>
-						<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
-						<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
-						<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
-						<td class="NOTI_QnA_cnt" class="NOTI_title_effect">조회수</td>
+						<td height="520px" class="NOTI_title_effect">제목</td>
+						<td height="120px" class="NOTI_title_effect">작성자</td>
+						<td height="120px" class="NOTI_title_effect">작성일</td>
+						<td height="30px" class="NOTI_title_effect">조회수</td>
 					</tr>
 		
 		<!-- for문 시작 -->
