@@ -48,11 +48,10 @@
 					<tr>					
 						<td id="my_Tsize1">${mylike.bno }</td>
 						<td id="my_Tsize2"><a href="/detail/${mylike.bno }">${mylike.title}</a></td>
-						<td id="my_likeTsize3">${mylike.likecnt}</td>
+						<td id="my_likeTsize3">${mylike.vote}</td>
 					</tr>
 					</c:forEach>						
 				</table>
-
 			<div id="my_paging">	
 				<div>			
 <!-- 이전버튼 -->
@@ -67,7 +66,7 @@
 
 <!-- 다음버튼 -->			
 					<c:if test="${paging.nextBtn }">
-						<a href="/mypage/myrlike?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+						<a href="/mypage/mylike?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 					</c:if>					
 				</div>			
 			</div>				

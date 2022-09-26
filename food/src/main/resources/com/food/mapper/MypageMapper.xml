@@ -98,12 +98,21 @@
 	</select>
 	
 	<select id="mylike" parameterType="com.food.model.VoteVo" resultType="com.food.model.MypageVO">
-		select v.*,
-			(select title from tb_community co where co.bno = v.bno) as title,
-			(select vote from tb_community co where co.bno = v.bno) as likecnt
-		from  tb_vote v 
-		where user_id=#{user_id}
-		order by v.bno desc 
+		select likelist.*, co.*  
+		from (
+			select @rownum:= @rownum+1 rownum, v.*
+			from tb_vote v, (select @rownum:=0) as tmp
+			
+			<if test="user_id != null">
+				where user_id = #{user_id}
+			</if> 
+		
+		order by bno desc 
+		)as likelist left outer join tb_community co
+		on likelist.bno = co.bno
+		<![CDATA[
+		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
 	</select>
 	
 	<select id="liketotal" resultType="int">
