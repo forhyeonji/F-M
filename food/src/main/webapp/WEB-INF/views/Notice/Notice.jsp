@@ -9,7 +9,6 @@
 		<br>
 	
 	
-	
 	<!-- 검색기능 -->
 	<form action="/notice" id="searchForm" method="get">
 	
