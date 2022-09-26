@@ -40,8 +40,8 @@
 						<button id="my_selectdelBtn">선택 삭제</button>
 					</div>					
 				</div>
-			
-				<div id="my_cartIn2"></div>				
+				<div id="my_cartIn2">
+				</div>				
 			</div>
 			<br>
 			<div id="my_cartpay" > 
@@ -53,8 +53,7 @@
 			
 		</div><!-- my_center -->
 		
-		<div id="my_side_right"></div>
-		
+		<div id="my_side_right"></div>		
 	</div><!-- my_main -->	
 </div><!-- my_con -->
 </body>

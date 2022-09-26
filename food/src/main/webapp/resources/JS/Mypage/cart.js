@@ -25,12 +25,11 @@ $(document).ready(function(){
 //	})
 
 	
-	
 	//수량 수정 버튼 클릭하면
 	$("#my_cart").on("click",".my_cntmodify",function(){
 		var c_no = $(this).data("c_no");
 		console.log(c_no);
-		var c_cnt = $(this).data("c_cnt");
+		var c_cnt = $("#my_cntnow"+c_no).val();
 		console.log(c_cnt);
 		//수량 수정 하기 위한 함수 호출
 		cartmodify({c_no:c_no, c_cnt:c_cnt});
@@ -46,6 +45,7 @@ function cartmodify(c_cnt){
 		contentType: "application/json; charset=utf-8",
 		success:function(result){
 			alert("수량 수정 성공입니닷");
+			location.reload();
 		},
 		error:function(e){
 			alert("수량 수정 실패 👽👽");
@@ -146,9 +146,9 @@ function cartlist(userid){
 			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
 			str+="<td>"
 //			str+="<button class='my_cntminus' data-c_cnt="+data[i].c_cnt+">-</button>"
-			str+="<input type='text' class='my_cntnow' value='"+data[i].c_cnt+"'>"
+			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' value='"+data[i].c_cnt+"'>"
 //			str+="<button class='my_cntplus' data-c_cnt="+data[i].c_cnt+">+</button>"
-			str+="<input type='button' class='my_cntmodify' value='수정' data-c_cnt="+data[i].c_cnt+" data-c_no="+data[i].c_no+"></td>"
+			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
 			str+="<td>"+addComma(data[i].c_sumprod)+" 원</td>"
 			str+="<td><input type='button' value='주문하기'><br>"
 			str+="<input class='cartdelete' type='button' value='삭제하기' data-c_no="+data[i].c_no+"></td></tr>"
@@ -156,15 +156,15 @@ function cartlist(userid){
 		str+="<tr><th colspan='6'>"
 		str+="<input id='my_cartAll' type='submit' value='👉전체주문👈'>"
 		str+="</th></tr></table>"
-		$("#my_cartlist").html(str);	
+			//해당 위치에 str 전부 출력
+			$("#my_cartIn2").html(str);
 	}	
 	//장바구니에 담긴 상품이 없으면
 	else{
 		str+="<h3>장바구니에 담긴 상품이 없습니다 😢😢</h3>"
 		$("#my_cartIn").hide();
 	}
-	//해당 위치에 str 전부 출력
-	$("#my_cartIn2").html(str);
+
 	
 	})
 }//cartlist 닫음
