@@ -14,7 +14,7 @@
 				<tr>	
 					<td width="260px"> 연락처 <input type="text" placeholder="꼭 남겨주세요" class="NOTI_Tel" name="user_tel"> </td>
 			
-					<td>
+					<td width="150px">
 						<select class="NOTI_Que_select" name="subsep">
 							<option value="inquiry_recipe">레시피 문의</option>
 							<option value="inquiry_store">스토어 문의</option>
@@ -59,10 +59,10 @@
 			<table class="NOTI_Que_Table">	
 			
 				<tr>
-					<td width="70px" class="NOTI_title_effect">카테고리</td>
-					<td width="330px" class="NOTI_title_effect">제목</td>
-					<td width="100px" class="NOTI_title_effect">작성일</td>
-					<td width="100px" class="NOTI_title_effect">답변여부</td>
+					<td width="80px" class="NOTI_title_effect">카테고리</td>
+					<td width="430px" class="NOTI_title_effect">제목</td>
+					<td width="120px" class="NOTI_title_effect">작성일</td>
+					<td width="120px" class="NOTI_title_effect">답변여부</td>
 				</tr>
 			
 			
