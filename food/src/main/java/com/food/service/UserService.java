@@ -18,5 +18,18 @@ public interface UserService {
 
  	
     
-    
+    /*
+ 	
+ 	public UserVO checkLoginBefore(String value) throws Exception;
+	
+	public void memberAuth(String user_email) throws Exception;
+
+	public static void register(UserVO userVO) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+	*/
+
+
 }

@@ -63,7 +63,7 @@
 					</div>
 					<br>
 					<div>
-						<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" '-' 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
+						<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" "-" 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
 					</div>
 					<br>
 					<div>
@@ -237,26 +237,37 @@
 				<div id=insert_agree><br>
 				<h4>이용 동의사항*</h4><br>
 					<div id=insert_agree_in>
-						<div><input type ="checkbox"></div>
+						<div><input type ="checkbox" name="insert_allAgree"  value="insert_allAgree" onclick="insert_allAgree(this)"></div>
 						<div>전체 동의</div><br>
-						<div><input type ="checkbox" name = "insert_agree" id="user_agree1"></div>
+						<div><input type ="checkbox" name = "insert_agree" id="user_agree1" onclick="insert_checkAgree(this)"></div>
 						<div>(필수)본인은 만 14세 이상입니다.</div><br>
-						<div><input type ="checkbox" name = "insert_agree" id="user_agree2"></div>
+						<div><input type ="checkbox" name = "insert_agree" id="user_agree2" onclick="insert_checkAgree(this)"></div>
 						<div>(필수)이용 약관에 동의합니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox" name = "insert_agree" id="user_agree3"></div>
+						<div><input type ="checkbox" name = "insert_agree" id="user_agree3" onclick="insert_checkAgree(this)"></div>
 						<div>(필수)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox"></div>
+						<div><input type ="checkbox" onclick="insert_checkAgree(this)"></div>
 						<div>(선택)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox"></div>
-						<div>(선택)SMS로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox"></div>
+						<div><input type ="checkbox" onclick="insert_checkAgree(this)"></div>
+						<div>(선택)이메일으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br>
+						<div><input type ="checkbox" onclick="insert_checkAgree(this)"></div>
 						<div>(선택)휴대폰으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br><br>
 						<span class="insert_agreeNone">동의사항을 확인하세요.</span>
 					</div>
 				</div><br>
 				
+				
+				
+				<input type="checkbox" id="chk_all">
+				<input type="checkbox" class="del-chk">  
+				<input type="checkbox" class="del-chk"> 
+				<input type="checkbox" class="del-chk"> 
+
+				
+				
+				
+				
 				<div id="insert_submit"><br>
-				<input type="button" id = "insert_insert" value="가입하기">
+					<input type="button" id = "insert_insert" value="가입하기">
 				</div><br>
 		
 			</div>			

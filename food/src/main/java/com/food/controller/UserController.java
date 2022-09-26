@@ -14,6 +14,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -126,6 +127,37 @@ public class UserController{
   	
   	
   	
+  	
+	
+  	
+ 
+
+	/*
+	@RequestMapping(value = "/emailCheck", method=RequestMethod.POST)
+	public String register(UserVO userVO, RedirectAttributes rttr, Model model)throws Exception{
+		UserService.register(userVO);
+		model.addAttribute("user", userVO);
+		
+		
+		rttr.addFlashAttribute("msg", "가입이 완료되었습니다");
+		rttr.addAttribute("memberEmail", userVO.getUser_email());
+		rttr.addAttribute("memberId", userVO.getUser_id());
+		
+		return "redirect:/insert";
+		
+		
+	}
+	
+	@RequestMapping(value="/emailCheck", method=RequestMethod.GET)
+	public String emailConfirm(String user_email,Model model)throws Exception{
+		us.memberAuth(user_email);
+		model.addAttribute("memberEmail", user_email);
+		
+		return "/insert";
+	}
+	*/
+	
+	
   	/* 이메일 인증 */
 	@RequestMapping(value="/mailCheck", method=RequestMethod.GET)
 	@ResponseBody

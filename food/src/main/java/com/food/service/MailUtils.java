@@ -1,3 +1,5 @@
+/*
+
 package com.food.service;
 
 import java.io.UnsupportedEncodingException;
@@ -45,3 +47,5 @@ public class MailUtils {
 	}
 
 }
+
+*/

@@ -373,6 +373,7 @@ $(".mail_check_button").click(function(){
 	});
 	
 });
+
 /* 인증번호 비교 */
 $(".mail_check_input").blur(function(){
 	
@@ -388,3 +389,14 @@ $(".mail_check_input").blur(function(){
 	}	
 	
 });
+
+
+
+/* 전체 동의 전체 해제*/
+
+
+$(".insert_allAgree").click(function(){
+	
+	
+})
+
