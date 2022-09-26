@@ -41,18 +41,18 @@
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/QnA_write'">
 		<hr>
 	
-		<table class="NOTI_mainTable">
-		<tr class="NOTI_bar">
-			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
-			<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
-			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>
-			<td class="NOTI_QnA_cnt" class="NOTI_title_effect">조회수</td>
+		<table class="NOTI_Que_Table">
+		<tr>
+			<td height="520px" class="NOTI_title_effect">제목</td>
+			<td height="120px" class="NOTI_title_effect">작성자</td>
+			<td height="120px" class="NOTI_title_effect">작성일</td>
+			<td height="30px" class="NOTI_title_effect">조회수</td>
 		</tr>
 		<!-- for문 시작 -->
 		<c:forEach items="${list}" var="Notiboardlist">
 	
 					<tr>
-						<td class="NOTI_list_title">
+						<td class="NOTI_list_title" class="NOTI_Que_title_effect">
 		
 							<c:choose>
 								<c:when test="${Notiboardlist.boldtitle}">
@@ -64,9 +64,9 @@
 							</c:choose>
 		
 						</td>
-						<td class="NOTI_list_writer">${Notiboardlist.user_id}</td>
-						<td class="NOTI_list_regdate">${Notiboardlist.reg_dt}</td>
-						<td class="NOTI_list_no">${Notiboardlist.cnt}</td>
+						<td class="NOTI_list_writer" class="NOTI_Que_title_effect">${Notiboardlist.user_id}</td>
+						<td class="NOTI_list_regdate" class="NOTI_Que_title_effect">${Notiboardlist.reg_dt}</td>
+						<td class="NOTI_list_no" class="NOTI_Que_title_effect">${Notiboardlist.cnt}</td>
 				</tr>
 
 

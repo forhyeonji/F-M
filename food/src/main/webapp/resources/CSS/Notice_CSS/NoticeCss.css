@@ -85,21 +85,13 @@
 	DirectKing_answer
 	DirectQue_detail
  */
-
-/* 헤더메뉴 */
-.NOTI_table, td{
-	
-	border: solid 1px rgb(234, 234, 234);
+/* 
+헤더메뉴
+.NOTI_table > td{
+	border : solid 1px rgb(234, 234, 234);
 	border-collapse : collapse;
-}
-
-.NOTI_mainTable, td{
-	/* border-top: solid 1px rgb(234, 234, 234); */
-	border-bottom: solid 1px rgb(234, 234, 234);
-	border-collapse : collapse;
-}
-
-
+} 
+ */
 
 .NOTI_label {
 	width : 200px;
@@ -161,8 +153,8 @@
 	height : 32px;
 	padding : 5px;
 	display : inline;
-	margin-top : 30px;
-	margin-bottom : 5px;
+	margin-top : 10px;
+	margin-bottom : 10px;
 	border : solid 1px rgb(234, 234, 234);
 	background-color: rgb(255, 255, 255);
 	
@@ -244,7 +236,7 @@
 
 .NOTI_a {
 	color : black;
-	
+	text-align:center;
 }
 
 
@@ -265,9 +257,8 @@
 }
 
 .NOTI_title_effect{
-	padding : 15px;
-	border-bottom : solid 1px rgb(234, 234, 234);
-	text-align:
+	text-align : center;
+	height:51px;
 }
 
 
@@ -312,9 +303,11 @@
 	border-bottom : solid gray 1px;
 }
 
-.NOTI_Que_Table {
-	width : 750px;
+.NOTI_Que_Table, .NOTI_Que_Table td {
+	
+	border-bottom : solid 1px rgb(234, 234, 234);
 	border-collapse : collapse;
+	
 	
 }
 
@@ -345,8 +338,9 @@
 }
  
 .NOTI_Que_title_effect{
-	padding : 15px;
 	border-bottom : solid 1px rgb(234, 234, 234);
+	text-align:center;
+	height : 51px;
 }
 
 #NOTI_Que_category{
@@ -383,7 +377,10 @@
 }
 
 
-
+.NOTI_a {
+	text-decoration : none;
+	color : black;
+}
 
 
 
@@ -451,6 +448,7 @@
 }
 
 .NOTI_list_title{
+	height : 51px;
 	width : 490px;
 	text-align : center;
 
@@ -458,6 +456,7 @@
 
 .NOTI_list_writer{
 	width : 120px;
+	height : 51px;
 	text-align : center;
 }
 
