@@ -15,16 +15,6 @@ $(document).ready(function(){
 	
 
 	
-	//수량 플러스 버튼 클릭하면
-//	$("#my_cart").on("click", ".my_cntplus", function(){
-//		//해당 수량을 불러와라
-//		var cntnow = $(this).data("c_cnt");
-//		console.log(cntnow);
-//		//불러온 수량을 +1시키고,
-//		//다시 수량에 찍어라		
-//	})
-
-	
 	//수량 수정 버튼 클릭하면
 	$("#my_cart").on("click",".my_cntmodify",function(){
 		var c_no = $(this).data("c_no");
@@ -146,7 +136,7 @@ function cartlist(userid){
 			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
 			str+="<td>"
 //			str+="<button class='my_cntminus' data-c_cnt="+data[i].c_cnt+">-</button>"
-			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' value='"+data[i].c_cnt+"'>"
+			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
 //			str+="<button class='my_cntplus' data-c_cnt="+data[i].c_cnt+">+</button>"
 			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
 			str+="<td>"+addComma(data[i].c_sumprod)+" 원</td>"
@@ -156,16 +146,14 @@ function cartlist(userid){
 		str+="<tr><th colspan='6'>"
 		str+="<input id='my_cartAll' type='submit' value='👉전체주문👈'>"
 		str+="</th></tr></table>"
-			//해당 위치에 str 전부 출력
-			$("#my_cartIn2").html(str);
 	}	
 	//장바구니에 담긴 상품이 없으면
 	else{
 		str+="<h3>장바구니에 담긴 상품이 없습니다 😢😢</h3>"
 		$("#my_cartIn").hide();
 	}
-
-	
+	//해당 위치에 str 전부 출력
+	$("#my_cartIn2").html(str);
 	})
 }//cartlist 닫음
 	

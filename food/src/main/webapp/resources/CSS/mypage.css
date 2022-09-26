@@ -157,6 +157,10 @@ canclelist
 	background-color:#ffcbb3;
 }
 
+.my_cnt{
+	width:50px;
+}
+
 #my_cartCon{
 	font-size:65%;
 	color:#c0c0c0;
