@@ -41,9 +41,8 @@
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/QnA_write'">
 		<hr>
 	
-		<table class="NOTI_Table">
+		<table class="NOTI_mainTable">
 		<tr class="NOTI_bar">
-			
 			<td class="NOTI_QnA_title" class="NOTI_title_effect">제목</td>
 			<td class="NOTI_QnA_writer" class="NOTI_title_effect">작성자</td>
 			<td class="NOTI_QnA_regdate" class="NOTI_title_effect">작성일</td>

@@ -86,24 +86,33 @@
 	DirectQue_detail
  */
 
+/* 헤더메뉴 */
+.NOTI_table, td{
+	
+	border: solid 1px rgb(234, 234, 234);
+	border-collapse : collapse;
+}
 
-.NOTI_table, td {
-	border : solid 1px rgb(234, 234, 234);
+.NOTI_mainTable, td{
+	/* border-top: solid 1px rgb(234, 234, 234); */
+	border-bottom: solid 1px rgb(234, 234, 234);
 	border-collapse : collapse;
 }
 
 
+
 .NOTI_label {
 	width : 200px;
-	height : 24px;
-	background-color : rgba(255, 234, 234);
+	height : 34px;
+	background-color : rgb(252, 252, 252);
 	text-align : center;
 	}
 
 .NOTI_label_answer {
 	width : 1040px;
+	height : 34px;
 	padding-left : 30px;
-	background-color : rgba(255, 252, 252)
+	/* background-color : rgba(255, 252, 252) */
 	}
 	
 .NOTI_detailText{
@@ -153,6 +162,10 @@
 	padding : 5px;
 	display : inline;
 	margin-top : 30px;
+	margin-bottom : 5px;
+	border : solid 1px rgb(234, 234, 234);
+	background-color: rgb(255, 255, 255);
+	
 	}
 
 .NOTI_button {
