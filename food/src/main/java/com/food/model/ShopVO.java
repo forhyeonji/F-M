@@ -20,6 +20,7 @@ public class ShopVO {
 	private int boundary;		/*구매수량*/
 	private String detail;
 	private String filename;
+	private String division;
 	
 	
 	public String getFilename() {
@@ -119,12 +120,21 @@ public class ShopVO {
 	public void setDetail(String detail) {
 		this.detail = detail;
 	}
+	
+	
+	public String getDivision() {
+		return division;
+	}
+	public void setDivision(String division) {
+		this.division = division;
+	}
 	@Override
 	public String toString() {
-		return "ShopVO [prodnum=" + prodnum + ", NAME=" + NAME + ", CONTENT=" + CONTENT + ", subcontent=" + subcontent
-				+ ", price2=" + price2 + ", discountprice=" + discountprice + ", Parcel=" + Parcel + ", packaging="
-				+ packaging + ", unit=" + unit + ", Origin=" + Origin + ", boundary=" + boundary + ", detail=" + detail
-				+ ", attach=" + attach + "]";
+		return "ShopVO [prodnum=" + prodnum + ", NAME=" + NAME + ", CONTENT=" + CONTENT + ", today=" + today
+				+ ", subcontent=" + subcontent + ", price2=" + price2 + ", discountprice=" + discountprice + ", Parcel="
+				+ Parcel + ", packaging=" + packaging + ", unit=" + unit + ", Origin=" + Origin + ", boundary="
+				+ boundary + ", detail=" + detail + ", filename=" + filename + ", division=" + division + ", attach="
+				+ attach + "]";
 	}
 
 	

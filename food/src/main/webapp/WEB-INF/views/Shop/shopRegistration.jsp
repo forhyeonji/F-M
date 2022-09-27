@@ -100,8 +100,6 @@
 								<label for="sh_gasPrice" id="sh_menuName">상품할인가:</label>
 							</div>
 							<div>
-								<!-- <input id="sh_discount" maxlength="2" value="0">
-								<input name="sh_productdiscount" type="hidden" value="0"> -->
 								<span class="sh_spaninput" id="sh_gasPriceinput">판매될 가격을 적어주세요</span>
 							</div>
 						</td>

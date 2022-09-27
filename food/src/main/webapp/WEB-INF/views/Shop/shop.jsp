@@ -3,6 +3,21 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../Header/Header.jsp"%>
 
+<!-- 슬라이드를 위한 코드 -->
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"/>
+<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css"/>
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+
+<link rel="stylesheet" type="text/css"
+	href="../../../resources/CSS/shop_CSS/shop.css">
+<script type="text/javascript"
+	src="../../../resources/JS/Shop/Shop.js"></script>
+
+<meta charset="UTF-8">
+</head>
+<body>
+
 <div class="shop">
 	<div class="shopall">
 		<ul class=" sh_menu1">
@@ -19,96 +34,99 @@
 			<li><a href="#" class="sh_a">New</a></li>
 			<li><a href="#" class="sh_a">Event</a></li>
 		</ul>
-		<div class="sh_main">
-			<div class="division_1">
-				<a href="#" class="sh_a"><h2 class="sh_h2">인기 상품></h2></a>
-			</div>
-			<div class="sh_main_top">
-				<ul class="sh_mainpart">
-						<c:forEach items="${shopVO}" var="shlist">
-							<li>
-								<div>
-									<input type="text" value="${shopVO.prodnum}" hidden="">
-								</div>
+		
+		<div class="sh_slide">
+				<div class="sh_advertisement">
+					<div class="slideadver">
+							<div>
+								<a href="#">	
+									<img src="../../../resources/image/shop/advertisement1.jpg" >
+								</a>
+							</div>
 							
-								<div>
-									<a href="/shopProductlist/ShopList?prodnum=${ShopProductlist.prodnum}" class="shmain_img" >
-									<img class="shmain_img" src="/display?filename=${shopProductlist.filename }"></a>
-								</div>
-								
-								<div>
-									상품명<span class="font">${ShopProductlist.NAME}</span>
-								</div>
-								<div>
-									가격<span class="font">${ShopProductlist.discountprice}</span>
-								</div>
-								<div>
-									<span class="font">${ShopProductlist.subcontent}</span>
-								</div>
-							</li>
-						</c:forEach>
-				</ul>
-				</div>
-				</div>
-
-	<!-- 		<div class="sh_division_2">
-				<a href="#" class="sh_a"><h2 class="sh_h2">F&M이 추천하는 신상 제품></h2></a>
+							<div>
+								<a href="#">	
+									<img src="../../../resources/image/shop/advertisement2.jpg" >
+								</a>
+							</div>
+							
+							<div>
+								<a href="#">	
+									<img src="../../../resources/image/shop/advertisement3.jpg" >
+								</a>
+							</div>
+					</div>				
 			</div>
-
-			<div class="sh_main_middle">
-				<div class="sh_main_image_1">
-					<a href="#" class="sh_a">
-						<div class="sh_img">
-							<img src="../../../resources/image/shop/규동.jpg">
+		
+		
+				<h2 id="sh_h2">[추천 상품]</h2>
+				<div class="sh_slide_div">
+ 					<c:forEach items="${ArrayList}" var="ArrayList">
+					<a href="/shopDetail?prodnum=${ArrayList.prodnum}">
+					<div class="sh_img_div">
+					  	 <div class="sh_ArrayList">
+							<div class="shop_div_img" data-name="${ArrayList.NAME}" data-filename="${ArrayList.filename}">
+                         	  <img>
+                       	    </div>
+						 </div>	
+					 </div>	
+					 
+					 <div class="sh_img_text">	
+						<div class="sh_NAME">
+							${ArrayList.NAME}
+						</div>		
+						
+						<div class="sh_subcontent">
+							${ArrayList.subcontent}
 						</div>
-						<div class="sh_parcel">한진택배</div>
-						<div class="sh_guydong">
-							규동<br> 소고기 덮밥용
+						
+						<div class="sh_discountprice">
+							${ArrayList.discountprice}
 						</div>
-						<div class="sh_guydong_price">18,430원</div>
-						<p class="sh_guydong_ex">간편하게 만들어 맛있게</p>
-					</a>
-				</div>
-
-				<div class="sh_main_image_1">
-					<a href="#" class="sh_a">
-						<div class="sh_img">
-
-							<img src="../../../resources/image/shop/granate.jpg">
+						
+						<div class="sh_prodnum">
+							<input type="hidden" value="${ArrayList.prodnum}">
 						</div>
-						<div class="sh_parcel">한진택배</div>
-						<div class="sh_granate">석류 3개</div>
-						<div class="sh_granate_price">23,500</div>
-						<p class="sh_granate_ex">여자에게 최고의 과일</p>
-					</a>
-				</div>
-
-				<div class="sh_main_image_1">
-					<a href="#" class="sh_a">
-						<div class="sh_img">
-							<img src="../../../resources/image/shop/VINIQ.jpg">
-						</div>
-						<div class="sh_parcel">한진택배</div>
-						<div class="sh_VINIQ">VINIQ 1병</div>
-						<div class="sh_VINIQ_price">13,500</div>
-						<p class="sh_VINIQ_ex">특별한 날 파티용 샴페인</p>
-					</a>
-				</div>
-
-				<div class="sh_main_image_1">
-					<a href="#" class="sh_a">
-						<div class="sh_img">
-							<img src="../../../resources/image/shop/lemon.jpg">
-						</div>
-						<div class="sh_parcel">한진택배</div>
-						<div class="sh_lemon">레몬 6개입</div>
-						<div class="sh_lemon_price">8,750원</div>
-						<p class="sh_lemon_ex">상큼한 미국산 레몬 6개입</p>
-					</a>
-				</div>
+					</div>
+				</a>
+				</c:forEach>
 			</div>
-		</div>
-	</div> -->
+			
+			
+				<h2 id="sh_h2">[신상품]</h2>
+				<div class="sh_slide_div">
+ 					<c:forEach items="${ArrayList}" var="ArrayList">
+					<a href="/Shop/shop">
+					<div class="sh_img_div">
+					  	 <div class="sh_ArrayList">
+							<div class="shop_div_img" data-name="${ArrayList.NAME}" data-filename="${ArrayList.filename}">
+                         	  <img>
+                       	    </div>
+						 </div>	
+					 </div>	
+					 
+					 <div class="sh_img_text">	
+						<div class="sh_NAME">
+							${ArrayList.NAME}
+						</div>		
+						
+						<div class="sh_subcontent">
+							${ArrayList.subcontent}
+						</div>
+						
+						<div class="sh_discountprice">
+							${ArrayList.discountprice}
+						</div>
+						
+						<div class="sh_prodnum">
+							<input type="hidden" value="${ArrayList.prodnum}">
+						</div>
+					</div>
+				</a>
+				</c:forEach>
+			</div>
+	</div>
+	</div>
 </div>
-</div>
+</body>
 <%@ include file="../Footer/footer.jsp"%>

@@ -25,10 +25,26 @@ public class ShopController {
 	@Autowired
 	private ShopService shop;
 	
-	//상품메인
+
+	// 메인 페이지 이동
 	@RequestMapping(value = "/shop", method = RequestMethod.GET)
-	public String list() {
+	public String ShopGET(Model model) {
+
+		System.out.println("메인페이지");
+		// System.out.println("shop.ShopSelect() = "+shop.ShopSelect());
+		// model.addAttribute("prodnum",shop.Shopattachlist(0));
+		model.addAttribute("ArrayList", shop.ShopSelect());
+
 		return "Shop/shop";
+	}
+
+	// 상품 상세설명
+	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
+	public String detail(ShopVO shopvo, Model model) {
+		System.out.println(shop);
+		model.addAttribute("main", shop.main(shopvo));
+		model.addAttribute("sub", shop.sub(shopvo));
+		return "/shopDetail";
 	}
 
 	//상품카테고리 안 meat part
@@ -121,15 +137,16 @@ public class ShopController {
 	
 	}
 	
+	
 
-	// 상품 상세설명
+	/*// 상품 상세설명
 	@RequestMapping(value = "/shoppage/Detail", method = RequestMethod.GET)
-	public String detail(ShopVO Shop, Model model) {
+	public String detssail(ShopVO Shop, Model model) {
 		System.out.println(shop);
 		model.addAttribute("main", shop.main(Shop));
 		model.addAttribute("sub", shop.sub(Shop));
 		return "/shoppage/Detail";
-	}
+	}*/
 
 	
 }

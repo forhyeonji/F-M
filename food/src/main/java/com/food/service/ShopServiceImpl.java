@@ -78,12 +78,18 @@ public class ShopServiceImpl implements ShopService {
 	public int total(CriteriaVO criteriaVO) {
 		return Sm.total(criteriaVO);
 	}
-
 	@Override
 	public void insert(ShopAttachVO attach) {
 
 	}
 
+	//메인화면 상품 정보
+	public ArrayList<ShopVO> ShopSelect(){
+
+		return Sm.ShopSelect();
+	}
+	
+	
 	// 상품 상세 내용보기 메인 이미지 구현
 	public ShopVO main(ShopVO shop) {
 		return Sm.main(shop);

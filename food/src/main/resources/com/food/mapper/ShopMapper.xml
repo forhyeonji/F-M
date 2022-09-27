@@ -49,36 +49,6 @@
 	
 	</select>
 
-	<!-- 상품리스트 -->
-	<!-- <select id="listsub" resultType="com.food.model.ShopVO">
-		select*
-		from(
-		select @rownum :=@rownum+1 rownum,s.*
-		from (select
-		s.prodnum,Name,discountprice,today,Concat(Replace(uploadpath,'\\','/'),'/',uuid,'-',filename)filename
-		from tb_shop s, sh_appatch a
-		where s.prodnum = a.prodnum)s, (select @rownum:=0) as tmp) as
-		shopProductlist
-		order by prodnum asc
-		
-		<if test = "keyword != null">
-                <choose>
-                   <when test="type == 'sh_Tp'.toString()">
-                      where title like concat('%',#{keyword},'%') 
-                   </when>
-                   <when test="type == 'sh_Tk'.toString()">
-                      where context like concat('%',#{keyword},'%') 
-                   </when>
-                   <otherwise>
-                     where (Name like concat('%',#{keyword},'%')
-                      or prodnum like concat('%',#{keyword},'%')) 
-                   </otherwise>
-                </choose>
-            </if>
-		<![CDATA[
-		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} and division = "m"
-		]]>
-	</select> -->
 	
 	<!-- 상품리스트(페이징 및 검색) -->
 	<select id="list" resultType="com.food.model.ShopVO">
@@ -134,37 +104,50 @@
             </if>
 </select>
 
-<!-- 상품 상세내용 -->
 
 
 
-<select id="main" resultType="com.food.model.ShopVO">
+<!-- 쇼핑몰 메인 내용 -->
+<select id="ShopSelect" resultType="com.food.model.ShopVO">
 SELECT 
-	rownum,prodnum,NAME,discountprice,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,<![CDATA['/']]>,uuid,'_' ,filename)AS filem
+	rownum,prodnum,NAME,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,<![CDATA['/']]>,uuid,'-' ,filename)AS filename, discountprice
 FROM  (
 		SELECT   @rownum:=@rownum+1 rownum,a.* 
 		FROM (SELECT * 
 					FROM (
- 						SELECT  t.prodnum,NAME,discountprice,subcontent,division,uuid,filename,uploadPath                                          
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath, discountprice
 							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE  image = 1 and division = 'm' )AS j ) AS a,(
-										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist<![CDATA[
-																								where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} 
-																																		]]>
+										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+</select>
+
+
+<!-- 상품 상세내용 -->
+
+<select id="main" resultType="com.food.model.ShopVO">
+SELECT 
+	rownum,prodnum,NAME,subcontent,division,CONTENT,Parcel,packaging,unit,detail,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
+FROM  (
+		SELECT   @rownum:=@rownum+1 rownum,a.* 
+		FROM (SELECT * 
+					FROM (
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath ,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE  t.prodnum= #{prodnum} and division = 	'm' )AS j ) AS a,(
+										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+;
 </select>
 
 
 <select id="sub" resultType="com.food.model.ShopVO">
 SELECT 
-	rownum,prodnum,NAME,discountprice,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,<![CDATA['/']]>,uuid,'_' ,filename)AS filem
+	rownum,prodnum,NAME,subcontent,division,CONTENT,Parcel,packaging,unit,detail,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
 FROM  (
 		SELECT   @rownum:=@rownum+1 rownum,a.* 
 		FROM (SELECT * 
 					FROM (
- 						SELECT  t.prodnum,NAME,discountprice,subcontent,division,uuid,filename,uploadPath                                          
-							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE  image = 1 and division = 's' )AS j ) AS a,(
-										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist <![CDATA[
-																								where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} 
-																																		]]>
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath ,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE t.prodnum= #{prodnum} and division = 	's' )AS j ) AS a,(
+										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+;
 </select>
 
 </mapper>
