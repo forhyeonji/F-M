@@ -72,7 +72,7 @@
 				sh.price2 as s_price
 		from tb_orderlist o left outer join tb_shop sh
 		on o.o_prodnum = sh.prodnum
-		where o.user_id = #{user_id}
+		where o.user_id = #{user_id} and o_type=&apos;order&apos;
 		order by o_no desc
 	</select>
 			

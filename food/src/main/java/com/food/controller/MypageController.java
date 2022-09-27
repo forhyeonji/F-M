@@ -154,6 +154,7 @@ public class MypageController {
 	public ResponseEntity<ArrayList<OrderlistVO>> orderlistget(Model model, @PathVariable String user_id){
 		System.out.println(user_id);
 		model.addAttribute("orderlist", ms.orderlist(user_id));
+
 		return new ResponseEntity<>(ms.orderlist(user_id), HttpStatus.OK);		
 	}
 		

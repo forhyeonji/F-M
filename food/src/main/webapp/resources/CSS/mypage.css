@@ -295,30 +295,7 @@ canclelist
 	color:#ff8080;	
 }
 
-/* orderdetail */
-.my_orderdetail{
-	border:1px solid rgb(234, 234, 234);
-	margin: 20px 0px;
-	
-}
 
-.my_orderdetail_Tb{
-	width:100%;
-	
-}
-
-#my_orderdetail_pay>table{
-	margin:auto;
-	border:1 rgb(234, 234, 234);
-	width:80%;
-}
-
-.my_orderdetailTB{
-	text-align:center;
-	padding:5px;
-	font-weight:bold;
-	color:#ff8080;
-}
 
 /* orderlist */
 .my_orderDate{

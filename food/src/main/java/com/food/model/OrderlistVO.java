@@ -14,6 +14,7 @@ public class OrderlistVO {
 	private int o_sum;		//주문목록 상품 가격
 	private String user_id;	//주문목록 아이디
 	private String o_dt;	//주문완료된 시각
+	private String o_type;	//주문리스트 내 타입(order / cancle / refund)
 	//날ㅉㅏ수정한거
 	private String o_date;
 	

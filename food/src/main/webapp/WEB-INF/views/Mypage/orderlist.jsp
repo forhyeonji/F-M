@@ -47,8 +47,8 @@
 							<img class="my_orderImg" alt="상품사진" src=""></td>
 						<td class="my_orderTb">${orderlist.s_name}</td>
 						<td class="my_orderTb">
-						<a href="http://localhost:8080/mypage/orderdetail">
-						<input type="button" value="상세 보기"></a></td>
+						<a href="http://localhost:8080/mypage/shopPurchase">
+						<input type="button" value="상품평 GO!"></a></td>
 					</tr>
 					<tr>
 						<td class="my_orderCon">${orderlist.s_content}</td>
@@ -66,8 +66,7 @@
 						</td>
 					</tr>
 				</table>
-			</c:forEach>
-${orderlist}								
+			</c:forEach>								
 			</div><!-- my_order1 -->
 			
 		</div><!-- my_center -->
