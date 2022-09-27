@@ -277,15 +277,20 @@ canclelist
 	width:100%;
 }
 
+#my_ordercancle_Tb tb{
+	border: 1px solid rgb(234, 234, 234);
+}
+
 #my_ordercancle_why{
 	border: 1px solid rgb(234, 234, 234);
 	width:100%;
 	text-align:center;
 }
 
-#my_ordercancleRadio{
+#my_ordercancleOpt{
 	background-color:#ff8080;
 	font-weight:bold;
+	height:50px;
 }
 
 #my_cancleDetail{
@@ -328,34 +333,15 @@ canclelist
 	text-align:center;
 }
 
-/*  orderrefund */
-#my_orderrefund{
-	border: 1px solid rgb(234, 234, 234);
-	margin: 0px 0px 20px;
-}
-
-#my_orderrefund_Tb{
-	width:100%;
-}
-
-#my_orderrefund_why{
-	border: 1px solid rgb(234, 234, 234);
-	width:100%;
+.my_orderTb input{
+	height:30px;
+	width:100px;
 	text-align:center;
+	background-color:#ffcbb3;
+	border:none;
+	border-radius:10px;	
 }
 
-.my_refundOpt{
-	background-color:#ff8080;
-	font-weight:bold;
-	padding:10px;
-}
-
-#my_refundDetail{
-	width:100%;
-	padding:5px;
-	font-weight:bold;
-	color:#ff8080;	
-}
 
 /* profile_edit */
 #my_profile_edit{

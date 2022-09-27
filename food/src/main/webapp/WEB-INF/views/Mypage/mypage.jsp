@@ -20,16 +20,16 @@
 				<p id="my_titlep">마이<br>페이지</p></div>
 
 			<div id="my_menu">
-				<div><a href="http://localhost:8080/mypage/profile_edit">회원 정보 수정</a></div>
-				<div><a href="http://localhost:8080/notice">공지사항</a></div>
-				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
-				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
+				<div><a href="/mypage/profile_edit">회원 정보 수정</a></div>
+				<div><a href="/notice">공지사항</a></div>
+				<div><a href="/QnA">자주하는 질문</a></div>
+				<div><a href="/directQue">1:1 문의</a></div>
 			</div>
 		</div><!-- side_left -->
 		
 		<div id="my_center">
 			<div class="my_center_go">	
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/cart'">
+				<div class="my_go" onclick="location.href='/mypage/cart'">
 					<div class="my_th" >
 						<img class="my_thimage" src="../../../resources/image/mypage/cart.png">
 					</div> 
@@ -38,7 +38,7 @@
 					</div>	
 				</div>	
 						
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/orderlist'">
+				<div class="my_go" onclick="location.href='/mypage/orderlist'">
 					<div class="my_th">
 						<img src="../../../resources/image/mypage/list.png">
 					</div>
@@ -47,19 +47,19 @@
 					</div>
 				</div>	
 				
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/canclelist'">
+				<div class="my_go" onclick="location.href='/mypage/canclelist'">
 					<div class="my_th">
 						<img src="../../../resources/image/mypage/cancle.png">
 					</div>
 					<div class="my_intexttop">
-						<h3>취소▪반품<br> 내역</h3>
+						<h3>취소 내역</h3>
 					</div>	
 				</div>
 								
 			</div>
 
 			<div class="my_center_go">							
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/mykeep'">
+				<div class="my_go" onclick="location.href='/mypage/mykeep'">
 					<div class="my_th">
 						<img class="my_thimage" src="../../../resources/image/mypage/like.png">
 					</div>	
@@ -68,7 +68,7 @@
 					</div>
 				</div>	
 							
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/myreview'">
+				<div class="my_go" onclick="location.href='/mypage/myreview'">
 					<div class="my_th">
 						<img src="../../../resources/image/mypage/review.png">
 					</div>	
@@ -80,7 +80,7 @@
 			</div>
 			
 			<div class="my_center_go">				
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/mywrite'">
+				<div class="my_go" onclick="location.href='/mypage/mywrite'">
 					<div class="my_th">
 						<img src="../../../resources/image/mypage/mywrite.png">
 					</div>
@@ -89,7 +89,7 @@
 					</div>	
 				</div>
 				
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/myreply'">
+				<div class="my_go" onclick="location.href='/mypage/myreply'">
 					<div class="my_th">
 						<img src="../../../resources/image/mypage/myreply.png">
 					</div>
@@ -98,7 +98,7 @@
 					</div>	
 				</div>
 				
-				<div class="my_go" onclick="location.href='http://localhost:8080/mypage/mylike'">
+				<div class="my_go" onclick="location.href='/mypage/mylike'">
 					<div class="my_th">
 						<img src="../../../resources/image/mypage/mylike.png">
 					</div>

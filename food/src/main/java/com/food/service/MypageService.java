@@ -41,6 +41,12 @@ public interface MypageService {
 	//주문목록을 출력하기 위한 설계
 	public ArrayList<OrderlistVO> orderlist(String user_id);
 	
+	//주문 취소페이지를 출력하기 위한 설계
+	public OrderlistVO canclePage(OrderlistVO order);
+	
+	//주문 취소를 위한 설계
+	public int ordercancle(OrderlistVO order);
+	
 	//내가 쓴글을 출력하기 위한 설계
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);
 	
