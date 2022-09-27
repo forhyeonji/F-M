@@ -44,7 +44,7 @@ public class ShopController {
 		System.out.println(shop);
 		model.addAttribute("main", shop.main(shopvo));
 		model.addAttribute("sub", shop.sub(shopvo));
-		return "/shopDetail";
+		return "Shop/shopDetail";
 	}
 
 	//상품카테고리 안 meat part

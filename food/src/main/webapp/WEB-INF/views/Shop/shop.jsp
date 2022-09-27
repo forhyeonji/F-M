@@ -96,7 +96,7 @@
 				<h2 id="sh_h2">[신상품]</h2>
 				<div class="sh_slide_div">
  					<c:forEach items="${ArrayList}" var="ArrayList">
-					<a href="/Shop/shop">
+					<a href="/shopDetail?prodnum=${ArrayList.prodnum}">
 					<div class="sh_img_div">
 					  	 <div class="sh_ArrayList">
 							<div class="shop_div_img" data-name="${ArrayList.NAME}" data-filename="${ArrayList.filename}">

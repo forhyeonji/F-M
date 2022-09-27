@@ -19,10 +19,10 @@
 								<div id="cnt-header_right">
 									<div id="title_header">
 										<div id="detail_name">
-											<h2>${ShopVO.NAME}</h2>
+											<h2>${main.NAME}</h2>
 										</div>
 										<div id="price">
-											<span>${ShopVO.discountprice}원</span>											
+											<span>${main.discountprice}원</span>											
 										</div>
 									</div>
 									<div id="shipping">
@@ -77,16 +77,16 @@
 								</ul>
 							</div>
 							<!-- 상품 설명,리뷰,문의,배송 전체 배치 -->
-							<ul class="tab-contents">
+							<%-- <ul class="tab-contents">
 								<c:forEach items="${sub}" var="sub">
 									<!-- 상품 설명 -->
 									<li id="product-detail"><img
-										src="/Shopdisplay?filename=${sub.filem}"></li>
+										id="sh_subimg" src="/Shopdisplay?filename=${sub.fileName}"></li>
 								</c:forEach>
 								<li id="product-review"></li>
 								<li id="product-qna"></li>
 								<li id="product-etc"></li>
-							</ul>
+							</ul> --%>
 						</div>
 					</div>
 				</div>
