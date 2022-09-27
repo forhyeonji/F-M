@@ -11,4 +11,5 @@ public class CommunityVO {
     private int cnt;
     private String user_id;
     private int vote;
+    private String menus;
 }
