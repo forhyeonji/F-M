@@ -20,10 +20,10 @@
 				<p id="my_titlep">취소▪반품<br>내역</p></div>
 
 			<div id="my_menu">
-				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
-				<div><a href="http://localhost:8080/notice">공지사항</a></div>
-				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
-				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
+				<div><a href="/mypage">마이페이지</a></div>
+				<div><a href="/notice">공지사항</a></div>
+				<div><a href="/QnA">자주하는 질문</a></div>
+				<div><a href="/directQue">1:1 문의</a></div>
 			</div>
 		</div><!-- side_left -->
 
@@ -41,7 +41,7 @@
 						<br>상품 사진(대표로 하나만)</td>
 						<td>상품 이름(제목)</td>
 						<td rowspan="3">
-						<a href="http://localhost:8080/mypage/orderdetail">
+						<a href="/mypage/orderdetail">
 						<input type="button" value="상세 보기"></a></td>
 					</tr>
 					<tr>
@@ -65,7 +65,7 @@
 						<br>상품 사진(대표로 하나만)</td>
 						<td>상품 이름(제목)</td>
 						<td rowspan="3">
-						<a href="http://localhost:8080/mypage/orderdetail">
+						<a href="/mypage/orderdetail">
 						<input type="button" value="상세 보기"></a></td>
 					</tr>
 					<tr>

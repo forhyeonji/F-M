@@ -23,10 +23,10 @@
 				<p id="my_titlep">주문 취소</p></div>
 
 			<div id="my_menu">
-				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
-				<div><a href="http://localhost:8080/notice">공지사항</a></div>
-				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
-				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
+				<div><a href="/mypage">마이페이지</a></div>
+				<div><a href="/notice">공지사항</a></div>
+				<div><a href="/QnA">자주하는 질문</a></div>
+				<div><a href="/directQue">1:1 문의</a></div>
 			</div>
 		</div><!-- my_side_left -->
 
@@ -49,7 +49,7 @@
 						<td>수량<span>${canclePage.o_cnt}</span></td>
 					</tr>
 					<tr>
-						<td>가격<span>${canclePage.s_price}</span></td>
+						<td>가격<span>${canclePage.o_sum}</span></td>
 					</tr>
 				</table></a>
 			</div>

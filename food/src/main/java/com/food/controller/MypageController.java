@@ -184,15 +184,6 @@ public class MypageController {
 	public String canclelist() {
 		return "Mypage/canclelist";
 	}
-	
-	//주문 반품
-	@RequestMapping(value="/mypage/orderrefund", method=RequestMethod.GET)
-	public String refundPage(OrderlistVO order, HttpSession session, Model model) {
-		String id = (String)session.getAttribute("user_id");
-		order.setUser_id(id);
-		model.addAttribute("canclePage", ms.canclePage(order));
-		return "/Mypage/orderrefund";
-	}
 
 	//배송조회
 	@RequestMapping(value = "mypage/delivery", method = RequestMethod.GET)

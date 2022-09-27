@@ -20,10 +20,10 @@
 				<p id="my_titlep">배송조회</p></div>
 
 			<div id="my_menu">
-				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
-				<div><a href="http://localhost:8080/notice">공지사항</a></div>
-				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
-				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
+				<div><a href="/mypage">마이페이지</a></div>
+				<div><a href="/notice">공지사항</a></div>
+				<div><a href="/QnA">자주하는 질문</a></div>
+				<div><a href="/directQue">1:1 문의</a></div>
 			</div>
 			
 			
@@ -33,7 +33,7 @@
 			<div id="my_delivery" >
 			
 				<div id="my_deliTop">
-					<button onclick="http://localhost:8080/mypage/orderlist">
+					<button onclick="/mypage/orderlist">
 					주문 목록 바로 가기</button>					
 				</div>
 				<div id="my_deliMain">

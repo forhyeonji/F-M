@@ -333,6 +333,15 @@ canclelist
 	text-align:center;
 }
 
+.my_orderTb input{
+	height:30px;
+	width:100px;
+	text-align:center;
+	background-color:#ffcbb3;
+	border:none;
+	border-radius:10px;	
+}
+
 
 /* profile_edit */
 #my_profile_edit{
