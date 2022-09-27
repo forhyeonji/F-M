@@ -75,8 +75,8 @@
 			<div>
 				<div id="login_search">
 					<div class="login_search_d"><a class="login_a" href="http://localhost:8080/insert">회원가입</a></div>
-					<div class="login_search_d"><a class="login_a" href="" id="login_find_id">아이디 찾기</a></div>
-					<div class="login_search_d"><a class="login_a" href="">비밀번호 찾기</a></div>
+					<div class="login_search_d"><a class="login_a" href="http://localhost:8080/find_id" id="login_find_id">아이디 찾기</a></div>
+					<div class="login_search_d"><a class="login_a" href="http://localhost:8080/find_pw">비밀번호 찾기</a></div>
 				</div>
 			</div>
 			

@@ -23,10 +23,10 @@
 				<img id="my_titleim" alt="주문내역" src="../../../resources/image/mypage/list.png">
 				<p id="my_titlep">주문내역</p></div>
 			<div id="my_menu">
-				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>			
-				<div><a href="http://localhost:8080/notice">공지사항</a></div>
-				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
-				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
+				<div><a href="/mypage">마이페이지</a></div>			
+				<div><a href="/notice">공지사항</a></div>
+				<div><a href="/QnA">자주하는 질문</a></div>
+				<div><a href="/directQue">1:1 문의</a></div>
 			</div>
 		</div><!-- my_side_left -->
 		
@@ -47,29 +47,45 @@
 							<img class="my_orderImg" alt="상품사진" src=""></td>
 						<td class="my_orderTb">${orderlist.s_name}</td>
 						<td class="my_orderTb">
-						<a href="http://localhost:8080/mypage/orderdetail">
-						<input type="button" value="상세 보기"></a></td>
+						<a href="/mypage/shopPurchase">
+						<input type="button" value="상품평 GO!"></a></td>
 					</tr>
 					<tr>
 						<td class="my_orderCon">${orderlist.s_content}</td>
-						<td class="my_orderTb"><a href="http://localhost:8080/mypage/delivery">
+						<td class="my_orderTb"><a href="/mypage/delivery">
 						<input type="button" value="배송 조회"></a></td>
 					</tr>
 					<tr>
 						<td class="my_orderTb">수량 <span>${orderlist.o_cnt}</span>
 							/ 가격 <span>${orderlist.o_sum}</span></td>
 						<td class="my_orderTb">
-							<a href="http://localhost:8080/mypage/ordercancle">
-							<input type="button" value="취소"></a>
-							<a href="http://localhost:8080/mypage/orderrefund">
-							<input type="button" value="반품"></a>
+							<a href="/mypage/ordercancle?o_no=${orderlist.o_no}">
+							<input type="button" value="취소 하기" name="cancle"></a>
 						</td>
 					</tr>
 				</table>
-			</c:forEach>
-${orderlist}								
+			</c:forEach>								
 			</div><!-- my_order1 -->
-			
+			<div id="my_paging">	
+				<div>			
+<!-- 이전버튼 -->
+					<c:if test="${paging.prevBtn }">
+						<a href="/mypage/orderlist?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+					</c:if>
+
+<!-- 페이징 처리 -->		
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
+						<a href="/mypage/orderlist?pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
+					</c:forEach>
+
+<!-- 다음버튼 -->			
+					<c:if test="${paging.nextBtn }">
+						<a href="/mypage/orderlist?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+					</c:if>					
+				</div>			
+			</div>
+
+		
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

@@ -4,10 +4,12 @@ import com.food.mapper.UserMapper;
 import com.food.model.UserVO;
 
 import java.util.Date;
+import java.util.List;
 
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
+ 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -22,7 +24,7 @@ public class UserServiceImpl implements UserService {
 	
 	
 
-    @Autowired
+    @Autowired 
     UserMapper um;
     
 
@@ -51,6 +53,24 @@ public class UserServiceImpl implements UserService {
 		
 		return um.phoneCheck(user_phone);
 	}
+    
+    // 아이디 찾기
+ 	@Override
+ 	public String find_id(String user_name, String user_phone) {
+ 			
+ 		String result = "";
+ 		
+ 		try {
+ 		 result= um.find_id(user_name, user_phone);
+ 		 
+ 		} catch(Exception e) {
+ 			
+ 			e.printStackTrace();
+ 		}
+ 		
+ 		return result ;
+ 	}
+   
   
     
     
@@ -83,11 +103,7 @@ public class UserServiceImpl implements UserService {
 	}
 
 
-	@Override
-	public UserVO checkLoginBefore(String value) throws Exception {
-		// TODO Auto-generated method stub
-		return null;
-	}
+	 
     */
     
     

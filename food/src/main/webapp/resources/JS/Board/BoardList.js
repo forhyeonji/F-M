@@ -6,6 +6,7 @@ $(function (){
         size: 10,
         count: 0,
         total: 0,
+        groupSize:3,
         title: ''
     }
 
@@ -60,7 +61,6 @@ $(function (){
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(pagination),
             success: (response) => {
-                console.log(response)
                 if(response.code !== 'SUCCESS')
                     return;
                 isCommunityRankListBody(response.result.data);
@@ -88,56 +88,45 @@ $(function (){
         const total = Math.floor(count / pagination.size) + (count % pagination.size !== 0 && 1);
         pagination.total = total;
 
-        html += `<div class="page" id="page-pre">이전</div>`;
-        for(let i=0; i<pagination.size; i++){
-            html += `<div class="page" id="page-${i+1}">${i+1}</div>`;
+        html += `<div class="page" id="page-pre">이전</div>`
+        for (let i = 0; i < pagination.total; i++) {
+            html += `<div class="page ${pagination.groupSize >= i + 1 ? '' : 'page-hide'}" id="page-${i + 1}">${i + 1}</div>`
         }
-        html += `<div class="page" id="page-next">다음</div>`;
+        html += `<div class="page" id="page-next">다음</div>`
 
         $('#pagination').append(html);
 
         $('.page').click((e)=> {
-            const page = e.target.id.split("-")[1];
+            const temp = e.target.id.split("-")[1];
+            let page;
+            if (temp == 'pre')
+                page = pagination.page - 1;
+            else if (temp == 'next')
+                page = pagination.page + 1;
+            else
+                page = +e.target.id.split("-")[1];
+
+            if (page < 1 || page > pagination.total)
+                return;
+
             onPagination(page);
         });
-        $(`#page-1`).attr("class", "select");
-    }
-
-    const isPaginationByGroup = () => {
-        if(pagination.page > pagination.size / 2 && pagination.page < pagination.total - pagination.size / 2){
-            $('#pagination').empty();
-
-            let html = ``;
-            html += `<div class="page" id="page-pre">이전</div>`;
-            for(let i=pagination.page - pagination.size/2; i< pagination.size; i++){
-                html += `<div className="page" id="page-${i+1}">${i + 1}</div>`;
-            }
-            html += `<div class="page" id="page-next">다음</div>`;
-
-            $('#pagination').append(html);
-        }
+        $(`#page-1`).addClass("select");
     }
 
     const onPagination = (page) => {
-        $(`#page-${pagination.page}`).removeAttr("class", "select");
-        if(page == 'pre' || page == 'next'){
-            let temp = page == 'pre' ? pagination.page - 1 : pagination.page + 1;
-            if(temp < 1) temp = 1;
-            else if(temp > pagination.total) temp = pagination.total;
+        $(`#page-${pagination.page}`).removeClass("select");
+        $(`#page-${page}`).addClass("select");
 
-            $(`#page-${temp}`).attr("class", "select");
-
-            pagination.page = temp;
-
-        } else{
-            $(`#page-${page}`).attr("class", "select");
-
-            pagination.page = +page;
+        for (let i = 1; i <= pagination.total; i++) {
+            if ((i >= page - pagination.groupSize / 2) && (i <= page + pagination.groupSize / 2))
+                $(`#page-${i}`).removeClass("page-hide");
+            else
+                $(`#page-${i}`).addClass("page-hide");
         }
-
+        pagination.page = page;
         onCommunityList();
         onPopular();
-        isPaginationByGroup();
     }
 
     const onCommunityList = () => {

@@ -29,6 +29,13 @@
   		from tb_user 
   		where user_phone = #{user_phone}
   	</select>
+ 
+	<select id="find_id" resultType="com.food.model.UserVO">
+		select user_id 
+		from tb_user 
+		where user_name = #{user_name} and user_phone = #{user_phone}
+	</select>
+	
   	
   	
   	

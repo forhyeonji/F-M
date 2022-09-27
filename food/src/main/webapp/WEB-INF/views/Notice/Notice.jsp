@@ -57,7 +57,7 @@
 		
 							<c:choose>
 								<c:when test="${Notiboardlist.boldtitle}">
-									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:red" ><b>${Notiboardlist.title}</b></a>
+									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:red"><b>${Notiboardlist.title}</b></a>
 								</c:when>
 								<c:otherwise>
 									<a href="notice_detail?bno=${Notiboardlist.bno}" style="color:black">${Notiboardlist.title}</a>
@@ -74,26 +74,26 @@
 		</c:forEach> <!-- for문 끝 -->
 		</table>
 		
+		<div class="NOTI_page">
+		
+			<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
+			<c:if test="${paging.prevBtn}">
+				<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}" class="NOTI_first"> << </a>
+			</c:if>
+			
+			
+			<!-- begin(1)이 end(10)가 될 동안 반복 -->
+			<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
+				<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${num}&amount=${paging.criteriaVO.amount}" class="NOTI_num"> ${num} </a>
+			</c:forEach>
+			
+			
+			<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
+			<c:if test="${paging.nextBtn}">
+				<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}" class="NOTI_last"> >> </a>
+			</c:if>
 
-		
-		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
-		<c:if test="${paging.prevBtn}">
-			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
-		</c:if>
-		
-		
-		<!-- begin(1)이 end(10)가 될 동안 반복 -->
-		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${num}&amount=${paging.criteriaVO.amount}"> ${num} </a>
-		</c:forEach>
-		
-		
-		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
-		<c:if test="${paging.nextBtn}">
-			<a href="/notice?sep=noti&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
-		</c:if>
-
-		
+		</div>		
 		
 		</div> <!-- main_center -->
 	

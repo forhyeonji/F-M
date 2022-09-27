@@ -125,10 +125,29 @@ public class UserController{
  		}	
 	} 
   	
+  //아이디 찾기 기능
+  	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
+  	public String find_id() {
+  		
+  	return "Main/find_idpw";
+  	
+  	}
+  	 
+  	//아이디 찾기 기능
+  	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
+  	@ResponseBody
+  	public String find_id(@RequestParam(value="user_name", required = false) String user_name,
+  							@RequestParam(value="user_phone", required = false) String user_phone) {
+  		
+  	String result = us.find_id(user_name, user_phone);
+  		
+  	return result;
+  	
+  	}
   	
   	
   	
-	
+  	
   	
  
 
@@ -203,34 +222,6 @@ public class UserController{
 		return num;
 
 	}	
-  	
- 
-  	/*
- // 아이디 찾기
- 	@RequestMapping(value = "/user/userSearch", method = RequestMethod.POST)
- 	@ResponseBody
- 	public String userIdSearch(@RequestParam("inputName_1") String user_name, 
- 			@RequestParam("inputPhone_1") String user_phone) {
- 		
- 		String result = us.get_searchId(user_name, user_phone);
-
- 		return result;
- 	}
- 	
- 	// 비밀번호 찾기
- 	@RequestMapping(value = "/user/searchPassword", method = RequestMethod.GET)
- 	@ResponseBody
- 	public String passwordSearch(@RequestParam("userId")String user_id,
- 			@RequestParam("userEmail")String user_email,
- 			HttpServletRequest request) {
-
- 		mailsender.mailSendWithPassword(user_id, user_email, request);
- 		
- 		return "user/userSearchPassword";
- 	}
- 	
- }
- */
   	
   
         
