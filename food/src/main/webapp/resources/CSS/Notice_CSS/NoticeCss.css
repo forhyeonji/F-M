@@ -439,4 +439,46 @@
 	text-align : center;
 }
 
- 
+
+/* 페이징 CSS */
+
+.NOTI_page{
+	text-align : center;
+	width : 470px;
+	margin:0px auto;
+	
+	display : block;
+	padding : 0;
+	margin-top : 40px;
+}
+
+
+.NOTI_num{
+	margin-top : 40px;
+	display : inline;
+	font-size : 15px;
+	text-decoration : none;
+	padding : 5px 7px;
+	magin : 0px 30px;
+	
+	color : #96a0ad;
+	line-height: 1.5;
+}
+
+
+
+.NOTI_first, .NOTI_last {
+	margin-top : 40px;
+	font-size : 15px;
+	padding : 5px 12px;
+	color : #96a0ad;
+	line-height: 1.5;
+	display : inline;
+}
+
+
+.NOTI_num : hover{
+	background-color : yellow;
+	cursor : pointer;
+}
+
