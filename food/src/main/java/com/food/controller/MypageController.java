@@ -141,47 +141,55 @@ public class MypageController {
 	
 	//주문 리스트
 	@RequestMapping(value = "mypage/orderlist", method = RequestMethod.GET)
-	public String orderlist(Model model, HttpSession session, UserVO user) {
-		String id = (String) session.getAttribute("user_id");
+	public String orderlist(Model model, HttpSession session, UserVO user,
+			OrderlistVO order, CriteriaVO cri) {
+		String id = (String)session.getAttribute("user_id");
 		user.setUser_id(id);
-		model.addAttribute("orderlist", ms.orderlist(id));
+		order.setUser_id(id);
+		
+		model.addAttribute("user", ms.mypage(user));
+		model.addAttribute("orderlist", ms.orderlist(order));
+		
+		int total = ms.orderlistCnt(order);
+		model.addAttribute("paging", new PageVO(cri, total));
 		return "Mypage/orderlist";
-	}		
-	
-	//주문 리스트
-	@RequestMapping(value="/mypage/orderlist/{user_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<OrderlistVO>> orderlistget(Model model, @PathVariable String user_id){
-		System.out.println(user_id);
-		model.addAttribute("orderlist", ms.orderlist(user_id));
-
-		return new ResponseEntity<>(ms.orderlist(user_id), HttpStatus.OK);		
 	}
-	
+		
 	//주문취소 페이지 출력
 	@RequestMapping(value="/mypage/ordercancle", method=RequestMethod.GET)
 	public String canclePage(OrderlistVO order, HttpSession session, Model model) {
 		String id = (String)session.getAttribute("user_id");
 		order.setUser_id(id);
 		model.addAttribute("canclePage", ms.canclePage(order));
-		return "/Mypage/ordercancle";
+		return "Mypage/ordercancle";
 	}
-
+	
 	//주문 취소
 	@ResponseBody
-	@RequestMapping(value="/mypage/ordercancle/{o_no}", method=RequestMethod.POST)
-	public ResponseEntity<String> ordercanclePost(HttpSession session, Model model, @RequestBody OrderlistVO order, @PathVariable int o_no){
+	@RequestMapping(value="/mypage/ordercancle", method=RequestMethod.PUT)
+	public ResponseEntity<String> ordercancle(HttpSession session, @RequestBody OrderlistVO order){
 		String id = (String)session.getAttribute("user_id");
 		order.setUser_id(id);
 		
 		int result = ms.ordercancle(order);
-
+		
 		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
 						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
 	
 	//주문_취소 리스트
 	@RequestMapping(value = "mypage/canclelist", method = RequestMethod.GET)
-	public String canclelist() {
+	public String canclelist(Model model, HttpSession session, OrderlistVO order,
+			UserVO user, CriteriaVO cri) {
+		String id = (String)session.getAttribute("user_id");
+		order.setUser_id(id);
+		user.setUser_id(id);
+
+		model.addAttribute("user", ms.mypage(user));
+		model.addAttribute("canclelist", ms.canclelist(order));
+		
+		int total = ms.canclelistCnt(order);
+		model.addAttribute("paging", new PageVO(cri, total));	
 		return "Mypage/canclelist";
 	}
 

@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -17,7 +18,7 @@
 		<div id="my_side_left" >
 			<div id="my_title">
 				<img id="my_titleim" alt="장바구니" src="../../../resources/image/mypage/cancle.png">
-				<p id="my_titlep">취소▪반품<br>내역</p></div>
+				<p id="my_titlep">취소<br>내역</p></div>
 
 			<div id="my_menu">
 				<div><a href="/mypage">마이페이지</a></div>
@@ -28,55 +29,49 @@
 		</div><!-- side_left -->
 
 		<div id="my_center">
-			<h3>주문 취소, 반품 내역을 확인하세여</h3>
+			<h3>주문 취소 내역을 확인하세여</h3>
 			<div class="my_order1">
-				<table>
-					<tr>
-						<td colspan="3">
-							<span>취소...</span><span>날짜 8/1</span></td>
+			<c:forEach items="${canclelist}" var="canclelist">
+				<table id="my_orderlist">
+					<tr>				
+						<td class="my_orderDate" colspan="3">취소날짜 ${canclelist.o_mod_date}
+						<input type="hidden" value="${canclelist.o_no}"></td>
 					</tr>
 					<tr>
-						<td rowspan="3">
-						<img src="../../../resources/image/lemon.jpg">
-						<br>상품 사진(대표로 하나만)</td>
-						<td>상품 이름(제목)</td>
-						<td rowspan="3">
-						<a href="/mypage/orderdetail">
-						<input type="button" value="상세 보기"></a></td>
+						<td class="my_orderTb" rowspan="3">
+							<img class="my_orderImg" alt="상품사진" src=""></td>	
+						<td class="my_orderTb">${canclelist.s_name}</td>					
+						<td class="my_orderTb" rowspan="3">
+							<a href="/Shop/shopPurchase">
+							<input type="button" value="상품 GO!!"></a></td>
 					</tr>
 					<tr>
-						<td>외 2품목</td>						
-					</tr>
-					<tr>
-						<td>금액 80,000</td>
+						<td class="my_orderTb">수량 <span>${canclelist.o_cnt}</span>
+							/ 가격 <span>${canclelist.o_sum}</span></td>
 					</tr>
 				</table>
+			</c:forEach>			
+			</div>	
+
+			<div id="my_paging">	
+				<div>			
+<!-- 이전버튼 -->
+					<c:if test="${paging.prevBtn }">
+						<a href="/mypage/canclelist?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+					</c:if>
+
+<!-- 페이징 처리 -->		
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
+						<a href="/mypage/canclelist?pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
+					</c:forEach>
+
+<!-- 다음버튼 -->			
+					<c:if test="${paging.nextBtn }">
+						<a href="/mypage/canclelist?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+					</c:if>					
+				</div>			
 			</div>
 
-			<div class="my_order1">
-				<table>
-					<tr>
-						<td colspan="3">
-							<span>반품...</span><span>날짜 7/28</span></td>
-					</tr>
-					<tr>
-						<td rowspan="3">
-						<img src="../../../resources/image/egg.jpg">
-						<br>상품 사진(대표로 하나만)</td>
-						<td>상품 이름(제목)</td>
-						<td rowspan="3">
-						<a href="/mypage/orderdetail">
-						<input type="button" value="상세 보기"></a></td>
-					</tr>
-					<tr>
-						<td>외 5품목</td>
-					</tr>
-					<tr>
-						<td>금액 130,000</td>
-						<td></td>
-					</tr>
-				</table>
-			</div>	
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

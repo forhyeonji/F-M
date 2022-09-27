@@ -69,8 +69,12 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	//주문목록을 출력하기 위한 구현
-	public ArrayList<OrderlistVO> orderlist(String user_id){
-		return mm.orderlist(user_id);
+	public List<Map<String, Object>> orderlist(OrderlistVO order){
+		return mm.orderlist(order);
+	}	
+	//주문리스트 건수를 카운팅하기 위한 구현
+	public int orderlistCnt(OrderlistVO order) {
+		return mm.orderlistCnt(order);
 	}
 	
 	//주문 취소 페이지를 출력하기 위한 구현
@@ -81,6 +85,16 @@ public class MypageServiceImpl implements MypageService {
 	//주문 취소를 위한 구현
 	public int ordercancle(OrderlistVO order) {
 		return mm.ordercancle(order);
+	}
+	
+	//주문 취소리스트를 출력하기 위한 구현
+	public List<Map<String, Object>> canclelist(OrderlistVO order){
+		return mm.canclelist(order);
+	}
+	
+	//주문 취소리스트 건수를 카운팅하기 위한 구현
+	public int canclelistCnt(OrderlistVO order) {
+		return mm.canclelistCnt(order);
 	}
 	
 	//내가 쓴 글을 출력하기 위한 구현

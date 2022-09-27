@@ -65,15 +65,30 @@
 	</insert>
 	
 	<select id="orderlist" resultType="com.food.model.OrderlistVO">
-		select o.*,
-				date_format(o_dt, '%m/%d') as o_date,
+		select orderlist.*,
+				date_format(orderlist.o_dt, '%m/%d') as o_date,
 				sh.NAME as s_name,
 				sh.CONTENT as s_content,
 				sh.price2 as s_price
-		from tb_orderlist o left outer join tb_shop sh
-		on o.o_prodnum = sh.prodnum
-		where o.user_id = #{user_id} and o_type=&apos;order&apos;
-		order by o_no desc
+		from (
+			select @rownum:= @rownum+1 rownum, o.*
+			from tb_orderlist o, (select @rownum:=0) as tmp
+			<if test="user_id !=null">
+				where user_id=#{user_id} and o_type=&apos;order&apos;
+			</if>
+			
+			order by o_no desc 
+			)
+		as orderlist left outer join tb_shop sh
+		on orderlist.o_prodnum = sh.prodnum
+		<![CDATA[
+		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>			
+	</select>
+
+	<select id="orderlistCnt" resultType="int">
+		select count(*) from tb_orderlist
+		where user_id=#{user_id} and o_type=&apos;order&apos;
 	</select>
 	
 	<select id="canclePage" resultType="com.food.model.OrderlistVO">
@@ -85,14 +100,40 @@
 		from tb_orderlist o left outer join tb_shop sh
 		on o.o_prodnum = sh.prodnum
 		where o.user_id = #{user_id} and o_no=#{o_no}
-		order by o_no desc
 	</select>
 	
 	<update id="ordercancle">
 		update tb_orderlist 
-		set o_type=&apos;cancle&apos;, o_why=#{o_why}
-		where o_no={o_no}
+		set o_type=&apos;cancle&apos;, o_opt=#{o_opt}, o_canclewhy=#{o_canclewhy}
+		where o_no=#{o_no}
 	</update>
+	
+	<select id="canclelist" resultType="com.food.model.OrderlistVO">
+		select orderlist.*,
+				date_format(orderlist.o_mod_dt, '%m/%d') as o_mod_date,
+				sh.NAME as s_name,
+				sh.CONTENT as s_content,
+				sh.price2 as s_price
+		from (
+			select @rownum:= @rownum+1 rownum, o.*
+			from tb_orderlist o, (select @rownum:=0) as tmp
+			<if test="user_id !=null">
+				where user_id=#{user_id} and o_type=&apos;cancle&apos;
+			</if>
+			
+			order by o_mod_dt desc 
+			)
+		as orderlist left outer join tb_shop sh
+		on orderlist.o_prodnum = sh.prodnum
+		<![CDATA[
+		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>	
+	</select>
+	
+	<select id="canclelistCnt" resultType="int">
+		select count(*) from tb_orderlist
+		where user_id=#{user_id} and o_type=&apos;cancle&apos;
+	</select>
 			
 	<select id="mywrite" resultType="com.food.model.MypageVO">
 		select * 

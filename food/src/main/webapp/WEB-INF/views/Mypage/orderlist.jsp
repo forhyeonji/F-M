@@ -66,7 +66,26 @@
 				</table>
 			</c:forEach>								
 			</div><!-- my_order1 -->
-			
+			<div id="my_paging">	
+				<div>			
+<!-- 이전버튼 -->
+					<c:if test="${paging.prevBtn }">
+						<a href="/mypage/orderlist?pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+					</c:if>
+
+<!-- 페이징 처리 -->		
+					<c:forEach begin="${paging.startPage }" end="${paging.endPage }" var="num">
+						<a href="/mypage/orderlist?pageNum=${num}&amount=${paging.criteriaVO.amount}">${num }</a>
+					</c:forEach>
+
+<!-- 다음버튼 -->			
+					<c:if test="${paging.nextBtn }">
+						<a href="/mypage/orderlist?pageNum=${paging.startPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+					</c:if>					
+				</div>			
+			</div>
+
+		
 		</div><!-- my_center -->
 		
 		<div id="my_side_right"></div>

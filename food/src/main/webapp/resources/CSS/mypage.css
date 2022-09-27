@@ -122,17 +122,15 @@ canclelist
 
 .my_order1{
 	border: 1px solid rgb(234, 234, 234);
-	margin:10px 0;
 }
 
 .my_order1 > table{
 	width:100%;
-
 }
 
 #order{
 	width:300px;
-	height:30px;
+	height:20px;
 	background-color:#ffcbb3;
 }
 
@@ -304,8 +302,7 @@ canclelist
 
 /* orderlist */
 .my_orderDate{
-	width:100%;
-	padding:5px;
+	font-size:15px;
 	font-weight:bold;
 	color:#ff8080;	
 }
@@ -323,7 +320,7 @@ canclelist
 }
 
 #my_orderlist{
-	margin:15px;
+	margin:5px;
 	width:95%;
 	border:1px solid rgb(234, 234, 234);
 }
@@ -331,11 +328,12 @@ canclelist
 .my_orderTb{
 	width:auto;
 	text-align:center;
+	font-size:12px;
 }
 
 .my_orderTb input{
-	height:30px;
-	width:100px;
+	height:20px;
+	width:80px;
 	text-align:center;
 	background-color:#ffcbb3;
 	border:none;

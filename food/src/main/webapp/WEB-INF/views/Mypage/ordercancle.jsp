@@ -31,9 +31,8 @@
 		</div><!-- my_side_left -->
 
 		<div id="my_center">	
-			<div id="my_ordercancle">
-				<a href="/mypage/orderlist">
-				<table id="my_ordercancle_Tb">
+			<div id="my_ordercancle">			
+				<table id="my_ordercancle_Tb" onclick="location.href='/mypage/orderlist'">
 					<tr>
 						<td id="my_cancleDetail" colspan="2">
 							<label>주문날짜 ${canclePage.o_date}</label>
@@ -51,15 +50,18 @@
 					<tr>
 						<td>가격<span>${canclePage.o_sum}</span></td>
 					</tr>
-				</table></a>
+				</table>
 			</div>
 	
-			<div id="my_canclePage">
-				<h3 >취소 사유를 입력해주세요.😢😢</h3>	
+			<div id="my_canclePage">				
+				
 				<table id="my_ordercancle_why">
 					<tr>
+						<td><h4>취소 사유를 입력해주세요.😢😢</h4>	</td>
+					</tr>
+					<tr>
 						<td id="my_ordercancleOpt">
-						<select name="cancleWhy">
+						<select name="o_opt">
 							<option value="simple">단순 변심</option>							
 							<option value="mistake">주문 실수</option>
 							<option value="delay">배송 지연</option>
@@ -71,12 +73,15 @@
 						</td>
 					</tr>				
 					<tr>
-					<td><textarea rows="10" cols="80" placeholder="상세사유를  입력해주세요."></textarea></td>
+					<td><textarea rows="10" cols="80" placeholder="상세사유를  입력해주세요." id="canclewhy" name="o_canclewhy" ></textarea></td>
 					</tr>
 					<tr>
-						<td><input type="submit" value="취소 신청"></td>
+						<td>
+						<input type="hidden" name="o_no" value="${canclePage.o_no}">
+						<input type="submit" id="my_cancleBtn" value="취소 신청"></td>
 					</tr>
 				</table>
+				
 			</div>
 		</div><!-- my_center -->
 		
