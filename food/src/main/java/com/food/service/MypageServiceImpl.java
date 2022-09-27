@@ -73,6 +73,16 @@ public class MypageServiceImpl implements MypageService {
 		return mm.orderlist(user_id);
 	}
 	
+	//주문 취소 페이지를 출력하기 위한 구현
+	public OrderlistVO canclePage(OrderlistVO order){
+		return mm.canclePage(order);
+	}
+	
+	//주문 취소를 위한 구현
+	public int ordercancle(OrderlistVO order) {
+		return mm.ordercancle(order);
+	}
+	
 	//내가 쓴 글을 출력하기 위한 구현
 	public ArrayList<MypageVO> mywrite(MypageVO mypage) {
 		return mm.mywrite(mypage);

@@ -15,6 +15,7 @@ public class OrderlistVO {
 	private String user_id;	//주문목록 아이디
 	private String o_dt;	//주문완료된 시각
 	private String o_type;	//주문리스트 내 타입(order / cancle / refund)
+	private String o_why;	//취소,환불 사유
 	//날ㅉㅏ수정한거
 	private String o_date;
 	

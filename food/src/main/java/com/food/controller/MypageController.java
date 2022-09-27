@@ -132,8 +132,7 @@ public class MypageController {
 	public ResponseEntity<String> order(HttpSession session, @RequestBody OrderlistVO order, @PathVariable int o_no){
 		//로그인한 아이디로 주문
 		String id = (String)session.getAttribute("user_id");
-		order.setUser_id(id);
-		
+		order.setUser_id(id);		
 		int result = ms.order(order);
 		
 		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
@@ -157,27 +156,44 @@ public class MypageController {
 
 		return new ResponseEntity<>(ms.orderlist(user_id), HttpStatus.OK);		
 	}
-		
-	//주문 상세보기
-	@RequestMapping(value = "mypage/orderdetail", method = RequestMethod.GET)
-	public String orderdetail() {
-		return "Mypage/orderdetail";
+	
+	//주문취소 페이지 출력
+	@RequestMapping(value="/mypage/ordercancle", method=RequestMethod.GET)
+	public String canclePage(OrderlistVO order, HttpSession session, Model model) {
+		String id = (String)session.getAttribute("user_id");
+		order.setUser_id(id);
+		model.addAttribute("canclePage", ms.canclePage(order));
+		return "/Mypage/ordercancle";
 	}
+
 	//주문 취소
-	@RequestMapping(value = "mypage/ordercancle", method = RequestMethod.GET)
-	public String ordercancle() {
-		return "Mypage/ordercancle";
+	@ResponseBody
+	@RequestMapping(value="/mypage/ordercancle/{o_no}", method=RequestMethod.POST)
+	public ResponseEntity<String> ordercanclePost(HttpSession session, Model model, @RequestBody OrderlistVO order, @PathVariable int o_no){
+		String id = (String)session.getAttribute("user_id");
+		order.setUser_id(id);
+		
+		int result = ms.ordercancle(order);
+
+		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
+						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
+	
 	//주문_취소 리스트
 	@RequestMapping(value = "mypage/canclelist", method = RequestMethod.GET)
 	public String canclelist() {
 		return "Mypage/canclelist";
 	}
+	
 	//주문 반품
-	@RequestMapping(value = "mypage/orderrefund", method = RequestMethod.GET)
-	public String orderrefund() {
-		return "Mypage/orderrefund";
+	@RequestMapping(value="/mypage/orderrefund", method=RequestMethod.GET)
+	public String refundPage(OrderlistVO order, HttpSession session, Model model) {
+		String id = (String)session.getAttribute("user_id");
+		order.setUser_id(id);
+		model.addAttribute("canclePage", ms.canclePage(order));
+		return "/Mypage/orderrefund";
 	}
+
 	//배송조회
 	@RequestMapping(value = "mypage/delivery", method = RequestMethod.GET)
 	public String delivery() {
