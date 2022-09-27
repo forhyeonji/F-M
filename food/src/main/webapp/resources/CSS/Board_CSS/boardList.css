@@ -366,3 +366,6 @@ ul li{
     width:85px;
     text-align:center;
 }
+#pagination > .page-hide{
+    display: none;
+}
