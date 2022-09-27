@@ -39,7 +39,22 @@ public interface MypageService {
 	public int order(OrderlistVO order);
 	
 	//주문목록을 출력하기 위한 설계
-	public ArrayList<OrderlistVO> orderlist(String user_id);
+	public List<Map<String, Object>> orderlist(OrderlistVO order);
+	
+	//주문 리스트 건수 카운팅 설계
+	public int orderlistCnt(OrderlistVO order);
+	
+	//주문 취소페이지를 출력하기 위한 설계
+	public OrderlistVO canclePage(OrderlistVO order);
+	
+	//주문 취소를 위한 설계
+	public int ordercancle(OrderlistVO order);
+	
+	//주문 취소리스트 출력하기 위한 설계
+	public List<Map<String, Object>> canclelist(OrderlistVO order);
+	
+	//주문 취소리스트 건수 카운팅 설계
+	public int canclelistCnt(OrderlistVO order);
 	
 	//내가 쓴글을 출력하기 위한 설계
 	public ArrayList<MypageVO> mywrite(MypageVO mypage);

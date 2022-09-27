@@ -38,7 +38,7 @@ public class MypageVO {
     private List<VoteVo> voteVOList;
     //좋아요 갯수
     private int vote;
-    
+      
     
     public MypageVO() {
     	this(1,10);

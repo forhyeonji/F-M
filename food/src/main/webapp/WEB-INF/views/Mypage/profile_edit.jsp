@@ -25,10 +25,10 @@
 				<img id="my_titleim" alt="정보수정" src="../../../resources/image/mypage/my.png">
 				<p id="my_titlep">회원<br>정보 수정</p></div>
 			<div id="my_menu">
-				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
-				<div><a href="http://localhost:8080/notice">공지사항</a></div>
-				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
-				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
+				<div><a href="/mypage">마이페이지</a></div>
+				<div><a href="/notice">공지사항</a></div>
+				<div><a href="/QnA">자주하는 질문</a></div>
+				<div><a href="/directQue">1:1 문의</a></div>
 			</div>			
 		</div><!-- my_side_left -->
 
@@ -80,7 +80,7 @@
 			</form>
 		
 				<div id="my_resign_btn">
-				<a href="http://localhost:8080/mypage/resign">
+				<a href="/mypage/resign">
 				<input id="my_editResignBtn" type="button" value="회원탈퇴"></a></div>
 					
 		</div><!-- my_center -->	

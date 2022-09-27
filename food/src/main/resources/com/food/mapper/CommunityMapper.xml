@@ -6,8 +6,8 @@
 
 <mapper namespace="com.food.mapper.CommunityMapper">
     <insert id="insertCommunity" parameterType="com.food.model.CommunityVO">
-        insert into tb_community(title, context, user_id)
-        values (#{title}, #{context}, #{user_id})
+        insert into tb_community(title, context, user_id, menus)
+        values (#{title}, #{context}, #{user_id}, #{menus})
     </insert>
 
     <select id="selectCommunityOne" parameterType="java.lang.String" resultType="com.food.model.CommunityVO">

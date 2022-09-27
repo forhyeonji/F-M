@@ -82,22 +82,30 @@
 		
 		
 		<!-- prevBtn(이전)이 true이면 이전버튼 활성화 -->
+		
+		
+		 <!-- id="prepage"  -->
+		 <!-- class="nowpage" -->
+		 <!-- id="nextpage" -->
+	<div class="NOTI_page">
+		 
 		<c:if test="${paging.prevBtn}">
-			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}" id="prepage">이전</a>
+			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}" class="NOTI_first"> << </a>
 		</c:if>
 		
 		
 		<!-- begin(1)이 end(10)가 될 동안 반복 -->
 		<c:forEach begin="${paging.startPage}" end="${paging.endPage}" var="num">
-			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${num}&amount=${paging.criteriaVO.amount}" class="nowpage"> ${num} </a>
+			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${num}&amount=${paging.criteriaVO.amount}" class="NOTI_num"> ${num} </a>
 		</c:forEach>
 		
 		
 		<!-- nextBtn(다음)이 true이면 다음버튼 활성화 -->
 		<c:if test="${paging.nextBtn}">
-			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}" id="nextpage">다음</a>
+			<a href="/directKing?sep=inquiry&subsep=${paging.criteriaVO.subsep}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}" class="NOTI_last"> >> </a>
 		</c:if>
 		
+	</div>		
 		
 	</div> <!-- main_center -->
 

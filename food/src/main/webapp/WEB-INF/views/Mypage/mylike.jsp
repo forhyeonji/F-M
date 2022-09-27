@@ -22,17 +22,17 @@
 				<p id="my_titlep">좋아요<br> 누른 글</p></div>
 
 			<div id="my_menu">
-				<div><a href="http://localhost:8080/mypage">마이페이지</a></div>
-				<div><a href="http://localhost:8080/notice">공지사항</a></div>
-				<div><a href="http://localhost:8080/QnA">자주하는 질문</a></div>
-				<div><a href="http://localhost:8080/directQue">1:1 문의</a></div>
+				<div><a href="/mypage">마이페이지</a></div>
+				<div><a href="/notice">공지사항</a></div>
+				<div><a href="/QnA">자주하는 질문</a></div>
+				<div><a href="/directQue">1:1 문의</a></div>
 			</div>
 		</div><!-- my_side_left -->
 
 		<div id="my_center">
 			<div>
-				<a href="http://localhost:8080/mypage/mywrite"><button>📝내가 쓴 글</button></a>
-				<a href="http://localhost:8080/mypage/myreply"><button>💬내 댓글</button></a>			
+				<a href="/mypage/mywrite"><button>📝내가 쓴 글</button></a>
+				<a href="/mypage/myreply"><button>💬내 댓글</button></a>			
 			</div>
 				<table id="my_like">
 				<tr><td>이건나중에 지울거야</td>

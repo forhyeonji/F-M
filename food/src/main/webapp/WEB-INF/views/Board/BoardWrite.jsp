@@ -5,6 +5,7 @@
             <form id="form_register">
                 <input type="text" name="uesr_id" id="user_id" value="${user_id}" hidden>
                 <input type="text" name="bno" id="bno" value="${bno}" hidden>
+                <div id="menu"></div>
                 <div class="click2edit">${context}</div>
                 <table class="b_table">
                     <thead id="write_head">
