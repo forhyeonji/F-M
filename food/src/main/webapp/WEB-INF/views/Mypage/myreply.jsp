@@ -28,16 +28,11 @@
 		</div><!-- my_side_left -->
 
 		<div id="my_center">
-			<div>
+			<div id="my_aBtn">
 				<a href="/mypage/mywrite"><button>📝내가 쓴 글</button></a>
 				<a href="/mypage/mylike"><button>❤내가 좋아요 누른 글</button></a>
 			</div>
 				<table id="my_reply">
-
-				<tr><td>이건나중에 지울거야</td>
-					<td>세션아이디값: ${sessionScope.user_id }</td>
-					<td>글쓴아이디값: ${user.user_id }</td></tr>
-
 					<tr>
 						<th>글번호</th>
 						<th>작성한 댓글</th>
@@ -49,7 +44,12 @@
 						<td id="my_Tsize2"><a href="/detail/${myreply.bno }">${myreply.context}</a></td>
 						<td id="my_Tsize3">${myreply.reg_dt}</td>
 					</tr>
-					</c:forEach>						
+					</c:forEach>
+					<c:if test="${empty myreply }">
+						<tr>
+							<td colspan="3" id="my_nodataTb">작성된 댓글이 없습니다.</td>
+						</tr>
+					</c:if>							
 				</table>
 
 			<div id="my_paging">	

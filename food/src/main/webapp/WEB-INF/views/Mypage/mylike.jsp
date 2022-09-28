@@ -30,15 +30,11 @@
 		</div><!-- my_side_left -->
 
 		<div id="my_center">
-			<div>
+			<div id="my_aBtn">
 				<a href="/mypage/mywrite"><button>📝내가 쓴 글</button></a>
 				<a href="/mypage/myreply"><button>💬내 댓글</button></a>			
 			</div>
 				<table id="my_like">
-				<tr><td>이건나중에 지울거야</td>
-					<td>세션아이디값: ${sessionScope.user_id }</td>
-					<td>글쓴아이디값: ${user.user_id }</td></tr>
-
 					<tr>
 						<th>♥글 번호</th>
 						<th>♥글 제목</th>
@@ -50,7 +46,12 @@
 						<td id="my_Tsize2"><a href="/detail/${mylike.bno }">${mylike.title}</a></td>
 						<td id="my_likeTsize3">${mylike.vote}</td>
 					</tr>
-					</c:forEach>						
+					</c:forEach>
+					<c:if test="${empty mylike }">
+						<tr>
+							<td colspan="3" id="my_nodataTb">좋아요 누른 글이 없습니다.</td>
+						</tr>
+					</c:if>							
 				</table>
 			<div id="my_paging">	
 				<div>			

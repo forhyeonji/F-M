@@ -60,8 +60,8 @@
 	</delete>
 	
 	<insert id="order">
-		insert into tb_orderlist(o_prodnum, o_cnt, o_sum, user_id)
-		values(#{o_prodnum}, #{o_cnt}, #{o_sum}, #{user_id})
+		insert into tb_orderlist(o_prodnum, o_cnt, o_sum, user_id, o_type)
+		values(#{c_prodnum}, #{c_cnt}, #{c_sumprod}, #{user_id}, &apos;order&apos;)
 	</insert>
 	
 	<select id="orderlist" resultType="com.food.model.OrderlistVO">

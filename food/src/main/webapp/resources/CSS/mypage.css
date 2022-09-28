@@ -211,7 +211,7 @@ canclelist
 
 #my_like td{
 	border : solid 1px rgb(234, 234, 234);
-	padding: 5px;
+	height:35px;
 }
 
 
@@ -260,10 +260,21 @@ canclelist
 	border : solid 1px rgb(234, 234, 234);
 }
 
+#my_aBtn{
+	margin:5px;
+}
+
 #my_paging{
 	display: flex;
 	justify-content: space-between;
 }
+
+#my_nodataTb{
+	text-align:center;
+	font-weight:bold;
+	padding:20px;
+}
+
 
 /* ordercancle */
 #my_ordercancle{
@@ -302,7 +313,7 @@ canclelist
 
 /* orderlist */
 .my_orderDate{
-	font-size:15px;
+	text-align:center;
 	font-weight:bold;
 	color:#ff8080;	
 }
@@ -329,6 +340,16 @@ canclelist
 	width:auto;
 	text-align:center;
 	font-size:12px;
+}
+
+.my_orderTbName{
+	text-align:center;
+	font-weight:bold;
+}
+
+.my_orderTbNumber{
+	width:30px;
+	text-align:right;
 }
 
 .my_orderTb input{

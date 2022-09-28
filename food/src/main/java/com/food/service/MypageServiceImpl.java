@@ -54,7 +54,7 @@ public class MypageServiceImpl implements MypageService {
 	
 	//장바구니 상품 수량을 수정하기 위한 구현
 	public int cartmodify(CartVO cart) {
-		System.out.println("수정하는거 연결된겨?");
+//		System.out.println("수정하는거 연결된겨?");
 		return mm.cartmodify(cart);
 	}
 	

@@ -36,13 +36,11 @@
 	</table>
 	
 	<hr>
-	<input type="button" value="이전글" class="NOTI_but">
-	<input type="button" value="다음글" class="NOTI_but">
 	<input type="button" value="목록" class="NOTI_but" onclick="location.href='http://localhost:8080/QnA?sep=qna'">
 	<input type="hidden" value="${detail.sep}" name="sep">
 	
-	<input type="button" value="수정" onclick="location.href='/QnA/modify?bno=${detail.bno}'">
-	<input type="submit" value="삭제" formaction="/QnA/remove">
+	<input type="button" value="수정" class="NOTI_but" onclick="location.href='/QnA/modify?bno=${detail.bno}'">
+	<input type="submit" value="삭제" class="NOTI_but" formaction="/QnA/remove">
 	<input type="hidden" value="${detail.bno}" name="bno">
 	
 	

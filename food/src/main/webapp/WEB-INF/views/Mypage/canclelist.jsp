@@ -29,25 +29,35 @@
 		</div><!-- side_left -->
 
 		<div id="my_center">
-			<h3>주문 취소 내역을 확인하세여</h3>
 			<div class="my_order1">
+			<c:choose>
+				<c:when test="${empty canclelist}">
+					<h3>취소 내역이 없습니다 </h3>
+				</c:when>
+				<c:otherwise>
+					<h3>취소 내역을 확인하세요 </h3>
+				</c:otherwise>
+			</c:choose>		
+			
 			<c:forEach items="${canclelist}" var="canclelist">
 				<table id="my_orderlist">
-					<tr>				
-						<td class="my_orderDate" colspan="3">취소날짜 ${canclelist.o_mod_date}
-						<input type="hidden" value="${canclelist.o_no}"></td>
-					</tr>
 					<tr>
 						<td class="my_orderTb" rowspan="3">
-							<img class="my_orderImg" alt="상품사진" src=""></td>	
-						<td class="my_orderTb">${canclelist.s_name}</td>					
-						<td class="my_orderTb" rowspan="3">
+							<img class="my_orderImg" alt="상품사진" src=""></td>				
+						<td class="my_orderTbName" colspan="2">${canclelist.s_name}</td>
+						<td class="my_orderDate">취소날짜 ${canclelist.o_mod_date}
+							<input type="hidden" value="${canclelist.o_no}"></td>
+					</tr>
+					<tr>
+						<td class="my_orderTb">수량</td>
+						<td class="my_orderTbNumber">${canclelist.o_cnt}</td>							
+						<td class="my_orderTb" rowspan="2">
 							<a href="/Shop/shopPurchase">
 							<input type="button" value="상품 GO!!"></a></td>
 					</tr>
 					<tr>
-						<td class="my_orderTb">수량 <span>${canclelist.o_cnt}</span>
-							/ 가격 <span>${canclelist.o_sum}</span></td>
+						<td class="my_orderTb">취소금액</td>
+						<td class="my_orderTbNumber">${canclelist.o_sum}</td>
 					</tr>
 				</table>
 			</c:forEach>			

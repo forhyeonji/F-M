@@ -17,16 +17,15 @@ public interface UserMapper {
     public int idCheck(String user_id);
     
     public int phoneCheck(String user_phone);
-    
-    public void createAuthKey(String user_email,String authKey) throws Exception;
-	
-	public void memberAuth(String user_email) throws Exception;
-	
 	
 	//아이디 찾기
 	public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone);
+
 	
 
+	
+	
+	
 
 
 

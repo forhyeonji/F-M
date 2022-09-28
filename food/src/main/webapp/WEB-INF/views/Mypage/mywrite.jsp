@@ -34,23 +34,23 @@
 				<a href="/mypage/mylike"><button>❤내가 좋아요 누른 글</button></a>
 			</div>
 				<table id="my_write">
-				<tr>
-				<td>이건나중에 지울거야</td>
-				<td>세션아이디값: ${sessionScope.user_id }</td>
-					<td>글쓴아이디값: ${user.user_id }</td></tr>
 					<tr>
 						<th>글번호</th>
 						<th>제목</th>
 						<th>작성일자</th>						
 					</tr>
-					
-					<c:forEach items="${mywrite}" var="mywrite">
+					<c:forEach items="${mywrite }" var="mywrite">				
 					<tr>					
 						<td id="my_Tsize1">${mywrite.bno }</td>
 						<td id="my_Tsize2"><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
 						<td id="my_Tsize3">${mywrite.reg_dt}</td>
-
-					</tr></c:forEach>						
+					</tr>
+					</c:forEach>
+					<c:if test="${empty mywrite }">
+						<tr>
+							<td colspan="3" id="my_nodataTb">작성된 글이 없습니다.</td>
+						</tr>
+					</c:if>					
 				</table>
 		
 			<div id="my_paging">	

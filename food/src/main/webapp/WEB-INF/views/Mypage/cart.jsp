@@ -50,7 +50,6 @@
 		
 				</table>
 			</div>
-
 			
 		</div><!-- my_center -->
 		

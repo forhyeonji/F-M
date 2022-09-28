@@ -10,6 +10,7 @@
     <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shop.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/footer.css">
     <link rel="stylesheet" href="${pageContext.request.contextPath}/resources/CSS/header.css">
     
@@ -65,7 +66,7 @@
                     <tr>
 <%--                        <td class="h_nav"><a href="/community/bread">레시피</a></td>--%>
                         <td class="h_nav"><a href="/shop">쇼핑</a></td>
-                        <td class="h_nav"><a href="/community/bread">커뮤니티</a></td>
+                        <td class="h_nav"><a href="/community">커뮤니티</a></td>
                         <td class="h_nav"><a href="/notice?sep=noti">고객센터</a></td>
                     </tr>
                 </table>

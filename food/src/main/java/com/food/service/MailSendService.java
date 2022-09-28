@@ -1,3 +1,5 @@
+/*
+
 package com.food.service;
 
 import java.util.Random;
@@ -64,3 +66,4 @@ public class MailSendService {
 	
 
 }
+*/

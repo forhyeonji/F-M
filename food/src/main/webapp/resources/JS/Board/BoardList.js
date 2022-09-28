@@ -7,8 +7,48 @@ $(function (){
         count: 0,
         total: 0,
         groupSize:3,
-        title: ''
+        title: '',
+        cd: '01'
     }
+
+
+    $('#bread').click(() => {
+        pagination.cd = '01'
+        $('#cm-title').empty();
+        $('#cm-title').append("빵");
+        onCommunityList();
+    })
+    $('#noodle').click(() => {
+        pagination.cd = '02'
+        $('#cm-title').empty();
+        $('#cm-title').text("면");
+        onCommunityList();
+    })
+    $('#meat').click(() => {
+        pagination.cd = '03'
+        $('#cm-title').empty();
+        $('#cm-title').text("고기");
+        onCommunityList();
+    })
+    $('#korean-food').click(() => {
+        pagination.cd = '04'
+        $('#cm-title').empty();
+        $('#cm-title').text("한식");
+        onCommunityList();
+    })
+    $('#chinese-food').click(() => {
+        pagination.cd = '05'
+        $('#cm-title').empty();
+        $('#cm-title').text("중식");
+        onCommunityList();
+    })
+    $('#western-food').click(() => {
+        pagination.cd = '06'
+        $('#cm-title').empty();
+        $('#cm-title').text("양식");
+        onCommunityList();
+    })
+
 
     const isCommunityListBody = (data = []) => {
         $('#b_tbody').empty();
@@ -57,7 +97,7 @@ $(function (){
     const onCommunityRankList = () => {
         $.ajax({
             type: 'POST',
-            url: "/community/bread/rank",
+            url: "/community/rank",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(pagination),
             success: (response) => {
@@ -132,7 +172,7 @@ $(function (){
     const onCommunityList = () => {
         $.ajax({
             type: 'POST',
-            url: "/community/bread",
+            url: "/community/",
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(pagination),
             success: (response) => {
