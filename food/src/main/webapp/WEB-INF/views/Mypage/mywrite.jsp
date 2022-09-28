@@ -39,14 +39,18 @@
 						<th>제목</th>
 						<th>작성일자</th>						
 					</tr>
-					
-					<c:forEach items="${mywrite}" var="mywrite">
+					<c:forEach items="${mywrite }" var="mywrite">				
 					<tr>					
 						<td id="my_Tsize1">${mywrite.bno }</td>
 						<td id="my_Tsize2"><a href="/detail/${mywrite.bno }">${mywrite.title}</a></td>
 						<td id="my_Tsize3">${mywrite.reg_dt}</td>
 					</tr>
-					</c:forEach>						
+					</c:forEach>
+					<c:if test="${empty mywrite }">
+						<tr>
+							<td colspan="3" id="my_nodataTb">작성된 글이 없습니다.</td>
+						</tr>
+					</c:if>					
 				</table>
 		
 			<div id="my_paging">	

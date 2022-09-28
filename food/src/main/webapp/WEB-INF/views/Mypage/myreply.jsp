@@ -44,7 +44,12 @@
 						<td id="my_Tsize2"><a href="/detail/${myreply.bno }">${myreply.context}</a></td>
 						<td id="my_Tsize3">${myreply.reg_dt}</td>
 					</tr>
-					</c:forEach>						
+					</c:forEach>
+					<c:if test="${empty myreply }">
+						<tr>
+							<td colspan="3" id="my_nodataTb">작성된 댓글이 없습니다.</td>
+						</tr>
+					</c:if>							
 				</table>
 
 			<div id="my_paging">	

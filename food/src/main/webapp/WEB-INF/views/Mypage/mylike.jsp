@@ -46,7 +46,12 @@
 						<td id="my_Tsize2"><a href="/detail/${mylike.bno }">${mylike.title}</a></td>
 						<td id="my_likeTsize3">${mylike.vote}</td>
 					</tr>
-					</c:forEach>						
+					</c:forEach>
+					<c:if test="${empty mylike }">
+						<tr>
+							<td colspan="3" id="my_nodataTb">좋아요 누른 글이 없습니다.</td>
+						</tr>
+					</c:if>							
 				</table>
 			<div id="my_paging">	
 				<div>			
