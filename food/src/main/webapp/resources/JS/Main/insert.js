@@ -1,4 +1,3 @@
-
 // 유효성 검사 체크용
 var emailCheck = false;			// 이메일 체크
 var emailckCheck = false;		// 이메일 중복 체크
@@ -363,9 +362,8 @@ $(".email_check_button").click(function(){
 		
 		type:"GET",
 		url:"emailCheck?user_email=" + user_email
+		
 				
 	});
 	
 });
-
-

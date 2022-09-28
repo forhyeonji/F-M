@@ -101,6 +101,7 @@
 						<span>인증번호 전송</span>
 					</div>
 					<div class="clearfix"></div>
+					<span id="email_check_input_box_warn"></span>
 				</div>
 			</div>
 				
