@@ -23,9 +23,8 @@ public interface UserService {
  	// 아이디 찾기
  	public String find_id(String user_name, String user_phone);
  	
- 
-	
-	
+
+
 	
    
 
