@@ -25,7 +25,7 @@ public class CommunityController extends CommonController {
      * @param reqVO
      * @return
      */
-    @PostMapping(value = "/community/bread", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/community", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getCommunityList(@RequestBody ReqPageVO reqVO) {
         isLog(reqVO);
 
@@ -34,7 +34,7 @@ public class CommunityController extends CommonController {
                 .code(ResCommonCode.SUCCESS)
                 .build();
     }
-    @PostMapping(value = "/community/bread/rank", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping(value = "/community/rank", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public ResCommonVO getCommunityRankList(@RequestBody ReqPageVO reqVO) {
         isLog(reqVO);
 

@@ -13,4 +13,5 @@ public class ReqPageVO {
     private int size;
 
     private String title;
+    private String cd;
 }
