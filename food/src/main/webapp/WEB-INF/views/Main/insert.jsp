@@ -99,6 +99,13 @@
 					<span id="mail_check_input_box_warn"></span>
 				</div>
 			</div>
+			
+			
+			
+			
+			
+	
+	
 				
 				
 				<div id="insert_id"><br>

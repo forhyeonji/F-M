@@ -1,4 +1,4 @@
-
+/*
 
 package com.food.service;
 
@@ -30,12 +30,12 @@ public class MailUtils {
 		messageHelper.setText(htmlContent, true);
 	}
 
-	public void setFrom(String email, String name) throws UnsupportedEncodingException, MessagingException {
-		messageHelper.setFrom(email, name);
+	public void setFrom(String user_email, String user_name) throws UnsupportedEncodingException, MessagingException {
+		messageHelper.setFrom(user_email, user_name);
 	}
 
-	public void setTo(String email) throws MessagingException {
-		messageHelper.setTo(email);
+	public void setTo(String user_email) throws MessagingException {
+		messageHelper.setTo(user_email);
 	}
 
 	public void addInline(String contentId, DataSource dataSource) throws MessagingException {
@@ -48,3 +48,4 @@ public class MailUtils {
 
 }
 
+*/
