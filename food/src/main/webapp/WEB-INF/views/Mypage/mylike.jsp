@@ -30,15 +30,11 @@
 		</div><!-- my_side_left -->
 
 		<div id="my_center">
-			<div>
+			<div id="my_aBtn">
 				<a href="/mypage/mywrite"><button>📝내가 쓴 글</button></a>
 				<a href="/mypage/myreply"><button>💬내 댓글</button></a>			
 			</div>
 				<table id="my_like">
-				<tr><td>이건나중에 지울거야</td>
-					<td>세션아이디값: ${sessionScope.user_id }</td>
-					<td>글쓴아이디값: ${user.user_id }</td></tr>
-
 					<tr>
 						<th>♥글 번호</th>
 						<th>♥글 제목</th>

@@ -260,10 +260,15 @@ canclelist
 	border : solid 1px rgb(234, 234, 234);
 }
 
+#my_aBtn{
+	margin:5px;
+}
+
 #my_paging{
 	display: flex;
 	justify-content: space-between;
 }
+
 
 /* ordercancle */
 #my_ordercancle{

@@ -39,11 +39,11 @@ public class MypageController {
 		mypage.setUser_id(id);
 		
 		String result="";
-		if(id != null) {			//로그인된 아이디있으면
-			result = "Mypage/mypage"; //마이페지로 이동
-		}else {
-			result = "/Main/insert";	//없으면 회원가입으로 이동
-		}
+			if(id != null) {			//로그인된 아이디있으면
+				result = "Mypage/mypage"; //마이페지로 이동
+			}else {
+				result = "/Main/insert";	//없으면 회원가입으로 이동
+			}
 
 		model.addAttribute("mypage", ms.mypage(user));
 		return result;
@@ -82,8 +82,7 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		ms.resignPost(user);
-//		System.out.println("어디서 안된느겨");
-//		System.out.println(user);
+
 		session.invalidate();
 		return "Main/main";
 	}
@@ -100,7 +99,6 @@ public class MypageController {
 	//장바구니 리스트 출력
 	@RequestMapping(value="/mypage/cart/{user_id}", method=RequestMethod.GET)
 	public ResponseEntity<ArrayList<CartVO>> cartlist(Model model, @PathVariable String user_id){
-		System.out.println(user_id);
 		model.addAttribute("cartlist", ms.cartlist(user_id));
 		return new ResponseEntity<>(ms.cartlist(user_id), HttpStatus.OK);		
 	}
@@ -112,8 +110,7 @@ public class MypageController {
 		String id = (String)session.getAttribute("user_id");
 		cart.setUser_id(id);
 		int result = ms.cartmodify(cart);
-		System.out.println("수정하는거 콘트롤러 연결된겨?");
-		System.out.println(cart);
+
 		return result==1? new ResponseEntity<>("success", HttpStatus.OK)
 						: new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
 	}
@@ -206,7 +203,7 @@ public class MypageController {
 			Model model, CriteriaVO cri, 
 			HttpSession session) {
 		String id = (String) session.getAttribute("user_id");
-		System.out.println("내글아이디"+id);
+//		System.out.println("내글아이디"+id);
 		user.setUser_id(id);		
 		mypage.setUser_id(id);
 		
@@ -231,7 +228,7 @@ public class MypageController {
 	public String myreply(UserVO user, MypageVO mypage, 
 			CriteriaVO cri, Model model, HttpSession session) {
 		String id = (String)session.getAttribute("user_id");
-		System.out.println("내[[[댓글]]]아이디"+id);
+//		System.out.println("내[[[댓글]]]아이디"+id);
 		user.setUser_id(id);
 		mypage.setUser_id(id);
 	
