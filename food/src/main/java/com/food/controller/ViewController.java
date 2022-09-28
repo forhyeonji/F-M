@@ -22,7 +22,7 @@ public class ViewController {
     @GetMapping(value = "/")
     public String main() { return "/Main/main";  }
 
-    @GetMapping("/community/bread")
+    @GetMapping("/community")
     public String getBoardList(){
         return "/Board/BoardList";
     }
