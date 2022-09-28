@@ -149,7 +149,7 @@ public class UserController{
   	/* 이메일 인증 */
 	@RequestMapping(value="/emailCheck", method=RequestMethod.GET)
 	@ResponseBody
-	public void emailCheckGET(String user_email) throws Exception{
+	public String emailCheckGET(String user_email) throws Exception{
 
 		/* 뷰(View)로부터 넘어온 데이터 확인 */
 		logger.info("이메일 데이터 전송 확인");
@@ -157,8 +157,8 @@ public class UserController{
 		
 		/* 인증번호(난수) 생성 */
         Random random = new Random();
-        int checkNum = random.nextInt(888888) + 111111;
-        logger.info("인증번호 " + checkNum);
+        int checkAuthKey = random.nextInt(888888) + 111111;
+        logger.info("인증번호 " + checkAuthKey);
         
         /* 이메일 보내기 */
         String setFrom = "ssnow000@daum.net";
@@ -167,7 +167,7 @@ public class UserController{
         String content = 
                 "홈페이지를 방문해주셔서 감사합니다." +
                 "<br><br>" + 
-                "인증 번호는 " + checkNum + "입니다." + 
+                "인증 번호는 " + checkAuthKey + "입니다." + 
                 "<br>" + 
                 "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
         
@@ -185,7 +185,9 @@ public class UserController{
             e.printStackTrace();
         }
         
+        String AuthKey = Integer.toString(checkAuthKey);
         
+        return AuthKey;
         
 		
 

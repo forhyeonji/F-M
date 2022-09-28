@@ -33,8 +33,8 @@
 					<div class="email_check_wrap">
 						<input type="text" id="user_email" class="insert_inputext" name="user_email">
 					</div><br>
-					<div>
-						<input type="text" id="insert_emailnumber" disabled="disabled">
+					<div id="insert_emailNumber_box">
+						<input type="text" id="insert_emailNumber" disabled="disabled">
 					</div>
 					<div>
 						<button type="button" id="insert_emailbtn" >인증번호</button>
@@ -55,7 +55,13 @@
 					<div>
 						<span class="insert_emailTrue">사용 가능한 이메일입니다.</span>
 					</div>
+					<div>
+						<span class="insert_emailNumber_TF"></span>
+					</div>
 				</div><br>
+				
+			
+				
 				
 				<div id="insert_phone"><br>
 					<div>
@@ -82,35 +88,6 @@
 					</div>
 					<br>
 				</div><br>
-				
-				
-				
-				
-				
-				<!-- 이메일 양식 테스트용 -->
-				<div class="email_wrap">
-				<div class="email_name">이메일</div> 
-				<div class="email_input_box">
-					<input class="email_input" name="memberMail">
-				</div>
-				<div class="email_check_wrap">
-					<div class="email_check_input_box" id="email_check_input_box_false">
-						<input class="email_check_input"  disabled="disabled">
-					</div>
-					<div class="email_check_button">
-						<span>인증번호 전송</span>
-					</div>
-					<div class="clearfix"></div>
-					<span id="email_check_input_box_warn"></span>
-				</div>
-			</div>
-				
-			
-			
-			
-			
-	
-	
 				
 				
 				<div id="insert_id"><br>
