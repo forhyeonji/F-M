@@ -313,7 +313,7 @@ canclelist
 
 /* orderlist */
 .my_orderDate{
-	font-size:15px;
+	text-align:center;
 	font-weight:bold;
 	color:#ff8080;	
 }
@@ -340,6 +340,11 @@ canclelist
 	width:auto;
 	text-align:center;
 	font-size:12px;
+}
+
+.my_orderTbNumber{
+	width:30px;
+	text-align:right;
 }
 
 .my_orderTb input{

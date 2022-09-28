@@ -125,8 +125,8 @@ public class MypageController {
 	}
 	
 	//장바구니 상품 주문하기
-	@RequestMapping(value="/mypage/cart/order/{o_no}", method = RequestMethod.POST)
-	public ResponseEntity<String> order(HttpSession session, @RequestBody OrderlistVO order, @PathVariable int o_no){
+	@RequestMapping(value="/mypage/cart/order", method = RequestMethod.POST)
+	public ResponseEntity<String> order(HttpSession session, @RequestBody OrderlistVO order){
 		//로그인한 아이디로 주문
 		String id = (String)session.getAttribute("user_id");
 		order.setUser_id(id);		

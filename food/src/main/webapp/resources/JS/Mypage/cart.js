@@ -174,8 +174,8 @@ function cartpay(userid){
 			//결제 예정금액
 			cnt += parseInt(data[i].c_cnt);
 		}
-		str+="<tr><th>선택한 상품수</th><td>"+cnt+"</td></tr>"
-		str+="<tr><th>선택한 상품 합계</th><td>"+addComma(sum)+"원</td></tr>"
+		str+="<tr><th>장바구니 상품수</th><td>"+cnt+"</td></tr>"
+		str+="<tr><th>장바구니 상품 합계</th><td>"+addComma(sum)+"원</td></tr>"
 		//합계가 3만원 이상이면 무료배송
 		if(sum>=30000){
 			str+="<tr><th>배송비</th><th>무료 배송</th></tr>"

@@ -32,39 +32,48 @@
 		
 		<div id="my_center">
 			<input type="hidden" name="user" value="${sessionScope.user_id }">
-			<h3>주문내역을 확인하세요~😁😁</h3>
+			
 			<div class="my_order1">	
-						
+					
 <!-- 주문날짜별로 나누고, 상품별로 하나씩 생성 -->	
+		<c:choose>
+			<c:when test="${empty orderlist}">
+				<h3>주문 내역이 없습니다 (T_T)</h3>
+			</c:when>
+			<c:otherwise>
+				<h3>주문내역을 확인하세요~😁😁</h3>	
+			</c:otherwise>
+		</c:choose>
+
 			<c:forEach items="${orderlist}" var="orderlist">
+			
 				<table id="my_orderlist">
 					<tr>				
-						<td class="my_orderDate" colspan="3">주문날짜 ${orderlist.o_date}
-						<input type="hidden" value="${orderlist.o_no}"></td>
-					</tr>
-					<tr>
-						<td class="my_orderTb" rowspan="3">
-							<img class="my_orderImg" alt="상품사진" src=""></td>
-						<td class="my_orderTb">${orderlist.s_name}</td>
+						<td class="my_orderDate">주문날짜 ${orderlist.o_date}
+							<input type="hidden" value="${orderlist.o_no}"></td>		
+						<td class="my_orderTb" colspan="2">${orderlist.s_name}</td>
 						<td class="my_orderTb">
-						<a href="/mypage/shopPurchase">
-						<input type="button" value="상품평 GO!"></a></td>
+							<a href="/mypage/shopPurchase">
+							<input type="button" value="상품평 GO!"></a></td>
 					</tr>
 					<tr>
-						<td class="my_orderCon">${orderlist.s_content}</td>
-						<td class="my_orderTb"><a href="/mypage/delivery">
-						<input type="button" value="배송 조회"></a></td>
+						<td class="my_orderTb" rowspan="2">
+							<img class="my_orderImg" alt="상품사진" src=""></td>
+						<td class="my_orderTb">수량</td>
+						<td class="my_orderTbNumber">${orderlist.o_cnt}</td>
+						<td class="my_orderTb">
+							<a href="/mypage/delivery">
+							<input type="button" value="배송 조회"></a></td>
 					</tr>
 					<tr>
-						<td class="my_orderTb">수량 <span>${orderlist.o_cnt}</span>
-							/ 가격 <span>${orderlist.o_sum}</span></td>
+						<td class="my_orderTb">결제 금액</td>
+						<td class="my_orderTbNumber">${orderlist.o_sum}</td>
 						<td class="my_orderTb">
 							<a href="/mypage/ordercancle?o_no=${orderlist.o_no}">
-							<input type="button" value="취소 하기" name="cancle"></a>
-						</td>
+							<input type="button" value="취소 하기" name="cancle"></a></td>						
 					</tr>
 				</table>
-			</c:forEach>								
+			</c:forEach>							
 			</div><!-- my_order1 -->
 			<div id="my_paging">	
 				<div>			
