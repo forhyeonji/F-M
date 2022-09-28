@@ -39,14 +39,8 @@
   	
   	
   	
-  	<!-- 이메일 중복 검사 써봤으나 얘도 실패함
-  	<insert id="createAuthKey">
-		insert into tb_user values(#{user_email}, #{authKey})
-	</insert>
+  
+  	
 
-	<update id="memberAuth">
-		<![CDATA[update MP_MEMBER set MEMBER_AUTH = 1 where (select count(*) from tb_user where user_email = #{user_email}) > 0]]>
-	</update>
-	-->
 	
 </mapper>
