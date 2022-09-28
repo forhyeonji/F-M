@@ -83,23 +83,27 @@
 					<br>
 				</div><br>
 				
-				<div class="mail_wrap">
-				<div class="mail_name">이메일</div> 
-				<div class="mail_input_box">
-					<input class="mail_input" name="memberMail">
+				
+				
+				
+				
+				<!-- 이메일 양식 테스트용 -->
+				<div class="email_wrap">
+				<div class="email_name">이메일</div> 
+				<div class="email_input_box">
+					<input class="email_input" name="memberMail">
 				</div>
-				<div class="mail_check_wrap">
-					<div class="mail_check_input_box" id="mail_check_input_box_false">
-						<input class="mail_check_input" disabled="disabled">
+				<div class="email_check_wrap">
+					<div class="email_check_input_box" id="email_check_input_box_false">
+						<input class="email_check_input"  disabled="disabled">
 					</div>
-					<div class="mail_check_button">
+					<div class="email_check_button">
 						<span>인증번호 전송</span>
 					</div>
 					<div class="clearfix"></div>
-					<span id="mail_check_input_box_warn"></span>
 				</div>
 			</div>
-			
+				
 			
 			
 			

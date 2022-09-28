@@ -1,7 +1,7 @@
 package com.food.controller;
 
 import com.food.model.UserVO;
-import com.food.service.MailSendService;
+//import com.food.service.MailSendService;
 import com.food.service.UserService;
 import org.codehaus.jackson.JsonProcessingException;
 import org.codehaus.jackson.map.ObjectMapper;
@@ -40,10 +40,9 @@ public class UserController{
 
     @Autowired
     UserService us;
-    // private UserService userService;
 
-    @Autowired
-	private MailSendService mailService;
+    //@Autowired
+	//private MailSendService mailService;
     
     @Autowired
 	private JavaMailSender mailSender;
@@ -146,35 +145,49 @@ public class UserController{
   	}
   	
   	
-  	/*
-	@RequestMapping(value = "/emailCheck", method=RequestMethod.POST)
-	public String register(UserVO userVO, RedirectAttributes rttr, Model model)throws Exception{
-		UserService.register(userVO);
-		model.addAttribute("user", userVO);
-		
-		
-		rttr.addFlashAttribute("msg", "가입이 완료되었습니다");
-		rttr.addAttribute("memberEmail", userVO.getUser_email());
-		rttr.addAttribute("memberId", userVO.getUser_id());
-		
-		return "redirect:/insert";
-		
-		
-	}
-	
+  	
+  	/* 이메일 인증 */
 	@RequestMapping(value="/emailCheck", method=RequestMethod.GET)
-	public String emailConfirm(String user_email,Model model)throws Exception{
-		us.memberAuth(user_email);
-		model.addAttribute("memberEmail", user_email);
-		
-		return "/insert";
-	}
-	
-	
-	*/
- 
+	@ResponseBody
+	public void emailCheckGET(String user_email) throws Exception{
 
-	
-  
+		/* 뷰(View)로부터 넘어온 데이터 확인 */
+		logger.info("이메일 데이터 전송 확인");
+		logger.info("인증번호 : " + user_email);
+		
+		/* 인증번호(난수) 생성 */
+        Random random = new Random();
+        int checkNum = random.nextInt(888888) + 111111;
+        logger.info("인증번호 " + checkNum);
         
+        /* 이메일 보내기 */
+        String setFrom = "ssnow000@daum.net";
+        String toMail = user_email;
+        String title = "회원가입 인증 이메일 입니다.";
+        String content = 
+                "홈페이지를 방문해주셔서 감사합니다." +
+                "<br><br>" + 
+                "인증 번호는 " + checkNum + "입니다." + 
+                "<br>" + 
+                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+        
+        try {
+            
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+            helper.setFrom(setFrom);
+            helper.setTo(toMail);
+            helper.setSubject(title);
+            helper.setText(content,true);
+            mailSender.send(message);
+            
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        
+		
+
+	}	
+  
 }
