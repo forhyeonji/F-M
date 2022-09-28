@@ -26,8 +26,7 @@ $(document).ready(function(){
 					c_sumprod = data[i].c_sumprod;
 					//전체주문 함수 호출
 					order({c_no:c_no, c_prodnum:c_prodnum, c_cnt:c_cnt, c_sumprod:c_sumprod, userid:userid});
-					//주문 후 장바구니 비우기 함수 호출
-					orderDel(c_no);
+
 				})//each문닫음
 			});	//getJSON닫음		
 		}	//취소누르면 페이지 새로고침
@@ -47,8 +46,6 @@ $(document).ready(function(){
 			
 			//주문 함수 호출
 			order({c_no:c_no, c_prodnum:c_prodnum, c_cnt:c_cnt, c_sumprod:c_sumprod, userid:userid});
-			//주문 후 장바구니에서 삭제 함수 호출
-			orderDel(c_no);	
 			location.href="/mypage/orderlist";
 		}else{
 			location.reload();
@@ -69,7 +66,8 @@ function order(od){
 			data:JSON.stringify(od), 
 			contentType:"application/json; charset=utf-8",	//입력되는 데이터의 형식
 			success:function(result){
-				
+				//주문 후 장바구니에서 삭제 함수 호출
+				orderDel(od.c_no);	
 			},
 			error:function(e){
 				alert("주문 실패 👽👽");
