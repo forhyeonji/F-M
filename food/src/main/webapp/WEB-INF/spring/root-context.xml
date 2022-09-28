@@ -40,7 +40,7 @@
 		<bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"> 
 		<property name="host" value="smtp.daum.net"/> <!-- 메일서버 호스트 -->
  		<property name="port" value="465"/> <!-- 메일서버 포트번호 -->
- 		<property name="username" value="ssnow000@daum.net"/> <!-- 자신의 이메일 아이디 -->
+ 		<property name="username" value="ssnow000"/> <!-- 자신의 이메일 아이디 -->
  		<property name="password" value="example1234!"/> <!-- 자신의 비밀번호 -->
 		   <!-- 보안연결 SSL과 관련된 설정 -->
 		 <property name="javaMailProperties">
@@ -49,8 +49,7 @@
   				<prop key="mail.smtp.starttls.enable">true</prop>
   				<prop key="mail.smtps.checkserveridentity">true</prop>
   				<prop key="mail.smtps.ssl.trust">*</prop>
-  				<prop key="mail.smtps.port">465</prop>
-	  			<prop key="mail.debug">true</prop>
+  				<prop key="mail.debug">true</prop>
 	  			<prop key="mail.smtp.ssl.enable">true</prop> 
   				<prop key="mail.smtp.socketFactory.class">javax.net.ssl.SSLSocketFactory</prop>
   				<prop key="mail.smtp.ssl.protocols">TLSv1.2</prop>
