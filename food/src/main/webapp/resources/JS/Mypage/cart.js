@@ -140,7 +140,7 @@ function cartlist(userid){
 //			str+="<button class='my_cntplus' data-c_cnt="+data[i].c_cnt+">+</button>"
 			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
 			str+="<td><span id='my_sum"+data[i].c_no+"' data-c_sum="+data[i].c_sumprod+">"+addComma(data[i].c_sumprod)+" 원</td>"
-			str+="<td><input type='button' value='주문하기'><br>"
+			str+="<td><input class='my_cartOne' type='button' value='주문하기' data-c_no="+data[i].c_no+" data-prodnum="+data[i].c_prodnum+"><br>"
 			str+="<input class='cartdelete' type='button' value='삭제하기' data-c_no="+data[i].c_no+"></td></tr>"
 		}
 		str+="<tr><th colspan='6'>"
@@ -174,8 +174,8 @@ function cartpay(userid){
 			//결제 예정금액
 			cnt += parseInt(data[i].c_cnt);
 		}
-		str+="<tr><th>선택한 상품수</th><td>"+cnt+"</td></tr>"
-		str+="<tr><th>선택한 상품 합계</th><td>"+addComma(sum)+"원</td></tr>"
+		str+="<tr><th>장바구니 상품수</th><td>"+cnt+"</td></tr>"
+		str+="<tr><th>장바구니 상품 합계</th><td>"+addComma(sum)+"원</td></tr>"
 		//합계가 3만원 이상이면 무료배송
 		if(sum>=30000){
 			str+="<tr><th>배송비</th><th>무료 배송</th></tr>"

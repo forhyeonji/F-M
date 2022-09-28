@@ -27,6 +27,10 @@ public class OrderlistVO {
     private String s_content;	//상품 설명
     private int s_price;		//상품 단가
     
+    private int c_prodnum;		//장바구니 속 상품번호
+    private int c_cnt;			//장바구니 속 수량
+    private int c_sumprod;		//장바구니 속 상품별 합계
+    
     //주문목록 카운팅
     private int orderlistCnt;
     //주문취소 목록 카운팅
