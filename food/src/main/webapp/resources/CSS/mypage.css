@@ -211,7 +211,7 @@ canclelist
 
 #my_like td{
 	border : solid 1px rgb(234, 234, 234);
-	padding: 5px;
+	height:35px;
 }
 
 
@@ -267,6 +267,12 @@ canclelist
 #my_paging{
 	display: flex;
 	justify-content: space-between;
+}
+
+#my_nodataTb{
+	text-align:center;
+	font-weight:bold;
+	padding:20px;
 }
 
 
