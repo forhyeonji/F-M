@@ -11,6 +11,7 @@ import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
+import com.food.model.ShopquestionVO;
 
 @Service
 public class ShopServiceImpl implements ShopService {
@@ -88,7 +89,9 @@ public class ShopServiceImpl implements ShopService {
 
 		return Sm.ShopSelect();
 	}
-	
+	public void shopDetail(ShopquestionVO shopquestion) {
+			return;
+	}
 	
 	// 상품 상세 내용보기 메인 이미지 구현
 	public ShopVO main(ShopVO shop) {
@@ -99,4 +102,26 @@ public class ShopServiceImpl implements ShopService {
 	public ArrayList<ShopVO> sub(ShopVO shop) {
 		return Sm.sub(shop);
 	}
+	
+/*	//Q&A 전체 글 수
+	public int total2(ShopquestionVO shopquestion) {
+			return Sm.total2(shopquestion);
+	}
+	
+	//Q&A 질의 내가 쓴 글
+	public ArrayList<ShopquestionVO> write(ShopquestionVO shopquestion){
+		return Sm.write(shopquestion);
+	}
+	
+	//관리자 답변글쓰기
+	public void answer(ShopquestionVO shopquestion) {
+		 Sm.answer(shopquestion);
+	}
+	
+	//관리자 답변 확인
+	public ShopquestionVO check(ShopquestionVO shopquestion) {
+		return Sm.check(shopquestion);
+	}*/
+	
+	
 }

@@ -7,7 +7,7 @@ import com.food.model.ShopAttachVO;
 public class ShopVO {
 
 	private int prodnum; 
-	private String NAME; 
+	private String NAME;
 	private String CONTENT;
 	private String today;
 	private String subcontent;
@@ -16,7 +16,7 @@ public class ShopVO {
 	private String Parcel;		/*택배회사이름*/
 	private String packaging;
 	private String unit;
-	private String Origin;
+	private String origin;
 	private int boundary;		/*구매수량*/
 	private String detail;
 	private String filename;
@@ -102,11 +102,14 @@ public class ShopVO {
 	public void setUnit(String unit) {
 		this.unit = unit;
 	}
+	
+	
+	
 	public String getOrigin() {
-		return Origin;
+		return origin;
 	}
 	public void setOrigin(String origin) {
-		Origin = origin;
+		this.origin = origin;
 	}
 	public int getBoundary() {
 		return boundary;
@@ -132,7 +135,7 @@ public class ShopVO {
 	public String toString() {
 		return "ShopVO [prodnum=" + prodnum + ", NAME=" + NAME + ", CONTENT=" + CONTENT + ", today=" + today
 				+ ", subcontent=" + subcontent + ", price2=" + price2 + ", discountprice=" + discountprice + ", Parcel="
-				+ Parcel + ", packaging=" + packaging + ", unit=" + unit + ", Origin=" + Origin + ", boundary="
+				+ Parcel + ", packaging=" + packaging + ", unit=" + unit + ", origin=" + origin + ", boundary="
 				+ boundary + ", detail=" + detail + ", filename=" + filename + ", division=" + division + ", attach="
 				+ attach + "]";
 	}

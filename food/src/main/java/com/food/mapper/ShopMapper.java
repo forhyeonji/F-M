@@ -6,6 +6,7 @@ import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
+import com.food.model.ShopquestionVO;
 
 public interface ShopMapper {
 
@@ -48,4 +49,17 @@ public interface ShopMapper {
 	
 	//상품 상세 내용보기 서브 이미지 설계
 	public ArrayList<ShopVO> sub(ShopVO shop);
+	
+	/*//Q&A 전체 글 수
+	public int total2(ShopquestionVO shopquestion);
+	
+	//Q&A 내가 쓴 문의
+	public ArrayList<ShopquestionVO> write(ShopquestionVO shopquestion);
+	
+	//Q&A 관리자 답변 확인
+	public ShopquestionVO check(ShopquestionVO shopquestion);
+	
+	//관리자 답변글쓰기
+	public void answer(ShopquestionVO shopquestion);
+	*/
 }

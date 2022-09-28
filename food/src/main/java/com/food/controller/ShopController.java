@@ -1,6 +1,9 @@
 package com.food.controller;
 
 import java.util.ArrayList;
+
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -12,10 +15,16 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.food.model.AnswerVO;
 import com.food.model.CriteriaVO;
+import com.food.model.MypageVO;
+import com.food.model.NotiBoardVO;
+import com.food.model.Page2VO;
 import com.food.model.PageVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
+import com.food.model.ShopquestionVO;
+import com.food.model.UserVO;
 import com.food.service.ShopService;
 
 
@@ -137,16 +146,94 @@ public class ShopController {
 	
 	}
 	
+	/* 문의 질문 	
+	
+	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
+	public String shopDetail (UserVO user,ShopquestionVO shopquestion,CriteriaVO criteriaVO, Model model,HttpSession session) {
+	
+		String id = (String) session.getAttribute("user_id");
+		System.out.println("로그인된 아이디="+id);
+		
+		user.setUser_id(id);
+		
+		
+		int total2 = shop.total2(shopquestion);	
+		model.addAttribute("paging", new Page2VO(criteriaVO, total2));
+		
+		if(id==null) {
+			
+			return "/shop";
+		}
+		
+		return "/shopDetail";
+
+	}
+	
+	
+	
+	@RequestMapping(value = "/shopDetail", method = RequestMethod.POST)
+	public String shopDetailPost (ShopVO shop) {
+		shop.write(shop);
+		return "redirect:/shopDetail?";
+	}
 	
 
-	/*// 상품 상세설명
-	@RequestMapping(value = "/shoppage/Detail", method = RequestMethod.GET)
-	public String detssail(ShopVO Shop, Model model) {
-		System.out.println(shop);
-		model.addAttribute("main", shop.main(Shop));
-		model.addAttribute("sub", shop.sub(Shop));
-		return "/shoppage/Detail";
-	}*/
+	
+	
+	
+	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
+	public String directQue_detail (ShopVO shop,ShopquestionVO shopquestion, Model model) {
+
+		model.addAttribute("detail",shop.shopDetail(shop));
+		
+		System.out.println("answercheck="+shop.check(ans));
+		model.addAttribute("answercheck",shop.check(ans));
+		s
+		
+		return "/Notice/DirectQue_detail";
+	}
+	
+	
+	
+	
+	
+ 문의 답변 
+	
+	@RequestMapping(value = "/directKing", method = RequestMethod.GET)
+	public String directKing (Model model, CriteriaVO criteriaVO, AnswerVO ans) {
+		
+		model.addAttribute("list", nbs.list(criteriaVO));
+		
+		int total = nbs.total(criteriaVO);
+		
+		model.addAttribute("paging", new PageVO(criteriaVO, total));
+		
+		return "/Notice/DirectKing";
+	}
+	
+	
+	@RequestMapping(value = "/directKing_answer", method = RequestMethod.GET)
+	public String directKing_answer (NotiBoardVO board, Model model, AnswerVO ans) {
+		
+		model.addAttribute("detail",nbs.detail(board));
+		
+		System.out.println("answercheck="+nbs.answercheck(ans));
+		model.addAttribute("answercheck",nbs.answercheck(ans));
+		
+		
+		return "/Notice/DirectKing_answer";
+}
+	
+	@RequestMapping(value = "/directKing_answer", method = RequestMethod.POST)
+	public String directKing_answer_post (AnswerVO ans) {
+		nbs.answer(ans);
+		System.out.println(ans);
+		
+		return "redirect:/directKing?sep=inquiry";
+	}
+	*/
+
+
 
 	
 }

@@ -125,12 +125,12 @@ FROM  (
 
 <select id="main" resultType="com.food.model.ShopVO">
 SELECT 
-	rownum,prodnum,NAME,subcontent,division,CONTENT,Parcel,packaging,unit,detail,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
+	rownum,prodnum,NAME,subcontent,division,CONTENT,origin,Parcel,packaging,unit,detail,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
 FROM  (
 		SELECT   @rownum:=@rownum+1 rownum,a.* 
 		FROM (SELECT * 
 					FROM (
- 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath ,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
+ 						SELECT  t.prodnum,NAME,subcontent,division,origin,uuid,filename,uploadPath ,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
 							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE  t.prodnum= #{prodnum} and division = 	'm' )AS j ) AS a,(
 										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
 ;
@@ -139,12 +139,12 @@ FROM  (
 
 <select id="sub" resultType="com.food.model.ShopVO">
 SELECT 
-	rownum,prodnum,NAME,subcontent,division,CONTENT,Parcel,packaging,unit,detail,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
+	rownum,prodnum,NAME,subcontent,division,CONTENT,Parcel,packaging,unit,detail,Origin,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
 FROM  (
 		SELECT   @rownum:=@rownum+1 rownum,a.* 
 		FROM (SELECT * 
 					FROM (
- 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath ,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath ,Origin,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
 							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE t.prodnum= #{prodnum} and division = 	's' )AS j ) AS a,(
 										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
 ;
