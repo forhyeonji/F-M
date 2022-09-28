@@ -2,6 +2,7 @@
  * 주문관련 js 파일
  */
 $(document).ready(function(){
+	location.reload;
 	//order 진행하면
 	//로그인된 아이디가져옴.
 	var userid = $("input[name='user']").val();
@@ -34,6 +35,30 @@ $(document).ready(function(){
 			location.reload();
 		}	
 	})
+	
+	//개별 주문하기 버튼 클릭하면
+	$("#my_cart").on("click", ".my_cartOne", function(){
+		var cartOne = confirm("해당 상품만 주문하시겠습니까?");
+		if(cartOne){
+			var c_no = $(this).data("c_no");
+			var c_prodnum = $(this).data("prodnum");
+			var c_cnt = $("#my_cntnow"+c_no).val();
+			var c_sumprod = $("#my_sum"+c_no).data("c_sum");
+			
+			//주문 함수 호출
+			order({c_no:c_no, c_prodnum:c_prodnum, c_cnt:c_cnt, c_sumprod:c_sumprod, userid:userid});
+			//주문 후 장바구니에서 삭제 함수 호출
+			orderDel(c_no);	
+			location.href="/mypage/orderlist";
+		}else{
+			location.reload();
+		}
+
+	})
+	
+	
+	
+	
 //전체 주문 함수 선언
 function order(od){
 		console.log(od);
@@ -50,8 +75,8 @@ function order(od){
 				alert("주문 실패 👽👽");
 			}
 		})//ajax닫음		
-		location.assign(location.href="/mypage/orderlist");
-}//order 닫음
+		location.href="/mypage/orderlist";
+}//order 닫음	
 	
 //주문완료 후 장바구니 속 상품 삭제하는 함수 선언
 function orderDel(c_no){

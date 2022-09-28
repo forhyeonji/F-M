@@ -51,7 +51,7 @@
 					<tr>				
 						<td class="my_orderDate">주문날짜 ${orderlist.o_date}
 							<input type="hidden" value="${orderlist.o_no}"></td>		
-						<td class="my_orderTb" colspan="2">${orderlist.s_name}</td>
+						<td class="my_orderTbNAME" colspan="2">${orderlist.s_name}</td>
 						<td class="my_orderTb">
 							<a href="/mypage/shopPurchase">
 							<input type="button" value="상품평 GO!"></a></td>

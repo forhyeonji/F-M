@@ -342,6 +342,11 @@ canclelist
 	font-size:12px;
 }
 
+.my_orderTbName{
+	text-align:center;
+	font-weight:bold;
+}
+
 .my_orderTbNumber{
 	width:30px;
 	text-align:right;

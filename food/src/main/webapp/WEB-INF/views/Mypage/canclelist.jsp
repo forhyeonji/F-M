@@ -44,7 +44,7 @@
 					<tr>
 						<td class="my_orderTb" rowspan="3">
 							<img class="my_orderImg" alt="상품사진" src=""></td>				
-						<td class="my_orderTb" colspan="2">${canclelist.s_name}</td>
+						<td class="my_orderTbName" colspan="2">${canclelist.s_name}</td>
 						<td class="my_orderDate">취소날짜 ${canclelist.o_mod_date}
 							<input type="hidden" value="${canclelist.o_no}"></td>
 					</tr>
