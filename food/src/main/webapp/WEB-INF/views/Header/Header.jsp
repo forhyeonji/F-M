@@ -56,7 +56,7 @@
             <div id="h_s1">
              
                 <div id="h_logoBox">
-                    <a href="/"><img src="../../../resources/image/HeaderImg/푸렌드.png" id="h_banner"></a>
+                    <a href="/"><img src="../../../resources/image/HeaderImg/푸렌드2.png" id="h_banner"></a>
                 </div> <!-- logoBox -->
                                 
             </div><!-- h_s1 -->
