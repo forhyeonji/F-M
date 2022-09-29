@@ -6,7 +6,7 @@ $(document).ready(function(){
 	//order 진행하면
 	//로그인된 아이디가져옴.
 	var userid = $("input[name='user']").val();
-
+	
 	//전체 주문 클릭하면
 	$("#my_cart").on("click", "#my_cartAll", function(){
 		var allorder = confirm("장바구니 내 상품을 모두 주문하시겠습니까?");
@@ -88,7 +88,10 @@ function orderDel(c_no){
 	})	
 }//orderDel 닫음	
 	
-	
+//천단위 콤마 함수 선언
+function addComma(won){
+	return won.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}	
 	
 	
 })//docu닫음
