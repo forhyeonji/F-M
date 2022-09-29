@@ -44,7 +44,7 @@
 	                 	<a href="/login" class="h_but">로그인</a>
 	                </c:if>
 					<c:if test="${not empty sessionScope.user_id}">
-			            <span class="h_loginmsg">${sessionScope.user_id}님 환영합니다.</span>
+                        <span class="h_loginmsg h_but" style="font-weight: bold; margin:0;">${sessionScope.user_id}</span><span class="h_but" style="margin:0">님 환영합니다.</span>
 						<a href="/logout" class="h_but">로그아웃</a>
 						<a href="/shopRegistration" class="h_but">상품등록</a>
 						<a href="/mypage" class="h_but">마이페이지</a>
@@ -64,7 +64,6 @@
            
                 <table frame="void" id="h_menu">
                     <tr>
-<%--                        <td class="h_nav"><a href="/community/bread">레시피</a></td>--%>
                         <td class="h_nav"><a href="/shop">쇼핑</a></td>
                         <td class="h_nav"><a href="/community">커뮤니티</a></td>
                         <td class="h_nav"><a href="/notice?sep=noti">고객센터</a></td>

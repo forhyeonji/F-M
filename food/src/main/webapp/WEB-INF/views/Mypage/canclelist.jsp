@@ -11,6 +11,8 @@
 <link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
 
+<script src="http://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script src="../../../resources/JS/Mypage/ordercancle.js" charset="utf-8"></script>
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
@@ -40,13 +42,14 @@
 					<h5>취소 내역을 확인하세요 </h5>
 				</c:otherwise>
 			</c:choose>		
-			
+		
 			<c:forEach items="${canclelist}" var="canclelist">
 				<table id="my_orderlist">
 					<tr>
 						<td class="my_orderTb" rowspan="3">
 							<a href="/shopDetail?prodnum=${canclelist.o_prodnum}">
-							<img class="my_orderImg" alt="상품사진" src=""></a></td>				
+
+							<img class="my_orderImg" alt="${canclelist.o_prodnum}" src="/Shopdisplay?fileName="></a></td>				
 						<td class="my_orderTbName" colspan="2">${canclelist.s_name}</td>
 						<td class="my_orderDate">취소날짜 ${canclelist.o_mod_date}
 							<input type="hidden" value="${canclelist.o_no}"></td>
@@ -66,7 +69,7 @@
 				</table>
 			</c:forEach>			
 			</div>	
-
+${img }
 			<div id="my_paging">	
 				<div>			
 <!-- 이전버튼 -->

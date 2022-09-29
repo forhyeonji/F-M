@@ -17,10 +17,8 @@
             </tr>
             <tr>
                 <td>
-                    <%--                            <textarea id="context" class="b_text" name="context" readonly></textarea>--%>
                     <div class="click2edit b_text" name="context" id="context">${board.context}</div>
                 </td>
-
             </tr>
             </tbody>
         </table>
@@ -36,9 +34,7 @@
                 <button id="save" class="btn_write" type="button">저장</button>
                 <button type="button" id="btn_delete" class="btn_write">삭제하기</button>
             </c:if>
-            <a href="/community/bread">
-                <button type="button" class="btn_write btn_cancel">목록</button>
-            </a>
+                <button type="button" class="btn_write btn_cancel" id="cm-back-list">목록</button>
         </div>
         <div id="cm_reply">
             <div id="cm_reply_textarea">

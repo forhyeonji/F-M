@@ -1,7 +1,7 @@
 <%@ include file="../Header/CommunityHeader.jsp" %>
 <%@ page contentType="text/html; charset=UTF-8" language="java"  pageEncoding="UTF-8"%>
     <div id="container">
-        <div id="content">
+        <div id="content" class="p-2">
             <form id="form_register">
                 <input type="text" name="uesr_id" id="user_id" value="${user_id}" hidden>
                 <input type="text" name="bno" id="bno" value="${bno}" hidden>
@@ -31,6 +31,8 @@
             </form>
         </div>
     </div>
+</div>
+<div id="cm-write-footer">
 </div>
 <script>
     let bno='${bno}';
