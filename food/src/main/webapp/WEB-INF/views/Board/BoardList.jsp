@@ -29,7 +29,7 @@
                     <div class="search_inside">
                         <input type="text" size="10" id="b_so" name="keyword">
                         <input type="button" value="🔍" id="search_btn">
-                        <span id="b_select">제목 검색</span>
+                        <div id="b_select">검색</div>
                     </div>
                 </div>
             </div>

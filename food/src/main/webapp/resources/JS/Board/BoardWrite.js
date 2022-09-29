@@ -75,7 +75,7 @@ $(function () {
             ]
         });
 
-        $('#btn_write_cancel').click(() => location.href = '/community');
+        $('#btn_write_cancel').click(() => history.back(1));
         $('#b_write_btn').click(() => onForm());
     }
 

@@ -13,13 +13,15 @@ $(function () {
     const onNormalCss = () => {
         $('.cm-menus').css({
             "color": "black",
-            "font-weight": "normal"
+            "font-weight": "normal",
+            "background":"none"
         })
     }
     const onBoldCss = (e) => {
         $(e).css({
             "color": "orange",
-            "font-weight": "bold"
+            "font-weight": "bold",
+            "background":"#FFEBC1"
         })
     }
     const onMenus = () => {
@@ -46,11 +48,11 @@ $(function () {
 
         let html = ``;
         if (data.length === 0) {
-            html += `<tr class="detail"><td>데이터 없음</td></tr>`
+            html += `<tr style="height:40px;"><td>데이터 없음</td></tr>`
         } else {
             data.map((value) => {
                 html += `<tr class="detail" id="detail-${value['bno']}">`
-                columns.map((key) => html += `<td class="cmList-${value[key]}">${value[key]}</td>`);
+                columns.map((key) => html += `<td class="cm-content">${value[key]}</td>`);
                 html += `</tr>`
             });
         }
@@ -68,7 +70,7 @@ $(function () {
 
         let html = ``;
         if (data.length === 0) {
-            html += `<tr class="detail"><td>데이터 없음</td></tr>`
+            html += `<tr><td>데이터 없음</td></tr>`
         } else {
             data.map((value) => {
                 html += `<tr class="detail" id="detail-${value['bno']}">`

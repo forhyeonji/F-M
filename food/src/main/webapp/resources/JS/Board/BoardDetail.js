@@ -18,7 +18,9 @@ $(function () {
             }
         });
     }
-
+    $('#cm-back-list').click(() => {
+        location.href=`/community`
+    })
     //특수문자 함수
     function ChangeOutputValue(pValue) {
         var strReturenValue = "";
