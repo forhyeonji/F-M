@@ -1,7 +1,9 @@
 package com.food.mapper;
 
+import com.food.model.ShopAttachVO;
 import com.food.model.UserVO;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.ibatis.annotations.Mapper;
@@ -28,6 +30,17 @@ public interface UserMapper {
 	public UserVO find_pw(UserVO userVO);
 
 	public void updatePassword(UserVO userVO);
+	
+	
+	
+	
+	//메인화면 테이블연동관련
+	public ArrayList<ShopAttachVO> Shopattachlist(int bno);
+	public void insert(ShopAttachVO attach);
+	
+	
+	
+	
 
     
 	

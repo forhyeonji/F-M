@@ -1,5 +1,6 @@
 package com.food.service;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpSession;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 
+import com.food.model.ShopAttachVO;
 import com.food.model.UserVO;
 
 public interface UserService {
@@ -35,4 +37,14 @@ public interface UserService {
 
 	UserVO find_pw(UserVO userVO);
 
+
+
+
+
+
+
+
+	//상품등록 이미지(첨부파일 조회 설계)
+		public ArrayList<ShopAttachVO> Shopattachlist(int prodnum);
+		public void insert(ShopAttachVO attach);
 }

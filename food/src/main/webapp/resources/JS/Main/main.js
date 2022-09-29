@@ -3,6 +3,7 @@
  */ 
 
 
+
 //페이지번호와 슬라이드페이지 index연결
 $('.slider > .main_slidepages > div').click(function() {
     var $this = $(this);

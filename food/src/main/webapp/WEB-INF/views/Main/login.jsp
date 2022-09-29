@@ -21,33 +21,6 @@
 		<div id="login_inborder">
 		
 			<div>
-				<div>
-					<h3 id="login_sub">SNS계정으로 간편 로그인/회원가입</h3>
-				</div>
-				<div id="login_link">
-					<div>
-						<a class="login_a" href="https://developers.naver.com/products/login/userguide/userguide.md"><img class="login_img" src="../../../resources/image/main_image/icon_logo_ex.png"></a>
-					</div>
-					<div>
-						<a class="login_a" href="https://developers.kakao.com/"><img class="login_img" src="../../../resources/image/main_image/icon_logo_ex.png"></a>
-					</div>
-					<div>
-						<a class="login_a" href="https://developers.facebook.com/products/instagram/?locale=ko_KR"><img class="login_img" src="../../../resources/image/main_image/icon_logo_ex.png"></a>
-					</div>
-					
-					
-<!-- 				<a id="kakao-login-btn" href="javascript:loginWithKakao()">
-						<img src="https://k.kakaocdn.net/14/dn/btroDszwNrM/I6efHub1SN5KCJqLm1Ovx1/o.jpg" width="222"
-							alt="카카오 로그인 버튼" />
-					</a>
-					<button class="api-btn" onclick="kakaoLogout()">로그아웃</button>
-					<p id="token-result"></p>  -->	
-
-
-				</div>
-			</div>
-			
-			<div>
 				<h3 id="login_sub2">ID 로그인</h3>
 			</div>
 		

@@ -1,5 +1,6 @@
 package com.food.controller;
 
+import com.food.model.ShopAttachVO;
 import com.food.model.UserVO;
 //import com.food.service.MailSendService;
 import com.food.service.UserService;
@@ -22,12 +23,18 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
 
+import java.io.File;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.Random;
+import java.util.UUID;
 
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
@@ -40,6 +47,8 @@ public class UserController{
 
     @Autowired
     UserService us;
+    
+    
 
     //@Autowired
 	//private MailSendService mailService;
@@ -268,6 +277,180 @@ public class UserController{
 	
 	
 	 
+
+		
+		// 내가 올리고자 하는 파일이 이미지 파일인지 아닌지 구분하는 메서드 선언
+		// 반환타입 메소드명 타입 변수명
+		private boolean u_checkImageType(File file) {
+			// probeContentType(파일경로): 파일경로에 있는 파일타입을 알아내는 메서드
+			try {
+				String contentType = Files.probeContentType(file.toPath());
+				System.out.println("contentType=" + contentType);
+				// 파일타입이 image이면 true, 그 이외는 false
+				return contentType.startsWith("image");
+
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			return false;
+		}
+		
+		// 년 , 월 , 일 폴더 생성하는 메서드 선언
+		private String getFolder() {
+			// 현재 날짜 추출(Thu Aug 24 09:23:12 KST 2022)
+			Date date = new Date();
+			System.out.println("No Format 현재날짜:" + date);
+			// Thu Aug 24 09:23:12 KST 2022 -> 2022-08-24
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+
+			// 현재날짜와 날짜 형식을 연결
+			String str = sdf.format(date); // 2022-08-24
+			// 2022-08-24 -> 2022\08\24로 변경
+			System.out.println("Format 적용 현재 날짜:" + str);
+			return str.replace("-", "\\");
+		}
+		
+		
+		
+		
+		// 상품이미지(메인)
+		@RequestMapping(value = "/u_ShopuploadMain", method = RequestMethod.POST)
+		public ResponseEntity<ShopAttachVO> uploadAjaxPost1(MultipartFile imagemain) {
+			// AttachFileVO
+			ShopAttachVO shopattachvo = new ShopAttachVO();
+			// 폴더 경로
+			String uploadFolder = "D:\\upload";
+
+			// 서버 업로드 경로와 getFolder 메서드의 날짜문자열을 이어서 하나의 폴더 생성
+			File uploadPath = new File(uploadFolder, getFolder());
+
+			// 폴더생성(D:\\upload\\현재날짜)
+			if (uploadPath.exists() == false) {// uploadPath가 존재하지 않으면,
+				uploadPath.mkdirs();
+			}
+			// for(변수명:배열명)
+
+				System.out.println(imagemain.getOriginalFilename());
+				System.out.println(imagemain.getSize());
+				// 실제 파일명( multiparFile.getOriginalFilename())
+				// UUID 적용(UUID_ multiparFile.getOriginalFilename());
+				UUID uuid = UUID.randomUUID();
+				System.out.println("UUID=" + uuid.toString());
+
+				// ShopAttachVO의 uploadPath 변수에 저장()
+				shopattachvo.setUploadPath(getFolder());
+				// ShopAttachVO의 fileName 변수에 저장()
+				shopattachvo.setFileName(imagemain.getOriginalFilename());
+				// ShopAttachVO의 uuid 변수에 저장()
+				shopattachvo.setUuid(uuid.toString());
+				// ShopAttachVO의 division 변수에 저장
+				shopattachvo.setDivision("m");
+
+				// 파일 저장 어느폴더에( D:\\upload\\ 현재날짜) ,어떤 파일이름으로 (비정규식.png)
+				File saveFile = new File(uploadPath, uuid.toString() + "-" + imagemain.getOriginalFilename());
+
+				// D:\\upload\\비정규식.png에 파일을 전송(transferTo)
+
+				try {// transferTo() 메소드에 예외가 있으면
+					imagemain.transferTo(saveFile); // 서버로 원본파일 전송
+					// 내가 서버에 올리고자 하는 파일이 이미지이면,
+					if (u_checkImageType(saveFile)) {
+
+						// ShopAttachVO의 image 변수에 true값 저장()
+						shopattachvo.setImage(true);
+
+					
+					} // checkImageType메서드 끝
+
+
+				} catch (Exception e) {// 예외를 처리하라.
+					System.out.println(e.getMessage());
+				}
+
+			//} // for문 끝
+			return new ResponseEntity<>(shopattachvo,HttpStatus.OK);
+		}// uploadAjax 끝
+		
+		
+		// 상품이미지(서브)
+		@RequestMapping(value = "/u_ShopuploadSub", method = RequestMethod.POST)
+		public ResponseEntity<ArrayList<ShopAttachVO>> uploadAjaxPost(MultipartFile[] imagesub) {
+			// AttachFileVO
+			ArrayList<ShopAttachVO> list = new ArrayList<>();
+			// 폴더 경로
+			String uploadFolder = "D:\\upload";
+
+			// 서버 업로드 경로와 getFolder 메서드의 날짜문자열을 이어서 하나의 폴더 생성
+			File uploadPath = new File(uploadFolder, getFolder());
+
+			// 폴더생성(D:\\upload\\현재날짜)
+			if (uploadPath.exists() == false) {// uploadPath가 존재하지 않으면,
+				uploadPath.mkdirs();
+			}
+			// for(변수명:배열명)
+
+			for (MultipartFile multipartFile : imagesub) {
+				// ShopAttachVO클래스의 새로운 주소를 반복적으로 생성하여
+				// ArrayList에 저장
+				ShopAttachVO shopattachvo = new ShopAttachVO();
+
+				System.out.println(multipartFile.getOriginalFilename());
+				System.out.println(multipartFile.getSize());
+				// 실제 파일명( multiparFile.getOriginalFilename())
+				// UUID 적용(UUID_ multiparFile.getOriginalFilename());
+				UUID uuid = UUID.randomUUID();
+				System.out.println("UUID=" + uuid.toString());
+
+				// ShopAttachVO의 uploadPath 변수에 저장()
+				shopattachvo.setUploadPath(getFolder());
+				// ShopAttachVO의 fileName 변수에 저장()
+				shopattachvo.setFileName(multipartFile.getOriginalFilename());
+				// ShopAttachVO의 uuid 변수에 저장()
+				shopattachvo.setUuid(uuid.toString());
+				// ShopAttachVO의 division 변수에 저장
+				shopattachvo.setDivision("s");
+
+				// 파일 저장 어느폴더에( D:\\upload\\ 현재날짜) ,어떤 파일이름으로 (비정규식.png)
+				File saveFile = new File(uploadPath, uuid.toString() + "-" + multipartFile.getOriginalFilename());
+
+				// D:\\upload\\비정규식.png에 파일을 전송(transferTo)
+
+				try {// transferTo() 메소드에 예외가 있으면
+					multipartFile.transferTo(saveFile); // 서버로 원본파일 전송
+					// 내가 서버에 올리고자 하는 파일이 이미지이면,
+					if (u_checkImageType(saveFile)) {
+
+						// ShopAttachVO의 image 변수에 true값 저장()
+						shopattachvo.setImage(true);
+
+					} // checkImageType메서드 끝
+
+					// AttachFileVO에 저장된 데이터를 배열의 추가
+					list.add(shopattachvo);
+
+				} catch (Exception e) {// 예외를 처리하라.
+					System.out.println(e.getMessage());
+				}
+
+			} // for문 끝
+			return new ResponseEntity<>(list,HttpStatus.OK);
+		}// uploadAjax 끝
+			// 이미지 주소 생성
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 	
   

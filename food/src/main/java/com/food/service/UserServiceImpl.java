@@ -1,7 +1,11 @@
 
 package com.food.service;
+import com.food.mapper.ShopAttachMapper;
 import com.food.mapper.UserMapper;
+import com.food.model.ShopAttachVO;
 import com.food.model.UserVO;
+
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.inject.Inject;
@@ -18,6 +22,9 @@ public class UserServiceImpl implements UserService {
 	@Inject
 	private JavaMailSender mailSender;
 	
+	
+	@Autowired
+	ShopAttachMapper sam;
 	
     @Autowired 
     UserMapper um;
@@ -81,7 +88,28 @@ public class UserServiceImpl implements UserService {
 	public void updatePassword(UserVO userVO) {
 		um.updatePassword(userVO);
 	}
-  
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		//첨부파일 조회 구현
+		public ArrayList<ShopAttachVO> Shopattachlist(int prodnum){
+			return sam.Shopattachlist(prodnum);
+		}
+		
+		@Override
+		public void insert(ShopAttachVO attach) {
+
+		}
     
     
     /*

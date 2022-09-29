@@ -48,6 +48,71 @@
 		update tb_user 
 		set user_pw=#{user_pw} where user_id=#{user_id}
 	</update>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 상품리스트 총갯수 -->
+	<select id="total" resultType="int">
+	select count(*)
+	from tb_shop t join sh_appatch s
+	on t.prodnum = s.prodnum
+	<if test = "keyword != null">
+                <choose>
+                   <when test="type == 'sh_Tp'.toString()">
+                      and NAME like concat('%',#{keyword},'%') 
+                   </when>
+                   <when test="type == 'sh_Tk'.toString()">
+                      and s.prodnum like concat('%',#{keyword},'%') 
+                   </when>
+                   <otherwise>
+                     where (NAME like concat('%',#{keyword},'%')
+                      or s.prodnum like concat('%',#{keyword},'%')) 
+                   </otherwise>
+                    </choose>
+            </if>
+</select>
+	
+	<!-- 쇼핑몰 메인 내용 -->
+<select id="ShopSelect" resultType="com.food.model.ShopVO">
+SELECT 
+	rownum,prodnum,NAME,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,<![CDATA['/']]>,uuid,'-' ,filename)AS filename, discountprice
+FROM  (
+		SELECT   @rownum:=@rownum+1 rownum,a.* 
+		FROM (SELECT * 
+					FROM (
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath, discountprice
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE  image = 1 and division = 'm' )AS j ) AS a,(
+										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+</select>
+
+	
+	<select id="main" resultType="com.food.model.ShopVO">
+SELECT 
+	rownum,prodnum,NAME,subcontent,division,CONTENT,origin,Parcel,packaging,unit,detail,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
+FROM  (
+		SELECT   @rownum:=@rownum+1 rownum,a.* 
+		FROM (SELECT * 
+					FROM (
+ 						SELECT  t.prodnum,NAME,subcontent,division,origin,uuid,filename,uploadPath ,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE  t.prodnum= #{prodnum} and division = 	'm' )AS j ) AS a,(
+										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+;
+</select>
+
+	<select id="Shopattachlist"
+		resultType="com.food.model.ShopAttachVO">
+		select*from sh_appatch where prodnum=#{prodnum}
+	</select>
+	
+	
   	
   	
   	
