@@ -22,7 +22,17 @@ public interface UserService {
  	public int phoneCheck(String user_phone) throws Exception;
  	
  	// 아이디 찾기
- 	public String find_id(String user_name, String user_phone);
+ 	//public String find_id(String user_name, String user_phone);
  
+ 	
+ 	//public UserVO findId(UserVO userVO);
+	
+	//public UserVO findPassword(UserVO userVO);
+	
+	public void updatePassword(UserVO userVO);
+
+	UserVO find_id(UserVO userVO);
+
+	UserVO find_pw(UserVO userVO);
 
 }

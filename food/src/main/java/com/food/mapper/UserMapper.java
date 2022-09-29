@@ -19,9 +19,15 @@ public interface UserMapper {
     public int phoneCheck(String user_phone);
 	
 	//아이디 찾기
-	public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone);
+	//public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone);
     
     
+    
+    public UserVO find_id(UserVO userVO);
+	
+	public UserVO find_pw(UserVO userVO);
+
+	public void updatePassword(UserVO userVO);
 
     
 	

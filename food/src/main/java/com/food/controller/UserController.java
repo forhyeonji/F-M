@@ -169,12 +169,12 @@ public class UserController{
 	}	
 	
 	
-	
+	/*
 	//아이디 찾기 
   	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
   	public String find_id() {
   		
-  	return "Main/find_idpw";
+  	return "Main/find_id";
   	
   	}
   	 
@@ -196,7 +196,74 @@ public class UserController{
 		}
   	
   	}
-  	
+  	*/
+	
+	
+	
+	// 아이디 찾기 페이지 이동
+		@RequestMapping(value="find_id", method=RequestMethod.GET)
+		public String find_id() {
+			return "Main/find_id";
+		}
+		
+	    // 아이디 찾기 실행
+		@RequestMapping(value="find_id", method=RequestMethod.POST)
+		public String find_idAction(UserVO userVO, Model model) {
+			UserVO user = us.find_id(userVO);
+			
+			if(user == null) { 
+				model.addAttribute("check", 1);
+			} else { 
+				model.addAttribute("check", 0);
+				model.addAttribute("id", userVO.getUser_id());
+			}
+			
+			return "Main/find_id";
+		}
+		
+	    // 비밀번호 찾기 페이지로 이동
+		@RequestMapping(value="find_pw", method=RequestMethod.GET)
+		public String find_pw() {
+			return "Main/find_pw";
+		}
+		
+	    // 비밀번호 찾기 실행
+		@RequestMapping(value="find_pw", method=RequestMethod.POST)
+		public String find_pwAction(UserVO userVO, Model model) {
+			UserVO user = us.find_pw(userVO);
+			
+			if(user == null) { 
+				model.addAttribute("check", 1);
+			} else { 
+				model.addAttribute("check", 0);
+				model.addAttribute("updateid", userVO.getUser_id());
+			}
+			
+			return "Main/find_pw";
+		}
+		
+		
+	    // 비밀번호 바꾸기 실행
+		@RequestMapping(value="update_password", method=RequestMethod.POST)
+		public String updatePasswordAction(@RequestParam(value="updateid", defaultValue="", required=false) 
+		String user_id, UserVO userVO) {
+			userVO.setUser_id(user_id);
+			System.out.println(userVO);
+			us.updatePassword(userVO);
+			return "Main/login";
+		}
+		
+	    // 비밀번호 바꾸기할 경우 성공 페이지 이동
+		@RequestMapping(value="check_password_view")
+		public String checkPasswordForModify(HttpSession session, Model model) {
+			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+			
+			if(loginUser == null) {
+				return "member/login";
+			} else {
+				return "mypage/checkformodify";
+			}
+		}
 	
 	
 	
