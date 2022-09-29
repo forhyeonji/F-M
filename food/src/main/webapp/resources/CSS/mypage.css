@@ -90,19 +90,19 @@ body {
 }
 
 .my_go{
-	width:200px;
-	height:100px;
+	width:180px;
+	height:auto;
 	border:1px solid rgb(234, 234, 234);
-	padding: 15px;
+	padding: 5px;
 	margin : 10px;
 	position:relative;
 	border-radius:15px;
 }
 
-.my_th image{
-	width:100%;
-	vertical-align:middle;
-
+.my_thimage{
+	width:40%;
+	dispaly:block;
+	vertical-align:left;
 }
 
 .my_intexttop, .my_intextmid, .my_intextlow{
@@ -112,6 +112,8 @@ body {
 	top:50%;
 	left:45%;
 	text-align:right;
+	font-size:20px;
+	font-weight:bold;
 	transform:translate(-50%, -50%);
 	color:#ff8080;
 }
@@ -371,11 +373,11 @@ canclelist
 }
 
 .my_edit_td{
-	width:120px;
+	width:80px;
 	background-color:#ff8080;
 	font-size:15px;
 	text-align:center;
-	border-radius:15px;
+
 }
 
 
