@@ -45,7 +45,8 @@
 				<table id="my_orderlist">
 					<tr>
 						<td class="my_orderTb" rowspan="3">
-							<img class="my_orderImg" alt="상품사진" src=""></td>				
+							<a href="/shopDetail?prodnum=${canclelist.o_prodnum}">
+							<img class="my_orderImg" alt="상품사진" src=""></a></td>				
 						<td class="my_orderTbName" colspan="2">${canclelist.s_name}</td>
 						<td class="my_orderDate">취소날짜 ${canclelist.o_mod_date}
 							<input type="hidden" value="${canclelist.o_no}"></td>
@@ -54,7 +55,7 @@
 						<td class="my_orderTb">수량</td>
 						<td class="my_orderTbNumber">${canclelist.o_cnt}</td>							
 						<td class="my_orderTb" rowspan="2">
-							<a href="/Shop/shopPurchase">
+							<a href="/shopDetail?prodnum=${canclelist.o_prodnum}">
 							<input type="button" value="상품 GO!!"></a></td>
 					</tr>
 					<tr>

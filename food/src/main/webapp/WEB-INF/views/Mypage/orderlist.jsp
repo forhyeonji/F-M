@@ -54,12 +54,13 @@
 							<input type="hidden" value="${orderlist.o_no}"></td>		
 						<td class="my_orderTbName" colspan="2">${orderlist.s_name}</td>
 						<td class="my_orderTb">
-							<a href="/mypage/shopPurchase">
+							<a href="/shopDetail?prodnum=${orderlist.o_prodnum}#product-review">						
 							<input type="button" value="상품평 GO!"></a></td>
 					</tr>
 					<tr>
 						<td class="my_orderTb" rowspan="2">
-							<img class="my_orderImg" alt="상품사진" src=""></td>
+							<a href="/shopDetail?prodnum=${orderlist.o_prodnum}">
+							<img class="my_orderImg" alt="상품사진" src=""></a></td>
 						<td class="my_orderTb">수량</td>
 						<td class="my_orderTbNumber">${orderlist.o_cnt}</td>
 						<td class="my_orderTb">
