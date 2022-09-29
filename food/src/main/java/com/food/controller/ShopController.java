@@ -149,30 +149,20 @@ public class ShopController {
 		int total2 = shop.total2(shopquestion);
 		model.addAttribute("paging", new Page2VO(criteriaVO, total2));
 
-		model.addAttribute("detail");
-
-		System.out.println("answerchack=" + shop.chack(shopquestion));
-		model.addAttribute("answerchack", shop.chack(shopquestion));
-
 		model.addAttribute("list", shop.list(criteriaVO));
-
 		int total = shop.total(criteriaVO);
 
 		model.addAttribute("paging", new PageVO(criteriaVO, total));
 
-		model.addAttribute("detail", shop.shopDetail(shopquestion));
+		model.addAttribute("detail", shop.shopDetail());
 
-		System.out.println("answerchack=" + shop.chack(shopquestion));
-		model.addAttribute("answerchack", shop.chack(shopquestion));
 
-		if (id == null) {
-
-			return "Shop/shopDetail";
-		}
 
 		return "Shop/shopDetail";
 
 	}
+	
+	
 
 	@RequestMapping(value = "/shopDetail", method = RequestMethod.POST)
 	public String shopDetailPost(ShopquestionVO shopquestion) {

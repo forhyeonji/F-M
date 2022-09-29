@@ -40,12 +40,12 @@ public interface ShopService {
 	 /*	Shopquestion*/
 	
 	//Q&A 전체 글 수
-	public ShopquestionVO shopDetail(ShopquestionVO shopquestion); 
+	public ArrayList<ShopquestionVO> shopDetail(); 
 	
 	public int total2(ShopquestionVO shopquestion);
 	
 	//Q&A 내가 쓴 문의
-	public ArrayList<ShopquestionVO> write(ShopquestionVO shopquestion);
+	 public void write(ShopquestionVO shopquestion);
 	
 	//Q&A 관리자 답변 확인
 	public ShopquestionVO chack(ShopquestionVO shopquestion);

@@ -153,9 +153,9 @@ FROM  (
 
 <!-- 문의 관련 -->
 <select id="shopDetail" resultType="com.food.model.ShopquestionVO">
-		select * from sh_question where prodnum=#{prodnum}
+		select * from sh_question
 	</select>
-<!--  글쓰기 -->
+<!-- 글쓰기 -->
 	<insert id="write">
 	
 	insert into sh_question (prodnum, context, title,  NAME, user_id)
@@ -164,19 +164,19 @@ FROM  (
 	</insert>
 
 <select id="total2" resultType="int">
-select count(prodnum) from sh_question where user_id = #{user_id}; 
+select count(*) from sh_question where user_id = #{user_id}
 </select>
 
 <!-- 관리자 답변 -->
 <insert id="answer">
 	
-insert into sh_question (prodnum, context, title,  NAME, user_id, chack)
-values(#{prodnum}, #{context}, #{title}, #{NAME},1)
+insert into sh_question (bno, context, title,  NAME, chack)
+values(#{bno}, #{context}, #{title}, #{NAME},1)
 	
 </insert>
 
 <!-- 관리자 답변-->
 <select id="chack" resultType="com.food.model.ShopquestionVO">
-	select * from sh_question where prodnum=#{prodnum}
+	select * from sh_question where bno=#{bno}
 </select>
 </mapper>

@@ -19,7 +19,6 @@
 				</ul></li>
 
 			<li><a href="#" class="sh_a">New</a></li>
-			<li><a href="#" class="sh_a">Event</a></li>
 		</ul>
 
 		<!-- main 전체 -->
@@ -162,11 +161,14 @@
 											<div class="prod-inquiry-list__container">
 												<div class="prod-inquiry-items">
 													<div class="prod-inquiry-item">
+													
+													
+													
 														<form action="/shopDetail" method="post">
 															<table class="sh_qnatb">
 
 																<tr>
-																	<td colspan="3"><input type="text"
+																	<td colspan="3">제목: <input type="text"
 																		id="sh_qna_title" name="title"></td>
 																</tr>
 
@@ -197,16 +199,14 @@
 															</tr>
 															
 															<!-- for문 시작 -->
-															<c:forEach items="${shopwrite}" var="shopwrite">
+															<c:forEach items="${detail}" var="detail">
 
 																<tr>
-																	<td class="NOTI_Que_title_effect"><a
-																		href="directQue_detail?bno=${shopwrite.prodnum}"
-																		class="NOTI_a">${shopwrite.title}</a></td>
-																	<td class="NOTI_Que_title_effect">${shopwrite.date}</td>
-																	<td class="NOTI_Que_title_effect"><c:choose>
+																	<td class="on"><a href="shopDetail?bno=${detail.bno}" class="sh_title_check">${detail.title}</a><input type="hidden"></td>
+																	<td class="sh_title_check">${detail.date}</td>
+																	<td class="sh_title_check"><c:choose>
 
-																			<c:when test="${shopwrite.ans_check!=false}">
+																			<c:when test="${detail.chack!=false}">
 																				<span style="color: red"><b>응답완료</b></span>
 																			</c:when>
 
@@ -225,20 +225,20 @@
 															<!-- 이전버튼 -->
 															<c:if test="${paging.prevBtn}">
 																<a
-																	href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+																	href="/prodnum?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 															</c:if>
 
 															<!-- 페이지번호 -->
 															<c:forEach begin="${paging.startPage }"
 																end="${paging.endPage }" var="sh_num">
 																<a
-																	href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
+																	href="/prodnum?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
 															</c:forEach>
 
 															<!-- 다음버튼 -->
 															<c:if test="${paging.nextBtn}">
 																<a
-																	href="/shopProductlist?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+																	href="/prodnum?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 															</c:if>
 														</div>
 													</div>
@@ -304,7 +304,7 @@
 											<td colspan="3"><ul>
 													<li><span>ㆍ배송 지역 : 주문 및 결제 완료 후, 1-2일 이내 도착</span></li>
 													<li><span>ㆍ 미배송 지역 : 주문 및 결제 완료 후, 2-3일 이내 도착</span>
-														<p>-도서 산간 지역 등은 하루가 더 소요될 수 있습니다. 곧 고객님께도 쿠팡친구가 찾아갈 수
+														<p>-도서 산간 지역 등은 하루가 더 소요될 수 있습니다. 곧 고객님께도 푸렌드가 찾아갈 수
 															있도록 노력하겠습니다</p></li>
 													<li>ㆍ천재지변, 물량 수급 변동 등 예외적인 사유 발생 시, 다소 지연될 수 있는 점 양해
 														부탁드립니다.</li>
@@ -363,7 +363,7 @@
 											<th>01. 상품에 문제가 있는 경우</th>
 											<td>
 												<p>ㆍ받으신 상품이 표시·광고 내용 또는 계약 내용과 다른 경우에는 상품을 받은 날부터 3개월
-													이내,</p> <span>※ 상품에 문제가 있는 것으로 확인되면 배송비는 F&M가 부담합니다.</span>
+													이내,</p> <span>※ 상품에 문제가 있는 것으로 확인되면 배송비는 "푸렌드"가 부담합니다.</span>
 											</td>
 										</tr>
 										<tr>
@@ -401,7 +401,7 @@
 										<tbody>
 											<tr>
 												<th>판매자</th>
-												<td>조석현 <a
+												<td>홍길동 <a
 													class="prod-delivery-return-policy-table__phone-link"
 													href="tel:+8215777011" target="_blank">0000-0000</a>
 												</td>

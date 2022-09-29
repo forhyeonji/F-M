@@ -362,8 +362,9 @@ article.sdp-review__article__list.js_reviewArticleReviewList {
 	color: #111;
 }
 /* 문의하기 */
-#product-qna {
-	
+.sh_qna_Textarea{
+	width: 130%;
+	height: 90%;
 }
 
 .prod-inquiry-list {
@@ -372,6 +373,7 @@ article.sdp-review__article__list.js_reviewArticleReviewList {
 	background: #fff;
 	padding: 30px 40xp;
 	border: 1px solid #ddd;
+	margin-bottom: 35px;
 }
 
 .prod-inquiry-list__title {
@@ -545,3 +547,4 @@ article.sdp-review__article__list.js_reviewArticleReviewList {
 	display: block;
 	padding-top: 22px;
 }
+
