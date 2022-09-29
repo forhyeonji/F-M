@@ -65,7 +65,7 @@
 		        sha.uuid as uuid,
 		        sha.uploadPath as uploadPath,
 		        sha.filename as filename,
-		        c.c_prodnum as c_prodnum	
+		        c.*	
 		from sh_appatch sha left outer join tb_cart c
 		on sha.prodnum = c.c_prodnum
 		where sha.division=&apos;m&apos;
@@ -73,16 +73,9 @@
 	</select>
 	
 	<select id="findListImg" resultType="com.food.model.OrderlistVO">
-		select sha.prodnum as prodnum,
-				sha.division as division,
-		        sha.uuid as uuid,
-		        sha.uploadPath as uploadPath,
-		        sha.filename as filename,
-		        o.o_prodnum as o_prodnum
-		from sh_appatch sha left outer join tb_orderlist o
-		on sha.prodnum = o.o_prodnum
+		select * from sh_appatch sha
 		where sha.division=&apos;m&apos;
-		and o.o_prodnum=#{o_prodnum}
+		and sha.prodnum=#{prodnum}
 	</select>
 	
 	<insert id="order">

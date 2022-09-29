@@ -53,7 +53,7 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	//장바구니 이미지를 출력하기 위한 구현
-	public CartVO findCartImg(CartVO cart) {
+	public List<Map<String, Object>> findCartImg(CartVO cart) {
 		return mm.findCartImg(cart);
 	}
 	
@@ -88,7 +88,7 @@ public class MypageServiceImpl implements MypageService {
 	}
 	
 	//주문 상품 이미지를 출력하기 위한 설계
-	public OrderlistVO findListImg(OrderlistVO order) {
+	public List<Map<String, Object>> findListImg(OrderlistVO order) {
 		return mm.findListImg(order);
 	}
 	

@@ -187,8 +187,8 @@ public class MypageController {
 
 		model.addAttribute("user", ms.mypage(user));
 		model.addAttribute("canclelist", ms.canclelist(order));
-		model.addAttribute("findListImg", ms.findListImg(order));
-		
+		model.addAttribute("img", ms.findListImg(order));
+
 		int total = ms.canclelistCnt(order);
 		model.addAttribute("paging", new PageVO(cri, total));	
 		return "Mypage/canclelist";
