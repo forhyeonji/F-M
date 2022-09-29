@@ -32,7 +32,6 @@
 				</ul></li>
 
 			<li><a href="#" class="sh_a">New</a></li>
-			<li><a href="#" class="sh_a">Event</a></li>
 		</ul>
 		
 		<div class="sh_slide">

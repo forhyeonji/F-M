@@ -90,8 +90,8 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.ShopSelect();
 	}
 	
-	public ShopquestionVO shopDetail(ShopquestionVO shopquestion) {
-			return Sm.shopDetail(shopquestion);
+	public ArrayList<ShopquestionVO> shopDetail() {
+			return Sm.shopDetail();
 	}
 	
 	// 상품 상세 내용보기 메인 이미지 구현
@@ -111,9 +111,9 @@ public class ShopServiceImpl implements ShopService {
 	}
 	
 	//Q&A 질의 내가 쓴 문의
-	public ArrayList<ShopquestionVO> write(ShopquestionVO shopquestion){
-		return Sm.write(shopquestion);
-	}
+	   public void write(ShopquestionVO shopquestion){
+	       Sm.write(shopquestion);
+	  }
 	
 	//관리자 답변글쓰기
 	public void answer(ShopquestionVO shopquestion) {

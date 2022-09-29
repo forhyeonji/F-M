@@ -1,12 +1,13 @@
 package com.food.model;
 
 public class ShopquestionVO {
+	private int bno;	//게시글 번호
 	private int prodnum;  	//제품번호
 	private String NAME; 	//제품명
 	private String date; 	//작성일자
 	private String user_id; //작성자
 	private String context;	//내용
-	private boolean check;	//답변확인
+	private boolean chack;	//답변확인
 	private String title;	//제목
 	
 	public int getProdnum() {
@@ -41,13 +42,20 @@ public class ShopquestionVO {
 		this.context = context;
 	}
 	
-	public boolean isCheck() {
-		return check;
-	}
-	public void setCheck(boolean check) {
-		this.check = check;
-	}
 	
+	
+	public int getBno() {
+		return bno;
+	}
+	public void setBno(int bno) {
+		this.bno = bno;
+	}
+	public boolean isChack() {
+		return chack;
+	}
+	public void setChack(boolean chack) {
+		this.chack = chack;
+	}
 	public String getTitle() {
 		return title;
 	}
@@ -56,8 +64,8 @@ public class ShopquestionVO {
 	}
 	@Override
 	public String toString() {
-		return "ShopquestionVO [prodnum=" + prodnum + ", NAME=" + NAME + ", date=" + date + ", user_id=" + user_id
-				+ ", context=" + context + ", check=" + check + ", title=" + title + "]";
+		return "ShopquestionVO [bno=" + bno + ", prodnum=" + prodnum + ", NAME=" + NAME + ", date=" + date
+				+ ", user_id=" + user_id + ", context=" + context + ", chack=" + chack + ", title=" + title + "]";
 	} 
 	
 }

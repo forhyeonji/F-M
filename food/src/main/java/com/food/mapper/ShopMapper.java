@@ -51,13 +51,13 @@ public interface ShopMapper {
 	public ArrayList<ShopVO> sub(ShopVO shop);
 	
 	//상세보기
-	public ShopquestionVO shopDetail(ShopquestionVO shopquestion);
+	public ArrayList<ShopquestionVO> shopDetail();
 	
 	//Q&A 전체 글 수
 	public int total2(ShopquestionVO shopquestion);
 	
 	//Q&A 내가 쓴 문의
-	public ArrayList<ShopquestionVO> write(ShopquestionVO shopquestion);
+	 public void write(ShopquestionVO shopquestion);
 	
 	//관리자 답변글쓰기
 	public void answer(ShopquestionVO shopquestion);
