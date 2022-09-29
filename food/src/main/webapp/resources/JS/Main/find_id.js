@@ -31,6 +31,4 @@ function findId_click(){
 		});
 	};
 	*/
-function closethewindow(){
-			self.close();
-		}
+

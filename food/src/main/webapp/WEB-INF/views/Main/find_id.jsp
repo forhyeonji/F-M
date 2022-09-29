@@ -6,7 +6,7 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
   
                     
-                    
+                
 <div id="login_homelogo">
 		<a class="login_a" href="http://localhost:8080"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
 	</div>
@@ -40,7 +40,6 @@
 </div>   
 
 -->
-
 
 <form method="post" class="form-signin" action="find_id" name="findform">
 		<div class="form-label-group">
@@ -78,7 +77,11 @@
 
 	</form>
 
+	
+	<script type="text/javascript">
+		function closethewindow(){
+			self.close();
+		}
+	</script>
 
 <script src="/resources/JS/Main/find_id.js"></script>
-
-
