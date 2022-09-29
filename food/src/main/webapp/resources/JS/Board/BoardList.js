@@ -29,6 +29,10 @@ $(function () {
 
             $("#cm-category").empty();
             $("#cm-category").append($this.text())
+            $('#cm_popular').css({
+                "text-decoration": "none",
+                "color": "black"
+            })
 
             onNormalCss();
             onBoldCss(e.target);
@@ -42,7 +46,7 @@ $(function () {
 
         let html = ``;
         if (data.length === 0) {
-            html += `<tr><td>데이터 없음</td></tr>`
+            html += `<tr class="detail"><td>데이터 없음</td></tr>`
         } else {
             data.map((value) => {
                 html += `<tr class="detail" id="detail-${value['bno']}">`
@@ -64,7 +68,7 @@ $(function () {
 
         let html = ``;
         if (data.length === 0) {
-            html += `<tr><td>데이터 없음</td></tr>`
+            html += `<tr class="detail"><td>데이터 없음</td></tr>`
         } else {
             data.map((value) => {
                 html += `<tr class="detail" id="detail-${value['bno']}">`

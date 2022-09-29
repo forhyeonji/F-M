@@ -17,10 +17,8 @@
             </tr>
             <tr>
                 <td>
-                    <%--                            <textarea id="context" class="b_text" name="context" readonly></textarea>--%>
                     <div class="click2edit b_text" name="context" id="context">${board.context}</div>
                 </td>
-
             </tr>
             </tbody>
         </table>

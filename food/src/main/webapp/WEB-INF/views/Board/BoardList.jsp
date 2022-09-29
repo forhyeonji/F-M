@@ -3,7 +3,7 @@
          pageEncoding="UTF-8" %>
 <div id="container">
     <div id="content" class="d-flex pt-3 pd-3">
-        <div class="p-2" style="width : 250px; border-right: 1px solid #A9A9A9">
+        <div class="p-2" style="width : 250px; border-right: 1px solid #dddddd">
             <div class="p-2">
                 <p class="font-weight-bold" style="font-size: 1.7rem">커뮤니티</p>
             </div>
@@ -16,7 +16,7 @@
                 <div class="p-2 mt-2 cm-menus" id="western-food" data-cd="06">양식</div>
             </div>
         </div>
-        <div class="p-2">
+        <div class="p-4">
             <div class="p-2" style="height:85px;">
                 <p class="font-weight-bold" style="font-size: 1.7rem">
                     <span id="cm_home" class="cm-table-nav cursorPoint">🏠</span>
@@ -25,7 +25,7 @@
             </div>
             <div>
                 <div class="p-2 cm-search">
-                    <div id="cm-category" style="font-size:1.2em; font-weight:bold">빵</div>
+                    <div id="cm-category" style="font-size:1.56em; font-weight:bold">빵</div>
                     <div class="search_inside">
                         <input type="text" size="10" id="b_so" name="keyword">
                         <input type="button" value="🔍" id="search_btn">
@@ -62,7 +62,6 @@
             </div>
         </div>
     </div>
-</div>
 </div>
 <script src="/resources/JS/Board/BoardList.js"></script>
 <%@ include file="../Footer/footer.jsp" %>

@@ -14,7 +14,7 @@ ul li{
     width:100%;
 }
 #container{
-    height: 700px;
+    height: 800px;
 }
 #content{
     width:1050px;
@@ -115,6 +115,7 @@ ul li{
 }
 #cm-table-session{
     width:784px;
+    margin: 15px 0;
 }
 .cm-table{
     border-top:1px solid #dddddd;
