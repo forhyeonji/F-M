@@ -184,9 +184,16 @@ public class UserController{
   	public String find_id(@RequestParam(value="user_name", required = false) String user_name,
   							@RequestParam(value="user_phone", required = false) String user_phone) {
   		
-  	String result = us.find_id(user_name, user_phone);
-  		
-  	return result;
+  	//String result = us.find_id(user_name, user_phone);	
+  	//return result;
+  		System.out.println("user의 이름="+user_name);
+		System.out.println("user의 번호="+user_phone);
+		if(us.find_id(user_name, user_phone)==null) {
+			return null; 
+		}else {
+			return "/find_id";
+			//return us.find_id(user_name, user_phone).getMemEmail();
+		}
   	
   	}
   	

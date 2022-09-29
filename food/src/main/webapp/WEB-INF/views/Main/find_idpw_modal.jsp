@@ -12,9 +12,9 @@
 <div class="jumbotron">
 	<h2> 아이디는 : </h2><br/>
   		<ul>
-  		<c:forEach items="${member}" var="member">
+  		<c:forEach items="${user_id}" var="member">
   		  	
-  		  	<li>${member.memberId} </li><br/>
+  		  	<li>${user_id} </li><br/>
   		
   		</c:forEach>
   		</ul>

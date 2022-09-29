@@ -31,8 +31,8 @@
 		</div>
 			
 	</div>
-	<div class="w3-container w3-card-4">
-			
+	<!-- <div class="w3-container w3-card-4">
+		
 		<div class="w3-center w3-large w3-margin-top">
 			<h3>비밀번호 찾기</h3>
 		</div>
@@ -53,7 +53,7 @@
 			</p>
 		</div>
 			
-	</div>
+	</div> -->	
 </div>   
 
 <script src="/resources/JS/Main/find_idpw.js"></script>

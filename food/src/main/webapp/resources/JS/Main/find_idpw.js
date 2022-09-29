@@ -10,25 +10,23 @@
 		var user_name=$('#user_name').val()
 		var user_phone=$('#user_phone').val()
 		
+		var findId = "user_name="+user_name+"user_phone="+user_phone;
+		
 		$.ajax({
-			type:"post",
-			data:{user_name:"user_name", user_phone:"user_phone"} ,
-			url:"/find_id",
-			success:function(data){
-				if(data == 0){
-					$('#id_value').text("회원 정보를 확인해주세요!");
-					$('#user_name').val('');
-					$('#user_phone').val('');
+			url : "find_id",
+			method : "post",
+			data : sendData,
+			dataType : "text",
+			success : function(text) {
+				if (text != null) {
+					$("#result_id").html("아이디 = "+text);
 				} else {
-					$('#id_value').text(data);
-					$('#user_name').val('');
-					$('#user_phone').val('');
-					
+					$("#result_id").html("해당정보가 없습니다.");
 				}
 			},
-			 error:function(){
-	                alert("에러입니다");
-	            }
+			error : function(xhr) {
+				alert("에러코드 = " + xhr.status);
+			}
 		});
 	};
 
