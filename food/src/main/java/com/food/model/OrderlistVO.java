@@ -31,6 +31,13 @@ public class OrderlistVO {
     private int c_cnt;			//장바구니 속 수량
     private int c_sumprod;		//장바구니 속 상품별 합계
     
+    //사진 출력, 조인해서 필요한거만 추출
+    private int prodnum;	//상품넘버
+    private String division;	//메인
+    private String uuid;		//uuid
+    private String uploadPath;	//uploadPath
+    private String filename;	//filename
+    
     //주문목록 카운팅
     private int orderlistCnt;
     //주문취소 목록 카운팅

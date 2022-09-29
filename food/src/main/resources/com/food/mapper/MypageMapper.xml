@@ -59,6 +59,32 @@
 		delete from tb_cart where c_no=#{c_no}
 	</delete>
 	
+	<select id="findCartImg" resultType="com.food.model.CartVO">
+		select sha.prodnum as prodnum,
+				sha.division as division,
+		        sha.uuid as uuid,
+		        sha.uploadPath as uploadPath,
+		        sha.filename as filename,
+		        c.c_prodnum as c_prodnum	
+		from sh_appatch sha left outer join tb_cart c
+		on sha.prodnum = c.c_prodnum
+		where sha.division=&apos;m&apos;
+		and c.c_prodnum=#{c_prodnum}
+	</select>
+	
+	<select id="findListImg" resultType="com.food.model.OrderlistVO">
+		select sha.prodnum as prodnum,
+				sha.division as division,
+		        sha.uuid as uuid,
+		        sha.uploadPath as uploadPath,
+		        sha.filename as filename,
+		        o.o_prodnum as o_prodnum
+		from sh_appatch sha left outer join tb_orderlist o
+		on sha.prodnum = o.o_prodnum
+		where sha.division=&apos;m&apos;
+		and o.o_prodnum=#{o_prodnum}
+	</select>
+	
 	<insert id="order">
 		insert into tb_orderlist(o_prodnum, o_cnt, o_sum, user_id, o_type)
 		values(#{c_prodnum}, #{c_cnt}, #{c_sumprod}, #{user_id}, &apos;order&apos;)

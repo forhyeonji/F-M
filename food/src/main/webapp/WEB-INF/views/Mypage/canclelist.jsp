@@ -37,7 +37,7 @@
 					<h3>취소 내역이 없습니다 </h3>
 				</c:when>
 				<c:otherwise>
-					<h5>취소 내역을 확인하세요 </h5>
+					<h5>취소 내역을 확인하세요${findListImg} </h5>
 				</c:otherwise>
 			</c:choose>		
 			
@@ -46,7 +46,7 @@
 					<tr>
 						<td class="my_orderTb" rowspan="3">
 							<a href="/shopDetail?prodnum=${canclelist.o_prodnum}">
-							<img class="my_orderImg" alt="상품사진" src=""></a></td>				
+							<img class="my_orderImg" alt="상품사진" src="/Shopdisplay?fileName=2022/09/23/eb944a35-6578-46c9-b186-097f47facae0-donma.jpg"></a></td>				
 						<td class="my_orderTbName" colspan="2">${canclelist.s_name}</td>
 						<td class="my_orderDate">취소날짜 ${canclelist.o_mod_date}
 							<input type="hidden" value="${canclelist.o_no}"></td>

@@ -89,17 +89,20 @@ public class MypageController {
 	
 	//장바구니
 	@RequestMapping(value = "mypage/cart", method = RequestMethod.GET)
-	public String cart(Model model, HttpSession session, UserVO user) {
+	public String cart(Model model, HttpSession session, UserVO user, CartVO cart) {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("cartlist", ms.cartlist(id));
+		model.addAttribute("findCartImg", ms.findCartImg(cart));
+		
 		return "Mypage/cart";
 	}
 	//장바구니는 비동기 도전!!
 	//장바구니 리스트 출력
 	@RequestMapping(value="/mypage/cart/{user_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<CartVO>> cartlist(Model model, @PathVariable String user_id){
+	public ResponseEntity<ArrayList<CartVO>> cartlist(Model model, @PathVariable String user_id, CartVO cart){
 		model.addAttribute("cartlist", ms.cartlist(user_id));
+		model.addAttribute("findCartImg", ms.findCartImg(cart));
 		return new ResponseEntity<>(ms.cartlist(user_id), HttpStatus.OK);		
 	}
 	
@@ -184,6 +187,7 @@ public class MypageController {
 
 		model.addAttribute("user", ms.mypage(user));
 		model.addAttribute("canclelist", ms.canclelist(order));
+		model.addAttribute("findListImg", ms.findListImg(order));
 		
 		int total = ms.canclelistCnt(order);
 		model.addAttribute("paging", new PageVO(cri, total));	
