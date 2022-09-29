@@ -75,7 +75,7 @@ $(function () {
             ]
         });
 
-        $('#btn_write_cancel').click(() => location.href = '/community/bread');
+        $('#btn_write_cancel').click(() => location.href = '/community');
         $('#b_write_btn').click(() => onForm());
     }
 

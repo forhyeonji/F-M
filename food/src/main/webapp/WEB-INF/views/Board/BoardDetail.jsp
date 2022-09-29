@@ -36,7 +36,7 @@
                 <button id="save" class="btn_write" type="button">저장</button>
                 <button type="button" id="btn_delete" class="btn_write">삭제하기</button>
             </c:if>
-            <a href="/community/bread">
+            <a href="/community">
                 <button type="button" class="btn_write btn_cancel">목록</button>
             </a>
         </div>

@@ -58,7 +58,6 @@
             <div class="h_navBox">
                 <table frame="void" id="h_menu">
                     <tr>
-<%--                        <td class="h_nav"><a href="/community/bread">레시피</a></td>--%>
                         <td class="h_nav"><a href="/shop">쇼핑</a></td>
                         <td class="h_nav"><a href="/community">커뮤니티</a></td>
                         <td class="h_nav"><a href="/notice?sep=noti">고객센터</a></td>

@@ -90,7 +90,7 @@ $(function () {
                     contentType: "application/json; charset=utf-8",
                     success: (data) => {
                         alert("삭제되었습니다.");
-                        location.href = "/community/bread";
+                        location.href = "/community";
                     }
                 })
             } else {

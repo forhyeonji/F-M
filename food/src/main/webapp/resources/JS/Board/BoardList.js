@@ -1,62 +1,49 @@
 "use strict"
-$(function (){
+$(function () {
     const columns = ["bno", "title", "cnt", "reg_dt", "user_id", "vote"];
     const pagination = {
-        page : 1,
+        page: 1,
         size: 10,
         count: 0,
         total: 0,
-        groupSize:3,
+        groupSize: 3,
         title: '',
         cd: '01'
     }
+    const onNormalCss = () => {
+        $('.cm-menus').css({
+            "color": "black",
+            "font-weight": "normal"
+        })
+    }
+    const onBoldCss = (e) => {
+        $(e).css({
+            "color": "orange",
+            "font-weight": "bold"
+        })
+    }
+    const onMenus = () => {
+        $('.cm-nav').click((e) => {
+            const $this = $(e.target);
+            pagination.cd = $this.data("cd");
 
+            $("#cm-category").empty();
+            $("#cm-category").append($this.text())
 
-    $('#bread').click(() => {
-        pagination.cd = '01'
-        $('#cm-title').empty();
-        $('#cm-title').append("빵");
-        onCommunityList();
-    })
-    $('#noodle').click(() => {
-        pagination.cd = '02'
-        $('#cm-title').empty();
-        $('#cm-title').text("면");
-        onCommunityList();
-    })
-    $('#meat').click(() => {
-        pagination.cd = '03'
-        $('#cm-title').empty();
-        $('#cm-title').text("고기");
-        onCommunityList();
-    })
-    $('#korean-food').click(() => {
-        pagination.cd = '04'
-        $('#cm-title').empty();
-        $('#cm-title').text("한식");
-        onCommunityList();
-    })
-    $('#chinese-food').click(() => {
-        pagination.cd = '05'
-        $('#cm-title').empty();
-        $('#cm-title').text("중식");
-        onCommunityList();
-    })
-    $('#western-food').click(() => {
-        pagination.cd = '06'
-        $('#cm-title').empty();
-        $('#cm-title').text("양식");
-        onCommunityList();
-    })
+            onNormalCss();
+            onBoldCss(e.target);
+            onCommunityList();
+        })
+    }
 
 
     const isCommunityListBody = (data = []) => {
-        $('#b_tbody').empty();
+        $('#cm-tbody').empty();
 
         let html = ``;
-        if(data.length === 0){
+        if (data.length === 0) {
             html += `<tr><td>데이터 없음</td></tr>`
-        } else{
+        } else {
             data.map((value) => {
                 html += `<tr class="detail" id="detail-${value['bno']}">`
                 columns.map((key) => html += `<td class="cmList-${value[key]}">${value[key]}</td>`);
@@ -64,7 +51,7 @@ $(function (){
             });
         }
 
-        $('#b_tbody').append(html);
+        $('#cm-tbody').append(html);
 
         $('.detail').click((e) => {
             const bno = $(e.target).parent()[0].id.split("-")[1];
@@ -73,12 +60,12 @@ $(function (){
     };
 
     const isCommunityRankListBody = (data = []) => {
-        $('#b_tbody').empty();
+        $('#cm-tbody').empty();
 
         let html = ``;
-        if(data.length === 0){
+        if (data.length === 0) {
             html += `<tr><td>데이터 없음</td></tr>`
-        } else{
+        } else {
             data.map((value) => {
                 html += `<tr class="detail" id="detail-${value['bno']}">`
                 columns.map((key) => html += `<td>${value[key]}</td>`);
@@ -86,7 +73,7 @@ $(function (){
             });
         }
 
-        $('#b_tbody').append(html);
+        $('#cm-tbody').append(html);
 
         $('.detail').click((e) => {
             const bno = $(e.target).parent()[0].id.split("-")[1];
@@ -101,7 +88,7 @@ $(function (){
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(pagination),
             success: (response) => {
-                if(response.code !== 'SUCCESS')
+                if (response.code !== 'SUCCESS')
                     return;
                 isCommunityRankListBody(response.result.data);
                 isPagination(response.result.count);
@@ -111,14 +98,22 @@ $(function (){
             }
         });
     }
-    const onPopular =() =>{
+    const onPopular = () => {
         $('#cm_popular').click(() => {
+            $('#cm-home').css({
+                "text-decoration": "none",
+                "color": "black"
+            })
+            $('#cm_popular').css({
+                "text-decoration": "underline",
+                "color": "darkorange"
+            });
             onCommunityRankList();
         })
     }
 
     const isPagination = (count) => {
-        if(pagination.count === count)
+        if (pagination.count === count)
             return;
         pagination.count = count;
 
@@ -136,7 +131,7 @@ $(function (){
 
         $('#pagination').append(html);
 
-        $('.page').click((e)=> {
+        $('.page').click((e) => {
             const temp = e.target.id.split("-")[1];
             let page;
             if (temp == 'pre')
@@ -176,7 +171,7 @@ $(function (){
             contentType: "application/json; charset=utf-8",
             data: JSON.stringify(pagination),
             success: (response) => {
-                if(response.code !== 'SUCCESS')
+                if (response.code !== 'SUCCESS')
                     return;
                 isCommunityListBody(response.result.data);
                 isPagination(response.result.count);
@@ -188,7 +183,7 @@ $(function (){
     }
 
     const onSearch = () => {
-        $('#search_btn').click(()=> {
+        $('#search_btn').click(() => {
             pagination.title = $('#b_so').val();
             pagination.page = 1;
 
@@ -196,12 +191,17 @@ $(function (){
             onPopular();
         });
     }
-    const onHomeClick = () =>{
+    const onHomeClick = () => {
         $('#cm_home').click(() => {
+            $('#cm_popular').css({
+                "text-decoration": "none",
+                "color": "black"
+            })
             onCommunityList();
         })
     }
 
+    onMenus();
     onHomeClick();
     onPopular();
     onCommunityList();
