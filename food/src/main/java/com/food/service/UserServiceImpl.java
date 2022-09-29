@@ -48,7 +48,8 @@ public class UserServiceImpl implements UserService {
 	}
     
     // 아이디 찾기
- 	@Override
+ 	/*
+    @Override
  	public String find_id(String user_name, String user_phone) {
  			
  		String result = "";
@@ -63,7 +64,23 @@ public class UserServiceImpl implements UserService {
  		
  		return result ;
  	}
+ 	*/
    
+    
+    @Override
+	public UserVO find_id(UserVO userVO) {
+		return um.find_id(userVO);
+	}
+
+	@Override
+	public UserVO find_pw(UserVO userVO) {
+		return um.find_pw(userVO);
+	}
+
+	@Override
+	public void updatePassword(UserVO userVO) {
+		um.updatePassword(userVO);
+	}
   
     
     

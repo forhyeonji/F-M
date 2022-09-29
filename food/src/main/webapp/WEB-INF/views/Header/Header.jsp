@@ -37,31 +37,31 @@
 <div id="wrap">
     <div id="header">
         <div id="header_main">
-            <div id="h_s1">
-                <div id="h_logoBox">
-                    <a href="/"><img src="../../../resources/image/HeaderImg/코카콜라.jpg" id="h_banner"></a>
-                </div> <!-- logoBox -->
-                <div id="h_search">
-                            <div class="h_searchTd">
-                                <input type="text" id="h_searchBar" placeholder="검색어를 입력해주세요.">
-                                <img src="../../../resources/image/HeaderImg/돋보기.jpg" id="h_mag">
-                            </div>
-                </div>
-                <div>
-                    <!--<a href="/login"><button>로그인</button></a> -->
-                    <c:if test="${empty sessionScope.user_id}">
-                    	<a href="/insert"><button>회원가입</button></a>
-                    	<a href="/login"><button>로그인</button></a>
-                    </c:if>
+             <div class="h_loginbox">
+	                 <!--<a href="/login"><button>로그인</button></a> -->
+	                <c:if test="${empty sessionScope.user_id}">
+	                 	<a href="/insert" class="h_but">회원가입</a>
+	                 	<a href="/login" class="h_but">로그인</a>
+	                </c:if>
 					<c:if test="${not empty sessionScope.user_id}">
-                        <span>${sessionScope.user_id}님 환영합니다.</span>
-						<a href="/logout"><button>로그아웃</button></a>
-						<a href="/shopRegistration"><button>상품등록</button></a>
-						<a href="/mypage"><button>마이페이지</button></a>
+			            <span class="h_loginmsg">${sessionScope.user_id}님 환영합니다.</span>
+						<a href="/logout" class="h_but">로그아웃</a>
+						<a href="/shopRegistration" class="h_but">상품등록</a>
+						<a href="/mypage" class="h_but">마이페이지</a>
 					</c:if>
-                </div>
-            </div>
+             </div><!-- h_logoBox -->
+             
+             
+             
+            <div id="h_s1">
+             
+                <div id="h_logoBox">
+                    <a href="/"><img src="../../../resources/image/HeaderImg/푸렌드.png" id="h_banner"></a>
+                </div> <!-- logoBox -->
+                                
+            </div><!-- h_s1 -->
             <div class="h_navBox">
+           
                 <table frame="void" id="h_menu">
                     <tr>
 <%--                        <td class="h_nav"><a href="/community/bread">레시피</a></td>--%>
