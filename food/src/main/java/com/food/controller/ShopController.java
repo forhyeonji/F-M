@@ -15,10 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.food.model.AnswerVO;
 import com.food.model.CriteriaVO;
-import com.food.model.MypageVO;
-import com.food.model.NotiBoardVO;
 import com.food.model.Page2VO;
 import com.food.model.PageVO;
 import com.food.model.ShopVO;
@@ -27,13 +24,11 @@ import com.food.model.ShopquestionVO;
 import com.food.model.UserVO;
 import com.food.service.ShopService;
 
-
 @Controller
 public class ShopController {
 
 	@Autowired
 	private ShopService shop;
-	
 
 	// 메인 페이지 이동
 	@RequestMapping(value = "/shop", method = RequestMethod.GET)
@@ -47,193 +42,146 @@ public class ShopController {
 		return "Shop/shop";
 	}
 
-	// 상품 상세설명
+/*	// 상품 상세설명
 	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
 	public String detail(ShopVO shopvo, Model model) {
 		System.out.println(shop);
 		model.addAttribute("main", shop.main(shopvo));
 		model.addAttribute("sub", shop.sub(shopvo));
 		return "Shop/shopDetail";
-	}
+	}*/
 
-	//상품카테고리 안 meat part
+	// 상품카테고리 안 meat part
 	@RequestMapping(value = "/shopconer", method = RequestMethod.GET)
 	public String Coner() {
 		return "Shop/shopconer";
 	}
-	
-	//상품카테고리 안 소고기
+
+	// 상품카테고리 안 소고기
 	@RequestMapping(value = "/shopbeef", method = RequestMethod.GET)
 	public String serve() {
 		return "Shop/shopbeef";
 	}
-	
-	//상품구매
+
+	// 상품구매
 	@RequestMapping(value = "/shopPurchase", method = RequestMethod.GET)
 	public String Purchase() {
 		return "Shop/shopPurchase";
 	}
-	
 
-	
-	
-	
-	//상품등록
-	@GetMapping("/shopRegistration")	// 상품등록 페이지를 실행하기 위한 url주소 매핑
-	public String shopRegistration(String Shop,Model model) {
-		
-		model.addAttribute("class1",shop.class1());		// // shopRegistration.jsp가 실행하자마자 1분류 select
-		return "Shop/shopRegistration";	// url주소가 매핑이 되면, Shop폴더 안에 있는 shopRegistration.jsp 실행
+	// 상품등록
+	@GetMapping("/shopRegistration") // 상품등록 페이지를 실행하기 위한 url주소 매핑
+	public String shopRegistration(String Shop, Model model) {
+
+		model.addAttribute("class1", shop.class1()); // // shopRegistration.jsp가 실행하자마자 1분류 select
+		return "Shop/shopRegistration"; // url주소가 매핑이 되면, Shop폴더 안에 있는 shopRegistration.jsp 실행
 	}
+
 	// 1차 분류를 change하면 2차분류 select
-	@RequestMapping(value="/Shop/{s}",method=RequestMethod.GET)	
-	public ResponseEntity<ArrayList<ShopdivisionVO>> getshopdivision(@PathVariable String s){
+	@RequestMapping(value = "/Shop/{s}", method = RequestMethod.GET)
+	public ResponseEntity<ArrayList<ShopdivisionVO>> getshopdivision(@PathVariable String s) {
 		System.out.println(s);
-		
-		return new ResponseEntity<>(shop.class2(s),HttpStatus.OK);
+
+		return new ResponseEntity<>(shop.class2(s), HttpStatus.OK);
 	}
-	
-	
-	
-	//상품등록 처리 매핑
+
+	// 상품등록 처리 매핑
 	@RequestMapping(value = "/shopRegistration", method = RequestMethod.POST)
 	public String ProductregistrationPOST(ShopVO Shop) {
-		System.out.println("contoroller="+Shop);
+		System.out.println("contoroller=" + Shop);
 		shop.Shopenroll(Shop);
 		return "redirect:/shopProductlist";
 	}
-	
-	
-	
 
-	//상품목록
-	@RequestMapping(value="/shopProductlist", method=RequestMethod.GET)
-	public String Shoplist(Model model,CriteriaVO criteriaVO) {
+	// 상품목록
+	@RequestMapping(value = "/shopProductlist", method = RequestMethod.GET)
+	public String Shoplist(Model model, CriteriaVO criteriaVO) {
 		model.addAttribute("shoplist", shop.list(criteriaVO));
-		
+
 		int total = shop.total(criteriaVO);
-		System.out.println("total="+total);
-		
-		
-		//페이지 인터페이스 데이터
-		model.addAttribute("paging",new PageVO(criteriaVO,total));
-		
-		return"Shop/shopProductlist";
+		System.out.println("total=" + total);
+
+		// 페이지 인터페이스 데이터
+		model.addAttribute("paging", new PageVO(criteriaVO, total));
+
+		return "Shop/shopProductlist";
 	}
-	
-	
+
 	// 상품수정 화면
 	@RequestMapping(value = "/shopProductEdit", method = RequestMethod.GET)
 	// 상품목록리스트 화면에서 prodnum을 넘겨서 ShopVO에 저장
 	public String ShopProductEdit(ShopVO shopvo, Model model) {
 		System.out.println(shopvo);
-		
+
 		// 저장된 prdnum을 db에 보내기 위해 ShopService를 연결
 		model.addAttribute("detail", shop.prodEdit(shopvo));
-		
+
 		return "Shop/shopProductEdit";
 	}
-			
-	
-	//상품 등록 후 수정(서버)
+
+	// 상품 등록 후 수정(서버)
 	@RequestMapping(value = "/shopProductEdit", method = RequestMethod.POST)
-	public String ShopEditPOST(ShopVO Shop,RedirectAttributes rttr) {
-		System.out.println("contoroller="+Shop);
+	public String ShopEditPOST(ShopVO Shop, RedirectAttributes rttr) {
+		System.out.println("contoroller=" + Shop);
 		shop.ShopEdit(Shop);
 		rttr.addAttribute("prodnum", Shop.getProdnum());
 		// 수정하고 난 뒤 확인을 위해 상품목록페이지로 화면이동
 		return "redirect:/shopProductlist";
-	
-	}
-	
-	/* 문의 질문 	
-	
-	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
-	public String shopDetail (UserVO user,ShopquestionVO shopquestion,CriteriaVO criteriaVO, Model model,HttpSession session) {
-	
-		String id = (String) session.getAttribute("user_id");
-		System.out.println("로그인된 아이디="+id);
-		
-		user.setUser_id(id);
-		
-		
-		int total2 = shop.total2(shopquestion);	
-		model.addAttribute("paging", new Page2VO(criteriaVO, total2));
-		
-		if(id==null) {
-			
-			return "/shop";
-		}
-		
-		return "/shopDetail";
 
 	}
-	
-	
-	
+
+	/* 문의 질문 */
+
+	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
+	public String shopDetail(UserVO user, ShopquestionVO shopquestion, CriteriaVO criteriaVO, Model model,ShopVO shopvo,
+			HttpSession session) {
+		// 상품 상세설명
+		System.out.println(shop);
+		model.addAttribute("main", shop.main(shopvo));
+		model.addAttribute("sub", shop.sub(shopvo));
+		
+		//문의
+		String id = (String) session.getAttribute("user_id");
+		System.out.println("로그인된 아이디=" + id);
+
+		user.setUser_id(id);
+
+		int total2 = shop.total2(shopquestion);
+		model.addAttribute("paging", new Page2VO(criteriaVO, total2));
+
+		model.addAttribute("detail");
+
+		System.out.println("answerchack=" + shop.chack(shopquestion));
+		model.addAttribute("answerchack", shop.chack(shopquestion));
+
+		model.addAttribute("list", shop.list(criteriaVO));
+
+		int total = shop.total(criteriaVO);
+
+		model.addAttribute("paging", new PageVO(criteriaVO, total));
+
+		model.addAttribute("detail", shop.shopDetail(shopquestion));
+
+		System.out.println("answerchack=" + shop.chack(shopquestion));
+		model.addAttribute("answerchack", shop.chack(shopquestion));
+
+		if (id == null) {
+
+			return "Shop/shopDetail";
+		}
+
+		return "Shop/shopDetail";
+
+	}
+
 	@RequestMapping(value = "/shopDetail", method = RequestMethod.POST)
-	public String shopDetailPost (ShopVO shop) {
-		shop.write(shop);
+	public String shopDetailPost(ShopquestionVO shopquestion) {
+		shop.write(shopquestion);
+
+		shop.answer(shopquestion);
+		System.out.println(shopquestion);
+
 		return "redirect:/shopDetail?";
 	}
-	
 
-	
-	
-	
-	@RequestMapping(value = "/shopDetail", method = RequestMethod.GET)
-	public String directQue_detail (ShopVO shop,ShopquestionVO shopquestion, Model model) {
-
-		model.addAttribute("detail",shop.shopDetail(shop));
-		
-		System.out.println("answercheck="+shop.check(ans));
-		model.addAttribute("answercheck",shop.check(ans));
-		s
-		
-		return "/Notice/DirectQue_detail";
-	}
-	
-	
-	
-	
-	
- 문의 답변 
-	
-	@RequestMapping(value = "/directKing", method = RequestMethod.GET)
-	public String directKing (Model model, CriteriaVO criteriaVO, AnswerVO ans) {
-		
-		model.addAttribute("list", nbs.list(criteriaVO));
-		
-		int total = nbs.total(criteriaVO);
-		
-		model.addAttribute("paging", new PageVO(criteriaVO, total));
-		
-		return "/Notice/DirectKing";
-	}
-	
-	
-	@RequestMapping(value = "/directKing_answer", method = RequestMethod.GET)
-	public String directKing_answer (NotiBoardVO board, Model model, AnswerVO ans) {
-		
-		model.addAttribute("detail",nbs.detail(board));
-		
-		System.out.println("answercheck="+nbs.answercheck(ans));
-		model.addAttribute("answercheck",nbs.answercheck(ans));
-		
-		
-		return "/Notice/DirectKing_answer";
-}
-	
-	@RequestMapping(value = "/directKing_answer", method = RequestMethod.POST)
-	public String directKing_answer_post (AnswerVO ans) {
-		nbs.answer(ans);
-		System.out.println(ans);
-		
-		return "redirect:/directKing?sep=inquiry";
-	}
-	*/
-
-
-
-	
 }

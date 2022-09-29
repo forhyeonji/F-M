@@ -1,15 +1,13 @@
 package com.food.model;
 
 public class ShopquestionVO {
-	private int prodnum; 
-	private int cnt; 
-	private String NAME; 
-	private String text; 
-	private String date; 
-	private String user_id; 
-	private String context;
-	private boolean check;
-	
+	private int prodnum;  	//제품번호
+	private String NAME; 	//제품명
+	private String date; 	//작성일자
+	private String user_id; //작성자
+	private String context;	//내용
+	private boolean check;	//답변확인
+	private String title;	//제목
 	
 	public int getProdnum() {
 		return prodnum;
@@ -17,24 +15,11 @@ public class ShopquestionVO {
 	public void setProdnum(int prodnum) {
 		this.prodnum = prodnum;
 	}
-	public int getCnt() {
-		return cnt;
-	}
-	public void setCnt(int cnt) {
-		this.cnt = cnt;
-	}
-	
 	public String getNAME() {
 		return NAME;
 	}
 	public void setNAME(String nAME) {
 		NAME = nAME;
-	}
-	public String getText() {
-		return text;
-	}
-	public void setText(String text) {
-		this.text = text;
 	}
 	public String getDate() {
 		return date;
@@ -62,10 +47,17 @@ public class ShopquestionVO {
 	public void setCheck(boolean check) {
 		this.check = check;
 	}
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
 	@Override
 	public String toString() {
-		return "ShopquestionVO [prodnum=" + prodnum + ", cnt=" + cnt + ", NAME=" + NAME + ", text=" + text + ", date="
-				+ date + ", user_id=" + user_id + ", context=" + context + ", check=" + check + "]";
+		return "ShopquestionVO [prodnum=" + prodnum + ", NAME=" + NAME + ", date=" + date + ", user_id=" + user_id
+				+ ", context=" + context + ", check=" + check + ", title=" + title + "]";
 	} 
 	
 }
