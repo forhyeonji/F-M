@@ -122,29 +122,7 @@ public class UserController{
  		} else {		
  			return "success";	// 중복 아이디 x			
  		}	
-	} 
-  	
-  //아이디 찾기 기능
-  	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
-  	public String find_id() {
-  		
-  	return "Main/find_idpw";
-  	
-  	}
-  	 
-  	//아이디 찾기 기능
-  	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
-  	@ResponseBody
-  	public String find_id(@RequestParam(value="user_name", required = false) String user_name,
-  							@RequestParam(value="user_phone", required = false) String user_phone) {
-  		
-  	String result = us.find_id(user_name, user_phone);
-  		
-  	return result;
-  	
-  	}
-  	
-  	
+	}   	
   	
   	/* 이메일 인증 */
 	@RequestMapping(value="/emailCheck", method=RequestMethod.GET)
@@ -188,9 +166,35 @@ public class UserController{
         String AuthKey = Integer.toString(checkAuthKey);
         
         return AuthKey;
-        
-		
-
 	}	
+	
+	
+	
+	//아이디 찾기 
+  	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
+  	public String find_id() {
+  		
+  	return "Main/find_idpw";
+  	
+  	}
+  	 
+  	//아이디 찾기 기능
+  	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
+  	@ResponseBody
+  	public String find_id(@RequestParam(value="user_name", required = false) String user_name,
+  							@RequestParam(value="user_phone", required = false) String user_phone) {
+  		
+  	String result = us.find_id(user_name, user_phone);
+  		
+  	return result;
+  	
+  	}
+  	
+	
+	
+	
+	 
+	
+	
   
 }

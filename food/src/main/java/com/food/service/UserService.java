@@ -3,6 +3,7 @@ package com.food.service;
 import java.util.Date;
 import java.util.List;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.mybatis.spring.SqlSessionTemplate;
@@ -22,11 +23,6 @@ public interface UserService {
  	
  	// 아이디 찾기
  	public String find_id(String user_name, String user_phone);
- 	
-
-
-	
-   
-
+ 
 
 }

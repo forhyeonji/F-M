@@ -33,7 +33,7 @@
 	};
 
 	
-	
+/*	
 const modal = document.getElementById("modal")
 const btnModal = document.getElementById("find_id")
 
@@ -53,4 +53,5 @@ modal.addEventListener("click", e => {
         modal.style.display = "none"
     }
 })
-
+*/
+	

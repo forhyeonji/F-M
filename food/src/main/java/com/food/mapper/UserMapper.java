@@ -20,7 +20,10 @@ public interface UserMapper {
 	
 	//아이디 찾기
 	public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone);
+    
+    
 
+    
 	
 
 	

@@ -1,20 +1,16 @@
-package com.food.service;
 
+package com.food.service;
 import com.food.mapper.UserMapper;
 import com.food.model.UserVO;
-
 import java.util.Date;
 import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
-
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 @Service
 public class UserServiceImpl implements UserService {
 	
@@ -23,15 +19,12 @@ public class UserServiceImpl implements UserService {
 	private JavaMailSender mailSender;
 	
 	
-
     @Autowired 
     UserMapper um;
     
-
     public void join(UserVO userVO) {
         um.join(userVO);
     }
-
    
     public boolean login(UserVO userVO, HttpSession session) {
       	UserVO login=um.login(userVO);
@@ -101,13 +94,11 @@ public class UserServiceImpl implements UserService {
 	public void memberAuth(String user_email) throws Exception{
 		um.memberAuth(user_email);
 	}
-
-
 	 
     */
- 	
- 	
-    
-    
-  
+
+
+
+
+
 }

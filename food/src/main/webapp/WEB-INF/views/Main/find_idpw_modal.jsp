@@ -1,27 +1,26 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    
+
+
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
-
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Insert title here</title>
-</head>
-<body>
-<div id="modal" class="modal-overlay">
-        <div class="modal-window">
-            <div class="title">
-                <h2>아이디 조회 결과</h2>
-            </div>
-            <div class="close-area">X</div>
-            <div class="content" id="id_value"></div>
-        </div>
-    </div>
-
-</body>
-</html>
-
-<script src="/resources/JS/Main/find_idpw.js"></script>
+ 
+ <div class="card o-hidden border-0 shadow-lg my-5">
+        
+               
+                    
+<div class="jumbotron">
+	<h2> 아이디는 : </h2><br/>
+  		<ul>
+  		<c:forEach items="${member}" var="member">
+  		  	
+  		  	<li>${member.memberId} </li><br/>
+  		
+  		</c:forEach>
+  		</ul>
+  	<h2>입니다</h2>
+  <button type="button" class="btn btn-primary" onclick="location.href='/member/loginView'">로그인페이지</button>
+  <button type="button" class="btn btn-primary" onclick="location.href='/board/list'">메인페이지</button>
+  
+  
+</div>
