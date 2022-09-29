@@ -40,12 +40,15 @@
 
     <sql id="communityRankListSQL">
         select
-        bno, title, date_format(reg_dt, '%m-%d') reg_dt, cnt, user_id, vote
-        from tb_community
+        tb.bno, tb.title, date_format(tb.reg_dt, '%m-%d') reg_dt, tb.cnt, tb.user_id, tb.vote
+        from tb_community tb, cm_code cm
         <trim prefix="WHERE" prefixOverrides="AND | OR">
             <if test="title != null and title != ''">
                 AND title LIKE CONCAT('%', #{title}, '%')
             </if>
+            and tb.menus = cm.cd
+            and cm.cd_grp = 'CM004'
+            and cm.cd = #{cd}
         </trim>
         order by vote desc, reg_dt desc
     </sql>

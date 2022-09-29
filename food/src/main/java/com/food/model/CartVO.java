@@ -19,4 +19,11 @@ public class CartVO {
     private String s_content;//상품 설명
     private int s_price;	//상품 단가
     private int c_sumprod;	//상품단가*고객선택수량
+    
+    //사진 출력, 조인해서 필요한거만 추출
+    private int prodnum;	//상품넘버
+    private String division;	//메인
+    private String uuid;		//uuid
+    private String uploadPath;	//uploadPath
+    private String filename;	//filename
 }

@@ -83,3 +83,6 @@
 #write_head > tr > th{
     height:30px;
 }
+#cm-write-footer{
+    height: 100px;
+}

@@ -27,6 +27,9 @@ public interface MypageMapper {
 	//장바구니 리스트를 출력하기 위한 DB작업
 	public ArrayList<CartVO> cartlist(String user_id);
 	
+	//장바구니 이미지를 출력하기 위한 DB작업
+	public List<Map<String, Object>> findCartImg (CartVO cart);
+	
 	//장바구니 상품 수량을 수정하기 위한 DB 작업
 	public int cartmodify(CartVO cart);
 	
@@ -44,6 +47,9 @@ public interface MypageMapper {
 	
 	//주문 취소 페이지를 출력하기 위한 DB작업
 	public OrderlistVO canclePage(OrderlistVO order);
+	
+	//주문 상품 이미지를 출력하기 위한 설계
+	public List<Map<String, Object>> findListImg(OrderlistVO order);
 	
 	//주문 취소를 위한 DB 작업
 	public int ordercancle(OrderlistVO order);

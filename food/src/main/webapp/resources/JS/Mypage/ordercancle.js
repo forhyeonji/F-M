@@ -3,7 +3,7 @@
  */
 
 $(document).ready(function(){
-	
+		
 	
 	//취소 신청 버튼을 클릭하면
 	$("#my_cancleBtn").on("click", function(){
