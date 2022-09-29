@@ -122,29 +122,7 @@ public class UserController{
  		} else {		
  			return "success";	// 중복 아이디 x			
  		}	
-	} 
-  	
-  //아이디 찾기 기능
-  	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
-  	public String find_id() {
-  		
-  	return "Main/find_idpw";
-  	
-  	}
-  	 
-  	//아이디 찾기 기능
-  	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
-  	@ResponseBody
-  	public String find_id(@RequestParam(value="user_name", required = false) String user_name,
-  							@RequestParam(value="user_phone", required = false) String user_phone) {
-  		
-  	String result = us.find_id(user_name, user_phone);
-  		
-  	return result;
-  	
-  	}
-  	
-  	
+	}   	
   	
   	/* 이메일 인증 */
 	@RequestMapping(value="/emailCheck", method=RequestMethod.GET)
@@ -188,9 +166,109 @@ public class UserController{
         String AuthKey = Integer.toString(checkAuthKey);
         
         return AuthKey;
-        
-		
-
 	}	
+	
+	
+	/*
+	//아이디 찾기 
+  	@RequestMapping(value = "/find_id", method = RequestMethod.GET)
+  	public String find_id() {
+  		
+  	return "Main/find_id";
+  	
+  	}
+  	 
+  	//아이디 찾기 기능
+  	@RequestMapping(value = "/find_id", method = RequestMethod.POST)
+  	@ResponseBody
+  	public String find_id(@RequestParam(value="user_name", required = false) String user_name,
+  							@RequestParam(value="user_phone", required = false) String user_phone) {
+  		
+  	//String result = us.find_id(user_name, user_phone);	
+  	//return result;
+  		System.out.println("user의 이름="+user_name);
+		System.out.println("user의 번호="+user_phone);
+		if(us.find_id(user_name, user_phone)==null) {
+			return null; 
+		}else {
+			return "/find_id";
+			//return us.find_id(user_name, user_phone).getMemEmail();
+		}
+  	
+  	}
+  	*/
+	
+	
+	
+	// 아이디 찾기 페이지 이동
+		@RequestMapping(value="find_id", method=RequestMethod.GET)
+		public String find_id() {
+			return "Main/find_id";
+		}
+		
+	    // 아이디 찾기 실행
+		@RequestMapping(value="find_id", method=RequestMethod.POST)
+		public String find_idAction(UserVO userVO, Model model) {
+			UserVO user = us.find_id(userVO);
+			
+			if(user == null) { 
+				model.addAttribute("check", 1);
+			} else { 
+				model.addAttribute("check", 0);
+				model.addAttribute("id", userVO.getUser_id());
+			}
+			
+			return "Main/find_id";
+		}
+		
+	    // 비밀번호 찾기 페이지로 이동
+		@RequestMapping(value="find_pw", method=RequestMethod.GET)
+		public String find_pw() {
+			return "Main/find_pw";
+		}
+		
+	    // 비밀번호 찾기 실행
+		@RequestMapping(value="find_pw", method=RequestMethod.POST)
+		public String find_pwAction(UserVO userVO, Model model) {
+			UserVO user = us.find_pw(userVO);
+			
+			if(user == null) { 
+				model.addAttribute("check", 1);
+			} else { 
+				model.addAttribute("check", 0);
+				model.addAttribute("updateid", userVO.getUser_id());
+			}
+			
+			return "Main/find_pw";
+		}
+		
+		
+	    // 비밀번호 바꾸기 실행
+		@RequestMapping(value="update_password", method=RequestMethod.POST)
+		public String updatePasswordAction(@RequestParam(value="updateid", defaultValue="", required=false) 
+		String user_id, UserVO userVO) {
+			userVO.setUser_id(user_id);
+			System.out.println(userVO);
+			us.updatePassword(userVO);
+			return "Main/login";
+		}
+		
+	    // 비밀번호 바꾸기할 경우 성공 페이지 이동
+		@RequestMapping(value="check_password_view")
+		public String checkPasswordForModify(HttpSession session, Model model) {
+			UserVO loginUser = (UserVO) session.getAttribute("loginUser");
+			
+			if(loginUser == null) {
+				return "member/login";
+			} else {
+				return "mypage/checkformodify";
+			}
+		}
+	
+	
+	
+	 
+	
+	
   
 }

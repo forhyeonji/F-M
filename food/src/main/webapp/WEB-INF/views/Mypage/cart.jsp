@@ -34,11 +34,11 @@
 			
 			<div id="my_cart">
 				<div id="my_cartIn">
-					<h3>🛒🛒🛒장바구니에 담긴 상품들을 확인하세요!</h3>
+					<h5>🛒🛒🛒장바구니에 담긴 상품들을 확인하세요!</h5>
 					<div class="my_allcheck">
 						<input type="checkbox" checked name="my_allcheck" id="my_allck">
-						<label for="my_allcheck">전체 선택</label>
-						<button id="my_selectdelBtn">선택 삭제</button>
+						<label for="my_allcheck">전체</label>
+						<button id="my_selectdelBtn">선택 상품 삭제</button>
 					</div>					
 				</div>
 				<div id="my_cartIn2">

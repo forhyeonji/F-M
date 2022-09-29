@@ -1,20 +1,16 @@
-package com.food.service;
 
+package com.food.service;
 import com.food.mapper.UserMapper;
 import com.food.model.UserVO;
-
 import java.util.Date;
 import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
-
  
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 @Service
 public class UserServiceImpl implements UserService {
 	
@@ -23,15 +19,12 @@ public class UserServiceImpl implements UserService {
 	private JavaMailSender mailSender;
 	
 	
-
     @Autowired 
     UserMapper um;
     
-
     public void join(UserVO userVO) {
         um.join(userVO);
     }
-
    
     public boolean login(UserVO userVO, HttpSession session) {
       	UserVO login=um.login(userVO);
@@ -55,7 +48,8 @@ public class UserServiceImpl implements UserService {
 	}
     
     // 아이디 찾기
- 	@Override
+ 	/*
+    @Override
  	public String find_id(String user_name, String user_phone) {
  			
  		String result = "";
@@ -70,7 +64,23 @@ public class UserServiceImpl implements UserService {
  		
  		return result ;
  	}
+ 	*/
    
+    
+    @Override
+	public UserVO find_id(UserVO userVO) {
+		return um.find_id(userVO);
+	}
+
+	@Override
+	public UserVO find_pw(UserVO userVO) {
+		return um.find_pw(userVO);
+	}
+
+	@Override
+	public void updatePassword(UserVO userVO) {
+		um.updatePassword(userVO);
+	}
   
     
     
@@ -101,13 +111,11 @@ public class UserServiceImpl implements UserService {
 	public void memberAuth(String user_email) throws Exception{
 		um.memberAuth(user_email);
 	}
-
-
 	 
     */
- 	
- 	
-    
-    
-  
+
+
+
+
+
 }

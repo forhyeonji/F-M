@@ -90,19 +90,19 @@ body {
 }
 
 .my_go{
-	width:200px;
-	height:100px;
+	width:180px;
+	height:auto;
 	border:1px solid rgb(234, 234, 234);
-	padding: 15px;
+	padding: 5px;
 	margin : 10px;
 	position:relative;
 	border-radius:15px;
 }
 
-.my_th image{
-	width:100%;
-	vertical-align:middle;
-
+.my_thimage{
+	width:40%;
+	dispaly:block;
+	vertical-align:left;
 }
 
 .my_intexttop, .my_intextmid, .my_intextlow{
@@ -112,6 +112,8 @@ body {
 	top:50%;
 	left:45%;
 	text-align:right;
+	font-size:20px;
+	font-weight:bold;
 	transform:translate(-50%, -50%);
 	color:#ff8080;
 }
@@ -157,7 +159,7 @@ canclelist
 
 #my_tableHead{
 	border:none;	
-	background-color:#ffcbb3;
+	background-color:#eaeaea;
 }
 
 .my_cnt{
@@ -169,13 +171,11 @@ canclelist
 
 #my_cartCon{
 	font-size:65%;
-	color:#c0c0c0;
 	font-weight:bold;
 }
 
 #my_cartAll{
 	font-size:25px;
-	background-color:#ffcbb3;
 	border:none;
 	border-radius:10px;
 	margin:5px;
@@ -193,11 +193,15 @@ canclelist
 }
 
 #my_cartpay_Tb >tr>td{
-	background-color:#ffcbb3;	
+	background-color:#eaeaea;	
 	font-weight:bold;
 	font-size:20px;
 	border:none;
 	border-radius:10px;	
+}
+
+#my_selectdelBtn{
+	border:1px solid;
 }
 
 /* delivery */
@@ -264,6 +268,11 @@ canclelist
 	margin:5px;
 }
 
+#my_aBtn button{
+	border: 1px solid;
+	padding: 5px;
+}
+
 #my_paging{
 	display: flex;
 	justify-content: space-between;
@@ -297,7 +306,7 @@ canclelist
 }
 
 #my_ordercancleOpt{
-	background-color:#ff8080;
+	background-color:#eaeaea;
 	font-weight:bold;
 	height:50px;
 }
@@ -319,7 +328,7 @@ canclelist
 }
 
 .my_orderImg{
-	width:100px;
+	width:80px;
 	border:1px solid rgb(234, 234, 234);
 }
 
@@ -337,7 +346,6 @@ canclelist
 }
 
 .my_orderTb{
-	width:auto;
 	text-align:center;
 	font-size:12px;
 }
@@ -348,7 +356,8 @@ canclelist
 }
 
 .my_orderTbNumber{
-	width:30px;
+	height:20px;
+	width:auto;
 	text-align:right;
 }
 
@@ -356,7 +365,7 @@ canclelist
 	height:20px;
 	width:80px;
 	text-align:center;
-	background-color:#ffcbb3;
+	font-weight:bold;
 	border:none;
 	border-radius:10px;	
 }
@@ -365,17 +374,18 @@ canclelist
 /* profile_edit */
 #my_profile_edit{
 	margin:auto;
-	border:1px solid rgb(234, 234, 234);
+	border:1px solid #eaeaea;
 	width:80%;
 	font-size:20px;
 }
 
-.my_edit_td{
-	width:120px;
-	background-color:#ff8080;
+
+.my_edit_td, #my_profile_edit button{
+	width:auto;
+	background-color:#eaeaea;
 	font-size:15px;
 	text-align:center;
-	border-radius:15px;
+	padding:5px;
 }
 
 

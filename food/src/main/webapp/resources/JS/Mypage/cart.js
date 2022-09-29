@@ -13,7 +13,11 @@ $(document).ready(function(){
 	//3qjs, cartpay 함수 호출
 	cartpay(userid);
 	
-
+	//상품 사진 클릭하면
+	$("#my_cart").on("click", ".my_orderImg", function(){
+		var c_no = $(this).attr('alt');
+		location.href="/shopDetail?prodnum="+c_no;
+	})
 	
 	//수량 수정 버튼 클릭하면
 	$("#my_cart").on("click",".my_cntmodify",function(){
@@ -34,7 +38,7 @@ function cartmodify(c_cnt){
 		data: JSON.stringify(c_cnt),
 		contentType: "application/json; charset=utf-8",
 		success:function(result){
-			alert("수량 수정 성공입니닷");
+			alert("수량을 수정했습니다");
 			location.reload();
 		},
 		error:function(e){
@@ -131,13 +135,11 @@ function cartlist(userid){
 		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
 		for(var i=0; i<data.length; i++){
 			str+="<tr><td><input type='checkbox' checked name='my_onecheck' class='my_oneck' value="+data[i].c_no+"></td>"
-			str+="<td><img class='my_orderImg' alt='상품사진' src=''></td>"
+			str+="<td><img class='my_orderImg' alt='"+data[i].c_no+"' src=''></td>"
 			str+="<td>"+data[i].s_name+"<br>"
 			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
 			str+="<td>"
-//			str+="<button class='my_cntminus' data-c_cnt="+data[i].c_cnt+">-</button>"
 			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
-//			str+="<button class='my_cntplus' data-c_cnt="+data[i].c_cnt+">+</button>"
 			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
 			str+="<td><span id='my_sum"+data[i].c_no+"' data-c_sum="+data[i].c_sumprod+">"+addComma(data[i].c_sumprod)+" 원</td>"
 			str+="<td><input class='my_cartOne' type='button' value='주문하기' data-c_no="+data[i].c_no+" data-prodnum="+data[i].c_prodnum+"><br>"
@@ -149,7 +151,7 @@ function cartlist(userid){
 	}	
 	//장바구니에 담긴 상품이 없으면
 	else{
-		str+="<h3>장바구니에 담긴 상품이 없습니다 😢😢</h3>"
+		str+="<p>장바구니에 담긴 상품이 없습니다 😢😢</p>"
 		$("#my_cartIn").hide();
 	}
 	//해당 위치에 str 전부 출력

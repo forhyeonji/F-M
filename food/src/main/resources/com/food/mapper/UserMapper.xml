@@ -29,13 +29,25 @@
   		from tb_user 
   		where user_phone = #{user_phone}
   	</select>
- 
+
+
+
 	<select id="find_id" resultType="com.food.model.UserVO">
-		select user_id 
+		select * 
 		from tb_user 
-		where user_name = #{user_name} and user_phone = #{user_phone}
+		where user_name=#{user_name} and user_phone=#{user_phone}
 	</select>
 	
+	<select id="find_pw" resultType="com.food.model.UserVO">
+		select * 
+		from tb_user 
+		where user_id=#{user_id} and user_name=#{user_name} and user_phone=#{user_phone}
+	</select>
+	
+	<update id="updatePassword">
+		update tb_user 
+		set user_pw=#{user_pw} where user_id=#{user_id}
+	</update>
   	
   	
   	

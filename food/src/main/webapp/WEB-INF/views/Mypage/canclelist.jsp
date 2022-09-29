@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,6 +10,7 @@
 <link rel="stylesheet" href="../../../resources/CSS/mypage.css">
 <link rel="stylesheet" href="../../../resources/CSS/header.css">
 <link rel="stylesheet" href="../../../resources/CSS/footer.css">
+
 </head>
 <jsp:include page="../Header/Header.jsp"></jsp:include>
 <body>
@@ -35,7 +37,7 @@
 					<h3>취소 내역이 없습니다 </h3>
 				</c:when>
 				<c:otherwise>
-					<h3>취소 내역을 확인하세요 </h3>
+					<h5>취소 내역을 확인하세요 </h5>
 				</c:otherwise>
 			</c:choose>		
 			
@@ -43,7 +45,8 @@
 				<table id="my_orderlist">
 					<tr>
 						<td class="my_orderTb" rowspan="3">
-							<img class="my_orderImg" alt="상품사진" src=""></td>				
+							<a href="/shopDetail?prodnum=${canclelist.o_prodnum}">
+							<img class="my_orderImg" alt="상품사진" src=""></a></td>				
 						<td class="my_orderTbName" colspan="2">${canclelist.s_name}</td>
 						<td class="my_orderDate">취소날짜 ${canclelist.o_mod_date}
 							<input type="hidden" value="${canclelist.o_no}"></td>
@@ -52,12 +55,13 @@
 						<td class="my_orderTb">수량</td>
 						<td class="my_orderTbNumber">${canclelist.o_cnt}</td>							
 						<td class="my_orderTb" rowspan="2">
-							<a href="/Shop/shopPurchase">
+							<a href="/shopDetail?prodnum=${canclelist.o_prodnum}">
 							<input type="button" value="상품 GO!!"></a></td>
 					</tr>
 					<tr>
 						<td class="my_orderTb">취소금액</td>
-						<td class="my_orderTbNumber">${canclelist.o_sum}</td>
+						<td class="my_orderTbNumber">
+							<fmt:formatNumber value="${canclelist.o_sum}" pattern="#,###"/> 원</td>
 					</tr>
 				</table>
 			</c:forEach>			

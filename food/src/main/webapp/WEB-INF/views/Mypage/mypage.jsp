@@ -34,25 +34,25 @@
 						<img class="my_thimage" src="../../../resources/image/mypage/cart.png">
 					</div> 
 					<div class="my_intexttop">
-						<h3>장바구니</h3>
+						<p>장바구니</p>
 					</div>	
 				</div>	
 						
 				<div class="my_go" onclick="location.href='/mypage/orderlist'">
 					<div class="my_th">
-						<img src="../../../resources/image/mypage/list.png">
+						<img class="my_thimage" src="../../../resources/image/mypage/list.png">
 					</div>
 					<div class="my_intexttop">
-						<h3>주문 목록<br>배송 조회</h3>
+						<p>주문 목록<br>배송 조회</p>
 					</div>
 				</div>	
 				
 				<div class="my_go" onclick="location.href='/mypage/canclelist'">
 					<div class="my_th">
-						<img src="../../../resources/image/mypage/cancle.png">
+						<img class="my_thimage" src="../../../resources/image/mypage/cancle.png">
 					</div>
 					<div class="my_intexttop">
-						<h3>취소 내역</h3>
+						<p>취소 내역</p>
 					</div>	
 				</div>
 								
@@ -64,16 +64,16 @@
 						<img class="my_thimage" src="../../../resources/image/mypage/like.png">
 					</div>	
 					<div class="my_intextmid">
-						<h3>찜한 상품</h3>
+						<p>찜한 상품</p>
 					</div>
 				</div>	
 							
 				<div class="my_go" onclick="location.href='/mypage/myreview'">
 					<div class="my_th">
-						<img src="../../../resources/image/mypage/review.png">
+						<img class="my_thimage" src="../../../resources/image/mypage/review.png">
 					</div>	
 					<div class="my_intextmid">
-						<h3>내가 쓴 상품평</h3>
+						<p>내가 쓴<br>상품평</p>
 					</div>
 				</div>
 							
@@ -82,28 +82,28 @@
 			<div class="my_center_go">				
 				<div class="my_go" onclick="location.href='/mypage/mywrite'">
 					<div class="my_th">
-						<img src="../../../resources/image/mypage/mywrite.png">
+						<img class="my_thimage" src="../../../resources/image/mypage/mywrite.png">
 					</div>
 					<div class="my_intextlow">
-						<h3>내 글<br> 보기</h3>
+						<p>내 글<br> 보기</p>
 					</div>	
 				</div>
 				
 				<div class="my_go" onclick="location.href='/mypage/myreply'">
 					<div class="my_th">
-						<img src="../../../resources/image/mypage/myreply.png">
+						<img class="my_thimage" src="../../../resources/image/mypage/myreply.png">
 					</div>
 					<div class="my_intextlow">
-						<h3>내 "댓"글<br> 보기</h3>
+						<p>내 "댓"글<br> 보기</p>
 					</div>	
 				</div>
 				
 				<div class="my_go" onclick="location.href='/mypage/mylike'">
 					<div class="my_th">
-						<img src="../../../resources/image/mypage/mylike.png">
+						<img class="my_thimage" src="../../../resources/image/mypage/mylike.png">
 					</div>
 					<div class="my_intextlow">
-						<h3>좋아요<br> 누른 글<br> 보기</h3>
+						<p>좋아요<br> 누른 글<br> 보기</p>
 					</div>	
 				</div>
 			</div>

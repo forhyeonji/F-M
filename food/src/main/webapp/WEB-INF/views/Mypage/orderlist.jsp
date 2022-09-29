@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -41,24 +42,25 @@
 				<h3>주문 내역이 없습니다 (T_T)</h3>
 			</c:when>
 			<c:otherwise>
-				<h3>주문내역을 확인하세요~😁😁</h3>	
+				<h5>주문내역을 확인하세요~😁😁</h5>	
 			</c:otherwise>
 		</c:choose>
 
 			<c:forEach items="${orderlist}" var="orderlist">
 			
 				<table id="my_orderlist">
-					<tr>				
-						<td class="my_orderDate">주문날짜 ${orderlist.o_date}
+					<tr>
+						<td class="my_orderTb" rowspan="3">
+							<a href="/shopDetail?prodnum=${orderlist.o_prodnum}">
+							<img class="my_orderImg" alt="상품사진" src=""></a></td>				
+						<td class="my_orderTbName">${orderlist.s_name}</td>
+						<td class="my_orderDate">${orderlist.o_date} 주문
 							<input type="hidden" value="${orderlist.o_no}"></td>		
-						<td class="my_orderTbNAME" colspan="2">${orderlist.s_name}</td>
 						<td class="my_orderTb">
-							<a href="/mypage/shopPurchase">
+							<a href="/shopDetail?prodnum=${orderlist.o_prodnum}#product-review">						
 							<input type="button" value="상품평 GO!"></a></td>
 					</tr>
 					<tr>
-						<td class="my_orderTb" rowspan="2">
-							<img class="my_orderImg" alt="상품사진" src=""></td>
 						<td class="my_orderTb">수량</td>
 						<td class="my_orderTbNumber">${orderlist.o_cnt}</td>
 						<td class="my_orderTb">
@@ -67,14 +69,17 @@
 					</tr>
 					<tr>
 						<td class="my_orderTb">결제 금액</td>
-						<td class="my_orderTbNumber">${orderlist.o_sum}</td>
+						<td class="my_orderTbNumber">
+							<fmt:formatNumber value="${orderlist.o_sum}" pattern="#,###"/> 원</td>
 						<td class="my_orderTb">
 							<a href="/mypage/ordercancle?o_no=${orderlist.o_no}">
 							<input type="button" value="취소 하기" name="cancle"></a></td>						
 					</tr>
+
 				</table>
 			</c:forEach>							
 			</div><!-- my_order1 -->
+			
 			<div id="my_paging">	
 				<div>			
 <!-- 이전버튼 -->
