@@ -2,7 +2,6 @@ package com.food.service;
 
 import java.util.ArrayList;
 
-import com.food.model.AnswerVO;
 import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
@@ -32,26 +31,27 @@ public interface ShopService {
 	//메인화면 상품 정보
 	public ArrayList<ShopVO> ShopSelect();
 	
-	public void shopDetail(ShopquestionVO shopquestion);
-	
 	// 상품 상세 내용보기 메인 이미지 설계
 	public ShopVO main(ShopVO shop);
 
 	// 상품 상세 내용보기 서브 이미지 설계
 	public ArrayList<ShopVO> sub(ShopVO shop);
 
-/*	Shopquestion
+	 /*	Shopquestion*/
+	
 	//Q&A 전체 글 수
+	public ShopquestionVO shopDetail(ShopquestionVO shopquestion); 
+	
 	public int total2(ShopquestionVO shopquestion);
 	
 	//Q&A 내가 쓴 문의
 	public ArrayList<ShopquestionVO> write(ShopquestionVO shopquestion);
 	
 	//Q&A 관리자 답변 확인
-	public ShopquestionVO check(ShopquestionVO shopquestion);
+	public ShopquestionVO chack(ShopquestionVO shopquestion);
 	
 	//관리자 답변글쓰기
-	public void answer(ShopquestionVO shopquestion);*/
+	public void answer(ShopquestionVO shopquestion);
 	
 	/* ShopAttach */
 	
