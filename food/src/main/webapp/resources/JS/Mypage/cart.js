@@ -151,7 +151,7 @@ function cartlist(userid){
 	}	
 	//장바구니에 담긴 상품이 없으면
 	else{
-		str+="<h3>장바구니에 담긴 상품이 없습니다 😢😢</h3>"
+		str+="<p>장바구니에 담긴 상품이 없습니다 😢😢</p>"
 		$("#my_cartIn").hide();
 	}
 	//해당 위치에 str 전부 출력

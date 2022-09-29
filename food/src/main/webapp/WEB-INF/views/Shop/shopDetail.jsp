@@ -184,9 +184,6 @@
 
 															</table>
 														</form>
-
-
-
 													</div>
 													<!-- main_top -->
 													<div class="product-qna_sub">
@@ -198,7 +195,7 @@
 																<td width="120px" class="sh_qnasub">작성일</td>
 																<td width="120px" class="sh_qnasub">답변여부</td>
 															</tr>
-
+															
 															<!-- for문 시작 -->
 															<c:forEach items="${shopwrite}" var="shopwrite">
 
@@ -219,11 +216,11 @@
 																		</c:choose></td>
 																</tr>
 
-
+											
 															</c:forEach>
 															<!-- for문 끝 -->
 														</table>
-
+																			
 														<div class="Shoppage">
 															<!-- 이전버튼 -->
 															<c:if test="${paging.prevBtn}">
