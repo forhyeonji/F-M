@@ -3,10 +3,6 @@
  */
 
 
-
-
-
-
 /* 아이디 찾기 */ 
 //아이디 & 스토어 값 저장하기 위한 변수
 	// 아이디 값 받고 출력하는 ajax
@@ -37,7 +33,7 @@
 	};
 
 	
-	
+/*	
 const modal = document.getElementById("modal")
 const btnModal = document.getElementById("find_id")
 
@@ -57,4 +53,5 @@ modal.addEventListener("click", e => {
         modal.style.display = "none"
     }
 })
-
+*/
+	
