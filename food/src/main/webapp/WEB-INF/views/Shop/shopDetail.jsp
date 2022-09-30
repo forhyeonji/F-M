@@ -204,7 +204,16 @@
 															<div>
 															<!-- for문 시작 -->
 															<c:forEach items="${detail}" var="detail">
-
+																   <div class="que">
+																     <a href="shopDetail?bno=${detail.bno}" class="sh_title_check">
+																			<span>${detail.title}</span>
+																		</a>														      
+																     </div>
+																     <div class="anw">
+																      	<a href="shopDetail?bno=${detail.bno}" class="sh_context_check">
+																			<span>${detail.context}</span>
+																		</a>
+																     </div>
 <%-- 																<tr>
 																	
 																	<td class="sh_title_aco">
@@ -234,13 +243,6 @@
 																</tr>
  --%>
  																
-																     <div class="que">
-																      <span>This is first question.</span>															      
-																     </div>
-																     <div class="anw">
-																      <span>This is first answer.</span>
-																     </div>
-
 															</c:forEach>
 														    </div>
 															<!-- for문 끝 -->

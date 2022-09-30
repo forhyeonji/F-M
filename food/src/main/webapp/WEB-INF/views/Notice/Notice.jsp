@@ -35,11 +35,18 @@
 	</form>
 		
 		<!-- 검색기능 끝 -->
+		<div class="NOTI_emptybox">
+		</div>
 		
+		
+		<c:if test="${user_id=='root' || user_id=='manager'}">
 		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://localhost:8080/notice_write'">
+		</c:if>
 		
+	
 		<hr>
 		<table class="NOTI_Que_Table">
+		
 					
 					<tr>
 						<td height="520px" class="NOTI_title_effect">제목</td>
