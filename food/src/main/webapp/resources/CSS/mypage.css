@@ -182,6 +182,7 @@ canclelist
 	padding:10px;
 }
 
+
 #my_cartpay_Tb{
 	margin:auto;
 	width:50%;
@@ -329,7 +330,7 @@ canclelist
 
 .my_orderImg{
 	width:80px;
-	border:1px solid rgb(234, 234, 234);
+	border:none;
 }
 
 .my_orderCon{

@@ -15,11 +15,9 @@ $(document).ready(function(){
 	
 	//상품 사진 클릭하면
 	$("#my_cart").on("click", ".my_orderImg", function(){
-		var filename=$(this).data("filename");
-		location.href="/shopDetail?prodnum="+filename;
+		var num=$(this).attr("alt");
+		location.href="/shopDetail?prodnum="+num;
 	})
-
-	
 	
 	//수량 수정 버튼 클릭하면
 	$("#my_cart").on("click",".my_cntmodify",function(){
@@ -103,8 +101,9 @@ function cartmodify(c_cnt){
 	//삭제하기 버튼 클릭하면
 	$("#my_cart").on("click",".cartdelete",function(){
 		//장바구니 속 상품 삭제 cartdelete 함수 호출
-		var c_no = $(this).data("c_no");
-		cartdelete(c_no);
+		var c_no = $(this).cno();
+		console.log(c_no);
+//		cartdelete(c_no);
 	})
 
 //상품 삭제 cartdelete 함수 선언
@@ -132,31 +131,29 @@ function cartlist(userid){
 		var str="";		
 	//장바구니 담긴 상품이 있으면
 	if(data.length != 0){
-		$("#my_cartlist").show();
 
-//		str+="<table id='my_cartlist'><tr id='my_tableHead'>"
-//		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
-//		for(var i=0; i<data.length; i++){
-//			str+="<tr><td><input type='checkbox' checked name='my_onecheck' class='my_oneck' value="+data[i].c_no+"></td>"
-//			str+="<td><img id='my_orderImg"+data[i].c_no+"' data-filename="+data[i].filename+" alt='"+data[i].c_no+"' src=''></td>"
-//			str+="<td>"+data[i].s_name+"<br>"
-//			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
-//			str+="<td>"
-//			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
-//			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
-//			str+="<td><span id='my_sum"+data[i].c_no+"' data-c_sum="+data[i].c_sumprod+">"+addComma(data[i].c_sumprod)+" 원</td>"
-//			str+="<td><input class='my_cartOne' type='button' value='주문하기' data-c_no="+data[i].c_no+" data-prodnum="+data[i].c_prodnum+"><br>"
-//			str+="<input class='cartdelete' type='button' value='삭제하기' data-c_no="+data[i].c_no+"></td></tr>"
-//		}
-//		str+="<tr><th colspan='6'>"
-//		str+="<input id='my_cartAll' type='submit' value='👉전체주문👈'>"
-//		str+="</th></tr></table>"
+		str+="<table id='my_cartlist'><tr id='my_tableHead'>"
+		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
+		for(var i=0; i<data.length; i++){
+			str+="<tr><td><input type='checkbox' checked name='my_onecheck' class='my_oneck' value="+data[i].c_no+"></td>"
+			str+="<td><img class='my_orderImg' alt='"+data[i].c_no+"' src='/Shopdisplay?fileName="+data[i].filename+"'></td>"
+			str+="<td>"+data[i].s_name+"<br>"
+			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
+			str+="<td>"
+			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
+			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
+			str+="<td><span id='my_sum"+data[i].c_no+"' data-c_sum="+data[i].c_sumprod+">"+addComma(data[i].c_sumprod)+" 원</td>"
+			str+="<td><input class='my_cartOne' type='button' value='주문하기' data-c_no="+data[i].c_no+" data-prodnum="+data[i].c_prodnum+"><br>"
+			str+="<input class='cartdelete' type='button' value='삭제하기' data-c_no="+data[i].c_no+"></td></tr>"
+		}
+		str+="<tr><th colspan='6'>"
+		str+="<input id='my_cartAll' type='submit' value='👉전체주문👈'>"
+		str+="</th></tr></table>"
 	}	
 	//장바구니에 담긴 상품이 없으면
 	else{
 		str+="<p>장바구니에 담긴 상품이 없습니다 😢😢</p>"
 		$("#my_cartIn").hide();
-		$("#my_cartlist").hide();
 	}
 	//해당 위치에 str 전부 출력
 	$("#my_cartIn2").html(str);
