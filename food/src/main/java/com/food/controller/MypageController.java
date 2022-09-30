@@ -174,7 +174,15 @@ public class MypageController {
 		
 		int total = ms.orderlistCnt(order);
 		model.addAttribute("paging", new PageVO(cri, total));
-		return "Mypage/orderlist";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/orderlist";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 		
 	//주문취소 페이지 출력
@@ -183,7 +191,15 @@ public class MypageController {
 		String id = (String)session.getAttribute("user_id");
 		order.setUser_id(id);
 		model.addAttribute("canclePage", ms.canclePage(order));
-		return "Mypage/ordercancle";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/ordercancle";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//주문 취소
@@ -212,13 +228,30 @@ public class MypageController {
 
 		int total = ms.canclelistCnt(order);
 		model.addAttribute("paging", new PageVO(cri, total));	
-		return "Mypage/canclelist";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/canclelist";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 
 	//배송조회
 	@RequestMapping(value = "mypage/delivery", method = RequestMethod.GET)
-	public String delivery() {
-		return "Mypage/delivery";
+	public String delivery(HttpSession session) {
+		String id = (String)session.getAttribute("user_id");
+
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/delivery";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//내가 쓴 글 목록
@@ -237,7 +270,15 @@ public class MypageController {
 		model.addAttribute("mywrite", ms.mywrite(mypage));		
 		int total = ms.total(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));
-		return "Mypage/mywrite";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/mywrite";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//내가 쓴 글 상세보기
@@ -262,7 +303,15 @@ public class MypageController {
 		
 		int total = ms.retotal(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));		
-		return "Mypage/myreply";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/myreply";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 		
 
@@ -280,7 +329,15 @@ public class MypageController {
 		
 		int total = ms.liketotal(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));
-		return "Mypage/mylike";
+
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/mylike";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//찜한 상품
