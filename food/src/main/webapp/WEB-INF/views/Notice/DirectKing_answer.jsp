@@ -108,8 +108,8 @@
 							<div class="NOTI_button">
 								<input type="submit" value="등록" class="NOTI_but">
 								<input type="button" value="취소" onclick="location.href='http://localhost:8080/directKing?sep=inquiry'" class="NOTI_but">
-								<input type="text" value="${sessionScope.user_id}" name="ans_id">
-								<input type="text" value="${detail.bno}" name="bno">
+								<input type="hidden" value="${sessionScope.user_id}" name="ans_id">
+								<input type="hidden" value="${detail.bno}" name="bno">
 							</div> <!-- button -->
 							
 						</form>
