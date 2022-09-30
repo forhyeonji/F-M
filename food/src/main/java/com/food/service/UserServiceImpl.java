@@ -9,6 +9,8 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -56,10 +58,10 @@ public class UserServiceImpl implements UserService {
 		return um.phoneCheck(user_phone);
 	}
     
-    
+    /*
     public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone) throws Exception{
     	return "";
-    	/*response.setContentType("text/html;charset=utf-8");
+    	response.setContentType("text/html;charset=utf-8");
 		PrintWriter out = response.getWriter();
 		String id = manager.find_id(user_name);
 		
@@ -73,9 +75,14 @@ public class UserServiceImpl implements UserService {
 		} else {
 			return id;
 		}
-		*/
+		
     }
+    */
     
+    
+    public UserVO find_id(UserVO userVO) {
+		return um.find_id(userVO);
+	}
 
 	
 	

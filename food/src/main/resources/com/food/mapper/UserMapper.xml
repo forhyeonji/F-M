@@ -31,13 +31,11 @@
   	</select>
   	
   	<!-- 아이디 찾기 -->
-	<select id="find_id" resultType="String">
+	<select id="find_id" resultType="com.food.model.UserVO">
 		select user_id 
-		from tb_user
-		where user_name = #{user_name} and user_phone = #{user_phone}
+		from tb_user 
+		where user_name=#{user_name} and user_phone=#{user_phone}
 	</select>
-
-
 
 	
 

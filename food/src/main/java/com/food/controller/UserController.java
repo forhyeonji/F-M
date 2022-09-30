@@ -33,6 +33,7 @@ import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -181,7 +182,22 @@ public class UserController{
 	
 	// 아이디 찾기 폼
 	@RequestMapping(value = "/find_id", method=RequestMethod.GET)
-	public String find_id_form() throws Exception{
+	public String find_id() throws Exception{
+		return "Main/find_id";
+	}
+	
+	
+	@RequestMapping(value = "/find_id", method=RequestMethod.POST)
+	public String find_idPost(UserVO userVO, Model model){
+		UserVO user = us.find_id(userVO);
+	
+		if(user == null) { 
+			model.addAttribute("check", 1);
+		} else { 
+			model.addAttribute("check", 0);
+			model.addAttribute("user", user);
+		}
+		
 		return "Main/find_id";
 	}
 	
