@@ -13,8 +13,8 @@
 			select ifnull(max(prodnum),0)+1 prodnum
 			from tb_shop
   		</selectKey>
-		insert into	tb_shop(prodnum,NAME,Origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
-		value(#{prodnum},#{NAME},#{Origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail})
+		insert into	tb_shop(prodnum,NAME,origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
+		value(#{prodnum},#{NAME},#{origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail})
 	</insert>
 		
 		
@@ -139,12 +139,12 @@ FROM  (
 
 <select id="sub" resultType="com.food.model.ShopVO">
 SELECT 
-	rownum,prodnum,NAME,subcontent,division,CONTENT,Parcel,packaging,unit,detail,Origin,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
+	rownum,prodnum,NAME,subcontent,division,CONTENT,Parcel,packaging,unit,detail,origin,boundary,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
 FROM  (
 		SELECT   @rownum:=@rownum+1 rownum,a.* 
 		FROM (SELECT * 
 					FROM (
- 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath ,Origin,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath ,origin,discountprice  ,CONTENT,Parcel,packaging,unit,detail,boundary                                       
 							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE t.prodnum= #{prodnum} and division = 	's' )AS j ) AS a,(
 										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
 ;
@@ -170,8 +170,8 @@ select count(*) from sh_question where user_id = #{user_id}
 <!-- 관리자 답변 -->
 <insert id="answer">
 	
-insert into sh_question (bno, context, title,  NAME, chack)
-values(#{bno}, #{context}, #{title}, #{NAME},1)
+insert into sh_question (answer)
+values(#{answer}) where bno=#{bno}
 	
 </insert>
 

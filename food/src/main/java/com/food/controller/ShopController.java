@@ -168,7 +168,7 @@ public class ShopController {
 	public String shopDetailPost(ShopquestionVO shopquestion,RedirectAttributes rttr) {
 		shop.write(shopquestion);
 				
-		shop.answer(shopquestion);
+		// shop.answer(shopquestion);
 		System.out.println("ShopController="+shopquestion);
 
 		rttr.addAttribute("prodnum",shopquestion.getProdnum());

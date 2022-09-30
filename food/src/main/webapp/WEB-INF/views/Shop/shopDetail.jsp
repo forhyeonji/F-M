@@ -211,9 +211,16 @@
 																     </div>
 																     <div class="anw">
 																      	<a href="shopDetail?bno=${detail.bno}" class="sh_context_check">
-																			<span>${detail.context}</span>
+																			<span>${detail.context}</span><br>
+																			<span>관리자 답변</span>
 																		</a>
+																		<!-- <input type="button" value="답변등록" class="answerbtn"> -->
 																     </div>
+<%-- 																     <div class="ans">
+																     	<a href="shopDetail?bno=${detail.bno}" class="sh_answer_check">
+																			
+																		</a>
+																     </div> --%>
 <%-- 																<tr>
 																	
 																	<td class="sh_title_aco">

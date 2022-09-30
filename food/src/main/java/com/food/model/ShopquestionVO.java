@@ -9,6 +9,8 @@ public class ShopquestionVO {
 	private String context;	//내용
 	private boolean chack;	//답변확인
 	private String title;	//제목
+	private String answer;	//관리자 답변
+	
 	
 	public int getProdnum() {
 		return prodnum;
@@ -44,6 +46,12 @@ public class ShopquestionVO {
 	
 	
 	
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -65,7 +73,8 @@ public class ShopquestionVO {
 	@Override
 	public String toString() {
 		return "ShopquestionVO [bno=" + bno + ", prodnum=" + prodnum + ", NAME=" + NAME + ", date=" + date
-				+ ", user_id=" + user_id + ", context=" + context + ", chack=" + chack + ", title=" + title + "]";
+				+ ", user_id=" + user_id + ", context=" + context + ", chack=" + chack + ", title=" + title
+				+ ", answer=" + answer + "]";
 	} 
 	
 }
