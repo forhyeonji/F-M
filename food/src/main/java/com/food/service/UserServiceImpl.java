@@ -5,12 +5,14 @@ import com.food.mapper.UserMapper;
 import com.food.model.ShopAttachVO;
 import com.food.model.UserVO;
 
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
- 
+
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
@@ -54,93 +56,30 @@ public class UserServiceImpl implements UserService {
 		return um.phoneCheck(user_phone);
 	}
     
-    // 아이디 찾기
- 	/*
-    @Override
- 	public String find_id(String user_name, String user_phone) {
- 			
- 		String result = "";
- 		
- 		try {
- 		 result= um.find_id(user_name, user_phone);
- 		 
- 		} catch(Exception e) {
- 			
- 			e.printStackTrace();
- 		}
- 		
- 		return result ;
- 	}
- 	*/
-   
     
-    @Override
-	public UserVO find_id(UserVO userVO) {
-		return um.find_id(userVO);
-	}
-
-	@Override
-	public UserVO find_pw(UserVO userVO) {
-		return um.find_pw(userVO);
-	}
-
-	@Override
-	public void updatePassword(UserVO userVO) {
-		um.updatePassword(userVO);
-	}
-
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-		//첨부파일 조회 구현
-		public ArrayList<ShopAttachVO> Shopattachlist(int prodnum){
-			return sam.Shopattachlist(prodnum);
+    public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone) throws Exception{
+    	return "";
+    	/*response.setContentType("text/html;charset=utf-8");
+		PrintWriter out = response.getWriter();
+		String id = manager.find_id(user_name);
+		
+		if (id == null) {
+			out.println("<script>");
+			out.println("alert('가입된 아이디가 없습니다.');");
+			out.println("history.go(-1);");
+			out.println("</script>");
+			out.close();
+			return null;
+		} else {
+			return id;
 		}
-		
-		@Override
-		public void insert(ShopAttachVO attach) {
+		*/
+    }
+    
 
-		}
-    
-    
-    /*
-    @Transactional
-	public void register(UserVO userVO) throws Exception{
-		userdao.register(userVO);
-		
-		String key = new tempKey().getKey(50,false);
-		userdao.createAuthKey (userVO.getUser_email(), key);
-		MailUtils sendMail = new MailUtils(mailSender);
-		sendMail.setSubject("[ICEWATER 커뮤니티 이메일 인증메일 입니다.]"); //메일제목
-		sendMail.setText(
-				"<h1>메일인증</h1>" +
-						"<br/>"+userVO.getUser_id()+"님 "+
-						"<br/>ICEWATER에 회원가입해주셔서 감사합니다."+
-						"<br/>아래 [이메일 인증 확인]을 눌러주세요."+
-						"<a href='http://localhost:8080/insert/registerEmail?memberEmail=" + userVO.getUser_email() +
-						"&key=" + key +
-						"' target='_blenk'>이메일 인증 확인</a>");
-		sendMail.setFrom("[발송 이메일 주소]", "[발송자 이름]");
-		sendMail.setTo(userVO.getUser_email());
-		sendMail.send();
-		
-	}
-    
-    @Override
-	public void memberAuth(String user_email) throws Exception{
-		um.memberAuth(user_email);
-	}
-	 
-    */
+	
+	
+
 
 
 

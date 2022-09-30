@@ -19,36 +19,9 @@ public interface UserMapper {
     public int idCheck(String user_id);
     
     public int phoneCheck(String user_phone);
-	
-	//아이디 찾기
-	//public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone);
     
-    
-    
-    public UserVO find_id(UserVO userVO);
-	
-	public UserVO find_pw(UserVO userVO);
-
-	public void updatePassword(UserVO userVO);
+    public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone);
 	
 	
-	
-	
-	//메인화면 테이블연동관련
-	public ArrayList<ShopAttachVO> Shopattachlist(int bno);
-	public void insert(ShopAttachVO attach);
-	
-	
-	
-	
-
-    
-	
-
-	
-	
-	
-
-
 
 }

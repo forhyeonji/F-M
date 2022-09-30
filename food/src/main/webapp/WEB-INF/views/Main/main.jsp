@@ -209,46 +209,6 @@
 	
 	
 	
-	
-	
-	
-	<h2 id="sh_h2">[추천 상품]</h2>
-				<div class="sh_slide_div">
- 					<c:forEach items="${ArrayList}" var="ArrayList">
-					<a href="/shopDetail?prodnum=${ArrayList.prodnum}">
-					<div class="sh_img_div">
-					  	 <div class="sh_ArrayList">
-							<div class="shop_div_img" data-name="${ArrayList.NAME}" data-filename="${ArrayList.filename}">
-                         	  <img>
-                       	    </div>
-						 </div>	
-					 </div>	
-					 
-					 <div class="sh_img_text">	
-						<div class="sh_NAME">
-							${ArrayList.NAME}
-						</div>		
-						
-						<div class="sh_subcontent">
-							${ArrayList.subcontent}
-						</div>
-						
-						<div class="sh_discountprice">
-							${ArrayList.discountprice}
-						</div>
-						
-						<div class="sh_prodnum">
-							<input type="hidden" value="${ArrayList.prodnum}">
-						</div>
-					</div>
-				</a>
-				</c:forEach>
-			</div>
-			
-			
-			
-			
-			
 			
 			
 			
