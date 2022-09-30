@@ -39,10 +39,10 @@ public class MypageController {
 		mypage.setUser_id(id);
 		
 		String result="";
-			if(id != null) {			//로그인된 아이디있으면
-				result = "Mypage/mypage"; //마이페지로 이동
+			if(id != null) {			
+				result = "Mypage/mypage"; //마이페이지로 이동
 			}else {
-				result = "/Main/insert";	//없으면 회원가입으로 이동
+				result = "/Main/login";	
 			}
 
 		model.addAttribute("mypage", ms.mypage(user));
@@ -54,7 +54,15 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("profile", ms.profile(user));
-		return "Mypage/profile_edit";
+		
+		String result="";
+		if(id !=null) {			
+			result = "Mypage/profile_edit";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	//회원정보 수정 (update)
 	@RequestMapping(value = "mypage/edit", method = RequestMethod.POST)
@@ -73,7 +81,15 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("resign", ms.resign(user));
-		return "Mypage/resign";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/resign";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//회원 탈퇴 (delete)
@@ -93,9 +109,17 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("cartlist", ms.cartlist(id));
+
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/cart";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
 		
-		return "Mypage/cart";
+		return result;
 	}
+	
 	//장바구니는 비동기 도전!!
 	//장바구니 리스트 출력
 	@RequestMapping(value="/mypage/cart/{user_id}", method=RequestMethod.GET)

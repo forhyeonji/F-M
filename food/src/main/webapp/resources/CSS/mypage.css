@@ -100,9 +100,12 @@ body {
 }
 
 .my_thimage{
-	width:40%;
+	max-width:75px;
+	max-height:70px;
+	margin:5px;
 	dispaly:block;
 	vertical-align:left;
+	opacity:0.9;
 }
 
 .my_intexttop, .my_intextmid, .my_intextlow{
@@ -137,17 +140,16 @@ canclelist
 }
 
 
-
 /* cart */
 
 #my_cartlist{
-	border:1px solid rgb(234, 234, 234);
 	width:100%;
 	text-align:center;
+	border:none;
 }
 
-#my_cartlist, #my_cartlist td{
-	border:1px solid rgb(234, 234, 234);
+#my_cartlist td{
+	border-bottom:1px solid rgb(234, 234, 234);
 	text-align:center;
 }
 
@@ -211,25 +213,39 @@ canclelist
 
 /* mylike */
 #my_like{
-	border : solid 1px rgb(234, 234, 234);
 	width:100%
 }
 
 #my_like td{
-	border : solid 1px rgb(234, 234, 234);
+	border-bottom : solid 1px rgb(234, 234, 234);
 	height:35px;
 }
 
+#my_like th{
+	border-top : solid 1px rgb(234, 234, 234);
+	border-bottom : solid 1px rgb(234, 234, 234);
+	text-align:center;
+	padding:10px;
+}
 
+#my_likeTsize3{
+	text-align:center;
+}
 
 /* myreply */
 #my_reply{
-	border : solid 1px rgb(234, 234, 234);
 	width:100%;
 }
 
 #my_reply td{
-	border : solid 1px rgb(234, 234, 234);
+	border-bottom : solid 1px rgb(234, 234, 234);
+}
+
+#my_reply th{
+	border-top : solid 1px rgb(234, 234, 234);
+	border-bottom : solid 1px rgb(234, 234, 234);
+	text-align:center;
+	padding:10px;
 }
 
 #my_Tsize1{
@@ -238,16 +254,18 @@ canclelist
 }
 
 #my_Tsize2{
+	padding: 0 30px;
 	width:400px;
 	text-overflow:ellipsis;
 	overflow:hidden;
 	white-space:nowrap;
-	max-width:380px;
+	max-width:380px;	
 }
 
 #my_Tsize3{
 	width:110px;
 	font-size:80%;
+	text-align:center;
 }
 
 .my_fsmall{
@@ -258,12 +276,18 @@ canclelist
 
 /* mywrite */
 #my_write{
-	border : solid 1px rgb(234, 234, 234);
 	width:100%
 }
 
 #my_write td{
-	border : solid 1px rgb(234, 234, 234);
+	border-bottom : solid 1px rgb(234, 234, 234);
+}
+
+#my_write th{
+	border-top : solid 1px rgb(234, 234, 234);
+	border-bottom : solid 1px rgb(234, 234, 234);
+	text-align:center;
+	padding:10px;
 }
 
 #my_aBtn{
