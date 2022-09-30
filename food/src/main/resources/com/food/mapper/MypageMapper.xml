@@ -44,10 +44,13 @@
 				sh.NAME as s_name,
 				sh.CONTENT as s_content,
 				sh.price2 as s_price,
-				sh.price2*c.c_cnt as c_sumprod
+				sh.price2*c.c_cnt as c_sumprod,
+				Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename
 		from tb_cart c left outer join tb_shop sh 
 		on c.c_prodnum=sh.prodnum
-		where c.user_id = #{user_id}
+		left join sh_appatch app
+		on c.c_prodnum = app.prodnum
+		where c.user_id = #{user_id} and app.division=&apos;m&apos;
 		order by c_dt desc
 	</select>
 	
@@ -59,24 +62,6 @@
 		delete from tb_cart where c_no=#{c_no}
 	</delete>
 	
-	<select id="findCartImg" resultType="com.food.model.CartVO">
-		select sha.prodnum as prodnum,
-				sha.division as division,
-		        sha.uuid as uuid,
-		        sha.uploadPath as uploadPath,
-		        sha.filename as filename,
-		        c.*	
-		from sh_appatch sha left outer join tb_cart c
-		on sha.prodnum = c.c_prodnum
-		where sha.division=&apos;m&apos;
-		and c.c_prodnum=#{c_prodnum}
-	</select>
-	
-	<select id="findListImg" resultType="com.food.model.OrderlistVO">
-		select * from sh_appatch sha
-		where sha.division=&apos;m&apos;
-		and sha.prodnum=#{prodnum}
-	</select>
 	
 	<insert id="order">
 		insert into tb_orderlist(o_prodnum, o_cnt, o_sum, user_id, o_type)
@@ -88,7 +73,8 @@
 				date_format(orderlist.o_dt, '%m/%d') as o_date,
 				sh.NAME as s_name,
 				sh.CONTENT as s_content,
-				sh.price2 as s_price
+				sh.price2 as s_price,
+				Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename
 		from (
 			select @rownum:= @rownum+1 rownum, o.*
 			from tb_orderlist o, (select @rownum:=0) as tmp
@@ -100,8 +86,10 @@
 			)
 		as orderlist left outer join tb_shop sh
 		on orderlist.o_prodnum = sh.prodnum
+		left join sh_appatch app
+		on orderlist.o_prodnum = app.prodnum
 		<![CDATA[
-		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} and division='m'
 		]]>			
 	</select>
 
@@ -115,10 +103,13 @@
 				date_format(o_dt, '%m/%d') as o_date,
 				sh.NAME as s_name,
 				sh.CONTENT as s_content,
-				sh.price2 as s_price
+				sh.price2 as s_price,
+				Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename
 		from tb_orderlist o left outer join tb_shop sh
 		on o.o_prodnum = sh.prodnum
-		where o.user_id = #{user_id} and o_no=#{o_no}
+		left join sh_appatch app
+		on o.o_prodnum = app.prodnum
+		where o.user_id = #{user_id} and o_no=#{o_no} and division=&apos;m&apos;
 	</select>
 	
 	<update id="ordercancle">
@@ -132,7 +123,8 @@
 				date_format(orderlist.o_mod_dt, '%m/%d') as o_mod_date,
 				sh.NAME as s_name,
 				sh.CONTENT as s_content,
-				sh.price2 as s_price
+				sh.price2 as s_price,
+				Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename
 		from (
 			select @rownum:= @rownum+1 rownum, o.*
 			from tb_orderlist o, (select @rownum:=0) as tmp
@@ -144,8 +136,10 @@
 			)
 		as orderlist left outer join tb_shop sh
 		on orderlist.o_prodnum = sh.prodnum
+		left join sh_appatch app
+		on orderlist.o_prodnum = app.prodnum
 		<![CDATA[
-		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		where rownum >(#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount} and division='m'
 		]]>	
 	</select>
 	

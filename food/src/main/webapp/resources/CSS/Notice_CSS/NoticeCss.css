@@ -23,7 +23,9 @@
 }
 
 
-
+.NOTI_emptybox {
+	height : 20px;
+}
 
 
 .NOTI_searchbox {
@@ -154,11 +156,12 @@
 	padding : 5px;
 	display : inline;
 	margin-top : 10px;
-	margin-bottom : 10px;
+
 	border : solid 1px rgb(234, 234, 234);
 	background-color: rgb(255, 255, 255);
 	
 	}
+	
 
 .NOTI_button {
 	width : 120px;

@@ -103,7 +103,7 @@
 						<img class="my_thimage" src="../../../resources/image/mypage/mylike.png">
 					</div>
 					<div class="my_intextlow">
-						<p>좋아요<br> 누른 글<br> 보기</p>
+						<p>좋아요<br> 누른 글</p>
 					</div>	
 				</div>
 			</div>

@@ -49,7 +49,7 @@
 						<td class="my_orderTb" rowspan="3">
 							<a href="/shopDetail?prodnum=${canclelist.o_prodnum}">
 
-							<img class="my_orderImg" alt="${canclelist.o_prodnum}" src="/Shopdisplay?fileName="></a></td>				
+							<img class="my_orderImg" alt="${canclelist.o_prodnum}" src="/Shopdisplay?fileName=${canclelist.filename }"></a></td>				
 						<td class="my_orderTbName" colspan="2">${canclelist.s_name}</td>
 						<td class="my_orderDate">취소날짜 ${canclelist.o_mod_date}
 							<input type="hidden" value="${canclelist.o_no}"></td>
@@ -69,7 +69,6 @@
 				</table>
 			</c:forEach>			
 			</div>	
-${img }
 			<div id="my_paging">	
 				<div>			
 <!-- 이전버튼 -->

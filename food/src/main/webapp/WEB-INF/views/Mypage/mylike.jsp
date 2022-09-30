@@ -36,7 +36,7 @@
 			</div>
 				<table id="my_like">
 					<tr>
-						<th>♥글 번호</th>
+						<th>♥글번호</th>
 						<th>♥글 제목</th>
 						<th>♥좋아요 수</th>
 					</tr>

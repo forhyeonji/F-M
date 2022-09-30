@@ -52,7 +52,7 @@
 					<tr>
 						<td class="my_orderTb" rowspan="3">
 							<a href="/shopDetail?prodnum=${orderlist.o_prodnum}">
-							<img class="my_orderImg" alt="상품사진" src=""></a></td>				
+							<img class="my_orderImg" alt="${orderlist.o_prodnum}" src="/Shopdisplay?fileName=${orderlist.filename }"></a></td>				
 						<td class="my_orderTbName">${orderlist.s_name}</td>
 						<td class="my_orderDate">${orderlist.o_date} 주문
 							<input type="hidden" value="${orderlist.o_no}"></td>		

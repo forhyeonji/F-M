@@ -39,10 +39,10 @@ public class MypageController {
 		mypage.setUser_id(id);
 		
 		String result="";
-			if(id != null) {			//로그인된 아이디있으면
-				result = "Mypage/mypage"; //마이페지로 이동
+			if(id != null) {			
+				result = "Mypage/mypage"; //마이페이지로 이동
 			}else {
-				result = "/Main/insert";	//없으면 회원가입으로 이동
+				result = "/Main/login";	
 			}
 
 		model.addAttribute("mypage", ms.mypage(user));
@@ -54,7 +54,15 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("profile", ms.profile(user));
-		return "Mypage/profile_edit";
+		
+		String result="";
+		if(id !=null) {			
+			result = "Mypage/profile_edit";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	//회원정보 수정 (update)
 	@RequestMapping(value = "mypage/edit", method = RequestMethod.POST)
@@ -73,7 +81,15 @@ public class MypageController {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("resign", ms.resign(user));
-		return "Mypage/resign";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/resign";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//회원 탈퇴 (delete)
@@ -89,20 +105,26 @@ public class MypageController {
 	
 	//장바구니
 	@RequestMapping(value = "mypage/cart", method = RequestMethod.GET)
-	public String cart(Model model, HttpSession session, UserVO user, CartVO cart) {
+	public String cart(Model model, HttpSession session, UserVO user) {
 		String id = (String) session.getAttribute("user_id");
 		user.setUser_id(id);
 		model.addAttribute("cartlist", ms.cartlist(id));
-		model.addAttribute("findCartImg", ms.findCartImg(cart));
+
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/cart";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
 		
-		return "Mypage/cart";
+		return result;
 	}
+	
 	//장바구니는 비동기 도전!!
 	//장바구니 리스트 출력
 	@RequestMapping(value="/mypage/cart/{user_id}", method=RequestMethod.GET)
-	public ResponseEntity<ArrayList<CartVO>> cartlist(Model model, @PathVariable String user_id, CartVO cart){
+	public ResponseEntity<ArrayList<CartVO>> cartlist(Model model, @PathVariable String user_id){
 		model.addAttribute("cartlist", ms.cartlist(user_id));
-		model.addAttribute("findCartImg", ms.findCartImg(cart));
 		return new ResponseEntity<>(ms.cartlist(user_id), HttpStatus.OK);		
 	}
 	
@@ -152,7 +174,15 @@ public class MypageController {
 		
 		int total = ms.orderlistCnt(order);
 		model.addAttribute("paging", new PageVO(cri, total));
-		return "Mypage/orderlist";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/orderlist";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 		
 	//주문취소 페이지 출력
@@ -161,7 +191,15 @@ public class MypageController {
 		String id = (String)session.getAttribute("user_id");
 		order.setUser_id(id);
 		model.addAttribute("canclePage", ms.canclePage(order));
-		return "Mypage/ordercancle";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/ordercancle";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//주문 취소
@@ -187,17 +225,33 @@ public class MypageController {
 
 		model.addAttribute("user", ms.mypage(user));
 		model.addAttribute("canclelist", ms.canclelist(order));
-		model.addAttribute("img", ms.findListImg(order));
 
 		int total = ms.canclelistCnt(order);
 		model.addAttribute("paging", new PageVO(cri, total));	
-		return "Mypage/canclelist";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/canclelist";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 
 	//배송조회
 	@RequestMapping(value = "mypage/delivery", method = RequestMethod.GET)
-	public String delivery() {
-		return "Mypage/delivery";
+	public String delivery(HttpSession session) {
+		String id = (String)session.getAttribute("user_id");
+
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/delivery";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//내가 쓴 글 목록
@@ -216,7 +270,15 @@ public class MypageController {
 		model.addAttribute("mywrite", ms.mywrite(mypage));		
 		int total = ms.total(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));
-		return "Mypage/mywrite";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/mywrite";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//내가 쓴 글 상세보기
@@ -241,7 +303,15 @@ public class MypageController {
 		
 		int total = ms.retotal(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));		
-		return "Mypage/myreply";
+		
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/myreply";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 		
 
@@ -259,7 +329,15 @@ public class MypageController {
 		
 		int total = ms.liketotal(mypage);
 		model.addAttribute("paging", new PageVO(cri, total));
-		return "Mypage/mylike";
+
+		String result="";
+		if(id !=null) {//로그인된 아이디있으면
+			result = "Mypage/mylike";
+		}else {
+			result = "/Main/login";//없으면 로그인으로 이동
+		}
+		
+		return result;
 	}
 	
 	//찜한 상품

@@ -15,8 +15,8 @@ $(document).ready(function(){
 	
 	//상품 사진 클릭하면
 	$("#my_cart").on("click", ".my_orderImg", function(){
-		var c_no = $(this).attr('alt');
-		location.href="/shopDetail?prodnum="+c_no;
+		var num=$(this).attr("alt");
+		location.href="/shopDetail?prodnum="+num;
 	})
 	
 	//수량 수정 버튼 클릭하면
@@ -127,15 +127,15 @@ function cartdelete(c_no){
 //cartlist 함수 선언
 function cartlist(userid){
 	$.getJSON("/mypage/cart/"+userid+".json", function(data){
-		console.log(data);
-		var str="";
+		var str="";		
 	//장바구니 담긴 상품이 있으면
 	if(data.length != 0){
+
 		str+="<table id='my_cartlist'><tr id='my_tableHead'>"
 		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
 		for(var i=0; i<data.length; i++){
 			str+="<tr><td><input type='checkbox' checked name='my_onecheck' class='my_oneck' value="+data[i].c_no+"></td>"
-			str+="<td><img class='my_orderImg' alt='"+data[i].c_no+"' src=''></td>"
+			str+="<td><img class='my_orderImg' alt='"+data[i].c_no+"' src='/Shopdisplay?fileName="+data[i].filename+"'></td>"
 			str+="<td>"+data[i].s_name+"<br>"
 			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
 			str+="<td>"
