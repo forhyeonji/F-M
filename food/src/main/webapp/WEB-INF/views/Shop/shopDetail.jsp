@@ -5,7 +5,8 @@
 
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopDetail.css">
-<body>
+	<script type="text/javascript"	src="../../../resources/JS/Shop/shopDetail.js"></script>
+
 	<div class="shopall">
 		<ul class=" sh_me">
 			<li><a href="#" class="sh_a">Category</a>
@@ -161,9 +162,9 @@
 											<div class="prod-inquiry-list__container">
 												<div class="prod-inquiry-items">
 													<div class="prod-inquiry-item">
-													
-													
-													
+
+
+
 														<form action="/shopDetail" method="post">
 															<table class="sh_qnatb">
 
@@ -178,9 +179,10 @@
 																</tr>
 
 																<tr>
-																	<td><input type="hidden"
-																		value="${sessionScope.id}" name="id"> <input
-																		type="submit" class="sh_signup" value="등록"></td>
+																	<td>
+																		<input type="hidden" value="${sessionScope.id}" name="id">
+																		<input type="hidden" value="${main.prodnum}" name="prodnum">
+																		<input type="submit" class="sh_signup" value="등록"></td>
 
 																</tr>
 
@@ -193,17 +195,32 @@
 														<table class="sh_qnatb">
 
 															<tr>
-																<td width="430px" class="sh_qnasub">제목</td>
+																<td width="120px" class="sh_qnasub">제목</td>
+																<td width="120px" class="sh_qnasub">내용</td>
 																<td width="120px" class="sh_qnasub">작성일</td>
 																<td width="120px" class="sh_qnasub">답변여부</td>
 															</tr>
-															
+														</table>
+															<div>
 															<!-- for문 시작 -->
 															<c:forEach items="${detail}" var="detail">
 
-																<tr>
-																	<td class="on"><a href="shopDetail?bno=${detail.bno}" class="sh_title_check">${detail.title}</a><input type="hidden"></td>
-																	<td class="sh_title_check">${detail.date}</td>
+<%-- 																<tr>
+																	
+																	<td class="sh_title_aco">
+																		<a href="shopDetail?bno=${detail.bno}" class="sh_title_check">
+																		<a href="#" class="sh_title_check">
+																			<span>${detail.title}</span>
+																		</a>
+																	</td>
+																	
+																	<td class="down">
+																		<a href="shopDetail?bno=${detail.bno}" class="sh_context_check">
+																			<span>${detail.context}</span>
+																		</a>
+																	</td>
+																	
+																	<td class="sh_date_check">${detail.date}</td>
 																	<td class="sh_title_check"><c:choose>
 
 																			<c:when test="${detail.chack!=false}">
@@ -215,30 +232,38 @@
 																			</c:otherwise>
 																		</c:choose></td>
 																</tr>
+ --%>
+ 																
+																     <div class="que">
+																      <span>This is first question.</span>															      
+																     </div>
+																     <div class="anw">
+																      <span>This is first answer.</span>
+																     </div>
 
-											
 															</c:forEach>
+														    </div>
 															<!-- for문 끝 -->
-														</table>
-																			
+
+
 														<div class="Shoppage">
 															<!-- 이전버튼 -->
 															<c:if test="${paging.prevBtn}">
 																<a
-																	href="/prodnum?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+																	href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 															</c:if>
 
 															<!-- 페이지번호 -->
 															<c:forEach begin="${paging.startPage }"
 																end="${paging.endPage }" var="sh_num">
 																<a
-																	href="/prodnum?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
+																	href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
 															</c:forEach>
 
 															<!-- 다음버튼 -->
 															<c:if test="${paging.nextBtn}">
 																<a
-																	href="/prodnum?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+																	href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 															</c:if>
 														</div>
 													</div>

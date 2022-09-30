@@ -165,13 +165,15 @@ public class ShopController {
 	
 
 	@RequestMapping(value = "/shopDetail", method = RequestMethod.POST)
-	public String shopDetailPost(ShopquestionVO shopquestion) {
+	public String shopDetailPost(ShopquestionVO shopquestion,RedirectAttributes rttr) {
 		shop.write(shopquestion);
-
+				
 		shop.answer(shopquestion);
-		System.out.println(shopquestion);
+		System.out.println("ShopController="+shopquestion);
 
-		return "redirect:/shopDetail?";
+		rttr.addAttribute("prodnum",shopquestion.getProdnum());
+			
+		return "redirect:/shopDetail";
 	}
 
 }

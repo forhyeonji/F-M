@@ -158,8 +158,8 @@ FROM  (
 <!-- 글쓰기 -->
 	<insert id="write">
 	
-	insert into sh_question (prodnum, context, title,  NAME, user_id)
-	values(#{prodnum}, #{context}, #{title}, #{NAME}, #{user_id})
+	insert into sh_question (bno, context, title,  NAME, user_id)
+	values(#{bno}, #{context}, #{title}, #{NAME}, #{user_id})
 	
 	</insert>
 
