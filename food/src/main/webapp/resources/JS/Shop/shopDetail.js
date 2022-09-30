@@ -8,15 +8,13 @@ $(document).ready(function() {
 	})
 	
 	
-	$(".que").click(function() {
+	$(".que").click(function(e) {
+		e.preventDefault();
 		  $(this).next(".anw").stop().slideToggle(300);
 		  $(this).toggleClass('on').siblings().removeClass('on');
 		  $(this).next(".anw").siblings(".anw").slideUp(300); // 1개씩 펼치기
 	});
-	
-	// ajax를 이용해서 select(reply .getJSON 참고)
-	
-	
+
 	
 	
 })
