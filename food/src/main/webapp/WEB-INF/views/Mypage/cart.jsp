@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>	
 <!DOCTYPE html>
 <html>
 <head>
@@ -44,7 +45,26 @@
 				<div id="my_cartIn2">
 				</div>				
 			</div>
-			<br>
+
+<!-- 
+			<table id="my_cartlist">
+				<tr id="my_tableHead"><td colspan="3">상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>
+			<c:forEach items="${cartlist}" var="cartlist">
+				<tr>
+					<td><input type="checkbox" checked name="my_onecheck" class="my_oneck" value="${cartlist.c_no}"></td>
+					<td><img id="my_orderImg+${cartlist.c_no}" alt="${cartlist.c_no}" src="/Shopdisplay?fileName=${cartlist.filename}"></td>	
+					<td>${cartlist.s_name}<br><span id="my_cartCon">${cartlist.s_content}</span></td>	
+					<td><input type="text" id="my_cntnow+${cartlist.c_no}" class="my_cnt" value="${cartlist.c_cnt}">
+						<input type="button" id="my_cntmodify" value="수정"></td>
+					<td><span id="my_sum+${cartlist.c_no }">${cartlist.c_sumprod}</span> 원</td>
+					<td><input class="my_cartOne" type="button" value="주문하기"><br>
+						<input class="cartdelete" type="button" value="삭제하기" cno="${cartlist.c_no }"></td>
+				</tr>
+				</c:forEach>
+				<tr><th colspan="6"><input id="my_cartAll"	type="submit" value="👉전체주문👈"></th></tr>			
+			</table>
+ -->
+			<br><br>
 			<div id="my_cartpay" > 
 				<table id="my_cartpay_Tb">
 		
