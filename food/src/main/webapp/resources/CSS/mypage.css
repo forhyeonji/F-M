@@ -38,7 +38,7 @@ body {
 	margin:0px 0px 5px 0px;
 	padding: 15px;
 	position:relative;
-	background-color:#ff8080;	
+	background-color:rgb(255,181,85);	
 	border-radius:15px;
 }
 
@@ -109,13 +109,13 @@ body {
 	position:absolute;
 	width:100%;
 	padding:5px;
-	top:50%;
+	top:55%;
 	left:45%;
 	text-align:right;
 	font-size:20px;
 	font-weight:bold;
 	transform:translate(-50%, -50%);
-	color:#ff8080;
+	color:rgb(255,144,0);
 }
 
 /* orderlist
@@ -133,7 +133,7 @@ canclelist
 #order{
 	width:300px;
 	height:20px;
-	background-color:#ffcbb3;
+	background-color:rgb(255,181,85);
 }
 
 
@@ -180,6 +180,7 @@ canclelist
 	border-radius:10px;
 	margin:5px;
 	padding:10px;
+	background-color:rgb(255,181,85);
 }
 
 
@@ -293,7 +294,9 @@ canclelist
 }
 
 #my_ordercancle_Tb{
-	width:100%;
+	width:80%;
+	padding:20px;
+	margin:10px 50px;
 }
 
 #my_ordercancle_Tb tb{
@@ -307,16 +310,9 @@ canclelist
 }
 
 #my_ordercancleOpt{
-	background-color:#eaeaea;
+	background-color:rgb(255,181,85);
 	font-weight:bold;
 	height:50px;
-}
-
-#my_cancleDetail{
-	width:100%;
-	padding:5px;
-	font-weight:bold;
-	color:#ff8080;	
 }
 
 
@@ -325,7 +321,7 @@ canclelist
 .my_orderDate{
 	text-align:center;
 	font-weight:bold;
-	color:#ff8080;	
+	color:rgb(255,144,0);	
 }
 
 .my_orderImg{
@@ -375,18 +371,29 @@ canclelist
 /* profile_edit */
 #my_profile_edit{
 	margin:auto;
-	border:1px solid #eaeaea;
-	width:80%;
+	width:60%;
 	font-size:20px;
 }
 
-
 .my_edit_td, #my_profile_edit button{
-	width:auto;
-	background-color:#eaeaea;
+	width:140px;
+	background-color:rgb(255,181,85);
 	font-size:15px;
 	text-align:center;
 	padding:5px;
+}
+
+#my_profileBtn{
+	margin:20px;
+	text-align:center;
+}
+
+#my_editBtn{
+	margin:20px;
+}
+
+#my_findzip{
+	text-align:right;
 }
 
 

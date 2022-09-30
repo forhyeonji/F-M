@@ -103,10 +103,13 @@
 				date_format(o_dt, '%m/%d') as o_date,
 				sh.NAME as s_name,
 				sh.CONTENT as s_content,
-				sh.price2 as s_price
+				sh.price2 as s_price,
+				Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename
 		from tb_orderlist o left outer join tb_shop sh
 		on o.o_prodnum = sh.prodnum
-		where o.user_id = #{user_id} and o_no=#{o_no}
+		left join sh_appatch app
+		on o.o_prodnum = app.prodnum
+		where o.user_id = #{user_id} and o_no=#{o_no} and division=&apos;m&apos;
 	</select>
 	
 	<update id="ordercancle">

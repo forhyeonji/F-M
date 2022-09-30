@@ -101,9 +101,8 @@ function cartmodify(c_cnt){
 	//삭제하기 버튼 클릭하면
 	$("#my_cart").on("click",".cartdelete",function(){
 		//장바구니 속 상품 삭제 cartdelete 함수 호출
-		var c_no = $(this).cno();
-		console.log(c_no);
-//		cartdelete(c_no);
+		var c_no = $(this).data("c_no");
+		cartdelete(c_no);
 	})
 
 //상품 삭제 cartdelete 함수 선언
