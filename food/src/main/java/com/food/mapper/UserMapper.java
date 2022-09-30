@@ -20,8 +20,6 @@ public interface UserMapper {
     
     public int phoneCheck(String user_phone);
     
-    public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone);
-	
-	
+    public UserVO find_id(UserVO userVO);
 
 }

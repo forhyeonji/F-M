@@ -2,3 +2,6 @@
  * 
  */
 
+function closethewindow(){
+			self.close();
+		}

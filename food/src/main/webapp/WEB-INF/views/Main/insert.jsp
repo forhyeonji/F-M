@@ -124,7 +124,7 @@
 					</div>
 					<br>
 					<div>
-						<input type="text" id="user_pw" class="insert_inputext" name="user_pw">
+						<input type="password" id="user_pw" class="insert_inputext" name="user_pw">
 					</div>
 					<br>
 					<div>
@@ -148,7 +148,7 @@
 					</div>
 					<br>
 					<div>
-						<input type="text" id="user_repw" class="insert_inputext">
+						<input type="password" id="user_repw" class="insert_inputext">
 					</div>
 					<br>
 					<div>

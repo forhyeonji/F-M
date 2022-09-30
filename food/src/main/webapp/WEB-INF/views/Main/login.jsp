@@ -32,7 +32,7 @@
 			</div>
 				
 			<div>
-				<input type="text" id="login_pw" name="user_pw" placeholder="비밀번호">
+				<input type="password" id="login_pw" name="user_pw" placeholder="비밀번호">
 			</div>
 			<div>
 				<span class="login_pwNone">비밀번호를 입력하세요.</span>
