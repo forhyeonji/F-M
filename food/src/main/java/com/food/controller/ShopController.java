@@ -175,5 +175,7 @@ public class ShopController {
 			
 		return "redirect:/shopDetail";
 	}
-
+	
+	//답변등록
+	
 }
