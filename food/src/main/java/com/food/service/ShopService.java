@@ -60,8 +60,4 @@ public interface ShopService {
 	public int cntup();
 	public void insert(ShopAttachVO attach);
 	
-	
-	
-	
-	
 }

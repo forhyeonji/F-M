@@ -406,6 +406,21 @@ article.sdp-review__article__list.js_reviewArticleReviewList {
 	border-bottom: 1px solid #ddd;
 }
 
+.sh_myquestion{
+	margin-top: 20px;
+}
+
+.sh_qnamenu {
+	border-collapse: separate;
+	border-spacing: 153px 5px;
+	margin-top: 15px;
+}
+
+.ans_check{
+	text-align: right;
+	margin-right: 190px;
+}
+
 /* 아코디언 메뉴  css */
 .que:first-child{
     border-top: 1px solid black;
@@ -413,7 +428,7 @@ article.sdp-review__article__list.js_reviewArticleReviewList {
   
 .que{
   position: relative;
-  padding: 17px 0;
+  padding-bottom: 15px;
   cursor: pointer;
   font-size: 14px;
   border-bottom: 1px solid #dddddd;
@@ -442,14 +457,19 @@ article.sdp-review__article__list.js_reviewArticleReviewList {
   
 .anw::before {
   display: inline-block;
-  content: 'Q';
   font-size: 14px;
   font-weight: bold;
   color: #666;
   margin: 0 5px;
 }
 
-
+.answer{
+	margin-bottom: 20px;
+	margin-left: 10px;
+}
+.ans{
+	margin-left: 10px;
+}
 
 /* 페이징 부분css 시작 */
 .prod-inquiry-list__pagination {
