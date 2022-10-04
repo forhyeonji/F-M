@@ -58,7 +58,7 @@
 								
 			</div>
 
-			<div class="my_center_go">							
+			<div class="my_center_go" style="display:none">							
 				<div class="my_go" onclick="location.href='/mypage/mykeep'">
 					<div class="my_th">
 						<img class="my_thimage" src="../../../resources/image/mypage/like.png">
