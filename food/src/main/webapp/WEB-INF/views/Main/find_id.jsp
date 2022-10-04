@@ -28,7 +28,7 @@
 		<div class="form-label-group">
 			<input type="text" id="user_phone" name="user_phone" class="form-control"/>
 			<label for="phone">phone</label>
-		</div>
+		</div>	
 
 		<div class="form-label-group">
 			<input class="btn btn-lg btn-secondary btn-block text-uppercase"
@@ -41,7 +41,7 @@
 		</c:if>
 
 		<!-- 이름과 전화번호가 일치할 때 -->
-		<c:if test="${check == 0 }">
+		<c:if test="${check == 0}">
 		<label>찾으시는 아이디는' ${user.user_id}' 입니다.</label>
 		<div class="form-label-group">
 				<input class="btn btn-lg btn-secondary btn-block text-uppercase"
@@ -58,7 +58,7 @@
 	</script>
 	
 	</body>   
-	
+	 
 	</html>
 
 <!--<script src="/resources/JS/Main/find_id.js"></script>-->

@@ -83,13 +83,13 @@ public class UserServiceImpl implements UserService {
     public UserVO find_id(UserVO userVO) {
 		return um.find_id(userVO);
 	}
-
+    
 	
 	
 
 
 
-
+  
 
 
 }

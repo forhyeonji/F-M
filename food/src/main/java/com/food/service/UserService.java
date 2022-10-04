@@ -24,10 +24,8 @@ public interface UserService {
  	
  	public int phoneCheck(String user_phone) throws Exception;
  	
- 	//public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone) throws Exception;
- 
  	public UserVO find_id(UserVO userVO);
- 
-
+ 	
+	
 
 }
