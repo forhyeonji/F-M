@@ -16,7 +16,7 @@
 <body>                
           
 <div id="login_homelogo">
-		<a class="login_a" href="http://poceania.o-r.kr/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
+		<a class="login_a" href="/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
 	</div>
 	
 <form method="post" class="form-signin" action="find_id" name="findform">
@@ -44,7 +44,7 @@
 		<c:if test="${check == 0}">
 		<label>찾으시는 아이디는' ${user.user_id}' 입니다.</label>
 		<div class="form-label-group">
-				<input class="btn btn-lg btn-secondary btn-block text-uppercase"
+				<input class="find_pw_btn"
 					type="button" value="OK" onclick="closethewindow()">
 			</div>
 		</c:if>

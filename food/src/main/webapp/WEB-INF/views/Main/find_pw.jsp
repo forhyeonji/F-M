@@ -5,27 +5,6 @@
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
 
 
-<style type="text/css">
-.mybtn{
-  width:150px;
-  height:40px;
-  padding:0;
-  display:inline; 
-  border-radius: 4px; 
-  background: #212529;
-  color: #fff;
-  margin-top: 20px;
-  border: solid 2px #212529; 
-  transition: all 0.5s ease-in-out 0s;
-}
-.mybtn:hover .mybtn:focus {
-  background: white;
-  color: #212529;
-  text-decoration: none;
-}
-</style>
-<title>비밀번호 찾기</title>
-</head>
 <body>
 	<div class="w3-content w3-container w3-margin-top">
 		<div class="w3-container w3-card-4 w3-auto" style="width: 382px;height: 456.3px;">

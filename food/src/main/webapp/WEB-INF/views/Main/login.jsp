@@ -13,7 +13,7 @@
 	<form method="post" action="/login" accept-charset="UTF-8">
 
 	<div id="login_homelogo">
-		<a class="login_a" href="http://poceania.o-r.kr/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
+		<a class="login_a" href="/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
 	</div>
 
 	<div id="login_border">
@@ -47,9 +47,9 @@
 			</c:if>
 			<div>
 				<div id="login_search">
-					<div class="login_search_d"><a class="login_a" href="http://poceania.o-r.kr/insert">회원가입</a></div>
-					<div class="login_search_d"><a class="login_a" href="http://poceania.o-r.kr/find_id" id="login_find_id">아이디 찾기</a></div>
-					<div class="login_search_d"><a class="login_a" href="http://poceania.o-r.kr/find_pw">비밀번호 찾기</a></div>
+					<div class="login_search_d"><a class="login_a" href="/insert">회원가입</a></div>
+					<div class="login_search_d"><a class="login_a" href="/find_id" id="login_find_id">아이디 찾기</a></div>
+					<div class="login_search_d"><a class="login_a" href="/find_pw">비밀번호 찾기</a></div>
 				</div>
 			</div>
 			
