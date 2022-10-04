@@ -16,7 +16,7 @@
 <body>                
           
 <div id="login_homelogo">
-		<a class="login_a" href="http://localhost:8080"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
+		<a class="login_a" href="http://poceania.o-r.kr/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
 	</div>
 	
 <form method="post" class="form-signin" action="find_id" name="findform">

@@ -11,7 +11,7 @@
 
 
 <div class="insert_homelogo">
-	<a href="http://localhost:8080"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>
+	<a href="http://poceania.o-r.kr/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>
 </div>
 
 <div class="insert_border">
