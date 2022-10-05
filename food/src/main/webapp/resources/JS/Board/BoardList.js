@@ -25,7 +25,7 @@ $(function () {
         })
     }
     const onMenus = () => {
-        $('.cm-nav').click((e) => {
+        $('.cm-menus').click((e) => {
             const $this = $(e.target);
             pagination.cd = $this.data("cd");
 
