@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -34,22 +35,27 @@
 			<div id="my_ordercancle">			
 				<table id="my_ordercancle_Tb" onclick="location.href='/mypage/orderlist'">
 					<tr>
-						<td id="my_cancleDetail" colspan="2">
-							<label>주문날짜 ${canclePage.o_date}</label>
+						<td class="my_orderImg" rowspan="3">
+							<a href="/shopDetail?prodnum=${canclePage.o_prodnum}">
+							<img class="my_orderImg" alt="${canclePage.o_prodnum}" src="/Shopdisplay?fileName=${canclePage.filename}">
+							</a>
+						</td>
+						<td class="my_orderTbName">${canclePage.s_name}</td>
+						<td class="my_orderDate">
+							${canclePage.o_date} 주문
 							<label style="display:none">주문 번호 ${canclePage.o_no}</label>
 						</td>
 					</tr>				
 					<tr>
-						<td class="my_orderImg" rowspan="3">
-						<img class="my_orderImg" alt="상품사진" src=""></td>
-						<td>${canclePage.s_name}</td>
+						<td class="my_orderTb">수량</td>
+						<td class="my_orderTbNumber">${canclePage.o_cnt}</td>
 					</tr>
 					<tr>
-						<td>수량<span>${canclePage.o_cnt}</span></td>
+						<td class="my_orderTb">결제금액</td>
+						<td class="my_orderTbNumber">
+							<fmt:formatNumber value="${canclePage.o_sum}" pattern="#,###"/> 원</td>
 					</tr>
-					<tr>
-						<td>가격<span>${canclePage.o_sum}</span></td>
-					</tr>
+
 				</table>
 			</div>
 	

@@ -1,4 +1,7 @@
-/**
+/** 
  * 
  */
 
+function closethewindow(){
+			self.close();
+		}

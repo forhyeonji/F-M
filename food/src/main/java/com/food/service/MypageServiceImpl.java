@@ -51,12 +51,7 @@ public class MypageServiceImpl implements MypageService {
 	public ArrayList<CartVO> cartlist(String user_id){
 		return mm.cartlist(user_id);
 	}
-	
-	//장바구니 이미지를 출력하기 위한 구현
-	public List<Map<String, Object>> findCartImg(CartVO cart) {
-		return mm.findCartImg(cart);
-	}
-	
+		
 	//장바구니 상품 수량을 수정하기 위한 구현
 	public int cartmodify(CartVO cart) {
 //		System.out.println("수정하는거 연결된겨?");
@@ -86,12 +81,7 @@ public class MypageServiceImpl implements MypageService {
 	public OrderlistVO canclePage(OrderlistVO order){
 		return mm.canclePage(order);
 	}
-	
-	//주문 상품 이미지를 출력하기 위한 설계
-	public List<Map<String, Object>> findListImg(OrderlistVO order) {
-		return mm.findListImg(order);
-	}
-	
+
 	//주문 취소를 위한 구현
 	public int ordercancle(OrderlistVO order) {
 		return mm.ordercancle(order);

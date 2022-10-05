@@ -29,7 +29,7 @@ $(document).ready(function() {
 	      var gasPrice= $("input[name='price2']").val();	// 상품원가
 	      var gasType= $("select[name='packaging']").val();	// 포장타입
 	      var gasunit= $("input[name='unit']").val();	// 판매단위
-	      var gasorigin= $("select[name='Origin']").val();	// 원산지
+	      var gasorigin= $("select[name='origin']").val();	// 원산지
 	      var gdsDes= $("textarea[name='CONTENT']").val();	// 상품설명
 	      var gasDetail= $("textarea[name='detail']").val();	// 상세정보
 	      
@@ -72,13 +72,6 @@ $(document).ready(function() {
 			$(".sh_gasunit").css('display','block');
 			gasunitchk=false;
 		}
-		if (gasorigin.length>0) {
-			$(".sh_gasorigin").css('display','none');
-			gasoriginchk=true;
-		} else {
-			$(".sh_gasorigin").css('display','block');
-			gasoriginchk=false;
-		}
 		if (gdsDes.length>0) {
 			$(".sh_gdsDes").css('display','none');
 			gdsDeschk=true;
@@ -92,10 +85,15 @@ $(document).ready(function() {
 		} else {
 			$(".sh_gasDetail").css('display','block');
 			gasDetailchk=false;
+		}if (gasorigin.length>0) {
+			$(".sh_gasorigin").css('display','none');
+			gasoriginchk=true;
+		} else {
+			$(".sh_gasorigin").css('display','block');
+			gasoriginchk=false;
 		}
 		
 		if(menuNamechk && subDeschk && gasPricechk && gasTypechk && gasunitchk && gasoriginchk && gdsDeschk && gasDetailchk){
-			 alert('통과');
 			 //sh_form.submit();
 			 $("#sh_form").append(input).submit();
 		}else{

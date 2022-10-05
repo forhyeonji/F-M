@@ -38,6 +38,7 @@ $(function () {
 
             onNormalCss();
             onBoldCss(e.target);
+            pagination.page = 1;
             onCommunityList();
         })
     }
@@ -113,7 +114,8 @@ $(function () {
             $('#cm_popular').css({
                 "text-decoration": "underline",
                 "color": "darkorange"
-            });
+            })
+
             onCommunityRankList();
         })
     }

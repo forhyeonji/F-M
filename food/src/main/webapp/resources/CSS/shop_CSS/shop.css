@@ -23,13 +23,13 @@ ul.sh_menu1 {
 .sh_menu1 li {
 	float: left;
 	list-style: none;
-	background: #ff8080;
+	background: #ffba75;
 	position: relative;
 }
 
 .sh_menu1 li a {
 	text-decoration: none;
-	color: #fff;
+	color: black;
 	display: block;
 	padding: 0.5em 1em;
 }

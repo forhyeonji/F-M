@@ -11,7 +11,7 @@
 
 
 <div class="insert_homelogo">
-	<a href="http://localhost:8080"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>
+	<a href="/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>
 </div>
 
 <div class="insert_border">
@@ -124,7 +124,7 @@
 					</div>
 					<br>
 					<div>
-						<input type="text" id="user_pw" class="insert_inputext" name="user_pw">
+						<input type="password" id="user_pw" class="insert_inputext" name="user_pw">
 					</div>
 					<br>
 					<div>
@@ -148,7 +148,7 @@
 					</div>
 					<br>
 					<div>
-						<input type="text" id="user_repw" class="insert_inputext">
+						<input type="password" id="user_repw" class="insert_inputext">
 					</div>
 					<br>
 					<div>

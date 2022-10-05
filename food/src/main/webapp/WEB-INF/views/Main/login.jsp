@@ -13,7 +13,7 @@
 	<form method="post" action="/login" accept-charset="UTF-8">
 
 	<div id="login_homelogo">
-		<a class="login_a" href="http://localhost:8080"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
+		<a class="login_a" href="/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
 	</div>
 
 	<div id="login_border">
@@ -32,7 +32,7 @@
 			</div>
 				
 			<div>
-				<input type="text" id="login_pw" name="user_pw" placeholder="비밀번호">
+				<input type="password" id="login_pw" name="user_pw" placeholder="비밀번호">
 			</div>
 			<div>
 				<span class="login_pwNone">비밀번호를 입력하세요.</span>
@@ -47,9 +47,9 @@
 			</c:if>
 			<div>
 				<div id="login_search">
-					<div class="login_search_d"><a class="login_a" href="http://localhost:8080/insert">회원가입</a></div>
-					<div class="login_search_d"><a class="login_a" href="http://localhost:8080/find_id" id="login_find_id">아이디 찾기</a></div>
-					<div class="login_search_d"><a class="login_a" href="http://localhost:8080/find_pw">비밀번호 찾기</a></div>
+					<div class="login_search_d"><a class="login_a" href="/insert">회원가입</a></div>
+					<div class="login_search_d"><a class="login_a" href="/find_id" id="login_find_id">아이디 찾기</a></div>
+					<div class="login_search_d"><a class="login_a" href="/find_pw">비밀번호 찾기</a></div>
 				</div>
 			</div>
 			

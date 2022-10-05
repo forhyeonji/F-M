@@ -5,6 +5,7 @@ import java.util.Date;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
@@ -24,10 +25,17 @@ public interface UserService {
  	
  	public int phoneCheck(String user_phone) throws Exception;
  	
- 	public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone) throws Exception;
- 
+ 	public UserVO find_id(UserVO userVO);
  	
- 
+ 	
+ 	
+ 	
+ 	//비밀번호 찾기
+ 	public void find_pw(String user_email,String user_id)throws Exception;
 
+	public int find_pwCheck(UserVO userVO)throws Exception;
+
+ 	
+	
 
 }

@@ -14,7 +14,7 @@ a.sh_a {
 }
 
 .sh_a:link {
-	color: #8000ff;
+	color: #ffba75;
 }
 
 .sh_a:visited {
@@ -22,7 +22,7 @@ a.sh_a {
 }
 
 .sh_a:hover {
-	color: #F15F5F;
+	color: #ffba75;
 }
 
 .sh_menu1 {
@@ -38,7 +38,7 @@ a.sh_a {
 .sh_menu1 li {
 	float: left;
 	list-style: none;
-	background: #ff8080;
+	background: #ffba75;
 	position: relative;
 }
 

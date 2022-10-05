@@ -16,6 +16,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -32,7 +33,10 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Date;
+import java.util.List;
+import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
@@ -150,7 +154,7 @@ public class UserController{
         /* 이메일 보내기 */
         String setFrom = "ssnow000@daum.net";
         String toMail = user_email;
-        String title = "회원가입 인증 이메일 입니다.";
+        String title = "[푸렌즈] 회원가입 인증 이메일 입니다.";
         String content = 
                 "홈페이지를 방문해주셔서 감사합니다." +
                 "<br><br>" + 
@@ -179,13 +183,99 @@ public class UserController{
 	
 	
 	
-	// 아이디 찾기 폼
+	// 아이디 찾기
 	@RequestMapping(value = "/find_id", method=RequestMethod.GET)
-	public String find_id_form() throws Exception{
+	public String find_id() throws Exception{
+		return "Main/find_id";
+	}
+	
+	
+	@RequestMapping(value = "/find_id", method=RequestMethod.POST)
+	public String find_idPost(UserVO userVO, Model model){
+		UserVO user = us.find_id(userVO);
+	
+		if(user == null) { 
+			model.addAttribute("check", 1);
+		} else { 
+			model.addAttribute("check", 0);
+			model.addAttribute("user", user);
+		}
+		
 		return "Main/find_id";
 	}
 	
 	
 	
-  
+	
+	
+	
+	
+
+	
+	
+	//비밀번호 찾기 폼
+	@RequestMapping(value = "/find_pw", method=RequestMethod.GET)
+	public String find_pw() throws Exception{
+		return "Main/find_pw";	
+	}
+		
+		
+	@RequestMapping(value = "/find_pw", method=RequestMethod.POST)
+	public String find_pwPost(String user_email, String user_id){
+		
+		//us.find_pw(user_email, user_id);
+		
+		/* 인증번호(난수) 생성 */
+		Random random = new Random();
+		StringBuffer randomBuf = new StringBuffer();
+		for (int i = 0; i < 15; i++) {
+			// Random.nextBoolean() : 랜덤으로 true, false 리턴 (true : 랜덤 소문자 영어, false : 랜덤 숫자)
+			if (random.nextBoolean()) {
+				// 26 : a-z 알파벳 개수
+				// 97 : letter 'a' 아스키코드
+				// (int)(random.nextInt(26)) + 97 : 랜덤 소문자 아스키코드
+				randomBuf.append((char)((int)(random.nextInt(26)) + 97));
+			} else {
+				randomBuf.append(random.nextInt(10));
+			}
+		}
+		String randomStr = randomBuf.toString();
+		System.out.println("[createRandomStrUsingRandomBoolean] randomStr : " + randomStr);
+	    // [createRandomStrUsingRandomBoolean] randomStr : iok887yt6sa31m99e4d6
+ 
+		
+        /* 이메일 보내기 */
+        String setFrom = "ssnow000@daum.net";
+        String toMail = user_email;
+        String title = "[푸렌즈] 비밀번호 찾기를 위한 임시 이메일 입니다.";
+        String content = 
+                "홈페이지를 이용해주셔서 감사합니다." + user_id + "님." +
+                "<br><br>" + 
+                " 임시 비밀번호는 " + randomStr + "입니다." + 
+                "<br>" + 
+                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+        
+        try {
+            
+            MimeMessage message = mailSender.createMimeMessage();
+            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
+            helper.setFrom(setFrom);
+            helper.setTo(toMail);
+            helper.setSubject(title);
+            helper.setText(content,true);
+            mailSender.send(message);
+            
+        }catch(Exception e) {
+            e.printStackTrace();
+        }
+        
+        return randomStr;
+		
+
+		
+	}
+	
+
+	
+   
 }

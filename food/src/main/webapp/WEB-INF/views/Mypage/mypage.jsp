@@ -58,7 +58,7 @@
 								
 			</div>
 
-			<div class="my_center_go">							
+			<div class="my_center_go" style="display:none">							
 				<div class="my_go" onclick="location.href='/mypage/mykeep'">
 					<div class="my_th">
 						<img class="my_thimage" src="../../../resources/image/mypage/like.png">
@@ -103,7 +103,7 @@
 						<img class="my_thimage" src="../../../resources/image/mypage/mylike.png">
 					</div>
 					<div class="my_intextlow">
-						<p>좋아요<br> 누른 글<br> 보기</p>
+						<p>좋아요<br> 누른 글</p>
 					</div>	
 				</div>
 			</div>

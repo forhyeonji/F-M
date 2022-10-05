@@ -31,15 +31,24 @@
   	</select>
   	
   	<!-- 아이디 찾기 -->
-	<select id="find_id" resultType="String">
+	<select id="find_id" resultType="com.food.model.UserVO">
 		select user_id 
-		from tb_user
-		where user_name = #{user_name} and user_phone = #{user_phone}
+		from tb_user 
+		where user_name=#{user_name} and user_phone=#{user_phone}
 	</select>
-
-
-
 	
+	<!-- 비밀번호 찾기 -->
+	<update id="findPw" >
+		update tb_user 
+		set user_pw = #{user_pw} 
+		where user_email = #{user_email} and user_id = #{user_id}
+	</update>
+
+	<select id="findPwCheck" resultType="int">
+		select count(*) 
+		from tb_user
+		where user_email = #{user_email} and user_id = #{user_id}
+	</select>
 
 	
 </mapper>

@@ -4,11 +4,13 @@ public class ShopquestionVO {
 	private int bno;	//게시글 번호
 	private int prodnum;  	//제품번호
 	private String NAME; 	//제품명
-	private String date; 	//작성일자
+	private String today; 	//작성일자
 	private String user_id; //작성자
 	private String context;	//내용
 	private boolean chack;	//답변확인
 	private String title;	//제목
+	private String answer;	//관리자 답변
+	
 	
 	public int getProdnum() {
 		return prodnum;
@@ -22,11 +24,11 @@ public class ShopquestionVO {
 	public void setNAME(String nAME) {
 		NAME = nAME;
 	}
-	public String getDate() {
-		return date;
+	public String gettoday() {
+		return today;
 	}
-	public void setDate(String date) {
-		this.date = date;
+	public void settoday(String today) {
+		this.today = today;
 	}
 	
 	public String getUser_id() {
@@ -44,6 +46,12 @@ public class ShopquestionVO {
 	
 	
 	
+	public String getAnswer() {
+		return answer;
+	}
+	public void setAnswer(String answer) {
+		this.answer = answer;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -64,8 +72,9 @@ public class ShopquestionVO {
 	}
 	@Override
 	public String toString() {
-		return "ShopquestionVO [bno=" + bno + ", prodnum=" + prodnum + ", NAME=" + NAME + ", date=" + date
-				+ ", user_id=" + user_id + ", context=" + context + ", chack=" + chack + ", title=" + title + "]";
+		return "ShopquestionVO [bno=" + bno + ", prodnum=" + prodnum + ", NAME=" + NAME + ", today=" + today
+				+ ", user_id=" + user_id + ", context=" + context + ", chack=" + chack + ", title=" + title
+				+ ", answer=" + answer + "]";
 	} 
 	
 }

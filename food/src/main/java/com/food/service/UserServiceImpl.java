@@ -9,7 +9,11 @@ import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
+import java.util.Random;
+
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.annotations.Param;
@@ -56,33 +60,20 @@ public class UserServiceImpl implements UserService {
 		return um.phoneCheck(user_phone);
 	}
     
+    public UserVO find_id(UserVO userVO) {
+		return um.find_id(userVO);
+	}
     
-    public String find_id(@Param("user_name") String user_name, @Param("user_phone") String user_phone) throws Exception{
-    	return "";
-    	/*response.setContentType("text/html;charset=utf-8");
-		PrintWriter out = response.getWriter();
-		String id = manager.find_id(user_name);
-		
-		if (id == null) {
-			out.println("<script>");
-			out.println("alert('가입된 아이디가 없습니다.');");
-			out.println("history.go(-1);");
-			out.println("</script>");
-			out.close();
-			return null;
-		} else {
-			return id;
-		}
-		*/
+	
+    
+    
+    
+    public void find_pw(String user_email,String user_id)throws Exception{
+    	um.find_pw(user_email, user_id);
     }
-    
 
-	
-	
-
-
-
-
-
+	public int find_pwCheck(UserVO userVO)throws Exception{
+		return um.find_pwCheck(userVO);
+	}
 
 }

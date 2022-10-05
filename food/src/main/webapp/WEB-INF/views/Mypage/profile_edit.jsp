@@ -50,9 +50,11 @@
 					<td><input readonly type="text" value="${profile.user_name }" name="user_name"></td>
 				</tr>
 				<tr>
-					<td class="my_edit_td">우편번호</td>
-					<td><input class="insert_ad" id="user_zip" type="text" value="${profile.user_zip}" name="user_zip" readonly>
-						<button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button></td>
+					<td rowspan="2" class="my_edit_td">우편번호</td>
+					<td id="my_zip"><input class="insert_ad" id="user_zip" type="text" value="${profile.user_zip}" name="user_zip" readonly></td>
+				</tr>
+				<tr>
+					<td id="my_findzip"><button type="button" class="btn btn-default" onclick="PostCode();">우편번호 찾기</button></td>
 				</tr>
 				<tr>
 					<td class="my_edit_td">도로명주소</td>
@@ -71,9 +73,9 @@
 					<td><input type="email" value="${profile.user_email}" name="user_email"></td>
 				</tr>
 				<tr>
-					<th colspan="2">
-					<input  id="my_editBtn" type="submit" value="회원정보 수정">
-					<input id="my_editResult" type="hidden" value="${edit }"></th>
+					<td id="my_profileBtn" colspan="2">
+					<input id="my_editBtn" type="submit" value="회원정보 수정">
+					<input id="my_editResult" type="hidden" value="${edit }"></td>
 				</tr>				
 			</table>
 			
