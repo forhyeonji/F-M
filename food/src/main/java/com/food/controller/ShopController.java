@@ -52,7 +52,8 @@ public class ShopController {
 
 	// 상품카테고리 안 meat part
 	@RequestMapping(value = "/shopconer", method = RequestMethod.GET)
-	public String Coner() {
+	public String Coner(ShopVO Shop,Model model) {
+		model.addAttribute("corner", shop.shopcorner(Shop));
 		return "Shop/shopconer";
 	}
 

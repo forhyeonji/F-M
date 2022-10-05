@@ -83,9 +83,6 @@
 								<span>개</span>
 							</div>
 							<div id="sh_sum">
-								<div id="sh_sum2">
-									<em>총 수량 개</em>
-								</div>
 								<div id="sh_allsum">
 									<strong>총 상품 금액</strong> <strong>원</strong>
 								</div>
@@ -93,8 +90,6 @@
 
 							<br>
 							<div id="sh_list">
-								<input id="sh_inquiry" type="submit" value="좋아요" formaction="#">
-								<input id="sh_wish" type="submit" value="찜하기" formaction="#">
 								<input id="sh_basket" type="submit" value="장바구니" formaction="#">
 							</div>
 						</div>

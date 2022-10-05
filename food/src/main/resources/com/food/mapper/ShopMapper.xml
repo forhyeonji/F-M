@@ -17,6 +17,19 @@
 		value(#{prodnum},#{NAME},#{origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail})
 	</insert>
 		
+	<!-- 상품 분류 페이지 -->	
+	<select id="shopcorner" resultType="com.food.model.ShopVO">
+	SELECT 
+	rownum,prodnum,class1,NAME,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,<![CDATA['/']]>,uuid,'-' ,filename)AS filename, discountprice
+		FROM  (
+			SELECT   @rownum:=@rownum+1 rownum,a.* 
+				FROM (SELECT * 
+					FROM (
+ 						SELECT  t.prodnum,class1,NAME,subcontent,division,uuid,filename,uploadPath, discountprice
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE class1=#{class1} and image = 1 and division = 'm' )AS j ) AS a,(
+										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+	</select>	
+		
 		
 	<!-- 상품등록시 분류 -->
 	<select id="class1" resultType="com.food.model.ShopdivisionVO">

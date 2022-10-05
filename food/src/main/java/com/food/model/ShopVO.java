@@ -21,6 +21,8 @@ public class ShopVO {
 	private String detail;
 	private String filename;
 	private String division;
+	private String class1;// 1차 분류
+	private String class2;// 2차 분류
 	
 	
 	public String getFilename() {
@@ -131,13 +133,29 @@ public class ShopVO {
 	public void setDivision(String division) {
 		this.division = division;
 	}
+	
+	
+	
+	
+	public String getClass1() {
+		return class1;
+	}
+	public void setClass1(String class1) {
+		this.class1 = class1;
+	}
+	public String getClass2() {
+		return class2;
+	}
+	public void setClass2(String class2) {
+		this.class2 = class2;
+	}
 	@Override
 	public String toString() {
 		return "ShopVO [prodnum=" + prodnum + ", NAME=" + NAME + ", CONTENT=" + CONTENT + ", today=" + today
 				+ ", subcontent=" + subcontent + ", price2=" + price2 + ", discountprice=" + discountprice + ", Parcel="
 				+ Parcel + ", packaging=" + packaging + ", unit=" + unit + ", origin=" + origin + ", boundary="
-				+ boundary + ", detail=" + detail + ", filename=" + filename + ", division=" + division + ", attach="
-				+ attach + "]";
+				+ boundary + ", detail=" + detail + ", filename=" + filename + ", division=" + division + ", class1="
+				+ class1 + ", class2=" + class2 + ", attach=" + attach + "]";
 	}
 
 

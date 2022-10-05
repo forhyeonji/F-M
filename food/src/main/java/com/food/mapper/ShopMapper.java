@@ -18,6 +18,9 @@ public interface ShopMapper {
 	//상품등록 수정
 	public void ShopEdit(ShopVO Shop);
 	
+	// 상품 분류 페이지
+	public ArrayList<ShopVO> shopcorner(ShopVO Shop);
+	
 	//상품 등록시 분류
 	public ArrayList<ShopdivisionVO> class1();
 	public ArrayList<ShopdivisionVO> class2(String shop);

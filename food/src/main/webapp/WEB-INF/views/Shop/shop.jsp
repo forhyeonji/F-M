@@ -24,11 +24,11 @@
 			<li><a href="#" class="sh_a">Category</a>
 
 				<ul class="sh_submenu">
-					<li><a href="http://localhost:8080/shopconer" class="sh_a">meat</a></li>
-					<li><a href="#" class="sh_a">vagetable</a></li>
-					<li><a href="#" class="sh_a">fruit</a></li>
-					<li><a href="#" class="sh_a">fish</a></li>
-					<li><a href="#" class="sh_a">juice</a></li>
+					<li><a href="/shopconer?class1=meat" class="sh_a">meat</a></li>
+					<li><a href="/shopconer?class1=vagetable" class="sh_a">vagetable</a></li>
+					<li><a href="/shopconer?class1=fruit" class="sh_a">fruit</a></li>
+					<li><a href="/shopconer?class1=fish" class="sh_a">fish</a></li>
+					<li><a href="/shopconer?class1=juice" class="sh_a">juice</a></li>
 				</ul></li>
 
 			<li><a href="#" class="sh_a">New</a></li>

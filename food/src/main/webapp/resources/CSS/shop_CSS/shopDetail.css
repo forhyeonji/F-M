@@ -129,28 +129,15 @@ img#sh_subimg {
 
 #sh_allsum {
 	margin-top: 20px;
-	margin-bottom: 20px;
 	font-family: Lucida Console, Courier, monospace;
+	font-size: xx-large;
 	text-align: right;
 }
 
-#sh_sum2 {
-	display: flex;
-	justify-content: flex-end;
-	align-items: flex-end;
-	margin-top: 20px;
-	margin-bottom: 10px;
-}
-
-#sh_list {
-	display: flex;
-	justify-content: space-between;
-}
 
 #sh_basket {
 	display: block;
-	margin-top: 20px;
-	width: 265px;
+	width: 380px;
 	height: 55px;
 	text-align: center;
 	background-color: #FFD9EC;
@@ -167,9 +154,6 @@ img#sh_subimg {
 	margin-top: 40px;
 }
 
-#sh_sum2 {
-	font-size: 15pt
-}
 
 #detail_name {
 	font-size: 23pt;

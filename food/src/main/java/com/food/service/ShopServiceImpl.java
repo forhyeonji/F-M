@@ -47,6 +47,11 @@ public class ShopServiceImpl implements ShopService {
 		Sm.ShopEdit(shop);
 	}
 	
+	// 상품 분류 페이지 구현
+	public ArrayList<ShopVO> shopcorner(ShopVO Shop){
+		return Sm.shopcorner(Shop);
+	}
+	
 	//상품 등록시 분류
 	public ArrayList<ShopdivisionVO> class1() {
 		return Sm.class1();

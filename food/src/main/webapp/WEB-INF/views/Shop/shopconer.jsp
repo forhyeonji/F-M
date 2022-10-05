@@ -13,24 +13,21 @@
 		<ul class="sh_menu">
 			<li><a href="#" class="sh_a">Category</a>
 				<ul class="sh_submenu1">
-					<li><a href="#" class="sh_a">meat</a></li>
-					<li><a href="#" class="sh_a">vagetable</a></li>
-					<li><a href="#" class="sh_a">fruit</a></li>
-					<li><a href="#" class="sh_a">fish</a></li>
-					<li><a href="#" class="sh_a">juice</a></li>
+					<li><a href="/shopconer?class1=meat" class="sh_a">meat</a></li>
+					<li><a href="/shopconer?class1=vagetable" class="sh_a">vagetable</a></li>
+					<li><a href="/shopconer?class1=fruit" class="sh_a">fruit</a></li>
+					<li><a href="/shopconer?class1=fish" class="sh_a">fish</a></li>
+					<li><a href="/shopconer?class1=juice" class="sh_a">juice</a></li>
 				</ul></li>
 
-			<li><a href="#" class="sh_a">Best</a></li>
 			<li><a href="#" class="sh_a">New</a></li>
-			<li><a href="#" class="sh_a">Sale</a></li>
-			<li><a href="#" class="sh_a">Event</a></li>
 		</ul>
 
 		<div class="sh_title">
 			<h1 class="sh_h1">정육 & 계란 코너</h1>
 		</div>
 
-		<div class="sh_header">
+	<!-- 	<div class="sh_header">
 			<table border="1" width="1050px" height="130px" class="sh_table">
 				<tr>
 					<td>
@@ -46,7 +43,7 @@
 					</td>
 				</tr>
 			</table>
-		</div>
+		</div> -->
 
 		<table class="sh_ta" align="right">
 			<tr>
@@ -58,55 +55,18 @@
 		</table>
 
 		<div class="sh_meat_main">
+			<c:forEach items="${corner}" var="corner">
+			<a href="/shopDetail?prodnum=${ArrayList.prodnum}">
 			<div class="sh_meatimg_1" id="pork">
-				<img src="../../../resources/image/shop/porkbelly.jpg">
-				<div class="sh_sky">하늘배송</div>
-				<div class="sh_porkbelly">돼지고기 1kg</div>
-				<div class="sh_porkbelly_price">16,900원</div>
-				<p class="sh_potrkbelly_ex">국내산 녹차 먹인 돼지</p>
+				<div class="shop_div_img" data-name="${corner.NAME}" data-filename="${corner.filename}">
+                 <img>
+                </div>
+				<div class="sh_porkbelly">${corner.NAME}</div>
+				<div class="sh_porkbelly_price">${corner.discountprice}원</div>
+				<p class="sh_potrkbelly_ex">${corner.subcontent}</p>
 			</div>
-
-			<div class="meatimg_1" id="sir">
-				<img src="../../../resources/image/shop/sirloin.jpg">
-				<div class="sh_sky">하늘배송</div>
-				<div class="sh_sirloin">등심 300g</div>
-				<div class="sh_sirloin_price">14,900원</div>
-				<p class="sh_sirloin_ex">호주산 등심 스테이크</p>
-			</div>
-
-			<div class="sh_meatimg_1">
-				<img src="../../../resources/image/shop/tip.jpg" id="tip">
-				<div class="sh_sky">하늘배송</div>
-				<div class="sh_tip">채끝살 300g</div>
-				<div class="sh_tip_price">69,900원</div>
-				<p class="sh_tip_ex">1++ 한우 채끝 스테이크</p>
-			</div>
-
-			<div class="sh_meat_middle">
-				<div class="sh_meatimg_1" id="chi">
-					<img src="../../../resources/image/shop/chicken.jpg">
-					<div class="sh_sky">하늘배송</div>
-					<div class="sh_chicken">생 닭 1마리</div>
-					<div class="sh_chicken_price">18,800원</div>
-					<p class="sh_chicken_ex">삼계탕용</p>
-				</div>
-
-				<div class="sh_meatimg_1" id="eg">
-					<img src="../../../resources/image/shop/egg.jpg">
-					<div class="sh_sky">하늘배송</div>
-					<div class="sh_egg">신선 왕란 30구</div>
-					<div class="sh_egg_price">8,250원</div>
-					<p class="sh_egg_ex">국내산 왕란 30구</p>
-				</div>
-
-				<div class="sh_meatimg_1" id="duck">
-					<img src="../../../resources/image/shop/smokeduck.jpg">
-					<div class="sh_sky">하늘배송</div>
-					<div class="sh_smokeduck">다향 훈제 오리 슬라이스 2묶음</div>
-					<div class="sh_smokeduck_price">11,250원</div>
-					<p class="sh_smokeduck_ex">다향 훈제 오리 1등급</p>
-				</div>
+			</a>
+			</c:forEach>
 			</div>
 		</div>
-	</div>
 	<%@ include file="../Footer/footer.jsp"%>
