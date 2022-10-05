@@ -90,8 +90,14 @@ public class ShopServiceImpl implements ShopService {
 		return Sm.ShopSelect();
 	}
 	
-	public ArrayList<ShopquestionVO> shopDetail() {
-			return Sm.shopDetail();
+	public ArrayList<ShopquestionVO> shopDetail(CriteriaVO criteriaVO) {
+			System.out.println("ShopVO의 값 = "+criteriaVO);
+			return Sm.shopDetail(criteriaVO);
+	}
+	
+	public ShopquestionVO shopEnDetail(ShopquestionVO shopquestion) {
+		System.out.println("ShopVO의 값 = "+shopquestion);
+		return Sm.shopEnDetail(shopquestion);
 	}
 	
 	// 상품 상세 내용보기 메인 이미지 구현
@@ -112,6 +118,7 @@ public class ShopServiceImpl implements ShopService {
 	
 	//Q&A 질의 내가 쓴 문의
 	   public void write(ShopquestionVO shopquestion){
+		   System.out.println("ShowpService="+shopquestion);
 	       Sm.write(shopquestion);
 	  }
 	
@@ -124,6 +131,4 @@ public class ShopServiceImpl implements ShopService {
 	public ShopquestionVO chack(ShopquestionVO shopquestion) {
 		return Sm.chack(shopquestion);
 	}
-	
-	
 }

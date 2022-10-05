@@ -421,6 +421,10 @@ article.sdp-review__article__list.js_reviewArticleReviewList {
 	margin-right: 190px;
 }
 
+.sh_date{
+	
+}
+
 /* 아코디언 메뉴  css */
 .que:first-child{
     border-top: 1px solid black;

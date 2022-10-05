@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.food.model.CriteriaVO;
-import com.food.model.Page2VO;
 import com.food.model.PageVO;
 import com.food.model.ShopVO;
 import com.food.model.ShopdivisionVO;
@@ -146,16 +145,11 @@ public class ShopController {
 
 		user.setUser_id(id);
 
-		int total2 = shop.total2(shopquestion);
-		model.addAttribute("paging", new Page2VO(criteriaVO, total2));
-
-		model.addAttribute("list", shop.list(criteriaVO));
-		int total = shop.total(criteriaVO);
+		int total = shop.total2(shopquestion);
 
 		model.addAttribute("paging", new PageVO(criteriaVO, total));
 
-		model.addAttribute("detail", shop.shopDetail());
-
+		model.addAttribute("detail", shop.shopDetail(criteriaVO));
 
 
 		return "Shop/shopDetail";
@@ -166,16 +160,36 @@ public class ShopController {
 
 	@RequestMapping(value = "/shopDetail", method = RequestMethod.POST)
 	public String shopDetailPost(ShopquestionVO shopquestion,RedirectAttributes rttr) {
+		
+		System.out.println("ShopController="+shopquestion);
 		shop.write(shopquestion);
 				
 		// shop.answer(shopquestion);
-		System.out.println("ShopController="+shopquestion);
 
 		rttr.addAttribute("prodnum",shopquestion.getProdnum());
 			
 		return "redirect:/shopDetail";
 	}
 	
-	//답변등록
+	/* 1:1문의 답변 */
+	
+	
+	@RequestMapping(value = "/shopEnswer", method = RequestMethod.GET)
+	public String directKing_answer (ShopVO shopvo, Model model, ShopquestionVO shopquestion) {
+		
+		model.addAttribute("detail",shop.shopEnDetail(shopquestion));		
+		return "Shop/shopEnswer";
+}
+	
+	@RequestMapping(value = "/shopEnswer", method = RequestMethod.POST)
+	public String shopEnswer_post (ShopquestionVO shopquestion,RedirectAttributes rttr) {
+		System.out.println(shopquestion);
+		shop.answer(shopquestion);
+		
+		rttr.addAttribute("prodnum",shopquestion.getProdnum());
+		
+		return "redirect:/shopDetail";
+	}
+	
 	
 }

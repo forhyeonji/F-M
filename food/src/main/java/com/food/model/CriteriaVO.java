@@ -10,6 +10,7 @@ import lombok.ToString;
 @Setter
 @ToString
 public class CriteriaVO {
+	private int prodnum;
     private int pageNum;
     private int amount;
     private String keyword;

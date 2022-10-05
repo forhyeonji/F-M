@@ -51,7 +51,10 @@ public interface ShopMapper {
 	public ArrayList<ShopVO> sub(ShopVO shop);
 	
 	//상세보기
-	public ArrayList<ShopquestionVO> shopDetail();
+	public ArrayList<ShopquestionVO> shopDetail(CriteriaVO criteriaVO);
+	
+	//상세보기
+	public ShopquestionVO shopEnDetail(ShopquestionVO shopquestion);
 	
 	//Q&A 전체 글 수
 	public int total2(ShopquestionVO shopquestion);

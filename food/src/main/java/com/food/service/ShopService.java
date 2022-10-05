@@ -40,7 +40,10 @@ public interface ShopService {
 	 /*	Shopquestion*/
 	
 	//Q&A 전체 글 수
-	public ArrayList<ShopquestionVO> shopDetail(); 
+	public ArrayList<ShopquestionVO> shopDetail(CriteriaVO criteriaVO); 
+
+	//Q&A 답변등록을 클릭한 후 답변 등록 화면 이동
+	public ShopquestionVO shopEnDetail(ShopquestionVO shopquestion); 
 	
 	public int total2(ShopquestionVO shopquestion);
 	
@@ -52,6 +55,7 @@ public interface ShopService {
 	
 	//관리자 답변글쓰기
 	public void answer(ShopquestionVO shopquestion);
+	
 	
 	/* ShopAttach */
 	

@@ -153,30 +153,43 @@ FROM  (
 
 <!-- 문의 관련 -->
 <select id="shopDetail" resultType="com.food.model.ShopquestionVO">
-		select * from sh_question
-	</select>
+select*
+	from(
+	select @rownum :=@rownum+1 rownum,s.* 
+			from( select* from sh_question where prodnum=#{prodnum} 
+            			order by prodnum desc
+            									)as s, (select @rownum:=0) as tmp) as shopEnswer
+<![CDATA[
+		where rownum > (#{pageNum}-1)*#{amount} and rownum <= #{pageNum}*#{amount}
+		]]>
+		
+ 
+</select>
+
+<select id="shopEnDetail" resultType="com.food.model.ShopquestionVO">
+	select * from sh_question where prodnum=#{prodnum}  and bno=#{bno} 
+</select>
+
 <!-- 글쓰기 -->
-	<insert id="write">
-	
-	insert into sh_question (bno, context, title,  NAME, user_id)
-	values(#{bno}, #{context}, #{title}, #{NAME}, #{user_id})
-	
-	</insert>
+<insert id="write">
+
+	insert into sh_question (prodnum,bno, context, title,  NAME, user_id, today)
+	values(#{prodnum},#{bno}, #{context}, #{title}, #{NAME}, #{user_id}, now())
+
+</insert>
 
 <select id="total2" resultType="int">
-select count(*) from sh_question where user_id = #{user_id}
+	select count(*) from sh_question where prodnum = #{prodnum}
 </select>
 
 <!-- 관리자 답변 -->
 <insert id="answer">
 	
-insert into sh_question (answer)
-values(#{answer}) where bno=#{bno}
+update sh_question
+set answer = #{answer}
+where prodnum = #{prodnum}
+and bno = #{bno}
 	
 </insert>
 
-<!-- 관리자 답변-->
-<select id="chack" resultType="com.food.model.ShopquestionVO">
-	select * from sh_question where bno=#{bno}
-</select>
 </mapper>
