@@ -108,7 +108,6 @@
 						<ul id="tab-titles">
 							<li name="detail"><a href="#product-CONTNET">상품설명</a></li>
 							<li name="etc"><a href="#product-detail">상세정보</a></li>
-							<li name="review"><a href="#product-review">후기</a></li>
 							<li name="qna"><a href="#product-qna">상품문의 <span
 									class="product-tab-review-count">(0)</span>
 							</a></li>
@@ -180,8 +179,8 @@
 															</tr>
 
 															<tr>
-																<td><input type="hidden" value="${sessionScope.id}"
-																	name="id"> <input type="hidden"
+																<td><input type="text" value="${sessionScope.user_id}"
+																	name="user_id"> <input type="hidden"
 																	value="${main.prodnum}" name="prodnum"> <input
 																	type="submit" class="sh_signup" value="등록"></td>
 
@@ -204,35 +203,40 @@
 													<div>
 														<!-- for문 시작 -->
 														<c:forEach items="${detail}" var="detail">
+															<div class="sh_source">
 															<div class="ans_check">
-															<c:choose>
-																<c:when test="${detail.chack!=false}">
-																	<span style="color: #FF9436"><b>답장완료♥</b></span>
-																</c:when>
+																<c:choose>
+																	<c:when test="${detail.answer!=null}">
+																		<span style="color: #FF9436"><b>답변완료♥</b></span>
+																	</c:when>
 
-																<c:otherwise>
-																	<span style="color: #BDBDBD">기다려주세요</span>
-																</c:otherwise>
-															</c:choose>
+																	<c:otherwise>
+																		<span style="color: #BDBDBD">기다려주세요</span>
+																	</c:otherwise>
+																</c:choose>
+															</div>	
+																
+															<div class="sh_date">
+																	<span>${detail.today}</span>
+															</div>	
 															</div>
-															
+																		
 															<div class="que">
 																<a href="shopDetail?bno=${detail.bno}"
 																	class="sh_title_check"> <span>${detail.title}</span>
 																</a>
 															</div>
+															
 															<div class="anw">
 																<div class="answer">
-																	<a href="shopDetail?bno=${detail.bno}"
-																		class="sh_context_check"> <span>Q.${detail.context}</span><br>
-																	</a> 
+																	<span>Q.${detail.context}</span><br>
 																</div>
 
 																<div class="ans">
-																	<a href="shopDetail?bno=${detail.bno}"
-																		class="sh_answer_check"> <span>A.${detail.answer}</span>
-																	</a>
-																	<input type="button" value="답변등록" class="answerbtn">
+																	<span>A.${detail.answer}</span> <a
+																		href="/shopEnswer?prodnum=${detail.prodnum}&bno=${detail.bno}"
+																		class="answerbtn">답변등록</a>
+																	<!-- <input type="button" value="답변등록" class="answerbtn"> -->
 																</div>
 															</div>
 														</c:forEach>
@@ -240,56 +244,31 @@
 													<!-- for문 끝 -->
 
 
+													<!-- 페이지이름 인터페이스 영역 -->
 													<div class="Shoppage">
 														<!-- 이전버튼 -->
 														<c:if test="${paging.prevBtn}">
 															<a
-																href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
+																href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&prodnum=${detail[0].prodnum}&pageNum=${paging.startPage-1}&amount=${paging.criteriaVO.amount}">이전</a>
 														</c:if>
 
 														<!-- 페이지번호 -->
 														<c:forEach begin="${paging.startPage }"
 															end="${paging.endPage }" var="sh_num">
-															<a
-																href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${sh_num}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
+															<a href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&prodnum=${detail[0].prodnum}&pageNum=${sh_num}&amount=${paging.criteriaVO.amount}">${sh_num}</a>
 														</c:forEach>
 
 														<!-- 다음버튼 -->
 														<c:if test="${paging.nextBtn}">
 															<a
-																href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
+																href="/shopDetail?sep=shop&type=${paging.criteriaVO.type}&keyword=${paging.criteriaVO.keyword}&prodnum=${detail[0].prodnum}&pageNum=${paging.endPage+1}&amount=${paging.criteriaVO.amount}">다음</a>
 														</c:if>
 													</div>
+													
 												</div>
 											</div>
 										</div>
 
-										<!-- 페이징 부분
-											<div class="prod-inquiry-list__pagination" data-current="1"
-												data-total="5">
-												<a
-													class="prod-inquiry-list__pagination__btn
-                      prod-inquiry-list__pagination__btn--prev"
-													href="javascript:;" data-page="1">이전</a> <a
-													class="prod-inquiry-list__pagination__item
-                          active"
-													href="javascript:;" data-page="1">1</a> <a
-													class="prod-inquiry-list__pagination__item
-                          "
-													href="javascript:;" data-page="2">2</a> <a
-													class="prod-inquiry-list__pagination__item
-                          "
-													href="javascript:;" data-page="3">3</a> <a
-													class="prod-inquiry-list__pagination__item
-                          "
-													href="javascript:;" data-page="4">4</a> <a
-													class="prod-inquiry-list__pagination__item
-                          "
-													href="javascript:;" data-page="5">5</a> <a
-													class="prod-inquiry-list__pagination__btn
-                      prod-inquiry-list__pagination__btn--next"
-													href="javascript:;" data-page="5">다음</a>
-											</div> -->
 									</div>
 								</div>
 							</div>
