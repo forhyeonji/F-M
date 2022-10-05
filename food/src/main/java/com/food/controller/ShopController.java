@@ -50,7 +50,7 @@ public class ShopController {
 		return "Shop/shopDetail";
 	}*/
 
-	// 상품카테고리 안 meat part
+	// 상품카테고리 분류
 	@RequestMapping(value = "/shopconer", method = RequestMethod.GET)
 	public String Coner(ShopVO Shop,Model model) {
 		model.addAttribute("corner", shop.shopcorner(Shop));

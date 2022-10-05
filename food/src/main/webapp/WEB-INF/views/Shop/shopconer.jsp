@@ -56,7 +56,7 @@
 
 		<div class="sh_meat_main">
 			<c:forEach items="${corner}" var="corner">
-			<a href="/shopDetail?prodnum=${ArrayList.prodnum}">
+			<a href="/shopconerl?prodnum=${corner.prodnum}">
 			<div class="sh_meatimg_1" id="pork">
 				<div class="shop_div_img" data-name="${corner.NAME}" data-filename="${corner.filename}">
                  <img>
