@@ -81,7 +81,7 @@
 						</div> <!-- main_bottom -->
 						<div class="NOTI_button">
 							
-								<input type="button" value="목록" onclick="location.href='http://localhost:8080/directKing?sep=inquiry'" class="NOTI_but">
+								<input type="button" value="목록" onclick="location.href='http://poceania.o-r.kr/directKing?sep=inquiry'" class="NOTI_but">
 							
 						</div> <!-- button -->
 				
@@ -102,7 +102,7 @@
 							
 							<div class="NOTI_button">
 							
-								<input type="button" value="목록" onclick="location.href='http://localhost:8080/directQue?sep=inquiry'" class="NOTI_but">
+								<input type="button" value="목록" onclick="location.href='http://poceania.o-r.kr/directQue?sep=inquiry'" class="NOTI_but">
 								
 							</div> <!-- button -->
 							

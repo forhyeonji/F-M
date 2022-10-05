@@ -37,7 +37,7 @@
 	
 
 
-	<input type="button" value="목록" class="NOTI_but" onclick="location.href='http://localhost:8080/notice?sep=noti'">
+	<input type="button" value="목록" class="NOTI_but" onclick="location.href='http://poceania.o-r.kr/notice?sep=noti'">
 	
 	
 	<input type="button" value="수정" class="NOTI_but" onclick="location.href='/notice/modify?bno=${detail.bno}'">
