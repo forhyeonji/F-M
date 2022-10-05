@@ -18,7 +18,8 @@
 }
 
 .main_pic{
-
+	width : 1050px;
+	cursor : pointer;
 }
 
 
@@ -42,7 +43,7 @@
 .slider > .main_slidepages > div {
     width:20px;
     height:20px;
-    background-color:rgba(255,255,255,0.5);
+    background-color:rgba(245,245,245,0.5);
     display:inline-block;
     cursor:pointer;
     transition:background-color 0.2s;
@@ -60,7 +61,7 @@
     width:100%;
     height:100%;
     opacity:0;
-    transition:opacity 0.3s;
+    transition:opacity 2s;
 }
 
 .slider > .slides > div.active {
@@ -69,11 +70,11 @@
 
 .slider > .side-btns > div {
     position:absolute;
-    top:0;
+    top:45%;
     left:0;
-    width:100px;
-    height:100%;
-    background-color:pink;
+    width:50px;
+    height:50px;
+    background-color:rgba(225,225,225,0.9);
     cursor:pointer;
 }
 
@@ -100,13 +101,94 @@
 
 
 
+#main_h2 {
+	margin-bottom: 30px;
+	margin-top: 50px;
+	text-align: center;
+	font-size: 40px;
+}
+
+.slick-prev{
+	left: 160px;
+    z-index: 1;
+}
+.slick-next{
+	right: 160px;
+    z-index: 1;
+}
 
 
+.main_slide_div img{
+	margin: auto;
+    background: #e6e9f6;
+    width: 100%;
+    height: 275px;
+}
 
+.slick-slide img {
+    display: inline-flex;
+}
 
+.main_ArrayList{
+    margin: auto;
+    height: 275px;
+    border: 1px solid #dadada;
+}
 
+.main_div_img{
+    height: 60%;
+    margin: auto;
+    padding: 0 0 5% 0;
+    display: flex;
+    align-items: center;    
+}
 
+.main_NAME{
+	text-align: center;
+    font-size: 13px;
+    color: #3e74ab;
+}
 
+.main_prodnum{
+	text-align: center;
+    font-size: 13px;
+    color: #c0c0c0;
+}
 
+.main_discountprice{
+	text-align: center;
+    color: #333;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.ls_div_content_prev{
+	position: absolute;
+    top: 40%;
+    width: 40px;
+    height: 30px;
+    left: 27px;
+    font-weight: bold;
+    z-index: 1;
+    opacity: 35%;
+}
+
+.ls_div_content_prev:hover{
+	 opacity: 80%;
+}
+
+.ls_div_content_next{
+    position: absolute;
+    top: 40%;
+    width: 40px;
+    height: 30px;
+    right: 27px;
+    font-weight: bold;
+    z-index: 1;
+    opacity: 35%;
+}
+.ls_div_content_next:hover{
+   opacity: 80%;
+}
 
 
