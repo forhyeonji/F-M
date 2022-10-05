@@ -1,7 +1,7 @@
 <%@ include file="../Header/Header.jsp" %>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8" %>
-<div id="container">
+<div id="container" oncontextmenu="return false" ondragstart="return false" onselectstart="return false">
     <div id="content" class="d-flex pt-3 pd-3">
         <div class="p-2" style="width : 250px; border-right: 1px solid #dddddd">
             <div class="p-2">

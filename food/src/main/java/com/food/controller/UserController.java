@@ -1,7 +1,12 @@
 package com.food.controller;
 
+import com.food.mapper.ShopMapper;
+import com.food.model.CartVO;
+import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
+import com.food.model.ShopVO;
 import com.food.model.UserVO;
+import com.food.service.ShopService;
 //import com.food.service.MailSendService;
 import com.food.service.UserService;
 import org.codehaus.jackson.JsonProcessingException;
@@ -9,6 +14,7 @@ import org.codehaus.jackson.map.ObjectMapper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +22,7 @@ import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.FileCopyUtils;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -25,6 +32,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
+import org.springframework.web.multipart.MultipartHttpServletRequest;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import org.springframework.web.util.WebUtils;
 
@@ -40,6 +48,7 @@ import java.util.Map;
 import java.util.Random;
 import java.util.UUID;
 
+import javax.annotation.Resource;
 import javax.mail.internet.MimeMessage;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
@@ -48,10 +57,15 @@ import javax.servlet.http.HttpSession;
  
 @Controller
 public class UserController{
+	
+	
 
     @Autowired
     UserService us;
     
+    @Autowired
+	private ShopService shopservice;
+     
     
 
     //@Autowired
@@ -62,26 +76,26 @@ public class UserController{
     
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     
-    // 회원가입 
+    // �쉶�썝媛��엯 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public String join() {
     	return "Main/insert";
     }
     
-    //회원가입(insert 이루어짐)
+    //�쉶�썝媛��엯(insert �씠猷⑥뼱吏�)
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String joinPost(UserVO userVO) {
     	us.join(userVO);
     	return "redirect:/login";
     }
     
-    // 로그인
+    // 濡쒓렇�씤
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(UserVO userVO) {
 		return "Main/login";
     }
     
-    // 로그인 기능
+    // 濡쒓렇�씤 湲곕뒫
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
     	
@@ -100,7 +114,7 @@ public class UserController{
     }
     
     
-    //로그아웃
+    //濡쒓렇�븘�썐
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session, RedirectAttributes rttr) {
 		session.invalidate();
@@ -109,58 +123,58 @@ public class UserController{
 	}
     
 
-    // 아이디 중복 검사
+    // �븘�씠�뵒 以묐났 寃��궗
  	@RequestMapping(value = "/insertIdChk", method = RequestMethod.POST)
  	@ResponseBody
  	public String insertIdChkPOST(String user_id) throws Exception{
  		System.out.println("user_id="+user_id);
  		int result = us.idCheck(user_id);
-		logger.info("결과값 = " + result);
+		logger.info("寃곌낵媛� = " + result);
 		if(result != 0) {
-			return "fail";	// 중복 아이디가 존재
+			return "fail";	// 以묐났 �븘�씠�뵒媛� 議댁옱
 		} else {
-			return "success";	// 중복 아이디 x
+			return "success";	// 以묐났 �븘�씠�뵒 x
 		}	
  	} 
  	
  	
- 	// 폰번호 중복 검사
+ 	// �룿踰덊샇 以묐났 寃��궗
   	@RequestMapping(value = "/insertphoneChk", method = RequestMethod.POST)
   	@ResponseBody
   	public String insertphoneChkPOST(String user_phone) throws Exception{
   		int result = us.phoneCheck(user_phone);
- 		logger.info("결과값 = " + result);
+ 		logger.info("寃곌낵媛� = " + result);
  		if(result != 0) {			
- 			return "fail";	// 중복 아이디가 존재		
+ 			return "fail";	// 以묐났 �븘�씠�뵒媛� 議댁옱		
  		} else {		
- 			return "success";	// 중복 아이디 x			
+ 			return "success";	// 以묐났 �븘�씠�뵒 x			
  		}	
 	}   	
   	
-  	/* 이메일 인증 */
+  	/* �씠硫붿씪 �씤利� */
 	@RequestMapping(value="/emailCheck", method=RequestMethod.GET)
 	@ResponseBody
 	public String emailCheckGET(String user_email) throws Exception{
 
-		/* 뷰(View)로부터 넘어온 데이터 확인 */
-		logger.info("이메일 데이터 전송 확인");
-		logger.info("인증번호 : " + user_email);
+		/* 酉�(View)濡쒕��꽣 �꽆�뼱�삩 �뜲�씠�꽣 �솗�씤 */
+		logger.info("�씠硫붿씪 �뜲�씠�꽣 �쟾�넚 �솗�씤");
+		logger.info("�씤利앸쾲�샇 : " + user_email);
 		
-		/* 인증번호(난수) 생성 */
+		/* �씤利앸쾲�샇(�궃�닔) �깮�꽦 */
         Random random = new Random();
         int checkAuthKey = random.nextInt(888888) + 111111;
-        logger.info("인증번호 " + checkAuthKey);
+        logger.info("�씤利앸쾲�샇 " + checkAuthKey);
         
-        /* 이메일 보내기 */
+        /* �씠硫붿씪 蹂대궡湲� */
         String setFrom = "ssnow000@daum.net";
         String toMail = user_email;
-        String title = "[푸렌즈] 회원가입 인증 이메일 입니다.";
+        String title = "[�뫖�젋利�] �쉶�썝媛��엯 �씤利� �씠硫붿씪 �엯�땲�떎.";
         String content = 
-                "홈페이지를 방문해주셔서 감사합니다." +
+                "�솃�럹�씠吏�瑜� 諛⑸Ц�빐二쇱뀛�꽌 媛먯궗�빀�땲�떎." +
                 "<br><br>" + 
-                "인증 번호는 " + checkAuthKey + "입니다." + 
+                "�씤利� 踰덊샇�뒗 " + checkAuthKey + "�엯�땲�떎." + 
                 "<br>" + 
-                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+                "�빐�떦 �씤利앸쾲�샇瑜� �씤利앸쾲�샇 �솗�씤���뿉 湲곗엯�븯�뿬 二쇱꽭�슂.";
         
         try {
             
@@ -183,7 +197,7 @@ public class UserController{
 	
 	
 	
-	// 아이디 찾기
+	// �븘�씠�뵒 李얘린
 	@RequestMapping(value = "/find_id", method=RequestMethod.GET)
 	public String find_id() throws Exception{
 		return "Main/find_id";
@@ -213,7 +227,7 @@ public class UserController{
 
 	
 	
-	//비밀번호 찾기 폼
+	//鍮꾨�踰덊샇 李얘린 �뤌
 	@RequestMapping(value = "/find_pw", method=RequestMethod.GET)
 	public String find_pw() throws Exception{
 		return "Main/find_pw";	
@@ -225,15 +239,15 @@ public class UserController{
 		
 		//us.find_pw(user_email, user_id);
 		
-		/* 인증번호(난수) 생성 */
+		/* �씤利앸쾲�샇(�궃�닔) �깮�꽦 */
 		Random random = new Random();
 		StringBuffer randomBuf = new StringBuffer();
 		for (int i = 0; i < 15; i++) {
-			// Random.nextBoolean() : 랜덤으로 true, false 리턴 (true : 랜덤 소문자 영어, false : 랜덤 숫자)
+			// Random.nextBoolean() : �옖�뜡�쑝濡� true, false 由ы꽩 (true : �옖�뜡 �냼臾몄옄 �쁺�뼱, false : �옖�뜡 �닽�옄)
 			if (random.nextBoolean()) {
-				// 26 : a-z 알파벳 개수
-				// 97 : letter 'a' 아스키코드
-				// (int)(random.nextInt(26)) + 97 : 랜덤 소문자 아스키코드
+				// 26 : a-z �븣�뙆踰� 媛쒖닔
+				// 97 : letter 'a' �븘�뒪�궎肄붾뱶
+				// (int)(random.nextInt(26)) + 97 : �옖�뜡 �냼臾몄옄 �븘�뒪�궎肄붾뱶
 				randomBuf.append((char)((int)(random.nextInt(26)) + 97));
 			} else {
 				randomBuf.append(random.nextInt(10));
@@ -244,16 +258,16 @@ public class UserController{
 	    // [createRandomStrUsingRandomBoolean] randomStr : iok887yt6sa31m99e4d6
  
 		
-        /* 이메일 보내기 */
+        /* �씠硫붿씪 蹂대궡湲� */
         String setFrom = "ssnow000@daum.net";
         String toMail = user_email;
-        String title = "[푸렌즈] 비밀번호 찾기를 위한 임시 이메일 입니다.";
+        String title = "[�뫖�젋利�] 鍮꾨�踰덊샇 李얘린瑜� �쐞�븳 �엫�떆 �씠硫붿씪 �엯�땲�떎.";
         String content = 
-                "홈페이지를 이용해주셔서 감사합니다." + user_id + "님." +
+                "�솃�럹�씠吏�瑜� �씠�슜�빐二쇱뀛�꽌 媛먯궗�빀�땲�떎." + user_id + "�떂." +
                 "<br><br>" + 
-                " 임시 비밀번호는 " + randomStr + "입니다." + 
+                " �엫�떆 鍮꾨�踰덊샇�뒗 " + randomStr + "�엯�땲�떎." + 
                 "<br>" + 
-                "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
+                "�빐�떦 �씤利앸쾲�샇瑜� �씤利앸쾲�샇 �솗�씤���뿉 湲곗엯�븯�뿬 二쇱꽭�슂.";
         
         try {
             
@@ -270,10 +284,50 @@ public class UserController{
         }
         
         return randomStr;
+
+
+	}
+	
+	
+	
+
+	
+	
+	
+	
+	/*
+	@RequestMapping (value="/", method=RequestMethod.POST)
+	@ResponseBody
+	public ResponseEntity<byte[]> main_display(String fileName)throws Exception{
+		ResponseEntity<byte[]> result=null;
+		//display fileName이 있는 경우
+		if(!fileName.equals("")) {
+			File file=new File(File.separator + fileName);
+			HttpHeaders header=new HttpHeaders();
+			header.add("Content-Type", Files.probeContentType(file.toPath()));
+			result=new ResponseEntity<>(FileCopyUtils.copyToByteArray(file), header, HttpStatus.OK);
+			}
+			return result;
+		}
+	*/
+	
+	// 硫붿씤 �럹�씠吏� �씠�룞
+		@RequestMapping(value = "/main", method = RequestMethod.GET)
+		public String main_shop(Model model) {
+
+			System.out.println("");
+			// System.out.println("shop.ShopSelect() = "+shop.ShopSelect());
+			// model.addAttribute("prodnum",shop.Shopattachlist(0));
+			model.addAttribute("ArrayList", shopservice.ShopSelect());
+
+			return "Main/main";
+		}
 		
 
-		
-	}
+	
+	
+	
+
 	
 
 	

@@ -114,7 +114,7 @@ $(function () {
 
     const onReplyWrite = () => {
         let text = document.getElementById("cm_editor").innerText;
-        let id = document.getElementById("session_id").innerText;
+        let id = "session_id";
         let bno = document.getElementById("bno").value;
         $.ajax({
             type: `post`,

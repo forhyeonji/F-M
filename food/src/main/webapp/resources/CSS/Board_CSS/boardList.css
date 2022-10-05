@@ -174,7 +174,8 @@ ul li{
 }
 .cm-menus:hover{
     background: #FFEBC1;
-    color:orangered;
+    color:orange;
+    font-weight: bold;
 }
 #cm-table-foot{
     display:flex;

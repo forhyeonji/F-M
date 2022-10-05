@@ -34,7 +34,7 @@
 		
 		<div id="divTest">
 			<input type="submit" class="NOTI_but" value="수정">
-			<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://localhost:8080/notice?sep=noti'">
+			<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://poceania.o-r.kr/notice?sep=noti'">
 			<input type="hidden" value="${modify.bno}" name="bno">
 		</div>
 		

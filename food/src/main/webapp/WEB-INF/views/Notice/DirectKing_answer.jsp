@@ -81,7 +81,7 @@
 						</div> <!-- main_bottom -->
 						<div class="NOTI_button">
 							
-								<input type="button" value="목록" onclick="location.href='http://localhost:8080/directKing?sep=inquiry'" class="NOTI_but">
+								<input type="button" value="목록" onclick="location.href='http://poceania.o-r.kr/directKing?sep=inquiry'" class="NOTI_but">
 							
 						</div> <!-- button -->
 				
@@ -107,7 +107,7 @@
 							
 							<div class="NOTI_button">
 								<input type="submit" value="등록" class="NOTI_but">
-								<input type="button" value="취소" onclick="location.href='http://localhost:8080/directKing?sep=inquiry'" class="NOTI_but">
+								<input type="button" value="취소" onclick="location.href='http://poceania.o-r.kr/directKing?sep=inquiry'" class="NOTI_but">
 								<input type="hidden" value="${sessionScope.user_id}" name="ans_id">
 								<input type="hidden" value="${detail.bno}" name="bno">
 							</div> <!-- button -->

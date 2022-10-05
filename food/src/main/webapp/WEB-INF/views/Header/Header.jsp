@@ -5,7 +5,7 @@
 <html lang="ko"> 
 <head>
     <meta charset="UTF-8">
-    <title>Insert title here</title>
+    <title>푸렌드</title>
 
     <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shop.css">
