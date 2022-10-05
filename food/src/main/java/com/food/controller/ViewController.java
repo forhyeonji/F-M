@@ -20,7 +20,9 @@ public class ViewController {
     }
 
     @GetMapping(value = "/")
-    public String main() { return "/Main/main";  }
+    public String main() { 
+    	return "redirect:/main";  
+    	}
 
     @GetMapping("/community")
     public String getBoardList(){
