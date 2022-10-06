@@ -5,10 +5,9 @@
 
 <link rel="stylesheet" type="text/css"
 	href="../../../resources/CSS/shop_CSS/shopconer.css">
-<meta charset="UTF-8">
+<script type="text/javascript"
+	src="../../../resources/JS/Shop/ShopConer.js"></script>
 
-</head>
-<body>
 	<div class="shopconer">
 		<ul class="sh_menu">
 			<li><a href="#" class="sh_a">Category</a>
@@ -23,11 +22,11 @@
 			<li><a href="#" class="sh_a">New</a></li>
 		</ul>
 
-		<div class="sh_title">
+		<!-- <div class="sh_title">
 			<h1 class="sh_h1">정육 & 계란 코너</h1>
 		</div>
 
-	<!-- 	<div class="sh_header">
+		<div class="sh_header">
 			<table border="1" width="1050px" height="130px" class="sh_table">
 				<tr>
 					<td>
@@ -43,8 +42,8 @@
 					</td>
 				</tr>
 			</table>
-		</div> -->
-
+		</div>
+ -->
 		<table class="sh_ta" align="right">
 			<tr>
 				<td><a href="#" class="sh_a2"> 낮은가격순</a></td>
@@ -56,11 +55,13 @@
 
 		<div class="sh_meat_main">
 			<c:forEach items="${corner}" var="corner">
-			<a href="/shopconerl?prodnum=${corner.prodnum}">
+			<a href="/shopcone?prodnum=${corner.prodnum}">
+			<div class="divisionimg">
 			<div class="sh_meatimg_1" id="pork">
-				<div class="shop_div_img" data-name="${corner.NAME}" data-filename="${corner.filename}">
+				<div class="shopcorner_div_img" data-name="${corner.NAME}" data-filename="${corner.filename}">
                  <img>
                 </div>
+			</div>
 				<div class="sh_porkbelly">${corner.NAME}</div>
 				<div class="sh_porkbelly_price">${corner.discountprice}원</div>
 				<p class="sh_potrkbelly_ex">${corner.subcontent}</p>

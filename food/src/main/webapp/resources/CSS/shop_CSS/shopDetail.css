@@ -31,10 +31,9 @@ a.sh_a {
 	width: 1050px;
 }
 
-.sh_me ul {
-	margin: 0;
-	padding: 0;
-	text-align: center;
+ ul.sh_me {
+	display: flex;
+    justify-content: center;
 }
 
 .sh_me li {
@@ -56,7 +55,6 @@ a.sh_a {
 	position: absolute;
 	left: 0;
 	top: 100%;
-	width: 13.1em;
 	box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 	z-index: 999;
 }

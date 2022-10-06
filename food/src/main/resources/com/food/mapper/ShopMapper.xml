@@ -13,8 +13,8 @@
 			select ifnull(max(prodnum),0)+1 prodnum
 			from tb_shop
   		</selectKey>
-		insert into	tb_shop(prodnum,NAME,origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail)
-		value(#{prodnum},#{NAME},#{origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail})
+		insert into	tb_shop(prodnum,NAME,origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail,class1,class2)
+		value(#{prodnum},#{NAME},#{origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail},#{class1},#{class2})
 	</insert>
 		
 	<!-- 상품 분류 페이지 -->	

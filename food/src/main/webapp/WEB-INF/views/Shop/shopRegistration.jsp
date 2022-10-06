@@ -40,7 +40,7 @@
 					<table>
 						<tr id="sh_TableSt">
 							<td id="sh_menutd">
-							<select id="class1">
+							<select id="class1" name="class1">
 									<option selected>1차분류</option>
 									<c:forEach items="${class1}" var="divi1">
 										<option value="<c:out value="${divi1.class1}" />"><c:out value="${divi1.class1}" /></option>
@@ -48,7 +48,7 @@
 							</select>
 							</td>
 
-							<td id="sh_TableSt"><select id="class2">
+							<td id="sh_TableSt"><select id="class2" name="class2">
 								<option>2차분류</option>
 							</select>
 							</td>

@@ -16,8 +16,8 @@ a.sh_a {
 }
 
 ul.sh_menu1 {
-	margin-left: 203px;	
-	margin-bottom: 20px;
+	display: flex;
+    justify-content: center;
 }
 
 .sh_menu1 li {
