@@ -27,6 +27,16 @@ a.sh_a {
 	color: #F15F5F;
 }
 
+.sh_ta{
+	border-collapse: collapse;
+    margin-top: 30px;
+}
+
+.sh_a2{
+	border-color: white;
+	margin-right: 5px;
+}
+
 ul.sh_menu{
 	display: flex;
     justify-content: center;
@@ -112,7 +122,7 @@ ul.sh_menu{
 }
 
 
-img {
+.conerimg {
     width: 340px;
     height: 405px;
 }

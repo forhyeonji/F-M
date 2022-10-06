@@ -46,20 +46,31 @@
  -->
 		<table class="sh_ta" align="right">
 			<tr>
-				<td><a href="#" class="sh_a2"> 낮은가격순</a></td>
-				<td><a href="#" class="sh_a2"> 높은가격순</a></td>
-				<td><a href="#" class="sh_a2"> 후기많은순</a></td>
-				<td><a href="#" class="sh_a3"> 추천순</a></td>
+				<td>
+					<input type="hidden" id="category" value="${corner[0].class1}">
+				</td>
+				<td>
+					<!-- <button class="sh_a2" id="basicprod" name="type">기본순</button> -->
+					<a href="#" id="basic">기본 순</a>
+				</td>
+				<td>
+					<!-- <button class="sh_a2" id="rowprice" name="type"> 낮은가격순</button> -->
+					<a href="#" id="rowprice">낮은 가격 순</a>
+				</td>
+				<td>
+					<!-- <button class="sh_a2" id="hightprice" name="type"> 높은가격순</button> -->
+					<a href="#" id="highprice">높은 가격 순</a>
+				</td>
 			</tr>
 		</table>
 
 		<div class="sh_meat_main">
 			<c:forEach items="${corner}" var="corner">
-			<a href="/shopcone?prodnum=${corner.prodnum}">
+			<a href="/shopDetail?prodnum=${corner.prodnum}">
 			<div class="divisionimg">
 			<div class="sh_meatimg_1" id="pork">
 				<div class="shopcorner_div_img" data-name="${corner.NAME}" data-filename="${corner.filename}">
-                 <img>
+                 <img class="conerimg">
                 </div>
 			</div>
 				<div class="sh_porkbelly">${corner.NAME}</div>

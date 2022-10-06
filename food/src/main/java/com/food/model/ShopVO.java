@@ -23,6 +23,7 @@ public class ShopVO {
 	private String division;
 	private String class1;// 1차 분류
 	private String class2;// 2차 분류
+	private String type;
 	
 	
 	public String getFilename() {
@@ -149,13 +150,22 @@ public class ShopVO {
 	public void setClass2(String class2) {
 		this.class2 = class2;
 	}
+	
+	
+	
+	public String getType() {
+		return type;
+	}
+	public void setType(String type) {
+		this.type = type;
+	}
 	@Override
 	public String toString() {
 		return "ShopVO [prodnum=" + prodnum + ", NAME=" + NAME + ", CONTENT=" + CONTENT + ", today=" + today
 				+ ", subcontent=" + subcontent + ", price2=" + price2 + ", discountprice=" + discountprice + ", Parcel="
 				+ Parcel + ", packaging=" + packaging + ", unit=" + unit + ", origin=" + origin + ", boundary="
 				+ boundary + ", detail=" + detail + ", filename=" + filename + ", division=" + division + ", class1="
-				+ class1 + ", class2=" + class2 + ", attach=" + attach + "]";
+				+ class1 + ", class2=" + class2 + ", type=" + type + ", attach=" + attach + "]";
 	}
 
 

@@ -53,6 +53,7 @@ public class ShopController {
 	// 상품카테고리 분류
 	@RequestMapping(value = "/shopconer", method = RequestMethod.GET)
 	public String Coner(ShopVO Shop,Model model) {
+		System.out.println("controller="+Shop);
 		model.addAttribute("corner", shop.shopcorner(Shop));
 		return "Shop/shopconer";
 	}

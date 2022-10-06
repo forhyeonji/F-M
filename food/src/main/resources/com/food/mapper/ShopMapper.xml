@@ -20,14 +20,32 @@
 	<!-- 상품 분류 페이지 -->	
 	<select id="shopcorner" resultType="com.food.model.ShopVO">
 	SELECT 
-	rownum,prodnum,class1,NAME,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,<![CDATA['/']]>,uuid,'-' ,filename)AS filename, discountprice
+	rownum,prodnum,class1,NAME,subcontent,division,concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice
 		FROM  (
 			SELECT   @rownum:=@rownum+1 rownum,a.* 
 				FROM (SELECT * 
 					FROM (
  						SELECT  t.prodnum,class1,NAME,subcontent,division,uuid,filename,uploadPath, discountprice
 							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE class1=#{class1} and image = 1 and division = 'm' )AS j ) AS a,(
-										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+										SELECT @rownum:=0) AS tmp 
+										
+								<if test = "type != null">
+									<choose>
+									   <when test="type == 'sh_basic'.toString()">
+										  ORDER BY prodnum desc
+									   </when>
+									   <when test="type == 'sh_rowprice'.toString()">
+										  ORDER BY discountprice
+									   </when>
+									    <when test="type == 'sh_hightprice'.toString()">
+										  ORDER BY discountprice desc
+									   </when>
+									</choose>
+
+								</if>
+										
+							) AS balist;
+
 	</select>	
 		
 		
