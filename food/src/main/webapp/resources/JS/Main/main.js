@@ -4,6 +4,25 @@
 
 
 
+$('#clickplease').click(function(){
+	if($(".slides :last-child").click(function(){
+		alert("aaa")
+	})){
+		alert("aa")
+	}else if($(".slides :2th-child()").click(function(){
+		alert("Bbb")
+	})){
+		alert("bb")
+	}else if($(".slides :first-child").click(function(){
+		alert("CCC")
+	})){
+		alert("cc")
+	}
+})
+
+
+
+
 //페이지번호와 슬라이드페이지 index연결
 $('.slider > .main_slidepages > div').click(function() {
     var $this = $(this);
@@ -90,8 +109,4 @@ $(".main_slide_div").slick({
 });
 
 
-
-/*$(".slider > .main_pic").click(function(){
-	alert("a")
-})*/
 

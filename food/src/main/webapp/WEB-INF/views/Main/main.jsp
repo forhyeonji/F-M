@@ -16,15 +16,12 @@
 <div id="main_outborder">
 
 	<div class="slider slider-1">
-	    <div class="slides">
+	    <div id="clickplease" class="slides">
 	        <div class="active">
-	        	<img class = "main_pic" src="../../../resources/image/main_image/reci.png">
-	        	<div>
-	        		<a href="https://www.google.com/">aaaa</a>
-	        	</div>
+	        	<img id = "first" class = "main_pic" src="../../../resources/image/main_image/reci.png">
 	        </div>
-	        <div style="background-color:black;"></div>
-	        <div style="background-color:pink;"></div>
+	        <div id = "second" style="background-color:black;"></div>
+	        <div id = "third" style="background-color:pink;"></div>
 	    </div>
 	    
 	    <div class="main_slidepages">
