@@ -92,6 +92,9 @@
     height:500px;
 }
 
+#clickplease{
+	z-index : 5;
+}
 
 
 
