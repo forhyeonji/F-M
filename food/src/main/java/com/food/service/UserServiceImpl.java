@@ -44,7 +44,7 @@ public class UserServiceImpl implements UserService {
       	boolean result=false;
       	if(login!=null) {
       		session.setAttribute("login", login);
-      		System.out.println("ì„¸ì…˜ê°’="+session.getAttribute("login"));
+      		System.out.println("·Î±×ÀÎ="+session.getAttribute("login"));
       		result=true;
       	}
       	return result;
@@ -68,12 +68,8 @@ public class UserServiceImpl implements UserService {
     
     
     
-    public void find_pw(String user_email,String user_id)throws Exception{
-    	um.find_pw(user_email, user_id);
+    public UserVO find_pw(UserVO userVO)throws Exception{
+    	return um.find_pw(userVO);
     }
-
-	public int find_pwCheck(UserVO userVO)throws Exception{
-		return um.find_pwCheck(userVO);
-	}
 
 }

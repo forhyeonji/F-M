@@ -195,3 +195,22 @@
 }
 
 
+
+
+
+
+/* basic menu code 1.0 */
+
+.slick-prev{
+	left: 160px;
+    z-index: 1;
+}
+.slick-next{
+	right: 160px;
+    z-index: 1;
+}
+
+
+
+
+

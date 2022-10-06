@@ -1,8 +1,5 @@
 /**
- * 
- */
-
-$(function(){
+ * $(function(){
 		$("#findBtn").click(function(){
 			$.ajax({
 				url : "/member/findpw",
@@ -20,7 +17,7 @@ $(function(){
 	
 	
 	
-/* 임시 비밀번호 발송 */
+// 임시 비밀번호 발송 
 $(".find_pw_btn").click(function(){
 	
 	var user_email = $("#user_email").val();		// 입력한 이메일
@@ -41,3 +38,10 @@ $(".find_pw_btn").click(function(){
 					
 	});	
 });
+ */
+
+
+function closethewindow(){
+			self.close();
+		}
+

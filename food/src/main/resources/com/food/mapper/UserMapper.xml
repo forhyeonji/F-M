@@ -38,17 +38,12 @@
 	</select>
 	
 	<!-- 비밀번호 찾기 -->
-	<update id="findPw" >
-		update tb_user 
-		set user_pw = #{user_pw} 
-		where user_email = #{user_email} and user_id = #{user_id}
-	</update>
-
-	<select id="findPwCheck" resultType="int">
-		select count(*) 
-		from tb_user
-		where user_email = #{user_email} and user_id = #{user_id}
+	<select id="find_pw" resultType="com.food.model.UserVO" >
+		select user_pw
+		from tb_user 
+		where user_name=#{user_name} and user_id=#{user_id} and user_email=#{user_email} 
 	</select>
+
 
 	
 </mapper>

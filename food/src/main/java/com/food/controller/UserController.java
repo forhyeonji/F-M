@@ -76,26 +76,26 @@ public class UserController{
     
     private static final Logger logger = LoggerFactory.getLogger(UserController.class);
     
-    // �쉶�썝媛��엯 
+    // 회원가입 
     @RequestMapping(value = "/insert", method = RequestMethod.GET)
     public String join() {
     	return "Main/insert";
     }
     
-    //�쉶�썝媛��엯(insert �씠猷⑥뼱吏�)
+	//회원가입(insert 이루어짐)
     @RequestMapping(value = "/insert", method = RequestMethod.POST)
     public String joinPost(UserVO userVO) {
     	us.join(userVO);
     	return "redirect:/login";
     }
     
-    // 濡쒓렇�씤
+	// 로그인
     @RequestMapping(value = "/login", method = RequestMethod.GET)
     public String login(UserVO userVO) {
 		return "Main/login";
     }
     
-    // 濡쒓렇�씤 湲곕뒫
+	// 로그인 기능
     @RequestMapping(value = "/login", method = RequestMethod.POST)
     public String loginPost(UserVO userVO, HttpSession session, RedirectAttributes rttr) {
     	
@@ -114,7 +114,7 @@ public class UserController{
     }
     
     
-    //濡쒓렇�븘�썐
+	//로그아웃
     @RequestMapping(value = "/logout", method = RequestMethod.GET)
 	public String logout(HttpSession session, RedirectAttributes rttr) {
 		session.invalidate();
@@ -123,7 +123,7 @@ public class UserController{
 	}
     
 
-    // �븘�씠�뵒 以묐났 寃��궗
+    // 아이디 중복 검사
  	@RequestMapping(value = "/insertIdChk", method = RequestMethod.POST)
  	@ResponseBody
  	public String insertIdChkPOST(String user_id) throws Exception{
@@ -131,50 +131,50 @@ public class UserController{
  		int result = us.idCheck(user_id);
 		logger.info("寃곌낵媛� = " + result);
 		if(result != 0) {
-			return "fail";	// 以묐났 �븘�씠�뵒媛� 議댁옱
+			return "fail";	// 중복 아이디가 존재
 		} else {
-			return "success";	// 以묐났 �븘�씠�뵒 x
+			return "success";	// 중복 아이디 x
 		}	
  	} 
  	
  	
- 	// �룿踰덊샇 以묐났 寃��궗
+	// 폰번호 중복 검사
   	@RequestMapping(value = "/insertphoneChk", method = RequestMethod.POST)
   	@ResponseBody
   	public String insertphoneChkPOST(String user_phone) throws Exception{
   		int result = us.phoneCheck(user_phone);
- 		logger.info("寃곌낵媛� = " + result);
+ 		logger.info("결과값 = " + result);
  		if(result != 0) {			
- 			return "fail";	// 以묐났 �븘�씠�뵒媛� 議댁옱		
+ 			return "fail";	// 중복 번호가 존재		
  		} else {		
- 			return "success";	// 以묐났 �븘�씠�뵒 x			
+ 			return "success";	// 중복 번호 x			
  		}	
 	}   	
   	
-  	/* �씠硫붿씪 �씤利� */
+  	// 이메일 인증
 	@RequestMapping(value="/emailCheck", method=RequestMethod.GET)
 	@ResponseBody
 	public String emailCheckGET(String user_email) throws Exception{
 
-		/* 酉�(View)濡쒕��꽣 �꽆�뼱�삩 �뜲�씠�꽣 �솗�씤 */
-		logger.info("�씠硫붿씪 �뜲�씠�꽣 �쟾�넚 �솗�씤");
-		logger.info("�씤利앸쾲�샇 : " + user_email);
+		/* 뷰(View)로부터 넘어온 데이터 확인 */
+		logger.info("이메일 데이터 전송 확인");
+		logger.info("인증번호 : " + user_email);
 		
-		/* �씤利앸쾲�샇(�궃�닔) �깮�꽦 */
+		/* 인증번호(난수) 생성 */
         Random random = new Random();
         int checkAuthKey = random.nextInt(888888) + 111111;
-        logger.info("�씤利앸쾲�샇 " + checkAuthKey);
+        logger.info("인증번호 " + checkAuthKey);
         
-        /* �씠硫붿씪 蹂대궡湲� */
+        /* 이메일 보내기 */
         String setFrom = "ssnow000@daum.net";
         String toMail = user_email;
-        String title = "[�뫖�젋利�] �쉶�썝媛��엯 �씤利� �씠硫붿씪 �엯�땲�떎.";
+        String title =  "회원가입 인증 이메일 입니다.";
         String content = 
-                "�솃�럹�씠吏�瑜� 諛⑸Ц�빐二쇱뀛�꽌 媛먯궗�빀�땲�떎." +
-                "<br><br>" + 
-                "�씤利� 踰덊샇�뒗 " + checkAuthKey + "�엯�땲�떎." + 
-                "<br>" + 
-                "�빐�떦 �씤利앸쾲�샇瑜� �씤利앸쾲�샇 �솗�씤���뿉 湲곗엯�븯�뿬 二쇱꽭�슂.";
+        		 "홈페이지를 방문해주셔서 감사합니다." +
+        	     "<br><br>" + 
+        	     "인증 번호는 " + checkAuthKey + "입니다." + 
+        	     "<br>" + 
+        	     "해당 인증번호를 인증번호 확인란에 기입하여 주세요.";
         
         try {
             
@@ -197,12 +197,11 @@ public class UserController{
 	
 	
 	
-	// �븘�씠�뵒 李얘린
+	//아이디 찾기 
 	@RequestMapping(value = "/find_id", method=RequestMethod.GET)
 	public String find_id() throws Exception{
 		return "Main/find_id";
 	}
-	
 	
 	@RequestMapping(value = "/find_id", method=RequestMethod.POST)
 	public String find_idPost(UserVO userVO, Model model){
@@ -219,14 +218,32 @@ public class UserController{
 	}
 	
 	
-	
+	//아이디 찾기 
+		@RequestMapping(value = "/find_pw", method=RequestMethod.GET)
+		public String find_pw() throws Exception{
+			return "Main/find_pw";
+		}
+		
+		@RequestMapping(value = "/find_pw", method=RequestMethod.POST)
+		public String find_pwPost(UserVO userVO, Model model) throws Exception{
+			UserVO user = us.find_pw(userVO);
+		
+			if(user == null) { 
+				model.addAttribute("check", 1);
+			} else { 
+				model.addAttribute("check", 0);
+				model.addAttribute("user", user);
+			}
+			
+			return "Main/find_pw";
+		}
 	
 	
 	
 	
 
 	
-	
+	/*
 	//鍮꾨�踰덊샇 李얘린 �뤌
 	@RequestMapping(value = "/find_pw", method=RequestMethod.GET)
 	public String find_pw() throws Exception{
@@ -239,7 +256,7 @@ public class UserController{
 		
 		//us.find_pw(user_email, user_id);
 		
-		/* �씤利앸쾲�샇(�궃�닔) �깮�꽦 */
+		// �씤利앸쾲�샇(�궃�닔) �깮�꽦/
 		Random random = new Random();
 		StringBuffer randomBuf = new StringBuffer();
 		for (int i = 0; i < 15; i++) {
@@ -258,7 +275,7 @@ public class UserController{
 	    // [createRandomStrUsingRandomBoolean] randomStr : iok887yt6sa31m99e4d6
  
 		
-        /* �씠硫붿씪 蹂대궡湲� */
+        // �씠硫붿씪 蹂대궡湲� *
         String setFrom = "ssnow000@daum.net";
         String toMail = user_email;
         String title = "[�뫖�젋利�] 鍮꾨�踰덊샇 李얘린瑜� �쐞�븳 �엫�떆 �씠硫붿씪 �엯�땲�떎.";
@@ -287,6 +304,7 @@ public class UserController{
 
 
 	}
+	*/
 	
 	
 	

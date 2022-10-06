@@ -44,7 +44,7 @@
 		<c:if test="${check == 0}">
 		<label>찾으시는 아이디는' ${user.user_id}' 입니다.</label>
 		<div class="form-label-group">
-				<input class="find_pw_btn"
+				<input class="find_id_btn"
 					type="button" value="OK" onclick="closethewindow()">
 			</div>
 		</c:if>

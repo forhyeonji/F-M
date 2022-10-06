@@ -3,26 +3,32 @@
  */ 
 
 
+/*
+$('.slides').click(function(){
+	
+	var $first = $(".slides").children("#first").click(function(){});
+	var $second = $(".slides").children("#second").click(function(){});
+	var $third = $(".slides").children("#third").click(function(){});
+	
+	if($first){
+		
+		alert("aaa");
 
-$('#clickplease').click(function(){
-	if($(".slides :last-child").click(function(){
-		alert("aaa")
-	})){
-		alert("aa")
-	}else if($(".slides :2th-child()").click(function(){
-		alert("Bbb")
-	})){
-		alert("bb")
-	}else if($(".slides :first-child").click(function(){
-		alert("CCC")
-	})){
-		alert("cc")
+	}else if($second){
+	
+		alert("bbb");
+	
+	}else if($third){
+
+		alert("ccc");
+	
 	}
 })
+*/
 
 
 
-
+/*
 //페이지번호와 슬라이드페이지 index연결
 $('.slider > .main_slidepages > div').click(function() {
     var $this = $(this);
@@ -72,7 +78,7 @@ function Slider1__moveNext() {
 }
 
 setInterval(Slider1__moveNext, 3000);
-
+*/
 
 
 
@@ -107,6 +113,19 @@ $(".main_slide_div").slick({
 	prevArrow : "<button type='button' class='ls_div_content_prev'>이전</button>",		// 이전 화살표 모양 설정
 	nextArrow : "<button type='button' class='ls_div_content_next'>다음</button>",		// 다음 화살표 모양 설정
 });
+
+
+
+
+
+/*광고 슬라이드*/
+$(".slideadver").slick(	
+	{
+	dots: true,
+	autoplay: true,
+	autoplaySpeed: 2000
+	}
+);
 
 
 
