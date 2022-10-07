@@ -105,6 +105,9 @@ public class UserController{
          session.setAttribute("user_id", userVO.getUser_id());
          session.setAttribute("user_pw", userVO.getUser_pw());
          rttr.addAttribute("loginsuccess");
+         
+         logger.info("왜안나와"+userVO+session);
+         
          return "redirect:/";
         }else {
          rttr.addAttribute("loginfail");
@@ -129,7 +132,7 @@ public class UserController{
  	public String insertIdChkPOST(String user_id) throws Exception{
  		System.out.println("user_id="+user_id);
  		int result = us.idCheck(user_id);
-		logger.info("寃곌낵媛� = " + result);
+		logger.info("아이디 = " + result);
 		if(result != 0) {
 			return "fail";	// 중복 아이디가 존재
 		} else {

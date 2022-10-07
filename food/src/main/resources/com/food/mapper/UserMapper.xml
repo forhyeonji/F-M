@@ -11,9 +11,9 @@
     </insert>
 
     <select id="login" resultType="com.food.model.UserVO">
-        select user_id, user_pw
+        select user_id, user_pw, auth_grp_cd
         from tb_user
-        where user_id = #{user_id} and user_pw = #{user_pw}
+        where user_id = #{user_id} and user_pw = #{user_pw} 
     </select>
     
     <!-- 아이디 중복검사 -->
