@@ -44,7 +44,7 @@
 	height : 42px;
 	color : white;
 	border : none;
-	background-color : salmon;
+	background-color : #FFA428;
 	border-radius : 5px;
 }
 
@@ -60,7 +60,7 @@
 	height : 42px;
 	color : white;
 	border : none;
-	background-color : salmon;
+	background-color : #FFA428;
 	box-sizing : content-box;
 	padding : 0px;
 	border-radius : 5px;
@@ -83,7 +83,7 @@
 	height : 42px;
 	color : white;
 	border : none;
-	background-color : salmon;
+	background-color : #FFA428;
 	border-radius : 5px;
 }
 
@@ -93,7 +93,7 @@
 	height : 42px;
 	text-align : center;
 	color : white;
-	background-color : salmon;
+	background-color : #FFA428;
 	padding : 0px;
 	border-radius : 5px;
 	border : none;
@@ -104,10 +104,7 @@
 
 
 
-/*
-↓유효성 검사 관련 태그
-*/
-
+/* 이메일 유효성 */
 .insert_emailNone{
 	color : red;
 	display : none;
@@ -129,7 +126,29 @@
 }
 
 
+/* 휴대폰 유효성*/
+.insert_phoneNone{
+	color : red;
+	display : none;
+}
 
+.insert_phoneHave{
+	color : red;
+	display : none;
+}
+
+.insert_phoneFalse{
+	color : red;
+	display : none;
+}
+
+.insert_phoneTrue{
+	color : green;
+	display : none;
+}
+
+
+/*아이디 유효성*/
 .insert_idNone{
 	color : red;
 	display : none;
@@ -145,15 +164,13 @@
 	display : none;
 }
 
-.insert_idY{
+.insert_idTrue{
 	color : green;
 	display : none; 
 }
 
 
-
-
-
+/* 비밀번호 유효성 */
 .insert_pwNone{
 	color : red;
 	display : none;
@@ -164,7 +181,17 @@
 	display : none;
 }
 
+.insert_pwTrue{
+	color : green;
+	display : none;
+}
 
+
+/* 비밀번호 재검사 */
+.insert_repwNone{
+	color : red;
+	display : none;
+}
 
 .insert_repwFalse{
 	color : red;
@@ -177,7 +204,7 @@
 }
 
 
-
+/* 이름 유효성 */
 .insert_nameNone{
 	color : red;
 	display : none;
@@ -194,44 +221,15 @@
 }
 
 
-.insert_phoneNone{
+/* 주소 유효성 */
+.insert_addrNone{
 	color : red;
 	display : none;
 }
 
-.insert_phoneFalse{
+/* 동의사항 유효성 */
+.insert_agreeNone{
 	color : red;
 	display : none;
 }
 
-.insert_phoneTrue{
-	color : green;
-	display : none;
-}
-
-
-
-
-.insert_birthNone{
-	color : red;
-	display : none;
-}
-
-.insert_birthFalse{
-	color : red;
-	display : none;
-}
-
-.insert_birthTrue{
-	color : green;
-	display : none;
-}
-
-
-
-
-.insert_agreeN{
-	color : red;
-	display : none;
-}
-.

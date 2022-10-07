@@ -4,9 +4,7 @@
 
 <link rel="stylesheet" href="../../../resources/CSS/Main_CSS/login.css">
 <script src="http://code.jquery.com/jquery-latest.js"></script> 
-<script src="/resources/JS/Main/login_kakao.js"></script>
-
-<script src="https://t1.kakaocdn.net/kakao_js_sdk/2.0.0/kakao.min.js"  integrity="sha384-PFHeU/4gvSH8kpvhrigAPfZGBDPs372JceJq3jAXce11bVA6rMvGWzvP4fMQuBGL" crossorigin="anonymous"></script>
+<!-- <script src="/resources/JS/Main/login_kakao.js"></script> -->
 
 
 <div id="login_outborder">
@@ -21,7 +19,7 @@
 		<div id="login_inborder">
 		
 			<div>
-				<h3 id="login_sub2">ID 로그인</h3>
+				<h3 id="login_sub2">로그인</h3>
 			</div>
 		
 			<div>

@@ -31,13 +31,14 @@
 						<h4>이메일</h4><br>
 					</div>
 					<div class="email_check_wrap">
-						<input type="text" id="user_email" class="insert_inputext" name="user_email">
+						<input type="text" id="user_email" class="insert_inputext" name="user_email" placeholder="이메일을 입력하세요.">
 					</div><br>
 					<div id="insert_emailNumber_box">
-						<input type="text" id="insert_emailNumber" disabled="disabled">
+						<input type="text" id="insert_emailNumber" class="insert_inputext" disabled="disabled" placeholder="인증번호를 입력하세요.">
 					</div>
+					<br>
 					<div>
-						<button type="button" id="insert_emailbtn" >인증번호</button>
+						<button type="button" id="insert_emailbtn" class="insert_add">인증번호 받기</button>
 					</div>
 					<br>
 					<div>
@@ -60,14 +61,11 @@
 					</div>
 				</div><br>
 				
-			
-				
 				
 				<div id="insert_phone"><br>
 					<div>
 						<h4>휴대폰 번호</h4><br>
 					</div>
-					<br>
 					<div>
 						<input type="text" id="user_phone" class="insert_inputext" name="user_phone" placeholder=" "-" 없이 숫자만 입력해주세요. 예)01012345678"><br><br>
 					</div>
@@ -78,15 +76,12 @@
 					<div>
 						<span class="insert_phoneHave">번호가 이미 존재합니다.</span>
 					</div>
-					<br>
 					<div>
 						<span class="insert_phoneFalse">휴대폰 번호에는 숫자와 하이픈(-)만을 입력해주세요.</span>
 					</div>
-					<br>
 					<div>
 						<span class="insert_phoneTrue">사용 가능한 휴대폰 번호입니다.</span>
 					</div>
-					<br>
 				</div><br>
 				
 				
@@ -158,6 +153,9 @@
 					<div>
 						<span class="insert_repwFalse">비밀번호가 일치하지 않습니다.</span>
 					</div>
+					<div>
+						<span class="insert_repwTrue">비밀번호 중복 확인을 완료했습니다.</span>
+					</div>
 					<br>
 				</div><br>
 				
@@ -190,17 +188,17 @@
 					<h4>주소</h4><br>
 					<div class="insert_addr">
 						<div>
+							<input class="insert_inputext" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">
+						</div><br>
+						<div>
+							<input class="insert_inputext" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
+						</div><br>
+						<div>
+							<input class="insert_inputext" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
+						</div><br>
+						<div>
 							<button type="button" class="insert_add" onclick="PostCode();">주소 찾기</button>
-						</div><br>
-						<div>
-							<input class="insert_ad" placeholder="우편번호" name="user_zip" id="user_zip" type="text" readonly="readonly">
-						</div><br>
-						<div>
-							<input class="insert_ad" placeholder="도로명 주소" name="user_addr1" id="user_addr1" type="text" readonly="readonly">
-						</div><br>
-						<div>
-							<input class="insert_ad" placeholder="상세주소" name="user_addr2" id="user_addr2" type="text">
-						</div><br>
+						</div>
 					</div> 
 					<span class="insert_addrNone">주소를 입력하세요.</span>   
 				</div><br>
@@ -223,36 +221,61 @@
 				
 				
 				
-				<div id=insert_agree><br>
-				<h4>이용 동의사항*</h4><br>
-					<div id=insert_agree_in>
-						<div><input type ="checkbox" name="insert_allAgree"  value="insert_allAgree" onclick="insert_allAgree(this)"></div>
-						<div>전체 동의</div><br>
-						<div><input type ="checkbox" name = "insert_agree" id="user_agree1" onclick="insert_checkAgree(this)"></div>
-						<div>(필수)본인은 만 14세 이상입니다.</div><br>
-						<div><input type ="checkbox" name = "insert_agree" id="user_agree2" onclick="insert_checkAgree(this)"></div>
-						<div>(필수)이용 약관에 동의합니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox" name = "insert_agree" id="user_agree3" onclick="insert_checkAgree(this)"></div>
-						<div>(필수)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox" onclick="insert_checkAgree(this)"></div>
-						<div>(선택)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox" onclick="insert_checkAgree(this)"></div>
-						<div>(선택)이메일으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br>
-						<div><input type ="checkbox" onclick="insert_checkAgree(this)"></div>
-						<div>(선택)휴대폰으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></div><br><br>
-						<span class="insert_agreeNone">동의사항을 확인하세요.</span>
-					</div>
-				</div><br>
+				<!-- 동의사항 함수 -->
+				<script type="text/javascript">
+					$(document).ready(function() {
+						$("#insert_allAgree").click(function() {
+							if($("#insert_allAgree").is(":checked")) $("input[class=insert_agreeChk]").prop("checked", true);
+							else $("input[class=insert_agreeChk]").prop("checked", false);
+						});
+						
+						$("input[class=insert_agreeChk]").click(function() {
+							var total = $("input[class=insert_agreeChk]").length;
+							var checked = $("input[class=insert_agreeChk]:checked").length;
+							
+							if(total != checked) $("#insert_allAgree").prop("checked", false);
+							else $("#insert_allAgree").prop("checked", true); 
+						});
+					});
+				</script>
 				
-				
-				
-				<input type="checkbox" id="chk_all">
-				<input type="checkbox" class="del-chk">  
-				<input type="checkbox" class="del-chk"> 
-				<input type="checkbox" class="del-chk"> 
-
-				
-				
+				<div class="insert_agreeZone">
+					<table>
+						<thead>
+							<tr>
+								<td><input type="checkbox" id="insert_allAgree" /></td>
+								<td>동의사항</td>
+							</tr>	
+						</thead>
+						<tbody>
+							<tr>
+								<td><input type="checkbox" name="insert_agree" class="insert_agreeChk"></td>
+								<td>(필수)본인은 만 14세 이상입니다.</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="insert_agree" class="insert_agreeChk"></td>
+								<td>(필수)이용 약관에 동의합니다.<a href="">약관 보기</a></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="insert_agree" class="insert_agreeChk"></td>
+								<td>(필수)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" class="insert_agreeChk"></td>
+								<td>(선택)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" class="insert_agreeChk"></td>
+								<td>(선택)이메일으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" class="insert_agreeChk"></td>
+								<td>(선택)휴대폰으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></td>
+							</tr>
+						</tbody>
+					</table>
+					<span class="insert_agreeNone">동의사항을 확인하세요.</span>
+				</div>
 				
 				
 				<div id="insert_submit"><br>

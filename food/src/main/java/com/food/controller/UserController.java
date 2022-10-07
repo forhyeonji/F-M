@@ -171,7 +171,7 @@ public class UserController{
         /* 이메일 보내기 */
         String setFrom = "ssnow000@daum.net";
         String toMail = user_email;
-        String title =  "회원가입 인증 이메일 입니다.";
+        String title =  "[푸렌즈] 회원가입 인증 이메일 입니다.";
         String content = 
         		 "홈페이지를 방문해주셔서 감사합니다." +
         	     "<br><br>" + 
@@ -243,96 +243,7 @@ public class UserController{
 	
 	
 	
-	
-
-	
-	/*
-	//鍮꾨�踰덊샇 李얘린 �뤌
-	@RequestMapping(value = "/find_pw", method=RequestMethod.GET)
-	public String find_pw() throws Exception{
-		return "Main/find_pw";	
-	}
-		
-		
-	@RequestMapping(value = "/find_pw", method=RequestMethod.POST)
-	public String find_pwPost(String user_email, String user_id){
-		
-		//us.find_pw(user_email, user_id);
-		
-		// �씤利앸쾲�샇(�궃�닔) �깮�꽦/
-		Random random = new Random();
-		StringBuffer randomBuf = new StringBuffer();
-		for (int i = 0; i < 15; i++) {
-			// Random.nextBoolean() : �옖�뜡�쑝濡� true, false 由ы꽩 (true : �옖�뜡 �냼臾몄옄 �쁺�뼱, false : �옖�뜡 �닽�옄)
-			if (random.nextBoolean()) {
-				// 26 : a-z �븣�뙆踰� 媛쒖닔
-				// 97 : letter 'a' �븘�뒪�궎肄붾뱶
-				// (int)(random.nextInt(26)) + 97 : �옖�뜡 �냼臾몄옄 �븘�뒪�궎肄붾뱶
-				randomBuf.append((char)((int)(random.nextInt(26)) + 97));
-			} else {
-				randomBuf.append(random.nextInt(10));
-			}
-		}
-		String randomStr = randomBuf.toString();
-		System.out.println("[createRandomStrUsingRandomBoolean] randomStr : " + randomStr);
-	    // [createRandomStrUsingRandomBoolean] randomStr : iok887yt6sa31m99e4d6
- 
-		
-        // �씠硫붿씪 蹂대궡湲� *
-        String setFrom = "ssnow000@daum.net";
-        String toMail = user_email;
-        String title = "[�뫖�젋利�] 鍮꾨�踰덊샇 李얘린瑜� �쐞�븳 �엫�떆 �씠硫붿씪 �엯�땲�떎.";
-        String content = 
-                "�솃�럹�씠吏�瑜� �씠�슜�빐二쇱뀛�꽌 媛먯궗�빀�땲�떎." + user_id + "�떂." +
-                "<br><br>" + 
-                " �엫�떆 鍮꾨�踰덊샇�뒗 " + randomStr + "�엯�땲�떎." + 
-                "<br>" + 
-                "�빐�떦 �씤利앸쾲�샇瑜� �씤利앸쾲�샇 �솗�씤���뿉 湲곗엯�븯�뿬 二쇱꽭�슂.";
-        
-        try {
-            
-            MimeMessage message = mailSender.createMimeMessage();
-            MimeMessageHelper helper = new MimeMessageHelper(message, true, "utf-8");
-            helper.setFrom(setFrom);
-            helper.setTo(toMail);
-            helper.setSubject(title);
-            helper.setText(content,true);
-            mailSender.send(message);
-            
-        }catch(Exception e) {
-            e.printStackTrace();
-        }
-        
-        return randomStr;
-
-
-	}
-	*/
-	
-	
-	
-
-	
-	
-	
-	
-	/*
-	@RequestMapping (value="/", method=RequestMethod.POST)
-	@ResponseBody
-	public ResponseEntity<byte[]> main_display(String fileName)throws Exception{
-		ResponseEntity<byte[]> result=null;
-		//display fileName이 있는 경우
-		if(!fileName.equals("")) {
-			File file=new File(File.separator + fileName);
-			HttpHeaders header=new HttpHeaders();
-			header.add("Content-Type", Files.probeContentType(file.toPath()));
-			result=new ResponseEntity<>(FileCopyUtils.copyToByteArray(file), header, HttpStatus.OK);
-			}
-			return result;
-		}
-	*/
-	
-		// 쇼핑 목록
+	// 홈 화면 쇼핑 목록
 		@RequestMapping(value = "/main", method = RequestMethod.GET)
 		public String main_shop(Model model) {
 
