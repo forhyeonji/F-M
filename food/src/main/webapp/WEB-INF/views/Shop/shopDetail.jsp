@@ -77,9 +77,8 @@
 
 							<div id="bun">
 								<button type="button" id="minus" class="but" value="-">-</button>
-								<input type="text" id="Quantity" class="but" value="1">
+								<input type="text" id="Quantity" class="but" value="1"><span>${main.unit}</span>
 								<button type="button" id="plus" class="but" value="+">+</button>
-								<span>개</span>
 							</div>
 							<div id="sh_sum">
 								<div id="sh_allsum">
