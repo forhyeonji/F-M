@@ -40,7 +40,7 @@
 									<span>${main.subcontent}</span>
 								</div>
 								<div id="price">
-									<span>${main.discountprice}원</span>
+									<span id="discountprice">${main.discountprice}</span>원
 								</div>
 							</div>
 							<div id="shipping">
@@ -76,20 +76,22 @@
 							</div>
 
 							<div id="bun">
-								<button type="button" id="plus" class="but" value="-">-</button>
+								<button type="button" id="minus" class="but" value="-">-</button>
 								<input type="text" id="Quantity" class="but" value="1">
-								<button type="button" id="minus" class="but" value="+">+</button>
+								<button type="button" id="plus" class="but" value="+">+</button>
 								<span>개</span>
 							</div>
 							<div id="sh_sum">
 								<div id="sh_allsum">
-									<strong>총 상품 금액</strong> <strong>원</strong>
+										<div id="sh_number">
+												총 가격 : <input type="text" id="sh_total" value="${main.discountprice}">원
+										</div>									
 								</div>
 							</div>
 
 							<br>
 							<div id="sh_list">
-								<input id="sh_basket" type="submit" value="장바구니" formaction="#">
+								<input id="sh_basket" type="submit" value="장바구니" formaction="/cart">
 							</div>
 						</div>
 					</div>
