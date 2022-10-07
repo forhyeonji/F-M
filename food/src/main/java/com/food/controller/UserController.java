@@ -332,7 +332,7 @@ public class UserController{
 		}
 	*/
 	
-	// 硫붿씤 �럹�씠吏� �씠�룞
+		// 쇼핑 목록
 		@RequestMapping(value = "/main", method = RequestMethod.GET)
 		public String main_shop(Model model) {
 

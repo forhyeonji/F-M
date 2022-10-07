@@ -41,7 +41,9 @@
                     <span class="h_loginmsg h_but" style="font-weight: bold; margin:0;">${sessionScope.user_id}</span><span class="h_but" style="margin:0">님 환영합니다.</span>
                     <a href="/logout" class="h_but">로그아웃</a>
                     <a href="/shopRegistration" class="h_but">상품등록</a>
-                    <a href="/mypage" class="h_but">마이페이지</a>
+                    <c:if test="${login.auth_grp_cd == 1 || login.auth_grp_cd == 2}">
+							<a href="/shopRegistration" class="h_but">상품등록</a>
+					</c:if>
                 </c:if>
             </div><!-- h_logoBox -->
 
