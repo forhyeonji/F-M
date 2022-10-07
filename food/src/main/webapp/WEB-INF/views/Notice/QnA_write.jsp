@@ -36,7 +36,7 @@
 	<div class="NOTI_button">
 		<input type="hidden" value="${sessionScope.user_id}" name="user_id">
 		<input type="submit" class="NOTI_but" value="등록">
-		<input type="button" class="NOTI_but" value="취소" onclick="location.href='http://poceania.o-r.kr/QnA?sep=qna'">
+		<input type="button" class="NOTI_but" value="취소" onclick="location.href='QnA?sep=qna'">
 		<input type="hidden" value="qna" name="sep">
 	</div> <!-- button -->
 

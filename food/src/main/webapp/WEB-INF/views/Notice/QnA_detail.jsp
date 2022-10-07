@@ -36,7 +36,7 @@
 	</table>
 	
 	<hr>
-	<input type="button" value="목록" class="NOTI_but" onclick="location.href='http://poceania.o-r.kr/QnA?sep=qna'">
+	<input type="button" value="목록" class="NOTI_but" onclick="location.href='QnA?sep=qna'">
 	<input type="hidden" value="${detail.sep}" name="sep">
 	
 	<input type="button" value="수정" class="NOTI_but" onclick="location.href='/QnA/modify?bno=${detail.bno}'">

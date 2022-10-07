@@ -39,7 +39,7 @@
 		</div>
 		
 		<c:if test="${user_id=='root' || user_id=='manager'}">
-		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='http://poceania.o-r.kr/QnA_write'">
+		<input type="button" class="NOTI_but" value="글쓰기" onclick="location.href='QnA_write'">
 		</c:if>
 		
 		
