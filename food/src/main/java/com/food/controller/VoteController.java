@@ -6,10 +6,7 @@ import com.food.model.ResCommonVO;
 import com.food.service.VoteService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
-import javax.xml.ws.Response;
 
 @RequiredArgsConstructor
 @RestController
