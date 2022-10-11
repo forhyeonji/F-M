@@ -17,7 +17,7 @@
                     </div>
                     <div class="f_column">
                         <h3>
-                            <a href="http://localhost:8080/directQue?sep=inquiry">
+                            <a href="/directQue?sep=inquiry">
                                 <button class="f_btn">문의하기</button>
                             </a>
                         </h3>

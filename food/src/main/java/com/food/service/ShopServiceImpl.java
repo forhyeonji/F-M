@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.food.mapper.ShopAttachMapper;
 import com.food.mapper.ShopMapper;
+import com.food.model.CartVO;
 import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
@@ -136,4 +137,13 @@ public class ShopServiceImpl implements ShopService {
 	public ShopquestionVO chack(ShopquestionVO shopquestion) {
 		return Sm.chack(shopquestion);
 	}
+	
+	
+	/*CartVO*/
+	
+	//장바구니 insert
+	public void cart(CartVO cart) {
+		Sm.cart(cart);
+	}
+	
 }

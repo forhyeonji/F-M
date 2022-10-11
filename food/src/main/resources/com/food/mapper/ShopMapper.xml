@@ -223,4 +223,10 @@ and bno = #{bno}
 	
 </insert>
 
+<!-- 장바구니 -->
+<insert id="cart">
+insert into tb_cart(c_prodnum,c_cnt,user_id)
+values(#{c_prodnum},#{c_cnt},#{user_id})
+</insert>
+
 </mapper>
