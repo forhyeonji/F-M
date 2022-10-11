@@ -1,4 +1,4 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../Header/Header.jsp"%>
@@ -159,4 +159,4 @@
 
 	</div>
 
-	<%@ include file="../Footer/footer.jsp"%>
+	<%@ include file="../Footer/footer.jsp"%> --%>

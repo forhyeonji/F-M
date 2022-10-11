@@ -2,6 +2,7 @@ package com.food.service;
 
 import java.util.ArrayList;
 
+import com.food.model.CartVO;
 import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
@@ -51,7 +52,7 @@ public interface ShopService {
 	public int total2(ShopquestionVO shopquestion);
 	
 	//Q&A 내가 쓴 문의
-	 public void write(ShopquestionVO shopquestion);
+	public void write(ShopquestionVO shopquestion);
 	
 	//Q&A 관리자 답변 확인
 	public ShopquestionVO chack(ShopquestionVO shopquestion);
@@ -66,5 +67,11 @@ public interface ShopService {
 	public ArrayList<ShopAttachVO> Shopattachlist(int prodnum);
 	public int cntup();
 	public void insert(ShopAttachVO attach);
+	
+	
+	/*CartVO*/
+	
+	//장바구니 insert
+	public void cart(CartVO cart);
 	
 }

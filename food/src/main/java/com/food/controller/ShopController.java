@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.food.model.CartVO;
 import com.food.model.CriteriaVO;
 import com.food.model.PageVO;
 import com.food.model.ShopVO;
@@ -58,17 +59,6 @@ public class ShopController {
 		return "Shop/shopconer";
 	}
 
-	// 상품카테고리 안 소고기
-	@RequestMapping(value = "/shopbeef", method = RequestMethod.GET)
-	public String serve() {
-		return "Shop/shopbeef";
-	}
-
-	// 상품구매
-	@RequestMapping(value = "/shopPurchase", method = RequestMethod.GET)
-	public String Purchase() {
-		return "Shop/shopPurchase";
-	}
 
 	// 상품등록
 	@GetMapping("/shopRegistration") // 상품등록 페이지를 실행하기 위한 url주소 매핑
@@ -153,7 +143,8 @@ public class ShopController {
 
 		model.addAttribute("detail", shop.shopDetail(criteriaVO));
 
-
+		
+		
 		return "Shop/shopDetail";
 
 	}
@@ -192,6 +183,18 @@ public class ShopController {
 		
 		return "redirect:/shopDetail";
 	}
+	
+	// 장바구니 등록
+	@RequestMapping(value = "/cartwrite", method = RequestMethod.POST)
+	public String CartInsert(CartVO cart) {
+		System.out.println(cart);
+		
+		shop.cart(cart);
+		
+		// 장바구니 insert 후 cart화면으로 이동
+		return "redirect:/mypage/cart";
+	}
+	
 	
 	
 }

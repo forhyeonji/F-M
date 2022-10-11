@@ -2,6 +2,7 @@ package com.food.mapper;
 
 import java.util.ArrayList;
 
+import com.food.model.CartVO;
 import com.food.model.CriteriaVO;
 import com.food.model.ShopAttachVO;
 import com.food.model.ShopVO;
@@ -71,6 +72,7 @@ public interface ShopMapper {
 	//Q&A 관리자 답변 확인
 	public ShopquestionVO chack(ShopquestionVO shopquestion);
 	
-	
+	//장바구니 insert
+	public void cart(CartVO cart);
 	
 }

@@ -26,76 +26,81 @@
 	<div id="test">
 		<div id="main">
 			<div id="cnt">
-				<div id="cnt_header">
-					<div id="cnt-header_left">
-						<img id="sh_img_cab" src="/Shopdisplay?fileName=${main.filename}">
-					</div>
-					<div id="box">
-						<div id="cnt-header_right">
-							<div id="title_header">
-								<div id="detail_name">
-									<h2>${main.NAME}</h2>
+				<form action="/cartwrite" method="post">
+					<div id="cnt_header">
+						<div id="cnt-header_left">
+							<img id="sh_img_cab" src="/Shopdisplay?fileName=${main.filename}">
+						</div>
+						<div id="box">
+							<div id="cnt-header_right">
+								<div id="title_header">
+									<div id="detail_name">
+										<h2>${main.NAME}</h2>
+										<input type="hidden" name="c_prodnum" value="${main.prodnum}">
+										<input type="hidden" value="${sessionScope.user_id}" name="user_id">
+									</div>
+									<div id="sh_subcontent">
+										<span>${main.subcontent}</span>
+									</div>
+									<div id="price">
+										<span id="discountprice">${main.discountprice}</span>원
+									</div>
 								</div>
-								<div id="sh_subcontent">
-									<span>${main.subcontent}</span>
+								<div id="shipping">
+									<div>
+										<span class="title"><b>배송방법</b></span><span>택배</span>
+									</div>
+									<div>
+										<span class="title"><b>배송비</b></span><span>무료(50,000원 이상
+											무료배송)</span>
+									</div>
+									<div>
+										<span class="title"><b>배송 안내</b></span><br> <span>배송비
+											3000원/제주도25,000원 추가/도서산간50,000원 추가/반품 및 교환비50,000원</span>
+									</div>
 								</div>
-								<div id="price">
-									<span id="discountprice">${main.discountprice}</span>원
+	
+								<hr id="sh_boundary">
+								<div class="sh_pacakge">
+									<p>포장타입 :</p>
+									<br>
+									<p id="sh_ice">${main.packaging}</p>
 								</div>
-							</div>
-							<div id="shipping">
-								<div>
-									<span class="title"><b>배송방법</b></span><span>택배</span>
+	
+								<hr id="sh_boundary">
+								<div class="sh_pacakge">
+									<p>판매단위 :</p>
+									<p id="sh_unit">${main.unit}</p>
 								</div>
-								<div>
-									<span class="title"><b>배송비</b></span><span>무료(50,000원 이상
-										무료배송)</span>
+								<hr id="sh_boundary">
+								<div class="sh_pacakge">
+									<p>원산지:</p>
+									<p id="sh_Origin">${main.origin}</p>
 								</div>
-								<div>
-									<span class="title"><b>배송 안내</b></span><br> <span>배송비
-										3000원/제주도25,000원 추가/도서산간50,000원 추가/반품 및 교환비50,000원</span>
+	
+								<div id="bun">
+									<button type="button" id="minus" class="but" value="-">-</button>
+									<input type="text" name="c_cnt" id="Quantity" class="but" value="1"><span>${main.unit}</span>
+									<button type="button" id="plus" class="but" value="+">+</button>
 								</div>
-							</div>
-
-							<hr id="sh_boundary">
-							<div class="sh_pacakge">
-								<p>포장타입 :</p>
+								<div id="sh_sum">
+									<div id="sh_allsum">
+											<div id="sh_number">
+													총 가격 : <input type="text" id="sh_total" value="${main.discountprice}">원
+											</div>									
+									</div>
+								</div>
+	
 								<br>
-								<p id="sh_ice">${main.packaging}</p>
-							</div>
-
-							<hr id="sh_boundary">
-							<div class="sh_pacakge">
-								<p>판매단위 :</p>
-								<p id="sh_unit">${main.unit}</p>
-							</div>
-							<hr id="sh_boundary">
-							<div class="sh_pacakge">
-								<p>원산지:</p>
-								<p id="sh_Origin">${main.origin}</p>
-							</div>
-
-							<div id="bun">
-								<button type="button" id="minus" class="but" value="-">-</button>
-								<input type="text" id="Quantity" class="but" value="1"><span>${main.unit}</span>
-								<button type="button" id="plus" class="but" value="+">+</button>
-							</div>
-							<div id="sh_sum">
-								<div id="sh_allsum">
-										<div id="sh_number">
-												총 가격 : <input type="text" id="sh_total" value="${main.discountprice}">원
-										</div>									
+								<div id="sh_list">
+									<!-- <a href="/mypage/cart"> -->
+									<input id="sh_basket" type="submit" value="장바구니" >
+									<!-- </a> -->
 								</div>
-							</div>
-
-							<br>
-							<div id="sh_list">
-								<input id="sh_basket" type="submit" value="장바구니" formaction="/cart">
 							</div>
 						</div>
 					</div>
-				</div>
-
+				</form>
 				<!-- 상품 설명,리뷰,문의,배송 전체 -->
 				<div id="btfTab" class="tab">
 					<!-- 상품 상세 메뉴 -->
@@ -174,10 +179,11 @@
 															</tr>
 
 															<tr>
-																<td><input type="text" value="${sessionScope.user_id}"
-																	name="user_id"> <input type="hidden"
-																	value="${main.prodnum}" name="prodnum"> <input
-																	type="submit" class="sh_signup" value="등록"></td>
+																<td>
+																<input type="text" value="${sessionScope.user_id}" name="user_id"> 
+																<input type="hidden" value="${main.prodnum}" name="prodnum"> 
+																<input type="submit" class="sh_signup" value="등록">
+																</td>
 
 															</tr>
 
@@ -228,10 +234,10 @@
 																</div>
 
 																<div class="ans">
-																	<span>A.${detail.answer}</span> <a
-																		href="/shopEnswer?prodnum=${detail.prodnum}&bno=${detail.bno}"
-																		class="answerbtn">답변등록</a>
-																	<!-- <input type="button" value="답변등록" class="answerbtn"> -->
+																	<span>A.${detail.answer}</span>
+																	<c:if test="${user_id=='root' || user_id=='manager'}">
+																	<a href="/shopEnswer?prodnum=${detail.prodnum}&bno=${detail.bno}" class="answerbtn">답변등록</a>
+																	</c:if>
 																</div>
 															</div>
 														</c:forEach>
