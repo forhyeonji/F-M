@@ -136,10 +136,8 @@ function cartlist(userid){
 		for(var i=0; i<data.length; i++){
 			str+="<tr><td><input type='checkbox' checked name='my_onecheck' class='my_oneck' value="+data[i].c_no+"></td>"
 			str+="<td><img class='my_orderImg' alt='"+data[i].c_no+"' src='/Shopdisplay?fileName="+data[i].filename+"'></td>"
-			str+="<td>"+data[i].s_name+"<br>"
-			str+="<span id='my_cartCon'>"+data[i].s_content+"</span></td>"
-			str+="<td>"
-			str+="<input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
+			str+="<td>"+data[i].s_name+"</td>"
+			str+="<td><input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
 			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
 			str+="<td><span id='my_sum"+data[i].c_no+"' data-c_sum="+data[i].c_sumprod+">"+addComma(data[i].c_sumprod)+" 원</td>"
 			str+="<td><input class='my_cartOne' type='button' value='주문하기' data-c_no="+data[i].c_no+" data-prodnum="+data[i].c_prodnum+"><br>"

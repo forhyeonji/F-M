@@ -217,7 +217,7 @@
 							<input type = "radio" id="user_none" name="user_gender" value="none" checked>선택안함
 							</div>
 					</div>
-				</div><br>
+				</div><br><br>
 				
 				
 				
@@ -239,46 +239,70 @@
 					});
 				</script>
 				
-				<div class="insert_agreeZone">
-					<table>
-						<thead>
+				<div class="insert_agree_border">
+					<div>
+						<h4>동의사항</h4>
+					</div>
+					<table class="insert_agreeZone">
 							<tr>
 								<td><input type="checkbox" id="insert_allAgree" /></td>
-								<td>동의사항</td>
-							</tr>	
-						</thead>
-						<tbody>
-							<tr>
-								<td><input type="checkbox" name="insert_agree" class="insert_agreeChk"></td>
-								<td>(필수)본인은 만 14세 이상입니다.</td>
+								<td>전체 동의</td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" name="insert_agree" class="insert_agreeChk"></td>
-								<td>(필수)이용 약관에 동의합니다.<a href="">약관 보기</a></td>
+								<td>(필수)본인은 만 14세 이상입니다</td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" name="insert_agree" class="insert_agreeChk"></td>
-								<td>(필수)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></td>
+								<td>(필수)이용 약관 동의</td>
+							</tr>
+							<tr>
+								<td><input type="checkbox" name="insert_agree" class="insert_agreeChk"></td>
+								<td>(필수)개인정보 수집 및 이용 동의</td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" class="insert_agreeChk"></td>
-								<td>(선택)개인정보 수집 및 이용에 동의합니다.<a href="">약관 보기</a></td>
+								<td>(선택)개인정보 마케팅 활용 동의</td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" class="insert_agreeChk"></td>
-								<td>(선택)이메일으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></td>
+								<td>(선택)이메일으로 혜택 및 정보 수신</td>
 							</tr>
 							<tr>
 								<td><input type="checkbox" class="insert_agreeChk"></td>
-								<td>(선택)휴대폰으로 혜택 및 정보를 수신하겠습니다.<a href="">약관 보기</a></td>
+								<td>(선택)휴대폰으로 혜택 및 정보 수신</td>
 							</tr>
-						</tbody>
+					</table>
+					<table class="insert_agreeLink">
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td>&nbsp;</td>
+						</tr>
+						<tr>
+							<td><a href="">약관</a></td>
+						</tr>
+						<tr>
+							<td><a href="">약관</a></td>
+						</tr>
+						<tr>
+							<td><a href="">약관</a></td>
+						</tr>
+						<tr>
+							<td><a href="">약관</a></td>
+						</tr>
+						<tr>
+							<td><a href="">약관</a></td>
+						</tr>
 					</table>
 					<span class="insert_agreeNone">동의사항을 확인하세요.</span>
 				</div>
+				<br>
+				<br>
+				<br>
 				
-				
-				<div id="insert_submit"><br>
+				<div id="insert_submit" class="insert_submit"><br>
 					<input type="button" id = "insert_insert" value="가입하기">
 				</div><br>
 		

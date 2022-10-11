@@ -1,5 +1,6 @@
 @charset "UTF-8";
 
+
 .insert_homelogo{
 	margin-top : 50px;
 	display : flex;
@@ -26,7 +27,7 @@
 	vertical-align : center;
 	margin : 20px;
 	padding : 20px;
-	width : 600px;
+	width : 405px;
 	border-radius : 5px;
 }
 
@@ -66,19 +67,24 @@
 	border-radius : 5px;
 }
 
-#insert_agree{
-	margin-left : 50px;
-	margin-right : 50px;
-	border-radius : 5px;
+#inser_agree_border{
+	width : 600px;
 }
 
-#insert_agree_in{
-	display : flex;
-	flex-direction : row;
-	justify-content : center;
+.insert_agreeZone{
+	width : 80%;
+	float : left;
 }
+
+.insert_agreeLink{
+	width : 20%;
+	float : right;
+	text-align : right;
+}
+
 
 #insert_insert{
+	margin-top : 80px;
 	width : 100px;
 	height : 42px;
 	color : white;
@@ -98,6 +104,9 @@
 	border-radius : 5px;
 	border : none;
 }
+
+
+
 
 
 
