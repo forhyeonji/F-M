@@ -90,11 +90,18 @@ public class ShopServiceImpl implements ShopService {
 
 	}
 
-	//메인화면 상품 정보
-	public ArrayList<ShopVO> ShopSelect(){
+	//메인화면 상품 정보 : 추천상품
+	public ArrayList<ShopVO> recoItem(){
 
-		return Sm.ShopSelect();
+		return Sm.recoItem();
 	}
+	
+	//메인화면 상품 정보 : 신상품
+	public ArrayList<ShopVO> newItem(){
+
+		return Sm.newItem();
+	}
+	
 	
 	public ArrayList<ShopquestionVO> shopDetail(CriteriaVO criteriaVO) {
 			System.out.println("ShopVO의 값 = "+criteriaVO);

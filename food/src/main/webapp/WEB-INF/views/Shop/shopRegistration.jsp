@@ -61,6 +61,7 @@
 						<td id="sh_inputArea">
 							<div id="sh_div">
 								<label for="sh_gasName" id="sh_menuName">상품명:</label>
+								<input type="checkbox" name="recom" value="1">추천상품 
 								<span class="sh_spaninput" id="sh_gasNameinput">상품명을 입력하세요.</span>
 							</div>
 						</td>

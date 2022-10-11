@@ -60,11 +60,11 @@
 		
 				<h2 id="sh_h2">[추천 상품]</h2>
 				<div class="sh_slide_div">
- 					<c:forEach items="${ArrayList}" var="ArrayList">
-					<a href="/shopDetail?prodnum=${ArrayList.prodnum}">
+ 					<c:forEach items="${recom}" var="recom">
+					<a href="/shopDetail?prodnum=${recom.prodnum}">
 					<div class="sh_img_div">
 					  	 <div class="sh_ArrayList">
-							<div class="shop_div_img" data-name="${ArrayList.NAME}" data-filename="${ArrayList.filename}">
+							<div class="shop_div_img" data-name="${recom.NAME}" data-filename="${recom.filename}">
                          	  <img>
                        	    </div>
 						 </div>	
@@ -72,19 +72,19 @@
 					 
 					 <div class="sh_img_text">	
 						<div class="sh_NAME">
-							${ArrayList.NAME}
+							${recom.NAME}
 						</div>		
 						
 						<div class="sh_subcontent">
-							${ArrayList.subcontent}
+							${recom.subcontent}
 						</div>
 						
 						<div class="sh_discountprice">
-							${ArrayList.discountprice}
+							${recom.discountprice}
 						</div>
 						
 						<div class="sh_prodnum">
-							<input type="hidden" value="${ArrayList.prodnum}">
+							<input type="hidden" value="${recom.prodnum}">
 						</div>
 					</div>
 				</a>
@@ -94,11 +94,11 @@
 			
 				<h2 id="sh_h2">[신상품]</h2>
 				<div class="sh_slide_div">
- 					<c:forEach items="${ArrayList}" var="ArrayList">
-					<a href="/shopDetail?prodnum=${ArrayList.prodnum}">
+ 					<c:forEach items="${newItem}" var="newItem">
+					<a href="/shopDetail?prodnum=${newItem.prodnum}">
 					<div class="sh_img_div">
 					  	 <div class="sh_ArrayList">
-							<div class="shop_div_img" data-name="${ArrayList.NAME}" data-filename="${ArrayList.filename}">
+							<div class="shop_div_img" data-name="${newItem.NAME}" data-filename="${newItem.filename}">
                          	  <img>
                        	    </div>
 						 </div>	
@@ -106,19 +106,19 @@
 					 
 					 <div class="sh_img_text">	
 						<div class="sh_NAME">
-							${ArrayList.NAME}
+							${newItem.NAME}
 						</div>		
 						
 						<div class="sh_subcontent">
-							${ArrayList.subcontent}
+							${newItem.subcontent}
 						</div>
 						
 						<div class="sh_discountprice">
-							${ArrayList.discountprice}
+							${newItem.discountprice}
 						</div>
 						
 						<div class="sh_prodnum">
-							<input type="hidden" value="${ArrayList.prodnum}">
+							<input type="hidden" value="${newItem.prodnum}">
 						</div>
 					</div>
 				</a>

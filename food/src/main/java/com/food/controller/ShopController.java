@@ -37,7 +37,8 @@ public class ShopController {
 		System.out.println("메인페이지");
 		// System.out.println("shop.ShopSelect() = "+shop.ShopSelect());
 		// model.addAttribute("prodnum",shop.Shopattachlist(0));
-		model.addAttribute("ArrayList", shop.ShopSelect());
+		model.addAttribute("recom", shop.recoItem());	// 추천상품 select
+		model.addAttribute("newItem", shop.newItem());// 신상품 select
 
 		return "Shop/shop";
 	}

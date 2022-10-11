@@ -32,8 +32,11 @@ public interface ShopService {
 	// 상품편집 클릭시 상품 상세 내용
 	public ShopVO prodEdit(ShopVO Shop);
 	
-	//메인화면 상품 정보
-	public ArrayList<ShopVO> ShopSelect();
+	//메인화면 상품 정보 : 추천상품 select
+	public ArrayList<ShopVO> recoItem();
+	
+	//메인화면 상품 정보 : 신상품 select
+	public ArrayList<ShopVO> newItem();
 	
 	// 상품 상세 내용보기 메인 이미지 설계
 	public ShopVO main(ShopVO shop);

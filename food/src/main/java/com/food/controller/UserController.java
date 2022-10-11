@@ -250,7 +250,7 @@ public class UserController{
 			System.out.println("");
 			// System.out.println("shop.ShopSelect() = "+shop.ShopSelect());
 			// model.addAttribute("prodnum",shop.Shopattachlist(0));
-			model.addAttribute("ArrayList", shopservice.ShopSelect());
+			//model.addAttribute("ArrayList", shopservice.ShopSelect());
 
 			return "Main/main";
 		}

@@ -13,8 +13,8 @@
 			select ifnull(max(prodnum),0)+1 prodnum
 			from tb_shop
   		</selectKey>
-		insert into	tb_shop(prodnum,NAME,origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail,class1,class2)
-		value(#{prodnum},#{NAME},#{origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail},#{class1},#{class2})
+		insert into	tb_shop(prodnum,NAME,origin,subcontent,CONTENT,price2,discountprice,Parcel,packaging,unit,boundary,detail,class1,class2,recom)
+		value(#{prodnum},#{NAME},#{origin},#{subcontent},#{CONTENT},#{discountprice},#{price2},#{Parcel},#{packaging},#{unit},#{boundary},#{detail},#{class1},#{class2},#{recom})
 	</insert>
 		
 	<!-- 상품 분류 페이지 -->	
@@ -138,17 +138,35 @@
 
 
 
-<!-- 쇼핑몰 메인 내용 -->
-<select id="ShopSelect" resultType="com.food.model.ShopVO">
+<!-- 쇼핑몰 메인 내용 : 추천상품 -->
+<select id="recoItem" resultType="com.food.model.ShopVO">
 SELECT 
-	rownum,prodnum,NAME,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,<![CDATA['/']]>,uuid,'-' ,filename)AS filename, discountprice
+	rownum,prodnum,NAME,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice,recom
 FROM  (
 		SELECT   @rownum:=@rownum+1 rownum,a.* 
 		FROM (SELECT * 
 					FROM (
- 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath, discountprice
-							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE  image = 1 and division = 'm' )AS j ) AS a,(
-										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath, discountprice,recom
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum  WHERE image = 1 and  division = 'm' and recom=1) AS j ) AS a,(
+										SELECT @rownum:=0) AS tmp ORDER BY prodnum DESC) AS balist;
+</select>
+
+
+<!-- 쇼핑몰 메인 내용 : 신상품 -->
+<select id="newItem" resultType="com.food.model.ShopVO">
+SELECT 
+	rownum,prodnum,NAME,subcontent,division,Concat(Replace(uploadPath,'\\','/') ,'/',uuid,'-' ,filename)AS filename, discountprice,today
+FROM  (
+		SELECT   @rownum:=@rownum+1 rownum,a.* 
+		FROM (SELECT * 
+					FROM (
+ 						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath, discountprice,today
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE image = 1 and s.prodnum = '1' and division = 'm' or s.prodnum='23' and division = 'm' or s.prodnum='4'  and division = 'm' or s.prodnum='15' and division = 'm' or s.prodnum='9' and division = 'm'or s.prodnum='24' and division = 'm') AS j ) AS a,(
+										SELECT @rownum:=0) AS tmp ORDER BY today DESC) AS balist
+<![CDATA[										
+WHERE ROWNUM <9
+]]>
+;
 </select>
 
 
