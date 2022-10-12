@@ -161,7 +161,7 @@ FROM  (
 		FROM (SELECT * 
 					FROM (
  						SELECT  t.prodnum,NAME,subcontent,division,uuid,filename,uploadPath, discountprice,today
-							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE image = 1 and s.prodnum = '1' and division = 'm' or s.prodnum='23' and division = 'm' or s.prodnum='4'  and division = 'm' or s.prodnum='15' and division = 'm' or s.prodnum='9' and division = 'm'or s.prodnum='24' and division = 'm') AS j ) AS a,(
+							FROM   tb_shop t  JOIN  sh_appatch s ON  t.prodnum = s.prodnum WHERE image = 1 and  division = 'm' ) AS j ) AS a,(
 										SELECT @rownum:=0) AS tmp ORDER BY today DESC) AS balist
 <![CDATA[										
 WHERE ROWNUM <9
