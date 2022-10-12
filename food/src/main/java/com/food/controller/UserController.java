@@ -244,17 +244,36 @@ public class UserController{
 	
 	
 	// 홈 화면 쇼핑 목록
-		@RequestMapping(value = "/main", method = RequestMethod.GET)
-		public String main_shop(Model model) {
+		//@RequestMapping(value = "/main", method = RequestMethod.GET)
+		//public String main_shop(Model model) {
 
-			System.out.println("");
+			//System.out.println("");
 			// System.out.println("shop.ShopSelect() = "+shop.ShopSelect());
 			// model.addAttribute("prodnum",shop.Shopattachlist(0));
 			//model.addAttribute("ArrayList", shopservice.ShopSelect());
 
+			//return "Main/main";
+		//}
+		
+		@RequestMapping(value = "/main", method = RequestMethod.GET)
+				public String main_shop(Model model) {
+
+					//System.out.println("");
+					// System.out.println("shop.ShopSelect() = "+shop.ShopSelect());
+					// model.addAttribute("prodnum",shop.Shopattachlist(0));
+					//model.addAttribute("ArrayList", shopservice.ShopSelect());
+
+					//return "Main/main";
+			
+			System.out.println("");
+			model.addAttribute("recom", shopservice.recoItem());	// 異붿쿇�긽�뭹 select
+			model.addAttribute("newItem", shopservice.newItem());// �떊�긽�뭹 select
+			
 			return "Main/main";
 		}
+	
 		
+	
 
 	
 	

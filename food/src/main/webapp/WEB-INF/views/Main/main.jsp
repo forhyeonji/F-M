@@ -56,10 +56,70 @@
 	        <div></div>
 	        <div></div>
 	    </div>
-	</div> -->		
+	</div> -->
+	
+	<br><br>
+	<h2 id="sh_h2"><a href=""></a>이 상품을 찾으셨나요?</h2>
+				<div class="main_slide_div">
+ 					<c:forEach items="${recom}" var="recom">
+					<a href="/shopDetail?prodnum=${recom.prodnum}">
+					<div class="sh_img_div">
+					  	 <div class="sh_ArrayList">
+							<div class="shop_div_img" data-name="${recom.NAME}" data-filename="${recom.filename}">
+                         	  <img>
+                       	    </div>
+						 </div>	
+					 </div>	
+					 
+					 <div class="sh_img_text">	
+						<div class="sh_NAME">
+							${recom.NAME}
+						</div>		
+						
+						<div class="sh_discountprice">
+							${recom.discountprice}
+						</div>
+						
+						<div class="sh_prodnum">
+							<input type="hidden" value="${recom.prodnum}">
+						</div>
+					</div>
+				</a>
+				</c:forEach>
+			</div>
+			
+				<br>
+				<h2 id="sh_h2">오늘은 이런 상품이 들어왔어요</h2>
+				<div class="main_slide_div">
+ 					<c:forEach items="${newItem}" var="newItem">
+					<a href="/shopDetail?prodnum=${newItem.prodnum}">
+					<div class="sh_img_div">
+					  	 <div class="sh_ArrayList">
+							<div class="shop_div_img" data-name="${newItem.NAME}" data-filename="${newItem.filename}">
+                         	  <img>
+                       	    </div>
+						 </div>	
+					 </div>	
+					 
+					 <div class="sh_img_text">	
+						<div class="sh_NAME">
+							${newItem.NAME}
+						</div>		
+						
+						<div class="sh_discountprice">
+							${newItem.discountprice}
+						</div>
+						
+						<div class="sh_prodnum">
+							<input type="hidden" value="${newItem.prodnum}">
+						</div>
+					</div>
+				</a>
+				</c:forEach>
+			</div>		
 	
 
-<h2 id="main_h2">추천 상품</h2>	
+<!-- <h2 id="main_h2">추천 상품</h2>	
 
 	<div class="main_slide_div">
  		<c:forEach items="${ArrayList}" var="ArrayList">
@@ -148,7 +208,7 @@
 				</div>
 			</a>
 		</c:forEach>
-	</div>			
+	</div>	-->		
 			
 </div>
 	
