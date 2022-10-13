@@ -1,13 +1,8 @@
 package com.food.mapper;
 
-import com.food.model.ShopAttachVO;
+
 import com.food.model.UserVO;
-
-import java.util.ArrayList;
-import java.util.List;
-
 import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
 
 @Mapper
 public interface UserMapper {
@@ -21,11 +16,7 @@ public interface UserMapper {
     public int phoneCheck(String user_phone);
     
     public UserVO find_id(UserVO userVO);
-    
-    
-    //비밀번호
-    public UserVO find_pw(UserVO userVO)throws Exception;
-    
 
+    public UserVO find_pw(UserVO userVO)throws Exception;
 
 } 

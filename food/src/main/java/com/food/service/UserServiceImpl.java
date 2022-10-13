@@ -29,7 +29,7 @@ public class UserServiceImpl implements UserService {
 	private JavaMailSender mailSender;
 	
 	
-	@Autowired
+
 	ShopAttachMapper sam;
 	
     @Autowired 
@@ -44,7 +44,6 @@ public class UserServiceImpl implements UserService {
       	boolean result=false;
       	if(login!=null) {
       		session.setAttribute("login", login);
-      		System.out.println("·Î±×ÀÎ="+session.getAttribute("login"));
       		result=true;
       	}
       	return result;
