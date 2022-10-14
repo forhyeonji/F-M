@@ -11,13 +11,14 @@
 
 
 <div class="insert_homelogo">
-	<a href="/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>
+	<a href="/"><img src="../../../resources/image/HeaderImg/푸렌드2.png"></a>
 </div>
 
 <div class="insert_border">
 
 	<form action="/insert" method ="post" name="insert_form"  id="insert_form">
 		
+		<br><br>
 		<div class="insert_top">
 			<h2 class="insert_h2">회원가입</h2>
 		</div>
@@ -89,7 +90,6 @@
 					<div>
 						<h4>아이디</h4><br>
 					</div>
-					<br>
 					<div>
 						<input type="text" id="user_id" class="insert_inputext" name="user_id">
 					</div>
@@ -117,7 +117,6 @@
 					<div>
 						<h4>비밀번호</h4><br>
 					</div>
-					<br>
 					<div>
 						<input type="password" id="user_pw" class="insert_inputext" name="user_pw">
 					</div>
@@ -141,7 +140,6 @@
 					<div>
 						<h4>비밀번호 확인</h4><br>
 					</div>
-					<br>
 					<div>
 						<input type="password" id="user_repw" class="insert_inputext">
 					</div>
@@ -164,7 +162,6 @@
 					<div>
 						<h4>이름</h4><br>
 					</div>
-					<br>
 					<div>
 						<input type="text" id="user_name" class="insert_inputext" name="user_name">
 					</div>

@@ -11,8 +11,9 @@
 	<form method="post" action="/login" accept-charset="UTF-8">
 
 	<div id="login_homelogo">
-		<a class="login_a" href="/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
+		<a class="login_a" href="/"><img src="../../../resources/image/HeaderImg/푸렌드2.png"></a>	
 	</div>
+	<br><br><br><br><br>
 
 	<div id="login_border">
 		

@@ -221,7 +221,7 @@ public class UserController{
 	}
 	
 	
-	//아이디 찾기 
+	//비밀번호 찾기 
 		@RequestMapping(value = "/find_pw", method=RequestMethod.GET)
 		public String find_pw() throws Exception{
 			return "Main/find_pw";

@@ -2,42 +2,31 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="UTF-8">
-<title>Find ID</title>
-<style>
-</style>
+<script src="http://code.jquery.com/jquery-latest.js"></script>
 
-<script src="http://code.jquery.com/jquery-latest.js"></script> 
-</head>
-  
-<body>                
+<div class="findpw_outborder">    
           
-<div id="login_homelogo">
-		<a class="login_a" href="/"><img class="login_img" src="../../../resources/image/main_image/home_logo_ex.png"></a>	
+	<div id="findpw_homelogo">
+		<a class="findpw_a" href="/"><img class="login_img" src="../../../resources/image/HeaderImg/푸렌드2.png"></a>	
 	</div>
+	<br><br><br><br><br>
 	
-<form method="post" class="form-signin" action="find_pw" name="findpwform">
-		<div class="form-label-group">
-			<input type="text" id="user_name" name="user_name" class="form-control"/>
-			<label for="name">이름</label>
+	<form method="post" class="findpw_form">
+	
+		<div class="findpw_namewrap">
+			<input type="text" name="user_name" class="findpw_name" placeholder="이름을 입력하세요."/>
 		</div>
 		
-		<div class="form-label-group">
-			<input type="text" id="user_id" name="user_id" class="form-control"/>
-			<label for="id">아이디</label>
+		<div class="findpw_idwrap">
+			<input type="text" name="user_id" class="findpw_name" placeholder="아이디를 입력하세요."/>
 		</div>
 		
-		<div class="form-label-group">
-			<input type="text" id="user_email" name="user_email" class="form-control"/>
-			<label for="email">이메일</label>
+		<div class="findpw_emailwrap">
+			<input type="text" name="user_email" class="findpw_email" placeholder="이메일을 입력하세요."/>
 		</div>	
 
-		<div class="form-label-group">
-			<input class="btn btn-lg btn-secondary btn-block text-uppercase"
-				type="submit" value="check">
+		<div class="findpw_buttonwrap">
+			<input class="findpw_button" type="submit" value="비밀번호 찾기">
 		</div>
 
 		<!-- 이름과 전화번호가 일치하지 않을 때-->
@@ -47,24 +36,18 @@
 
 		<!-- 이름과 전화번호가 일치할 때 -->
 		<c:if test="${check == 0}">
-		<label>찾으시는 비밀번호는' ${user.user_pw}' 입니다.</label>
-		<div class="form-label-group">
-				<input class="find_pw_btn"
-					type="button" value="OK" onclick="closethewindow()">
-			</div>
+			<label>찾으시는 비밀번호는' ${user.user_pw}' 입니다.</label>
 		</c:if>
 
 	</form>
 	
-	<script type="text/javascript">
-		function closethewindow(){
-			self.close();
-		}
-	</script>
-	
-	</body>   
-	 
-	</html>
+	<div class="findpw_link">
+		<div class="findpw_search"><a class="findpw_a" href="/insert">회원가입</a></div>
+		<div class="findpw_search"><a class="findpw_a" href="/login">로그인</a></div>
+		<div class="findpw_search"><a class="findpw_a" href="/find_id">아이디 찾기</a></div>
+	</div>
 
+</div>        
 	
-<!-- <script src="/resources/JS/Main/find_pw.js"></script> -->
+	
+<script src="/resources/JS/Main/find_pw.js"></script>
