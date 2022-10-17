@@ -1,23 +1,15 @@
 @charset "UTF-8";
 
- #login_outborder{
+#findId_outborder{
 	width : 1050px; 
 	margin : auto;
 	}
-
-.login_a{
-	text-decoration-line : none;
-	color : black;
-	}
-
-#login_homelogo{
+	
+.findId_sub2{
 	margin-top : 50px;
-	display : flex;
-	justify-content : center;
-	align-items : center;
 	}
-
-#login_inborder{
+	
+.findId_wrap{
 	flex:auto;
 	width : 400px;
 	margin : auto;
@@ -26,45 +18,42 @@
 	justify-content: center;
 	align-items: center;
 	border : 1px solid #dddddd;
+}
+
+.findId_a{
+	text-decoration-line : none;
+	color : black;
 	}
 
-#login_id{
+#findId_homelogo{
+	margin-top : 50px;
+	display : flex;
+	justify-content : center;
+	align-items : center;
+	}
+
+.findId_name{
 	margin-top : 20px;
 	width : 300px;
 	height : 45px;
 	border : 1px solid #dddddd;
 	text-align : center;
 	padding : 0;
-	border-radius : 5px 5px 0px 0px;
+	border-radius : 5px;
 	}
-
-#login_pw{
+	
+.findId_phone{
+	margin-top : 20px;
 	width : 300px;
 	height : 45px;
 	border : 1px solid #dddddd;
 	text-align : center;
 	padding : 0;
-	border-radius : 0px 0px 5px 5px;
+	border-radius : 5px;
 	}
 
-#login_sub{
-	margin-top : 50px;
-	}
-	
-#login_sub2{
-	margin-top : 50px;
-	}
 
-#login_link{
-	width : 250px;
-	display : flex;
-	flex-direction: row;
-	justify-content : space-around;
-	align-items : center;
-	margin : 20px;
-	}
-
-#login_search{
+.findId_link{
 	margin-top : 20px;
 	margin-bottom : 50px;
 	width : 250px;
@@ -79,7 +68,7 @@
 	}
 
 
-#login_login{
+.findId_button{
 	width : 300px;
 	height : 47px;
 	color : white;
@@ -88,24 +77,10 @@
 	box-sizing : content-box;
 	padding : 0px;
 	border-radius : 5px;
-	margin : 30px;
+	margin-top : 30px;
 	}
 
 
 
 
 
-
-/*
-↓유효성 검사 관련 태그
-*/
-
-.login_idNone{
-	color : red;
-	display : none;
-}
-
-.login_pwNone{
-	color : red;
-	display : none;
-}

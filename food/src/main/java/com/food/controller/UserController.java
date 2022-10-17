@@ -244,17 +244,6 @@ public class UserController{
 	
 	
 	// 홈 화면 쇼핑 목록
-		//@RequestMapping(value = "/main", method = RequestMethod.GET)
-		//public String main_shop(Model model) {
-
-			//System.out.println("");
-			// System.out.println("shop.ShopSelect() = "+shop.ShopSelect());
-			// model.addAttribute("prodnum",shop.Shopattachlist(0));
-			//model.addAttribute("ArrayList", shopservice.ShopSelect());
-
-			//return "Main/main";
-		//}
-		
 		@RequestMapping(value = "/main", method = RequestMethod.GET)
 				public String main_shop(Model model) {
 

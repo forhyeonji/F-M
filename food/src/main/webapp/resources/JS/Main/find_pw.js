@@ -1,8 +1,0 @@
-/**
- * 
- */
-
-function closethewindow(){
-			self.close();
-		}
-
