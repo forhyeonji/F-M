@@ -13,7 +13,6 @@ $(function () {
             sColumns.map((key) => str += `<option value="${value[`cd`]}">${value[`cd_nm`]}</option>`);
         })
         str += `</select>`
-        console.log(str);
 
         $('#menu').append(str);
     }
@@ -28,7 +27,6 @@ $(function () {
                 if(e.code !== 'SUCCESS')
                     return;
                 isSelectBox(e.result.data)
-                console.log(e.result.data);
             }
         })
     }

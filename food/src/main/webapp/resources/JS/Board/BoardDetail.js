@@ -186,7 +186,7 @@ $(function () {
             data:JSON.stringify({"bno":bno}),
             contentType: "application/json; charset=utf-8",
             success: (data) => {
-                console.log(data);
+
             }
         })
     }
