@@ -19,19 +19,19 @@
 		<div class="slideadver">
 			<div>
 				<a href="/community">	
-					<img src="../../../resources/image/main_image/bannerEx1.png" >
+					<img src="../../../resources/image/main_image/bannerEx1.jpg" >
 				</a>
 			</div>
 							
 			<div>
 				<a href="/mypage">	
-					<img src="../../../resources/image/main_image/bannerEx2.png" >
+					<img src="../../../resources/image/main_image/bannerEx2.jpg" >
 				</a>
 					</div>
 							
 			<div>
 				<a href="/shop">	
-					<img src="../../../resources/image/main_image/bannerEx3.png" >
+					<img src="../../../resources/image/main_image/bannerEx3.jpg" >
 				</a>
 			</div>
 		</div>				
