@@ -135,7 +135,7 @@ function cartlist(userid){
 		str+="<td colspan='3'>상품</td><td>수량</td><td>상품별 합계</td><td></td></tr>"				
 		for(var i=0; i<data.length; i++){
 			str+="<tr><td><input type='checkbox' checked name='my_onecheck' class='my_oneck' value="+data[i].c_no+"></td>"
-			str+="<td><img class='my_orderImg' alt='"+data[i].c_no+"' src='/Shopdisplay?fileName="+data[i].filename+"'></td>"
+			str+="<td><img class='my_orderImg' alt='"+data[i].c_prodnum+"' src='/Shopdisplay?fileName="+data[i].filename+"'></td>"
 			str+="<td>"+data[i].s_name+"</td>"
 			str+="<td><input type='text' id='my_cntnow"+data[i].c_no+"' class='my_cnt' value='"+data[i].c_cnt+"'>"
 			str+="<input type='button' class='my_cntmodify' value='수정' data-c_no="+data[i].c_no+" data-c_cnt="+data[i].c_cnt+"></td>"
